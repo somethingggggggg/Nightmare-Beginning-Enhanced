@@ -1,0 +1,517 @@
+|a_solidlool
+|sm1
+|tailscustom
++dataselect
+	|MS_1
+	|MS_2
+	|MS_3
+	|MS_4
+	|MS_5
+	|MS_6
+	|Timer_2
+	|Timer_3
+	|DK
+	|DT
+	|DE
+	|MS_5_2
+	|MS_5_3
++title
+	|speedor
+	|saver
+	|object673
+	|SEGA_LOGO
+	|STP
+	|SS_Climb
+	|SB
+	|Timer_1
++ghz
+	|Hill_Note
+	|HZ_1
+	|HZ_2
+	|HZ_3
+	|HZ_4
+	|HZ_5
+	|HZ_6
+	|HZ_7
+	|Tails
+	|Ex1
+	|FalseSonic
+	|IntroTails
+	|Tornado
++hideseek
+	|H&S_Note
+	|HS_1
+	|H&S_2
+	|H&S_3
+	|HS_3
+	|Ex3
+	|object678
+	|Tails2
+	|FalseSonic2
+	|TailsStop2
+	|Ex4_2
++debug
+	|DM_Ring
+	|DM_Sonic
+	|DM_MasterEmerald
+	|DM_Tails
+	|DM_Knuckles
+	|DM_Metal
+	|EnergyBlast
+	|DM_Spring
+	|Debug_Thing
++mymenu
+	|langswtch
+	|cheatsswtch
+	|menusasa
+	|langselspr
+	|cheatsspr
+	|apply
+	|loadmodspr
++YCR
+	|YCR
+	|ScrapGround
+	|Knuckles
+	|KnucklesStop
+	|Ex6
+	|Noice
+	|ScrapWall
+	|ScrapWallDestruct
+	|ScrapWallExit
+	|Ex7
+	|KnucklesStop2
++threedots
+	|..._Note
+	|Egg_Ground
+	|Eggman
+	|BigLight
+	|BigLightMove
+	|EggmanStop
++fatalfog
+	|FF_Note
+	|FF_Ground
+	|AI1
+	|AI2
+	|AI3
+	|Pers1
+	|Pers2
+	|Pers3
+	|PersonalChoiser
+	|Ex11
+	|Ex11_2
+	|Ex11_3
+	|DP
+	|DP2
+	|Ex12
+	|Ex12_2
+	|Ex12_2_Ai
+	|Ex12_9
+	|SmachDash
++finalfight
+	|FinalCam
+	|HP_Exe
+	|FinalCam2
+	|Execkles
+	|ExeAttack1
+	|TipArrowRight
+	|HP_Metal
+	|TipArrowUp
+	|FinalSpring
+	|HitCounter
+	|ExeAttack2
+	|ExeAttack3
+	|HP_ExeWeak
+	|FinalCam3
+	|FinalCam4
+	|FinalMasterEmerald
+	|ExeAttack4
+	|WorstExe
+	|FinalExeBitch
+	|RealyDedExe
+	|ReallyDedSonic2
+	|SadMetal
+	|FinalTimer
+	|FinalSonic
+	|FinalBackground
+	|FinalGround
+	|FinalPoint2
+	|FinalExetior
+	|UpGrounder
+	|SonicExeCutscene
+	|ReallyDedSonic
+	|SadEggman
+	|SadKnuckles
+	|SadTails
+	|FinalGroundDown
+	|FinalGroundRSide
+	|FinalGround2
+	|objSlopeParent
+	|FinalGroundDown2
+	|FinalGroundRSide2
+	|UpGrounderBroke
+	|FinalPoint4
+	|FinalPoint5
+	|BestTails
+	|BestSonic
+	|BestKnuckles
+	|WorstEggman
+	|WorstTails
+	|WorstKnuckles
+	|WorstMetal
+	|WorstNote
++general
+	|Achwatch
+	|SW_Control
+	|title card
+	|lvlcontroller
+|Solid
+|Timer
+|Warn1
+|Ex2
+|Warn2
+|Warn2_2
+|TailsStop
+|Timer_4
+|Note_1
+|DA_1
+|DA_2
+|DA_3
+|Warn3
+|Test
+|Warn4
+|Ex4
+|Warn5
+|Warn6
+|Warn7
+|object677
+|HS_4
+|HS_5
+|HS_6
+|EE_1
+|Ex5
+|Note_2
+|Timer_5
+|Note1_5
+|Choiser_1
+|GoI
+|Timer_6
+|Choiser_10
+|Choiser_2
+|Choiser_3
+|GoI_2
+|GoI_3
+|Timer_7
+|Timer_8
+|Timer_9
+|object674
+|Warn8
+|Warn9
+|Warn10
+|Note_3
+|Warn11
+|Timer_10
+|SanityTimer
+|Timer_11
+|Note_4
+|Timer_12
+|Timer_13
+|Warn12
+|Ex8
+|Ex8_2
+|Warn13
+|Warn14
+|Timer_14
+|Warn15
+|Note_5
+|Ex_9
+|Ex10
+|Warn16
+|MS_7
+|BL
+|BE_1
+|BE_2
+|Timer_15
+|Timer_16
+|Timer2
+|Timer_17
+|Timer_18
+|BE_3
+|BE_4
+|Sonic
+|Timer3
+|Noice2
+|Warn17
+|Warn18
+|MS_Select
+|MS_FF
+|MS_Sonic
+|Selecter2
+|HZ_3B
+|HZ_1B
+|Warn1_5
+|TR1
+|Warn5_2
+|HS_1G
+|TeleportRing
+|Tails3
+|ButtonHS
+|HalfSolid
+|AI_Exe
+|HSE_Fall
+|HSE_Watch
+|HS_5G
+|HS_6G
+|AI_1
+|Spring2
+|Exe_Turner
+|HSE_GA
+|WinRing
+|WinRingOut
+|DeathRing
+|DeathRingOut
+|Tails4
+|Cheker
+|DeadTails
+|DeadKnuckles
+|DeadEggman
+|DeadExe
+|Warn19
+|SonicStop
+|EnergyShieldFF
+|CutTails
+|CutKnuckles
+|CutEggman
+|HPGround
+|HPK
+|HPT
+|HPE
+|DF_Alone
+|CEmerald
+|Choiser_9
+|TPassed
+|KPassed
+|EPassed
+|Ex7_2
+|GroundSolid2
+|AI_Watch
+|SonicExSwith
+|SonicExRunin
+|Note_6
+|Note_7
+|ENDEDScreen
+|Note_8
+|ExLastAttack
+|Note_9
+|JRTimer
+|Note9_2
+|Note9_3
+|Note9_31
+|Note9_32
+|Luigikid
+|IC003969
+|EEExplode
+|DeadSonic
+|KnucklesTable
+|Exe_Attack_Mode
+|HvostStand
+|HvostStand2
+|H&S2_Note
+|ButtonDest
+|TailsSELECTOR
+|KnucklesSELECTOR
+|EggmanSELECTOR
+|FFSELECTOR
+|SonicSELECTOR
+|TailsIcon
+|SonicIcon
+|NoteNegetivRings
+|Cratch
+|Continue_Note
+|Tails_Cont
+|Time_Cont
+|Game_Over_T
+|Game_Over_Exe
+|Game_Over_K
+|Game_Over_Exe2
+|Game_Over_E
+|Game_Over_Exe3
+|TailsLive
+|KnucklesLive
+|EggmanLive
+|Ex14
+|BlodyNoice
+|Speed_Up
+|MasterEmerald
+|HPEExe
+|VideoIcon
+|ES_Creeps
+|ES_Exe
+|HUD_PC
+|HUD_Chat
+|TAB
+|HvostBlack
+|Losters
+|EggBomb
+|ESHZ
+|ES_Sonic
+|PreExetior
+|ES_Note
+|DeadExe2
+|Deadnado
+|Deadnado2
+|Good
+|Average
+|Bad
+|Worse
+|HL_Note
+|HZ_3G
+|Easter_Sequel
+|CS_Easter_Egg
+|ScrapWallClean
+|YCR_Background
+|Wall_piece
+|YellowRing
+|YellowRingOut
+|KnucklesRingOut
+|KnucklesRing
+|Mouse_Cam
+|BackGround_Egg
+|Ground_Egg
+|Egg_Controler
+|EGG_Shower
+|EGGBot
+|Badnic_1
+|Badnic_2
+|Badnic_3
+|BlodyAnimal
+|Egg_Exe
+|Exploy
+|Pig
+|sprDA_1Dark
+|sprDA_2Dark
+|Game_Over_FaKnuckles
+|Game_Over_FaTails
+|Game_Over_FaEggman
+|Game_Over_FaExe
+|FF_All
+|FF_TE
+|FF_TK
+|FFNote_Choise
+|Ring
+|RingOut
+|RingLoss
+|GhostSonicWin
+|FinalPoint1
+|DM_Note
+|FinalSELECTOR
+|FinalSonicDeath
+|Final_Time
+|GhostEmerald
+|SuperExetior
+|RiseSonic1
+|PowerRay
+|HyperSonicClose
+|PowerRayClose
+|DarkSonic2
+|Charasters_Rectangle
+|Cam_Control
+|Charasters_Ghost_Close1
+|Charasters_Ghost_Close2
+|Charasters_Ghost_Close3
+|Charasters_Ghost_Close4
+|TailsWatched
+|HvostStand3
+|Creep_Back
+|Line_Crusher
+|TailsFatality
+|Bushes
+|HS_Cam
+|HSE_Walker
+|DarkCircle
+|FF_DT
+|ExePlayer
+|TailsRacing
+|FinishTable
+|Tabls
+|ScrapElevator
+|ScrapEggman
+|KnucklesPreDeath
+|EggmanPreDeath
+|FF_Piece
+|FF_Wall
+|EggElevator
+|SonicExAssasin
+|SuicideHill_Note
+|SH_Ground
+|SH_Trees
+|SH_Flower1
+|SH_Flower2
+|SH_Back
+|SuicideSonic
+|SuicideTails
+|SuicideKnuckles
+|SuicideEggman
+|SuicideEggman2
+|SuicideSpikes
+|Creeps
+|Timer19
+|SH_TailsGhost
+|ViewGround
+|SH_ViewSonic
+|SH_KnucklesGhost
+|SH_ViewBack
+|ViewSpike
+|SH_ViewBack2
+|SH_ViewSonic2
+|Rebooter
+|Skiper
+|Sounder
+|FinalPoint3
+|SpikeUp
+|StripSpike
+|Trio_Away
+|HZ_FinalBackground
+|RiseHPGround
+|SonicWayOut
+|DF_Note
+|DF_Tails
+|DF_Knuckles
+|DF_Eggman
+|Pre_DF_Note
+|DF_Exe
+|object601
+|DF_Spike
+|DF_Head
+|DFDeathTails
+|ElectroBall
+|DF_Metal
+|Truther
+|Death1
+|Death2
+|Death3
+|BIG_MEME_KNUX
+|Sunky
+|KnockKnock
+|Tlels
+|RingStruction
+|AllPers
+|FogExe1
+|Fog_Exe2
+|Solid_Mask
+|KnucklesDeath
+|TailsDeath
+|EE_2
+|SunkyHill
+|EasterSolid
+|EasterExploy
+|MS_Death
+|RiseSonic0
+|RiseExe0
+|AEC_Tails
+|AEC_Knuckles
+|AEC_Metal
+|AEC_Eggman
+|AEC_Sonic
+|Timer_20
+|AEC_Amy
+|Credits
