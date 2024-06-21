@@ -1,0 +1,559 @@
+if Page = 1
+{
+draw_sprite(sprSW_Tails,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "И снова холмы! В последнее#время Соник слишком часто#здесь бывает! Интересно,#зачем он позвал меня на#этот раз?",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+//All
+if Page = 3
+{
+draw_sprite(sprSW_Tails,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Что это за место?",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 5 
+{
+draw_sprite(sprSW_Tails,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Наклз! Эггман! Как я рад вас#видеть! Что-то не так с#Соником: он пытался...",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 6
+{
+CutTails.image_xscale = -1
+draw_sprite(sprSW_Knuckles,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "...Убить тебя? Не удивляйся:#со мной он тоже пытался#разделаться! Что ты сделал#с Соником, Яйцеголовый?!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 7
+{
+CutTails.image_xscale = 1
+draw_sprite(sprSW_Eggman,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Меня зовут Эггман! И я#понятия не имею что#случилось с этим синим#выскочкой!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 8
+{
+draw_sprite(sprSW_Eggman,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Моя цель - роботизация, не#убийство! Я видел как Соник#убивал животных. Но#я чуял, что он хочет#добраться до меня!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 9
+{
+draw_sprite(sprSW_Eggman,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Я приказал бадникам#задержать его, а сам#ушел потайным путем. У#меня было подозрение, что#они не остановят ежа.",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 10
+{
+draw_sprite(sprSW_Eggman,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Как оказалось, я был прав.",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 11
+{
+CutTails.image_xscale = -1
+draw_sprite(sprSW_Knuckles,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Похоже, теперь синий может#управлять чужим сознанием!#Было ощущение, что он#хотел заставить меня#сойти с ума!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 12
+{
+draw_sprite(sprSW_Tails,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Согласен! От этого#Соника веет какой-то#странной аурой.",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 13
+{
+draw_sprite(sprSW_Knuckles,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Аурой? Точно! Возможно я#смогу узнать, что#случилось с нашим другом!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 14
+{
+draw_sprite(sprSW_Tails,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Как?!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 15
+{
+draw_sprite(sprSW_Knuckles,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Недавно нашел изумруд хаоса!#Он поможет понять, что#творится с этим колючим#шаром!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 16
+{
+CutTails.image_xscale = 1
+draw_sprite(sprSW_Eggman,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "И что ты можешь сделать?!#У нас нет механизмов,#способных вычислить#состояние ежа!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 17
+{
+CutTails.image_xscale = -1
+draw_sprite(sprSW_Tails,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Боюсь он прав, Наклз.",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 18
+{
+draw_sprite(sprSW_Knuckles,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Не забывайте, что я#-хранитель Мастер-изумруда!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 19
+{
+draw_sprite(sprSW_Knuckles,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "И если я могу управлять#его энергией, то неужели#я не смогу использовать#обычный камень!?",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 21
+{
+CutTails.image_xscale = 1
+draw_sprite(sprSW_Eggman,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "А вот и виновник#торжества! Нужно уходить.",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 22
+{
+CutTails.image_xscale = -1
+draw_sprite(sprSW_Knuckles,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Не нужно. Мы должны#остаться! Если подпустить его#ближе, изумруд сможет#уловить энергетику! ",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 23
+{
+draw_sprite(sprSW_Tails,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Но Наклз! Что мешает#Сонику убить нас на#расстоянии, с помощью#контроля разума?",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 24
+{
+draw_sprite(sprSW_Knuckles,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Все тот же изумруд. Это#конечно не супер-форма, но он#способен блокировать#ментальные атаки!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 25
+{
+draw_sprite(sprSW_Knuckles,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Рассредоточимся!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+//Tails_Death
+if Page = 27
+{
+draw_sprite(sprSW_Eggman,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Наклз?! Не думал, что#скажу это, но я рад#тебя видеть!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 28
+{
+draw_sprite(sprSW_Knuckles,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Не пытайся меня запутать,#ряженое яйцо! Что#происходит?! Что ты#сделал с Соником!?",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 29
+{
+CutTails.image_xscale = 1
+draw_sprite(sprSW_Eggman,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Меня зовут Эггман! И я#понятия не имею что#случилось с этим синим#выскочкой!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 30
+{
+draw_sprite(sprSW_Eggman,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Моя цель - роботизация, не#убийство! Я видел как Соник#убивал животных. Но#я чуял, что он хочет#добраться до меня!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 31
+{
+draw_sprite(sprSW_Eggman,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Я приказал бадникам#задержать его, а сам#ушел потайным путем. У#меня было подозрение, что#они не остановят ежа.",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 32
+{
+draw_sprite(sprSW_Eggman,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Как оказалось, я был прав.",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 33
+{
+CutTails.image_xscale = -1
+draw_sprite(sprSW_Knuckles,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Похоже, теперь синий может#управлять чужим сознанием!#Было ощущение, что он#хотел заставить меня#сойти с ума!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 34
+{
+draw_sprite(sprSW_Knuckles,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Есть идея! Возможно я#смогу узнать, что#случилось с нашим другом!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 35
+{
+draw_sprite(sprSW_Eggman,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Твоим другом...",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 36
+{
+draw_sprite(sprSW_Knuckles,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Недавно нашел изумруд хаоса!#Он поможет понять, что#творится с этим колючим#шаром!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 37
+{
+CutTails.image_xscale = 1
+draw_sprite(sprSW_Eggman,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "И что ты можешь сделать?!#У нас нет механизмов,#способных вычислить#состояние ежа!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+
+if Page = 38
+{
+draw_sprite(sprSW_Knuckles,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Не забывай, что я#-хранитель Мастер-изумруда!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 39
+{
+draw_sprite(sprSW_Knuckles,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "И если я могу управлять#его энергией, то неужели#я не смогу использовать#обычный камень!?",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 42
+{
+CutTails.image_xscale = 1
+draw_sprite(sprSW_Eggman,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "А вот и виновник#торжества! Нужно уходить.",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 43
+{
+CutTails.image_xscale = -1
+draw_sprite(sprSW_Knuckles,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Не нужно. Мы должны#остаться! Если подпустить его#ближе, изумруд сможет#уловить энергетику! ",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 44
+{
+draw_sprite(sprSW_Eggman,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Ты идиот?! Что мешает#Сонику убить нас на#расстоянии, с помощью#контроля разума?",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 45
+{
+draw_sprite(sprSW_Knuckles,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Все тот же изумруд. Это#конечно не супер-форма, но он#способен блокировать#ментальные атаки!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 46
+{
+draw_sprite(sprSW_Knuckles,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Рассредоточимся!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+//Knuckles_Death
+
+if Page = 48
+{
+draw_sprite(sprSW_Tails,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Эггман!#Что ты здесь делаешь?",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 49
+{
+draw_sprite(sprSW_Eggman,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "То же, что и ты,#я полагаю...",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 50
+{
+draw_sprite(sprSW_Tails,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Значит Соник напал и на#тебя?! Это ужасно!#Что с ним случилось?!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 51
+{
+draw_sprite(sprSW_Eggman,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Ну, в самом деле#он на меня не нападал.#Пытался, но я успел#сбежать.",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 52
+{
+draw_sprite(sprSW_Eggman,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Еще, весьма странно то,#что мы оба пришли сюда,#хотя я даже не знал#об этом месте!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 53
+{
+draw_sprite(sprSW_Tails,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Точно! Я тоже здесь#впервые! У меня было#ощущение, что что-то#вело меня сюда.",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 54
+{
+draw_sprite(sprSW_Eggman,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Или кто-то...#Я подозреваю, что это#был еж. У меня #постоянное ощущение,#что он видит меня!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 55
+{
+draw_sprite(sprSW_Tails,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Согласен! Как думаешь:#можно ли как-то сделать#Соника снова нормальным?",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 56
+{
+draw_sprite(sprSW_Eggman,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Хмм... Если бы я смог#вычислить его состояние#в данный момент...#Но у меня нет нужных#приборов... ",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 57
+{
+draw_sprite(sprSW_Eggman,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Хотя... Возможно у#моего коммуникатора#еще осталась энергия.#Я мог бы вызвать#Метал-Соника!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 58
+{
+draw_sprite(sprSW_Tails,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Это может сработать!#Метал имеет связь со#своим прототипом, значит#он может просканировать#его!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 59
+{
+draw_sprite(sprSW_Eggman,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "И заодно помочь нам#выжить!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 61
+{
+draw_sprite(sprSW_Eggman,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "А вот и наш сумасшедший!#Ну что Тейлз:#сейчас или никогда!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 64
+{
+draw_sprite(sprSW_Tails,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Ура доктор:#у вас получилось!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 65
+{
+draw_sprite(sprSW_Eggman,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Осталось только задать#ему программу и...#Готово!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 66
+{
+draw_sprite(sprSW_Tails,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Отлично! Надеюсь с#Наклзом все в порядке!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 67
+{
+CutEggman.image_xscale = -1
+draw_sprite(sprSW_Eggman,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Знаешь Тейлз: Мне#кажется, что Наклза#больше нет...",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 68
+{
+draw_sprite(sprSW_Tails,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "...",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+//Eggman Death
+
+if Page = 70
+{
+draw_sprite(sprSW_Tails,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Наклз! Как я рад тебя#видеть!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 71
+{
+draw_sprite(sprSW_Knuckles,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Взаимно. Что это за#место? И почему мы#оба здесь?",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 72
+{
+draw_sprite(sprSW_Tails,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Я не знаю. С Соником#что-то случилось! Он#напал меня! Я смог#сбежать, но почему-то#оказался здесь!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 73
+{
+draw_sprite(sprSW_Knuckles,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Cо мной он тоже пытался#разделаться.",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 74
+{
+draw_sprite(sprSW_Knuckles,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "И кстати: похоже, теперь#ёж может управлять чужим#сознанием! Было ощущение,#что он хотел заставить#меня сойти с ума!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 75
+{
+draw_sprite(sprSW_Tails,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Точно! От этого#Соника веет какой-то#странной аурой!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 76
+{
+draw_sprite(sprSW_Knuckles,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Аурой? Точно! Возможно я#смогу узнать, что#случилось с нашим другом!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 77
+{
+draw_sprite(sprSW_Tails,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Как?!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 78
+{
+draw_sprite(sprSW_Knuckles,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Недавно нашел изумруд хаоса!#Он поможет понять, что#творится с этим колючим#шаром!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 79
+{
+draw_sprite(sprSW_Tails,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Я неуверен Наклз. Что#может сделать один#изумруд хаоса, без#специального оборудования?",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 80
+{
+draw_sprite(sprSW_Knuckles,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Не забывай, что я#-хранитель Мастер-изумруда!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 81
+{
+draw_sprite(sprSW_Knuckles,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "И если я могу управлять#его энергией, то неужели#я не смогу активировать#обычный камень!?",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 83
+{
+draw_sprite(sprSW_Tails,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "ЭТО СОНИК! ОН НАШЁЛ#НАС! ЧТО ТЕПЕРЬ ДЕЛАТЬ?!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 84
+{
+draw_sprite(sprSW_Knuckles,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Не бойся Тейлз! Мы#должны остаться!#Если подпустить его#ближе, изумруд сможет#уловить энергетику! ",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 85
+{
+draw_sprite(sprSW_Tails,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "НО НАКЛЗ! Что мешает#Сонику убить нас на#расстоянии, с помощью#контроля разума?",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 86
+{
+draw_sprite(sprSW_Knuckles,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Все тот же изумруд. Это#конечно не супер-форма, но он#способен блокировать#ментальные атаки!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 87
+{
+draw_sprite(sprSW_Tails,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Хорошо. Я хотел#спросить тебя... Ты#думаешь это сделал#Эггман?",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 88
+{
+draw_sprite(sprSW_Knuckles,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Не знаю точно, но мне#кажется, что да.",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+
+if Page = 89
+{
+draw_sprite(sprSW_Knuckles,1,view_xview[0],view_yview[0])
+draw_set_font(WORD_Font)
+draw_text_color(view_xview[0]+100, view_yview[0], "Рассредоточимся!",$00ffff,$00ffff,$00ffff,$005555,1)
+}
+

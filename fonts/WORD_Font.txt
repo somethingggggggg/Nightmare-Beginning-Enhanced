@@ -1,0 +1,8 @@
+name=Arial
+size=9
+bold=0
+italic=0
+charset=204
+aa_level=3
+range_start=0
+range_end=255

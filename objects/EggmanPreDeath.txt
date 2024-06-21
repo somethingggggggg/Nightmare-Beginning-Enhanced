@@ -1,0 +1,7 @@
+sprite=sprEggmanPreDeath
+visible=1
+solid=0
+persistent=1
+depth=-5
+parent=AllPers
+mask=
