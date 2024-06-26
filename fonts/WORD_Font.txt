@@ -1,5 +1,5 @@
-name=Arial
-size=9
+name=Korinna
+size=12
 bold=0
 italic=0
 charset=204
