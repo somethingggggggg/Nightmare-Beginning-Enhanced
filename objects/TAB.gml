@@ -9,6 +9,7 @@ Energy = 100
 EggBombTime = false
 Twister_mode = false
 life = 25
+global.complpercent = 0
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -152,3 +153,14 @@ if collision_rectangle(x,y+100,x+10000,y-100,Pers2,1,0)
 instance_create(Pers2.x-270,336,AI3)
 instance_destroy()
 }}}}
+#define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+draw_set_font(global.dialoguefont)
+draw_text_color(view_xview[0] + view_wview[0]/2+60, view_yview[0]+10, global.complpercent,$000075,$000051,$000075,$000051,1)
+draw_text_color(view_xview[0] + view_wview[0]/2+80, view_yview[0]+10, '%',$000075,$000051,$000075,$000051,1)
+draw_rectangle_color((view_xview[0] + view_wview[0]/2)-50,view_yview[0],view_xview[0] + view_wview[0]/2+50,view_yview[0]+30,$000000,$000000,$000000,$000000,1)
+draw_rectangle_color((view_xview[0] + view_wview[0]/2)-50,view_yview[0],(view_xview[0] + view_wview[0]/2)-50 + global.complpercent,view_yview[0]+30,$000075,$000051,$000075,$000051,0)

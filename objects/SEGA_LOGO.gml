@@ -24,6 +24,10 @@ if Act = 4
 {
 global.Final = true
 }
+if keyboard_string = "jaiz"
+{
+    room_goto(90)
+}
 #define Keyboard_65
 /*"/*'/**//* YYD ACTION
 lib_id=1

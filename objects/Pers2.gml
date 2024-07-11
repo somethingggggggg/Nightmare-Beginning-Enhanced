@@ -273,6 +273,7 @@ TAB.Twister_mode = false
 Act = 2
 alarm[3] = 250
 }
+global.complpercent = 100 - round((x / 8300) * 100)
 #define Collision_Solid
 /*"/*'/**//* YYD ACTION
 lib_id=1

@@ -172,6 +172,7 @@ instance_change(Pers2,AI2)
 }
 view_object[0] = Pers2
 }}
+global.complpercent = 100 - round((x / 8300) * 100)
 #define Collision_Solid
 /*"/*'/**//* YYD ACTION
 lib_id=1

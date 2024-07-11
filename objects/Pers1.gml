@@ -19,6 +19,7 @@ canHit = true;
 canSpriteChange = true;
 canJump = true
 SmashDash = false
+complpercent = 0
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -212,6 +213,7 @@ if sprite_index = sprTailsJumpBlack && ground = false && keyboard_check_pressed(
 SmashDash = true
 instance_create(x,y,SmachDash)
 }
+global.complpercent = 100 - round((x / 8300) * 100)
 #define Collision_Solid
 /*"/*'/**//* YYD ACTION
 lib_id=1
