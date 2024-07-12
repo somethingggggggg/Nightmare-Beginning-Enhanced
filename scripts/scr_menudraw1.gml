@@ -1,7 +1,7 @@
-        draw_set_font(font6)
-        draw_text(192,128,"OPTIONS")
-        draw_text(176,192,"LOAD MOD")
-        draw_text(224,256,"APPLY")
+draw_set_font(font6)
+draw_text(192,128,"OPTIONS")
+draw_text(176,192,"LOAD MOD")
+draw_text(224,256,"APPLY")
 switch global.option
 {
     case 0:

@@ -108,16 +108,17 @@ switch global.option
         if global.progressbar = 1
         {
             draw_text_color(256,260,"on",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
+            draw_text_color(400+60, 200+10, 50,$000075,$000051,$000075,$000051,1)
+            draw_text_color(400+80, 200+10, '%',$000075,$000051,$000075,$000051,1)
+            draw_rectangle_color(400-50,200,400+50,200+30,$000000,$000000,$000000,$000000,1)
+            draw_rectangle_color(400-50,200,400-50 + 50,200+30,$000075,$000051,$000075,$000051,0)
         }
         else
         {
             draw_text_color(256,260,"off",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
+            draw_text(400,200,'good luck')
         }
         draw_set_font(global.dialoguefont)
-    draw_text_color(400+60, 200+10, 50,$000075,$000051,$000075,$000051,1)
-    draw_text_color(400+80, 200+10, '%',$000075,$000051,$000075,$000051,1)
-    draw_rectangle_color(400-50,200,400+50,200+30,$000000,$000000,$000000,$000000,1)
-    draw_rectangle_color(400-50,200,400-50 + 50,200+30,$000075,$000051,$000075,$000051,0)
     break;
 }
 if text = 1
