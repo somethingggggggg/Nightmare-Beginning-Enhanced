@@ -309,4 +309,4 @@ if pause = 1 && room != 0
     //execute_file(working_directory+"/script.txt")
 }
 if global.showfps = 1
-draw_text(view_xview[0],view_yview[0],fps)
+draw_text(view_xview,view_yview,fps)

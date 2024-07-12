@@ -33,6 +33,14 @@ switch global.lang
         {
             draw_text(view_xview+224,view_yview+160,"off")
         }
+        if global.showfps = 1
+        {
+            draw_text(view_xview+224,view_yview+180,"on")
+        }
+        else
+        {
+            draw_text(view_xview+224,view_yview+180,"off")
+        }
         if global.dialoguefont = WORD_Font
         {
             draw_text(view_xview+224,view_yview+140,"old")
