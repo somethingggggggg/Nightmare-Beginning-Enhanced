@@ -34,6 +34,7 @@ complete = 0
     complete = ini_read_real('progress','bestend',0)
     ini_close()
     ini_open("options.ini")
+    global.showfps = ini_read_real('options','showfps',0)
     global.lang = ini_read_real('options','language',0)
     global.dialoguefont = ini_read_real('options','font',WORD_Font)
     global.progressbar = ini_read_real('options','progressbar',0)
