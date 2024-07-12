@@ -1,8 +1,10 @@
 draw_set_font(WORD_Font)
 draw_text(view_xview+32,view_yview+80,"back")
 draw_text(view_xview+32,view_yview+100,"language")
+draw_text(view_xview+32,view_yview+120,"cheats")
 draw_text(view_xview+32,view_yview+140,"font")
 draw_text(view_xview+32,view_yview+160,"FF progressbar")
+draw_text(view_xview+32,view_yview+180,"Show FPS")
 switch global.lang
 {
     case 0:
@@ -30,6 +32,14 @@ switch global.lang
         else
         {
             draw_text(view_xview+224,view_yview+160,"off")
+        }
+        if global.showfps = 1
+        {
+            draw_text(view_xview+224,view_yview+180,"on")
+        }
+        else
+        {
+            draw_text(view_xview+224,view_yview+180,"off")
         }
         if global.dialoguefont = WORD_Font
         {
@@ -83,12 +93,26 @@ switch global.option
             draw_text_color(view_xview+410, view_yview+110, 50,$000075,$000051,$000075,$000051,1)
             draw_text_color(view_xview+430, view_yview+110, '%',$000075,$000051,$000075,$000051,1)
             draw_rectangle_color(view_xview+300,view_yview+100,view_xview+400,view_yview+130,$000000,$000000,$000000,$000000,1)
-            draw_rectangle_color(view_xview+300,view_yview+100,view_xview+400,view_yview+130,$000075,$000051,$000075,$000051,0)
+            draw_rectangle_color(view_xview+300,view_yview+100,view_xview+350,view_yview+130,$000075,$000051,$000075,$000051,0)
         }
         else
         {
             draw_text_color(view_xview+224,view_yview+160,"off",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
             draw_text(view_xview+335,view_yview+115,'good luck')
+        }
+        draw_set_font(global.dialoguefont)
+    break;
+    case 4:
+        draw_text_color(view_xview+32,view_yview+180,"Show FPS",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
+        draw_text(view_xview+272,view_yview+188,"Show FPS")
+        if global.showfps = 1
+        {
+            draw_text_color(view_xview+224,view_yview+180,"on",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
+            draw_text(view_xview+335,view_yview+115,fps)
+        }
+        else
+        {
+            draw_text_color(view_xview+224,view_yview+180,"off",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
         }
         draw_set_font(global.dialoguefont)
     break;

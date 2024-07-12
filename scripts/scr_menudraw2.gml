@@ -4,6 +4,7 @@ draw_text(96,200,"language")
 draw_text(96,220,"cheats")
 draw_text(96,240,"font")
 draw_text(96,260,"FF progressbar")
+draw_text(96,280,"Show FPS")
 switch global.lang
 {
     case 0:
@@ -38,6 +39,14 @@ switch global.lang
         else
         {
             draw_text(256,260,"off")
+        }
+        if global.showfps = 1
+        {
+            draw_text(256,280,"on")
+        }
+        else
+        {
+            draw_text(256,280,"off")
         }
         if global.dialoguefont = WORD_Font
         {
@@ -117,6 +126,20 @@ switch global.option
         {
             draw_text_color(256,260,"off",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
             draw_text(400,200,'good luck')
+        }
+        draw_set_font(global.dialoguefont)
+    break;
+    case 5:
+        draw_text_color(96,280,"Show FPS",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
+        draw_text(304,288,"Show FPS")
+        if global.showfps = 1
+        {
+            draw_text_color(256,280,"on",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
+            draw_text(400,220,fps)
+        }
+        else
+        {
+            draw_text_color(256,280,"off",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
         }
         draw_set_font(global.dialoguefont)
     break;

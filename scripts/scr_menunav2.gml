@@ -53,6 +53,12 @@ if keyboard_check_pressed(vk_left)
         if global.progressbar = 1 global.progressbar = 0
         else global.progressbar = 1
     }
+    if global.option = 5
+    {
+        sound_play(global.S_WellRing)
+        if global.showfps = 1 global.showfps = 0
+        else global.showfps = 1
+    }
 }
 if keyboard_check_pressed(vk_right)
 {
@@ -87,11 +93,16 @@ if keyboard_check_pressed(vk_right)
         if global.progressbar = 1 global.progressbar = 0
         else global.progressbar = 1
     }
+    if global.option = 5
+    {
+        sound_play(global.S_WellRing)
+        if global.showfps = 1 global.showfps = 0
+        else global.showfps = 1
+    }
 }
 if global.lang < 0 global.lang = 2
 if global.lang > 2 global.lang = 0
 if global.option < 0 global.option = 4
-
 if global.cheats < 0 global.cheats = 1
 if global.cheats > 1 global.cheats = 0
 ass -= 0.01
