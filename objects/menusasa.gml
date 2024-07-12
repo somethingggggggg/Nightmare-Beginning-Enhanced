@@ -4,6 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+background_alpha[1] = 0
 global.lang = 0
 hui = 0
 global.dialoguefont = WORD_Font
@@ -29,18 +30,14 @@ action_id=603
 applies_to=self
 */
 complete = 0
-
-if file_exists("save.ini")
-{
     ini_open("save.ini")
-    if ini_read_real('progress','bestend',0) = 1
-    {
-        complete = 1
-    }
+    complete = ini_read_real('progress','bestend',0)
+    ini_close()
+    ini_open("options.ini")
     global.lang = ini_read_real('options','language',0)
     global.dialoguefont = ini_read_real('options','font',WORD_Font)
     global.progressbar = ini_read_real('options','progressbar',0)
-}
+    ini_close()
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=611

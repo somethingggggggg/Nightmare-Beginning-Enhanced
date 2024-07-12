@@ -4,6 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+pause = 0
 global.F_Alarm_2=working_directory+"/Sound/Alarm_2.mp3"
 global.F_BoxBroke=working_directory+"/Sound/BoxBroke.wav"
 global.F_Breathing=working_directory+"/Sound/Breath.wav"
@@ -254,6 +255,27 @@ global.S_Chase=sound_add(global.F_Chase,0,0)
 global.S_suka=sound_add(global.F_suka,0,0)
 global.S_tailsfly=sound_add(global.F_tailsfly,0,0)
 global.S_tailstired=sound_add(global.F_tailstired,0,0)
+#define Step_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if room != 0
+{
+    if pause = 0
+    {
+        if keyboard_check_pressed(vk_escape) && !instance_exists(SW_Control)
+        {
+            instance_deactivate_all(1)
+            pause = 1
+        }
+    }
+    else
+    {
+        scr_pausenav()
+    }
+}
 #define Other_3
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -262,3 +284,27 @@ applies_to=self
 */
 discord_free_app()
 discord_free_dll()
+#define Other_30
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+discord_free_app()
+discord_free_dll()
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=332
+invert=0
+*/
+#define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if pause = 1 && room != 0
+{
+    scr_pausedraw()
+    //execute_file(working_directory+"/script.txt")
+}
