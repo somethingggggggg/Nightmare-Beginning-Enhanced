@@ -2,14 +2,14 @@ gm82_version=5
 gameid=160640509
 
 info_author=Jaiz Koiz & some guy who knows how to use a decompiler
-info_version=1.7.0
+info_version=2.0.0
 info_information=
 
 exe_company=Hell
 exe_product=Sonic.exe Nightmare Beginning Enhanced
 exe_copyright=
 exe_description=
-exe_version=1.7.0.0
+exe_version=2.0.0.0
 
 has_backgrounds=1
 has_datafiles=0
