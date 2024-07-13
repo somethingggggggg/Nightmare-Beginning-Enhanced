@@ -50,6 +50,16 @@ draw_sprite(sprRingCont,Timer.Min,view_xview+49,view_yview+24)
 draw_sprite(sprTimeCont,Timer.Sec,view_xview+73,view_yview+24)
 }
 
+with tailscustom
+{
+draw_sprite(sprT_Lives, 0, view_xview+35, view_yview+240)
+draw_sprite(sprDesk, 0, view_xview+35, view_yview+32)
+draw_sprite(sprRingCont,0,view_xview+60,view_yview+40)
+draw_sprite(sprLive_Cont,global.TLive-1,view_xview+55,view_yview+244)
+draw_sprite(sprRingCont,Timer.Min,view_xview+49,view_yview+24)
+draw_sprite(sprTimeCont,Timer.Sec,view_xview+73,view_yview+24)
+}
+
 with Knuckles
 {
 draw_sprite(sprK_Lives, 0, view_xview+35, view_yview+240)
