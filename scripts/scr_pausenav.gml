@@ -11,7 +11,19 @@ sound_play(global.S_MS_Move)
 if keyboard_check_pressed(vk_escape)
 {
     pause = 0
+    view_hview = prev_view_hview
+    view_wview = prev_view_wview
     instance_activate_all()
+}
+if keyboard_check_pressed(vk_enter)
+{
+    if global.option = 0
+    {
+        pause = 0
+        view_hview = prev_view_hview
+        view_wview = prev_view_wview
+        instance_activate_all()
+    }
 }
 if keyboard_check_pressed(vk_left)
 {

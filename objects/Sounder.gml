@@ -5,6 +5,8 @@ action_id=603
 applies_to=self
 */
 pause = 0
+prev_view_hview = view_hview
+prev_view_wview = view_wview
 global.F_Alarm_2=working_directory+"/Sound/Alarm_2.mp3"
 global.F_BoxBroke=working_directory+"/Sound/BoxBroke.wav"
 global.F_Breathing=working_directory+"/Sound/Breath.wav"
@@ -268,6 +270,10 @@ if room != 0
         if keyboard_check_pressed(vk_escape) && !instance_exists(SW_Control)
         {
             instance_deactivate_all(1)
+            prev_view_hview = view_hview
+            prev_view_wview = view_wview
+            view_wview = 462
+            view_hview = 260
             pause = 1
         }
     }
