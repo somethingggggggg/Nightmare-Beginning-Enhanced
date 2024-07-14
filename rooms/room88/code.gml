@@ -1,0 +1,1 @@
+global.dialoguepage = 0

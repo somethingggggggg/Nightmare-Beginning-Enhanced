@@ -71,7 +71,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if sprite_index = sprBC & sprBCrus & sprBCita
+if sprite_index = sprBC or sprBCrus or sprBCita
 {
 if image_index = 13
 {
@@ -83,7 +83,7 @@ image_index += 1
 alarm[1] = 180
 }}
 
-if sprite_index = sprGC & sprGCrus & sprGCita
+if sprite_index = sprGC or sprGCrus or sprGCita
 {
 if image_index = 12
 {
@@ -95,7 +95,7 @@ image_index += 1
 alarm[1] = 180
 }}
 
-if sprite_index = sprWC & sprWCrus & sprWCita
+if sprite_index = sprWC or sprWCrus or sprWCita
 {
 if image_index = 12
 {
