@@ -51,7 +51,6 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-Time_Script()
 //Movement
 if botmode = 0
 {
@@ -267,8 +266,8 @@ image_speed = 0.12
 
 if global.vel !=0 or ducking == true or up == true
 {
-IdieTimer = 300
-Idie_mode = false
+    IdieTimer = 300
+    Idie_mode = false
 }
 }
 
@@ -284,8 +283,8 @@ if place_meeting(x, y+2*vspeed+2, Solid) or place_meeting(x, y+vspeed+1, Solid_M
 //Smash Dash
 if sprite_index = sprTailsJump && ground = false && keyboard_check_pressed(ord("Z")) && SmashDash = false
 {
-SmashDash = true
-instance_create(x,y,sm1)
+    SmashDash = true
+    instance_create(x,y,sm1)
 }
 
 if ground = true && !instance_exists(sm1) SmashDash = false
@@ -315,6 +314,11 @@ if botmode = 1
 }
 if botmode = 2
 {
+    if a = 0
+    {
+        instance_create(0,0,obj_dialogue)
+        a = 1
+    }
     sprite_index = sprTailsUp;
 }
 #define Collision_Solid
@@ -356,3 +360,4 @@ action_id=603
 applies_to=self
 */
 draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale, image_yscale, drawAngle, image_blend, image_alpha);
+Time_Script()
