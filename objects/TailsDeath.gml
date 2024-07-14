@@ -19,18 +19,19 @@ applies_to=self
 */
 if global.TLive = 0
 {
-instance_create(0,0,TPassed)
-if instance_exists(TPassed) && instance_exists(KPassed) && instance_exists(EPassed)
-{
-room_goto(18)
+    instance_create(0,0,TPassed)
+    if instance_exists(TPassed) && instance_exists(KPassed) && instance_exists(EPassed)
+    {
+        room_goto(18)
+    }
+    else
+    {
+        room_goto(5)
+    }
 }
 else
 {
-room_goto(5)
-}}
-else
-{
-room_goto(68)
+room_goto(53)
 }
 #define Step_0
 /*"/*'/**//* YYD ACTION

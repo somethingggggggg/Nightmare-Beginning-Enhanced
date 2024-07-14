@@ -34,12 +34,13 @@ if global.TDetection = true
 {
     if !instance_exists(AI_Exe)
     {
-    room_goto(10)
+        room_goto(10)
     }
 else
 {
-room_goto(52)
-}}
+    room_goto(52)
+}
+}
 
 if global.KDetection = true
 {

@@ -41,7 +41,10 @@ else
     else image_alpha = 1
     invis_timer -= 1
 }
-if state = 0
+if instance_exists(tailscustom)
 {
+    if tailscustom.botmode = 0
+    {
 
+    }
 }

@@ -297,8 +297,8 @@ if global.Tails_mode = true
 {
 if ground = false && keyboard_check_pressed(ord("Z")) && FlyTime = 220
 {
-Fly = true
-vspeed = 2.3
+    Fly = true
+    vspeed = 2.3
 }
 
 if Fly = true && !keyboard_check_pressed(ord("Z"))
