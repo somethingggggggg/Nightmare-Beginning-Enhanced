@@ -26,6 +26,9 @@ Fly = false
 IdieTimer = 300
 Idie_mode = false
 
+a = 0
+cameramode = 0
+botmode = 0
 acc = 0.076875;
 global.vel = 0;
 maxSpeed = 6;
@@ -50,6 +53,8 @@ applies_to=self
 */
 Time_Script()
 //Movement
+if botmode = 0
+{
 if keyboard_check(vk_left) && !place_meeting(x+(abs(global.vel)*-1)-1, y, Solid_Mask) && !place_meeting(x+(abs(global.vel)*-1)-1, y, Solid) && (canMove == true or (rolling == true && global.vel > 0))
 {
   global.vel -= acc * (1+ground);
@@ -68,7 +73,7 @@ if global.vel < 0 && ground == false
 if global.vel >=0 && rolling == false
   image_xscale = 1;
 }
-
+}
 //Deacceleration
 if ground == true
 {
@@ -135,12 +140,14 @@ image_speed = (global.vel/2)
 }
 }
 
-//Jumping
-if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && Idie_mode = false
+if botmode = 0
 {
-   vspeed = -7;
-   sprite_index = sprTailsJump;
-}
+    //Jumping
+    if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && Idie_mode = false
+    {
+       vspeed = -7;
+       sprite_index = sprTailsJump;
+    }
 
 //Up
 if global.vel == 0 && ground == true && up == false && ducking == false && rolling == false && keyboard_check(vk_up)
@@ -150,6 +157,7 @@ if global.vel == 0 && ground == true && up == false && ducking == false && rolli
 
 
 //Ducking
+
 if global.vel == 0 && ground == true && up == false && ducking == false && rolling == false && keyboard_check(vk_down)
 {
    ducking = true;
@@ -176,17 +184,15 @@ if ducking == true && (!keyboard_check(vk_down) or ground == false)
    up = false;
    canMove = true;
 }
-
+}
 if rolling == true && (ground == false or global.vel == 0)
 {
-
    canMove = false;
 }
-
+else
 {
   mask_index = sprTailsMask;
    canMove = true
-
 }
 
 if up == true && spindash == false
@@ -236,6 +242,8 @@ if ground == false && sprite_index == sprTailsDuck
 collideSlopes();
 
 //Idie
+if botmode = 0
+{
 if global.vel = 0 && ground = true && Idie_mode = false && ducking == false && up == false && spindash == false
 {
 if IdieTimer >-1
@@ -262,6 +270,7 @@ if global.vel !=0 or ducking == true or up == true
 IdieTimer = 300
 Idie_mode = false
 }
+}
 
 //Return control when the player falls on the ground when getting hit
 if place_meeting(x, y+2*vspeed+2, Solid) or place_meeting(x, y+vspeed+1, Solid_Mask)&& (sprite_index = sprTailsHit && canHit =false)
@@ -278,7 +287,36 @@ if sprite_index = sprTailsJump && ground = false && keyboard_check_pressed(ord("
 SmashDash = true
 instance_create(x,y,sm1)
 }
+
 if ground = true && !instance_exists(sm1) SmashDash = false
+if cameramode = 0
+{
+    view_xview = x - 231
+    view_yview = y - 130
+    if view_xview < 0 view_xview = 0
+    if view_yview < 0 view_yview = 0
+}
+else
+{
+    view_xview = 545
+    view_yview = 5
+}
+if botmode = 1
+{
+    cameramode = 1
+    if x < 720
+    {
+        global.vel = 2
+    }
+    else
+    {
+        botmode = 2
+    }
+}
+if botmode = 2
+{
+    sprite_index = sprTailsUp;
+}
 #define Collision_Solid
 /*"/*'/**//* YYD ACTION
 lib_id=1

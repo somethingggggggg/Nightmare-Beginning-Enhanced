@@ -11,9 +11,19 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-global.TR += 1
-BL.T_Ring = true
-sound_play(global.S_Ring)
+if global.newcontent = 1
+{
+    global.TR += 1
+    BL.T_Ring = true
+    sound_play(global.S_Ring)
+    room_goto(88)
+}
+else
+{
+    global.TR += 1
+    BL.T_Ring = true
+    sound_play(global.S_Ring)
+}
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=203

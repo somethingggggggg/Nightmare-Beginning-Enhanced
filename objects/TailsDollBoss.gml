@@ -6,7 +6,9 @@ applies_to=self
 */
 hp = 5
 invis_timer = 0
+image_speed = 0.2
 state = 0
+image_xscale = -1
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -17,7 +19,7 @@ if invis_timer <= 0
 {
     if place_meeting(x,y,tailscustom)
     {
-        if tailscustom.sprite_index = sprTailsJump
+        if tailscustom.sprite_index = sprTailsJump && instance_exists(sm1)
         {
             hp -= 1
             invis_timer = 150

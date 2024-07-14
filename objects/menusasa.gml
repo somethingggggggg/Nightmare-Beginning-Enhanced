@@ -9,6 +9,7 @@ global.lang = 0
 hui = 0
 global.dialoguefont = WORD_Font
 global.menustate = 0
+global.newcontent = 1
 discord_init_dll()
 discord_init_app("1252129963411505222")
 discord_update_presence("IN MAIN MENU","An experimental nb mod",'sprfex','sprfex')
