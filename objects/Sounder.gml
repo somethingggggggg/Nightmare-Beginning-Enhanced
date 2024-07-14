@@ -5,6 +5,7 @@ action_id=603
 applies_to=self
 */
 pause = 0
+global.T_bossfight = 0
 prev_view_hview = view_hview
 prev_view_wview = view_wview
 global.F_Alarm_2=working_directory+"/Sound/Alarm_2.mp3"

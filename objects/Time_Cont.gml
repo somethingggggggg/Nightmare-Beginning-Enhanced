@@ -30,6 +30,10 @@ action_id=603
 applies_to=self
 */
 sound_stop(global.S_Continue_S)
+if global.T_bossfight = 1
+{
+    room_goto(88)
+}
 if global.TDetection = true
 {
     if !instance_exists(AI_Exe)
@@ -107,7 +111,7 @@ applies_to=self
 */
 alarm[0] = 0
 
-if global.TDetection = true
+if global.TDetection = true or global.T_bossfight = 1
 {
 Game_Over_T.hspeed = 5
 alarm[1] = 120
