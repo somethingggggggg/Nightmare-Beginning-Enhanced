@@ -9,6 +9,11 @@
             dialsprite = sprSW_Tailsdoll
         break;
         case 2:
+            message = "CURRENT MISSION: TERMINATE MILES TAILS PROWER"
+            dialsprite = sprSW_Tailsdoll
+        break;
+        case 3:
+            TailsDollBoss.fight = 1
             tailscustom.botmode = 0
             instance_destroy()
         break;

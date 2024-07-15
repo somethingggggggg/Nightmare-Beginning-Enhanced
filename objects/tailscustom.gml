@@ -321,6 +321,8 @@ if botmode = 2
     }
     sprite_index = sprTailsUp;
 }
+background_x = view_xview[0] / 32
+background_y = view_yview[0] / 8
 #define Collision_Solid
 /*"/*'/**//* YYD ACTION
 lib_id=1

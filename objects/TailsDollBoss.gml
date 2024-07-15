@@ -7,8 +7,16 @@ applies_to=self
 hp = 5
 invis_timer = 0
 image_speed = 0.2
-state = 0
+state = 1
+fight = 0
 image_xscale = -1
+timer = 300
+#define Alarm_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -22,7 +30,7 @@ if invis_timer <= 0
         if tailscustom.sprite_index = sprTailsJump && instance_exists(sm1)
         {
             hp -= 1
-            invis_timer = 150
+            invis_timer = 50
             tailscustom.vspeed = -tailscustom.vspeed
             global.vel = -global.vel
         }
@@ -43,8 +51,85 @@ else
 }
 if instance_exists(tailscustom)
 {
-    if tailscustom.botmode = 0
+    if tailscustom.botmode = 0 && fight = 1
     {
-
+        if timer = 0
+        {
+            if state = 1
+            {
+                state = 2
+            }
+            else
+            {
+                state = 1
+            }
+            timer = 300
+        }
+        else
+        {
+            timer -= 1
+        }
+        image_xscale = (tailscustom.x - x) / abs(tailscustom.x - x)
+        switch state
+        {
+            case 0:
+                if x > view_xview[0] + view_wview[0] / 2
+                {
+                    hspeed += -0.25
+                }
+                else
+                {
+                    hspeed += 0.25
+                }
+            if y > view_yview[0] + view_hview[0] / 2
+            {
+                vspeed += -0.25
+            }
+            else
+            {
+                vspeed += 0.25
+            }
+            break;
+            case 1:
+                if x > view_xview[0] + view_wview[0] / 2
+                {
+                    hspeed += -0.25
+                }
+                else
+                {
+                    hspeed += 0.25
+                }
+                if vspeed > 2 vspeed = 2
+                if vspeed < -2 vspeed = -2
+            if y > tailscustom.y + vspeed
+            {
+                vspeed += -0.25
+            }
+            else
+            {
+                vspeed += 0.25
+            }
+            break;
+            case 2:
+                if x > view_xview[0] + view_wview[0] / 2
+                {
+                    hspeed += -0.25 // * (6 - hp) / 3
+                }
+                else
+                {
+                    hspeed += 0.25 // * (6 - hp) / 3
+                }
+                if vspeed > 2 vspeed = 2
+                if vspeed < -2 vspeed = -2
+            if y > view_yview[0]
+            {
+                vspeed += -0.25
+            }
+            else
+            {
+                vspeed += 0.25
+            }
+            break;
+        }
     }
 }
