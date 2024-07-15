@@ -30,6 +30,7 @@ if invis_timer <= 0
         if tailscustom.sprite_index = sprTailsJump && instance_exists(sm1)
         {
             hp -= 1
+            sound_play(global.S_MetalBroke)
             invis_timer = 50
             tailscustom.vspeed = -tailscustom.vspeed
             global.vel = -global.vel

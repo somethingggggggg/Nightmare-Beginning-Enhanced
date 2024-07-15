@@ -5,6 +5,7 @@ draw_text(96,220,"cheats")
 draw_text(96,240,"font")
 draw_text(96,260,"FF progressbar")
 draw_text(96,280,"Show FPS")
+draw_text(96,300,"New content")
 switch global.lang
 {
     case 0:
@@ -47,6 +48,14 @@ switch global.lang
         else
         {
             draw_text(256,280,"off")
+        }
+        if global.newcontent = 1
+        {
+            draw_text(256,300,"on")
+        }
+        else
+        {
+            draw_text(256,300,"off")
         }
         if global.dialoguefont = WORD_Font
         {
@@ -140,6 +149,26 @@ switch global.option
         else
         {
             draw_text_color(256,280,"off",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
+        }
+        draw_set_font(global.dialoguefont)
+    break;
+    case 6:
+        draw_text_color(96,300,"New content",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
+        draw_text(304,288,"Toggle new content on or off")
+        if global.newcontent = 1
+        {
+            draw_text_color(256,300,"on",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
+            draw_sprite_ext(sprTailsDoll,image_index,450,220,-1,1,0,$ffffff,1)
+            draw_sprite_ext(sprTR,image_index,350,230,1,1,0,$ffffff,1)    //sprHvostStand
+            draw_sprite_ext(sprHvostStand,image_index,385,232,-1,1,0,$ffffff,1)
+            draw_sprite_ext(sprTails,image_index,380,230,-1,1,0,$ffffff,1)
+        }
+        else
+        {
+            draw_text_color(256,300,"off",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
+            draw_sprite_ext(sprTR,image_index,350,230,1,1,0,$ffffff,1)
+            draw_sprite_ext(sprHvostStand,image_index,385,232,-1,1,0,$ffffff,1)
+            draw_sprite_ext(sprTails,image_index,380,230,-1,1,0,$ffffff,1)
         }
         draw_set_font(global.dialoguefont)
     break;

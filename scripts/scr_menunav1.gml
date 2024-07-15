@@ -24,8 +24,15 @@ if keyboard_check_pressed(vk_enter) or mouse_check_button_pressed(mb_left)
     if global.option = 1
     {
         hui = get_string('Input Folder Name',hui)
-        execute_file(working_directory+"\mods\"+hui+"\mod.txt")
-        text = 1
+        if file_exists(working_directory+"\mods\"+hui+"\mod.txt")
+        {
+            execute_file(working_directory+"\mods\"+hui+"\mod.txt")
+            text = 1
+        }
+        else
+        {
+            text = 2
+        }
         ass = 1
     }
     if global.option = 2
@@ -35,6 +42,7 @@ if keyboard_check_pressed(vk_enter) or mouse_check_button_pressed(mb_left)
     ini_write_real('options','language',global.lang)
     ini_write_real('options','font',global.dialoguefont)
     ini_write_real('options','progressbar',global.progressbar)
+    ini_read_real('options','newcontent',global.newcontent)
     ini_close()
         if global.cheats = 1
         {
