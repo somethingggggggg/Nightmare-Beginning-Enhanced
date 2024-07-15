@@ -59,6 +59,12 @@ if keyboard_check_pressed(vk_left)
         if global.showfps = 1 global.showfps = 0
         else global.showfps = 1
     }
+    if global.option = 6
+    {
+        sound_play(global.S_WellRing)
+        if global.newcontent = 1 global.newcontent = 0
+        else global.newcontent = 1
+    }
 }
 if keyboard_check_pressed(vk_right)
 {
@@ -98,6 +104,12 @@ if keyboard_check_pressed(vk_right)
         sound_play(global.S_WellRing)
         if global.showfps = 1 global.showfps = 0
         else global.showfps = 1
+    }
+    if global.option = 6
+    {
+        sound_play(global.S_WellRing)
+        if global.newcontent = 1 global.newcontent = 0
+        else global.newcontent = 1
     }
 }
 if global.lang < 0 global.lang = 2

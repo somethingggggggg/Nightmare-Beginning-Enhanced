@@ -1,17 +1,20 @@
+|shDisplacement
++discord rich presence
+	|discord_init_dll
+	|discord_init_app
+	|discord_free_dll
+	|discord_free_app
+	|discord_update_presence
+	|update_discord_lol
++Menus
+	|scr_menudraw1
+	|scr_menudraw2
+	|scr_pausedraw
+	|scr_menunav1
+	|scr_menunav2
+	|scr_pausenav
+	|scr_dialget
 |EnemyGetHit
 |collideSlopes
 |Time_Script
-|discord_init_dll
-|discord_init_app
-|discord_free_dll
-|discord_free_app
-|discord_update_presence
 |playerGetHit
-|update_discord_lol
-|scr_menudraw1
-|scr_menudraw2
-|scr_pausedraw
-|scr_menunav1
-|scr_menunav2
-|scr_pausenav
-|scr_dialget
