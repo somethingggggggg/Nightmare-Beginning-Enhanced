@@ -4,10 +4,10 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if global.TDetection = true
+if global.TDetection = true or global.T_bossfight = 1
 {
 instance_create(112,320,Game_Over_T)
-instance_create(0,320,Game_Over_Exe)
+instance_create(0,305,Game_Over_Exe)
 }
 
 if global.KDetection = true
