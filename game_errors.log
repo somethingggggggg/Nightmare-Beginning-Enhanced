@@ -1,8 +1,3 @@
-ERROR in
-action number 1
-of  Step Event
-for object menusasa:
-
-Trying to execute non-existing file.
+COMPILATION ERROR in file to be executedError in code at line 3:   draw_text(288,220,HELL'S ENCYCLOPEDIA##PROGRAMMER)                        ^at position 23: Symbol , or ) expected.
 
 

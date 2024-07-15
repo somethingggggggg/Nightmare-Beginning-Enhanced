@@ -21,5 +21,7 @@ global.Debug_mode = false
 global.Time = 0
 background_hspeed[0] = 0.5
 background_vspeed[1] = 0.5
+background_hspeed[2] = 0.25
+background_vspeed[2] = 0.25
 window_set_caption("Sonic.exe: Nightmare Beginning ENHANCED")
 window_set_showicons(true)

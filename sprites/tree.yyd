@@ -32,6 +32,8 @@
 	|cheatsunpct
 	|loadunpct
 |sprTailsDoll
+|spr_cred_NBEDEV
+|spr_cred_danik
 |smashwhite
 |sprite773
 |ES_Noteita
@@ -190,6 +192,7 @@
 |sprEx2
 |sprEx3
 |sprEx4
+|sprExFuckItAll
 |sprEx4_2
 |sprEx4_3
 |sprEx4_4
@@ -684,6 +687,7 @@
 |sprYellowRing
 |sprYellowRingOut
 |spr_placeholder
+|spr_placemagic
 |spr_numpad
 |hate
 |spranother
