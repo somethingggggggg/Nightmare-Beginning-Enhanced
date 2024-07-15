@@ -1,17 +1,21 @@
 draw_set_font(font6)
-draw_text(192,128,"OPTIONS")
-draw_text(176,192,"LOAD MOD")
-draw_text(224,256,"APPLY")
+draw_text(208,128,"OPTIONS")
+draw_text(196,192,"LOAD MOD")
+draw_text(208,256,"CREDITS")
+draw_text(224,320,"APPLY")
 switch global.option
 {
     case 0:
-        draw_text_color(192,128,"OPTIONS",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
+        draw_text_color(208,128,"OPTIONS",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
     break;
     case 1:
-        draw_text_color(176,192,"LOAD MOD",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
+        draw_text_color(196,192,"LOAD MOD",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
     break;
     case 2:
-        draw_text_color(224,256,"APPLY",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
+        draw_text_color(208,256,"CREDITS",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
+    break;
+    case 3:
+        draw_text_color(224,320,"APPLY",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
     break;
 }
 switch text

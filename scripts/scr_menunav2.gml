@@ -2,6 +2,10 @@ if background_alpha[1] < 1
 {
     background_alpha[1] += 0.1
 }
+if background_alpha[2] > 0
+{
+    background_alpha[2] -= 0.1
+}
 if keyboard_check_pressed(vk_up) or mouse_wheel_up()
 {
 global.option -= 1
@@ -16,6 +20,7 @@ if keyboard_check_pressed(vk_enter) or mouse_check_button_pressed(mb_left)
 {
     if global.option = 0
     {
+        sound_play(global.S_Ring)
         global.option = 0
         global.menustate = 0
     }

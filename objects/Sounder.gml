@@ -133,6 +133,7 @@ global.S_Chase=sound_add(working_directory+"/Sound/Chase.mp3",0,0)
 global.S_suka=sound_add(working_directory+"/Sound/keepup.wav",0,0)
 global.S_tailsfly=sound_add(working_directory+"/Sound/S3K_BA.wav",0,0)
 global.S_tailstired=sound_add(working_directory+"/Sound/S3K_BB.wav",0,0)
+global.S_CYFTS_voiceline=sound_add(working_directory+"/Sound/tailsdollvoice.wav",0,0)
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -191,4 +192,7 @@ if pause = 1 && room != 0
     //execute_file(working_directory+"/script.txt")
 }
 if global.showfps = 1
+{
+draw_set_font(global.dialoguefont)
 draw_text(view_xview,view_yview,fps)
+}

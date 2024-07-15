@@ -99,8 +99,8 @@ action_id=603
 applies_to=self
 */
 hspeed = 0
-sprite_index = sprEx4
-y=y-11
+sprite_index = sprExFuckItAll
+y -= 11
 
 with RiseSonic0
 {

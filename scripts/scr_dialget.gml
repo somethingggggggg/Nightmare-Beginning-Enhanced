@@ -5,11 +5,12 @@
             dialsprite = sprSW_TailsShocked
         break;
         case 1:
+            sound_play(global.S_CYFTS_voiceline)
             message = "#TAILS DOLL#MODEL A001#COPYRIGHT IVO INDUSTRIES"
             dialsprite = sprSW_Tailsdoll
         break;
         case 2:
-            message = "CURRENT MISSION: TERMINATE MILES TAILS PROWER"
+            message = "CURRENT MISSION: TERMINATE#MILES TAILS PROWER"
             dialsprite = sprSW_Tailsdoll
         break;
         case 3:

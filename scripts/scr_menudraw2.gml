@@ -1,3 +1,4 @@
+draw_sprite(spr_placeholder,0,400,220)
 draw_set_font(WORD_Font)
 draw_text(96,180,"back")
 draw_text(96,200,"language")
@@ -173,14 +174,19 @@ switch global.option
         draw_set_font(global.dialoguefont)
     break;
 }
-if text = 1
+switch text
 {
-draw_set_font(global.dialoguefont)
-draw_text_color(view_xview[0],view_yview[0],"MOD LOADED",$00ffff,$00ffff,$00ffff,$005555,ass)
+    case 0:
+        draw_set_font(global.dialoguefont)
+        draw_text_color(view_xview[0],view_yview[0],"COMPLETE THE GAME#ON THE BEST#ENDING FIRST",$00ffff,$00ffff,$00ffff,$005555,ass)
+    break;
+    case 1:
+        draw_set_font(global.dialoguefont)
+        draw_text_color(view_xview[0],view_yview[0],"MOD LOADED",$00ffff,$00ffff,$00ffff,$005555,ass)
+    break;
+    case 2:
+        draw_set_font(global.dialoguefont)
+        draw_text_color(view_xview[0],view_yview[0],"MOD LOAD FAILED",$00ffff,$00ffff,$00ffff,$005555,ass)
+    break;
 }
-else
-{
-draw_set_font(global.dialoguefont)
-draw_text_color(view_xview[0],view_yview[0],"COMPLETE THE GAME#ON THE BEST#ENDING FIRST",$00ffff,$00ffff,$00ffff,$005555,ass)
-}
-draw_sprite(spr_placeholder,0,400,220)
+draw_sprite(spr_placemagic,0,400,220)

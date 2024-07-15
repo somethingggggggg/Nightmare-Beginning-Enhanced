@@ -1,5 +1,6 @@
 draw_set_font(WORD_Font)
 draw_sprite(spranother,0,view_xview,view_yview)
+draw_sprite(spr_placeholder,0,view_xview-32+368,view_yview+120)
 draw_text(view_xview-16+32,view_yview+80,"Return to game")
 draw_text(view_xview-16+32,view_yview+100,"Language")
 draw_text(view_xview-16+32,view_yview+120,"Cheats")
@@ -118,4 +119,4 @@ switch global.option
         draw_set_font(global.dialoguefont)
     break;
 }
-draw_sprite(spr_placeholder,0,view_xview-32+368,view_yview+120)
+draw_sprite(spr_placemagic,0,view_xview-32+368,view_yview+120)

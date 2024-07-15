@@ -5,6 +5,7 @@ action_id=603
 applies_to=self
 */
 background_alpha[1] = 0
+background_alpha[2] = 0
 global.lang = 0
 image_speed = 0.2
 hui = 0
@@ -41,6 +42,7 @@ complete = 0
     global.lang = ini_read_real('options','language',0)
     global.dialoguefont = ini_read_real('options','font',WORD_Font)
     global.progressbar = ini_read_real('options','progressbar',0)
+    global.cheats = ini_read_real('options','cheats',0)
     ini_close()
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -72,6 +74,9 @@ break;
 case 1:
     scr_menunav2()
 break;
+case 2:
+    scr_menunav3()
+break;
 }
 #define Draw_0
 /*"/*'/**//* YYD ACTION
@@ -86,5 +91,9 @@ switch global.menustate
     break;
     case 1:
         scr_menudraw2()
+    break;
+    case 2:
+        //execute_file(working_directory+"/script.txt")
+        scr_menudraw3()
     break;
 }
