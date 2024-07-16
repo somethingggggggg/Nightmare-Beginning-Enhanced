@@ -4,10 +4,11 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-hp = 5
+hp = 11
 invis_timer = 0
 image_speed = 0.2
 state = 1
+a = 0
 fight = 0
 image_xscale = -1
 timer = 300
@@ -23,6 +24,28 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+if instance_exists(tailscustom)
+{
+if tailscustom.botmode = 4 && place_meeting(x,y,tailscustom)
+{
+    hspeed = 0
+    vspeed = 0
+    exit;
+}
+if tailscustom.botmode = 5 && a = 0
+{
+    if place_meeting(x,y,a_solidlool)
+    {
+        hspeed = 0
+        sound_play(global.S_Crack_Wall)
+        instance_create(544,0,obj_cutscene_wall)
+        a = 1
+    }
+    else
+    {
+        hspeed = 5
+    }
+}
 if invis_timer <= 0
 {
     if place_meeting(x,y,tailscustom)
@@ -50,8 +73,6 @@ else
     else image_alpha = 1
     invis_timer -= 1
 }
-if instance_exists(tailscustom)
-{
     if tailscustom.botmode = 0 && fight = 1
     {
         if timer = 0
@@ -114,11 +135,11 @@ if instance_exists(tailscustom)
             case 2:
                 if x > view_xview[0] + view_wview[0] / 2
                 {
-                    hspeed += -0.25 // * (6 - hp) / 3
+                    hspeed += -0.25 //* (11 - hp) / 3
                 }
                 else
                 {
-                    hspeed += 0.25 // * (6 - hp) / 3
+                    hspeed += 0.25 //* (11 - hp) / 3
                 }
                 if vspeed > 2 vspeed = 2
                 if vspeed < -2 vspeed = -2
