@@ -52,6 +52,19 @@ action_id=603
 applies_to=self
 */
 //Movement
+if botmode = 4
+{
+    vspeed = -0.25
+    if sprite_index = sprTailsJump && keyboard_check_pressed(ord("Z"))
+    {
+        SmashDash = true
+        instance_create(x,y,sm1)
+        global.dialoguepage = 5
+        a = 0
+        botmode = 5
+    }
+    exit;
+}
 if botmode = 0
 {
 if keyboard_check(vk_left) && !place_meeting(x+(abs(global.vel)*-1)-1, y, Solid_Mask) && !place_meeting(x+(abs(global.vel)*-1)-1, y, Solid) && (canMove == true or (rolling == true && global.vel > 0))
@@ -321,8 +334,24 @@ if botmode = 2
     }
     sprite_index = sprTailsUp;
 }
-background_x = view_xview[0] / 32
-background_y = view_yview[0] / 8
+if botmode = 3
+{
+    if vspeed = 0
+    {
+        botmode = 4
+    }
+}
+if botmode = 5
+{
+    if a = 0
+    {
+        instance_create(0,0,obj_dialogue)
+        a = 1
+    }
+    sprite_index = sprTailsUp;
+}
+background_x = view_xview[0] / 2
+background_y = view_yview[0] / 2
 #define Collision_Solid
 /*"/*'/**//* YYD ACTION
 lib_id=1
