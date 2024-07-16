@@ -86,6 +86,8 @@
 	|ScrapWallExit
 	|Ex7
 	|KnucklesStop2
+	|Note_3
+	|BlodyNoice
 +threedots
 	|..._Note
 	|Egg_Ground
@@ -213,7 +215,6 @@
 |Warn8
 |Warn9
 |Warn10
-|Note_3
 |Warn11
 |Timer_10
 |SanityTimer
@@ -345,7 +346,6 @@
 |KnucklesLive
 |EggmanLive
 |Ex14
-|BlodyNoice
 |Speed_Up
 |MasterEmerald
 |HPEExe
