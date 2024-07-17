@@ -105,33 +105,41 @@
 |sprDeathRing
 |sprDeathRingOut
 |sprDesk
-|sprDF_Exe
-|sprDF_ExeDeath
-|sprDF_ExeDeath2
-|sprDF_ExeDuck
-|sprDF_ExeShocked
-|sprDF_ExeStand
-|sprDF_ExeStand2
-|sprDF_MetalCatch
-|sprDF_MetalFly
-|sprDF_Note
-|sprDF_Re_Turn
-|sprDF_Spike
-|sprDF_Spindash
-|sprDFAttack2
-|sprDFEggmanDeath
-|sprDFExe_Weak
-|sprDFExeFight
-|sprDFKnucklesAgony
-|sprDFKnucklesDeath
-|sprDFKnucklesFight
-|sprDFKnucklesKick
-|sprDFKnucklesTreack
-|sprDFLaugh
-|sprDFTailsDeath
-|sprDGExeMoveSlow
++Fatal Fog
+	|sprDF_Exe
+	|sprDF_ExeDeath
+	|sprDF_ExeDeath2
+	|sprDF_ExeDuck
+	|sprDF_ExeShocked
+	|sprDF_ExeStand
+	|sprDF_ExeStand2
+	|sprDF_MetalCatch
+	|sprDFExe_Weak
+	|sprDFKnucklesAgony
+	|sprDFEggmanDeath
+	|sprDFKnucklesDeath
+	|sprDFKnucklesFight
+	|sprDFKnucklesKick
+	|sprDF_MetalFly
+	|sprDFExeFight
+	|sprDFLaugh
+	|sprDFTailsDeath
+	|sprDGExeMoveSlow
+	|sprDFKnucklesTreack
+	|sprDF_Re_Turn
+	|sprDF_Spike
+	|sprDF_Spindash
+	|sprDFAttack2
++title cards
+	|sprDF_Note
+	|sprDM_Note
+	|sprFF_Note
+	|sprHill_Note
+	|sprHandS2_Note
+	|sprHandS_Note
+	|sprHL_Note
+	|sprSuicideHill_Note
 |sprDK
-|sprDM_Note
 |sprDM_Spring
 |sprDT
 |sprEaster_Egg
@@ -219,7 +227,6 @@
 |sprFF_Allrus
 |sprFF_DT
 |sprFF_Ground
-|sprFF_Note
 |sprFF_Piece
 |sprFF_T&E
 |sprFF_T&K
@@ -263,12 +270,8 @@
 |sprH&S_2
 |sprH&S_2_2
 |sprH&S_3
-|sprHandS_Note
-|sprHandS2_Note
 |sprHalfSolid
-|sprHill_Note
 |sprHitCounter
-|sprHL_Note
 |sprHorrorTails
 |sprHorrorTailsDuck
 |sprHorrorTailsIdie
@@ -588,7 +591,6 @@
 |sprStripSpike
 |sprSuicideEggman1
 |sprSuicideEggman2
-|sprSuicideHill_Note
 |sprSuicideKnuckles
 |sprSuicideSonicDuck
 |sprSuicideSonicStand
