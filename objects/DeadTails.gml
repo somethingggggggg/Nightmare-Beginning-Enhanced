@@ -62,7 +62,18 @@ applies_to=self
 */
 if image_alpha = 1
 {
-show_message("Tails: Please don't leave me Sonic!")
+switch global.lang
+{
+    case 0:
+        show_message("Tails: Please don't leave me Sonic!")
+    break;
+    case 1:
+        show_message("Тейлз: Не оставляй меня, Соник!")
+    break;
+    case 2:
+        show_message("Tails: Perfavore non lasciarmi Sonic!")
+    break;
+}
 alarm[0] = 1
 Sonic.maxSpeed -= 1.
 }

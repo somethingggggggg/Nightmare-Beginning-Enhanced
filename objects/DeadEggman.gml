@@ -55,7 +55,18 @@ applies_to=self
 */
 if image_alpha = 1
 {
-show_message("Eggman: Seems that you are met with something new. This new - failure...")
+switch global.lang
+{
+    case 0:
+        show_message("Eggman: Seems that you are met with something new. This new - failure...")
+    break;
+    case 1:
+        show_message("Эггман: Похоже ты столкнулся с чем-то новым... С провалом...")
+    break;
+    case 2:
+        show_message("Eggman: Sembra che hai incontrato qualcosa di nuovo. Questo nuovo - fallimento...")
+    break;
+}
 alarm[0] = 1
 Sonic.maxSpeed -= 1.
 }

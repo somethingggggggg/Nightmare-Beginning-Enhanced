@@ -55,7 +55,18 @@ applies_to=self
 */
 if image_alpha = 1
 {
-show_message("Knuckles: Stay here buddy - from here there is no escape.")
+switch global.lang
+{
+    case 0:
+        show_message("Knuckles: Stay here buddy - from here there is no escape.")
+    break;
+    case 1:
+        show_message("Наклз: Оставайся здесь приятель - отсюда нет выхода")
+    break;
+    case 2:
+        show_message("Knuckels: Rimani qui amico - da qui non si puo scappare")
+    break;
+}
 alarm[0] = 1
 Sonic.maxSpeed -= 1.
 }
