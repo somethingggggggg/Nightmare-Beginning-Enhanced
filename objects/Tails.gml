@@ -29,6 +29,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+if global.pause = 1 exit;
 //Movement
 if keyboard_check(vk_left) && !place_meeting(x+(abs(global.vel)*-1)-1, y, Solid) && (canMove == true or (rolling == true && global.vel > 0))
 {

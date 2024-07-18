@@ -18,6 +18,9 @@
 	|sprSW_ExeConfused
 	|sprSW_SlaveSonic
 	|sprSW_Tailsdoll
+	|sprSW_Exeils
+	|sprSW_EggmanDeath
+	|sprSW_KnucklesDeath
 +group
 	|sprite720
 	|sprite721
@@ -267,10 +270,10 @@
 |sprGroundSolid
 |sprGroundSolid2
 |sprH&S_1
-|sprH&S_1_2
+|sprHS_1_2
 |sprH&S_1G
 |sprH&S_2
-|sprH&S_2_2
+|sprHS_2_2
 |sprH&S_3
 |sprHalfSolid
 |sprHitCounter

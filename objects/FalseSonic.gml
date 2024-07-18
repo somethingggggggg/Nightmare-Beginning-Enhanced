@@ -6,7 +6,7 @@ applies_to=self
 */
 image_speed = 0.3
 Act = 1
-hspeed = 15
+myspeed = 15
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -15,7 +15,7 @@ applies_to=self
 */
 sprite_index = sprFalseSonic
 image_xscale =-1
-hspeed = -10
+myspeed = -10
 Tails.maxSpeed = 8;
 instance_create(4624,208,Warn2_2)
 global.hackpage = 0
@@ -32,13 +32,21 @@ if global.lang = 2
 {
 show_message("Sonic: Perche sei venuto qua Tails? Ti ho detto di stare vicino Tornado! Qualcosa e accaduto, non so cosa. Ma qualcuno ha ucciso tutti gli animali nell'area! Dobbiamo trovare l'assassino! Forza Tails! Non rimanere dietro!")
 }
+#define Step_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if global.pause = 0
+x += myspeed
 #define Collision_Tails
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
-if Act = 1
+if Act = 1 && global.pause = 0
 {
 Act = 2
 alarm[0] = 5

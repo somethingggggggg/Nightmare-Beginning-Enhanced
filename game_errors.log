@@ -1,9 +1,9 @@
 ERROR in
 action number 1
 of  Step Event
-for object TailsDollBoss:
+for object obj_dialogue_pause:
 
-Error in code at line 50:   
-    if tailscustom.botmode = 0 && fight = 1                      ^at position 21: Unknown variable botmode
+In script scr_hackdialget:Error in code at line 66:   
+                    Sonic.maxSpeed -= 1.                       ^at position 22: Unknown variable maxSpeed
 
 

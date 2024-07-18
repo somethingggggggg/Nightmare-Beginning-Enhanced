@@ -15,7 +15,9 @@ if Act = 1
 {
 Act = 2
 Tails2.Bot_Mode = true
-if global.lang = 0
+global.hackpage = 2
+instance_create(0,0,obj_dialogue_pause)
+/* if global.lang = 0
 {
 show_message("There you are Tails!...Listen, I'm a bit tired... Don't let the murderer get away! Go now! I'll catch up with you in a second!")
 }
@@ -27,5 +29,5 @@ if global.lang = 2
 {
 show_message("Sonic: Eccoti Tails!... Ascolta, sono un poco stanco. Non lasciar scappare l'assassino! Vai adesso! Ti raggiungero in un secondo!")
 }
-
+*/
 }

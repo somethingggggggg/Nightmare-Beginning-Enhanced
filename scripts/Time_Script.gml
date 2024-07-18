@@ -1,3 +1,4 @@
+if global.pause = 1 exit;
 with FinalSonic
 {
 if instance_exists(FinalBackground) && view_visible[1] = false && view_visible[2] = false && Bot = 3

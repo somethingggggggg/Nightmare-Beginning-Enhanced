@@ -55,6 +55,9 @@ applies_to=self
 */
 if image_alpha = 1
 {
+global.hackpage = 10
+instance_create(0,0,obj_dialogue_pause)
+/*
 switch global.lang
 {
     case 0:
@@ -69,4 +72,5 @@ switch global.lang
 }
 alarm[0] = 1
 Sonic.maxSpeed -= 1.
+*/
 }
