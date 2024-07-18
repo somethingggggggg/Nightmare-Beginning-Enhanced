@@ -9,6 +9,7 @@ background_alpha[2] = 0
 global.lang = 0
 image_speed = 0.2
 hui = 0
+global.hackpage = 0
 global.dialoguefont = WORD_Font
 global.menustate = 0
 global.newcontent = 1

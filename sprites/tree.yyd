@@ -1,4 +1,5 @@
 +dialogues
+	|sprSW_SonicNormal
 	|sprSW_Eggman
 	|sprSW_EggmanFrown
 	|sprSW_Knuckles
@@ -31,6 +32,7 @@
 	|cheatsgr
 	|cheatsunpct
 	|loadunpct
+|spr_hackerycontin
 |sprTailsDoll
 |spr_cred_NBEDEV
 |spr_cred_danik
