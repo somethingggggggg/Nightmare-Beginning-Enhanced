@@ -1,4 +1,5 @@
 +dialogues
+	|sprSW_SonicNormal
 	|sprSW_Eggman
 	|sprSW_EggmanFrown
 	|sprSW_Knuckles
@@ -17,6 +18,9 @@
 	|sprSW_ExeConfused
 	|sprSW_SlaveSonic
 	|sprSW_Tailsdoll
+	|sprSW_Exeils
+	|sprSW_EggmanDeath
+	|sprSW_KnucklesDeath
 +group
 	|sprite720
 	|sprite721
@@ -28,9 +32,9 @@
 	|sprite724
 	|sprite725
 	|cheatspct
-	|cheatsgr
 	|cheatsunpct
 	|loadunpct
+|spr_hackerycontin
 |sprTailsDoll
 |spr_cred_NBEDEV
 |spr_cred_danik
@@ -139,6 +143,7 @@
 	|sprHandS_Note
 	|sprHL_Note
 	|sprSuicideHill_Note
+	|sprHandS0_Note
 |sprDK
 |sprDM_Spring
 |sprDT
@@ -265,10 +270,10 @@
 |sprGroundSolid
 |sprGroundSolid2
 |sprH&S_1
-|sprH&S_1_2
+|sprHS_1_2
 |sprH&S_1G
 |sprH&S_2
-|sprH&S_2_2
+|sprHS_2_2
 |sprH&S_3
 |sprHalfSolid
 |sprHitCounter

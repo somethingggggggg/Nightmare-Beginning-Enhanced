@@ -9,6 +9,7 @@ background_alpha[2] = 0
 global.lang = 0
 image_speed = 0.2
 hui = 0
+global.hackpage = 0
 global.dialoguefont = WORD_Font
 global.menustate = 0
 global.newcontent = 1
@@ -21,11 +22,7 @@ action_id=603
 applies_to=self
 */
 global.option = 0
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
+global.pause = 0
 global.cheats = 0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -77,6 +74,9 @@ break;
 case 2:
     scr_menunav3()
 break;
+case 3:
+    scr_menunav4()
+break;
 }
 #define Draw_0
 /*"/*'/**//* YYD ACTION
@@ -95,5 +95,8 @@ switch global.menustate
     case 2:
         //execute_file(working_directory+"/script.txt")
         scr_menudraw3()
+    break;
+    case 3:
+        scr_menudraw4()
     break;
 }

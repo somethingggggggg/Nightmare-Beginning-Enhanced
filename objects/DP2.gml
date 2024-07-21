@@ -15,6 +15,50 @@ action_id=603
 applies_to=self
 */
 perass=irandom_range(1,6)
+switch perass
+{
+    case 1:
+        instance_create(0,256,Ex11_3)
+        Ex11_3.hspeed = 8
+    break;
+    case 2:
+        instance_create(8272,304,Ex11_2)
+        Ex11_2.hspeed =-8
+    break;
+    case 3:
+        instance_create(view_xview[0]-1386,368,Ex11)
+        Ex11.hspeed =8
+        if BL.FF_E = true
+        {
+            sound_play(global.S_Egg_Speak2)
+        }
+    break;
+    case 4:
+        instance_create(view_xview[0]+1386/*8272*/,272,Ex12)
+        Ex12.hspeed =-8
+        if BL.FF_E = true
+        {
+            sound_play(global.S_Egg_Speak3)
+        }
+    break;
+    case 5:
+        instance_create(view_xview[0]+1386,368,Ex11)
+        Ex11.hspeed =-8
+        if BL.FF_E = true
+        {
+            sound_play(global.S_Egg_Speak1)
+        }
+    break;
+    case 6:
+        instance_create(view_xview[0],view_yview[0],Ex12_9)
+        if BL.FF_E = true
+        {
+            sound_play(global.S_Egg_Speak3)
+        }
+    break;
+}
+perass1=irandom_range(300,500)
+/*
 if perass=1
 {
 instance_create(0,256,Ex11_3)
@@ -27,21 +71,21 @@ Ex11_2.hspeed =-8
 }
 if perass=3
 {
-instance_create(view_xview[0]-1386,368,Ex11)
-Ex11.hspeed =8
-if BL.FF_E = true
-{
-sound_play(global.S_Egg_Speak2)
-}
+    instance_create(view_xview[0]-1386,368,Ex11)
+    Ex11.hspeed =8
+    if BL.FF_E = true
+    {
+        sound_play(global.S_Egg_Speak2)
+    }
 }
 if perass=4
 {
-instance_create(8272,272,Ex12)
-Ex12.hspeed =-8
-if BL.FF_E = true
-{
-sound_play(global.S_Egg_Speak3)
-}
+    instance_create(8272,272,Ex12)
+    Ex12.hspeed =-8
+    if BL.FF_E = true
+    {
+        sound_play(global.S_Egg_Speak3)
+    }
 }
 if perass=5
 {
@@ -60,7 +104,7 @@ if BL.FF_E = true
 sound_play(global.S_Egg_Speak3)
 }
 }
-perass1=irandom_range(300,500)
+*/
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=301

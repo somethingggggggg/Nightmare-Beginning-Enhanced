@@ -1,4 +1,4 @@
-sprite=sprHandS_Note
+sprite=sprHandS0_Note
 visible=1
 solid=0
 persistent=0

@@ -2,11 +2,14 @@
 	|scr_menudraw1
 	|scr_menudraw2
 	|scr_menudraw3
+	|scr_menudraw4
 	|scr_pausedraw
 	|scr_menunav1
 	|scr_menunav2
 	|scr_menunav3
+	|scr_menunav4
 	|scr_pausenav
+	|scr_hackdialget
 	|scr_dialget
 +discord rich presence
 	|discord_init_dll

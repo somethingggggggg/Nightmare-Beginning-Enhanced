@@ -6,6 +6,16 @@ relative=0
 applies_to=self
 invert=0
 arg0=HS_3
+arg1=9056
+arg2=400
+*/
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=201
+relative=0
+applies_to=self
+invert=0
+arg0=HS_3
 arg1=3828
 arg2=384
 */
@@ -58,16 +68,6 @@ invert=0
 arg0=HS_3
 arg1=5824
 arg2=256
-*/
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=201
-relative=0
-applies_to=self
-invert=0
-arg0=HS_3
-arg1=9056
-arg2=400
 */
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -145,9 +145,13 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+if global.pause = 0
+{
 Tails2.Bot_Mode = false
 global.vel = 0
-if global.lang = 0
+global.hackpage = 4
+instance_create(0,0,obj_dialogue_pause)
+/*if global.lang = 0
 {
 show_message("Tails: Wait... Sonic never gets tired...")
 }
@@ -158,8 +162,12 @@ show_message("Тейлз: Стоп... Соник никогда не устаё�
 if global.lang = 2
 {
 show_message("Tails: Aspetta... Sonic non e mai stanco...")
+}*/
 }
+if global.pause = 1 && !instance_exists(obj_dialogue_pause)
+{
 alarm[0] = 1
+}
 #define Collision_Sonic
 /*"/*'/**//* YYD ACTION
 lib_id=1

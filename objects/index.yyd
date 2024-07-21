@@ -43,7 +43,7 @@ DA_2
 DA_3
 H&S_Note
 HS_1
-H&S_2
+HS_2
 HS_3
 Warn3
 Tails2
@@ -691,7 +691,7 @@ cheatsspr
 cheatsswtch
 loadmodspr
 Achwatch
-title card
+title_card
 lvlcontroller
 tailscustom
 a_solidlool
@@ -704,3 +704,4 @@ tailstrigger
 obj_dialogue
 backmab
 obj_cutscene_wall
+obj_dialogue_pause

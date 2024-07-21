@@ -29,6 +29,8 @@ applies_to=self
 */
 maxSpeed = 5
 background_visible[0] = false
+global.pause = 0
+instance_create(0,0,title_card)
 sound_loop(global.S_Hide_and_Seek)
 #define Alarm_1
 /*"/*'/**//* YYD ACTION
@@ -79,6 +81,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+if global.pause = 1 exit;
 //Movement
 if Bot_Mode = false
 {
@@ -290,58 +293,18 @@ vspeed = 0;
 #define Collision_Warn3
 /*"/*'/**//* YYD ACTION
 lib_id=1
-action_id=301
-relative=0
+action_id=603
 applies_to=self
-invert=0
-arg0=540
-arg1=0
 */
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=541
-applies_to=HS_1
-invert=0
-arg0=sprH&S_1_2
-arg1=0
-arg2=1
-*/
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=541
-applies_to=H&S_2
-invert=0
-arg0=sprH&S_2_2
-arg1=0
-arg2=1
-*/
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=541
-applies_to=HS_4
-invert=0
-arg0=sprHS_4_2
-arg1=0
-arg2=1
-*/
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=541
-applies_to=HS_5
-invert=0
-arg0=sprHS_5_2
-arg1=0
-arg2=1
-*/
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=541
-applies_to=HS_6
-invert=0
-arg0=sprHS_6_2
-arg1=0
-arg2=1
-*/
+if global.pause = 1 && !instance_exists(obj_dialogue_pause)
+{
+alarm[0] = 540
+HS_1.sprite_index = sprHS_1_2
+HS_2.sprite_index = sprHS_2_2
+HS_4.sprite_index = sprHS_4_2
+HS_5.sprite_index = sprHS_5_2
+HS_6.sprite_index = sprHS_6_2
+}
 #define Collision_Warn4
 /*"/*'/**//* YYD ACTION
 lib_id=1

@@ -49,9 +49,9 @@ sprDA_3
 sprHandS_Note
 
 sprH&S_1
-sprH&S_1_2
+sprHS_1_2
 sprH&S_2
-sprH&S_2_2
+sprHS_2_2
 sprH&S_3
 sprBlackColor
 sprHS_Mask
@@ -749,7 +749,7 @@ sprFF_TEita
 sprFF_TKita
 sprFF_Allita
 HandS3
-cheatsgr
+
 ongr
 
 loadunpct
@@ -786,3 +786,9 @@ spr_cred_danik
 spr_cred_NBEDEV
 sprExFuckItAll
 spr_cutscene_wall
+spr_hackerycontin
+sprSW_SonicNormal
+sprSW_Exeils
+sprSW_EggmanDeath
+sprSW_KnucklesDeath
+sprHandS0_Note

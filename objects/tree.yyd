@@ -1,3 +1,4 @@
+|obj_dialogue_pause
 |obj_dialogue
 |obj_cutscene_wall
 |backmab
@@ -48,7 +49,7 @@
 +hideseek
 	|H&S_Note
 	|HS_1
-	|H&S_2
+	|HS_2
 	|H&S_3
 	|HS_3
 	|Ex3
@@ -171,7 +172,7 @@
 +general
 	|Achwatch
 	|SW_Control
-	|title card
+	|title_card
 	|lvlcontroller
 |Solid
 |Timer
