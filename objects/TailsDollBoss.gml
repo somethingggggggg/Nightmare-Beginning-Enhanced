@@ -46,33 +46,6 @@ if tailscustom.botmode = 5 && a = 0
         hspeed = 5
     }
 }
-if invis_timer <= 0
-{
-    if place_meeting(x,y,tailscustom)
-    {
-        if tailscustom.sprite_index = sprTailsJump && instance_exists(sm1)
-        {
-            hp -= 1
-            sound_play(global.S_MetalBroke)
-            invis_timer = 50
-            tailscustom.vspeed = -tailscustom.vspeed
-            global.vel = -global.vel
-        }
-        else
-        {
-            with tailscustom
-            {
-                playerGetHit()
-            }
-        }
-    }
-}
-else
-{
-    if image_alpha = 1 image_alpha = 0
-    else image_alpha = 1
-    invis_timer -= 1
-}
     if tailscustom.botmode = 0 && fight = 1
     {
         if timer = 0
@@ -154,4 +127,31 @@ else
             break;
         }
     }
+if invis_timer <= 0
+{
+    if place_meeting(x,y,tailscustom)
+    {
+        if tailscustom.sprite_index = sprTailsJump && instance_exists(sm1)
+        {
+            hp -= 1
+            sound_play(global.S_MetalBroke)
+            invis_timer = 50
+            tailscustom.vspeed = -tailscustom.vspeed
+            global.vel = -global.vel
+        }
+        else
+        {
+            with tailscustom
+            {
+                playerGetHit()
+            }
+        }
+    }
+}
+else
+{
+    if image_alpha = 1 image_alpha = 0
+    else image_alpha = 1
+    invis_timer -= 1
+}
 }

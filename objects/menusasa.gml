@@ -23,11 +23,6 @@ applies_to=self
 */
 global.option = 0
 global.pause = 0
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
 global.cheats = 0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -79,6 +74,9 @@ break;
 case 2:
     scr_menunav3()
 break;
+case 3:
+    scr_menunav4()
+break;
 }
 #define Draw_0
 /*"/*'/**//* YYD ACTION
@@ -97,5 +95,8 @@ switch global.menustate
     case 2:
         //execute_file(working_directory+"/script.txt")
         scr_menudraw3()
+    break;
+    case 3:
+        scr_menudraw4()
     break;
 }

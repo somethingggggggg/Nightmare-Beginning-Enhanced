@@ -749,7 +749,7 @@ sprFF_TEita
 sprFF_TKita
 sprFF_Allita
 HandS3
-cheatsgr
+
 ongr
 
 loadunpct
@@ -791,3 +791,4 @@ sprSW_SonicNormal
 sprSW_Exeils
 sprSW_EggmanDeath
 sprSW_KnucklesDeath
+sprHandS0_Note

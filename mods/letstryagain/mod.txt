@@ -1,0 +1,1 @@
+sprite_replace(spr_cred_NBEDEV,working_directory+"\mods\letstryagain\am.png",1,0,0,0,0)

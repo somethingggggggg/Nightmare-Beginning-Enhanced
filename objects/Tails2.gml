@@ -30,6 +30,7 @@ applies_to=self
 maxSpeed = 5
 background_visible[0] = false
 global.pause = 0
+instance_create(0,0,title_card)
 sound_loop(global.S_Hide_and_Seek)
 #define Alarm_1
 /*"/*'/**//* YYD ACTION

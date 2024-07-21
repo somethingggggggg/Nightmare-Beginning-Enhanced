@@ -172,7 +172,7 @@
 +general
 	|Achwatch
 	|SW_Control
-	|title card
+	|title_card
 	|lvlcontroller
 |Solid
 |Timer

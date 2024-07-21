@@ -33,3 +33,4 @@ switch text
         draw_text_color(view_xview[0],view_yview[0],"MOD LOAD FAILED",$00ffff,$00ffff,$00ffff,$005555,ass)
     break;
 }
+ass -= 0.01

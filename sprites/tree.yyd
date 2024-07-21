@@ -32,7 +32,6 @@
 	|sprite724
 	|sprite725
 	|cheatspct
-	|cheatsgr
 	|cheatsunpct
 	|loadunpct
 |spr_hackerycontin
@@ -144,6 +143,7 @@
 	|sprHandS_Note
 	|sprHL_Note
 	|sprSuicideHill_Note
+	|sprHandS0_Note
 |sprDK
 |sprDM_Spring
 |sprDT
