@@ -29,7 +29,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-//Act
+/*Act
 if Act = 0
 {
 sprite_index = sprMS_5
@@ -46,10 +46,110 @@ if Act = 2
 sprite_index = sprMS_5
 image_index = 1
 }
+*/
+if keyboard_check_pressed(vk_right)
+{
+        //mp_linear_step_object(x+10000,y, 112,Solid)
+        x += 112
+        if place_meeting(x,y,Solid)
+        {
+            x -= 112
+        }
+        if place_meeting(x,y,Truther)
+        {
+            if sprite_index = sprMS_5 sprite_index = sprMS_5_1
+            else sprite_index = sprMS_5_2
+        }
+        sound_play(global.S_MS_Move)
+}
+if keyboard_check_pressed(vk_left)
+{
+    if Act = 0
+    {
+        //mp_linear_step_object(x-10000,y, 112,Solid)
+        if !place_meeting(x,y,NoteNegetivRings)
+        {
+            sprite_index = sprMS_5
+            x -= 112
+        }
+        else
+        {
+            sprite_index = sprMS_5_1
+        }
+        sound_play(global.S_MS_Move)
+        if place_meeting(x,y,Solid)
+        {
+            x += 112
+        }
+    }
+    else if Act = 2
+    {
+        sound_play(global.S_MS_Move)
+        Act = 1
+    }
+    else if Act = 1
+    {
+        mp_linear_step_object(x-10000,y, 112,Solid)
+        sound_play(global.S_MS_Move)
+        Act = 0
+    }
+}
+if place_meeting(x,y,Truther)
+{
+    if Truther.image_index = 0
+    {
+        global.Deadly_Mode = false
+    }
+    if Truther.image_index = 1
+    {
+        global.Deadly_Mode = true
+    }
+}
+if place_meeting(x,y,NoteNegetivRings)
+{
+    if keyboard_check_pressed(vk_left)
+    {
+        sprite_index = sprMS_5_1
+    }
+    else
+    {
+        sprite_index = sprMS_5_2
+    }
+    if Cratch.image_index = 0
+    {
+        global.TR = 0
+        BL.T_Ring = false
+        BL.K_Ring = false
+        BL.E_Ring = false
+    }
 
+    if Cratch.image_index = 1
+    {
+        global.TR = 1
+        BL.T_Ring = true
+        BL.K_Ring = false
+        BL.E_Ring = false
+    }
+
+    if Cratch.image_index = 2
+    {
+        global.TR = 2
+        BL.T_Ring = true
+        BL.K_Ring = true
+        BL.E_Ring = false
+    }
+
+    if Cratch.image_index = 3
+    {
+        global.TR = 3
+        BL.T_Ring = true
+        BL.K_Ring = true
+        BL.E_Ring = true
+    }
+}
 view_xview = ((x + view_xview) / 2) - 129
 if view_xview < 0 view_xview = 0
-if view_xview > 480 view_xview = 480
+if view_xview > 220 view_xview = 220
 #define Collision_TailsSELECTOR
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -234,8 +334,15 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-sprite_index = sprMS_5_2
-image_index = 1
+/*sprite_index = sprMS_5_2
+if keyboard_check_pressed(vk_left)
+{
+    image_index = 0
+}
+else
+{
+    image_index = 1
+}
 if Cratch.image_index = 0
 {
 global.TR = 0
@@ -294,15 +401,22 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-sprite_index = sprMS_5_2
-image_index = 0
+/*sprite_index = sprMS_5_2
+if keyboard_check_pressed(vk_right)
+{
+    image_index = 1
+}
+else
+{
+    image_index = 0
+}
 if Truther.image_index = 0
 {
-global.Deadly_Mode = false
+    global.Deadly_Mode = false
 }
 if Truther.image_index = 1
 {
-global.Deadly_Mode = true
+    global.Deadly_Mode = true
 }
 #define KeyPress_37
 /*"/*'/**//* YYD ACTION
@@ -310,7 +424,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if Act = 0
+/*if Act = 0
 {
 mp_linear_step_object(x-10000,y, 112,Solid)
 sound_play(global.S_MS_Move)
@@ -332,7 +446,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if Act = 0
+/*if Act = 0
 {
 mp_linear_step_object(x+10000,y, 112,Solid)
 sound_play(global.S_MS_Move)

@@ -708,7 +708,7 @@ sprSlaveSonicIdleBlack
 sprite707
 sprite708
 
-sprite710
+
 
 
 
@@ -792,3 +792,5 @@ sprSW_Exeils
 sprSW_EggmanDeath
 sprSW_KnucklesDeath
 sprHandS0_Note
+
+sprMS_5_1
