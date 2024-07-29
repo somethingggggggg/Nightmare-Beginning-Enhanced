@@ -8,7 +8,6 @@ pause = 0
 global.T_bossfight = 0
 prev_view_hview = view_hview
 prev_view_wview = view_wview
-
 global.S_Alarm_2=sound_add(working_directory+"/Sound/Alarm_2.mp3",0,0)
 global.S_BoxBroke=sound_add(working_directory+"/Sound/BoxBroke.wav",0,0)
 global.S_Breathing=sound_add(working_directory+"/Sound/Breath.wav",0,0)
