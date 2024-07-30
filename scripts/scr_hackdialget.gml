@@ -6,13 +6,13 @@
                 case 0:
                     message = "Why did you come here Tails? I told you to stay near the Tornado! Something happened, I don't know what. But someone killed all the animals in the area! We must find the killer! Come on Tails! Don't fall behind!"
                     FalseSonic.sprite_index = sprSonicTurnOut
-                    image_xscale = 1
+                    FalseSonic.image_xscale = 1
                     spritedial = sprSW_SonicNormal
                 break;
                 case 1:
                     global.pause = 0
                     FalseSonic.sprite_index = sprFalseSonic
-                    image_xscale = -1
+                    FalseSonic.image_xscale = -1
                     instance_destroy()
                 break;
                 case 2:
@@ -109,7 +109,7 @@
                 break;
                 case 5:
                     global.pause = 0
-                    HS_1.sprite_index = sprHS_1_2
+                    /*HS_1.sprite_index = sprHS_1_2
                     HS_2.sprite_index = sprHS_2_2
                     HS_4.sprite_index = sprHS_4_2
                     HS_5.sprite_index = sprHS_5_2
@@ -131,7 +131,7 @@
                     sound_play(global.S_Exployed)
                     maxSpeed = 0
                     background_visible[0] = true
-                    position_destroy(3632,128)
+                    position_destroy(3632,128)*/
                     instance_destroy()
                 break;
                 case 6:
@@ -191,7 +191,7 @@
                 break;
                 case 5:
                     global.pause = 0
-                    HS_1.sprite_index = sprHS_1_2
+                    /*HS_1.sprite_index = sprHS_1_2
                     HS_2.sprite_index = sprHS_2_2
                     HS_4.sprite_index = sprHS_4_2
                     HS_5.sprite_index = sprHS_5_2
@@ -213,7 +213,7 @@
                     sound_play(global.S_Exployed)
                     maxSpeed = 0
                     background_visible[0] = true
-                    position_destroy(3632,128)
+                    position_destroy(3632,128)*/
                     instance_destroy()
                 break;
                 case 6:

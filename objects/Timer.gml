@@ -24,14 +24,13 @@ applies_to=self
 */
 if Sec = 60
 {
-Sec = 00
-Min +=1
+    Sec = 00
+    Min +=1
 }
-
 
 if Min = 10
 {
-game_end()
+    game_end()
 }
 #define Draw_0
 /*"/*'/**//* YYD ACTION

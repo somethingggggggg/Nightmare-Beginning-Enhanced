@@ -24,6 +24,10 @@ if keyboard_check_pressed(vk_enter) or mouse_check_button_pressed(mb_left)
         global.option = 0
         global.menustate = 0
     }
+    if global.option = 7
+    {
+        splash_show_web('https://freesugaryspireonline.ru/',0)
+    }
 }
 if keyboard_check_pressed(vk_left)
 {
@@ -117,6 +121,8 @@ if keyboard_check_pressed(vk_right)
         else global.newcontent = 1
     }
 }
+if global.option > 2 scroll = -((((global.option-2) * 20)+abs(scroll))/2)
+else scroll = - abs(scroll)/2
 if global.lang < 0 global.lang = 2
 if global.lang > 2 global.lang = 0
 if global.option < 0 global.option = 4

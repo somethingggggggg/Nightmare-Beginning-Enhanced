@@ -6,6 +6,7 @@ applies_to=self
 */
 background_alpha[1] = 0
 background_alpha[2] = 0
+scroll = 0
 global.lang = 0
 image_speed = 0.2
 hui = 0

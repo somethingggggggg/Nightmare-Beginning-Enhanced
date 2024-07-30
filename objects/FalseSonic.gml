@@ -14,7 +14,7 @@ action_id=603
 applies_to=self
 */
 sprite_index = sprFalseSonic
-image_xscale =-1
+image_xscale = -1
 myspeed = -10
 Tails.maxSpeed = 8;
 instance_create(4624,208,Warn2_2)
