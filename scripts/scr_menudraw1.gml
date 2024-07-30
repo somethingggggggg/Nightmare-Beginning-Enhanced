@@ -1,21 +1,21 @@
 draw_set_font(font6)
-draw_text(208,128,"OPTIONS")
-draw_text(196,192,"LOAD MOD")
-draw_text(208,256,"CREDITS")
-draw_text(224,320,"APPLY")
+draw_text(view_xview+(view_wview/2)-(string_width("OPTIONS")/2),128,"OPTIONS")
+draw_text(view_xview+(view_wview/2)-(string_width("LOAD MOD")/2),192,"LOAD MOD")
+draw_text(view_xview+(view_wview/2)-(string_width("CREDITS")/2),256,"CREDITS")
+draw_text(view_xview+(view_wview/2)-(string_width("APPLY")/2),320,"APPLY")
 switch global.option
 {
     case 0:
-        draw_text_color(208,128,"OPTIONS",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
+        draw_text_color(view_xview+(view_wview/2)-(string_width("OPTIONS")/2),128,"OPTIONS",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
     break;
     case 1:
-        draw_text_color(196,192,"LOAD MOD",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
+        draw_text_color(view_xview+(view_wview/2)-(string_width("LOAD MOD")/2),192,"LOAD MOD",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
     break;
     case 2:
-        draw_text_color(208,256,"CREDITS",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
+        draw_text_color(view_xview+(view_wview/2)-(string_width("CREDITS")/2),256,"CREDITS",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
     break;
     case 3:
-        draw_text_color(224,320,"APPLY",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
+        draw_text_color(view_xview+(view_wview/2)-(string_width("APPLY")/2),320,"APPLY",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
     break;
 }
 switch text

@@ -1,0 +1,8 @@
+ERROR in
+action number 1
+of Draw Event
+for object SonicIcon:
+
+Error in code at line 7:           draw_sprite_part_ext(sprNoice1,anim/2,anim,0,sprite_width-anim,sprite_height,x-11,y-24,1,1,mycolor,image_alpha)                                         ^at position 40: Unknown variable anim
+
+

@@ -29,4 +29,4 @@ switch room
         imagineavariable = "DESTROYED MIND"
     break;
 }
-discord_update_presence(imagineavariable,"An experimental nb mod",'sprfex','sprfex')
+discord_update_presence(imagineavariable,"An experimental nb mod 2.0 test build",'sprfex','sprfex')

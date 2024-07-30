@@ -19,33 +19,28 @@ global.KDetection = false
 global.EDetection = false
 if instance_exists(TailsIcon)
 {
-if TailsIcon.image_index = 0
-{
-room_goto(7)
-}
-
-if TailsIcon.image_index = 1
-{
-room_goto(10)
-}
-
-if TailsIcon.image_index = 2
-{
-room_goto(52)
-}
-
-if TailsIcon.image_index = 3
-{
-room_goto(21)
-}
-
-if TailsIcon.image_index = 4
-{
-room_goto(42)
-}
-
+    switch TailsIcon.image_index
+    {
+        case 0:
+            room_goto(7)
+        break;
+        case 1:
+            room_goto(10)
+        break;
+        case 2:
+            room_goto(52)
+        break;
+        case 3:
+            room_goto(21)
+        break;
+        case 4:
+            room_goto(42)
+        break;
+    }
+    instance_deactivate_object(TailsIcon)
 }
 else
 {
 room_goto(7)
+instance_deactivate_object(TailsIcon)
 }

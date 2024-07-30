@@ -34,6 +34,41 @@
 	|cheatspct
 	|cheatsunpct
 	|loadunpct
++Fatal Fog
+	|sprDF_Exe
+	|sprDF_ExeDeath
+	|sprDF_ExeDeath2
+	|sprDF_ExeDuck
+	|sprDF_ExeShocked
+	|sprDF_ExeStand
+	|sprDF_ExeStand2
+	|sprDF_MetalCatch
+	|sprDFExe_Weak
+	|sprDFKnucklesAgony
+	|sprDFEggmanDeath
+	|sprDFKnucklesDeath
+	|sprDFKnucklesFight
+	|sprDFKnucklesKick
+	|sprDF_MetalFly
+	|sprDFExeFight
+	|sprDFLaugh
+	|sprDFTailsDeath
+	|sprDGExeMoveSlow
+	|sprDFKnucklesTreack
+	|sprDF_Re_Turn
+	|sprDF_Spike
+	|sprDF_Spindash
+	|sprDFAttack2
++title cards
+	|sprDF_Note
+	|sprDM_Note
+	|sprFF_Note
+	|sprHill_Note
+	|sprHandS2_Note
+	|sprHandS_Note
+	|sprHL_Note
+	|sprSuicideHill_Note
+	|sprHandS0_Note
 |spr_hackerycontin
 |sprTailsDoll
 |spr_cred_NBEDEV
@@ -109,41 +144,6 @@
 |sprDeathRing
 |sprDeathRingOut
 |sprDesk
-+Fatal Fog
-	|sprDF_Exe
-	|sprDF_ExeDeath
-	|sprDF_ExeDeath2
-	|sprDF_ExeDuck
-	|sprDF_ExeShocked
-	|sprDF_ExeStand
-	|sprDF_ExeStand2
-	|sprDF_MetalCatch
-	|sprDFExe_Weak
-	|sprDFKnucklesAgony
-	|sprDFEggmanDeath
-	|sprDFKnucklesDeath
-	|sprDFKnucklesFight
-	|sprDFKnucklesKick
-	|sprDF_MetalFly
-	|sprDFExeFight
-	|sprDFLaugh
-	|sprDFTailsDeath
-	|sprDGExeMoveSlow
-	|sprDFKnucklesTreack
-	|sprDF_Re_Turn
-	|sprDF_Spike
-	|sprDF_Spindash
-	|sprDFAttack2
-+title cards
-	|sprDF_Note
-	|sprDM_Note
-	|sprFF_Note
-	|sprHill_Note
-	|sprHandS2_Note
-	|sprHandS_Note
-	|sprHL_Note
-	|sprSuicideHill_Note
-	|sprHandS0_Note
 |sprDK
 |sprDM_Spring
 |sprDT

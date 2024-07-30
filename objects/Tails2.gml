@@ -81,7 +81,11 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if global.pause = 1 exit;
+if global.pause = 1
+{
+    image_index = 0
+    exit;
+}
 //Movement
 if Bot_Mode = false
 {
