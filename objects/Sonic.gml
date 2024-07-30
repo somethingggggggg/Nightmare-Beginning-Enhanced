@@ -296,3 +296,12 @@ action_id=603
 applies_to=self
 */
 draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale, image_yscale, drawAngle, image_blend, image_alpha);
+#define KeyPress_78
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+//IC003969
+y -= 20
+instance_change(IC003969,Sonic)

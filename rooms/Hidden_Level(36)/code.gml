@@ -11,3 +11,4 @@ if BL.End_2 = true
     instance_create(7968,224,DeadEggman)
     instance_create(9520,144,Warn14)
 }
+instance_deactivate_object(SonicIcon)
