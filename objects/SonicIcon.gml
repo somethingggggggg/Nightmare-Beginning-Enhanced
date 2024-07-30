@@ -6,6 +6,7 @@ applies_to=self
 */
 image_speed = 0
 mycolor = $ffffff
+anim = 0
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

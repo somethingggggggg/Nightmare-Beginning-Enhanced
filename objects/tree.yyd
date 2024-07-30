@@ -173,6 +173,10 @@
 	|SW_Control
 	|title_card
 	|lvlcontroller
++submind
+	|Sonic
+	|Timer3
+	|Noice2
 |Solid
 |Timer
 |Warn1
@@ -245,9 +249,6 @@
 |Timer_18
 |BE_3
 |BE_4
-|Sonic
-|Timer3
-|Noice2
 |Warn17
 |Warn18
 |MS_Select
