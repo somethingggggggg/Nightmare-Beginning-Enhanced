@@ -56,6 +56,7 @@ if keyboard_check_pressed(vk_enter) or mouse_check_button_pressed(mb_left)
     if global.option = 3
     {
         ini_open("options.ini")
+        ini_write_real('options','subcnoise',global.subcnoise)
         ini_write_real('options','showfps',global.showfps)
         ini_write_real('options','language',global.lang)
         ini_write_real('options','font',global.dialoguefont)

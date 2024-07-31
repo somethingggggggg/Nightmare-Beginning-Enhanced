@@ -7,7 +7,8 @@ draw_text(42+view_xview[0],115+view_yview[0]+scroll,"font")
 draw_text(42+view_xview[0],135+view_yview[0]+scroll,"FF progressbar")
 draw_text(42+view_xview[0],155+view_yview[0]+scroll,"Show FPS")
 draw_text(42+view_xview[0],175+view_yview[0]+scroll,"New content")
-draw_text(42+view_xview[0],195+view_yview[0]+scroll,"FREE SUGARY SPIRE LEAK BUILD DOWNLOAD")
+draw_text(42+view_xview[0],195+view_yview[0]+scroll,"SM Noise")
+draw_text(42+view_xview[0],215+view_yview[0]+scroll,"FREE SUGARY SPIRE LEAK BUILD DOWNLOAD")
 switch global.lang
 {
     case 0:
@@ -66,6 +67,14 @@ switch global.lang
         else
         {
             draw_text(234+view_xview[0]-string_width("off"),175+view_yview[0]+scroll,"off")
+        }
+        if global.subcnoise = 1
+        {
+            draw_text(234+view_xview[0]-string_width("camera follow"),195+view_yview[0]+scroll,"camera follow")
+        }
+        else
+        {
+            draw_text(234+view_xview[0]-string_width("original"),195+view_yview[0]+scroll,"original")
         }
 
 switch global.option
@@ -175,7 +184,33 @@ switch global.option
         draw_set_font(global.dialoguefont)
     break;
     case 7:
-        draw_text_color(42+view_xview[0],195+view_yview[0]+scroll,"FREE SUGARY SPIRE LEAK BUILD DOWNLOAD",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
+        draw_text_color(42+view_xview[0],195+view_yview[0]+scroll,"SM Noise",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
+        draw_text_ext(250+view_xview[0],163+view_yview[0],"Change how overlayed noise works in subconcious mind",16,192)
+        draw_rectangle_color(346+view_xview[0]-96,95+view_yview[0]-64,346+view_xview[0]+96,95+view_yview[0]+64,$000000,$000000,$000000,$000000,0)
+        draw_sprite(sprSlaveSonicWalk,image_index,346+view_xview[0],95+view_yview[0])
+        if global.subcnoise = 1
+        {
+            //sprNoice1
+            draw_sprite_part_ext(sprNoice1,anim,0,0,192,128,346+view_xview[0]-96,95+view_yview[0]-64,1,1,$ffffff,1)
+            draw_text_color(234+view_xview[0]-string_width("camera follow"),195+view_yview[0]+scroll,"camera follow",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
+        }
+        else
+        {
+            if anim < 192/2
+            {
+                draw_sprite_part_ext(sprNoice1,anim,anim*2,0,192-anim*2,128,346+view_xview[0]-96,95+view_yview[0]-64,1,1,$ffffff,1)
+                draw_sprite_part_ext(sprNoice1,anim,0,0,anim*2,128,view_xview[0]+346-anim*2+96,95+view_yview[0]-64,1,1,$ffffff,1)
+            }
+            else
+            {
+                draw_sprite_part_ext(sprNoice1,anim,anim*2,0,192+(192-anim*2),128,346+view_xview[0]-96,95+view_yview[0]-64,1,1,$ffffff,1)
+                draw_sprite_part_ext(sprNoice1,anim,0,0,anim*2-192,128,view_xview[0]+346-anim*2+96+192,95+view_yview[0]-64,1,1,$ffffff,1)
+            }
+            draw_text_color(234+view_xview[0]-string_width("original"),195+view_yview[0]+scroll,"original",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
+        }
+    break;
+    case 8:
+        draw_text_color(42+view_xview[0],215+view_yview[0]+scroll,"FREE SUGARY SPIRE LEAK BUILD DOWNLOAD",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
         draw_text_ext(250+view_xview[0],163+view_yview[0],"FREE SUGARY SPIRE LEAK BUILD DOWNLOAD",16,192)
     break;
 }
