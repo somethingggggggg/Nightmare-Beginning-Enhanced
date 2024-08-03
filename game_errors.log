@@ -1,10 +1,9 @@
-FATAL ERROR in
+ERROR in
 action number 1
-of Other Event: Room Start
-for object Controller:
+of  Step Event
+for object ReallyDedSonic:
 
-Error loading project - required file not found: 
-
-E:\nb dev\NBE\objects\..._Note.txt
+Error in code at line 17:   
+if Act = 1 && RealyDedExe.image_alpha > 0.7                             ^at position 28: Unknown variable image_alpha
 
 

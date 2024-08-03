@@ -61,7 +61,7 @@ applies_to=self
 if Bot = 0
 {
 sprite_index = sprEggmanWalk;
-if !keyboard_check(vk_left) && !keyboard_check(vk_right)
+if (!keyboard_check(vk_left) && !keyboard_check(vk_right)) or (keyboard_check(vk_left) && keyboard_check(vk_right))
 {
     sprite_index = sprEggman
 }
@@ -71,29 +71,32 @@ if keyboard_check(vk_left) && (canMove == true or (rolling == true && hspeed > 0
   image_xscale = -1;
   while place_meeting(x,y,Egg_Ground)
   {
-  sprite_index = sprEggman;
-  x += 1
+      sprite_index = sprEggman;
+      x += 1
   }
 }
+/*
 if keyboard_check_released(vk_left) or (place_meeting(x+(abs(hspeed)*-1)-1, y, Egg_Ground) or place_meeting(x+(abs(hspeed)*-1)-1, y, Solid))
 {
     hspeed = 0
 }
+*/
 if keyboard_check(vk_right) && (canMove == true or (rolling == true && hspeed < 0))
 {
-  x += maxSpeed
-  image_xscale = 1;
-  while place_meeting(x,y,Egg_Ground)
-  {
-    sprite_index = sprEggman;
-    x -= 1
-  }
+    x += maxSpeed
+    image_xscale = 1;
+    while place_meeting(x,y,Egg_Ground)
+    {
+        sprite_index = sprEggman;
+        x -= 1
+    }
 }
 
 if keyboard_check_released(vk_right) or place_meeting(x+abs(hspeed)+1, y, Egg_Ground) or place_meeting(x+abs(hspeed)+1, y, Solid)
 {
   hspeed = 0
-}}
+}
+}
 
 //Gravity
 if place_meeting(x, y+vspeed+1, Egg_Ground) or place_meeting(x, y+vspeed+1, EggElevator) && vspeed >= 0

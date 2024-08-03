@@ -1,35 +1,29 @@
 if keyboard_check_pressed(vk_up) or mouse_wheel_up()
 {
-global.option -= 1
-sound_play(global.S_MS_Move)
+    global.option -= 1
+    sound_play(global.S_MS_Move)
 }
 if keyboard_check_pressed(vk_down) or mouse_wheel_down()
 {
-global.option += 1
-sound_play(global.S_MS_Move)
+    global.option += 1
+    sound_play(global.S_MS_Move)
 }
 if keyboard_check_pressed(vk_escape)
 {
-    pause = 0
-    view_hview = prev_view_hview
-    view_wview = prev_view_wview
-    instance_activate_all()
+    global.menustate = 0
 }
 if keyboard_check_pressed(vk_enter)
 {
     if global.option = 0
     {
-        pause = 0
-        view_hview = prev_view_hview
-        view_wview = prev_view_wview
-        instance_activate_all()
+        global.menustate = 0
     }
 }
 if keyboard_check_pressed(vk_left)
 {
     if global.option = 1
     {
-        global.lang -=1
+        global.lang -= 1
         sound_play(global.S_WellRing)
     }
     if global.option = 2
