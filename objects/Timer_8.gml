@@ -17,6 +17,8 @@ applies_to=self
 global.KDetection = true
 global.TDetection = false
 global.EDetection = false
+instance_deactivate_object(TailsIcon)
+instance_deactivate_object(SonicIcon)
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=224

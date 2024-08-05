@@ -1,3 +1,10 @@
+anim += 0.5
+mycolor = $ffffff
+if anim > 192
+{
+    anim = 0
+}
+
 if background_alpha[1] < 1
 {
     background_alpha[1] += 0.1
@@ -24,7 +31,7 @@ if keyboard_check_pressed(vk_enter) or mouse_check_button_pressed(mb_left)
         global.option = 0
         global.menustate = 0
     }
-    if global.option = 7
+    if global.option = 8
     {
         splash_show_web('https://freesugaryspireonline.ru/',0)
     }
@@ -74,6 +81,12 @@ if keyboard_check_pressed(vk_left)
         if global.newcontent = 1 global.newcontent = 0
         else global.newcontent = 1
     }
+    if global.option = 7
+    {
+        sound_play(global.S_WellRing)
+        if global.subcnoise = 1 global.subcnoise = 0
+        else global.subcnoise = 1
+    }
 }
 if keyboard_check_pressed(vk_right)
 {
@@ -119,6 +132,12 @@ if keyboard_check_pressed(vk_right)
         sound_play(global.S_WellRing)
         if global.newcontent = 1 global.newcontent = 0
         else global.newcontent = 1
+    }
+    if global.option = 7
+    {
+        sound_play(global.S_WellRing)
+        if global.subcnoise = 1 global.subcnoise = 0
+        else global.subcnoise = 1
     }
 }
 if global.option > 2 scroll = -((((global.option-2) * 20)+abs(scroll))/2)

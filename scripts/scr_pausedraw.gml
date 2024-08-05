@@ -1,4 +1,6 @@
 draw_set_font(WORD_Font)
+//idk why adding half a pixel makes it look better but it does
+draw_sprite_stretched(sprpausefuck,0,view_xview[0],view_yview[0],view_wview+0.5,view_hview+0.5)
 draw_sprite(spranother,0,view_xview,view_yview)
 draw_sprite(spr_placeholder,0,346+view_xview[0],95+view_yview[0])
 draw_text(42+view_xview[0],55+view_yview[0],"back")

@@ -718,16 +718,16 @@ sprite716
 sprite717
 
 
-sprite720
-sprite721
+
+
 sprite722
-sprite723
-sprite724
-sprite725
-cheatspct
-cheatsunpct
-onpct
-onunpct
+
+
+
+
+
+
+
 ES_Noterus
 ES_Noteita
 sprBCrus
@@ -750,9 +750,9 @@ sprFF_TKita
 sprFF_Allita
 HandS3
 
-ongr
 
-loadunpct
+
+
 sprPre_DF4ita
 sprPre_DF3ita
 sprPre_DF2ita
@@ -795,3 +795,4 @@ sprHandS0_Note
 
 sprMS_5_1
 sprite796
+spr_cred_NICKZACH

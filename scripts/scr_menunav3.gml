@@ -13,7 +13,16 @@ if keyboard_check_pressed(vk_enter) or mouse_check_button_pressed(mb_left)
         sound_play(global.S_Ring)
         global.option = 0
         global.menustate = 0
+        view_yview[0] = 125
     }
+}
+if keyboard_check(vk_up)
+{
+    view_yview -= 1
+}
+if keyboard_check(vk_down)
+{
+    view_yview += 1
 }
 if global.lang < 0 global.lang = 2
 if global.lang > 2 global.lang = 0

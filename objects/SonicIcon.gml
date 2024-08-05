@@ -43,10 +43,10 @@ switch image_index
         draw_sprite_part_ext(sprNoice1,anim/2,0,0,anim,sprite_height,x+sprite_width-anim-11,y-24,1,1,mycolor,image_alpha)
     break;
     case 1:
-	//sprSH_Ground
-	//sprSH_Back
+//sprSH_Ground
+//sprSH_Back
         //draw_self()
-	       draw_sprite_part_ext(sprSH_Back,anim/2,/*511*/anim/2,130,sprite_width,sprite_height-12,x-11,y-24,1,1,$ffffff,1)
+        draw_sprite_part_ext(sprSH_Back,anim/2,/*511*/anim/2,130,sprite_width,sprite_height-12,x-11,y-24,1,1,$ffffff,1)
         draw_sprite_part_ext(sprSH_Ground,image_index,0,0,sprite_width,sprite_height-36,x-11,y+12,1,1,mycolor,image_alpha)
     break;
     case 2:

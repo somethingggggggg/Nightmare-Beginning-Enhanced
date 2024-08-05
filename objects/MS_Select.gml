@@ -216,29 +216,25 @@ sound_play(global.S_TAB)
 
 if keyboard_check_pressed(vk_enter)
 {
-if FFSELECTOR.image_index = 0
-{
-instance_create(0,0,Timer_16)
-PersonalChoiser.Tails_Pers = true
-instance_destroy()
-}
-
-if FFSELECTOR.image_index = 1
-{
-instance_create(0,0,Timer_16)
-PersonalChoiser.Knuckles_Pers = true
-instance_destroy()
-}
-
-if FFSELECTOR.image_index = 2
-{
-instance_create(0,0,Timer_16)
-PersonalChoiser.Eggman_Pers = true
-instance_destroy()
-}
-instance_create(0,0,GoI)
-instance_create(0,0,GoI_2)
-instance_create(0,0,GoI_3)
+    instance_create(0,0,Timer_16)
+    if FFSELECTOR.image_index = 0
+    {
+        PersonalChoiser.Tails_Pers = true
+        instance_destroy()
+    }
+    if FFSELECTOR.image_index = 1
+    {
+        PersonalChoiser.Knuckles_Pers = true
+        instance_destroy()
+    }
+    if FFSELECTOR.image_index = 2
+    {
+        PersonalChoiser.Eggman_Pers = true
+        instance_destroy()
+    }
+    instance_create(0,0,GoI)
+    instance_create(0,0,GoI_2)
+    instance_create(0,0,GoI_3)
 }
 #define Collision_SonicSELECTOR
 /*"/*'/**//* YYD ACTION

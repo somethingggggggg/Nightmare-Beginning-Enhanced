@@ -5,6 +5,7 @@ action_id=603
 applies_to=self
 */
 pause = 0
+sprpausefuck = 0
 global.T_bossfight = 0
 prev_view_hview = view_hview
 prev_view_wview = view_wview
@@ -133,6 +134,20 @@ global.S_suka=sound_add(working_directory+"/Sound/keepup.wav",0,0)
 global.S_tailsfly=sound_add(working_directory+"/Sound/S3K_BA.wav",0,0)
 global.S_tailstired=sound_add(working_directory+"/Sound/S3K_BB.wav",0,0)
 global.S_CYFTS_voiceline=sound_add(working_directory+"/Sound/tailsdollvoice.wav",0,0)
+#define Alarm_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+pause = 0
+view_hview = prev_view_hview
+view_wview = prev_view_wview
+global.menustate = 0
+global.option = 0
+//view_xview = prev_view_xview
+//view_yview = prev_view_yview
+instance_activate_all()
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -145,7 +160,12 @@ if room != 0
     {
         if keyboard_check_pressed(vk_escape) && !instance_exists(SW_Control)
         {
+            sprpausefuck = sprite_create_from_screen(/*view_xview[0]*/0,0/*view_yview[0]*/,view_wview[0]*4,view_hview[0]*4,0,0,0,0)
             instance_deactivate_all(1)
+            /*prev_view_xview = view_xview
+            prev_view_yview = view_yview
+            view_xview = 0
+            view_yview = 0*/
             prev_view_hview = view_hview
             prev_view_wview = view_wview
             view_wview = 462
@@ -155,7 +175,8 @@ if room != 0
     }
     else
     {
-        scr_pausenav()
+        if global.menustate = 1 scr_pausenav()
+        else scr_pausenav2()
     }
 }
 #define Other_3
@@ -187,11 +208,12 @@ applies_to=self
 */
 if pause = 1 && room != 0
 {
-    scr_pausedraw()
+    if global.menustate = 1 scr_pausedraw()
+    else scr_pausedraw2()
     //execute_file(working_directory+"/script.txt")
 }
 if global.showfps = 1
 {
-draw_set_font(global.dialoguefont)
-draw_text(view_xview,view_yview,fps)
+    draw_set_font(global.dialoguefont)
+    draw_text(view_xview,view_yview,fps)
 }

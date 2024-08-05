@@ -1,3 +1,4 @@
+|sprite722
 +dialogues
 	|sprSW_SonicNormal
 	|sprSW_Eggman
@@ -21,19 +22,6 @@
 	|sprSW_Exeils
 	|sprSW_EggmanDeath
 	|sprSW_KnucklesDeath
-+group
-	|sprite720
-	|sprite721
-	|sprite722
-	|onpct
-	|onunpct
-	|ongr
-	|sprite723
-	|sprite724
-	|sprite725
-	|cheatspct
-	|cheatsunpct
-	|loadunpct
 +Fatal Fog
 	|sprDF_Exe
 	|sprDF_ExeDeath
@@ -72,6 +60,7 @@
 |spr_hackerycontin
 |sprTailsDoll
 |spr_cred_NBEDEV
+|spr_cred_NICKZACH
 |spr_cred_danik
 |smashwhite
 |sprite773
