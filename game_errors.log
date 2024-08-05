@@ -1,9 +1,0 @@
-ERROR in
-action number 1
-of  Step Event
-for object ReallyDedSonic:
-
-Error in code at line 17:   
-if Act = 1 && RealyDedExe.image_alpha > 0.7                             ^at position 28: Unknown variable image_alpha
-
-
