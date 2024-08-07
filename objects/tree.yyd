@@ -1,14 +1,20 @@
-|obj_dialogue_pause
-|obj_dialogue
-|obj_cutscene_wall
-|backmab
-|tailstrigger
-|TailsDollBoss
-|obj_hate
-|a_solidlool
-|sm1
-|tailscustom
-|customtail
++leosa002 content
+	|Cream_528
+	|Cream_529
+	|Cream_530
+	|Cream_531
++NBE content
+	|obj_dialogue_pause
+	|obj_dialogue
+	|obj_cutscene_wall
+	|backmab
+	|tailstrigger
+	|TailsDollBoss
+	|obj_hate
+	|a_solidlool
+	|sm1
+	|tailscustom
+	|customtail
 +dataselect
 	|MS_1
 	|MS_2

@@ -1,4 +1,3 @@
-|sprite722
 +dialogues
 	|sprSW_SonicNormal
 	|sprSW_Eggman
@@ -57,12 +56,21 @@
 	|sprHL_Note
 	|sprSuicideHill_Note
 	|sprHandS0_Note
-|spr_hackerycontin
-|sprTailsDoll
-|spr_cred_NBEDEV
-|spr_cred_NICKZACH
-|spr_cred_danik
-|smashwhite
++NBE sprites
+	|sprite722
+	|sprTailsDoll
+	|spr_cred_NICKZACH
+	|spr_cred_NBEDEV
+	|spr_cred_danik
+	|smashwhite
+	|spr_hackerycontin
++leosa002 content
+	|sprEaster_Sequel_1
+	|sprCreamD
+	|sprCreamDamage
+	|sprCreamScary
+	|sprCreamScary1
+	|sprCreamStand
 |sprite773
 |ES_Noteita
 |ES_Noterus

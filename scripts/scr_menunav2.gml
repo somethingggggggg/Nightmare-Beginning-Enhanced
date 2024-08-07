@@ -87,6 +87,13 @@ if keyboard_check_pressed(vk_left)
         if global.subcnoise = 1 global.subcnoise = 0
         else global.subcnoise = 1
     }
+    //global.leosa_add
+    if global.option = 8
+    {
+        sound_play(global.S_WellRing)
+        if global.leosa_add = 1 global.leosa_add = 0
+        else global.leosa_add = 1
+    }
 }
 if keyboard_check_pressed(vk_right)
 {
@@ -138,6 +145,12 @@ if keyboard_check_pressed(vk_right)
         sound_play(global.S_WellRing)
         if global.subcnoise = 1 global.subcnoise = 0
         else global.subcnoise = 1
+    }
+    if global.option = 8
+    {
+        sound_play(global.S_WellRing)
+        if global.leosa_add = 1 global.leosa_add = 0
+        else global.leosa_add = 1
     }
 }
 if global.option > 2 scroll = -((((global.option-2) * 20)+abs(scroll))/2)
