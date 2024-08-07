@@ -22,10 +22,12 @@ global.option = 0
 global.pause = 0
 global.cheats = 0
 complete = 0
+//reading inis
 ini_open("save.ini")
 complete = ini_read_real('progress','bestend',0)
 ini_close()
 ini_open("options.ini")
+global.leosa_add = ini_read_real('options','leosa_add',1)
 global.subcnoise = ini_read_real('options','subcnoise',1)
 global.newcontent = ini_read_real('options','newcontent',1)
 global.showfps = ini_read_real('options','showfps',0)
