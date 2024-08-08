@@ -37,33 +37,39 @@ image_alpha = 0
 //Noice
 if instance_exists(Knuckles)
 {
-if image_alpha < 0.1
-{
-sound_volume(global.S_NoiceKS,0.5)
-}
+    if image_alpha < 0.1
+    {
+        sound_kind_volume(1,0)
+        //sound_volume(global.S_NoiceKS,0.5)
+    }
 
-if image_alpha > 0.1 && image_alpha < 0.2
-{
-sound_volume(global.S_NoiceKS,0.7)
-}
+    if image_alpha > 0.1 && image_alpha < 0.2
+    {
+        sound_kind_volume(1,0.5)
+        //sound_volume(global.S_NoiceKS,0.7)
+    }
 
-if image_alpha > 0.2 && image_alpha < 0.3
-{
-sound_volume(global.S_NoiceKS,0.8)
-}
+    if image_alpha > 0.2 && image_alpha < 0.3
+    {
+        sound_kind_volume(1,0.7)
+        //sound_volume(global.S_NoiceKS,0.8)
+    }
 
-if image_alpha > 0.3 && image_alpha < 0.4
-{
-sound_volume(global.S_NoiceKS,0.9)
-}
+    if image_alpha > 0.3 && image_alpha < 0.4
+    {
+        sound_kind_volume(1,0.8)
+        //sound_volume(global.S_NoiceKS,0.9)
+    }
 
-if image_alpha > 0.4
-{
-sound_volume(global.S_NoiceKS,1)
-}}
+    if image_alpha > 0.4
+    {
+        sound_kind_volume(1,1)
+        //sound_volume(global.S_NoiceKS,1)
+    }
+}
 
 if instance_exists(Tails4)
 {
-x = view_xview[0]+100
-y = view_yview[0]+100
+    x = view_xview[0]+100
+    y = view_yview[0]+100
 }

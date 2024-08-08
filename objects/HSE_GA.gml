@@ -60,7 +60,7 @@ if image_alpha = 1
                     }
                     if collision_rectangle(x-20,y,x+20,y-100,Tails3,1,0)
                     {
-                    sprite_index = sprHSE_SleepUp
+                        sprite_index = sprHSE_SleepUp
                     }
                 }
             }
@@ -68,24 +68,24 @@ if image_alpha = 1
 //WakeUp
 if collision_circle(x,y,300,Tails3,1,0) && Tails3.Hide = false
 {
-SleepTimer -= 1
+    SleepTimer -= 1
 }
 
 if (!collision_circle(x,y,300,Tails3,1,0) or Tails3.Hide = true) && SleepTimer < 150
 {
-SleepTimer += 1
+    SleepTimer += 1
 }
 
 if SleepTimer <= 0
 {
-SleepTime = false
+    SleepTime = false
 }
 
 //Asleep
 if (!collision_circle(x,y,300,Tails3,1,0) or Tails3.Hide = true) && SleepTime = false && SleepTimer = 150
 {
-SleepTime = true
-sprite_index = sprHSE_Sleep
+    SleepTime = true
+    sprite_index = sprHSE_Sleep
 }
 
 //AwakeTime
@@ -102,7 +102,8 @@ AwakeTime += 1
 if AwakeTime <= 0
 {
 Phase_2 = true
-}}
+}
+}
 
 if Phase_2 = true
 {

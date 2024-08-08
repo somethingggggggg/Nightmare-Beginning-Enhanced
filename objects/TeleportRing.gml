@@ -95,21 +95,23 @@ applies_to=self
 */
 if instance_exists(TailsFatality)
 {
-if TailsFatality.Dissappear = true
-{
-image_alpha -=0.01
-}}
+    if TailsFatality.Dissappear = true
+    {
+        image_alpha -= 0.01
+    }
+}
 
 if instance_exists(TailsFatality)
 {
-if TailsFatality.Appear = true
-{
-image_alpha +=0.01
-}}
+    if TailsFatality.Appear = true
+    {
+        image_alpha +=0.01
+    }
+}
 
 if image_alpha <= 0
 {
-image_alpha = 0
+    image_alpha = 0
 }
 
 //Re-color
@@ -117,23 +119,23 @@ if view_object[0] = Tails3
 {
 if collision_circle(x,y,150,HSE_Walker,1,0)
 {
-Lose_mode = true
+    Lose_mode = true
 }
 
 if !collision_circle(x,y,150,HSE_Walker,1,0)
 {
-Lose_mode = false
+    Lose_mode = false
 }
 
 
 if Win_mode = true
 {
-sprite_index = sprWinRing
+    sprite_index = sprWinRing
 }
 
 if Lose_mode = true && Act = 0
 {
-sprite_index = sprDeathRing
+    sprite_index = sprDeathRing
 }
 
 if Win_mode = true && Act = 0
@@ -141,6 +143,11 @@ if Win_mode = true && Act = 0
 Act = 1
 alarm[8] = 120
 }}
+
+if !instance_exists(Tails3)
+{
+    sound_stop(global.S_HideSound)
+}
 #define Collision_Tails3
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -223,27 +230,30 @@ if global.Tails_mode = true
 {
 if Teleport_1 = true && image_alpha >= 1
 {
-with HvostStand2
-{
-instance_create(2080,640,HvostStand2)
-instance_destroy()
-}}
+    with HvostStand2
+    {
+        instance_create(2080,640,HvostStand2)
+        instance_destroy()
+    }
+}
 
 if Teleport_2 = true && image_alpha >= 1
 {
-with HvostStand2
-{
-instance_create(3264,1408,HvostStand2)
-instance_destroy()
-}}
+    with HvostStand2
+    {
+        instance_create(3264,1408,HvostStand2)
+        instance_destroy()
+    }
+}
 
 if Teleport_3 = true && image_alpha >= 1
 {
-with HvostStand2
-{
-instance_create(3008,400,HvostStand2)
-instance_destroy()
-}}
+    with HvostStand2
+    {
+        instance_create(3008,400,HvostStand2)
+        instance_destroy()
+    }
+}
 
 if Teleport_4 = true && image_alpha >= 1
 {
@@ -300,7 +310,8 @@ instance_destroy()
 instance_change(WinRingOut,TeleportRing)
 sound_stop(global.S_HideSound)
 sound_play(global.S_Warp2)
-}}
+}
+}
 
 if Lose_mode = true
 {
