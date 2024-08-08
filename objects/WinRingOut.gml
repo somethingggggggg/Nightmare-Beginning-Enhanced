@@ -11,8 +11,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-sound_stop(global.S_tailsfly)
-sound_stop(global.S_tailstired)
+//sound_stop(global.S_tailsfly)
+//sound_stop(global.S_tailstired)
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=224

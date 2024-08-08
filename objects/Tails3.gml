@@ -31,8 +31,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-        sound_stop(global.S_tailsfly)
-        sound_stop(global.S_tailstired)
+sound_stop(global.S_tailsfly)
+sound_stop(global.S_tailstired)
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -470,8 +470,8 @@ SleepTimer = 300
 SleepTime = true
 Phase_2 = false
 image_alpha = 1
-sound_stop(global.S_Chase)
-sound_loop(global.S_HideSound)
+if sound_isplaying(global.S_Chase) sound_stop(global.S_Chase)
+if !sound_isplaying(global.S_Chase) sound_loop(global.S_HideSound)
 }}
 #define Collision_GroundSolid2
 /*"/*'/**//* YYD ACTION

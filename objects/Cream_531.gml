@@ -15,7 +15,8 @@ action_id=603
 applies_to=self
 */
 image_index = 1
-caster_play(global.S_sound_take,2,1)
+sound_play(global.S_sound_take)
+//caster_play(global.S_sound_take,2,1)
 alarm[1] = 150
 #define Alarm_1
 /*"/*'/**//* YYD ACTION
@@ -33,7 +34,7 @@ applies_to=self
 */
 Cream_530.visible = true
 sound_stop(global.S_You_Can_t_Run)
-caster_loop(global.S_YCRS,2,1)
+sound_loop(global.S_YCRS)
 alarm[3] = 300
 #define Alarm_3
 /*"/*'/**//* YYD ACTION

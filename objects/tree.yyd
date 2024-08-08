@@ -95,6 +95,7 @@
 	|KnucklesStop2
 	|Note_3
 	|BlodyNoice
+	|Ex14
 +threedots
 	|..._Note
 	|Egg_Ground
@@ -300,8 +301,9 @@
 |HPK
 |HPT
 |HPE
++unused
+	|CEmerald
 |DF_Alone
-|CEmerald
 |Choiser_9
 |TPassed
 |KPassed
@@ -353,7 +355,6 @@
 |TailsLive
 |KnucklesLive
 |EggmanLive
-|Ex14
 |Speed_Up
 |MasterEmerald
 |HPEExe

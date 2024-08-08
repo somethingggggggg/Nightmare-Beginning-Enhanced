@@ -12,13 +12,14 @@ action_id=603
 applies_to=self
 */
 sound_stop(global.S_You_Can_t_Run)
+sound_stop(global.S_NoiceKS)
 sound_stop(global.S_Mindfuckery)
 sound_play(global.S_Warp2)
+sound_kind_volume(1,1)
 with Knuckles
 {
 instance_destroy()
 }
-
 instance_change(KnucklesRingOut,KnucklesRing)
 #define Collision_Tails4
 /*"/*'/**//* YYD ACTION
