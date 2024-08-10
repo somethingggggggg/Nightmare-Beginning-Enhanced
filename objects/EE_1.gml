@@ -45,6 +45,22 @@ arg0=Lol! You found the hidden part of the level! Well done!
 */
 /*"/*'/**//* YYD ACTION
 lib_id=1
+action_id=603
+applies_to=self
+*/
+ini_open("save.ini")
+switch room
+{
+    case 40:
+        ini_write_real('Achivements','THNS_EE_Ach',1)
+    break;
+    case 42:
+        ini_write_real('Achivements','Tdeath_EE_Ach',1)
+    break;
+}
+ini_close()
+/*"/*'/**//* YYD ACTION
+lib_id=1
 action_id=203
 applies_to=self
 invert=0

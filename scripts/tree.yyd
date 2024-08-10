@@ -20,9 +20,12 @@
 	|discord_free_app
 	|discord_update_presence
 	|update_discord_lol
-|shDisplacement
-|EnemyGetHit
-|collideSlopes
-|Time_Script
-|playerGetHit
-|bnw
++vanilla scripts
+	|EnemyGetHit
+	|collideSlopes
+	|Time_Script
+	|playerGetHit
++shaders
+	|bnw
+	|shDisplacement
+	|script38

@@ -184,6 +184,10 @@
 	|Sonic
 	|Timer3
 	|Noice2
+	|NewNoiceEngineLOL
++unused
+	|CEmerald
+	|ButtonHS
 |Solid
 |Timer
 |Warn1
@@ -270,7 +274,6 @@
 |HS_1G
 |TeleportRing
 |Tails3
-|ButtonHS
 |HalfSolid
 |AI_Exe
 |HSE_Fall
@@ -301,8 +304,6 @@
 |HPK
 |HPT
 |HPE
-+unused
-	|CEmerald
 |DF_Alone
 |Choiser_9
 |TPassed
