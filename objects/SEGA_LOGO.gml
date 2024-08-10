@@ -71,6 +71,13 @@ action_id=603
 applies_to=self
 */
 Act = 1
+#define Other_5
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+sound_stop(global.S_Sega)
 #define Other_7
 /*"/*'/**//* YYD ACTION
 lib_id=1

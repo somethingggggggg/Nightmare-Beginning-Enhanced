@@ -220,4 +220,6 @@ if global.showfps = 1
 {
     draw_set_font(global.dialoguefont)
     draw_text(view_xview,view_yview,fps)
+    draw_text(view_xview,view_yview+16,d3d_get_free_video_memory())
+    //d3d_get_free_video_memory()
 }

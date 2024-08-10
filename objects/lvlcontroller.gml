@@ -12,6 +12,9 @@ switch room
     case 40:
     myx = 4
     break;
+    case 42:
+    myx = 4
+    break;
 }
 #define Step_0
 /*"/*'/**//* YYD ACTION
