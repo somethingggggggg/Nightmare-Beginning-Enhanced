@@ -1186,21 +1186,22 @@ draw_text_ext_color(view_xview[0]+100, view_yview[0], "...This cant be... S-Send
 
 if Page = 118
 {
-draw_sprite(sprSW_ExeGrin,1,view_xview[1],view_yview[1])
+draw_sprite_part(sprSW_ExeGrin,1,0,0,642,80,view_xview[1],view_yview[1])
+//draw_sprite(sprSW_ExeGrin,1,view_xview[1],view_yview[1])
 draw_set_font(global.dialoguefont)
 draw_text_ext_color(view_xview[1]+100, view_yview[1], "You fools! You decided to beat me by giving me the power inside of the master emerald?!",16,view_wview[0]-100,$5050cf,$5050cf,$5050cf,$5050cf,1)
 }
 
 if Page = 119
 {
-draw_sprite(sprSW_ExeGrin,1,view_xview[1],view_yview[1])
+draw_sprite_part(sprSW_ExeGrin,1,0,0,642,80,view_xview[1],view_yview[1])
 draw_set_font(global.dialoguefont)
 draw_text_ext_color(view_xview[1]+100, view_yview[1], "Very clever Knuckles! But thank you, for helping me find the emerald!",16,view_wview[0]-100,$5050cf,$5050cf,$5050cf,$5050cf,1)
 }
 
 if Page = 120
 {
-draw_sprite(sprSW_ExeGrin,1,view_xview[1],view_yview[1])
+draw_sprite_part(sprSW_ExeGrin,1,0,0,642,80,view_xview[1],view_yview[1])
 draw_set_font(global.dialoguefont)
 draw_text_ext_color(view_xview[1]+100, view_yview[1], "It's time to end all of you!",16,view_wview[0]-100,$5050cf,$5050cf,$5050cf,$5050cf,1)
 }
@@ -1278,7 +1279,7 @@ draw_text_ext_color(view_xview[0]+100, view_yview[0], "Will you two quit wasting
 }
 else if Page = 135 && BL.Eggman_Plot = false
 {
-Page +=1
+Page += 1
 }
 
 if Page = 136
@@ -1608,6 +1609,7 @@ draw_text_ext_color(view_xview[0]+100, view_yview[0], "You got the good ending",
 
 if Page = 191
 {
+//draw_sprite(sprSW_Twin,1,view_xview[0],view_yview[0])
 draw_sprite(sprSW_Twin,1,view_xview[0],view_yview[0])
 draw_set_font(global.dialoguefont)
 draw_text_ext_color(view_xview[0]+100, view_yview[0], "The Creator of the game: JaizKoys (or Twin)",16,view_wview[0]-100,$006e00,$006e00,$006e00,$006e00,1)
@@ -2359,21 +2361,21 @@ draw_text_ext_color(view_xview[0]+100, view_yview[0], "...Невозможно! 
 
 if Page = 118
 {
-draw_sprite(sprSW_Exe,1,view_xview[1],view_yview[1])
+draw_sprite_part(sprSW_ExeGrin,1,0,0,642,80,view_xview[1],view_yview[1])
 draw_set_font(global.dialoguefont)
 draw_text_ext_color(view_xview[1]+100, view_yview[1], "Придурки! Вы действительно хотите победить меня с помощью энергии Мастер- изумруда?!",16,view_wview[0]-100,$5050cf,$5050cf,$5050cf,$5050cf,1)
 }
 
 if Page = 119
 {
-draw_sprite(sprSW_Exe,1,view_xview[1],view_yview[1])
+draw_sprite_part(sprSW_ExeGrin,1,0,0,642,80,view_xview[1],view_yview[1])
 draw_set_font(global.dialoguefont)
 draw_text_ext_color(view_xview[1]+100, view_yview[1], "Очень умно Наклз! В любом случае, спасибо за то что помог найти изумруд.",16,view_wview[0]-100,$5050cf,$5050cf,$5050cf,$5050cf,1)
 }
 
 if Page = 120
 {
-draw_sprite(sprSW_Exe,1,view_xview[1],view_yview[1])
+draw_sprite_part(sprSW_ExeGrin,1,0,0,642,80,view_xview[1],view_yview[1])
 draw_set_font(global.dialoguefont)
 draw_text_ext_color(view_xview[1]+100, view_yview[1], "Пришло время покончить с вами!",16,view_wview[0]-100,$5050cf,$5050cf,$5050cf,$5050cf,1)
 }
@@ -2981,21 +2983,21 @@ draw_text_ext_color(view_xview[0]+100, view_yview[0], "...Non puo essere... e-el
 
 if Page = 118
 {
-draw_sprite(sprSW_Exe,1,view_xview[1],view_yview[1])
+draw_sprite_part(sprSW_ExeGrin,1,0,0,642,80,view_xview[1],view_yview[1])
 draw_set_font(global.dialoguefont)
 draw_text_ext_color(view_xview[1]+100, view_yview[1], "Stupidi! Avete deciso di battermi dandomi l'energia del master emerald?!",16,view_wview[0]-100,$5050cf,$5050cf,$5050cf,$5050cf,1)
 }
 
 if Page = 119
 {
-draw_sprite(sprSW_Exe,1,view_xview[1],view_yview[1])
+draw_sprite_part(sprSW_ExeGrin,1,0,0,642,80,view_xview[1],view_yview[1])
 draw_set_font(global.dialoguefont)
 draw_text_ext_color(view_xview[1]+100, view_yview[1], "Davvero intelligente Knuckels! Ma grazie, per avermi aiutato a trovare lo smeraldo!",16,view_wview[0]-100,$5050cf,$5050cf,$5050cf,$5050cf,1)
 }
 
 if Page = 120
 {
-draw_sprite(sprSW_Exe,1,view_xview[1],view_yview[1])
+draw_sprite_part(sprSW_ExeGrin,1,0,0,642,80,view_xview[1],view_yview[1])
 draw_set_font(global.dialoguefont)
 draw_text_ext_color(view_xview[1]+100, view_yview[1], "E ora di finire tutti voi!",16,view_wview[0]-100,$5050cf,$5050cf,$5050cf,$5050cf,1)
 }

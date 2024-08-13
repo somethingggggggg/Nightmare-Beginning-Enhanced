@@ -1,3 +1,4 @@
+if myfade < 1 myfade += 0.1
 if keyboard_check_pressed(vk_up) or mouse_wheel_up()
 {
     global.option -= 1
@@ -17,6 +18,9 @@ if keyboard_check_pressed(vk_escape)
     global.option = 0
     //view_xview = prev_view_xview
     //view_yview = prev_view_yview
+    sound_stop(global.S_PAUSEMENU)
+    scr_soundunfuck()
+    myfade = 0
     instance_activate_all()
 }
 if keyboard_check_pressed(vk_enter)

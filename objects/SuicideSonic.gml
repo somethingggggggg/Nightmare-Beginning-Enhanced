@@ -283,8 +283,8 @@ sound_play(global.S_IntoSpike)
 instance_destroy()
 with SuicideSpikes
 {
-sprite_index = sprSuicideSpike2
-alarm[0] = 240
+    sprite_index = sprSuicideSpike2
+    alarm[0] = 240
 }
 #define Draw_0
 /*"/*'/**//* YYD ACTION
@@ -292,8 +292,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+draw_set_font(global.dialoguefont)
 draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale, image_yscale, drawAngle, image_blend, image_alpha);
-
 if Act = 4
 {
 draw_text_color(view_xview[0]+120,view_yview[0]+70,"Press 'Z' to jump",$00ffff,$00ffff,$00ffff,$005555, 1)

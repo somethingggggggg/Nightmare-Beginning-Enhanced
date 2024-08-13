@@ -6,7 +6,7 @@ applies_to=self
 */
 image_alpha = 0
 alarm[0] = 180
-image_speed =0
+image_speed = 0
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -64,7 +64,8 @@ if global.GoodEnd = true
     }
 sound_play(global.S_BestEndings)
 }
-alarm[1] = 375
+//alarm[1] = 375
+image_speed = 0.1
 #define Alarm_1
 /*"/*'/**//* YYD ACTION
 lib_id=1

@@ -1,20 +1,19 @@
 return shader_pixel_create_base64("
-    eJxNk8Fr01AAh78kTZtu3R54EwR71EthCwrFheDmwUM96Oa5TNe4YmdnO2XikAde
-    PewaEHwH8ZAd/Qf8AwIDT56lf4QnI+/tNb72ku/rj5TvkXh+Vf2teuzs3d++AXwE
-    PL+qfEAzHpwBD4DAoM+e9sAB4NPA4xoT64Yvjobb+/PR3uj05M1sRIMOnvna34+n
-    cy4uLjwCc6+lP54PN4fPeDR+PpvOp9lJ99aT292Hg91Bd/dw/2A06+5Mj47Hk9Gs
-    2+9t9nv9O5u9eGNjg8cQglCXZZlkWZYG/EjgMNXeQ6i78fckz8fpOPuWxPFL432E
-    +pznSVlO0svyU5Jlr4wPECpAJnCcTrIsyfPXxocI9bMcJHE8T/txnJTlifFNhPqS
-    X0+y7G0aQgKnxrcQ6ldZbuX5u/Rrnm/F8XvjI4T6XQ62yvIs/VOW97Lsg/FthML8
-    7//PTX20IEGc2+tzIqE8cx3IBgvVgIZHIGEhAQVPjfNrVyiojAus80B5dteoXaE8
-    uwut80H5dtesXaF8u2tZF4AK7C6qXaECu2tbF4IK7W6ldoUK7W7Vuiaopt11aleo
-    pt2tWdcC1bK79doVqmV3wroIVGR31K5QEZXahsBDSE+fVbQw7COk73CAkIHDDYQ+
-    +5pDhAwdbiJk0+EWQrYcjhAycriNkG2HVxByxeFVhFx1uIOQHYfXEHLN4XWEXHdY
-    IKRwGMTVsxEtlO/06+Yl617PYd3rsu51Wfe6rHtd1r0u616Xda/Lutdl3euy7nVZ
-    97qse5e87NUcuv0szl1um/cCn+iKqwr+AaG/JPc=
+    eJxN07+rklEcx/HPeY6PPv78QlsQ5FiLoFIgeYa8DQ021LVZbl0twYuiN2hoONDa
+    4CoEPUM05Ng/0B/wwIWm5vCPaOqJ7zmPh68uvr7yEd6KKsrzf3kHZ5PHozsAPgJQ
+    UZ5HANhQwAcATwBoxwgTvgO4BBChBIVbWBa36Zur6ehiO5vM3l+/28xQQgPKPYv3
+    16stDoeDgnafdbqvt9Pe9BWeLV5vVtvV/Lp978X99tPx+bh9/vbicrZpn62u1ovl
+    bNMedHqDzuBBr9Pvdrt4DsQApTdZZjR+mof9H2Yx/2b4rkDp5/3e3GSfjIY1y/nc
+    3SNQ+isbm0G/b77sb5sYcHcNSn9n2fDrfj/8k42Hf7PsEd9jUApYA/G4y+mABWhX
+    vN4hoVS519qWcExjQCtoCxwtAOco+KWzDv7uXArOnePCqtiXg/2+Euz3SbDfVwtH
+    xb4W7Pf1YL9vBPt9s7Au9q1gv6dgv0dwno5cP1nFPcnROQLZSFiDrBYugfi7C45B
+    NhYug2xZuAKyFeEEZBPhKshWhWsgWxOug2xduAGyDeEmyDaFWyDbEiaQJWGA/O+X
+    HNNI9HPzydyrhLlXmnuluVeae6W5V5p7pblXmnuluVeae6W5V5p7Tz71sv3vX/Tj
+    uJOOAf/fSLzzHPgPGWD2gg==
 ")
 
 /*
+    varying vec2 in_TextureCoord;
     varying vec4 v_vColour;
     uniform vec2 pos;//x,y
     const int Quality = 16;
@@ -26,7 +25,7 @@ return shader_pixel_create_base64("
         for( float i=0.0;i<1.0;i+=1.0/float(Quality) )
         {
                 v = 0.9+i*0.1;//convert "i" to the 0.9 to 1 range
-                Color += texture2D( gm_BaseTexture, v+(pos)*(1.0-v));
+                Color += texture2D( gm_BaseTexture, in_TextureCoord*v+(pos)*(1.0-v));
         }
         Color /= float(Quality);
         gl_FragColor =  Color *  v_vColour;

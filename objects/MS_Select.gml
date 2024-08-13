@@ -7,6 +7,7 @@ applies_to=self
 image_speed = 0.2
 Act = 0
 alarm[0] = 5
+noyouwait = 0
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -235,6 +236,8 @@ if keyboard_check_pressed(vk_enter)
     instance_create(0,0,GoI)
     instance_create(0,0,GoI_2)
     instance_create(0,0,GoI_3)
+    SonicIcon.visible = 0
+    TailsIcon.visible = 0
 }
 #define Collision_SonicSELECTOR
 /*"/*'/**//* YYD ACTION
@@ -244,55 +247,60 @@ applies_to=self
 */
 if keyboard_check_pressed(vk_enter)
 {
-if SonicIcon.image_index = 0
-{
-if global.Final = true
-{
-sound_stop(global.S_Select_Screen)
-TailsIcon.image_alpha = 0
-SonicIcon.image_alpha = 0
-if global.Deadly_Mode = false
-{
-BL.End_2 = true
-}
-else
-{
-if global.TR = 0
-{
-BL.T_Ring = false
-BL.K_Ring = false
-BL.E_Ring = false
-global.TR = 0
-}
-if global.TR = 1
-{
-BL.T_Ring = true
-BL.K_Ring = false
-BL.E_Ring = false
-global.TR = 1
-}
-if global.TR = 2
-{
-BL.T_Ring = true
-BL.K_Ring = true
-BL.E_Ring = false
-global.TR = 2
-}
-if global.TR = 3
-{
-BL.T_Ring = true
-BL.K_Ring = true
-BL.E_Ring = true
-global.TR = 3
-}
-BL.End_1 = true
-}
-room_goto(62)
-}
-if global.Final = false
-{
-sound_play(global.S_Locked)
-}}
+    if SonicIcon.image_index = 0
+    {
+        if global.Final = true
+        {
+            sound_stop(global.S_Select_Screen)
+            TailsIcon.image_alpha = 0
+            SonicIcon.image_alpha = 0
+            SonicIcon.visible = 0
+            TailsIcon.visible = 0
+            if global.Deadly_Mode = false
+            {
+                BL.End_2 = true
+            }
+            else
+            {
+                if global.TR = 0
+                {
+                    BL.T_Ring = false
+                    BL.K_Ring = false
+                    BL.E_Ring = false
+                    global.TR = 0
+                }
+                if global.TR = 1
+                {
+                    BL.T_Ring = true
+                    BL.K_Ring = false
+                    BL.E_Ring = false
+                    global.TR = 1
+                }
+                if global.TR = 2
+                {
+                    BL.T_Ring = true
+                    BL.K_Ring = true
+                    BL.E_Ring = false
+                    global.TR = 2
+                }
+                if global.TR = 3
+                {
+                    BL.T_Ring = true
+                    BL.K_Ring = true
+                    BL.E_Ring = true
+                    global.TR = 3
+                }
+            BL.End_1 = true
+            }
+            room_goto(62)
+            SonicIcon.visible = 0
+            TailsIcon.visible = 0
+            }
+            if global.Final = false
+            {
+            sound_play(global.S_Locked)
+            }
+        }
 
 if SonicIcon.image_index = 1
 {
@@ -301,6 +309,8 @@ if global.Final = true
 sound_stop(global.S_Select_Screen)
 TailsIcon.image_alpha = 0
 SonicIcon.image_alpha = 0
+SonicIcon.visible = 0
+TailsIcon.visible = 0
 room_goto(72)
 }
 if global.Final = false
@@ -315,6 +325,8 @@ if global.Final = true
 sound_stop(global.S_Select_Screen)
 TailsIcon.image_alpha = 0
 SonicIcon.image_alpha = 0
+SonicIcon.visible = 0
+TailsIcon.visible = 0
 room_goto(68)
 }
 if global.Final = false

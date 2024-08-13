@@ -26,6 +26,8 @@ with HSE_Walker
 {
 instance_destroy()
 }
+sound_stop(global.S_Chase)
+sound_loop(global.S_HideSound)
     with HSE_GA
     {
         AwakeTime = 400
@@ -33,8 +35,6 @@ instance_destroy()
         SleepTime = true
         Phase_2 = false
         image_alpha = 1
-        if sound_isplaying(global.S_Chase) sound_stop(global.S_Chase)
-        if !sound_isplaying(global.S_HideSound) sound_loop(global.S_HideSound)
     }
 }
 #define Step_0
@@ -203,6 +203,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+draw_set_font(global.dialoguefont)
 draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale, image_yscale, drawAngle, image_blend, image_alpha);
 if place_meeting(x,y,Tails3) && !instance_exists(TailsFatality)
 {
