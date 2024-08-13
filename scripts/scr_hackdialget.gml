@@ -108,7 +108,7 @@
                     spritedial = sprSW_TailsWary
                 break;
                 case 5:
-                    global.pause = 0
+                    //global.pause = 0
                     /*HS_1.sprite_index = sprHS_1_2
                     HS_2.sprite_index = sprHS_2_2
                     HS_4.sprite_index = sprHS_4_2
@@ -190,7 +190,7 @@
                     spritedial = sprSW_TailsWary
                 break;
                 case 5:
-                    global.pause = 0
+                    //global.pause = 0
                     /*HS_1.sprite_index = sprHS_1_2
                     HS_2.sprite_index = sprHS_2_2
                     HS_4.sprite_index = sprHS_4_2

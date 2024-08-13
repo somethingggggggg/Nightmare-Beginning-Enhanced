@@ -19,6 +19,8 @@ sound_stop(global.S_Save_Select)
 sound_play(global.S_Smeh)
 TailsIcon.image_alpha = 0
 SonicIcon.image_alpha = 0
+SonicIcon.visible = 0
+TailsIcon.visible = 0
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=224

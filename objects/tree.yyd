@@ -188,6 +188,7 @@
 +unused
 	|CEmerald
 	|ButtonHS
+	|FinalSELECTOR
 |Solid
 |Timer
 |Warn1
@@ -335,15 +336,16 @@
 |HvostStand2
 |H&S2_Note
 |ButtonDest
-|TailsSELECTOR
-|KnucklesSELECTOR
-|EggmanSELECTOR
-|FFSELECTOR
-|SonicSELECTOR
-|TailsIcon
-|SonicIcon
-|NoteNegetivRings
-|Cratch
++lvl select
+	|TailsSELECTOR
+	|KnucklesSELECTOR
+	|EggmanSELECTOR
+	|FFSELECTOR
+	|SonicSELECTOR
+	|SonicIcon
+	|TailsIcon
+	|NoteNegetivRings
+	|Cratch
 |Continue_Note
 |Tails_Cont
 |Time_Cont
@@ -419,7 +421,6 @@
 |GhostSonicWin
 |FinalPoint1
 |DM_Note
-|FinalSELECTOR
 |FinalSonicDeath
 |Final_Time
 |GhostEmerald

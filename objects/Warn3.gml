@@ -127,6 +127,7 @@ applies_to=Tails2
 sound_stop(global.S_Forest)
 sound_play(global.S_Exployed)
 maxSpeed = 0
+global.pause = 0
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603

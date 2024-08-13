@@ -73,6 +73,7 @@ applies_to=self
 */
 if global.ELive != 0
 {
+sound_stop(global.S_Noice)
 room_goto(53)
 }
 

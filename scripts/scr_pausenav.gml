@@ -1,3 +1,4 @@
+myfade = 1
 if keyboard_check_pressed(vk_up) or mouse_wheel_up()
 {
     global.option -= 1
