@@ -2,11 +2,11 @@ draw_text((view_xview[0]+view_wview[0]/2)-string_width("back")/2,view_yview[0],"
 suka = 0
 repeat(ds_list_size(fuckarr))
 {
-    suka += 1
-    if ds_list_size(fuckarr) > suka+1
+    if ds_list_size(fuckarr) > suka
     {
-        draw_text(view_xview[0]+view_wview[0]/2-string_width(ds_list_find_value(fuckarr,suka+1))/2,view_yview[0]+(suka*16),ds_list_find_value(fuckarr,suka+1))
+        draw_text(view_xview[0]+view_wview[0]/2-string_width(ds_list_find_value(fuckarr,suka))/2,view_yview[0]+((suka+1)*16),ds_list_find_value(fuckarr,suka))
     }
+    suka += 1
 }
 /*
 while maxsuka > suka
@@ -16,7 +16,7 @@ while maxsuka > suka
 }
 */
 if global.option = 0 draw_text_color(view_xview[0]+view_wview[0]/2-string_width("back")/2,view_yview[0],"back",$00ffff,$00ffff,$00ffff,$005555,1)
-if global.option > 0 && global.option < ds_list_size(fuckarr) draw_text_color(view_xview[0]+view_wview[0]/2-string_width(ds_list_find_value(fuckarr,global.option+1))/2,view_yview[0]+(global.option*16),ds_list_find_value(fuckarr,global.option+1),$00ffff,$00ffff,$00ffff,$005555,1)
+if global.option > 0 && global.option < ds_list_size(fuckarr)+1 draw_text_color(view_xview[0]+view_wview[0]/2-string_width(ds_list_find_value(fuckarr,global.option-1))/2,view_yview[0]+(global.option*16),ds_list_find_value(fuckarr,global.option-1),$00ffff,$00ffff,$00ffff,$005555,1)
 
 switch text
 {
