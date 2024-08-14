@@ -34,7 +34,10 @@ if keyboard_check_pressed(vk_enter) or mouse_check_button_pressed(mb_left)
         file_name = file_find_first(working_directory+"\mods\*.*",fa_directory);
         while (file_name != "")
         {
-            ds_list_add(fuckarr,file_name)
+            if file_exists(working_directory+"\mods\"+file_name+"\mod.txt")
+            {
+                ds_list_add(fuckarr,file_name)
+            }
             /*
             suka += 1
             files[suka] = file_name;
@@ -63,6 +66,7 @@ if keyboard_check_pressed(vk_enter) or mouse_check_button_pressed(mb_left)
         ini_write_real('options','progressbar',global.progressbar)
         ini_write_real('options','newcontent',global.newcontent)
         ini_write_real('options','cheats',global.cheats)
+        ini_write_real('options','fourbythree',global.fourbythree)
         ini_close()
         if global.cheats = 1
         {

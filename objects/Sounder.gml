@@ -12,6 +12,11 @@ prev_view_hview = view_hview
 prev_view_wview = view_wview
 //global.S_sound_take=caster_load(working_directory+"/Sound/S_sound_take.ogg")
 //global.S_YCRS=caster_load(working_directory+"/Sound/S_You_Can_t_Run_Secret.ogg")
+global.voicedir = "voice_rus"
+
+global.S_YCR_Knuck_1 = sound_add(working_directory+"/Sound/"+global.voicedir+"/YCR_Knuck_1.ogg",0,0)
+global.S_YCR_Knuck_2 = sound_add(working_directory+"/Sound/"+global.voicedir+"/YCR_Knuck_2.ogg",0,0)
+
 global.S_sound_take=sound_add(working_directory+"/Sound/S_sound_take.ogg",0,0)
 global.S_YCRS=sound_add(working_directory+"/Sound/S_You_Can_t_Run_Secret.ogg",0,0)
 global.S_Alarm_2=sound_add(working_directory+"/Sound/Alarm_2.mp3",0,0)
@@ -199,6 +204,32 @@ applies_to=self
 */
 discord_free_app()
 discord_free_dll()
+#define Other_4
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if room != 0
+{
+    switch global.fourbythree
+    {
+        case 1:
+        //window_set_region_size(640,480,0)
+        //window_set_size(640,480)
+        view_xview[0] += (view_wview[0] - (view_hview[0] / 3) * 4) / 2
+        view_wview[0] = (view_hview[0] / 3) * 4
+        view_hborder[0] = view_wview[0] / 2
+        break;
+        case 2:
+        window_set_region_size(640,480,0)
+        //window_set_size(640,480)
+        view_xview[0] += (view_wview[0] - (view_hview[0] / 3) * 4) / 2
+        view_wview[0] = (view_hview[0] / 3) * 4
+        view_hborder[0] = view_wview[0] / 2
+        break;
+    }
+}
 #define Other_30
 /*"/*'/**//* YYD ACTION
 lib_id=1

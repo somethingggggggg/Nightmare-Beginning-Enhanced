@@ -15,6 +15,7 @@ V_7 = true
 V_8 = true
 V_9 = true
 jink = 0
+alarm[2] = 1
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -31,6 +32,13 @@ applies_to=self
 */
 Page +=1
 jink -= 1
+#define Alarm_2
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+scr_voicethefucker()
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -272,7 +280,11 @@ instance_destroy()
 //Action
 if keyboard_check_pressed(vk_enter) && jink = 0
 {
-Page +=1
+    Page += 1
+    if global.voicedir != ""
+    {
+        scr_voicethefucker()
+    }
 }
 
 //jink

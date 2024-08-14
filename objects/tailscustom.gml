@@ -55,12 +55,13 @@ applies_to=self
 if botmode = 4
 {
     vspeed = -0.25
-    if sprite_index = sprTailsJump && keyboard_check_pressed(ord("Z"))
+    if sprite_index = sprTailsJump && keyboard_check_pressed(ord("Z")) && place_meeting(x,y,TailsDollBoss)
     {
         SmashDash = true
         instance_create(x,y,sm1)
         global.dialoguepage = 5
         a = 0
+        vspeed = 0
         botmode = 5
     }
     exit;

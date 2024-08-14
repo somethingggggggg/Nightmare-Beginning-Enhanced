@@ -8,7 +8,7 @@ draw_text(42+view_xview[0],135+view_yview[0]+scroll,"FF progressbar")
 draw_text(42+view_xview[0],155+view_yview[0]+scroll,"Show FPS")
 draw_text(42+view_xview[0],175+view_yview[0]+scroll,"New content")
 draw_text(42+view_xview[0],195+view_yview[0]+scroll,"SM Noise")
-draw_text(42+view_xview[0],215+view_yview[0]+scroll,"FREE SUGARY SPIRE LEAK BUILD DOWNLOAD")
+draw_text(42+view_xview[0],215+view_yview[0]+scroll,"4:3 mode")
 switch global.lang
 {
     case 0:
@@ -76,7 +76,18 @@ switch global.lang
         {
             draw_text(234+view_xview[0]-string_width("original"),195+view_yview[0]+scroll,"original")
         }
-
+        switch global.fourbythree
+        {
+            case 0:
+                draw_text(234+view_xview[0]-string_width("off"),215+view_yview[0]+scroll,"off")
+            break;
+            case 1:
+                draw_text_color(234+view_xview[0]-string_width("stretch"),215+view_yview[0]+scroll,"stretch",c_white,c_white,c_white,c_white,1)
+            break;
+            case 2:
+                draw_text_color(234+view_xview[0]-string_width("black bars"),215+view_yview[0]+scroll,"black bars",c_white,c_white,c_white,c_white,1)
+            break;
+        }
 switch global.option
 {
     case 0:
@@ -124,10 +135,15 @@ switch global.option
         draw_text_ext(250+view_xview[0],163+view_yview[0],"pick between original NB font (korinna) and new NU font (pallete)",16,192)
         if global.dialoguefont = WORD_Font
         {
+            draw_set_font(WORD_Font)
+            draw_text_color(346+view_xview[0]-string_width("korinna")/2,95+view_yview[0]-string_height("korinna")/2,"korinna",c_white,c_white,c_white,c_white,1)
             draw_text_color(234+view_xview[0]-string_width("old"),115+view_yview[0]+scroll,"old",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
         }
         else
         {
+            draw_set_font(global.dialoguefont)
+            draw_text_color(346+view_xview[0]-string_width("pallete")/2,95+view_yview[0]-string_height("korinna")/2,"pallete",c_white,c_white,c_white,c_white,1)
+            draw_set_font(WORD_Font)
             draw_text_color(234+view_xview[0]-string_width("new"),115+view_yview[0]+scroll,"new",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
         }
     break;
@@ -186,33 +202,48 @@ switch global.option
     case 7:
         draw_text_color(42+view_xview[0],195+view_yview[0]+scroll,"SM Noise",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
         draw_text_ext(250+view_xview[0],163+view_yview[0],"Change how overlayed noise works in subconcious mind",16,192)
-        draw_rectangle_color(346+view_xview[0]-96,95+view_yview[0]-64,346+view_xview[0]+96,95+view_yview[0]+64,$000000,$000000,$000000,$000000,0)
+        draw_rectangle_color(346+view_xview[0]-96+4,95+view_yview[0]-64+4,346+view_xview[0]+96-4,95+view_yview[0]+64-4,$000000,$000000,$000000,$000000,0)
         draw_sprite(sprSlaveSonicWalk,image_index,346+view_xview[0],95+view_yview[0])
         if global.subcnoise = 1
         {
-            //sprNoice1
-            draw_sprite_part_ext(sprNoice1,anim,0,0,192,128,346+view_xview[0]-96,95+view_yview[0]-64,1,1,$ffffff,1)
+            //adding 4 pixels so that it fits in the sprplaceholder
+            draw_sprite_part_ext(sprNoice1,anim/2,0,0,192-4,128-4,346+view_xview[0]-96+4,95+view_yview[0]-64+4,1,1,$ffffff,1)
             draw_text_color(234+view_xview[0]-string_width("camera follow"),195+view_yview[0]+scroll,"camera follow",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
         }
         else
         {
-            if anim < 192/2
-            {
-                draw_sprite_part_ext(sprNoice1,anim,anim*2,0,192-anim*2,128,346+view_xview[0]-96,95+view_yview[0]-64,1,1,$ffffff,1)
-                draw_sprite_part_ext(sprNoice1,anim,0,0,anim*2,128,view_xview[0]+346-anim*2+96,95+view_yview[0]-64,1,1,$ffffff,1)
-            }
-            else
-            {
-                draw_sprite_part_ext(sprNoice1,anim,anim*2,0,192+(192-anim*2),128,346+view_xview[0]-96,95+view_yview[0]-64,1,1,$ffffff,1)
-                draw_sprite_part_ext(sprNoice1,anim,0,0,anim*2-192,128,view_xview[0]+346-anim*2+96+192,95+view_yview[0]-64,1,1,$ffffff,1)
-            }
+            draw_sprite_part_ext(sprNoice1,anim/2,anim,0,192-anim-4,128-4,346+view_xview[0]-96+4,95+view_yview[0]-64+4,1,1,$ffffff,1)
+            draw_sprite_part_ext(sprNoice1,anim/2,0,0,anim-4,128-4,view_xview[0]+346-anim+96,95+view_yview[0]-64+4,1,1,$ffffff,1)
             draw_text_color(234+view_xview[0]-string_width("original"),195+view_yview[0]+scroll,"original",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
         }
     break;
     case 8:
+        draw_text_color(42+view_xview[0],215+view_yview[0]+scroll,"4:3 mode",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
+        draw_text_ext(250+view_xview[0],163+view_yview[0],"Change the screen resolution back to 4:3#VERY EXPERIMENTAL",16,192)
+        draw_rectangle_color(346+view_xview[0]-96+4,95+view_yview[0]-64+4,346+view_xview[0]+96-4,95+view_yview[0]+64-4,c_white,c_white,c_white,c_white,0)
+        switch global.fourbythree
+        {
+            case 0:
+                draw_sprite_ext(sprSEGA_LOGO,24,346+view_xview[0],95+view_yview[0],0.5,0.5,0,c_white,1)
+                draw_text_color(234+view_xview[0]-string_width("off"),215+view_yview[0]+scroll,"off",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
+            break;
+            case 1:
+                draw_sprite_ext(sprSEGA_LOGO,24,346+view_xview[0],95+view_yview[0],1.3333333333*0.5,1*0.5,0,c_white,1)
+                draw_text_color(234+view_xview[0]-string_width("stretch"),215+view_yview[0]+scroll,"stretch",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
+            break;
+            case 2:
+                draw_rectangle_color(346+view_xview[0]-96+4,95+view_yview[0]-64-4,346+view_xview[0]-70,95+view_yview[0]+64-4,c_black,c_black,c_black,c_black,0)
+                draw_rectangle_color(346+view_xview[0]+96-4,95+view_yview[0]-64+4,346+view_xview[0]+70,95+view_yview[0]+64-4,c_black,c_black,c_black,c_black,0)
+                //draw_rectangle_color(346+view_xview[0]+256,95+view_yview[0]-64+4,346+view_xview[0]+512,95+view_yview[0]+64-4,c_black,c_black,c_black,c_black,0)
+                draw_sprite_ext(sprSEGA_LOGO,24,346+view_xview[0],95+view_yview[0],0.5,0.5,0,c_white,1)
+                draw_text_color(234+view_xview[0]-string_width("black bars"),215+view_yview[0]+scroll,"black bars",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
+            break;
+        }
+    break;
+/*    case 8:
         draw_text_color(42+view_xview[0],215+view_yview[0]+scroll,"FREE SUGARY SPIRE LEAK BUILD DOWNLOAD",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
         draw_text_ext(250+view_xview[0],163+view_yview[0],"FREE SUGARY SPIRE LEAK BUILD DOWNLOAD",16,192)
-    break;
+    break;*/
 }
 switch text
 {

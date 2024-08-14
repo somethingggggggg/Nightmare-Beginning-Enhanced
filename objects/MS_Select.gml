@@ -148,7 +148,7 @@ if place_meeting(x,y,NoteNegetivRings)
         BL.E_Ring = true
     }
 }
-view_xview = ((x + view_xview) / 2) - 129
+view_xview = ((x + view_xview) / 2) - view_wview[0]/4
 if view_xview < 0 view_xview = 0
 if view_xview > 220 view_xview = 220
 #define Collision_TailsSELECTOR

@@ -1,4 +1,4 @@
-anim += 0.5
+anim += 1
 mycolor = $ffffff
 if anim > 192
 {
@@ -31,10 +31,10 @@ if keyboard_check_pressed(vk_enter) or mouse_check_button_pressed(mb_left)
         global.option = 0
         global.menustate = 0
     }
-    if global.option = 8
+    /*if global.option = 8
     {
-        splash_show_web('https://freesugaryspireonline.ru/',0)
-    }
+        splash_show_web('https://discord.com/invite/J2eYeyuj9C',0)
+    }*/
 }
 if keyboard_check_pressed(vk_left)
 {
@@ -87,12 +87,12 @@ if keyboard_check_pressed(vk_left)
         if global.subcnoise = 1 global.subcnoise = 0
         else global.subcnoise = 1
     }
-    //global.leosa_add
     if global.option = 8
     {
         sound_play(global.S_WellRing)
-        if global.leosa_add = 1 global.leosa_add = 0
-        else global.leosa_add = 1
+        global.fourbythree -= 1
+        if global.fourbythree > 2 global.fourbythree = 0
+        if global.fourbythree < 0 global.fourbythree = 2
     }
 }
 if keyboard_check_pressed(vk_right)
@@ -149,11 +149,12 @@ if keyboard_check_pressed(vk_right)
     if global.option = 8
     {
         sound_play(global.S_WellRing)
-        if global.leosa_add = 1 global.leosa_add = 0
-        else global.leosa_add = 1
+        global.fourbythree += 1
+        if global.fourbythree > 2 global.fourbythree = 0
+        if global.fourbythree < 0 global.fourbythree = 2
     }
 }
-if global.option > 2 scroll = -((((global.option-2) * 20)+abs(scroll))/2)
+if global.option > 3 scroll = -((((global.option-3) * 20)+abs(scroll))/2)
 else scroll = - abs(scroll)/2
 if global.lang < 0 global.lang = 2
 if global.lang > 2 global.lang = 0
