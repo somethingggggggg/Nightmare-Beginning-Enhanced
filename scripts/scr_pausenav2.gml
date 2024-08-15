@@ -19,6 +19,7 @@ if keyboard_check_pressed(vk_escape)
     //view_xview = prev_view_xview
     //view_yview = prev_view_yview
     sound_stop(global.S_PAUSEMENU)
+    scr_saveoptions()
     scr_soundunfuck()
     myfade = 0
     instance_activate_all()

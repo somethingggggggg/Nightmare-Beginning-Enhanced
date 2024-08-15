@@ -281,10 +281,7 @@ instance_destroy()
 if keyboard_check_pressed(vk_enter) && jink = 0
 {
     Page += 1
-    if global.voicedir != ""
-    {
-        scr_voicethefucker()
-    }
+    scr_voicethefucker()
 }
 
 //jink

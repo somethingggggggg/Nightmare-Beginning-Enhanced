@@ -12,10 +12,6 @@ prev_view_hview = view_hview
 prev_view_wview = view_wview
 //global.S_sound_take=caster_load(working_directory+"/Sound/S_sound_take.ogg")
 //global.S_YCRS=caster_load(working_directory+"/Sound/S_You_Can_t_Run_Secret.ogg")
-global.voicedir = "voice_rus"
-
-global.S_YCR_Knuck_1 = sound_add(working_directory+"/Sound/"+global.voicedir+"/YCR_Knuck_1.ogg",0,0)
-global.S_YCR_Knuck_2 = sound_add(working_directory+"/Sound/"+global.voicedir+"/YCR_Knuck_2.ogg",0,0)
 
 global.S_sound_take=sound_add(working_directory+"/Sound/S_sound_take.ogg",0,0)
 global.S_YCRS=sound_add(working_directory+"/Sound/S_You_Can_t_Run_Secret.ogg",0,0)
@@ -185,6 +181,7 @@ if room != 0
             prev_view_wview = view_wview
             view_wview = 462
             view_hview = 260
+            sound_kind_volume(1,1)
             sound_loop(global.S_PAUSEMENU)
             scr_soundfuck()
             pause = 1

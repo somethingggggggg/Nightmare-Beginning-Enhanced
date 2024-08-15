@@ -17,6 +17,7 @@ global.hackpage = 0
 global.dialoguefont = WORD_Font
 global.menustate = 0
 global.newcontent = 1
+global.voicedir = 0
 discord_init_dll()
 discord_init_app("1252129963411505222")
 discord_update_presence("IN MAIN MENU","An experimental nb mod",'sprfex','sprfex')

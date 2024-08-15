@@ -301,6 +301,6 @@ draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale, ima
 draw_sprite(sprChangePlayer,0,view_xview[0]+40,view_yview[0]+225)
 if Act=1
 {
-draw_sprite(sprTwisterIconBlack, 0, view_xview[0]+412, view_yview[0]+25)
+draw_sprite(sprTwisterIconBlack, 0, view_xview[0]+view_wview[0]-50, view_yview[0]+25)
 }
-draw_sprite(sprPunchIconBlack, 0, view_xview[0]+422, view_yview[0]+240)
+draw_sprite(sprPunchIconBlack, 0, view_xview[0]+view_wview[0]-40, view_yview[0]+240)

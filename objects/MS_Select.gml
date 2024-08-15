@@ -150,7 +150,7 @@ if place_meeting(x,y,NoteNegetivRings)
 }
 view_xview = ((x + view_xview) / 2) - view_wview[0]/4
 if view_xview < 0 view_xview = 0
-if view_xview > 220 view_xview = 220
+if view_xview+view_wview > 736 view_xview = 736-view_wview
 #define Collision_TailsSELECTOR
 /*"/*'/**//* YYD ACTION
 lib_id=1
