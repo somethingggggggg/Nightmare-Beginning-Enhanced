@@ -189,6 +189,16 @@
 	|CEmerald
 	|ButtonHS
 	|FinalSELECTOR
++lvl select
+	|TailsSELECTOR
+	|KnucklesSELECTOR
+	|EggmanSELECTOR
+	|FFSELECTOR
+	|SonicSELECTOR
+	|SonicIcon
+	|TailsIcon
+	|NoteNegetivRings
+	|Cratch
 |Solid
 |Timer
 |Warn1
@@ -336,16 +346,6 @@
 |HvostStand2
 |H&S2_Note
 |ButtonDest
-+lvl select
-	|TailsSELECTOR
-	|KnucklesSELECTOR
-	|EggmanSELECTOR
-	|FFSELECTOR
-	|SonicSELECTOR
-	|SonicIcon
-	|TailsIcon
-	|NoteNegetivRings
-	|Cratch
 |Continue_Note
 |Tails_Cont
 |Time_Cont

@@ -23,6 +23,14 @@ if keyboard_check_pressed(vk_enter) or mouse_check_button_pressed(mb_left)
 {
     if global.option = 0
     {
+        global.voicelist = ds_list_create()
+        ds_list_add(global.voicelist,"")
+        voice_dir = file_find_first(working_directory+"\Sound\voice_*",fa_directory);
+        while (voice_dir != "")
+        {
+            ds_list_add(global.voicelist,voice_dir)
+            voice_dir = file_find_next()
+        }
         sound_play(global.S_Ring)
         global.option = 0
         global.menustate = 1
@@ -58,16 +66,8 @@ if keyboard_check_pressed(vk_enter) or mouse_check_button_pressed(mb_left)
     }
     if global.option = 3
     {
-        ini_open("options.ini")
-        ini_write_real('options','subcnoise',global.subcnoise)
-        ini_write_real('options','showfps',global.showfps)
-        ini_write_real('options','language',global.lang)
-        ini_write_real('options','font',global.dialoguefont)
-        ini_write_real('options','progressbar',global.progressbar)
-        ini_write_real('options','newcontent',global.newcontent)
-        ini_write_real('options','cheats',global.cheats)
-        ini_write_real('options','fourbythree',global.fourbythree)
-        ini_close()
+        scr_saveoptions()
+        scr_voiceinit()
         if global.cheats = 1
         {
             instance_create(0,0,saver)

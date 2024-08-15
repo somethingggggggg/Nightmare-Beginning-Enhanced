@@ -214,9 +214,9 @@ action_id=603
 applies_to=self
 */
 draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale, image_yscale, drawAngle, image_blend, image_alpha);
-
-draw_text_color(view_xview[0]+206,view_yview[0]+80,TAB.Energy,$000000,$000000,$000000,$000000, 1)
-draw_sprite(sprEggmanS,0,view_xview[0]+231,view_yview[0]+60)
+draw_set_halign(fa_center)
+draw_text_color(view_xview[0]+(view_wview[0]/2),view_yview[0]+80,TAB.Energy,$000000,$000000,$000000,$000000, 1)
+draw_sprite(sprEggmanS,0,view_xview[0]+(view_wview[0]/2),view_yview[0]+60)
 draw_sprite(sprChangePlayer,0,view_xview[0]+40,view_yview[0]+225)
 
 if TAB.EggBombTime = false

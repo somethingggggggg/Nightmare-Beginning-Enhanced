@@ -27,14 +27,11 @@ if keyboard_check_pressed(vk_enter) or mouse_check_button_pressed(mb_left)
 {
     if global.option = 0
     {
+        scr_saveoptions()
         sound_play(global.S_Ring)
         global.option = 0
         global.menustate = 0
     }
-    /*if global.option = 8
-    {
-        splash_show_web('https://discord.com/invite/J2eYeyuj9C',0)
-    }*/
 }
 if keyboard_check_pressed(vk_left)
 {
@@ -93,6 +90,13 @@ if keyboard_check_pressed(vk_left)
         global.fourbythree -= 1
         if global.fourbythree > 2 global.fourbythree = 0
         if global.fourbythree < 0 global.fourbythree = 2
+    }
+    if global.option = 9
+    {
+        sound_play(global.S_WellRing)
+        global.voicedir -= 1
+        if global.voicedir > ds_list_size(global.voicelist)-1 global.voicedir = 0
+        if global.voicedir < 0 global.voicedir = ds_list_size(global.voicelist)-1
     }
 }
 if keyboard_check_pressed(vk_right)
@@ -153,12 +157,20 @@ if keyboard_check_pressed(vk_right)
         if global.fourbythree > 2 global.fourbythree = 0
         if global.fourbythree < 0 global.fourbythree = 2
     }
+    if global.option = 9
+    {
+        sound_play(global.S_WellRing)
+        global.voicedir += 1
+        if global.voicedir > ds_list_size(global.voicelist)-1 global.voicedir = 0
+        if global.voicedir < 0 global.voicedir = ds_list_size(global.voicelist)-1
+    }
 }
 if global.option > 3 scroll = -((((global.option-3) * 20)+abs(scroll))/2)
 else scroll = - abs(scroll)/2
 if global.lang < 0 global.lang = 2
 if global.lang > 2 global.lang = 0
-if global.option < 0 global.option = 4
+if global.option < 0 global.option = 9
+if global.option > 9 global.option = 0
 if global.cheats < 0 global.cheats = 1
 if global.cheats > 1 global.cheats = 0
 ass -= 0.01

@@ -588,9 +588,10 @@ if Bot_mode = false
 {
 if Twister_mode = false
 {
-draw_sprite(sprPunchIcon, 0, view_xview[0]+422, view_yview[0]+240)
+draw_sprite(sprPunchIcon, 0, view_xview[0]+view_wview[0]-40, view_yview[0]+240)
 }
-if Act=1
+if Act = 1
 {
-draw_sprite(sprTwisterIcon, 0, view_xview[0]+412, view_yview[0]+25)
-}}
+draw_sprite(sprTwisterIcon, 0, view_xview[0]+view_wview[0]-50, view_yview[0]+25)
+}
+}

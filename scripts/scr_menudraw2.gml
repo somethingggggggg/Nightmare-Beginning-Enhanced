@@ -9,6 +9,7 @@ draw_text(42+view_xview[0],155+view_yview[0]+scroll,"Show FPS")
 draw_text(42+view_xview[0],175+view_yview[0]+scroll,"New content")
 draw_text(42+view_xview[0],195+view_yview[0]+scroll,"SM Noise")
 draw_text(42+view_xview[0],215+view_yview[0]+scroll,"4:3 mode")
+draw_text(42+view_xview[0],235+view_yview[0]+scroll,"Voiceover")
 switch global.lang
 {
     case 0:
@@ -88,6 +89,8 @@ switch global.lang
                 draw_text_color(234+view_xview[0]-string_width("black bars"),215+view_yview[0]+scroll,"black bars",c_white,c_white,c_white,c_white,1)
             break;
         }
+        if ds_list_find_value(global.voicelist,global.voicedir) != '' draw_text(234+view_xview[0]-string_width(ds_list_find_value(global.voicelist,global.voicedir)),235+view_yview[0]+scroll,ds_list_find_value(global.voicelist,global.voicedir))
+        else draw_text(234+view_xview[0]-string_width('off'),235+view_yview[0]+scroll,'off')
 switch global.option
 {
     case 0:
@@ -96,7 +99,9 @@ switch global.option
     case 1:
         draw_text_color(42+view_xview[0],75+view_yview[0]+scroll,"language",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
         draw_sprite(sprite722,global.lang,314+view_xview[0],63+view_yview[0])
-        draw_text(250+view_xview[0],163+view_yview[0],"pick your language")
+        draw_set_halign(fa_center)
+        draw_text(346+view_xview[0],163+view_yview[0],"pick your language")
+        draw_set_halign(fa_left)
         switch global.lang
         {
             case 0:
@@ -112,7 +117,9 @@ switch global.option
     break;
     case 2:
         draw_text_color(42+view_xview[0],95+view_yview[0]+scroll,"cheats",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
-        draw_text_ext(250+view_xview[0],163+view_yview[0],"enable debug mode and some cheats accecible with the numpad (enable numlock on your keyboard)",16,192)
+        draw_set_halign(fa_center)
+        draw_text_ext(346+view_xview[0],163+view_yview[0],"enable debug mode and some cheats accecible with the numpad (enable numlock on your keyboard)",16,192)
+        draw_set_halign(fa_left)
         draw_sprite(spr_numpad,global.cheats,346+view_xview[0],95+view_yview[0])
         if menusasa.complete = 1
         {
@@ -132,7 +139,9 @@ switch global.option
     break;
     case 3:
         draw_text_color(42+view_xview[0],115+view_yview[0]+scroll,"font",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
-        draw_text_ext(250+view_xview[0],163+view_yview[0],"pick between original NB font (korinna) and new NU font (pallete)",16,192)
+        draw_set_halign(fa_center)
+        draw_text_ext(346+view_xview[0],163+view_yview[0],"pick between original NB font (korinna) and new NU font (pallete)",16,192)
+        draw_set_halign(fa_left)
         if global.dialoguefont = WORD_Font
         {
             draw_set_font(WORD_Font)
@@ -149,7 +158,9 @@ switch global.option
     break;
     case 4:
         draw_text_color(42+view_xview[0],135+view_yview[0]+scroll,"FF progressbar",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
-        draw_text_ext(250+view_xview[0],163+view_yview[0],"Toggle the progressbar in Fatal Fog",16,192)
+        draw_set_halign(fa_center)
+        draw_text_ext(346+view_xview[0],163+view_yview[0],"Toggle the progressbar in Fatal Fog",16,192)
+        draw_set_halign(fa_left)
         if global.progressbar = 1
         {
             draw_text_color(234+view_xview[0]-string_width("on"),135+view_yview[0]+scroll,"on",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
@@ -167,7 +178,9 @@ switch global.option
     break;
     case 5:
         draw_text_color(42+view_xview[0],155+view_yview[0]+scroll,"Show FPS",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
-        draw_text_ext(250+view_xview[0],163+view_yview[0],"Show FPS",16,192)
+        draw_set_halign(fa_center)
+        draw_text_ext(346+view_xview[0],163+view_yview[0],"Show FPS",16,192)
+        draw_set_halign(fa_left)
         if global.showfps = 1
         {
             draw_text_color(234+view_xview[0]-string_width("on"),155+view_yview[0]+scroll,"on",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
@@ -181,7 +194,9 @@ switch global.option
     break;
     case 6:
         draw_text_color(42+view_xview[0],175+view_yview[0]+scroll,"New content",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
-        draw_text_ext(250+view_xview[0],163+view_yview[0],"Toggle new content on or off",16,192)
+        draw_set_halign(fa_center)
+        draw_text_ext(346+view_xview[0],163+view_yview[0],"Toggle new content on or off",16,192)
+        draw_set_halign(fa_left)
         if global.newcontent = 1
         {
             draw_text_color(234+view_xview[0]-string_width("on"),175+view_yview[0]+scroll,"on",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
@@ -201,7 +216,9 @@ switch global.option
     break;
     case 7:
         draw_text_color(42+view_xview[0],195+view_yview[0]+scroll,"SM Noise",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
-        draw_text_ext(250+view_xview[0],163+view_yview[0],"Change how overlayed noise works in subconcious mind",16,192)
+        draw_set_halign(fa_center)
+        draw_text_ext(346+view_xview[0],163+view_yview[0],"Change how overlayed noise works in subconcious mind",16,192)
+        draw_set_halign(fa_left)
         draw_rectangle_color(346+view_xview[0]-96+4,95+view_yview[0]-64+4,346+view_xview[0]+96-4,95+view_yview[0]+64-4,$000000,$000000,$000000,$000000,0)
         draw_sprite(sprSlaveSonicWalk,image_index,346+view_xview[0],95+view_yview[0])
         if global.subcnoise = 1
@@ -219,7 +236,9 @@ switch global.option
     break;
     case 8:
         draw_text_color(42+view_xview[0],215+view_yview[0]+scroll,"4:3 mode",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
-        draw_text_ext(250+view_xview[0],163+view_yview[0],"Change the screen resolution back to 4:3#VERY EXPERIMENTAL",16,192)
+        draw_set_halign(fa_center)
+        draw_text_ext(346+view_xview[0],163+view_yview[0],"Change the screen resolution back to 4:3#VERY EXPERIMENTAL",16,192)
+        draw_set_halign(fa_left)
         draw_rectangle_color(346+view_xview[0]-96+4,95+view_yview[0]-64+4,346+view_xview[0]+96-4,95+view_yview[0]+64-4,c_white,c_white,c_white,c_white,0)
         switch global.fourbythree
         {
@@ -240,10 +259,14 @@ switch global.option
             break;
         }
     break;
-/*    case 8:
-        draw_text_color(42+view_xview[0],215+view_yview[0]+scroll,"FREE SUGARY SPIRE LEAK BUILD DOWNLOAD",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
-        draw_text_ext(250+view_xview[0],163+view_yview[0],"FREE SUGARY SPIRE LEAK BUILD DOWNLOAD",16,192)
-    break;*/
+    case 9:
+        draw_text_color(42+view_xview[0],235+view_yview[0]+scroll,"Voiceover",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
+        draw_set_halign(fa_center)
+        draw_text_ext(346+view_xview[0],163+view_yview[0],"Choose the voiceover you want (you can add your own by naming a folder voice_*)",16,192)
+        draw_set_halign(fa_left)
+        if ds_list_find_value(global.voicelist,global.voicedir) != '' draw_text_color(234+view_xview[0]-string_width(ds_list_find_value(global.voicelist,global.voicedir)),235+view_yview[0]+scroll,ds_list_find_value(global.voicelist,global.voicedir),$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
+        else draw_text_color(234+view_xview[0]-string_width('off'),235+view_yview[0]+scroll,'off',$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
+    break;
 }
 switch text
 {

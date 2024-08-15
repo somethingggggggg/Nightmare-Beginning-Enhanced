@@ -22,6 +22,7 @@ if keyboard_check_pressed(vk_enter)
     {
         global.menustate = 0
         global.option = 0
+        ds_list_destroy(fuckarr)
     }
     else
     {
