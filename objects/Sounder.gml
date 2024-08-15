@@ -214,14 +214,14 @@ if room != 0
         case 1:
         //window_set_region_size(640,480,0)
         //window_set_size(640,480)
-        view_xview[0] += (view_wview[0] - (view_hview[0] / 3) * 4) / 2
+        if room != 56 && room != 55 view_xview[0] += (view_wview[0] - (view_hview[0] / 3) * 4) / 2
         view_wview[0] = (view_hview[0] / 3) * 4
         view_hborder[0] = view_wview[0] / 2
         break;
         case 2:
         window_set_region_size(640,480,0)
         //window_set_size(640,480)
-        view_xview[0] += (view_wview[0] - (view_hview[0] / 3) * 4) / 2
+        if room != 56 && room != 55 view_xview[0] += (view_wview[0] - (view_hview[0] / 3) * 4) / 2
         view_wview[0] = (view_hview[0] / 3) * 4
         view_hborder[0] = view_wview[0] / 2
         break;

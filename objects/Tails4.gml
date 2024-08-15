@@ -200,30 +200,33 @@ else
 //Fly
 if Idie_mode = false
 {
-if ground = false && keyboard_check_pressed(ord("Z")) && FlyTime = 220
-{
-Fly = true
-vspeed = 2.3
-}
+    if ground = false && keyboard_check_pressed(ord("Z")) && FlyTime = 220
+    {
+        Fly = true
+        vspeed = 2.3
+    }
 
-if Fly = true && !keyboard_check_pressed(ord("Z"))
-{
-FlyTime -=1
-gravity = 0.1
-sprite_index = sprTailsRacing
-image_speed = 0.15
-}
-else if Fly = true && keyboard_check_pressed(ord("Z"))
-{
-vspeed=-2.5
-}
+    if Fly = true && !keyboard_check_pressed(ord("Z"))
+    {
+        FlyTime -=1
+        gravity = 0.1
+        //mask_index = sprTailsRacing;
+        sprite_index = sprTailsRacing
+        mask_index = sprTailsRacing;
+        image_speed = 0.15
+    }
+    else if Fly = true && keyboard_check_pressed(ord("Z"))
+    {
+        vspeed= -2.5
+    }
 
-if FlyTime <= 0 && Fly = true
-{
-vspeed = 2.3
-sprite_index = sprTailsRacingTired
-image_speed = 0.15
-}}
+    if FlyTime <= 0 && Fly = true
+    {
+        vspeed = 2.3
+        sprite_index = sprTailsRacingTired
+        image_speed = 0.15
+    }
+}
 
 //Idie
 if global.vel = 0 && ground = true && Idie_mode = false && ducking == false && up == false && spindash == false
