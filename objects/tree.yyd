@@ -189,6 +189,9 @@
 	|CEmerald
 	|ButtonHS
 	|FinalSELECTOR
+	|Luigikid
+	|DeadSonic
+	|IC003969
 +lvl select
 	|TailsSELECTOR
 	|KnucklesSELECTOR
@@ -336,10 +339,7 @@
 |Note9_3
 |Note9_31
 |Note9_32
-|Luigikid
-|IC003969
 |EEExplode
-|DeadSonic
 |KnucklesTable
 |Exe_Attack_Mode
 |HvostStand

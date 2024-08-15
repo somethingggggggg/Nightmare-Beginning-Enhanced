@@ -23,7 +23,7 @@ if keyboard_check_pressed(vk_enter) or mouse_check_button_pressed(mb_left)
 {
     if global.option = 0
     {
-        global.voicelist = ds_list_create()
+        ds_list_clear(global.voicelist)
         ds_list_add(global.voicelist,"")
         voice_dir = file_find_first(working_directory+"\Sound\voice_*",fa_directory);
         while (voice_dir != "")
