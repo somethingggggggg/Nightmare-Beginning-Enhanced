@@ -262,7 +262,7 @@ switch global.option
     case 9:
         draw_text_color(42+view_xview[0],235+view_yview[0]+scroll,"Voiceover",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
         draw_set_halign(fa_center)
-        draw_text_ext(346+view_xview[0],163+view_yview[0],"Choose the voiceover you want (you can add your own by naming a folder voice_*)",16,192)
+        draw_text_ext(346+view_xview[0],163+view_yview[0],"Choose the voiceover you want (you can add your own by naming a folder voice_ )",16,192)
         draw_set_halign(fa_left)
         if ds_list_find_value(global.voicelist,global.voicedir) != '' draw_text_color(234+view_xview[0]-string_width(string_copy_end(ds_list_find_value(global.voicelist,global.voicedir),string_length(ds_list_find_value(global.voicelist,global.voicedir))-6)),235+view_yview[0]+scroll,string_copy_end(ds_list_find_value(global.voicelist,global.voicedir),string_length(ds_list_find_value(global.voicelist,global.voicedir))-6),$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
         else draw_text_color(234+view_xview[0]-string_width('off'),235+view_yview[0]+scroll,'off',$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
