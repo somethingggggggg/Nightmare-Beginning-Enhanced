@@ -21,7 +21,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-sprite_index = sprDeadnado3
+//sprite_index = sprDeadnado3
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=301
@@ -37,7 +37,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-sprite_index = sprDeadnado4
+//sprite_index = sprDeadnado4
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=301
@@ -62,7 +62,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-sprite_index = sprDeadnado5
+//sprite_index = sprDeadnado5
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=301
@@ -80,3 +80,16 @@ invert=0
 arg0=BadFinal(73)
 arg1=21
 */
+#define Step_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if x < 6976
+{
+    image_xscale += 0.005
+    image_yscale -= 0.005
+}
+if image_xscale > 0 image_xscale = 0
+if image_yscale < 0 image_yscale = 0

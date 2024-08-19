@@ -153,7 +153,6 @@ if place_meeting(x, y+vspeed+1, Solid_Mask) or place_meeting(x, y+vspeed+1, Scra
    gravity = 0;
 if vspeed > 8
    vspeed = 8;
-
 }
 }
 else
@@ -480,16 +479,19 @@ if ground == true && ducking == true && keyboard_check_pressed(ord("Z")) && canH
 
  spindashTimer = spindashTimer - ((spindashTimer div 0.125 )/ 256);
 
- if vspeed = 0
- {
- if ground == true && spindash == true && keyboard_check_released(vk_down)
-{
-  rolling = true;
-  sound_play(global.S_Rolling)
-  global.vel = image_xscale * (5 + spindashTimer);
-  spindash = false;
-  spindashTimer = 0;
-}}}}
+    if vspeed = 0
+    {
+        if ground == true && spindash == true && keyboard_check_released(vk_down)
+        {
+            rolling = true;
+            sound_play(global.S_Rolling)
+            global.vel = image_xscale * (5 + spindashTimer);
+            spindash = false;
+            spindashTimer = 0;
+        }
+    }
+}
+}
 
 
 
@@ -501,11 +503,11 @@ collideSlopes();
 //Return control when the player falls on the ground when getting hit
 if place_meeting(x, y+2*vspeed+2, Solid) or place_meeting(x, y+vspeed+1, Solid_Mask) or place_meeting(x, y+vspeed+1, EggElevator) or place_meeting(x, y+vspeed+1, ScrapWallDestruct) or place_meeting(x, y+vspeed+1, ScrapWall) or place_meeting(x, y+vspeed+1, ScrapGround) or place_meeting(x, y+vspeed+1, UpGrounder) or place_meeting(x, y+vspeed+1, FinalGround2) or place_meeting(x, y+vspeed+1, FinalGroundDown) or place_meeting(x, y+vspeed+1, FinalGround) or place_meeting(x, y+vspeed+1, objSlopeParent) && (sprite_index = sprSonicHit && canHit =false)
 {
-  canMove = true;
-  canSpriteChange = true;
-  image_alpha = 0.5;
-  alarm[0] = 90;
-  global.vel = 0;
+    canMove = true;
+    canSpriteChange = true;
+    image_alpha = 0.5;
+    alarm[0] = 90;
+    global.vel = 0;
 }
 
 if Bot = 1
