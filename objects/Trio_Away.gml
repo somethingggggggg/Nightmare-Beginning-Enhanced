@@ -7,6 +7,9 @@ applies_to=self
 instance_create(view_xview[7],view_yview[7],SW_Control)
 SW_Control.Page = 190
 SW_Control.jink = 19
+image_speed = 0.2
+image_xscale = 0
+image_yscale = 0
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=301
@@ -28,7 +31,9 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if sprite_index = sprTrio_Away1 && image_index <11
+if image_xscale < 1 image_xscale += 0.02
+if image_yscale < 1 image_yscale += 0.02
+/*if sprite_index = sprTrio_Away1 && image_index <11
 {
 image_speed = 0.3
 sprite_index = sprTrio_Away1
