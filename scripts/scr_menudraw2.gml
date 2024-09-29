@@ -7,14 +7,25 @@ while i < menulength
     else draw_set_color(c_white)
 
     if complete = 0 && i = 2 draw_set_color(c_gray)
-
-    draw_text(42+view_xview[0],55+view_yview[0]+scroll+(i*20),optionname[i])
+    if string_width(optionname[i]) > 96 draw_text_ext_transformed(42+view_xview[0],55+view_yview[0]+scroll+(i*20),optionname[i],0,1000,96/string_width(optionname[i]),1,0)
+    else draw_text(42+view_xview[0],55+view_yview[0]+scroll+(i*20),optionname[i])
     draw_set_halign(fa_right)
-    if i != 9 draw_text(234+view_xview[0],55+view_yview[0]+scroll+(i*20),optionstate[i,option[i]])
+    if i != 9
+    {
+    if string_width(optionstate[i,option[i]]) > 64 draw_text_ext_transformed(234+view_xview[0],55+view_yview[0]+scroll+(i*20),optionstate[i,option[i]],0,1000,64/string_width(optionstate[i,option[i]]),1,0)
+    else draw_text(234+view_xview[0],55+view_yview[0]+scroll+(i*20),optionstate[i,option[i]])
+    }
     else
     {
-        if ds_list_find_value(global.voicelist,global.voicedir) != '' draw_text(234+view_xview[0],235+view_yview[0]+scroll,string_copy_end(ds_list_find_value(global.voicelist,global.voicedir),string_length(ds_list_find_value(global.voicelist,global.voicedir))-6))
-        else draw_text(234+view_xview[0],235+view_yview[0]+scroll,'off')
+        if ds_list_find_value(global.voicelist,global.voicedir) != ''
+        {
+            if string_width(string_copy_end(ds_list_find_value(global.voicelist,global.voicedir),string_length(ds_list_find_value(global.voicelist,global.voicedir))-6)) < 64 draw_text(234+view_xview[0],235+view_yview[0]+scroll,string_copy_end(ds_list_find_value(global.voicelist,global.voicedir),string_length(ds_list_find_value(global.voicelist,global.voicedir))-6))
+            else draw_text_ext_transformed(234+view_xview[0],235+view_yview[0]+scroll,string_copy_end(ds_list_find_value(global.voicelist,global.voicedir),string_length(ds_list_find_value(global.voicelist,global.voicedir))-6),0,1000,64/string_width(string_copy_end(ds_list_find_value(global.voicelist,global.voicedir),string_length(ds_list_find_value(global.voicelist,global.voicedir))-6)),1,0)
+        }
+        else
+        {
+            draw_text(234+view_xview[0],235+view_yview[0]+scroll,'off')
+        }
     }
     draw_set_halign(fa_left)
     i += 1
@@ -112,6 +123,9 @@ switch global.option
                 draw_sprite_ext(sprSEGA_LOGO,24,346+view_xview[0],95+view_yview[0],0.5,0.5,0,c_white,1)
             break;
         }
+    break;
+    case 9:
+        draw_sprite(spr_sound,anim/64,346+view_xview[0],95+view_yview[0])
     break;
 }
 switch text
