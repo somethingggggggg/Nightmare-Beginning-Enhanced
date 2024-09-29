@@ -51,16 +51,58 @@ if global.voicedir > ds_list_size(global.voicelist) global.voicedir = 0
 ass = 0
 text = 0
 
-optionname[0] = "back"
-optionname[1] = "language"
-optionname[2] = "cheats"
-optionname[3] = "font"
+i = 0
+global.valueweneed = 0
+
+optionname[0] = "Back"
+optionname[1] = "Language"
+optionname[2] = "Cheats"
+optionname[3] = "Font"
 optionname[4] = "FF progressbar"
 optionname[5] = "Show FPS"
 optionname[6] = "New content"
 optionname[7] = "SM Noise"
 optionname[8] = "4:3 mode"
 optionname[9] = "Voiceover"
+
+optiondesc[0] = ""
+optiondesc[1] = "Pick your language"
+optiondesc[2] = "Enable debug mode and some cheats accecible with the numpad (enable numlock on your keyboard)"
+optiondesc[3] = "Pick between original NB font (korinna) and new NU font (pallete)"
+optiondesc[4] = "Toggle the progressbar in Fatal Fog"
+optiondesc[5] = "Show FPS"
+optiondesc[6] = "Toggle new content on or off"
+optiondesc[7] = "Change how overlayed noise works in subconcious mind"
+optiondesc[8] = "Change the screen resolution back to 4:3#VERY EXPERIMENTAL"
+optiondesc[9] = "Choose the voiceover you want (you can add your own by naming a folder voice_ )"
+
+optionstate[0,0] = ""
+
+optionstate[1,0] = "English"
+optionstate[1,1] = "Russian"
+optionstate[1,2] = "Italian"
+
+optionstate[2,0] = "off"
+optionstate[2,1] = "on"
+
+optionstate[3,WORD_Font] = "Old"
+optionstate[3,testingfont] = "New"
+
+optionstate[4,0] = "off"
+optionstate[4,1] = "on"
+
+optionstate[5,0] = "off"
+optionstate[5,1] = "on"
+
+optionstate[6,0] = "off"
+optionstate[6,1] = "on"
+
+optionstate[7,0] = "Original"
+optionstate[7,1] = "Camera Follow"
+
+optionstate[8,0] = "off"
+optionstate[8,1] = "Stretch"
+optionstate[8,2] = "Black Bars"
 
 menulength = 10
 #define Step_0
