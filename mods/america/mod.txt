@@ -1,1 +1,1 @@
-sprite_replace(sprite722,working_directory+"\mods\america\am.png",1,0,0,0,0)
+sprite_replace(sprite722,working_directory+"\mods\america\am.png",3,0,0,0,0)

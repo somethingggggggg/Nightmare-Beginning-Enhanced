@@ -1,117 +1,16 @@
 ERROR in
 action number 1
-of Draw Event
+of  Step Event
 for object menusasa:
 
-In script scr_menudraw2:Error in code at line 13:   
-    if i != 9 draw_text(234+view_xview[0],55+view_yview[0]+scroll+(i*20),optionstate[i,option[i]])                                                                            ^at position 75: Unknown variable optionstate or array index out of bounds
+File does not exist trying to add a sound: E:\nb dev\NBE/Sound/voice_LOOOOOOOOOOOONG/YCR_Knuck_1.ogg
 
 
 ERROR in
 action number 1
-of Draw Event
+of  Step Event
 for object menusasa:
 
-In script scr_menudraw2:Error in code at line 13:   
-    if i != 9 draw_text(234+view_xview[0],55+view_yview[0]+scroll+(i*20),optionstate[i,option[i]])                                                                            ^at position 75: Unknown variable optionstate or array index out of bounds
-
-
-ERROR in
-action number 1
-of Draw Event
-for object menusasa:
-
-In script scr_menudraw2:Error in code at line 13:   
-    if i != 9 draw_text(234+view_xview[0],55+view_yview[0]+scroll+(i*20),optionstate[i,option[i]])                                                                            ^at position 75: Unknown variable optionstate or array index out of bounds
-
-
-ERROR in
-action number 1
-of Draw Event
-for object menusasa:
-
-In script scr_menudraw2:Error in code at line 13:   
-    if i != 9 draw_text(234+view_xview[0],55+view_yview[0]+scroll+(i*20),optionstate[i,option[i]])                                                                            ^at position 75: Unknown variable optionstate or array index out of bounds
-
-
-ERROR in
-action number 1
-of Draw Event
-for object menusasa:
-
-In script scr_menudraw2:Error in code at line 13:   
-    if i != 9 draw_text(234+view_xview[0],55+view_yview[0]+scroll+(i*20),optionstate[i,option[i]])                                                                            ^at position 75: Unknown variable optionstate or array index out of bounds
-
-
-ERROR in
-action number 1
-of Draw Event
-for object menusasa:
-
-In script scr_menudraw2:Error in code at line 13:   
-    if i != 9 draw_text(234+view_xview[0],55+view_yview[0]+scroll+(i*20),optionstate[i,option[i]])                                                                            ^at position 75: Unknown variable optionstate or array index out of bounds
-
-
-ERROR in
-action number 1
-of Draw Event
-for object menusasa:
-
-In script scr_menudraw2:Error in code at line 13:   
-    if i != 9 draw_text(234+view_xview[0],55+view_yview[0]+scroll+(i*20),optionstate[i,option[i]])                                                                            ^at position 75: Unknown variable optionstate or array index out of bounds
-
-
-ERROR in
-action number 1
-of Draw Event
-for object menusasa:
-
-In script scr_menudraw2:Error in code at line 13:   
-    if i != 9 draw_text(234+view_xview[0],55+view_yview[0]+scroll+(i*20),optionstate[i,option[i]])                                                                            ^at position 75: Unknown variable optionstate or array index out of bounds
-
-
-ERROR in
-action number 1
-of Draw Event
-for object menusasa:
-
-In script scr_menudraw2:Error in code at line 13:   
-    if i != 9 draw_text(234+view_xview[0],55+view_yview[0]+scroll+(i*20),optionstate[i,option[i]])                                                                            ^at position 75: Unknown variable optionstate or array index out of bounds
-
-
-ERROR in
-action number 1
-of Draw Event
-for object menusasa:
-
-In script scr_menudraw2:Error in code at line 13:   
-    if i != 9 draw_text(234+view_xview[0],55+view_yview[0]+scroll+(i*20),optionstate[i,option[i]])                                                                            ^at position 75: Unknown variable optionstate or array index out of bounds
-
-
-ERROR in
-action number 1
-of Draw Event
-for object menusasa:
-
-In script scr_menudraw2:Error in code at line 13:   
-    if i != 9 draw_text(234+view_xview[0],55+view_yview[0]+scroll+(i*20),optionstate[i,option[i]])                                                                            ^at position 75: Unknown variable optionstate or array index out of bounds
-
-
-ERROR in
-action number 1
-of Draw Event
-for object menusasa:
-
-In script scr_menudraw2:Error in code at line 13:   
-    if i != 9 draw_text(234+view_xview[0],55+view_yview[0]+scroll+(i*20),optionstate[i,option[i]])                                                                            ^at position 75: Unknown variable optionstate or array index out of bounds
-
-
-ERROR in
-action number 1
-of Draw Event
-for object menusasa:
-
-In script scr_menudraw2:Error in code at line 13:   
-    if i != 9 draw_text(234+view_xview[0],55+view_yview[0]+scroll+(i*20),optionstate[i,option[i]])                                                                            ^at position 75: Unknown variable optionstate or array index out of bounds
+File does not exist trying to add a sound: E:\nb dev\NBE/Sound/voice_LOOOOOOOOOOOONG/YCR_Knuck_2.ogg
 
 

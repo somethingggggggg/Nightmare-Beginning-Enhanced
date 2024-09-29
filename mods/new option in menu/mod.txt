@@ -1,6 +1,8 @@
-optionname[10] = "What"
+global.DRPdis = 0
+optionname[10] = "РУССКИЙ ТЕКСТ НЕ РАБОТАЕТ ВАМ ПИЗДЕЦ"
 optiondesc[10] = "What did you think was going to happen?"
-optionstate[10,0] = "no"
-optionstate[10,1] = "no"
-option[10] = 0
+optionstate[10,0] = "off"
+optionstate[10,1] = "on"
+option[10] = global.DRPdis
 menulength = 11
+object_event_add(Sounder,ev_step,2,"if global.DRPdis = 1 && room != 0 {discord_free_app(); discord_free_dll()}")
