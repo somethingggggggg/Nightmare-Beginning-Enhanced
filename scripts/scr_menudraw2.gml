@@ -1,15 +1,12 @@
 draw_sprite(spr_placeholder,0,346+view_xview[0],95+view_yview[0])
 draw_set_font(WORD_Font)
-draw_text(42+view_xview[0],55+view_yview[0]+scroll,"back")
-draw_text(42+view_xview[0],75+view_yview[0]+scroll,"language")
-draw_text(42+view_xview[0],95+view_yview[0]+scroll,"cheats")
-draw_text(42+view_xview[0],115+view_yview[0]+scroll,"font")
-draw_text(42+view_xview[0],135+view_yview[0]+scroll,"FF progressbar")
-draw_text(42+view_xview[0],155+view_yview[0]+scroll,"Show FPS")
-draw_text(42+view_xview[0],175+view_yview[0]+scroll,"New content")
-draw_text(42+view_xview[0],195+view_yview[0]+scroll,"SM Noise")
-draw_text(42+view_xview[0],215+view_yview[0]+scroll,"4:3 mode")
-draw_text(42+view_xview[0],235+view_yview[0]+scroll,"Voiceover")
+while i < 10
+{
+    if global.option = i draw_set_color(c_yellow)
+    else draw_set_color(c_white)
+    draw_text(42+view_xview[0],55+view_yview[0]+scroll+(i*20),optionname[i])
+}
+draw_set_color(c_white)
 switch global.lang
 {
     case 0:

@@ -50,6 +50,19 @@ ini_close()
 if global.voicedir > ds_list_size(global.voicelist) global.voicedir = 0
 ass = 0
 text = 0
+
+optionname[0] = "back"
+optionname[1] = "language"
+optionname[2] = "cheats"
+optionname[3] = "font"
+optionname[4] = "FF progressbar"
+optionname[5] = "Show FPS"
+optionname[6] = "New content"
+optionname[7] = "SM Noise"
+optionname[8] = "4:3 mode"
+optionname[9] = "Voiceover"
+
+menulength = 10
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
