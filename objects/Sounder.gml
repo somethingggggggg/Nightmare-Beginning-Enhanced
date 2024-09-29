@@ -12,7 +12,7 @@ prev_view_hview = view_hview
 prev_view_wview = view_wview
 //global.S_sound_take=caster_load(working_directory+"/Sound/S_sound_take.ogg")
 //global.S_YCRS=caster_load(working_directory+"/Sound/S_You_Can_t_Run_Secret.ogg")
-
+draw_text(x,y,"loading")
 global.S_sound_take=sound_add(working_directory+"/Sound/S_sound_take.ogg",0,0)
 global.S_YCRS=sound_add(working_directory+"/Sound/S_You_Can_t_Run_Secret.ogg",0,0)
 global.S_Alarm_2=sound_add(working_directory+"/Sound/Alarm_2.mp3",0,0)
