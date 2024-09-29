@@ -3,24 +3,14 @@ draw_set_font(WORD_Font)
 global.valueweneed = 0
 while i < menulength
 {
-    switch i
-    {
-        case 0: global.valueweneed = 0 break;
-        case 1: global.valueweneed = global.lang break;
-        case 2: global.valueweneed = global.cheats break;
-        case 3: global.valueweneed = global.dialoguefont break;
-        case 4: global.valueweneed = global.progressbar break;
-        case 5: global.valueweneed = global.showfps break;
-        case 6: global.valueweneed = global.newcontent break;
-        case 7: global.valueweneed = global.subcnoise break;
-        case 8: global.valueweneed = global.fourbythree break;
-    }
     if global.option = i draw_set_color(c_yellow)
     else draw_set_color(c_white)
+
     if complete = 0 && i = 2 draw_set_color(c_gray)
+
     draw_text(42+view_xview[0],55+view_yview[0]+scroll+(i*20),optionname[i])
     draw_set_halign(fa_right)
-    if i != 9 draw_text(234+view_xview[0],55+view_yview[0]+scroll+(i*20),optionstate[i,global.valueweneed])
+    if i != 9 draw_text(234+view_xview[0],55+view_yview[0]+scroll+(i*20),optionstate[i,option[i]])
     else
     {
         if ds_list_find_value(global.voicelist,global.voicedir) != '' draw_text(234+view_xview[0],235+view_yview[0]+scroll,string_copy_end(ds_list_find_value(global.voicelist,global.voicedir),string_length(ds_list_find_value(global.voicelist,global.voicedir))-6))
@@ -99,14 +89,11 @@ switch global.option
         {
             //adding 4 pixels so that it fits in the sprplaceholder
             draw_sprite_part_ext(sprNoice1,anim/2,0,0,192-4,128-4,346+view_xview[0]-96+4,95+view_yview[0]-64+4,1,1,$ffffff,1)
-            draw_text_color(234+view_xview[0]-string_width("camera follow"),195+view_yview[0]+scroll,"camera follow",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
         }
         else
         {
             draw_sprite_part_ext(sprNoice1,anim/2,anim,0,192-anim-4,128-4,346+view_xview[0]-96+4,95+view_yview[0]-64+4,1,1,$ffffff,1)
-            draw_sprite_part_ext(sprNoice1,anim/2,0,0,anim-4,128-4,view_xview[0]+346-anim+96,95+view_yview[0]-64+4,1,1,$ffffff,1)
-            draw_text_color(234+view_xview[0]-string_width("original"),195+view_yview[0]+scroll,"original",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
-        }
+            draw_sprite_part_ext(sprNoice1,anim/2,0,0,anim-4,128-4,view_xview[0]+346-anim+96,95+view_yview[0]-64+4,1,1,$ffffff,1)        }
     break;
     case 8:
         draw_rectangle_color(346+view_xview[0]-96+4,95+view_yview[0]-64+4,346+view_xview[0]+96-4,95+view_yview[0]+64-4,c_white,c_white,c_white,c_white,0)

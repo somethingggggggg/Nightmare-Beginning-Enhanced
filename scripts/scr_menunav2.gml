@@ -33,144 +33,99 @@ if keyboard_check_pressed(vk_enter) or mouse_check_button_pressed(mb_left)
         global.menustate = 0
     }
 }
-if keyboard_check_pressed(vk_left)
+if keyboard_check_pressed(vk_left) && global.option != 0
 {
-    if global.option = 1
+    sound_play(global.S_WellRing)
+    if global.option != 3 && global.option != 8 && global.option != 9 && global.option != 1
     {
-        global.lang -=1
-        sound_play(global.S_WellRing)
+        if option[global.option] = 1 option[global.option] = 0
+        else option[global.option] = 1
     }
-    if global.option = 2
+    else
     {
-        if complete = 1
+        if global.option = 1
         {
-            global.cheats -= 1
-            sound_play(global.S_WellRing)
+            option[global.option] -= 1
         }
-        else
+        if global.option = 3
         {
-            sound_play(global.S_Hit)
-            text = 0
-            ass = 1
+            if option[global.option] = WORD_Font option[global.option] = testingfont
+            else option[global.option] = WORD_Font
         }
-    }
-    if global.option = 3
-    {
-        sound_play(global.S_WellRing)
-        if global.dialoguefont = WORD_Font global.dialoguefont = testingfont
-        else global.dialoguefont = WORD_Font
-    }
-    if global.option = 4
-    {
-        sound_play(global.S_WellRing)
-        if global.progressbar = 1 global.progressbar = 0
-        else global.progressbar = 1
-    }
-    if global.option = 5
-    {
-        sound_play(global.S_WellRing)
-        if global.showfps = 1 global.showfps = 0
-        else global.showfps = 1
-    }
-    if global.option = 6
-    {
-        sound_play(global.S_WellRing)
-        if global.newcontent = 1 global.newcontent = 0
-        else global.newcontent = 1
-    }
-    if global.option = 7
-    {
-        sound_play(global.S_WellRing)
-        if global.subcnoise = 1 global.subcnoise = 0
-        else global.subcnoise = 1
-    }
-    if global.option = 8
-    {
-        sound_play(global.S_WellRing)
-        global.fourbythree -= 1
-        if global.fourbythree > 2 global.fourbythree = 0
-        if global.fourbythree < 0 global.fourbythree = 2
-    }
-    if global.option = 9
-    {
-        sound_play(global.S_WellRing)
-        global.voicedir -= 1
-        if global.voicedir > ds_list_size(global.voicelist)-1 global.voicedir = 0
-        if global.voicedir < 0 global.voicedir = ds_list_size(global.voicelist)-1
+        if global.option = 8
+        {
+            option[global.option] -= 1
+            if option[global.option] > 2 option[global.option] = 0
+            if option[global.option] < 0 option[global.option] = 2
+        }
+        if global.option = 9
+        {
+            option[global.option] -= 1
+            if option[global.option] > ds_list_size(global.voicelist)-1 option[global.option] = 0
+            if option[global.option] < 0 option[global.option] = ds_list_size(global.voicelist)-1
+        }
     }
 }
-if keyboard_check_pressed(vk_right)
+if keyboard_check_pressed(vk_right) && global.option != 0
 {
-    if global.option = 1
+    sound_play(global.S_WellRing)
+    if global.option != 3 && global.option != 8 && global.option != 9 && global.option != 1
     {
-        global.lang +=1
-        sound_play(global.S_WellRing)
+        if option[global.option] = 1 option[global.option] = 0
+        else option[global.option] = 1
     }
-    if global.option = 2
+    else
     {
-        if complete = 1
+        if global.option = 1
         {
-            global.cheats += 1
-            sound_play(global.S_WellRing)
+            option[global.option] += 1
         }
-        else
+        if global.option = 3
         {
-            sound_play(global.S_Hit)
-            text = 0
-            ass = 1
+            if option[global.option] = WORD_Font option[global.option] = testingfont
+            else option[global.option] = WORD_Font
         }
-    }
-    if global.option = 3
-    {
-        sound_play(global.S_WellRing)
-        if global.dialoguefont = testingfont global.dialoguefont = WORD_Font
-        else global.dialoguefont = testingfont
-    }
-    if global.option = 4
-    {
-        sound_play(global.S_WellRing)
-        if global.progressbar = 1 global.progressbar = 0
-        else global.progressbar = 1
-    }
-    if global.option = 5
-    {
-        sound_play(global.S_WellRing)
-        if global.showfps = 1 global.showfps = 0
-        else global.showfps = 1
-    }
-    if global.option = 6
-    {
-        sound_play(global.S_WellRing)
-        if global.newcontent = 1 global.newcontent = 0
-        else global.newcontent = 1
-    }
-    if global.option = 7
-    {
-        sound_play(global.S_WellRing)
-        if global.subcnoise = 1 global.subcnoise = 0
-        else global.subcnoise = 1
-    }
-    if global.option = 8
-    {
-        sound_play(global.S_WellRing)
-        global.fourbythree += 1
-        if global.fourbythree > 2 global.fourbythree = 0
-        if global.fourbythree < 0 global.fourbythree = 2
-    }
-    if global.option = 9
-    {
-        sound_play(global.S_WellRing)
-        global.voicedir += 1
-        if global.voicedir > ds_list_size(global.voicelist)-1 global.voicedir = 0
-        if global.voicedir < 0 global.voicedir = ds_list_size(global.voicelist)-1
+        if global.option = 8
+        {
+            option[global.option] += 1
+            if option[global.option] > 2 option[global.option] = 0
+            if option[global.option] < 0 option[global.option] = 2
+        }
+        if global.option = 9
+        {
+            option[global.option] += 1
+            if option[global.option] > ds_list_size(global.voicelist)-1 option[global.option] = 0
+            if option[global.option] < 0 option[global.option] = ds_list_size(global.voicelist)-1
+        }
     }
 }
+    global.lang = option[1]
+    global.cheats = option[2]
+    global.dialoguefont = option[3]
+    global.progressbar = option[4]
+    global.showfps = option[5]
+    global.newcontent = option[6]
+    global.subcnoise = option[7]
+    global.fourbythree = option[8]
+    global.voicedir = option[9]
+    if global.lang < 0 global.lang = 2
+    if global.lang > 2 global.lang = 0
+    if global.option < 0 global.option = menulength-1
+    if global.option > menulength-1 global.option = 0
+    if global.cheats < 0 global.cheats = 1
+    if global.cheats > 1 global.cheats = 0
+    option[1] = global.lang
+    option[2] = global.cheats
+    option[3] = global.dialoguefont
+    option[4] = global.progressbar
+    option[5] = global.showfps
+    option[6] = global.newcontent
+    option[7] = global.subcnoise
+    option[8] = global.fourbythree
+    option[9] = global.voicedir
+
 if global.option > 3 scroll = -((((global.option-3) * 20)+abs(scroll))/2)
 else scroll = - abs(scroll)/2
-if global.lang < 0 global.lang = 2
-if global.lang > 2 global.lang = 0
-if global.option < 0 global.option = menulength-1
-if global.option > menulength-1 global.option = 0
-if global.cheats < 0 global.cheats = 1
-if global.cheats > 1 global.cheats = 0
+
+
 ass -= 0.01

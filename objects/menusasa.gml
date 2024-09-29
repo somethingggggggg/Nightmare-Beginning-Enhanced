@@ -54,6 +54,16 @@ text = 0
 i = 0
 global.valueweneed = 0
 
+option[1] = global.lang
+option[2] = global.cheats
+option[3] = global.dialoguefont
+option[4] = global.progressbar
+option[5] = global.showfps
+option[6] = global.newcontent
+option[7] = global.subcnoise
+option[8] = global.fourbythree
+option[9] = global.voicedir
+
 optionname[0] = "Back"
 optionname[1] = "Language"
 optionname[2] = "Cheats"
