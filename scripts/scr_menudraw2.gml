@@ -7,8 +7,8 @@ while i < menulength
     else draw_set_color(c_white)
 
     if complete = 0 && i = 2 draw_set_color(c_gray)
-    if string_width(optionname[i]) > 96 draw_text_ext_transformed(42+view_xview[0],55+view_yview[0]+scroll+(i*20),optionname[i],0,1000,96/string_width(optionname[i]),1,0)
-    else draw_text(42+view_xview[0],55+view_yview[0]+scroll+(i*20),optionname[i])
+    if string_width(optionname[i]) > 112 draw_text_ext_transformed(32+view_xview[0],55+view_yview[0]+scroll+(i*20),optionname[i],0,1000,112/string_width(optionname[i]),1,0)
+    else draw_text(32+view_xview[0],55+view_yview[0]+scroll+(i*20),optionname[i])
     draw_set_halign(fa_right)
     if i != 9
     {
