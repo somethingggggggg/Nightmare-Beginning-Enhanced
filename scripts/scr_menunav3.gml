@@ -6,7 +6,7 @@ if background_alpha[2] < 1
 {
     background_alpha[2] += 0.1
 }
-if keyboard_check_pressed(vk_enter) or mouse_check_button_pressed(mb_left)
+if keyboard_check_pressed(vk_enter)
 {
     if global.option = 0
     {

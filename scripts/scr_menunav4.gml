@@ -1,4 +1,4 @@
-if keyboard_check_pressed(vk_up) or mouse_wheel_up()
+if keyboard_check_pressed(vk_up)
 {
     global.option -= 1
     sound_play(global.S_MS_Move)
@@ -7,7 +7,7 @@ if keyboard_check_pressed(vk_up) or mouse_wheel_up()
         global.option = 0
     }
 }
-if keyboard_check_pressed(vk_down) or mouse_wheel_down()
+if keyboard_check_pressed(vk_down)
 {
     global.option += 1
     sound_play(global.S_MS_Move)

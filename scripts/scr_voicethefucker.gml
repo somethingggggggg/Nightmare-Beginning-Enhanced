@@ -1,14 +1,6 @@
-if ds_list_find_value(global.voicelist,global.voicedir) != ''
+if ds_list_find_value(global.voicelist,global.voicedir) = ''
 {
-    sound_stop(global.S_YCR_Knuck_1)
-    sound_stop(global.S_YCR_Knuck_2)
-    switch Page
-    {
-        case 108:
-            sound_play(global.S_YCR_Knuck_1)
-        break;
-        case 109:
-            sound_play(global.S_YCR_Knuck_2)
-        break;
-    }
+    exit;
 }
+if sound_exists(global.voiceline[Page-1]) sound_stop(global.voiceline[Page-1])
+if sound_exists(global.voiceline[Page]) sound_play(global.voiceline[Page])

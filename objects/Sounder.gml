@@ -12,7 +12,30 @@ prev_view_hview = view_hview
 prev_view_wview = view_wview
 //global.S_sound_take=caster_load(working_directory+"/Sound/S_sound_take.ogg")
 //global.S_YCRS=caster_load(working_directory+"/Sound/S_You_Can_t_Run_Secret.ogg")
-draw_text(x,y,"loading")
+alarm[1] = 1
+#define Alarm_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+pause = 0
+view_hview = prev_view_hview
+view_wview = prev_view_wview
+global.menustate = 0
+global.option = 0
+//view_xview = prev_view_xview
+//view_yview = prev_view_yview
+scr_soundunfuck()
+sound_stop(global.S_PAUSEMENU)
+myfade = 0
+instance_activate_all()
+#define Alarm_1
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
 global.S_sound_take=sound_add(working_directory+"/Sound/S_sound_take.ogg",0,0)
 global.S_YCRS=sound_add(working_directory+"/Sound/S_You_Can_t_Run_Secret.ogg",0,0)
 global.S_Alarm_2=sound_add(working_directory+"/Sound/Alarm_2.mp3",0,0)
@@ -141,23 +164,11 @@ global.S_tailsfly=sound_add(working_directory+"/Sound/S3K_BA.wav",0,0)
 global.S_tailstired=sound_add(working_directory+"/Sound/S3K_BB.wav",0,0)
 global.S_CYFTS_voiceline=sound_add(working_directory+"/Sound/tailsdollvoice.wav",0,0)
 global.S_PAUSEMENU=sound_add(working_directory+"/Sound/n8_song.mp3",1,0)
-#define Alarm_0
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-pause = 0
-view_hview = prev_view_hview
-view_wview = prev_view_wview
-global.menustate = 0
-global.option = 0
-//view_xview = prev_view_xview
-//view_yview = prev_view_yview
-scr_soundunfuck()
-sound_stop(global.S_PAUSEMENU)
-myfade = 0
-instance_activate_all()
+
+with obj_loadingscreen
+{
+    instance_destroy()
+}
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -254,8 +265,9 @@ if pause = 1 && room != 0
 }
 if global.showfps = 1
 {
+    draw_set_font(global.SMALLSONFONT)
+    draw_text(view_xview+8,view_yview+8,fps)
+    //draw_text(view_xview+8,view_yview+16,d3d_get_free_video_memory())
+    //if room != 0 draw_text(view_xview,view_yview+32,variable_global_array_get(voiceline,108))
     draw_set_font(global.dialoguefont)
-    draw_text(view_xview,view_yview,fps)
-    draw_text(view_xview,view_yview+16,d3d_get_free_video_memory())
-    //d3d_get_free_video_memory()
 }
