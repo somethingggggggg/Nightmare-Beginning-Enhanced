@@ -1,5 +1,5 @@
 draw_sprite(spr_placeholder,0,346+view_xview[0],95+view_yview[0])
-draw_set_font(WORD_Font)
+draw_set_font(global.SPRSONFONT)
 global.valueweneed = 0
 while i < menulength
 {
@@ -12,8 +12,8 @@ while i < menulength
     draw_set_halign(fa_right)
     if i != 9
     {
-    if string_width(optionstate[i,option[i]]) > 64 draw_text_ext_transformed(234+view_xview[0],55+view_yview[0]+scroll+(i*20),optionstate[i,option[i]],0,1000,64/string_width(optionstate[i,option[i]]),1,0)
-    else draw_text(234+view_xview[0],55+view_yview[0]+scroll+(i*20),optionstate[i,option[i]])
+        if string_width(optionstate[i,option[i]]) > 64 draw_text_ext_transformed(234+view_xview[0],55+view_yview[0]+scroll+(i*20),optionstate[i,option[i]],0,1000,64/string_width(optionstate[i,option[i]]),1,0)
+        else draw_text(234+view_xview[0],55+view_yview[0]+scroll+(i*20),optionstate[i,option[i]])
     }
     else
     {
@@ -31,10 +31,12 @@ while i < menulength
     i += 1
 }
 i = 0
+draw_set_font(global.SMALLSONFONT)
 draw_set_color(c_white)
 draw_set_halign(fa_center)
-draw_text_ext(346+view_xview[0],163+view_yview[0],optiondesc[global.option],16,192)
+draw_text_ext(346+view_xview[0],163+view_yview[0],optiondesc[global.option],8,192)
 draw_set_halign(fa_left)
+draw_set_font(global.SPRSONFONT)
 switch global.option
 {
     case 1:
