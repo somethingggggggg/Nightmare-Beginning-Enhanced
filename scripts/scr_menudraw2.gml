@@ -1,5 +1,5 @@
 draw_sprite(spr_placeholder,0,346+view_xview[0],95+view_yview[0])
-draw_set_font(global.SPRSONFONT)
+draw_set_font(global.SMALLSONFONT)
 global.valueweneed = 0
 while i < menulength
 {
@@ -7,24 +7,24 @@ while i < menulength
     else draw_set_color(c_white)
 
     if complete = 0 && i = 2 draw_set_color(c_gray)
-    if string_width(optionname[i]) > 112 draw_text_ext_transformed(32+view_xview[0],55+view_yview[0]+scroll+(i*20),optionname[i],0,1000,112/string_width(optionname[i]),1,0)
-    else draw_text(32+view_xview[0],55+view_yview[0]+scroll+(i*20),optionname[i])
+    if string_width(optionname[i]) > 112 draw_text_ext_transformed(32+view_xview[0],55+view_yview[0]+scroll+(i*10),optionname[i],0,1000,112/string_width(optionname[i]),1,0)
+    else draw_text(32+view_xview[0],55+view_yview[0]+scroll+(i*10),optionname[i])
     draw_set_halign(fa_right)
     if i != 9
     {
-        if string_width(optionstate[i,option[i]]) > 64 draw_text_ext_transformed(234+view_xview[0],55+view_yview[0]+scroll+(i*20),optionstate[i,option[i]],0,1000,64/string_width(optionstate[i,option[i]]),1,0)
-        else draw_text(234+view_xview[0],55+view_yview[0]+scroll+(i*20),optionstate[i,option[i]])
+        if string_width(optionstate[i,option[i]]) > 64 draw_text_ext_transformed(234+view_xview[0],55+view_yview[0]+scroll+(i*10),optionstate[i,option[i]],0,1000,64/string_width(optionstate[i,option[i]]),1,0)
+        else draw_text(234+view_xview[0],55+view_yview[0]+scroll+(i*10),optionstate[i,option[i]])
     }
     else
     {
         if ds_list_find_value(global.voicelist,global.voicedir) != ''
         {
-            if string_width(string_copy_end(ds_list_find_value(global.voicelist,global.voicedir),string_length(ds_list_find_value(global.voicelist,global.voicedir))-6)) < 64 draw_text(234+view_xview[0],235+view_yview[0]+scroll,string_copy_end(ds_list_find_value(global.voicelist,global.voicedir),string_length(ds_list_find_value(global.voicelist,global.voicedir))-6))
-            else draw_text_ext_transformed(234+view_xview[0],235+view_yview[0]+scroll,string_copy_end(ds_list_find_value(global.voicelist,global.voicedir),string_length(ds_list_find_value(global.voicelist,global.voicedir))-6),0,1000,64/string_width(string_copy_end(ds_list_find_value(global.voicelist,global.voicedir),string_length(ds_list_find_value(global.voicelist,global.voicedir))-6)),1,0)
+            if string_width(string_copy_end(ds_list_find_value(global.voicelist,global.voicedir),string_length(ds_list_find_value(global.voicelist,global.voicedir))-6)) < 64 draw_text(234+view_xview[0],55+view_yview[0]+scroll+(i*10),string_copy_end(ds_list_find_value(global.voicelist,global.voicedir),string_length(ds_list_find_value(global.voicelist,global.voicedir))-6))
+            else draw_text_ext_transformed(234+view_xview[0],55+view_yview[0]+scroll+(i*10),string_copy_end(ds_list_find_value(global.voicelist,global.voicedir),string_length(ds_list_find_value(global.voicelist,global.voicedir))-6),0,1000,64/string_width(string_copy_end(ds_list_find_value(global.voicelist,global.voicedir),string_length(ds_list_find_value(global.voicelist,global.voicedir))-6)),1,0)
         }
         else
         {
-            draw_text(234+view_xview[0],235+view_yview[0]+scroll,'off')
+            draw_text(234+view_xview[0],55+view_yview[0]+scroll+(i*10),'off')
         }
     }
     draw_set_halign(fa_left)

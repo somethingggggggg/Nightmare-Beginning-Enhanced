@@ -4,6 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+instance_create(0,0,obj_loadingscreen)
 pause = 0
 myfade = 0
 sprpausefuck = 0
@@ -257,6 +258,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+draw_set_halign(fa_left)
 if pause = 1 && room != 0
 {
     if global.menustate = 1 scr_pausedraw()

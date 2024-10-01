@@ -37,6 +37,7 @@ global.cheats = 0
 //reading inis
 ini_open("save.ini")
 complete = ini_read_real('progress','bestend',0)
+comppercent = ((ini_read_real('progress','bestend',0) + ini_read_real('progress','goodend',0) + ini_read_real('progress','worstend',0) + ini_read_real('progress','badend',0) + ini_read_real('progress','eggend',0) + ini_read_real('progress','tailsend',0))/6)*100
 ini_close()
 ini_open("options.ini")
 global.fourbythree = ini_read_real('options','fourbythree',0)

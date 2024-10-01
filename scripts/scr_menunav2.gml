@@ -124,7 +124,7 @@ if keyboard_check_pressed(vk_right) && global.option != 0
     option[8] = global.fourbythree
     option[9] = global.voicedir
 
-if global.option > 3 scroll = -((((global.option-3) * 20)+abs(scroll))/2)
+if global.option > 3 scroll = -((((global.option-3) * 10)+abs(scroll))/2)
 else scroll = - abs(scroll)/2
 
 
