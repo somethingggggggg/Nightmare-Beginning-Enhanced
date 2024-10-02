@@ -131,6 +131,11 @@ if global.vel > -acc && global.vel < acc
 }
 
 x += global.vel;
+if place_meeting(x,y,Solid) or place_meeting(x,y,HS_1)
+{
+    x -= global.vel;
+    global.vel = 0
+}
 
 //Gravity
 if place_meeting(x, y+vspeed+1, HS_1) && vspeed >= 0

@@ -1,0 +1,8 @@
+FATAL ERROR in
+action number 4
+of Create Event
+for object __newobject715:
+
+game_restart() is currently not supported by the GM 8.2 extensions due to potential memory leaks.
+
+

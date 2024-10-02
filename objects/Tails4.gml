@@ -124,25 +124,22 @@ else
 //Handle sprites
 if canSpriteChange == true
 {
+    if ground == true && ducking == false && rolling == false && spindash == false && stopping = 0
+    {
+       if global.vel = 0
+       sprite_index = sprTails;
+     else if global.vel > -6 && global.vel < 6
+       sprite_index = sprTailsWalk;
+    else
+       sprite_index = sprTailsRun;
 
-if ground == true && ducking == false && rolling == false && spindash == false && stopping = 0
-{
-   if global.vel = 0
-   sprite_index = sprTails;
- else if global.vel > -6 && global.vel < 6
-   sprite_index = sprTailsWalk;
-else
-   sprite_index = sprTailsRun;
-
-image_speed = abs(global.vel/20);
-}
-else if sprite_index == sprTailsJump
-{
-   sprite_index = sprTailsJump;
-
-if image_index != sprTailsJump image_speed = (global.vel/2)
-else image_speed = 1
-}
+        image_speed = abs(global.vel/20);
+    }
+    else if sprite_index == sprTailsJump
+    {
+        sprite_index = sprTailsJump;
+        image_speed = 1
+    }
 }
 
 //Jumping

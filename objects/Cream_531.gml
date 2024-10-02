@@ -42,9 +42,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-ini_open("save.ini")
-ini_write_real('Achivements','creamach',1)
-ini_close()
+scr_giveach("cream")
 game_end()
 #define Step_0
 /*"/*'/**//* YYD ACTION

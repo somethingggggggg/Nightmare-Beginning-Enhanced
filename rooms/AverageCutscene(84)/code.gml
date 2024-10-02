@@ -1,4 +1,5 @@
 sound_play(global.S_AverageEndings)
+ini_open("save.ini")
 if BL.AEC_K = true
 {
     background_visible[1] = true
@@ -9,9 +10,7 @@ if BL.AEC_K = true
     instance_create(496,96,AEC_Amy)
     instance_create(528,144,HZ_1)
     view_object[0] = AEC_Knuckles
-    ini_open("save.ini")
-    ini_write_real('progress','knuckend',1)
-    ini_close()
+    if global.cheats = 0 ini_write_real('progress','knuckend',1)
 }
 
 if BL.AEC_T = true
@@ -24,9 +23,7 @@ if BL.AEC_T = true
     instance_create(200,410,HvostStand)
     instance_create(496,400,AEC_Sonic)
     view_object[0] = AEC_Tails
-    ini_open("save.ini")
-    ini_write_real('progress','tailsend',1)
-    ini_close()
+    if global.cheats = 0 ini_write_real('progress','tailsend',1)
 }
 
 if BL.AEC_E = true
@@ -38,7 +35,6 @@ if BL.AEC_E = true
     instance_create(416,400,AEC_Metal)
     instance_create(96,392,AEC_Eggman)
     view_object[0] = AEC_Metal
-    ini_open("save.ini")
-    ini_write_real('progress','eggend',1)
-    ini_close()
+    if global.cheats = 0 ini_write_real('progress','eggend',1)
 }
+ini_close()

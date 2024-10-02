@@ -260,6 +260,7 @@ action_id=603
 applies_to=self
 */
 draw_set_halign(fa_left)
+draw_set_color(c_white)
 if pause = 1 && room != 0
 {
     if global.menustate = 1 scr_pausedraw()
@@ -269,8 +270,12 @@ if pause = 1 && room != 0
 if global.showfps = 1
 {
     draw_set_font(global.SMALLSONFONT)
+    if fps > 40 draw_set_color(c_lime)
+    else if fps > 20 draw_set_color(c_yellow)
+    else draw_set_color(c_red)
     draw_text(view_xview+8,view_yview+8,fps)
     //draw_text(view_xview+8,view_yview+16,d3d_get_free_video_memory())
     //if room != 0 draw_text(view_xview,view_yview+32,variable_global_array_get(voiceline,108))
     draw_set_font(global.dialoguefont)
+    draw_set_color(c_white)
 }

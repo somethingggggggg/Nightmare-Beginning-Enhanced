@@ -33,6 +33,7 @@ applies_to=self
 */
 //draw_set_color(c_orange)
 draw_set_font(global.dialoguefont)
+draw_set_halign(fa_left)
 if text = "Я видела её смерть.. Я не хочу умирать!"
 {
     draw_sprite_ext(sprTailsJumpMask, 1, (view_xview[0] + 55), (view_yview[0] + 35), 15, 1, 0, c_black, 1)

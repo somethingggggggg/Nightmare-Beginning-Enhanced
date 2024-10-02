@@ -26,6 +26,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+draw_set_halign(fa_left)
 vspeed = 0
 if sc > 3
     hspeed = 0
