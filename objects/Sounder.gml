@@ -165,6 +165,7 @@ global.S_tailsfly=sound_add(working_directory+"/Sound/S3K_BA.wav",0,0)
 global.S_tailstired=sound_add(working_directory+"/Sound/S3K_BB.wav",0,0)
 global.S_CYFTS_voiceline=sound_add(working_directory+"/Sound/tailsdollvoice.wav",0,0)
 global.S_PAUSEMENU=sound_add(working_directory+"/Sound/n8_song.mp3",1,0)
+global.S_skid=sound_add(working_directory+"/Sound/skid.mp3",1,0)
 
 with obj_loadingscreen
 {

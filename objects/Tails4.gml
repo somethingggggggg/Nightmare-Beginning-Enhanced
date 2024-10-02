@@ -25,6 +25,7 @@ FlyTime = 220
 Fly = false
 IdieTimer = 300
 Idie_mode = false
+stopping = 0
 #define Destroy_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -47,7 +48,7 @@ action_id=603
 applies_to=self
 */
 //Movement
-if keyboard_check(vk_left) && !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapWallDestruct) && !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapElevator) && !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapWallExit) && !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapWall) && !place_meeting(x+(abs(global.vel)*-1)-1, y, Solid) && !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapGround) && !place_meeting(x+(abs(global.vel)*-1)-1, y, HalfSolid) && (canMove == true or (rolling == true && global.vel > 0))
+if keyboard_check(vk_left) && (canMove == true or (rolling == true && global.vel > 0)) //&& !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapWallDestruct) && !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapElevator) && !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapWallExit) && !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapWall) && !place_meeting(x+(abs(global.vel)*-1)-1, y, Solid) && !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapGround) && !place_meeting(x+(abs(global.vel)*-1)-1, y, HalfSolid)
 {
   global.vel -= acc * (1+ground);
 if global.vel > 0 && ground == false
@@ -56,7 +57,8 @@ if global.vel > 0 && ground == false
 if rolling == false
   image_xscale = -1;
 }
-if keyboard_check(vk_right) && !place_meeting(x+abs(global.vel)+1, y, ScrapWallDestruct) && !place_meeting(x+abs(global.vel)+1, y, ScrapElevator) && !place_meeting(x+abs(global.vel)+1, y, ScrapWallExit) && !place_meeting(x+abs(global.vel)+1, y, ScrapWall) && !place_meeting(x+abs(global.vel)+1, y, Solid) && !place_meeting(x+abs(global.vel)+1, y, ScrapGround) && !place_meeting(x+abs(global.vel)+1, y, HalfSolid) && (canMove == true or (rolling == true && global.vel < 0))
+
+if keyboard_check(vk_right) && (canMove == true or (rolling == true && global.vel < 0)) //&& !place_meeting(x+abs(global.vel)+1, y, ScrapWallDestruct) && !place_meeting(x+abs(global.vel)+1, y, ScrapElevator) && !place_meeting(x+abs(global.vel)+1, y, ScrapWallExit) && !place_meeting(x+abs(global.vel)+1, y, ScrapWall) && !place_meeting(x+abs(global.vel)+1, y, Solid) && !place_meeting(x+abs(global.vel)+1, y, ScrapGround) && !place_meeting(x+abs(global.vel)+1, y, HalfSolid)
 {
   global.vel += acc * (1+ground);
 if global.vel < 0 && ground == false
@@ -66,6 +68,16 @@ if rolling == false
   image_xscale = 1;
 }
 
+if keyboard_check_pressed(vk_right) && global.vel < -4 && stopping = 0 && ground == true
+{
+    sound_play(global.S_skid)
+    stopping = 10
+}
+if keyboard_check_pressed(vk_left) && global.vel > 4 && stopping = 0 && ground == true
+{
+    sound_play(global.S_skid)
+    stopping = -10
+}
 //Deacceleration
 if ground == true
 {
@@ -89,6 +101,11 @@ if global.vel > -acc && global.vel < acc
 }
 
 x += global.vel;
+if place_meeting(x,y,ScrapGround) or place_meeting(x,y,ScrapWallDestruct) or place_meeting(x,y,ScrapElevator) or place_meeting(x,y,ScrapWallExit) or place_meeting(x,y,ScrapWall) or place_meeting(x,y,ScrapWallExit) or place_meeting(x,y,HalfSolid) or place_meeting(x,y,Solid) or place_meeting(x,y,ScrapGround)
+{
+    x -= global.vel
+    global.vel = 0
+}
 
 //Gravity
 if place_meeting(x, y+vspeed+1, ScrapGround) or place_meeting(x, y+vspeed+1, ScrapElevator) or place_meeting(x, y+vspeed+1, ScrapWallDestruct) or place_meeting(x, y+vspeed+1, ScrapWallExit) or place_meeting(x, y+vspeed+1, ScrapWall) or place_meeting(x, y+vspeed+1, HPGround) && vspeed >= 0
@@ -108,7 +125,7 @@ else
 if canSpriteChange == true
 {
 
-if ground == true && ducking == false && rolling == false && spindash == false
+if ground == true && ducking == false && rolling == false && spindash == false && stopping = 0
 {
    if global.vel = 0
    sprite_index = sprTails;
@@ -123,12 +140,13 @@ else if sprite_index == sprTailsJump
 {
    sprite_index = sprTailsJump;
 
-image_speed = (global.vel/2)
+if image_index != sprTailsJump image_speed = (global.vel/2)
+else image_speed = 1
 }
 }
 
 //Jumping
-if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && canMove == true && Idie_mode = false
+if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && canMove == true && Idie_mode = false && stopping = 0
 {
    vspeed = -7;
    sound_play(global.S_Jump);
@@ -174,7 +192,6 @@ if rolling == true && (ground == false or global.vel == 0)
    canMove = true
 
 }
-
 if up == true && spindash == false
 {
    mask_index = sprTailsMask;
@@ -185,7 +202,6 @@ else
    image_speed = 0;
    canMove = false;
 }
-
 
 if ducking == true && spindash == false
 {
@@ -205,29 +221,47 @@ if Idie_mode = false
         Fly = true
         vspeed = 2.3
     }
-
-    if Fly = true && !keyboard_check_pressed(ord("Z"))
+    if FlyTime > 0 && Fly = true
     {
-        FlyTime -=1
-        gravity = 0.1
-        //mask_index = sprTailsRacing;
-        sprite_index = sprTailsRacing
-        mask_index = sprTailsRacing;
-        image_speed = 0.15
+        if (!sound_isplaying(global.S_tailsfly))
+        {
+            sound_stop(global.S_tailstired)
+            sound_stop(global.S_tailsfly)
+            sound_loop(global.S_tailsfly)
+        }
+        if !keyboard_check_pressed(ord("Z"))
+        {
+            FlyTime -=1
+            gravity = 0.1
+            //mask_index = sprTailsRacing;
+            sprite_index = sprTailsRacing
+            mask_index = sprTailsRacing;
+            image_speed = 0.15
+        }
+        else if keyboard_check_pressed(ord("Z"))
+        {
+            vspeed= -2.5
+        }
     }
-    else if Fly = true && keyboard_check_pressed(ord("Z"))
-    {
-        vspeed= -2.5
-    }
-
     if FlyTime <= 0 && Fly = true
     {
-        vspeed = 2.3
+        //vspeed = 2.3
+        if (!sound_isplaying(global.S_tailstired))
+        {
+            sound_stop(global.S_tailsfly)
+            sound_stop(global.S_tailstired)
+            sound_loop(global.S_tailstired)
+        }
+        gravity = 0.1
         sprite_index = sprTailsRacingTired
         image_speed = 0.15
     }
 }
-
+if Fly = false
+{
+    sound_stop(global.S_tailsfly)
+    sound_stop(global.S_tailstired)
+}
 //Idie
 if global.vel = 0 && ground = true && Idie_mode = false && ducking == false && up == false && spindash == false
 {
@@ -250,10 +284,24 @@ sprite_index = sprScaryTailsIdle
 image_speed = 0.12
 }
 
-if global.vel !=0 or ducking == true or up == true
+if global.vel != 0 or ducking == true or up == true
 {
 IdieTimer = 300
 Idie_mode = false
+}
+
+if stopping != 0
+{
+    stopping -= sign(stopping)
+    if sign(stopping) != 0 image_xscale = -sign(stopping)
+    else image_xscale = 1
+    acc = 0.066875 * 2;
+    sprite_index = spr_tailsskid;
+    mask_index = sprTailsMask;
+}
+else
+{
+    acc = 0.066875;
 }
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -261,28 +309,28 @@ action_id=603
 applies_to=self
 */
 ///fly sound
-if Fly = true
+/*if Fly = true
 {
     if FlyTime >= 0
     {
         if (!sound_isplaying(global.S_tailsfly))
         {
-        sound_stop(global.S_tailstired)
-        sound_stop(global.S_tailsfly)
-         sound_loop(global.S_tailsfly)
+            sound_stop(global.S_tailstired)
+            sound_stop(global.S_tailsfly)
+            sound_loop(global.S_tailsfly)
         }
     }
     else if (!sound_isplaying(global.S_tailstired))
     {
         sound_stop(global.S_tailsfly)
         sound_stop(global.S_tailstired)
-      sound_loop(global.S_tailstired)
+        sound_loop(global.S_tailstired)
     }
 }
 else
 {
-        sound_stop(global.S_tailsfly)
-        sound_stop(global.S_tailstired)
+    sound_stop(global.S_tailsfly)
+    sound_stop(global.S_tailstired)
 }
 #define Collision_Solid
 /*"/*'/**//* YYD ACTION
@@ -441,7 +489,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-move_contact_solid(direction, 0.1);
+/*move_contact_solid(direction, 0.1);
 drawAngle = 0
 global.vel = 0
 
