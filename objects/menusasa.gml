@@ -28,9 +28,6 @@ while (voice_dir != "")
     ds_list_add(global.voicelist,voice_dir)
     voice_dir = file_find_next()
 }
-discord_init_dll()
-discord_init_app("1252129963411505222")
-discord_update_presence("IN MAIN MENU","An experimental nb mod",'sprfex','sprfex')
 global.option = 0
 global.pause = 0
 global.cheats = 0
@@ -49,7 +46,14 @@ global.dialoguefont = ini_read_real('options','font',WORD_Font)
 global.progressbar = ini_read_real('options','progressbar',0)
 global.cheats = ini_read_real('options','cheats',0)
 global.voicedir = ini_read_real('options','voicedir',0)
+global.DCRP_enabled = ini_read_real('options','DCRP_enabled',1)
 ini_close()
+if global.DCRP_enabled = 1
+{
+    discord_init_dll()
+    discord_init_app("1252129963411505222")
+    discord_update_presence("IN MAIN MENU","An experimental nb mod",'sprfex','sprfex')
+}
 if global.voicedir > ds_list_size(global.voicelist) global.voicedir = 0
 ass = 0
 text = 0
@@ -66,6 +70,7 @@ option[6] = global.newcontent
 option[7] = global.subcnoise
 option[8] = global.fourbythree
 option[9] = global.voicedir
+option[10] = global.DCRP_enabled
 
 optionname[0] = "Back"
 optionname[1] = "Language"
@@ -77,6 +82,7 @@ optionname[6] = "New content"
 optionname[7] = "SM Noise"
 optionname[8] = "4:3 mode"
 optionname[9] = "Voiceover"
+optionname[10] = "Enable DCRP"
 
 optiondesc[0] = ""
 optiondesc[1] = "Pick your language"
@@ -88,6 +94,7 @@ optiondesc[6] = "Toggle new content on or off"
 optiondesc[7] = "Change how overlayed noise works in subconcious mind"
 optiondesc[8] = "Change the screen resolution back to 4:3#VERY EXPERIMENTAL"
 optiondesc[9] = "Choose the voiceover you want (you can add your own by naming a folder voice_ )"
+optiondesc[10] = "Shows to other people that you are playing NBE"
 
 optionstate[0,0] = ""
 
@@ -117,7 +124,10 @@ optionstate[8,0] = "off"
 optionstate[8,1] = "Stretch"
 optionstate[8,2] = "Black Bars"
 
-menulength = 10
+optionstate[10,0] = "off"
+optionstate[10,1] = "on"
+
+menulength = 11
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

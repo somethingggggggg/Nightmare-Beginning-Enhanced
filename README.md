@@ -1,3 +1,7 @@
-fuck, its open source now
+This is an experimental mod for Sonic.exe: Nightmare Beginning that aims to enhance the game
 
-Fonts you need: Korinna, Doom 2016 font, Palette.
+Dependencies:
+
+Engine: Game Maker 8.2
+
+Fonts: Korinna, Doom 2016 font, Palette.

@@ -47,6 +47,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+///everything
 //Movement
 if keyboard_check(vk_left) && (canMove == true or (rolling == true && global.vel > 0)) //&& !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapWallDestruct) && !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapElevator) && !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapWallExit) && !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapWall) && !place_meeting(x+(abs(global.vel)*-1)-1, y, Solid) && !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapGround) && !place_meeting(x+(abs(global.vel)*-1)-1, y, HalfSolid)
 {
@@ -137,7 +138,7 @@ if canSpriteChange == true
     }
     else if sprite_index == sprTailsJump
     {
-        sprite_index = sprTailsJump;
+        //sprite_index = sprTailsJump;
         image_speed = 1
     }
 }
@@ -148,6 +149,7 @@ if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && can
    vspeed = -7;
    sound_play(global.S_Jump);
    sprite_index = sprTailsJump;
+   mask_index = sprTailsMask;
 }
 
 //Up
@@ -305,7 +307,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-///fly sound
+///legacy fly sound code
 /*if Fly = true
 {
     if FlyTime >= 0

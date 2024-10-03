@@ -73,6 +73,17 @@ if keyboard_check_pressed(vk_enter)
             instance_create(0,0,saver)
             instance_create(0,0,speedor)
         }
+        if global.DCRP_enabled = 0
+        {
+            discord_free_app()
+            discord_free_dll()
+        }
+        else
+        {
+            discord_init_dll()
+            discord_init_app("1252129963411505222")
+            discord_update_presence("IN MAIN MENU","An experimental nb mod",'sprfex','sprfex')
+        }
         room_goto(87)
     }
 }

@@ -1,3 +1,4 @@
+if global.DCRP_enabled = 0 exit;
 imagineavariable = 0
 switch room
 {

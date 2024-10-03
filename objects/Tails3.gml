@@ -25,6 +25,7 @@ Fly = false
 alarm[0] = 360
 IdieTimer = 300
 Idie_mode = false
+stopping = 0
 #define Destroy_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -69,6 +70,16 @@ if rolling == false
   image_xscale = 1;
 }
 
+if keyboard_check_pressed(vk_right) && global.vel < -4 && stopping = 0 && ground == true
+{
+    sound_play(global.S_skid)
+    stopping = 10
+}
+if keyboard_check_pressed(vk_left) && global.vel > 4 && stopping = 0 && ground == true
+{
+    sound_play(global.S_skid)
+    stopping = -10
+}
 //Deacceleration
 if ground == true
 {
@@ -127,7 +138,7 @@ else if sprite_index == sprHorrorTailsJump
 {
    sprite_index = sprHorrorTailsJump;
 
-image_speed = (global.vel/2)
+image_speed = 1
 }
 }}
 
@@ -285,40 +296,41 @@ if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && can
 //Hide
 if image_alpha = 0.4
 {
-Hide = true
+    Hide = true
 }
 else
 {
-Hide = false
+    Hide = false
 }
 
 //Fly
 if global.Tails_mode = true
 {
-if ground = false && keyboard_check_pressed(ord("Z")) && FlyTime = 220
-{
-    Fly = true
-    vspeed = 2.3
-}
+    if ground = false && keyboard_check_pressed(ord("Z")) && FlyTime = 220
+    {
+        Fly = true
+        vspeed = 2.3
+    }
 
-if Fly = true && !keyboard_check_pressed(ord("Z"))
-{
-FlyTime -=1
-gravity = 0.1
-sprite_index = sprTailsFly
-image_speed = 0.15
-}
-else if Fly = true && keyboard_check_pressed(ord("Z"))
-{
-vspeed=-2.5
-}
+    if Fly = true && !keyboard_check_pressed(ord("Z"))
+    {
+        FlyTime -= 1
+        gravity = 0.1
+        sprite_index = sprTailsFly
+        image_speed = 0.15
+    }
+    else if Fly = true && keyboard_check_pressed(ord("Z"))
+    {
+        vspeed= -2.5
+    }
 
-if FlyTime <= 0 && Fly = true
-{
-vspeed = 2.3
-sprite_index = sprTailsFlyTired
-image_speed = 0.15
-}}
+    if FlyTime <= 0 && Fly = true
+    {
+        gravity = 0.1
+        sprite_index = sprTailsFlyTired
+        image_speed = 0.15
+    }
+}
 
 if instance_exists(TailsFatality)
 {
@@ -354,34 +366,51 @@ maxSpeed = 6
 //Idie
 if view_object[0] = Tails3
 {
-if global.vel = 0 && ground = true && Idie_mode = false && ducking == false && up == false && spindash == false
+    if global.vel = 0 && ground = true && Idie_mode = false && ducking == false && up == false && spindash == false
+    {
+        if IdieTimer >-1
+        {
+        IdieTimer -= 1
+        }
+    }
+    else
+    {
+        IdieTimer = 300
+    }
+    if IdieTimer <=0
+    {
+        Idie_mode = true
+    }
+
+    if Idie_mode = true
+    {
+        if global.Tails_mode = true
+        {
+            sprite_index = sprHorrorTailsIdie
+            image_speed = 0.1
+        }
+
+        if global.vel !=0 or ducking == true or up == true
+        {
+            IdieTimer = 300
+            Idie_mode = false
+        }
+    }
+}
+
+if stopping != 0
 {
-if IdieTimer >-1
-{
-IdieTimer -= 1
-}}
+    stopping -= sign(stopping)
+    if sign(stopping) != 0 image_xscale = -sign(stopping)
+    else image_xscale = 1
+    acc = 0.066875 * 2;
+    sprite_index = spr_tailsskid;
+    mask_index = sprTailsMask;
+}
 else
 {
-IdieTimer = 300
+    acc = 0.066875;
 }
-if IdieTimer <=0
-{
-Idie_mode = true
-}
-
-if Idie_mode = true
-{
-if global.Tails_mode = true
-{
-sprite_index = sprHorrorTailsIdie
-image_speed = 0.1
-}
-
-if global.vel !=0 or ducking == true or up == true
-{
-IdieTimer = 300
-Idie_mode = false
-}}}
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
