@@ -48,17 +48,11 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-ini_open("save.ini")
 switch room
 {
-    case 40:
-        ini_write_real('Achivements','THNS_EE_Ach',1)
-    break;
-    case 42:
-        ini_write_real('Achivements','Tdeath_EE_Ach',1)
-    break;
+    case 40: scr_giveach("secret_40") break;
+    case 42: scr_giveach("secret_42") break;
 }
-ini_close()
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=203
