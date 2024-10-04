@@ -35,6 +35,7 @@
             dialsprite = sprSW_Tailsdoll
         break;
         case 6:
+            sound_loop(global.S_Final_Boss_RG)
             TailsDollBoss.fight = 1
             tailscustom.botmode = 0
             instance_destroy()

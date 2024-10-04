@@ -47,6 +47,7 @@ global.progressbar = ini_read_real('options','progressbar',0)
 global.cheats = ini_read_real('options','cheats',0)
 global.voicedir = ini_read_real('options','voicedir',0)
 global.DCRP_enabled = ini_read_real('options','DCRP_enabled',1)
+global.RG_final_boss = ini_read_real('options','RG_final_boss',1)
 ini_close()
 if global.DCRP_enabled = 1
 {
@@ -60,6 +61,7 @@ text = 0
 
 i = 0
 global.valueweneed = 0
+//global.S_Final_Boss_RG
 
 option[1] = global.lang
 option[2] = global.cheats
@@ -71,6 +73,7 @@ option[7] = global.subcnoise
 option[8] = global.fourbythree
 option[9] = global.voicedir
 option[10] = global.DCRP_enabled
+option[11] = global.RG_final_boss
 
 optionname[0] = "Back"
 optionname[1] = "Language"
@@ -83,6 +86,7 @@ optionname[7] = "SM Noise"
 optionname[8] = "4:3 mode"
 optionname[9] = "Voiceover"
 optionname[10] = "Enable DCRP"
+optionname[11] = "REALLY GOOD BOSS FIGHT MUSIC"
 
 optiondesc[0] = ""
 optiondesc[1] = "Pick your language"
@@ -95,6 +99,7 @@ optiondesc[7] = "Change how overlayed noise works in subconcious mind"
 optiondesc[8] = "Change the screen resolution back to 4:3#VERY EXPERIMENTAL"
 optiondesc[9] = "Choose the voiceover you want (you can add your own by naming a folder voice_ )"
 optiondesc[10] = "Shows to other people that you are playing NBE"
+optiondesc[11] = "suka blyat"
 
 optionstate[0,0] = ""
 
@@ -127,7 +132,10 @@ optionstate[8,2] = "Black Bars"
 optionstate[10,0] = "off"
 optionstate[10,1] = "on"
 
-menulength = 11
+optionstate[11,0] = "off"
+optionstate[11,1] = "on"
+
+menulength = 12
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

@@ -321,7 +321,7 @@ if global.Tails_mode = true
     }
     else if Fly = true && keyboard_check_pressed(ord("Z"))
     {
-        vspeed= -2.5
+        vspeed = -2.5
     }
 
     if FlyTime <= 0 && Fly = true
@@ -411,6 +411,8 @@ else
 {
     acc = 0.066875;
 }
+
+if global.vel != 0 image_angle = dtan(vspeed/global.vel)
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
@@ -517,4 +519,4 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale, image_yscale, drawAngle, image_blend, image_alpha);
+draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale, image_yscale, image_angle, image_blend, image_alpha);

@@ -4,7 +4,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-sound_play(global.S_Final_Boss)
+if global.RG_final_boss sound_loop(global.S_Final_Boss_RG)
+else sound_play(global.S_Final_Boss)
 alarm[0] = 2520
 alarm[1] = 4680
 alarm[2] = 5280

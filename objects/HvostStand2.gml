@@ -48,7 +48,7 @@ image_xscale = -1
 move_snap(Tails3.x+5,Tails3.y+4)
 }
 
-if Tails3.sprite_index = sprHorrorTailsWalk or Tails3.sprite_index = sprHorrorTailsRun or Tails3.sprite_index = sprHorrorTailsJump or Tails3.sprite_index = sprTailsFly or Tails3.sprite_index = sprTailsFlyTired
+if Tails3.sprite_index = sprHorrorTailsWalk or Tails3.sprite_index = sprHorrorTailsRun or Tails3.sprite_index = sprTailsFly or Tails3.sprite_index = sprTailsFlyTired
 {
 image_alpha = 0
 }
@@ -80,5 +80,16 @@ image_alpha -=0.01
 
 if image_alpha <= 0
 {
-image_alpha = 0
+    image_alpha = 0
+}
+
+if Tails3.sprite_index = sprHorrorTailsJump
+{
+    image_xscale = 1
+    image_alpha = 1
+    if global.vel != 0 image_angle = dtan(Tails3.vspeed/global.vel)
+}
+else
+{
+    image_angle = 0
 }
