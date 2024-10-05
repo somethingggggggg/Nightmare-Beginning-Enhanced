@@ -5,6 +5,7 @@ action_id=603
 applies_to=self
 */
 Act = 0
+image_alpha = 1
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -18,24 +19,24 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+image_angle += 2
 if instance_exists(TailsFatality)
 {
-if TailsFatality.Dissappear = true
-{
-image_alpha -=0.01
-}}
+    if TailsFatality.Dissappear = true
+    {
+        image_alpha -= 0.01
+    }
 
-if instance_exists(TailsFatality)
-{
-if TailsFatality.Appear = true
-{
-image_alpha +=0.01
+    if TailsFatality.Appear = true
+    {
+        image_alpha += 0.01
+    }
+
+    if image_alpha <= 0
+    {
+        image_alpha = 0
+    }
 }
-
-if image_alpha <= 0
-{
-image_alpha = 0
-}}
 #define Collision_AllPers
 /*"/*'/**//* YYD ACTION
 lib_id=1

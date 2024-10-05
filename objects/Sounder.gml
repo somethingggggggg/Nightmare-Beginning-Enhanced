@@ -66,7 +66,6 @@ global.S_ExeFinish=sound_add(working_directory+"/Sound/ExeFinish.mp3",0,0)
 global.S_Exployed=sound_add(working_directory+"/Sound/Exployed.mp3",0,0)
 global.S_FF_S=sound_add(working_directory+"/Sound/FF_S.mp3",0,0)
 global.S_Final_Boss=sound_add(working_directory+"/Sound/Final_Boss.mp3",0,0)
-global.S_Final_Boss_RG=sound_add(working_directory+"/Sound/Final_Boss_REALLY_GOOD.mp3",0,0)
 global.S_Forest=sound_add(working_directory+"/Sound/Forest.mp3",0,0)
 global.S_Game_Over=sound_add(working_directory+"/Sound/Game_Over.mp3",0,0)
 global.S_Green_Hill=sound_add(working_directory+"/Sound/Green_Hill.mp3",0,0)
@@ -161,12 +160,15 @@ global.S_AverageEndings2=sound_add(working_directory+"/Sound/AverageEndings2.mp3
 global.S_BestEndings=sound_add(working_directory+"/Sound/BestEndings.mp3",0,0)
 global.S_BadEnding=sound_add(working_directory+"/Sound/BadEnding.mp3",0,0)
 global.S_Chase=sound_add(working_directory+"/Sound/Chase.mp3",0,0)
+
+//modded sounds
 global.S_suka=sound_add(working_directory+"/Sound/keepup.wav",0,0)
 global.S_tailsfly=sound_add(working_directory+"/Sound/S3K_BA.wav",0,0)
 global.S_tailstired=sound_add(working_directory+"/Sound/S3K_BB.wav",0,0)
 global.S_CYFTS_voiceline=sound_add(working_directory+"/Sound/tailsdollvoice.wav",0,0)
 global.S_PAUSEMENU=sound_add(working_directory+"/Sound/n8_song.mp3",1,0)
 global.S_skid=sound_add(working_directory+"/Sound/skid.mp3",1,0)
+global.S_Final_Boss_RG=sound_add(working_directory+"/Sound/Final_Boss_REALLY_GOOD.mp3",0,0)
 
 //doomsday machine
 if irandom_range(0,10000) = 56

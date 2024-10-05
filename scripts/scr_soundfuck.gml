@@ -1,4 +1,18 @@
-sound_pause(global.S_sound_take)
+i = 0
+repeat(ds_list_size(sound_kind_list(0)))
+{
+    sound_pause(ds_list_find_value(sound_kind_list(0),i))
+    i += 1
+}
+i = 0
+repeat(ds_list_size(sound_kind_list(1)))
+{
+    sound_pause(ds_list_find_value(sound_kind_list(1),i))
+    i += 1
+}
+sound_resume(global.S_PAUSEMENU)
+//fuck this
+/*sound_pause(global.S_sound_take)
 sound_pause(global.S_YCRS)
 sound_pause(global.S_Alarm_2)
 sound_pause(global.S_BoxBroke)
