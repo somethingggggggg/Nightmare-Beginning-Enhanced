@@ -175,59 +175,62 @@ if global.vel == 0 && ground == true && up == false && ducking == false && rolli
 //Ducking
 if global.Tails_mode = true
 {
-if global.vel == 0 && ground == true && up == false && ducking == false && rolling == false && keyboard_check(vk_down)
-{
-   ducking = true;
+    if global.vel == 0 && ground == true && up == false && ducking == false && rolling == false && keyboard_check(vk_down)
+    {
+       ducking = true;
+    }
+
+    if up == true && (!keyboard_check(vk_up) or ground == false)
+    {
+       ducking = false;
+       up = false;
+       canMove = true;
+    }
+
+    if ducking == true && (!keyboard_check(vk_down) or ground == false)
+    {
+       ducking = false;
+       up = false;
+       canMove = true;
+    }
+
+    if rolling == true && (ground == false or global.vel == 0)
+    {
+       rolling = false;
+       canMove = true;
+    {
+    {
+    }
+    }
+    }
+    {
+       mask_index = sprTailsMask;
+       canMove = true
+
+    }
+
+    if up == true && spindash == false
+    {
+       mask_index = sprTailsMask;
+       sprite_index = sprHorrorTailsUp;
+    if image_index < 1
+       image_speed = 0.1;
+    else
+       image_speed = 0;
+       canMove = false;
+    }
+
+
+    if ducking == true && spindash == false
+    {
+       sprite_index = sprHorrorTailsDuck;
+    if image_index < 1
+       image_speed = 0.1;
+    else
+       image_speed = 0;
+       canMove = false;
+    }
 }
-
-if up == true && (!keyboard_check(vk_up) or ground == false)
-{
-   ducking = false;
-   up = false;
-   canMove = true;
-}
-
-if ducking == true && (!keyboard_check(vk_down) or ground == false)
-{
-   ducking = false;
-   up = false;
-   canMove = true;
-}
-
-if rolling == true && (ground == false or global.vel == 0)
-{
-   rolling = false;
-   canMove = true;
-{
-{
-}}}
-{
-   mask_index = sprTailsMask;
-   canMove = true
-
-}
-
-if up == true && spindash == false
-{
-   mask_index = sprTailsMask;
-   sprite_index = sprHorrorTailsUp;
-if image_index < 1
-   image_speed = 0.1;
-else
-   image_speed = 0;
-   canMove = false;
-}
-
-
-if ducking == true && spindash == false
-{
-   sprite_index = sprHorrorTailsDuck;
-if image_index < 1
-   image_speed = 0.1;
-else
-   image_speed = 0;
-   canMove = false;
-}}
 
 if global.Tails_mode = false
 {
@@ -289,6 +292,7 @@ else
 if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && canMove == true && Idie_mode = false
 {
    vspeed = -7;
+   stopping = 0
    sound_play(global.S_Jump);
    sprite_index = sprHorrorTailsJump;
 }
@@ -319,7 +323,7 @@ if global.Tails_mode = true
         sprite_index = sprTailsFly
         image_speed = 0.15
     }
-    else if Fly = true && keyboard_check_pressed(ord("Z"))
+    else if Fly = true && keyboard_check_pressed(ord("Z")) && FlyTime > 0
     {
         vspeed = -2.5
     }

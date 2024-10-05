@@ -144,10 +144,11 @@ if canSpriteChange == true
 }
 
 //Jumping
-if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && canMove == true && Idie_mode = false && stopping = 0
+if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && canMove == true && Idie_mode = false
 {
    vspeed = -7;
    sound_play(global.S_Jump);
+   stopping = 0
    sprite_index = sprTailsJump;
    mask_index = sprTailsMask;
 }

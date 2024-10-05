@@ -14,7 +14,7 @@ sound_loop(global.S_Alarm_2)
 global.vel = 0
 maxSpeed = 10
 acc = 0.066875;
-Rob = true
+Rob = 1
 canMove = true
 rolling = false
 Act_Color = 1
@@ -200,10 +200,10 @@ applies_to=self
 */
 if Act = 0
 {
-Act = 1
-global.vel = 0
-sprite_index = sprEGGBotStand
-alarm[0] = 100
+    Act = 1
+    global.vel = 0
+    sprite_index = sprEGGBotStand
+    alarm[0] = 100
 }
 #define Other_0
 /*"/*'/**//* YYD ACTION
@@ -226,4 +226,4 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale, image_yscale, drawAngle, image_blend, image_alpha);
+draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale, image_yscale, drawAngle, c_white, image_alpha);

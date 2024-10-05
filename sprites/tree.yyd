@@ -72,11 +72,11 @@
 	|sprCreamScary
 	|sprCreamScary1
 	|sprCreamStand
-|spr_smallsonfont
-|spr_son1font
 +tailssprites
 	|sprtt
 	|spr_tailsskid
+|spr_smallsonfont
+|spr_son1font
 |sprite773
 |ES_Noteita
 |ES_Noterus
