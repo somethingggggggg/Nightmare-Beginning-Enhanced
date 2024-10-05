@@ -411,8 +411,6 @@ else
 {
     acc = 0.066875;
 }
-
-if global.vel != 0 image_angle = dtan(vspeed/global.vel)
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603

@@ -53,12 +53,12 @@ if Tails3.sprite_index = sprHorrorTailsWalk or Tails3.sprite_index = sprHorrorTa
 image_alpha = 0
 }
 
-if Tails3.Hide = true && (Tails3.sprite_index != sprHorrorTailsWalk && Tails3.sprite_index != sprHorrorTailsRun && Tails3.sprite_index != sprHorrorTailsJump && Tails3.sprite_index != sprTailsFly && Tails3.sprite_index != sprTailsFlyTired)
+if Tails3.Hide = true && (Tails3.sprite_index != sprHorrorTailsWalk && Tails3.sprite_index != sprHorrorTailsRun && Tails3.sprite_index != sprTailsFly && Tails3.sprite_index != sprTailsFlyTired)
 {
 image_alpha = 0.4
 }
 
-if Tails3.Hide = false && (Tails3.sprite_index != sprHorrorTailsWalk && Tails3.sprite_index != sprHorrorTailsRun && Tails3.sprite_index != sprHorrorTailsJump && Tails3.sprite_index != sprTailsFly && Tails3.sprite_index != sprTailsFlyTired)
+if Tails3.Hide = false && (Tails3.sprite_index != sprHorrorTailsWalk && Tails3.sprite_index != sprHorrorTailsRun && Tails3.sprite_index != sprTailsFly && Tails3.sprite_index != sprTailsFlyTired)
 {
 image_alpha = 1
 }
@@ -85,12 +85,24 @@ if image_alpha <= 0
 
 if Tails3.sprite_index = sprHorrorTailsJump
 {
+    x = Tails3.x
+    y = Tails3.y
+    sprite_index = sprtt
     image_xscale = 1
-    image_alpha = 1
-    if global.vel != 0 image_angle = dtan(Tails3.vspeed/global.vel)
+    if global.vel != 0
+    {
+        image_angle = -radtodeg(arctan(Tails3.vspeed/global.vel))
+    }
+    else
+    {
+        if Tails3.vspeed > 0 image_angle = -90
+        if Tails3.vspeed < 0 image_angle = 90
+    }
+    if global.vel < 0 image_angle = -radtodeg(arctan(Tails3.vspeed/global.vel))+180
 }
 else
 {
+    sprite_index = sprHvostStand2
     image_angle = 0
 }
 #define Draw_0
@@ -99,5 +111,14 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-draw_self()
-draw_text(view_xview[0],view_yview[0],image_angle)
+if sprite_index = sprtt draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,$b4b4b4,image_alpha)
+else draw_self()
+
+/*draw_set_color(c_white)
+draw_set_font(global.dialoguefont)
+if global.vel != 0
+{
+draw_text(x,y+60,-radtodeg(arctan(Tails3.vspeed/global.vel)))
+}
+draw_text(x,y+40,image_angle)
+*/
