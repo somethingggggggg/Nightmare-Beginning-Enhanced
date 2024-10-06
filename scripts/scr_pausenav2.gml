@@ -49,6 +49,7 @@ if keyboard_check_pressed(vk_enter)
             view_wview = prev_view_wview
             global.menustate = 0
             global.option = 0
+            global.T_bossfight = 0
             //view_xview = prev_view_xview
             //view_yview = prev_view_yview
             instance_activate_all()

@@ -278,7 +278,7 @@ sprNoteNegetivRings
 spr123_Cratch
 sprContinue_Note
 sprTails_Cont
-sprTime_Cont
+
 sprKnuckles_Cont
 sprEggman_Cont
 sprTailsLive
@@ -337,7 +337,7 @@ sprHL_Note
 sprFalseSonic
 sprSonicTurnOut
 sprFalseSonic2
-sprTimeCont
+
 
 sprLive_Cont
 sprEaster_Sequel
@@ -525,7 +525,7 @@ sprExeckles
 sprHP_MetalFly
 sprHP_MetalCatch
 sprKnucklesFell
-sprRingCont
+
 sprTipArrowRight
 sprFinalExePossible_to_beat1
 sprSpikeUp

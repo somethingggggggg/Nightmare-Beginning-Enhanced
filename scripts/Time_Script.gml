@@ -2,6 +2,7 @@ if global.pause = 1 exit;
 draw_set_font(global.DESKFONT)
 draw_set_halign(fa_right)
 draw_set_valign(fa_center)
+draw_set_color(c_white)
 with FinalSonic
 {
     if instance_exists(FinalBackground) && view_visible[1] = false && view_visible[2] = false && Bot = 3
@@ -79,7 +80,6 @@ with tailscustom
 
 with Knuckles
 {
-    draw_set_color(c_white)
     draw_sprite(sprK_Lives, 0, view_xview+35, view_yview+240)
     draw_sprite(sprDesk, 0, view_xview+35, view_yview+32)
     draw_text(view_xview[view_current]+81,view_yview[view_current]+40,"0")

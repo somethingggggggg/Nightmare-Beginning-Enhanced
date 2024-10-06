@@ -22,9 +22,9 @@ applies_to=self
 */
 if Act = 4
 {
-global.Final = true
+    global.Final = true
 }
-if keyboard_string = "jaiz"
+/*if keyboard_string = "jaiz"
 {
     room_goto(90)
 }
