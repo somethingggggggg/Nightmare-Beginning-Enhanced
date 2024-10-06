@@ -2,6 +2,6 @@ This is an experimental mod for Sonic.exe: Nightmare Beginning that aims to enha
 
 Dependencies:
 
-Engine: Game Maker 8.2
+Engine: Game Maker 8.2 (with all of the extensions)
 
 Fonts: Korinna, Doom 2016 font, Palette.
