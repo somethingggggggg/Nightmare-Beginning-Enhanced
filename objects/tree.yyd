@@ -15,6 +15,7 @@
 	|sm1
 	|tailscustom
 	|customtail
+	|obj_SkidParticle
 +dataselect
 	|MS_1
 	|MS_2

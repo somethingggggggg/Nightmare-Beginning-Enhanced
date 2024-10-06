@@ -809,3 +809,6 @@ spr_smallsonfont
 sprite808
 spr_tailsskid
 sprtt
+sprLightCircle
+sprSkidParticles
+

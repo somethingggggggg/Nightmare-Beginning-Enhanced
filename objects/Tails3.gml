@@ -134,9 +134,9 @@ else
 
 image_speed = abs(global.vel/20);
 }
-else if sprite_index == sprHorrorTailsJump
+else if sprite_index == sprTailsJump
 {
-   sprite_index = sprHorrorTailsJump;
+   sprite_index = sprTailsJump;
 
 image_speed = 1
 }
@@ -144,25 +144,25 @@ image_speed = 1
 
 if canSpriteChange == true
 {
-if global.Tails_mode = false
-{
-if ground == true && ducking == false && rolling == false && spindash == false && Idie_mode = false
-{
-   if global.vel = 0
-   sprite_index = sprScaryTailsW;
- else if global.vel > -6 && global.vel < 6
-   sprite_index = sprScaryTailsWalkW;
-else
-   sprite_index = sprScaryTailsWalkW;
+    if global.Tails_mode = false
+    {
+        if ground == true && ducking == false && rolling == false && spindash == false && Idie_mode = false
+        {
+           if global.vel = 0
+           sprite_index = sprScaryTailsW;
+         else if global.vel > -6 && global.vel < 6
+           sprite_index = sprScaryTailsWalkW;
+        else
+           sprite_index = sprScaryTailsWalkW;
 
-image_speed = abs(global.vel/20);
+        image_speed = abs(global.vel/20);
+        }
+        else if sprite_index == sprTailsJump
+        {
+            image_speed = 1
+        }
+    }
 }
-else if sprite_index == sprHorrorTailsJump
-{
-   sprite_index = sprHorrorTailsJump;
-
-image_speed = (global.vel/2)
-}}}
 
 
 //Up
@@ -294,7 +294,7 @@ if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && can
    vspeed = -7;
    stopping = 0
    sound_play(global.S_Jump);
-   sprite_index = sprHorrorTailsJump;
+   sprite_index = sprTailsJump;
 }
 
 //Hide
@@ -310,6 +310,15 @@ else
 //Fly
 if global.Tails_mode = true
 {
+    if Fly = true && keyboard_check_pressed(ord("Z")) && keyboard_check(vk_down)
+    {
+        FlyTime = 0
+        Fly = false
+        sound_stop(global.S_tailstired)
+        sound_stop(global.S_tailsfly)
+        sprite_index = sprTailsJump;
+        mask_index = sprTailsMask;
+    }
     if ground = false && keyboard_check_pressed(ord("Z")) && FlyTime = 220
     {
         Fly = true
@@ -320,7 +329,7 @@ if global.Tails_mode = true
     {
         FlyTime -= 1
         gravity = 0.1
-        sprite_index = sprTailsFly
+        sprite_index = sprTailsRacing
         image_speed = 0.15
     }
     else if Fly = true && keyboard_check_pressed(ord("Z")) && FlyTime > 0
@@ -374,7 +383,7 @@ if view_object[0] = Tails3
     {
         if IdieTimer >-1
         {
-        IdieTimer -= 1
+            IdieTimer -= 1
         }
     }
     else
@@ -394,7 +403,7 @@ if view_object[0] = Tails3
             image_speed = 0.1
         }
 
-        if global.vel !=0 or ducking == true or up == true
+        if global.vel != 0 or ducking == true or up == true
         {
             IdieTimer = 300
             Idie_mode = false
@@ -405,6 +414,9 @@ if view_object[0] = Tails3
 if stopping != 0
 {
     stopping -= sign(stopping)
+    //stupid fucking check if the frame is odd or even
+    if stopping/2 = floor(stopping/2) instance_create(x+(16*sign(stopping)),bbox_bottom,obj_SkidParticle)
+    obj_SkidParticle.depth = depth
     if sign(stopping) != 0 image_xscale = -sign(stopping)
     else image_xscale = 1
     acc = 0.066875 * 2;
@@ -521,4 +533,5 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+if sprite_index = spr_tailsskid or sprite_index = sprTailsRacing or sprite_index = sprTailsJump draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale, image_yscale, image_angle, $b4b4b4, image_alpha);
+else draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale, image_yscale, image_angle, c_white, image_alpha);

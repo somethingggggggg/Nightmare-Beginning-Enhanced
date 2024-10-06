@@ -216,6 +216,15 @@ else
 //Fly
 if Idie_mode = false
 {
+    if Fly = true && keyboard_check_pressed(ord("Z")) && keyboard_check(vk_down)
+    {
+        FlyTime = 0
+        Fly = false
+        sound_stop(global.S_tailstired)
+        sound_stop(global.S_tailsfly)
+        sprite_index = sprTailsJump;
+        mask_index = sprTailsMask;
+    }
     if ground = false && keyboard_check_pressed(ord("Z")) && FlyTime = 220
     {
         Fly = true
@@ -293,6 +302,9 @@ Idie_mode = false
 if stopping != 0
 {
     stopping -= sign(stopping)
+    //stupid fucking check if the frame is odd or even
+    if stopping/2 = floor(stopping/2) instance_create(x+(16*sign(stopping)),bbox_bottom,obj_SkidParticle)
+    obj_SkidParticle.depth = depth
     if sign(stopping) != 0 image_xscale = -sign(stopping)
     else image_xscale = 1
     acc = 0.066875 * 2;

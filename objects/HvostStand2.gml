@@ -48,17 +48,17 @@ image_xscale = -1
 move_snap(Tails3.x+5,Tails3.y+4)
 }
 
-if Tails3.sprite_index = sprHorrorTailsWalk or Tails3.sprite_index = sprHorrorTailsRun or Tails3.sprite_index = sprTailsFly or Tails3.sprite_index = sprTailsFlyTired
+if Tails3.sprite_index = sprHorrorTailsWalk or Tails3.sprite_index = sprHorrorTailsRun or Tails3.sprite_index = sprTailsRacing or Tails3.sprite_index = sprTailsFlyTired
 {
 image_alpha = 0
 }
 
-if Tails3.Hide = true && (Tails3.sprite_index != sprHorrorTailsWalk && Tails3.sprite_index != sprHorrorTailsRun && Tails3.sprite_index != sprTailsFly && Tails3.sprite_index != sprTailsFlyTired)
+if Tails3.Hide = true && (Tails3.sprite_index != sprHorrorTailsWalk && Tails3.sprite_index != sprHorrorTailsRun && Tails3.sprite_index != sprTailsRacing && Tails3.sprite_index != sprTailsFlyTired)
 {
 image_alpha = 0.4
 }
 
-if Tails3.Hide = false && (Tails3.sprite_index != sprHorrorTailsWalk && Tails3.sprite_index != sprHorrorTailsRun && Tails3.sprite_index != sprTailsFly && Tails3.sprite_index != sprTailsFlyTired)
+if Tails3.Hide = false && (Tails3.sprite_index != sprHorrorTailsWalk && Tails3.sprite_index != sprHorrorTailsRun && Tails3.sprite_index != sprTailsRacing && Tails3.sprite_index != sprTailsFlyTired)
 {
 image_alpha = 1
 }
@@ -83,7 +83,7 @@ if image_alpha <= 0
     image_alpha = 0
 }
 
-if Tails3.sprite_index = sprHorrorTailsJump
+if Tails3.sprite_index = sprTailsJump
 {
     x = Tails3.x
     y = Tails3.y

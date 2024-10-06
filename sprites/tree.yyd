@@ -77,6 +77,7 @@
 	|spr_tailsskid
 |spr_smallsonfont
 |spr_son1font
+|sprSkidParticles
 |sprite773
 |ES_Noteita
 |ES_Noterus
@@ -126,6 +127,7 @@
 |sprDA_2_Dark
 |sprDA_3
 |sprDarkCircle
+|sprLightCircle
 |sprDarkEx4_3
 |sprDarkSlaveSonic
 |sprDarkSlaveSonicWalk
