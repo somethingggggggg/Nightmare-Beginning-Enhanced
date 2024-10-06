@@ -385,9 +385,9 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-FinalBackground.x = view_xview[0]+100
+/*FinalBackground.x = view_xview[0]+100
 FinalBackground.y = view_yview[0]+140
-
+*/
 
 
 platform = instance_place(x, y, UpGrounder);

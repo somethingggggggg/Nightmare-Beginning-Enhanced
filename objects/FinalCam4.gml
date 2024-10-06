@@ -35,12 +35,17 @@ applies_to=self
 */
 if instance_exists(FinalSonic)
 {
-if Act = 0
-{
-move_snap(FinalSonic.x-3,FinalSonic.y-4)
-}
+    if Act = 0
+    {
+        x = FinalSonic.x + irandom_range(-1,1)
+        y = FinalSonic.y + irandom_range(-1,1)
+        //move_snap(FinalSonic.x-3,FinalSonic.y-4)
+    }
 
-if Act = 1
-{
-move_snap(FinalSonic.x+3,FinalSonic.y+4)
-}}
+    if Act = 1
+    {
+        x = FinalSonic.x + irandom_range(-1,1)
+        y = FinalSonic.y + irandom_range(-1,1)
+        //move_snap(FinalSonic.x+3,FinalSonic.y+4)
+    }
+}
