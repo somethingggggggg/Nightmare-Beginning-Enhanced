@@ -11,6 +11,8 @@ repeat(ds_list_size(sound_kind_list(1)))
     i += 1
 }
 sound_resume(global.S_PAUSEMENU)
+ds_list_destroy(sound_kind_list(0))
+ds_list_destroy(sound_kind_list(1))
 //fuck this
 /*sound_pause(global.S_sound_take)
 sound_pause(global.S_YCRS)

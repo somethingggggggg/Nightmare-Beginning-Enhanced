@@ -21,6 +21,7 @@ if keyboard_check_pressed(vk_escape)
     sound_stop(global.S_PAUSEMENU)
     scr_saveoptions()
     scr_soundunfuck()
+    sprite_delete(sprpausefuck)
     myfade = 0
     instance_activate_all()
 }

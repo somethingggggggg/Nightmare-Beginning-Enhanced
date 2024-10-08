@@ -10,6 +10,8 @@ repeat(ds_list_size(sound_kind_list(1)))
     sound_resume(ds_list_find_value(sound_kind_list(1),i))
     i += 1
 }
+ds_list_destroy(sound_kind_list(0))
+ds_list_destroy(sound_kind_list(1))
 //also fuck this
 /*sound_resume(global.S_sound_take)
 sound_resume(global.S_YCRS)

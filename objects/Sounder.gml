@@ -253,6 +253,13 @@ if room != 0
         view_hborder[0] = view_wview[0] / 2
         break;
     }
+    //mirrored mode code
+    /*
+    with all
+    {
+        x = room_width - x
+    }
+    */
 }
 #define Other_30
 /*"/*'/**//* YYD ACTION
@@ -288,6 +295,7 @@ if global.showfps = 1
     else if fps > 20 draw_set_color(c_yellow)
     else draw_set_color(c_red)
     draw_text(view_xview+8,view_yview+8,fps)
+    if debug_mode = 1 draw_text(view_xview+32,view_yview+8,get_ram_usage())
     //draw_text(view_xview+8,view_yview+16,d3d_get_free_video_memory())
     //if room != 0 draw_text(view_xview,view_yview+32,variable_global_array_get(voiceline,108))
     draw_set_font(global.dialoguefont)
