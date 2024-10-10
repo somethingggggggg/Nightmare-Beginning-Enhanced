@@ -26,6 +26,12 @@ invert=0
 arg0=1500
 arg1=11
 */
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+image_angle = 0
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -114,7 +120,9 @@ applies_to=self
 */
 ES_Creeps.sprite_index = sprES_Creeps
 ES_Creeps.y = ES_Creeps.y-12
-image_speed = 0.15
+//image_speed = 0.15
+image_speed = 0
+image_index = 0
 sprite_index = sprExeHurtCircle
 #define Alarm_11
 /*"/*'/**//* YYD ACTION
@@ -124,3 +132,13 @@ applies_to=self
 */
 instance_create(view_xview[0],view_yview[0],SW_Control)
 SW_Control.Page = 91
+#define Step_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if sprite_index = sprExeHurtCircle
+{
+    image_angle += 4
+}

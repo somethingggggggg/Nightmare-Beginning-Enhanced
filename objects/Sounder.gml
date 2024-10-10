@@ -9,10 +9,8 @@ pause = 0
 myfade = 0
 sprpausefuck = 0
 global.T_bossfight = 0
-prev_view_hview = view_hview
-prev_view_wview = view_wview
-//global.S_sound_take=caster_load(working_directory+"/Sound/S_sound_take.ogg")
-//global.S_YCRS=caster_load(working_directory+"/Sound/S_You_Can_t_Run_Secret.ogg")
+prev_view_hview = view_hview[view_current]
+prev_view_wview = view_wview[view_current]
 alarm[1] = 1
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
@@ -21,8 +19,8 @@ action_id=603
 applies_to=self
 */
 pause = 0
-view_hview = prev_view_hview
-view_wview = prev_view_wview
+view_hview[view_current] = prev_view_hview
+view_wview[view_current] = prev_view_wview
 global.menustate = 0
 global.option = 0
 //view_xview = prev_view_xview
@@ -198,7 +196,7 @@ if room != 0
         if keyboard_check_pressed(vk_escape) && !instance_exists(SW_Control)
         {
             room_speed = 60
-            sprpausefuck = sprite_create_from_screen(/*view_xview[0]*/0,0/*view_yview[0]*/,view_wview[0]*4,view_hview[0]*4,0,0,0,0)
+            sprpausefuck = sprite_create_from_screen(/*view_xview[0]*/0,0/*view_yview[0]*/,view_wview[view_current]*4,view_hview[view_current]*4,0,0,0,0)
             instance_deactivate_all(1)
             /*prev_view_xview = view_xview
             prev_view_yview = view_yview

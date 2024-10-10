@@ -56,6 +56,7 @@
 	|sprHL_Note
 	|sprSuicideHill_Note
 	|sprHandS0_Note
+	|spr3dot_Note
 +NBE sprites
 	|sprite722
 	|sprTailsDoll
@@ -83,7 +84,6 @@
 |ES_Noteita
 |ES_Noterus
 |HandS3
-|spr3dot_Note
 |spr123_Cratch
 |sprAEC_Amy
 |sprAEC_Sonic
@@ -193,6 +193,7 @@
 |sprES_Creeps
 |sprES_Note
 |sprESCreepsBack
+|sprESImsorry
 |sprEvilPowerRay
 |sprEx_9
 |sprEx1
