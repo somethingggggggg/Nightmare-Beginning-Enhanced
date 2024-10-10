@@ -65,6 +65,11 @@ if keyboard_check_pressed(vk_left) && global.option != 0
             if option[global.option] > ds_list_size(global.voicelist)-1 option[global.option] = 0
             if option[global.option] < 0 option[global.option] = ds_list_size(global.voicelist)-1
         }
+        if global.option = 12
+        {
+            if option[global.option] = 1 option[global.option] = 0
+            else option[global.option] = 1
+        }
     }
 }
 if keyboard_check_pressed(vk_right) && global.option != 0
@@ -98,6 +103,11 @@ if keyboard_check_pressed(vk_right) && global.option != 0
             if option[global.option] > ds_list_size(global.voicelist)-1 option[global.option] = 0
             if option[global.option] < 0 option[global.option] = ds_list_size(global.voicelist)-1
         }
+        if global.option = 12
+        {
+            if option[global.option] = 1 option[global.option] = 0
+            else option[global.option] = 1
+        }
     }
 }
     global.lang = option[1]
@@ -109,12 +119,16 @@ if keyboard_check_pressed(vk_right) && global.option != 0
     global.subcnoise = option[7]
     global.fourbythree = option[8]
     global.voicedir = option[9]
+    global.DCRP_enabled = option[10]
+    global.RG_final_boss = option[11]
+    global.BL_fliter = option[12]
     if global.lang < 0 global.lang = 2
     if global.lang > 2 global.lang = 0
     if global.option < 0 global.option = menulength-1
     if global.option > menulength-1 global.option = 0
     if global.cheats < 0 global.cheats = 1
     if global.cheats > 1 global.cheats = 0
+    if complete = 0 global.cheats = 0
     option[1] = global.lang
     option[2] = global.cheats
     option[3] = global.dialoguefont
@@ -124,9 +138,12 @@ if keyboard_check_pressed(vk_right) && global.option != 0
     option[7] = global.subcnoise
     option[8] = global.fourbythree
     option[9] = global.voicedir
+    option[10] = global.DCRP_enabled
+    option[11] = global.RG_final_boss
+    option[12] = global.BL_fliter
+    texture_set_interpolation(global.BL_fliter)
 
 if global.option > 3 scroll = -((((global.option-3) * 10)+abs(scroll))/2)
 else scroll = - abs(scroll)/2
-
 
 ass -= 0.01

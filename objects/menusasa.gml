@@ -49,7 +49,9 @@ global.cheats = ini_read_real('options','cheats',0)
 global.voicedir = ini_read_real('options','voicedir',0)
 global.DCRP_enabled = ini_read_real('options','DCRP_enabled',1)
 global.RG_final_boss = ini_read_real('options','RG_final_boss',1)
+global.BL_fliter = ini_read_real('options','BL_fliter',1)
 ini_close()
+texture_set_interpolation(global.BL_fliter)
 if global.DCRP_enabled = 1
 {
     discord_init_dll()
@@ -75,6 +77,7 @@ option[8] = global.fourbythree
 option[9] = global.voicedir
 option[10] = global.DCRP_enabled
 option[11] = global.RG_final_boss
+option[12] = global.BL_fliter
 
 optionname[0] = "Back"
 optionname[1] = "Language"
@@ -88,6 +91,7 @@ optionname[8] = "4:3 mode"
 optionname[9] = "Voiceover"
 optionname[10] = "Enable DCRP"
 optionname[11] = "REALLY GOOD BOSS FIGHT MUSIC"
+optionname[12] = "Billineal filtering"
 
 optiondesc[0] = ""
 optiondesc[1] = "Pick your language"
@@ -101,6 +105,7 @@ optiondesc[8] = "Change the screen resolution back to 4:3#VERY EXPERIMENTAL"
 optiondesc[9] = "Choose the voiceover you want (you can add your own by naming a folder voice_ )"
 optiondesc[10] = "Shows to other people that you are playing NBE"
 optiondesc[11] = "suka blyat"
+optiondesc[12] = "blurs your fucking game so it looks like shit"
 
 optionstate[0,0] = ""
 
@@ -136,7 +141,10 @@ optionstate[10,1] = "on"
 optionstate[11,0] = "off"
 optionstate[11,1] = "on"
 
-menulength = 12
+optionstate[12,0] = "off"
+optionstate[12,1] = "on"
+
+menulength = 13
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
