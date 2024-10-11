@@ -44,6 +44,7 @@ applies_to=self
 Appear = true
 Dissappear = false
 global.Tails_mode = false
+background_visible[0] = true
 image_alpha = 0
 alarm[4] = 300
 #define Alarm_4

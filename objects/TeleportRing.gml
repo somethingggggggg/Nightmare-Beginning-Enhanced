@@ -341,7 +341,7 @@ with HSE_Walker
 instance_create(2080,640,HSE_Walker)
 instance_destroy()
 }
-sound_play(TeleWarp_S)
+sound_play(global.S_Warp2)
 }
 
 if Teleport_2 = true && image_alpha >= 1

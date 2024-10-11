@@ -646,6 +646,7 @@
 |sprTailsJumpMask
 |sprTailsLive
 |sprTailsMask
+|sprTailsMaskFly
 |sprTailsPickEx
 |sprTailsRacing
 |sprTailsRacingTired

@@ -317,7 +317,7 @@ if global.Tails_mode = true
         sound_stop(global.S_tailstired)
         sound_stop(global.S_tailsfly)
         sprite_index = sprTailsJump;
-        mask_index = sprTailsMask;
+        mask_index = sprTailsJumpMask;
     }
     if ground = false && keyboard_check_pressed(ord("Z")) && FlyTime = 220
     {

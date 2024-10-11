@@ -195,13 +195,10 @@ if rolling == true && (ground == false or global.vel == 0)
 }
 if up == true && spindash == false
 {
-   mask_index = sprTailsMask;
-   sprite_index = sprTailsUp;
-if image_index < 1
-   image_speed = 0.1;
-else
-   image_speed = 0;
-   canMove = false;
+    mask_index = sprTailsMask;
+    sprite_index = sprTailsUp;
+    if image_index < 1 image_speed = 0.1;
+    else image_speed = 0; canMove = false;
 }
 
 if ducking == true && spindash == false
@@ -245,7 +242,7 @@ if Idie_mode = false
             gravity = 0.1
             //mask_index = sprTailsRacing;
             sprite_index = sprTailsRacing
-            mask_index = sprTailsMask;
+            mask_index = sprTailsMaskFly;
             image_speed = 0.15
         }
         else if keyboard_check_pressed(ord("Z"))
@@ -275,23 +272,24 @@ if Fly = false
 //Idie
 if global.vel = 0 && ground = true && Idie_mode = false && ducking == false && up == false && spindash == false
 {
-if IdieTimer >-1
-{
-IdieTimer -= 1
-}}
+    if IdieTimer >-1
+    {
+        IdieTimer -= 1
+    }
+}
 else
 {
 IdieTimer = 300
 }
 if IdieTimer <=0
 {
-Idie_mode = true
+    Idie_mode = true
 }
 
 if Idie_mode = true
 {
-sprite_index = sprScaryTailsIdle
-image_speed = 0.12
+    sprite_index = sprScaryTailsIdle
+    image_speed = 0.12
 }
 
 if global.vel != 0 or ducking == true or up == true
