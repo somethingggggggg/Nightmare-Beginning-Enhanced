@@ -12,6 +12,89 @@ global.T_bossfight = 0
 prev_view_hview = view_hview[view_current]
 prev_view_wview = view_wview[view_current]
 alarm[1] = 1
+
+scroll = 0
+anim = 0
+
+option[1] = global.lang
+option[2] = global.cheats
+option[3] = global.dialoguefont
+option[4] = global.progressbar
+option[5] = global.showfps
+option[6] = global.newcontent
+option[7] = global.subcnoise
+option[8] = global.fourbythree
+option[9] = global.voicedir
+option[10] = global.DCRP_enabled
+option[11] = global.RG_final_boss
+option[12] = global.BL_fliter
+
+optionname[0] = "Back"
+optionname[1] = "Language"
+optionname[2] = "Cheats"
+optionname[3] = "Font"
+optionname[4] = "FF progressbar"
+optionname[5] = "Show FPS"
+optionname[6] = "New content"
+optionname[7] = "SM Noise"
+optionname[8] = "4:3 mode"
+optionname[9] = "Voiceover"
+optionname[10] = "Enable DCRP"
+optionname[11] = "REALLY GOOD BOSS FIGHT MUSIC"
+optionname[12] = "Billineal filtering"
+
+optiondesc[0] = ""
+optiondesc[1] = "Pick your language"
+optiondesc[2] = "Enable debug mode and some cheats accecible with the numpad (enable numlock on your keyboard)"
+optiondesc[3] = "Pick between original NB font (korinna) and new NU font (pallete)"
+optiondesc[4] = "Toggle the progressbar in Fatal Fog"
+optiondesc[5] = "Show FPS"
+optiondesc[6] = "Toggle new content on or off"
+optiondesc[7] = "Change how overlayed noise works in subconcious mind"
+optiondesc[8] = "Change the screen resolution back to 4:3#VERY EXPERIMENTAL"
+optiondesc[9] = "Choose the voiceover you want (you can add your own by naming a folder voice_ )"
+optiondesc[10] = "Shows to other people that you are playing NBE"
+optiondesc[11] = "suka blyat"
+optiondesc[12] = "blurs your fucking game so it looks like shit"
+
+optionstate[0,0] = ""
+
+optionstate[1,0] = "English"
+optionstate[1,1] = "Russian"
+optionstate[1,2] = "Italian"
+
+optionstate[2,0] = "off"
+optionstate[2,1] = "on"
+
+optionstate[3,WORD_Font] = "Old"
+optionstate[3,testingfont] = "New"
+
+optionstate[4,0] = "off"
+optionstate[4,1] = "on"
+
+optionstate[5,0] = "off"
+optionstate[5,1] = "on"
+
+optionstate[6,0] = "off"
+optionstate[6,1] = "on"
+
+optionstate[7,0] = "Original"
+optionstate[7,1] = "Camera Follow"
+
+optionstate[8,0] = "off"
+optionstate[8,1] = "Stretch"
+optionstate[8,2] = "Black Bars"
+
+optionstate[10,0] = "off"
+optionstate[10,1] = "on"
+
+optionstate[11,0] = "off"
+optionstate[11,1] = "on"
+
+optionstate[12,0] = "off"
+optionstate[12,1] = "on"
+
+menulength = 13
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -196,16 +279,12 @@ if room != 0
         if keyboard_check_pressed(vk_escape) && !instance_exists(SW_Control)
         {
             room_speed = 60
-            sprpausefuck = sprite_create_from_screen(/*view_xview[0]*/0,0/*view_yview[0]*/,view_wview[view_current]*4,view_hview[view_current]*4,0,0,0,0)
+            sprpausefuck = sprite_create_from_screen(0,0,view_wview[view_current]*4,view_hview[view_current]*4,0,0,0,0)
             instance_deactivate_all(1)
-            /*prev_view_xview = view_xview
-            prev_view_yview = view_yview
-            view_xview = 0
-            view_yview = 0*/
-            prev_view_hview = view_hview
-            prev_view_wview = view_wview
-            view_wview = 462
-            view_hview = 260
+            prev_view_hview = view_hview[view_current]
+            prev_view_wview = view_wview[view_current]
+            view_wview[view_current] = 462
+            view_hview[view_current] = 260
             sound_kind_volume(1,1)
             sound_loop(global.S_PAUSEMENU)
             scr_soundfuck()
@@ -214,7 +293,7 @@ if room != 0
     }
     else
     {
-        if global.menustate = 1 scr_pausenav()
+        if global.menustate = 1 scr_menunav2(1)
         else scr_pausenav2()
     }
 }

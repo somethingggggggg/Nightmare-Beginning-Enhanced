@@ -34,7 +34,7 @@ global.pause = 0
 global.cheats = 0
 //reading inis
 ini_open("save.ini")
-complete = ini_read_real('progress','bestend',0)
+global.complete = ini_read_real('progress','bestend',0)
 comppercent = ((ini_read_real('progress','bestend',0) + ini_read_real('progress','goodend',0) + ini_read_real('progress','worstend',0) + ini_read_real('progress','badend',0) + ini_read_real('progress','eggend',0) + ini_read_real('progress','tailsend',0))/6)*100
 ini_close()
 ini_open("options.ini")
@@ -157,7 +157,7 @@ switch global.menustate
         scr_menunav1()
     break;
     case 1:
-        scr_menunav2()
+        scr_menunav2(0)
     break;
     case 2:
         scr_menunav3()
@@ -188,3 +188,11 @@ switch global.menustate
         scr_menudraw4()
     break;
 }
+draw_set_font(global.dialoguefont)
+switch text
+{
+    case 0: draw_text_color(view_xview[0],view_yview[0],"COMPLETE THE GAME#ON THE BEST#ENDING FIRST",$00ffff,$00ffff,$00ffff,$005555,ass) break;
+    case 1: draw_text_color(view_xview[0],view_yview[0],"MOD LOADED",$00ffff,$00ffff,$00ffff,$005555,ass) break;
+    case 2: draw_text_color(view_xview[0],view_yview[0],"MOD LOAD FAILED",$00ffff,$00ffff,$00ffff,$005555,ass) break;
+}
+ass -= 0.01

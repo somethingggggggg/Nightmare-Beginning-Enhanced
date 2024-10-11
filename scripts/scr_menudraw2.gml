@@ -6,7 +6,7 @@ while i < menulength
     if global.option = i draw_set_color(c_yellow)
     else draw_set_color(c_white)
 
-    if complete = 0 && i = 2 draw_set_color(c_gray)
+    if global.complete = 0 && i = 2 draw_set_color(c_gray)
     if string_width(optionname[i]) > 112 draw_text_ext_transformed(32+view_xview[0],55+view_yview[0]+scroll+(i*10),optionname[i],0,1000,112/string_width(optionname[i]),1,0)
     else draw_text(32+view_xview[0],55+view_yview[0]+scroll+(i*10),optionname[i])
     draw_set_halign(fa_right)
@@ -130,19 +130,5 @@ switch global.option
         draw_sprite(spr_sound,anim/64,346+view_xview[0],95+view_yview[0])
     break;
 }
-switch text
-{
-    case 0:
-        draw_set_font(global.dialoguefont)
-        draw_text_color(view_xview[0],view_yview[0],"COMPLETE THE GAME ON THE BEST#ENDING FIRST",$00ffff,$00ffff,$00ffff,$005555,ass)
-    break;
-    case 1:
-        draw_set_font(global.dialoguefont)
-        draw_text_color(view_xview[0],view_yview[0],"MOD LOADED",$00ffff,$00ffff,$00ffff,$005555,ass)
-    break;
-    case 2:
-        draw_set_font(global.dialoguefont)
-        draw_text_color(view_xview[0],view_yview[0],"MOD LOAD FAILED",$00ffff,$00ffff,$00ffff,$005555,ass)
-    break;
-}
+
 draw_sprite(spr_placemagic,0,346+view_xview[0],95+view_yview[0])
