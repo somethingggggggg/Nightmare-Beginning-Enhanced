@@ -73,3 +73,10 @@ if instance_exists(Tails4)
     x = view_xview[0]+100
     y = view_yview[0]+100
 }
+#define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+draw_sprite_ext(sprite_index,image_index,view_xview[view_current]+250,view_yview[view_current]+187,view_wview[view_current]/320,image_yscale,0,c_white,image_alpha)

@@ -5,6 +5,7 @@ action_id=603
 applies_to=self
 */
 drawAngle = 0
+sweattimer = 60
 ground = true
 canSpriteChange = true
 image_xscale =-1
@@ -69,6 +70,15 @@ action_id=603
 applies_to=self
 */
 mask_index = sprEggmanMask
+if sweattimer = 0
+{
+    instance_create(x+irandom_range(-10,10),bbox_top,obj_SweatParticle)
+    sweattimer = 10
+}
+else
+{
+    sweattimer -= 1
+}
 //Movement
 if Rob = false
 {
@@ -132,20 +142,27 @@ if canSpriteChange == true
 if ground == true
 {
    if global.vel = 0
-   sprite_index = sprEGGBotStand;
+   {
+       sprite_index = sprEGGBotStand;
+   }
  else if global.vel > -8 && global.vel < 8
+ {
    sprite_index = sprEGGBotWalk;
+ }
 else
+{
    sprite_index = sprEGGBotWalk;
-
-image_speed = abs(global.vel/20);
+}
+    if sprite_index != sprEGGBotStand image_speed = abs(global.vel/20);
+    else image_speed = 0.1
 }
 else if sprite_index == sprTailsJump
 {
    sprite_index = sprTailsJump;
 
 image_speed = 0.2 + abs(global.vel / 20)
-}}
+}
+}
 
 if Rob = true && Act = 0
 {
@@ -154,35 +171,35 @@ global.vel = -3.5
 
 if Rob = true && Act = 3
 {
-EGG_Shower.image_xscale =-1
-EGG_Shower.sprite_index = sprMSonicAttack
-EGG_Shower.hspeed = -5
-view_object[0] = EGG_Shower
-alarm[1] = 0
+    EGG_Shower.image_xscale =-1
+    EGG_Shower.sprite_index = sprMSonicAttack
+    EGG_Shower.hspeed = -5
+    view_object[0] = EGG_Shower
+    alarm[1] = 0
 }
 if Rob = true && Act = 4
 {
-Act = 5
-alarm[1] = 60
+    Act = 5
+    alarm[1] = 60
 }
 if Rob = true && Act = 6
 {
-sound_play(Pig_Scream_S)
-instance_create(48,384,BlodyAnimal)
-Act = 7
+    sound_play(Pig_Scream_S)
+    instance_create(48,384,BlodyAnimal)
+    Act = 7
 }
 
 if Rob = true && Act = 12
 {
-instance_create(view_xview[0],view_yview[0],SW_Control)
-SW_Control.Page = 116
-Act = 13
+    instance_create(view_xview[0],view_yview[0],SW_Control)
+    SW_Control.Page = 116
+    Act = 13
 }
 
 if Rob = true && Act = 14
 {
-global.vel =15
-image_xscale = 1
+    global.vel =15
+    image_xscale = 1
 }
 #define Collision_Ground_Egg
 /*"/*'/**//* YYD ACTION

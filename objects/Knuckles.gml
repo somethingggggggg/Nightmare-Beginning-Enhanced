@@ -124,7 +124,8 @@ if global.vel < 0 && ground == false
 
 if rolling == false
   image_xscale = 1;
-}}
+}
+}
 
 //Deacceleration
 if ground == true
@@ -214,7 +215,7 @@ image_speed = (global.vel/2)
 }}}
 
 //Up
-if global.vel == 0 && ground == true && up == false && ducking == false && rolling == false && Punch = false && keyboard_check(vk_up)
+if global.vel == 0 && ground == true && up == false && ducking == false && rolling == false && Punch = false && keyboard_check(vk_up) && Bot_mode = false
 {
    up = true;
 }
@@ -223,7 +224,7 @@ if global.vel == 0 && ground == true && up == false && ducking == false && rolli
 //Ducking
 if global.Sprite_mode = false
 {
-if global.vel == 0 && ground == true && up == false && ducking == false && rolling == false && Punch = false && keyboard_check(vk_down)
+if global.vel == 0 && ground == true && up == false && ducking == false && rolling == false && Punch = false && keyboard_check(vk_down) && Bot_mode = false
 {
    ducking = true;
 }

@@ -150,7 +150,8 @@ if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && can
    sound_play(global.S_Jump);
    stopping = 0
    sprite_index = sprTailsJump;
-   mask_index = sprTailsMask;
+   mask_index = sprTailsJumpMask;
+   up = false
 }
 
 //Up
@@ -223,7 +224,7 @@ if Idie_mode = false
         sound_stop(global.S_tailstired)
         sound_stop(global.S_tailsfly)
         sprite_index = sprTailsJump;
-        mask_index = sprTailsMask;
+        mask_index = sprTailsJumpMask;
     }
     if ground = false && keyboard_check_pressed(ord("Z")) && FlyTime = 220
     {
@@ -244,7 +245,7 @@ if Idie_mode = false
             gravity = 0.1
             //mask_index = sprTailsRacing;
             sprite_index = sprTailsRacing
-            mask_index = sprTailsRacing;
+            mask_index = sprTailsMask;
             image_speed = 0.15
         }
         else if keyboard_check_pressed(ord("Z"))

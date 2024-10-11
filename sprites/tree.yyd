@@ -66,6 +66,11 @@
 	|smashwhite
 	|spr_hackerycontin
 	|spr_sound
+	|sprSkidParticles
+	|spr_smallsonfont
+	|spr_son1font
+	|sprFontCount
+	|Spr_Sweat
 +leosa002 content
 	|sprEaster_Sequel_1
 	|sprCreamD
@@ -76,10 +81,6 @@
 +tailssprites
 	|sprtt
 	|spr_tailsskid
-|spr_smallsonfont
-|spr_son1font
-|sprFontCount
-|sprSkidParticles
 |sprite773
 |ES_Noteita
 |ES_Noterus
@@ -700,7 +701,6 @@
 |spr_placeholder
 |spr_placemagic
 |spr_numpad
-|hate
 |spranother
 |sprite782
 |spr_cutscene_wall

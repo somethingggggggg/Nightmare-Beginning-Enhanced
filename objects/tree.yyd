@@ -16,6 +16,9 @@
 	|tailscustom
 	|customtail
 	|obj_SkidParticle
+	|NewNoiceEngineLOL
+	|menusasa
+	|obj_SweatParticle
 +dataselect
 	|MS_1
 	|MS_2
@@ -74,14 +77,6 @@
 	|EnergyBlast
 	|DM_Spring
 	|Debug_Thing
-+mymenu
-	|langswtch
-	|cheatsswtch
-	|menusasa
-	|langselspr
-	|cheatsspr
-	|apply
-	|loadmodspr
 +YCR
 	|YCR
 	|ScrapGround
@@ -185,7 +180,6 @@
 	|Sonic
 	|Timer3
 	|Noice2
-	|NewNoiceEngineLOL
 +unused
 	|CEmerald
 	|ButtonHS

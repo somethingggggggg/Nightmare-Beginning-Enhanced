@@ -192,15 +192,16 @@ applies_to=self
 */
 if keyboard_check_pressed(vk_up)
 {
-if FFSELECTOR.image_index = 0
-{
-FFSELECTOR.image_index = 0
+    if FFSELECTOR.image_index = 0
+    {
+        FFSELECTOR.image_index = 0
+    }
+    if FFSELECTOR.image_index != 0
+    {
+        FFSELECTOR.image_index -= 1
+        sound_play(global.S_TAB)
+    }
 }
-if FFSELECTOR.image_index != 0
-{
-FFSELECTOR.image_index -= 1
-sound_play(global.S_TAB)
-}}
 
 if keyboard_check_pressed(vk_down)
 {
@@ -236,8 +237,6 @@ if keyboard_check_pressed(vk_enter)
     instance_create(0,0,GoI)
     instance_create(0,0,GoI_2)
     instance_create(0,0,GoI_3)
-    SonicIcon.visible = 0
-    TailsIcon.visible = 0
 }
 #define Collision_SonicSELECTOR
 /*"/*'/**//* YYD ACTION
