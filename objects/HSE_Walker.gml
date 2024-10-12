@@ -119,7 +119,7 @@ if place_meeting(x,y,Tails3)
     {
         if !place_meeting(x,y,Tails3)
         {
-            if Timer_Up < 100 Timer_Up += 1
+            Timer_Up = 100
         }
     }
 if global.Tails_mode = true

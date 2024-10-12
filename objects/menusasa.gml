@@ -7,6 +7,7 @@ applies_to=self
 background_alpha[1] = 0
 background_alpha[2] = 0
 fuckyalpha = 0
+scrollcounter = 0
 scroll = 0
 global.lang = 0
 global.fourbythree = 1
@@ -15,7 +16,7 @@ hui = 0
 anim = 0
 global.SPRSONFONT = font_add_sprite(spr_son1font,ord('A'),1,1)
 global.SMALLSONFONT = font_add_sprite(spr_smallsonfont,ord('/'),0,0)
-global.DESKFONT = font_add_sprite(sprFontCount,ord('0'),0,0)
+global.DESKFONT = font_add_sprite(sprFontCount,ord('-'),0,0)
 global.hackpage = 0
 global.dialoguefont = WORD_Font
 global.menustate = 0
@@ -78,6 +79,19 @@ option[9] = global.voicedir
 option[10] = global.DCRP_enabled
 option[11] = global.RG_final_boss
 option[12] = global.BL_fliter
+
+optionblocked[1] = 0
+optionblocked[2] = 0
+optionblocked[3] = 0
+optionblocked[4] = 0
+optionblocked[5] = 0
+optionblocked[6] = 0
+optionblocked[7] = 0
+optionblocked[8] = 0
+optionblocked[9] = 0
+optionblocked[10] = 0
+optionblocked[11] = 0
+optionblocked[12] = 0
 
 optionname[0] = "Back"
 optionname[1] = "Language"
@@ -153,19 +167,13 @@ applies_to=self
 */
 switch global.menustate
 {
-    case 0:
-        scr_menunav1()
-    break;
-    case 1:
-        scr_menunav2(0)
-    break;
-    case 2:
-        scr_menunav3()
-    break;
-    case 3:
-        scr_menunav4()
-    break;
+    case 0: scr_menunav1() break;
+    case 1: scr_menunav2() break;
+    case 2: scr_menunav3() break;
+    case 3: scr_menunav4() break;
 }
+scrollcounter += 0.5
+if scrollcounter > 120 scrollcounter = 0
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

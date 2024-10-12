@@ -8,7 +8,7 @@ while i < menulength
     if global.option = i draw_set_color(c_yellow)
     else draw_set_color(c_white)
 
-    if i = 2 draw_set_color(c_gray)
+    if i = 2 or optionblocked[i] = 1 draw_set_color(c_gray)
     if string_width(optionname[i]) > 112 draw_text_ext_transformed(32+view_xview[view_current],55+view_yview[view_current]+scroll+(i*10),optionname[i],0,1000,112/string_width(optionname[i]),1,0)
     else draw_text(32+view_xview[view_current],55+view_yview[view_current]+scroll+(i*10),optionname[i])
     draw_set_halign(fa_right)
@@ -36,7 +36,8 @@ i = 0
 draw_set_font(global.SMALLSONFONT)
 draw_set_color(c_white)
 draw_set_halign(fa_center)
-draw_text_ext(346+view_xview[view_current],163+view_yview[view_current],optiondesc[global.option],8,192)
+if optionblocked[global.option] = 0 draw_text_ext(346+view_xview[view_current],163+view_yview[view_current],optiondesc[global.option],8,192)
+else draw_text_ext(346+view_xview[view_current],163+view_yview[view_current],"Not toggleable mid game",8,192)
 draw_set_halign(fa_left)
 draw_set_font(global.SPRSONFONT)
 switch global.option
@@ -108,7 +109,8 @@ switch global.option
         else
         {
             draw_sprite_part_ext(sprNoice1,anim/2,anim,0,192-anim-4,128-4,346+view_xview[view_current]-96+4,95+view_yview[view_current]-64+4,1,1,$ffffff,1)
-            draw_sprite_part_ext(sprNoice1,anim/2,0,0,anim-4,128-4,view_xview[view_current]+346-anim+96,95+view_yview[view_current]-64+4,1,1,$ffffff,1)        }
+            draw_sprite_part_ext(sprNoice1,anim/2,0,0,anim-4,128-4,view_xview[view_current]+346-anim+96,95+view_yview[view_current]-64+4,1,1,$ffffff,1)
+        }
     break;
     case 8:
         draw_rectangle_color(346+view_xview[view_current]-96+4,95+view_yview[view_current]-64+4,346+view_xview[view_current]+96-4,95+view_yview[view_current]+64-4,c_white,c_white,c_white,c_white,0)
@@ -121,8 +123,8 @@ switch global.option
                 draw_sprite_ext(sprSEGA_LOGO,24,346+view_xview[view_current],95+view_yview[view_current],1.3333333333*0.5,1*0.5,0,c_white,1)
             break;
             case 2:
-                draw_rectangle_color(346+view_xview[view_current]-96+4,95+view_yview[view_current]-64-4,346+view_xview[view_current]-70,95+view_yview[view_current]+64-4,c_black,c_black,c_black,c_black,0)
-                draw_rectangle_color(346+view_xview[view_current]+96-4,95+view_yview[view_current]-64+4,346+view_xview[view_current]+70,95+view_yview[view_current]+64-4,c_black,c_black,c_black,c_black,0)
+                draw_rectangle_color(346+view_xview[view_current]-96+4,95+view_yview[view_current]-60,346+view_xview[view_current]-70,95+view_yview[view_current]+64-4,c_black,c_black,c_black,c_black,0)
+                draw_rectangle_color(346+view_xview[view_current]+96-4,95+view_yview[view_current]-60,346+view_xview[view_current]+70,95+view_yview[view_current]+64-4,c_black,c_black,c_black,c_black,0)
                 //draw_rectangle_color(346+view_xview[view_current]+256,95+view_yview[view_current]-64+4,346+view_xview[view_current]+512,95+view_yview[view_current]+64-4,c_black,c_black,c_black,c_black,0)
                 draw_sprite_ext(sprSEGA_LOGO,24,346+view_xview[view_current],95+view_yview[view_current],0.5,0.5,0,c_white,1)
             break;

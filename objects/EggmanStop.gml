@@ -83,6 +83,19 @@ instance_create(0,0,EPassed)
 sound_stop(global.S_Noice)
 room_goto(28)
 }
+#define Step_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+gravity = 0.25
+
+view_xview[view_current] += (view_wview[view_current] - (314 + view_wview[view_current]/2))/2
+view_yview[view_current] += (view_hview[view_current] - (177 + view_hview[view_current]/2))/2
+
+view_wview[view_current] = 314 + view_wview[view_current]/2
+view_hview[view_current] = 177 + view_hview[view_current]/2
 #define Collision_Egg_Ground
 /*"/*'/**//* YYD ACTION
 lib_id=1

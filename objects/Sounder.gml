@@ -12,6 +12,7 @@ global.T_bossfight = 0
 prev_view_hview = view_hview[view_current]
 prev_view_wview = view_wview[view_current]
 alarm[1] = 1
+image_speed = 0.2
 
 scroll = 0
 anim = 0
@@ -28,6 +29,19 @@ option[9] = global.voicedir
 option[10] = global.DCRP_enabled
 option[11] = global.RG_final_boss
 option[12] = global.BL_fliter
+
+optionblocked[1] = 0
+optionblocked[2] = 1
+optionblocked[3] = 0
+optionblocked[4] = 0
+optionblocked[5] = 0
+optionblocked[6] = 1
+optionblocked[7] = 0
+optionblocked[8] = 0
+optionblocked[9] = 0
+optionblocked[10] = 0
+optionblocked[11] = 1
+optionblocked[12] = 0
 
 optionname[0] = "Back"
 optionname[1] = "Language"
@@ -293,7 +307,7 @@ if room != 0
     }
     else
     {
-        if global.menustate = 1 scr_menunav2(1)
+        if global.menustate = 1 scr_menunav2()
         else scr_pausenav2()
     }
 }

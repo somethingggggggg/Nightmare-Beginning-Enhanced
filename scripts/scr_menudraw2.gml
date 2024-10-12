@@ -1,3 +1,4 @@
+draw_sprite_tiled_ext(spr_NBRsomething,0,0,-120+scrollcounter,1,1,c_white,1)
 draw_sprite(spr_placeholder,0,346+view_xview[0],95+view_yview[0])
 draw_set_font(global.SMALLSONFONT)
 global.valueweneed = 0
@@ -6,7 +7,7 @@ while i < menulength
     if global.option = i draw_set_color(c_yellow)
     else draw_set_color(c_white)
 
-    if global.complete = 0 && i = 2 draw_set_color(c_gray)
+    if global.complete = 0 && i = 2 or optionblocked[i] = 1 draw_set_color(c_gray)
     if string_width(optionname[i]) > 112 draw_text_ext_transformed(32+view_xview[0],55+view_yview[0]+scroll+(i*10),optionname[i],0,1000,112/string_width(optionname[i]),1,0)
     else draw_text(32+view_xview[0],55+view_yview[0]+scroll+(i*10),optionname[i])
     draw_set_halign(fa_right)
@@ -119,8 +120,8 @@ switch global.option
                 draw_sprite_ext(sprSEGA_LOGO,24,346+view_xview[0],95+view_yview[0],1.3333333333*0.5,1*0.5,0,c_white,1)
             break;
             case 2:
-                draw_rectangle_color(346+view_xview[0]-96+4,95+view_yview[0]-64-4,346+view_xview[0]-70,95+view_yview[0]+64-4,c_black,c_black,c_black,c_black,0)
-                draw_rectangle_color(346+view_xview[0]+96-4,95+view_yview[0]-64+4,346+view_xview[0]+70,95+view_yview[0]+64-4,c_black,c_black,c_black,c_black,0)
+                draw_rectangle_color(346+view_xview[0]-96+4,95+view_yview[0]-60,346+view_xview[0]-70,95+view_yview[0]+64-4,c_black,c_black,c_black,c_black,0)
+                draw_rectangle_color(346+view_xview[0]+96-4,95+view_yview[0]-60,346+view_xview[0]+70,95+view_yview[0]+64-4,c_black,c_black,c_black,c_black,0)
                 //draw_rectangle_color(346+view_xview[0]+256,95+view_yview[0]-64+4,346+view_xview[0]+512,95+view_yview[0]+64-4,c_black,c_black,c_black,c_black,0)
                 draw_sprite_ext(sprSEGA_LOGO,24,346+view_xview[0],95+view_yview[0],0.5,0.5,0,c_white,1)
             break;

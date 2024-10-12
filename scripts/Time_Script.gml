@@ -26,7 +26,7 @@ with Tails
     draw_sprite(sprDesk, 0, view_xview+35, view_yview+32)
     //draw_sprite(sprRingCont,0,view_xview+60,view_yview+40)
     draw_sprite(sprLive_Cont,global.TLive-1,view_xview+55,view_yview+244)
-    draw_text(view_xview[view_current]+81,view_yview[view_current]+40,string('0'))
+    draw_text(view_xview[view_current]+81,view_yview[view_current]+40,string(-global.TR))
     draw_text(view_xview+57,view_yview+24,Timer.Min)
     if Timer.Sec < 10 draw_text(view_xview[view_current]+81,view_yview[view_current]+24,string("0")+string(Timer.Sec))
     else draw_text(view_xview[view_current]+81,view_yview[view_current]+24,string(Timer.Sec))
@@ -38,7 +38,7 @@ with Tails2
 {
     draw_sprite(sprT_Lives, 0, view_xview+35, view_yview+240)
     draw_sprite(sprDesk, 0, view_xview+35, view_yview+32)
-    draw_text(view_xview[view_current]+81,view_yview[view_current]+40,string('0'))
+    draw_text(view_xview[view_current]+81,view_yview[view_current]+40,string(-global.TR))
     draw_sprite(sprLive_Cont,global.TLive-1,view_xview+55,view_yview+244)
     draw_text(view_xview+57,view_yview+24,Timer.Min)
     if Timer.Sec < 10 draw_text(view_xview[view_current]+81,view_yview[view_current]+24,string("0")+string(Timer.Sec))
@@ -49,7 +49,7 @@ with Tails3
 {
     draw_sprite(sprT_Lives, 0, view_xview+35, view_yview+240)
     draw_sprite(sprDesk, 0, view_xview+35, view_yview+32)
-    draw_text(view_xview[view_current]+81,view_yview[view_current]+40,string('0'))
+    draw_text(view_xview[view_current]+81,view_yview[view_current]+40,string(-global.TR))
     draw_sprite(sprLive_Cont,global.TLive-1,view_xview+55,view_yview+244)
     draw_text(view_xview+57,view_yview+24,Timer.Min)
     if Timer.Sec < 10 draw_text(view_xview[view_current]+81,view_yview[view_current]+24,string("0")+string(Timer.Sec))
@@ -60,7 +60,7 @@ with Tails4
 {
     draw_sprite(sprT_Lives, 0, view_xview+35, view_yview+240)
     draw_sprite(sprDesk, 0, view_xview+35, view_yview+32)
-    draw_text(view_xview[view_current]+81,view_yview[view_current]+40,string('0'))
+    draw_text(view_xview[view_current]+81,view_yview[view_current]+40,string(-global.TR))
     draw_sprite(sprLive_Cont,global.TLive-1,view_xview+55,view_yview+244)
     draw_text(view_xview+57,view_yview+24,Timer.Min)
     if Timer.Sec < 10 draw_text(view_xview[view_current]+81,view_yview[view_current]+24,string("0")+string(Timer.Sec))
@@ -82,7 +82,7 @@ with Knuckles
 {
     draw_sprite(sprK_Lives, 0, view_xview+35, view_yview+240)
     draw_sprite(sprDesk, 0, view_xview+35, view_yview+32)
-    draw_text(view_xview[view_current]+81,view_yview[view_current]+40,"0")
+    draw_text(view_xview[view_current]+81,view_yview[view_current]+40,string(-global.TR))
     draw_sprite(sprLive_Cont,global.KLive-1,view_xview+55,view_yview+244)
     draw_text(view_xview+57,view_yview+24,Timer.Min)
     if Timer.Sec < 10 draw_text(view_xview[view_current]+81,view_yview[view_current]+24,string("0")+string(Timer.Sec))
@@ -92,7 +92,7 @@ with Knuckles
 with Sonic
 {
     draw_sprite(sprDesk, 0, view_xview+35, view_yview+32)
-    draw_text(view_xview[view_current]+81,view_yview[view_current]+40,"0")
+    draw_text(view_xview[view_current]+81,view_yview[view_current]+40,string(-global.TR))
     draw_text(view_xview+57,view_yview+24,Timer3.Min)
     if Timer3.Sec < 10 draw_text(view_xview[view_current]+81,view_yview[view_current]+24,string("0")+string(Timer3.Sec))
     else draw_text(view_xview[view_current]+81,view_yview[view_current]+24,string(Timer3.Sec))
@@ -101,7 +101,7 @@ with Sonic
 with SuicideSonic
 {
     draw_sprite(sprDesk, 0, view_xview+35, view_yview+32)
-    draw_text(view_xview[view_current]+81,view_yview[view_current]+40,"0")
+    draw_text(view_xview[view_current]+81,view_yview[view_current]+40,string(-global.TR))
     draw_text(view_xview+57,view_yview+24,Timer3.Min)
     if Timer3.Sec < 10 draw_text(view_xview[view_current]+81,view_yview[view_current]+24,string("0")+string(Timer3.Sec))
     else draw_text(view_xview[view_current]+81,view_yview[view_current]+24,string(Timer3.Sec))

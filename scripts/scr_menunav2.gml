@@ -4,26 +4,18 @@ if anim > 192
 {
     anim = 0
 }
-
-if background_alpha[1] < 1
-{
-    background_alpha[1] += 0.1
-}
-if background_alpha[2] > 0
-{
-    background_alpha[2] -= 0.1
-}
 if keyboard_check_pressed(vk_up)
 {
-global.option -= 1
-sound_play(global.S_TAB)
+    global.option -= 1
+    sound_play(global.S_TAB)
 }
 if keyboard_check_pressed(vk_down)
 {
-global.option += 1
-// global.S_MS_Move
-sound_play(global.S_TAB)
+    global.option += 1
+    sound_play(global.S_TAB)
 }
+if global.option < 0 global.option = menulength-1
+if global.option > menulength-1 global.option = 0
 if keyboard_check_pressed(vk_enter)
 {
     if global.option = 0
@@ -34,7 +26,7 @@ if keyboard_check_pressed(vk_enter)
         global.menustate = 0
     }
 }
-if keyboard_check_pressed(vk_left) && global.option != 0
+if keyboard_check_pressed(vk_left) && global.option != 0 && optionblocked[global.option] != 1
 {
     sound_play(global.S_WellRing)
     if global.option != 3 && global.option != 8 && global.option != 9 && global.option != 1
@@ -72,7 +64,7 @@ if keyboard_check_pressed(vk_left) && global.option != 0
         }
     }
 }
-if keyboard_check_pressed(vk_right) && global.option != 0
+if keyboard_check_pressed(vk_right) && global.option != 0 && optionblocked[global.option] != 1
 {
     sound_play(global.S_WellRing)
     if global.option != 3 && global.option != 8 && global.option != 9 && global.option != 1
@@ -111,21 +103,19 @@ if keyboard_check_pressed(vk_right) && global.option != 0
     }
 }
     global.lang = option[1]
-    if argument0 = 0 global.cheats = option[2]
+    global.cheats = option[2]
     global.dialoguefont = option[3]
     global.progressbar = option[4]
     global.showfps = option[5]
-    if argument0 = 0 global.newcontent = option[6]
+    global.newcontent = option[6]
     global.subcnoise = option[7]
     global.fourbythree = option[8]
     global.voicedir = option[9]
     global.DCRP_enabled = option[10]
-    if argument0 = 0 global.RG_final_boss = option[11]
+    global.RG_final_boss = option[11]
     global.BL_fliter = option[12]
     if global.lang < 0 global.lang = 2
     if global.lang > 2 global.lang = 0
-    if global.option < 0 global.option = menulength-1
-    if global.option > menulength-1 global.option = 0
     if global.cheats < 0 global.cheats = 1
     if global.cheats > 1 global.cheats = 0
     if global.complete = 0 global.cheats = 0

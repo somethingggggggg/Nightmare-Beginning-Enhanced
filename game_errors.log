@@ -1,0 +1,18 @@
+ERROR in
+action number 1
+of  Step Event
+for object menusasa:
+
+In script scr_menunav2:Error in code at line 37:   
+if keyboard_check_pressed(vk_left) && global.option != 0 && optionblocked[global.option] != 1                                                                ^at position 62: Unknown variable optionblocked or array index out of bounds
+
+
+ERROR in
+action number 1
+of Draw Event
+for object menusasa:
+
+In script scr_menudraw2:Error in code at line 37:   
+draw_text_ext(346+view_xview[0],163+view_yview[0],optiondesc[global.option],8,192)                                                     ^at position 52: Unknown variable optiondesc or array index out of bounds
+
+
