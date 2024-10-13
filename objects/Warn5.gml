@@ -30,8 +30,8 @@ applies_to=self
 */
 with RiseExe0
 {
-hspeed = 0
-sprite_index = sprEx4
-RiseExe0.Act = 3
+    hspeed = 0
+    sprite_index = sprExFuckItAll
+    RiseExe0.Act = 3
 }
 instance_destroy()

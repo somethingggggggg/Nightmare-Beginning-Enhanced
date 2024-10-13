@@ -30,7 +30,8 @@ if Sec = 60
 
 if Min = 10
 {
-    game_end()
+    playerGetHit()
+    //game_end()
 }
 #define Draw_0
 /*"/*'/**//* YYD ACTION

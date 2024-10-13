@@ -207,10 +207,10 @@ else
 
 
 //Punch
-if keyboard_check_pressed(ord("D")) && Punch = false
+if keyboard_check_pressed(ord("D")) && Punch = false && TAB.Twister_mode = false
 {
-Punch = true
-alarm[0] = 25
+    Punch = true
+    alarm[0] = 25
 }
 
 
@@ -273,7 +273,7 @@ TAB.Twister_mode = false
 Act = 2
 alarm[3] = 250
 }
-global.complpercent = 100 - round((x / 8300) * 100)
+global.complpercent = 100 - ((x / 8300) * 100)
 #define Collision_Solid
 /*"/*'/**//* YYD ACTION
 lib_id=1

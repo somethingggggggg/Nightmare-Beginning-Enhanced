@@ -60,8 +60,8 @@
                     spritedial = sprSW_Exeils
                 break;
                 case 7:
-                    global.pause = 0
                     DeadTails.alarm[0] = 0
+                    global.pause = 0
                     instance_destroy()
                 break;
                 case 8:

@@ -30,22 +30,22 @@ applies_to=self
 */
 if instance_exists(Tails3)
 {
-if distance_to_object(HSE_GA) > 300
-{
-image_alpha -= 0.1
-}
-else
-{
-image_alpha += 0.1
-}
+    if distance_to_object(HSE_GA) > 300
+    {
+        image_alpha -= 0.1
+    }
+    else
+    {
+        image_alpha += 0.1
+    }
 }
 
 if image_alpha > 1
 {
-image_alpha = 1
+    image_alpha = 1
 }
 
 if image_alpha < 0
 {
-image_alpha = 0
+    image_alpha = 0
 }

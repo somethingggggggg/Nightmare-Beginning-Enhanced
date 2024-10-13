@@ -2,6 +2,13 @@
 
 with FinalSonic
 {
+if Timer.Min = 10
+{
+    global.SLive -= 1
+    instance_create(x,y,FinalSonicDeath)
+    instance_destroy()
+    exit;
+}
 Idie_mode = false
 if global.rings !=0
 {
@@ -56,7 +63,8 @@ else if global.rings = 0 && canHit = true
 global.SLive -= 1
 instance_create(x,y,FinalSonicDeath)
 instance_destroy()
-}}
+}
+}
 
 
 with DM_Knuckles
@@ -115,7 +123,8 @@ else if global.rings = 0 && canHit = true
 global.KLive -= 1
 instance_create(x,y,KnucklesDeath)
 instance_destroy()
-}}
+}
+}
 
 
 with DM_Tails
@@ -293,4 +302,40 @@ else if global.rings = 0 && canHit = true
 {
 instance_create(x,y,MS_Death)
 instance_destroy()
-}}
+}
+}
+//fuck this to hell
+with Tails
+{
+    global.TLive -= 1
+    instance_create(x,y,TailsDeath)
+    with HvostStand instance_destroy()
+    instance_destroy()
+}
+with Tails2
+{
+    global.TLive -= 1
+    instance_create(x,y,TailsDeath)
+    with HvostStand instance_destroy()
+    instance_destroy()
+}
+with Tails3
+{
+    global.TLive -= 1
+    instance_create(x,y,TailsDeath)
+    with HvostStand2 instance_destroy()
+    instance_destroy()
+}
+with Tails4
+{
+    global.TLive -= 1
+    instance_create(x,y,TailsDeath)
+    with HvostStand instance_destroy()
+    instance_destroy()
+}
+with Knuckles
+{
+    global.KLive -= 1
+    instance_create(x,y,KnucklesDeath)
+    instance_destroy()
+}

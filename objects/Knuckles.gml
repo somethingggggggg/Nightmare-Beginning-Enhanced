@@ -587,12 +587,12 @@ applies_to=self
 draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale, image_yscale, drawAngle, image_blend, image_alpha);
 if Bot_mode = false
 {
-if Twister_mode = false
-{
-draw_sprite(sprPunchIcon, 0, view_xview[0]+view_wview[0]-40, view_yview[0]+240)
-}
-if Act = 1
-{
-draw_sprite(sprTwisterIcon, 0, view_xview[0]+view_wview[0]-50, view_yview[0]+25)
-}
+    if Twister_mode = false
+    {
+        draw_sprite(sprPunchIcon, 0, view_xview[0]+view_wview[0]-40, view_yview[0]+240)
+    }
+    if Act = 1
+    {
+        draw_sprite(sprTwisterIcon, 0, view_xview[0]+view_wview[0]-50, view_yview[0]+25)
+    }
 }

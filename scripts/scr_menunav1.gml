@@ -84,6 +84,21 @@ if keyboard_check_pressed(vk_enter)
             discord_init_app("1252129963411505222")
             discord_update_presence("IN MAIN MENU","An experimental nb mod",'sprfex','sprfex')
         }
+        with Sounder
+        {
+            option[1] = global.lang
+            option[2] = global.cheats
+            option[3] = global.dialoguefont
+            option[4] = global.progressbar
+            option[5] = global.showfps
+            option[6] = global.newcontent
+            option[7] = global.subcnoise
+            option[8] = global.fourbythree
+            option[9] = global.voicedir
+            option[10] = global.DCRP_enabled
+            option[11] = global.RG_final_boss
+            option[12] = global.BL_fliter
+        }
         room_goto(87)
     }
 }

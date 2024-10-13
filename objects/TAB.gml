@@ -96,35 +96,39 @@ with AI1
 
 with AI2
 {
-if instance_exists(Pers1)
-{
-if distance_to_object(Pers1) > 300
-{
-if collision_rectangle(x,y+100,x-10000,y-100,Pers1,1,0)
-{
-instance_create(Pers1.x+220,352,AI2)
-instance_destroy()
+    if instance_exists(Pers1)
+    {
+        if distance_to_object(Pers1) > 300
+        {
+            if collision_rectangle(x,y+100,x-10000,y-100,Pers1,1,0)
+            {
+                instance_create(Pers1.x+220,352,AI2)
+                instance_destroy()
+            }
+            if collision_rectangle(x,y+100,x+10000,y-100,Pers1,1,0)
+            {
+                instance_create(Pers1.x-220,352,AI2)
+                instance_destroy()
+            }
+        }
+    }
+    if instance_exists(Pers3)
+    {
+        if distance_to_object(Pers3) > 300
+        {
+            if collision_rectangle(x,y+100,x-10000,y-100,Pers3,1,0)
+            {
+                instance_create(Pers3.x+220,352,AI2)
+                instance_destroy()
+            }
+            if collision_rectangle(x,y+100,x+10000,y-100,Pers3,1,0)
+            {
+                instance_create(Pers3.x-220,352,AI2)
+                instance_destroy()
+            }
+        }
+    }
 }
-if collision_rectangle(x,y+100,x+10000,y-100,Pers1,1,0)
-{
-instance_create(Pers1.x-220,352,AI2)
-instance_destroy()
-}}}
-
-if instance_exists(Pers3)
-{
-if distance_to_object(Pers3) > 300
-{
-if collision_rectangle(x,y+100,x-10000,y-100,Pers3,1,0)
-{
-instance_create(Pers3.x+220,352,AI2)
-instance_destroy()
-}
-if collision_rectangle(x,y+100,x+10000,y-100,Pers3,1,0)
-{
-instance_create(Pers3.x-220,352,AI2)
-instance_destroy()
-}}}}
 
 with AI3
 {
@@ -169,9 +173,9 @@ applies_to=self
 */
 if global.progressbar = 1
 {
-draw_set_font(global.dialoguefont)
-draw_text_color(view_xview[0] + view_wview[0]/2+60, view_yview[0]+10, global.complpercent,$000075,$000051,$000075,$000051,1)
-draw_text_color(view_xview[0] + view_wview[0]/2+80, view_yview[0]+10, '%',$000075,$000051,$000075,$000051,1)
-draw_rectangle_color((view_xview[0] + view_wview[0]/2)-50,view_yview[0],view_xview[0] + view_wview[0]/2+50,view_yview[0]+30,$000000,$000000,$000000,$000000,1)
-draw_rectangle_color((view_xview[0] + view_wview[0]/2)-50,view_yview[0],(view_xview[0] + view_wview[0]/2)-50 + global.complpercent,view_yview[0]+30,$000075,$000051,$000075,$000051,0)
+    draw_set_font(global.dialoguefont)
+    draw_text_color(view_xview[0] + view_wview[0]/2+60, view_yview[0]+10, string(round(global.complpercent)),$000075,$000051,$000075,$000051,1)
+    draw_text_color(view_xview[0] + view_wview[0]/2+80, view_yview[0]+10, '%',$000075,$000051,$000075,$000051,1)
+    draw_rectangle_color((view_xview[0] + view_wview[0]/2)-50,view_yview[0],view_xview[0] + view_wview[0]/2+50,view_yview[0]+30,$000000,$000000,$000000,$000000,1)
+    draw_rectangle_color((view_xview[0] + view_wview[0]/2)-50,view_yview[0],(view_xview[0] + view_wview[0]/2)-50 + global.complpercent,view_yview[0]+30,$000075,$000051,$000075,$000051,0)
 }

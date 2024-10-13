@@ -11,8 +11,11 @@ Game Maker 8.2 DragFile
 Game Maker 8.2 Joystick
 Game Maker 8.2 Live
 Game Maker 8.2 Network
+Game Maker 8.2 SDL Audio
 Game Maker 8.2 Sound
+Game Maker 8.2 Video
 GM Printing
 GM Room Transitions
 GM Windows Dialogs
 High Resolution Timer
+N_Menu

@@ -30,7 +30,7 @@ switch perass
         Ex11.hspeed =8
         if BL.FF_E = true
         {
-            sound_play(global.S_Egg_Speak2)
+            sound_play_ex(global.S_Egg_Speak2,1,1,-1)
         }
     break;
     case 4:
@@ -38,7 +38,7 @@ switch perass
         Ex12.hspeed =-8
         if BL.FF_E = true
         {
-            sound_play(global.S_Egg_Speak3)
+            sound_play_ex(global.S_Egg_Speak3,1,1,0)
         }
     break;
     case 5:
@@ -46,14 +46,14 @@ switch perass
         Ex11.hspeed =-8
         if BL.FF_E = true
         {
-            sound_play(global.S_Egg_Speak1)
+            sound_play_ex(global.S_Egg_Speak1,1,1,1)
         }
     break;
     case 6:
         instance_create(view_xview[0],view_yview[0],Ex12_9)
         if BL.FF_E = true
         {
-            sound_play(global.S_Egg_Speak3)
+            sound_play_ex(global.S_Egg_Speak3,1,1,0)
         }
     break;
 }
@@ -141,7 +141,8 @@ instance_create(0,368,Ex11)
 Ex11.hspeed =8
 if BL.FF_E = true
 {
-sound_play(global.S_Egg_Speak2)
+    sound_play_ex(global.S_Egg_Speak2,1,1,-1)
+    //sound_play(global.S_Egg_Speak2)
 }
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -162,7 +163,8 @@ instance_create(8272,272,Ex12)
 Ex12.hspeed =-8
 if BL.FF_E = true
 {
-sound_play(global.S_Egg_Speak3)
+    sound_play_ex(global.S_Egg_Speak3,1,1,0)
+    //sound_play(global.S_Egg_Speak3)
 }
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -183,7 +185,8 @@ instance_create(8272,368,Ex11)
 Ex11.hspeed =-8
 if BL.FF_E = true
 {
-sound_play(global.S_Egg_Speak1)
+    sound_play_ex(global.S_Egg_Speak1,1,1,1)
+    //sound_play(global.S_Egg_Speak1)
 }
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -203,7 +206,8 @@ applies_to=self
 instance_create(view_xview[0],view_yview[0],Ex12_9)
 if BL.FF_E = true
 {
-sound_play(global.S_Egg_Speak3)
+    sound_play_ex(global.S_Egg_Speak3,1,1,0)
+    //sound_play(global.S_Egg_Speak3)
 }
 /*"/*'/**//* YYD ACTION
 lib_id=1

@@ -175,8 +175,13 @@ image_speed = 0
 
 if global.vel !=0 or ducking == true or up == true
 {
-IdieTimer = 300
-Idie_mode = false
+    IdieTimer = 300
+    Idie_mode = false
+}
+
+if global.pause = 1
+{
+    global.vel = 0
 }
 #define Collision_Solid
 /*"/*'/**//* YYD ACTION

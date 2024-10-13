@@ -688,6 +688,7 @@ if ExeAttack1.sprite_index = sprFinalExePossible_to_beat1 && sprite_index = sprS
 with ExeAttack1
 {
 global.Hit+=1
+if global.Hit = 27 scr_giveach('DM_WR')
 Mode = 3
 sound_play(global.S_Hit)
 }}
@@ -731,6 +732,7 @@ if ExeAttack2.sprite_index = sprFinalExLaugh && sprite_index = sprSonicJump
 with ExeAttack2
 {
 global.Hit+=1
+if global.Hit = 27 scr_giveach('DM_WR')
 vspeed =-5
 Act = 2
 sound_play(global.S_Hit)
@@ -751,6 +753,7 @@ if ExeAttack3.sprite_index = sprFinalExePossible_to_beat1 && sprite_index = sprS
 with ExeAttack3
 {
 global.Hit+=1
+if global.Hit = 27 scr_giveach('DM_WR')
 vspeed =-5
 Hit = true
 sound_play(global.S_Hit)
@@ -773,6 +776,7 @@ if ExeAttack4.sprite_index = sprFinalExePossible_to_beat1 && sprite_index = sprS
 with ExeAttack4
 {
 global.Hit+=1
+if global.Hit = 27 scr_giveach('DM_WR')
 Mode = 3
 sound_play(global.S_Hit)
 }}

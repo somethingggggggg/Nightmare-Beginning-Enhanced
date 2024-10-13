@@ -83,23 +83,50 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if Pers2.sprite_index = sprKnucklesTwisterBlack
+if instance_exists(Pers2)
 {
-instance_create(x+30,y+96,FF_Piece)
-instance_create(x+15,y+32,FF_Piece)
-instance_create(x-10,y,FF_Piece)
-instance_create(x,y-32,FF_Piece)
-instance_destroy()
-sound_play(global.S_Broke)
-}
+    if Pers2.sprite_index = sprKnucklesTwisterBlack
+    {
+    instance_create(x+30,y+96,FF_Piece)
+    instance_create(x+15,y+32,FF_Piece)
+    instance_create(x-10,y,FF_Piece)
+    instance_create(x,y-32,FF_Piece)
+    instance_destroy()
+    sound_play(global.S_Broke)
+    }
 
-//Broke down
-if Pers2.sprite_index = sprKnucklesPunchBlack
+    //Broke down
+    if Pers2.sprite_index = sprKnucklesPunchBlack
+    {
+    sound_play(global.S_Crack_Wall)
+    Strong -= 2
+    alarm[0] = 1
+    alarm[1] = 20
+    }
+}
+else
 {
-sound_play(global.S_Crack_Wall)
-Strong -= 2
-alarm[0] = 1
-alarm[1] = 20
+    if instance_exists(AI2)
+    {
+        if AI2.sprite_index = sprKnucklesTwisterBlack
+        {
+        instance_create(x+30,y+96,FF_Piece)
+        instance_create(x+15,y+32,FF_Piece)
+        instance_create(x-10,y,FF_Piece)
+        instance_create(x,y-32,FF_Piece)
+        instance_destroy()
+        sound_play(global.S_Broke)
+        }
+
+        //Broke down
+        if AI2.sprite_index = sprKnucklesPunchBlack
+        {
+        sound_play(global.S_Crack_Wall)
+        Strong -= 2
+        alarm[0] = 1
+        alarm[1] = 20
+        }
+    }
 }
 #define Collision_EnergyShieldFF
 /*"/*'/**//* YYD ACTION
