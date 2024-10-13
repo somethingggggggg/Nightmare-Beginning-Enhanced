@@ -22,8 +22,20 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-background_x[0] = view_xview[0] / myx
-background_y[0] = view_yview[0] / myx
+if room != 21
+{
+    background_x[0] = view_xview[0] / myx
+    background_y[0] = view_yview[0] / myx
+    background_x[1] = view_xview[0] / 8
+    background_y[1] = view_yview[0] / 8 + 2000
+}
+else
+{
 
-background_x[1] = view_xview[0] / 8
-background_y[1] = view_yview[0] / 8 + 2000
+}
+#define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/

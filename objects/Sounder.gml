@@ -311,6 +311,33 @@ if room != 0
         else scr_pausenav2()
     }
 }
+//I think this helps with the scaling, but this is so fucking stupid
+if keyboard_check_pressed(vk_f4)
+{
+    if window_get_fullscreen() = 1
+    {
+        window_set_fullscreen(0)
+        window_set_size(1280,720)
+        //window_set_showborder(1)
+        //window_set_showicons(1)
+        //window_set_sizeable(1)
+        window_set_position(display_get_width()/2-(1280/2),display_get_height()/2-(720/2))
+    }
+    else
+    {
+        window_set_fullscreen(1)
+        /*window_set_size(1920,1080)
+        window_set_region_size(1920,1080,1)
+        window_resize_buffer(1920,1080,1,0)*/
+    }
+}
+//if window_get_fullscreen() = 1 window_set_size(display_get_width(),display_get_height())
+/*else
+{
+    window_set_showborder(1)
+    window_set_showicons(1)
+    window_set_sizeable(1)
+}
 #define Other_3
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -327,6 +354,17 @@ applies_to=self
 */
 if room != 0
 {
+    if window_get_fullscreen() = 1
+    {
+        view_wport[0] = display_get_width()
+        view_hport[0] = display_get_height()
+        view_wport[1] = display_get_width()
+        view_hport[1] = display_get_height()
+        view_wport[2] = display_get_width()
+        view_hport[2] = display_get_height()
+        view_wport[3] = display_get_width()
+        view_hport[3] = display_get_height()
+    }
     switch global.fourbythree
     {
         case 1:

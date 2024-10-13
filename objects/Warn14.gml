@@ -6,6 +6,7 @@ applies_to=self
 */
 sound_stop(global.S_Egg_Sound)
 sound_play(global.S_Warp)
+scr_giveach('EggWarp')
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=224
