@@ -18,6 +18,8 @@ if keyboard_check_pressed(vk_enter)
     if global.option = 0
     {
         global.menustate = 0
+        //scr_applysettings()
+
     }
 }
 if keyboard_check_pressed(vk_left)

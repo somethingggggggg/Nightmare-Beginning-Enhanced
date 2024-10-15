@@ -1,7 +1,3 @@
-draw_set_font(global.SMALLSONFONT)
-//idk why adding half a pixel makes it look better but it does
-draw_sprite_stretched(sprpausefuck,0,view_xview[view_current],view_yview[view_current],view_wview+0.5,view_hview+0.5)
-draw_sprite(spranother,view_current,view_xview,view_yview)
 draw_sprite(spr_placeholder,view_current,346+view_xview[view_current],95+view_yview[view_current])
 while i < menulength
 {

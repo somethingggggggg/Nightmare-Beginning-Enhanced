@@ -67,7 +67,7 @@ if instance_exists(EPassed) && instance_exists(GoI_3)
 {
 instance_create(416,272,MS_6)
 }
-else if instance_exists(EPassed) && !instance_exists(GoI_2)
+else if instance_exists(EPassed) && !instance_exists(GoI_3)
 {
 instance_create(416,272,MS_6)
 instance_create(414,194,DE)

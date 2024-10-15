@@ -1,3 +1,11 @@
+window_resize_buffer(display_get_width(),display_get_height(),1,0)
+i = 0
+repeat(8)
+{
+    view_wport[i] = display_get_width()
+    view_hport[i] = display_get_height()
+    i += 1
+}
 global.TLive = 1
 global.ELive = 1
 global.KLive = 1

@@ -55,6 +55,7 @@ if keyboard_check_pressed(vk_enter)
             //view_yview = prev_view_yview
             instance_activate_all()
             sound_stop_all()
+            myfade = 0
             room_goto(38)
         }
     }

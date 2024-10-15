@@ -36,16 +36,14 @@ applies_to=self
 switch image_index
 {
     case 0:
-        //draw_self()
         draw_rectangle_color(x-11,y-24,x+sprite_width-11,y+sprite_height-24,$000000,$000000,$000000,$000000,0)
         draw_sprite(sprSlaveSonicIdle,0,x-11+sprite_width/2,y-24+sprite_height/2)
-        draw_sprite_part_ext(sprNoice1,anim/2,anim,0,sprite_width-anim,sprite_height,x-11,y-24,1,1,mycolor,image_alpha)
-        draw_sprite_part_ext(sprNoice1,anim/2,0,0,anim,sprite_height,x+sprite_width-anim-11,y-24,1,1,mycolor,image_alpha)
+        draw_sprite_part_ext(sprNoice1,anim/2,anim,0,sprite_width-anim,sprite_height+0.75,x-11,y-24,1,1,mycolor,image_alpha)
+        draw_sprite_part_ext(sprNoice1,anim/2,0,0,anim,sprite_height+0.75,x+sprite_width-anim-11,y-24,1,1,mycolor,image_alpha)
     break;
     case 1:
 //sprSH_Ground
 //sprSH_Back
-        //draw_self()
         draw_sprite_part_ext(sprSH_Back,anim/2,/*511*/anim/2,130,sprite_width,sprite_height-12,x-11,y-24,1,1,$ffffff,1)
         draw_sprite_part_ext(sprSH_Ground,image_index,0,0,sprite_width,sprite_height-36,x-11,y+12,1,1,mycolor,image_alpha)
     break;

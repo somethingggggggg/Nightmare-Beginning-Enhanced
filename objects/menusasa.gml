@@ -9,6 +9,7 @@ background_alpha[2] = 0
 fuckyalpha = 0
 scrollcounter = 0
 scroll = 0
+Notavalmessage = "Unavailable in this version"
 global.lang = 0
 global.fourbythree = 1
 image_speed = 0.2
@@ -186,6 +187,7 @@ switch global.menustate
         scr_menudraw1()
     break;
     case 1:
+        draw_sprite_tiled_ext(spr_NBRsomething,0,0,-120+scrollcounter,1,1,c_white,1)
         scr_menudraw2()
     break;
     case 2:

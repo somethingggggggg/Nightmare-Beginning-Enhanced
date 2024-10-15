@@ -5,6 +5,7 @@ action_id=603
 applies_to=self
 */
 instance_create(0,0,obj_loadingscreen)
+
 pause = 0
 myfade = 0
 sprpausefuck = 0
@@ -17,6 +18,7 @@ image_speed = 0.2
 scroll = 0
 anim = 0
 
+Notavalmessage = "Not toggleable mid game"
 option[1] = global.lang
 option[2] = global.cheats
 option[3] = global.dialoguefont
@@ -132,6 +134,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+///initialize all sounds in the stupidest way
 global.S_sound_take=sound_add(working_directory+"/Sound/S_sound_take.ogg",0,0)
 global.S_YCRS=sound_add(working_directory+"/Sound/S_You_Can_t_Run_Secret.ogg",0,0)
 global.S_Alarm_2=sound_add(working_directory+"/Sound/Alarm_2.mp3",0,0)
@@ -293,7 +296,7 @@ if room != 0
         if keyboard_check_pressed(vk_escape) && !instance_exists(SW_Control)
         {
             room_speed = 60
-            sprpausefuck = sprite_create_from_screen(0,0,view_wview[view_current]*4,view_hview[view_current]*4,0,0,0,0)
+            sprpausefuck = sprite_create_from_screen(0,0,view_wport[view_current],view_wport[view_current],0,0,0,0)
             instance_deactivate_all(1)
             prev_view_hview = view_hview[view_current]
             prev_view_wview = view_wview[view_current]
@@ -318,6 +321,17 @@ if keyboard_check_pressed(vk_f4)
     {
         window_set_fullscreen(0)
         window_set_size(1280,720)
+        //I will regret commenting this
+
+        //window_set_region_size(1280,720,1)
+        window_resize_buffer(1280,720,1,0)
+        i = 0
+        repeat(8)
+        {
+            view_wport[i] = 1280
+            view_hport[i] = 720
+            i += 1
+        }
         //window_set_showborder(1)
         //window_set_showicons(1)
         //window_set_sizeable(1)
@@ -326,11 +340,19 @@ if keyboard_check_pressed(vk_f4)
     else
     {
         window_set_fullscreen(1)
-        /*window_set_size(1920,1080)
-        window_set_region_size(1920,1080,1)
-        window_resize_buffer(1920,1080,1,0)*/
+        //window_set_size(display_get_width(),display_get_height())
+        //window_set_region_size(display_get_width(),display_get_height(),1)
+        window_resize_buffer(display_get_width(),display_get_height(),1,0)
+        i = 0
+        repeat(8)
+        {
+            view_wport[i] = display_get_width()
+            view_hport[i] = display_get_height()
+            i += 1
+        }
     }
 }
+
 //if window_get_fullscreen() = 1 window_set_size(display_get_width(),display_get_height())
 /*else
 {
@@ -352,19 +374,26 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+if window_get_fullscreen() = 1
+{
+    //window_set_size(display_get_width(),display_get_height())
+    //window_set_region_size(display_get_width(),display_get_height(),1)
+    window_resize_buffer(display_get_width(),display_get_height(),1,0)
+    i = 0
+    repeat(8)
+    {
+        view_wport[i] = display_get_width()
+        view_hport[i] = display_get_height()
+        i += 1
+    }
+}
+else
+{
+    window_set_size(1280,720)
+    //window_set_position(display_get_width()/2-(1280/2),display_get_height()/2-(720/2))
+}
 if room != 0
 {
-    if window_get_fullscreen() = 1
-    {
-        view_wport[0] = display_get_width()
-        view_hport[0] = display_get_height()
-        view_wport[1] = display_get_width()
-        view_hport[1] = display_get_height()
-        view_wport[2] = display_get_width()
-        view_hport[2] = display_get_height()
-        view_wport[3] = display_get_width()
-        view_hport[3] = display_get_height()
-    }
     switch global.fourbythree
     {
         case 1:
@@ -413,18 +442,25 @@ draw_set_halign(fa_left)
 draw_set_color(c_white)
 if pause = 1 && room != 0
 {
-    if global.menustate = 1 scr_pausedraw()
+    if global.menustate = 1
+    {
+        draw_set_font(global.SMALLSONFONT)
+        //idk why adding half a pixel makes it look better but it does
+        draw_sprite_stretched(sprpausefuck,0,view_xview[view_current],view_yview[view_current],view_wview[view_current]+0.5,view_hview[view_current]+0.5)
+        draw_sprite(spranother,0,view_xview[view_current],view_yview[view_current])
+        scr_menudraw2()
+    }
     else scr_pausedraw2()
     //execute_file(working_directory+"/script.txt")
 }
 if global.showfps = 1
 {
     draw_set_font(global.SMALLSONFONT)
+    if debug_mode = 1 draw_text(view_xview[view_current]+32,view_yview[view_current]+8,get_ram_usage())
     if fps > 40 draw_set_color(c_lime)
     else if fps > 20 draw_set_color(c_yellow)
     else draw_set_color(c_red)
-    draw_text(view_xview+8,view_yview+8,fps)
-    if debug_mode = 1 draw_text(view_xview+32,view_yview+8,get_ram_usage())
+    draw_text(view_xview[view_current]+8,view_yview[view_current]+8,fps)
     //draw_text(view_xview+8,view_yview+16,d3d_get_free_video_memory())
     //if room != 0 draw_text(view_xview,view_yview+32,variable_global_array_get(voiceline,108))
     draw_set_font(global.dialoguefont)

@@ -1,7 +1,3 @@
-Derp XML 8.2
-ds_bin
-ExtremePhysics 2.2
-Game Appearance
 Game Maker 8.2 Alpha
 Game Maker 8.2 Chunk
 Game Maker 8.2 Console
@@ -17,5 +13,3 @@ Game Maker 8.2 Video
 GM Printing
 GM Room Transitions
 GM Windows Dialogs
-High Resolution Timer
-N_Menu

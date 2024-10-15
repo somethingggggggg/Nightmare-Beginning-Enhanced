@@ -34,3 +34,5 @@
 |scr_voiceinit
 |scr_saveoptions
 |scr_giveach
+|scr_skidscript
+|scr_skidcheck

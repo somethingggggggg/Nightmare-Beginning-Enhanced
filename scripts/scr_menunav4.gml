@@ -39,3 +39,5 @@ if keyboard_check_pressed(vk_enter)
         ass = 1
     }
 }
+if global.option > 3 scroll = -((((global.option-3) * 10)+abs(scroll))/2)
+else scroll = - abs(scroll)/2

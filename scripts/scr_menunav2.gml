@@ -26,80 +26,102 @@ if keyboard_check_pressed(vk_enter)
         global.menustate = 0
     }
 }
-if keyboard_check_pressed(vk_left) && global.option != 0 && optionblocked[global.option] != 1
+if keyboard_check_pressed(vk_left)
 {
-    sound_play(global.S_WellRing)
-    if global.option != 3 && global.option != 8 && global.option != 9 && global.option != 1
+    if optionblocked[global.option] != 1
     {
-        if option[global.option] = 1 option[global.option] = 0
-        else option[global.option] = 1
+        if global.option != 0
+        {
+            sound_play(global.S_WellRing)
+            if global.option != 3 && global.option != 8 && global.option != 9 && global.option != 1
+            {
+                if option[global.option] = 1 option[global.option] = 0
+                else option[global.option] = 1
+            }
+            else
+            {
+                if global.option = 1
+                {
+                    option[global.option] -= 1
+                }
+                if global.option = 3
+                {
+                    if option[global.option] = WORD_Font option[global.option] = testingfont
+                    else option[global.option] = WORD_Font
+                }
+                if global.option = 8
+                {
+                    option[global.option] -= 1
+                    if option[global.option] > 2 option[global.option] = 0
+                    if option[global.option] < 0 option[global.option] = 2
+                }
+                if global.option = 9
+                {
+                    option[global.option] -= 1
+                    if option[global.option] > ds_list_size(global.voicelist)-1 option[global.option] = 0
+                    if option[global.option] < 0 option[global.option] = ds_list_size(global.voicelist)-1
+                }
+                if global.option = 12
+                {
+                    if option[global.option] = 1 option[global.option] = 0
+                    else option[global.option] = 1
+                }
+            }
+        }
     }
     else
     {
-        if global.option = 1
-        {
-            option[global.option] -= 1
-        }
-        if global.option = 3
-        {
-            if option[global.option] = WORD_Font option[global.option] = testingfont
-            else option[global.option] = WORD_Font
-        }
-        if global.option = 8
-        {
-            option[global.option] -= 1
-            if option[global.option] > 2 option[global.option] = 0
-            if option[global.option] < 0 option[global.option] = 2
-        }
-        if global.option = 9
-        {
-            option[global.option] -= 1
-            if option[global.option] > ds_list_size(global.voicelist)-1 option[global.option] = 0
-            if option[global.option] < 0 option[global.option] = ds_list_size(global.voicelist)-1
-        }
-        if global.option = 12
-        {
-            if option[global.option] = 1 option[global.option] = 0
-            else option[global.option] = 1
-        }
+        sound_play(global.S_Locked)
     }
 }
-if keyboard_check_pressed(vk_right) && global.option != 0 && optionblocked[global.option] != 1
+
+//global.S_Locked
+if keyboard_check_pressed(vk_right)
 {
-    sound_play(global.S_WellRing)
-    if global.option != 3 && global.option != 8 && global.option != 9 && global.option != 1
+    if optionblocked[global.option] != 1
     {
-        if option[global.option] = 1 option[global.option] = 0
-        else option[global.option] = 1
+        if global.option != 0
+        {
+            sound_play(global.S_WellRing)
+            if global.option != 3 && global.option != 8 && global.option != 9 && global.option != 1
+            {
+                if option[global.option] = 1 option[global.option] = 0
+                else option[global.option] = 1
+            }
+            else
+            {
+                if global.option = 1
+                {
+                    option[global.option] += 1
+                }
+                if global.option = 3
+                {
+                    if option[global.option] = WORD_Font option[global.option] = testingfont
+                    else option[global.option] = WORD_Font
+                }
+                if global.option = 8
+                {
+                    option[global.option] += 1
+                    if option[global.option] > 2 option[global.option] = 0
+                    if option[global.option] < 0 option[global.option] = 2
+                }
+                if global.option = 9
+                {
+                    option[global.option] += 1
+                    if option[global.option] > ds_list_size(global.voicelist)-1 option[global.option] = 0
+                    if option[global.option] < 0 option[global.option] = ds_list_size(global.voicelist)-1
+                }
+                if global.option = 12
+                {
+                    if option[global.option] = 1 option[global.option] = 0
+                    else option[global.option] = 1
+                }
+            }
+        }
     }
     else
     {
-        if global.option = 1
-        {
-            option[global.option] += 1
-        }
-        if global.option = 3
-        {
-            if option[global.option] = WORD_Font option[global.option] = testingfont
-            else option[global.option] = WORD_Font
-        }
-        if global.option = 8
-        {
-            option[global.option] += 1
-            if option[global.option] > 2 option[global.option] = 0
-            if option[global.option] < 0 option[global.option] = 2
-        }
-        if global.option = 9
-        {
-            option[global.option] += 1
-            if option[global.option] > ds_list_size(global.voicelist)-1 option[global.option] = 0
-            if option[global.option] < 0 option[global.option] = ds_list_size(global.voicelist)-1
-        }
-        if global.option = 12
-        {
-            if option[global.option] = 1 option[global.option] = 0
-            else option[global.option] = 1
-        }
+        sound_play(global.S_Locked)
     }
 }
     global.lang = option[1]

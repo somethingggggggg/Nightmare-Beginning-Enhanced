@@ -28,3 +28,10 @@ else
    gravity = 0.25;
 }
 image_angle += rotate_speed
+#define Other_40
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=203
+applies_to=self
+invert=0
+*/

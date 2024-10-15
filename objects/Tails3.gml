@@ -6,6 +6,7 @@ applies_to=self
 */
 image_speed = 0.2
 acc = 0.066875;
+origacc = 0.066875
 global.vel = 0;
 maxSpeed = 6;
 ground = true;
@@ -26,6 +27,7 @@ alarm[0] = 360
 IdieTimer = 300
 Idie_mode = false
 stopping = 0
+varsprskid = spr_tailsskid
 #define Destroy_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -70,16 +72,8 @@ if rolling == false
   image_xscale = 1;
 }
 
-if keyboard_check_pressed(vk_right) && global.vel < -4 && stopping = 0 && ground == true
-{
-    sound_play(global.S_skid)
-    stopping = 10
-}
-if keyboard_check_pressed(vk_left) && global.vel > 4 && stopping = 0 && ground == true
-{
-    sound_play(global.S_skid)
-    stopping = -10
-}
+scr_skidcheck()
+
 //Deacceleration
 if ground == true
 {
@@ -411,22 +405,7 @@ if view_object[0] = Tails3
     }
 }
 
-if stopping != 0
-{
-    stopping -= sign(stopping)
-    //stupid fucking check if the frame is odd or even
-    if stopping/2 = floor(stopping/2) instance_create(x+(16*sign(stopping)),bbox_bottom,obj_SkidParticle)
-    obj_SkidParticle.depth = depth
-    if sign(stopping) != 0 image_xscale = -sign(stopping)
-    else image_xscale = 1
-    acc = 0.066875 * 2;
-    sprite_index = spr_tailsskid;
-    mask_index = sprTailsMask;
-}
-else
-{
-    acc = 0.066875;
-}
+scr_skidscript()
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603

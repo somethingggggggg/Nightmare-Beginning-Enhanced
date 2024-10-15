@@ -19,11 +19,15 @@ drawAngle = 0;
 canHit = true;
 canSpriteChange = true;
 global.rings = 10;
-Bot =1
+Bot = 1
 platform = noone
 Act = 0
 IdieTimer = 300
 Idie_mode = false
+
+origacc = 0.08
+stopping = 0
+varsprskid = spr_sonicskid
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -61,7 +65,11 @@ if global.vel < 0 && ground == false
 
 if rolling == false
   image_xscale = 1;
-}}
+}
+}
+
+scr_skidcheck()
+
 //Deacceleration
 if Bot != 5
 {
@@ -355,30 +363,33 @@ platform = instance_place(x, y + 1, UpGrounder)
 //Idie
 if global.vel = 0 && ground = true && Idie_mode = false && ducking == false && up == false && spindash == false
 {
-if IdieTimer >-1
-{
-IdieTimer -= 1
-}}
+    if IdieTimer >-1
+    {
+        IdieTimer -= 1
+    }
+}
 else
 {
-IdieTimer = 300
+    IdieTimer = 300
 }
 if IdieTimer <=0
 {
-Idie_mode = true
+    Idie_mode = true
 }
 
 if Idie_mode = true
 {
-sprite_index = sprSonicIdie
-image_speed = 0.12
+    sprite_index = sprSonicIdie
+    image_speed = 0.12
 }
 
 if global.vel !=0 or ducking == true or up == true
 {
-IdieTimer = 300
-Idie_mode = false
+    IdieTimer = 300
+    Idie_mode = false
 }
+
+scr_skidscript()
 #define Step_2
 /*"/*'/**//* YYD ACTION
 lib_id=1
