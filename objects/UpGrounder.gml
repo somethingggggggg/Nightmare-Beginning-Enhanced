@@ -17,8 +17,14 @@ Act = 1
 vspeed = 0
 image_index = 1
 instance_create(4384,2000,ExeAttack2)
-view_visible[0] = false
-view_visible[2] = true
+view_visible[0] = 0
+view_visible[1] = 0
+view_visible[3] = 0
+view_visible[4] = 0
+view_visible[5] = 0
+view_visible[6] = 0
+view_visible[7] = 0
+view_visible[2] = 1
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

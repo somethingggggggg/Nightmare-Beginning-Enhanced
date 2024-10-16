@@ -12,8 +12,17 @@ if keyboard_check_pressed(vk_down) or mouse_wheel_down()
 if keyboard_check_pressed(vk_escape)
 {
     pause = 0
-    view_hview = prev_view_hview
-    view_wview = prev_view_wview
+    //stupid fix because view_current doesn't work
+    if room = 66 && view_visible[2] = 1
+    {
+        view_wview[2] = 640
+        view_hview[2] = 360
+    }
+    else
+    {
+        view_hview[view_current] = prev_view_hview
+        view_wview[view_current] = prev_view_wview
+    }
     global.menustate = 0
     global.option = 0
     //view_xview = prev_view_xview

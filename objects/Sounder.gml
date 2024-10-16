@@ -298,10 +298,21 @@ if room != 0
             room_speed = 60
             sprpausefuck = sprite_create_from_screen(0,0,view_wport[view_current],view_wport[view_current],0,0,0,0)
             instance_deactivate_all(1)
-            prev_view_hview = view_hview[view_current]
-            prev_view_wview = view_wview[view_current]
-            view_wview[view_current] = 462
-            view_hview[view_current] = 260
+            //stupid fix because view_current doesn't work
+            if room = 66 && view_visible[2] = 1
+            {
+                prev_view_hview = view_hview[2]
+                prev_view_wview = view_wview[2]
+                view_wview[2] = 462
+                view_hview[2] = 260
+            }
+            else
+            {
+                prev_view_hview = view_hview[view_current]
+                prev_view_wview = view_wview[view_current]
+                view_wview[view_current] = 462
+                view_hview[view_current] = 260
+            }
             sound_kind_volume(1,1)
             sound_loop(global.S_PAUSEMENU)
             scr_soundfuck()
@@ -360,6 +371,12 @@ if keyboard_check_pressed(vk_f4)
     window_set_showicons(1)
     window_set_sizeable(1)
 }
+#define Step_2
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
 #define Other_3
 /*"/*'/**//* YYD ACTION
 lib_id=1
