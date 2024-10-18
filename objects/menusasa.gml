@@ -173,6 +173,14 @@ switch global.menustate
     case 2: scr_menunav3() break;
     case 3: scr_menunav4() break;
 }
+if global.menustate = 0
+{
+    ass -= 0.01
+}
+else
+{
+    ass += 0.01
+}
 scrollcounter += 0.5
 if scrollcounter > 120 scrollcounter = 0
 #define Draw_0
@@ -187,7 +195,7 @@ switch global.menustate
         scr_menudraw1()
     break;
     case 1:
-        draw_sprite_tiled_ext(spr_NBRsomething,0,0,-120+scrollcounter,1,1,c_white,1)
+        draw_sprite_tiled_ext(spr_NBRsomething,0,0,-120+scrollcounter,1,1,c_white,ass)
         scr_menudraw2()
     break;
     case 2:

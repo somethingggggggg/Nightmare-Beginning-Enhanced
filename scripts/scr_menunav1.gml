@@ -108,5 +108,4 @@ if global.option < 0 global.option = 3
 if global.option > 3 global.option = 0
 if global.cheats < 0 global.cheats = 1
 if global.cheats > 1 global.cheats = 0
-ass -= 0.01
 background_y[0] = view_yview[0]

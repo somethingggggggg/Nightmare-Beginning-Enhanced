@@ -9,18 +9,10 @@ if keyboard_check_pressed(vk_down) or mouse_wheel_down()
     global.option += 1
     sound_play(global.S_MS_Move)
 }
-if keyboard_check_pressed(vk_escape)
+if (keyboard_check_pressed(vk_enter) && global.option = 0) or keyboard_check_pressed(vk_escape)
 {
     global.menustate = 0
-}
-if keyboard_check_pressed(vk_enter)
-{
-    if global.option = 0
-    {
-        global.menustate = 0
-        //scr_applysettings()
-
-    }
+    //scr_applysettings()
 }
 if keyboard_check_pressed(vk_left)
 {

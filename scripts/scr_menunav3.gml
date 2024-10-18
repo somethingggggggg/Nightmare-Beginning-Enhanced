@@ -24,9 +24,5 @@ if keyboard_check(vk_down)
 {
     view_yview += 4
 }
-if global.lang < 0 global.lang = 2
-if global.lang > 2 global.lang = 0
-if global.option < 0 global.option = 4
-if global.cheats < 0 global.cheats = 1
-if global.cheats > 1 global.cheats = 0
-ass -= 0.01
+if view_yview[view_current] < 125 view_yview[view_current] = 125
+if view_yview[view_current] > 233 view_yview[view_current] = 233

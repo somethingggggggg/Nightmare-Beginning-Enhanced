@@ -118,13 +118,36 @@ action_id=603
 applies_to=self
 */
 pause = 0
-view_hview[view_current] = prev_view_hview
-view_wview[view_current] = prev_view_wview
+if room = 66 && view_visible[2] = 1
+{
+    view_wview[2] = 640
+    view_hview[2] = 360
+}
+else
+{
+    view_hview[view_current] = prev_view_hview
+    view_wview[view_current] = prev_view_wview
+}
 global.menustate = 0
 global.option = 0
 //view_xview = prev_view_xview
 //view_yview = prev_view_yview
 scr_soundunfuck()
+if global.fourbythree != prevset[8] scr_fourbythreer()
+if global.DCRP_enabled != prevset[10]
+{
+    if global.DCRP_enabled = 0
+    {
+        discord_free_app()
+        discord_free_dll()
+    }
+    else
+    {
+        discord_init_dll()
+        discord_init_app("1252129963411505222")
+        update_discord_lol()
+    }
+}
 sound_stop(global.S_PAUSEMENU)
 myfade = 0
 instance_activate_all()
@@ -295,6 +318,18 @@ if room != 0
     {
         if keyboard_check_pressed(vk_escape) && !instance_exists(SW_Control)
         {
+            prevset[1] = global.lang
+            prevset[2] = global.cheats
+            prevset[3] = global.dialoguefont
+            prevset[4] = global.progressbar
+            prevset[5] = global.showfps
+            prevset[6] = global.newcontent
+            prevset[7] = global.subcnoise
+            prevset[8] = global.fourbythree
+            prevset[9] = global.voicedir
+            prevset[10] = global.DCRP_enabled
+            prevset[11] = global.RG_final_boss
+            prevset[12] = global.BL_fliter
             room_speed = 60
             sprpausefuck = sprite_create_from_screen(0,0,view_wport[view_current],view_wport[view_current],0,0,0,0)
             instance_deactivate_all(1)
@@ -383,8 +418,11 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-discord_free_app()
-discord_free_dll()
+if global.DCRP_enabled = 1
+{
+    discord_free_app()
+    discord_free_dll()
+}
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -406,28 +444,16 @@ if window_get_fullscreen() = 1
 }
 else
 {
-    window_set_size(1280,720)
+    //window_set_size(1280,720)
     //window_set_position(display_get_width()/2-(1280/2),display_get_height()/2-(720/2))
 }
 if room != 0
 {
-    switch global.fourbythree
+    if global.fourbythree != 0
     {
-        case 1:
-        //window_set_region_size(640,480,0)
-        //window_set_size(640,480)
-        if room != 56 && room != 55 view_xview[0] += (view_wview[0] - (view_hview[0] / 3) * 4) / 2
-        view_wview[0] = (view_hview[0] / 3) * 4
-        view_hborder[0] = view_wview[0] / 2
-        break;
-        case 2:
-        window_set_region_size(640,480,0)
-        //window_set_size(640,480)
-        if room != 56 && room != 55 view_xview[0] += (view_wview[0] - (view_hview[0] / 3) * 4) / 2
-        view_wview[0] = (view_hview[0] / 3) * 4
-        view_hborder[0] = view_wview[0] / 2
-        break;
+        scr_fourbythreer()
     }
+}
     //mirrored mode code
     /*
     with all
@@ -435,15 +461,17 @@ if room != 0
         x = room_width - x
     }
     */
-}
 #define Other_30
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
-discord_free_app()
-discord_free_dll()
+if global.DCRP_enabled = 1
+{
+    discord_free_app()
+    discord_free_dll()
+}
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=332
