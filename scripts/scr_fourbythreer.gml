@@ -1,4 +1,7 @@
-if global.fourbythree = 2 window_set_region_size(640,480,0)
+if global.fourbythree = 2
+{
+    window_set_region_size(4,3,0)
+}
 else window_set_region_size(display_get_width(),display_get_height(),0)
 i = 0
 repeat(8)

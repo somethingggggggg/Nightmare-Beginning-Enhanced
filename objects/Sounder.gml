@@ -148,6 +148,11 @@ if global.DCRP_enabled != prevset[10]
         update_discord_lol()
     }
 }
+if global.voicedir != option[9]
+{
+    scr_voiceunload()
+    if global.voicedir != 0 scr_voiceinit()
+}
 sound_stop(global.S_PAUSEMENU)
 myfade = 0
 instance_activate_all()

@@ -1,4 +1,4 @@
-if stopping != 0
+if stopping != 0 && (Bot = 3 or Bot = 0)
 {
     stopping -= sign(stopping)
     //stupid fucking check if the frame is odd or even

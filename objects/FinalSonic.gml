@@ -48,24 +48,24 @@ if view_visible[1] = false
 //Movement
 if Bot = 3
 {
-if (keyboard_check(vk_left) && !place_meeting(x+(abs(global.vel)*-1)-1, y, Solid_Mask) && !place_meeting(x+(abs(global.vel)*-1)-1, y, EggElevator) && !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapWallDestruct) && !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapWall) && !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapGround) && !place_meeting(x+(abs(global.vel)*-1)-1, y, FinalGroundDown) && !place_meeting(x+(abs(global.vel)*-1)-1, y, FinalGround2) && !place_meeting(x+(abs(global.vel)*-1)-1, y, UpGrounder) && !place_meeting(x+(abs(global.vel)*-1)-1, y, UpGrounderBroke) && !place_meeting(x+(abs(global.vel)*-1)-1, y, FinalGround) && !place_meeting(x+(abs(global.vel)*-1)-1, y, Solid)) && (canMove == true or (rolling == true && global.vel > 0))
-{
-  global.vel -= acc * (1+ground);
-if global.vel > 0 && ground == false
-  global.vel -= acc
+    if (keyboard_check(vk_left) && !place_meeting(x+(abs(global.vel)*-1)-1, y, Solid_Mask) && !place_meeting(x+(abs(global.vel)*-1)-1, y, EggElevator) && !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapWallDestruct) && !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapWall) && !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapGround) && !place_meeting(x+(abs(global.vel)*-1)-1, y, FinalGroundDown) && !place_meeting(x+(abs(global.vel)*-1)-1, y, FinalGround2) && !place_meeting(x+(abs(global.vel)*-1)-1, y, UpGrounder) && !place_meeting(x+(abs(global.vel)*-1)-1, y, UpGrounderBroke) && !place_meeting(x+(abs(global.vel)*-1)-1, y, FinalGround) && !place_meeting(x+(abs(global.vel)*-1)-1, y, Solid)) && (canMove == true or (rolling == true && global.vel > 0))
+    {
+      global.vel -= acc * (1+ground);
+    if global.vel > 0 && ground == false
+      global.vel -= acc
 
-if rolling == false
-  image_xscale = -1;
-}
-if (keyboard_check(vk_right) && !place_meeting(x+abs(global.vel)+1, y, Solid_Mask) && !place_meeting(x+abs(global.vel)+1, y, EggElevator) && !place_meeting(x+abs(global.vel)+1, y, ScrapWallDestruct) && !place_meeting(x+abs(global.vel)+1, y, ScrapWall) && !place_meeting(x+abs(global.vel)+1, y, ScrapGround) && !place_meeting(x+abs(global.vel)+1, y, FinalGroundDown) && !place_meeting(x+abs(global.vel)+1, y, FinalGround2) && !place_meeting(x+abs(global.vel)+1, y, UpGrounder) && !place_meeting(x+abs(global.vel)+1, y, UpGrounderBroke) && !place_meeting(x+abs(global.vel)+1, y, FinalGround) && !place_meeting(x+abs(global.vel)+1, y, Solid)) && (canMove == true or (rolling == true && global.vel < 0))
-{
-  global.vel += acc * (1+ground);
-if global.vel < 0 && ground == false
-  global.vel += acc
+    if rolling == false
+      image_xscale = -1;
+    }
+    if (keyboard_check(vk_right) && !place_meeting(x+abs(global.vel)+1, y, Solid_Mask) && !place_meeting(x+abs(global.vel)+1, y, EggElevator) && !place_meeting(x+abs(global.vel)+1, y, ScrapWallDestruct) && !place_meeting(x+abs(global.vel)+1, y, ScrapWall) && !place_meeting(x+abs(global.vel)+1, y, ScrapGround) && !place_meeting(x+abs(global.vel)+1, y, FinalGroundDown) && !place_meeting(x+abs(global.vel)+1, y, FinalGround2) && !place_meeting(x+abs(global.vel)+1, y, UpGrounder) && !place_meeting(x+abs(global.vel)+1, y, UpGrounderBroke) && !place_meeting(x+abs(global.vel)+1, y, FinalGround) && !place_meeting(x+abs(global.vel)+1, y, Solid)) && (canMove == true or (rolling == true && global.vel < 0))
+    {
+      global.vel += acc * (1+ground);
+    if global.vel < 0 && ground == false
+      global.vel += acc
 
-if rolling == false
-  image_xscale = 1;
-}
+    if rolling == false
+      image_xscale = 1;
+    }
 }
 
 scr_skidcheck()
@@ -172,12 +172,14 @@ image_speed = 0.2 + abs(global.vel / 20)
 //Jumping
 if Bot = 3
 {
-if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && up = false && spindash = false && Idie_mode = false
-{
-vspeed = -7
-sprite_index = sprSonicJump;
-sound_play(global.S_Jump)
-}}
+    if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && up = false && spindash = false && Idie_mode = false
+    {
+        vspeed = -7
+        stopping = 0
+        sprite_index = sprSonicJump;
+        sound_play(global.S_Jump)
+    }
+}
 
 
 //Up
@@ -197,7 +199,6 @@ if global.vel == 0 && ground == true && up == false && ducking == false && rolli
    image_index = 0;
 }
 //Rolling
-
 else if global.vel != 0 && ground == true && up == false && ducking == false && rolling == false && keyboard_check(vk_down) && canHit = true
 {
    rolling = true;
@@ -323,38 +324,38 @@ if place_meeting(x, y+2*vspeed+2, Solid) or place_meeting(x, y+vspeed+1, Solid_M
 
 if Bot = 1
 {
-global.vel = 0
+    global.vel = 0
 }
 
 if Bot = 2
 {
-image_xscale = 1
-global.vel = 8
+    image_xscale = 1
+    global.vel = 8
 }
 
 if Bot = 4
 {
-global.vel = 6
+    global.vel = 6
 }
 
 if Bot = 5
 {
-global.vel = 4
-image_xscale = 1
-rolling = false
-up = false
-ducking = false
-spindash = false
+    global.vel = 4
+    image_xscale = 1
+    rolling = false
+    up = false
+    ducking = false
+    spindash = false
 }
 
 if Bot = 6 or Bot = 7
 {
-sprite_index = sprSonicLookAround
+    sprite_index = sprSonicLookAround
 }
 if Bot = 6
 {
-Bot = 7
-FinalCam.alarm[5] = 120
+    Bot = 7
+    FinalCam.alarm[5] = 120
 }
 //Platform
 platform = instance_place(x, y + 1, UpGrounder)

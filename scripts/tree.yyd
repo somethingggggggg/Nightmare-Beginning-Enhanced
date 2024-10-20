@@ -13,6 +13,11 @@
 	|scr_pausenav2
 	|scr_hackdialget
 	|scr_dialget
++vanilla scripts
+	|EnemyGetHit
+	|collideSlopes
+	|Time_Script
+	|playerGetHit
 +discord rich presence
 	|discord_init_dll
 	|discord_init_app
@@ -20,18 +25,15 @@
 	|discord_free_app
 	|discord_update_presence
 	|update_discord_lol
-+vanilla scripts
-	|EnemyGetHit
-	|collideSlopes
-	|Time_Script
-	|playerGetHit
 +shaders
 	|bnw
 	|script38
++voice
+	|scr_voiceunload
+	|scr_voiceinit
+	|scr_voicethefucker
 |scr_soundfuck
 |scr_soundunfuck
-|scr_voicethefucker
-|scr_voiceinit
 |scr_saveoptions
 |scr_giveach
 |scr_skidscript

@@ -28,6 +28,7 @@ IdieTimer = 300
 Idie_mode = false
 stopping = 0
 varsprskid = spr_tailsskid
+Bot = 0
 #define Destroy_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
