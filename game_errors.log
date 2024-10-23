@@ -1,9 +1,0 @@
-ERROR in
-action number 1
-of Other Event: Room Start
-for object Sounder:
-
-In script scr_fourbythreer:Error in code at line 3:   
-    if window_get_fullscreen = 0 window_set_region_size(640,480,0)          ^at position 9: Unknown variable window_get_fullscreen
-
-
