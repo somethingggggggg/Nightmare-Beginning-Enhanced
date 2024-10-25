@@ -112,7 +112,9 @@ with HSE_GA
 image_alpha = 0
 }
 instance_create(x,y-10,HSE_Walker)
-}}}
+}
+}
+}
 #define Collision_Solid
 /*"/*'/**//* YYD ACTION
 lib_id=1

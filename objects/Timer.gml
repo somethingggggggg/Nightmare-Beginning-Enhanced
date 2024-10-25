@@ -4,8 +4,17 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-Sec = 00
-Min = 00
+
+if global.hardmode = 0 && global.TDetection = false
+{
+    Sec = 0
+    Min = 0
+}
+else
+{
+    Sec = 0
+    Min = 9
+}
 
 alarm[0] = 60
 #define Alarm_0

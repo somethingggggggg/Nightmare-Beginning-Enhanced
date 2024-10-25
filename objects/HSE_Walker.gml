@@ -58,16 +58,19 @@ else
 }
 if vspeed > 8 vspeed = 8;*/
 x += hsp
-if place_meeting(x, y, HS_1G) && sprite_index != sprHSE_Catch
+if place_meeting(x, y, HS_1G)
 {
+    sprite_index = sprHSE_Walker
+    mask_index = sprHSE_Walker
     do x -= scr_is_plus(hsp)
     until !place_meeting(x, y, HS_1G)
     hsp = 0
 }
 vsp += 0.25
 y += vsp
-if place_meeting(x, y, HS_1G) && sprite_index != sprHSE_Catch
+if place_meeting(x, y, HS_1G)
 {
+    ground = true
     sprite_index = sprHSE_Walker
     mask_index = sprHSE_Walker
     do y -= scr_is_plus(vsp)
@@ -140,7 +143,8 @@ if place_meeting(x,y,Tails3)
 }
     else
     {
-        Timer_Up = 100
+        if global.hardmode = 0 Timer_Up = 100
+        else if Timer_Up < 100 Timer_Up += 1
     }
 if global.Tails_mode = true
 {

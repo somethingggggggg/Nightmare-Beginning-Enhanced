@@ -27,7 +27,7 @@ switch perass
     break;
     case 3:
         instance_create(view_xview[0]-1386,368,Ex11)
-        Ex11.hspeed =8
+        Ex11.hspeed = 8
         if BL.FF_E = true
         {
             sound_play_ex(global.S_Egg_Speak2,1,1,-1)
@@ -43,7 +43,8 @@ switch perass
     break;
     case 5:
         instance_create(view_xview[0]+1386,368,Ex11)
-        Ex11.hspeed =-8
+        Ex11.hspeed = -8
+        Ex11.image_xscale = -1
         if BL.FF_E = true
         {
             sound_play_ex(global.S_Egg_Speak1,1,1,1)
