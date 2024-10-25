@@ -12,6 +12,8 @@ canSpriteChange = true
 Phase_2 = false
 Timer_Up = 100
 drawAngle = 0
+hsp = 0
+vsp = 0
 sound_stop(global.S_HideSound)
 sound_loop(global.S_Chase)
 #define Alarm_0
@@ -44,7 +46,7 @@ action_id=603
 applies_to=self
 */
 //Gravity
-if place_meeting(x, y+vspeed+1, HS_1G) && vspeed >= 0
+/*if place_meeting(x, y+vspeed+1, HS_1G) && vspeed >= 0
 {
    ground = true;
    //gravity = 0;
@@ -54,22 +56,38 @@ else
     ground = false;
     gravity = 0.25;
 }
-if vspeed > 8 vspeed = 8;
-
+if vspeed > 8 vspeed = 8;*/
+x += hsp
+if place_meeting(x, y, HS_1G) && sprite_index != sprHSE_Catch
+{
+    do x -= scr_is_plus(hsp)
+    until !place_meeting(x, y, HS_1G)
+    hsp = 0
+}
+vsp += 0.25
+y += vsp
+if place_meeting(x, y, HS_1G) && sprite_index != sprHSE_Catch
+{
+    sprite_index = sprHSE_Walker
+    mask_index = sprHSE_Walker
+    do y -= scr_is_plus(vsp)
+    until !place_meeting(x, y, HS_1G)
+    vsp = 0
+}
 //Movement
 if instance_exists(Tails3)
 {
     if !instance_exists(HSE_Watch)
     {
-        if collision_rectangle(x-10,y+5000,x-10000,y-5000,Tails3,1,0)
+        if Tails3.x < x
         {
             image_xscale = -1
-            hspeed = -4
+            hsp = -4
         }
-        if collision_rectangle(x+10,y+5000,x+10000,y-5000,Tails3,1,0)
+        else
         {
             image_xscale = 1
-            hspeed = 4
+            hsp = 4
         }
     }
 }
@@ -77,17 +95,19 @@ if instance_exists(Tails3)
 //Jump
 if collision_rectangle(x-10,y-30,x+30,y-150,Tails3,1,0) && sprite_index != sprHSE_GAJump && !place_meeting(x,y,Tails3)
 {
-    vspeed = -7.5
+    vsp = -7.5
     sprite_index = sprHSE_GAJump
-    hspeed = 0
+    mask_index = sprHSE_Walker
+    hsp = 0
 }
 
 if collision_rectangle(x-30,y-30,x+30,y-1000,Tails3,1,0)
 {
     if (!collision_rectangle(x,y,x+35,bbox_bottom+1,HS_1G,1,0) or !collision_rectangle(x,y,x-35,bbox_bottom+1,HS_1G,1,0) ) && sprite_index != sprHSE_GAJump
     {
-        vspeed = -7.5
+        vsp = -7.5
         sprite_index = sprHSE_GAJump
+        mask_index = sprHSE_Walker
     }
 }
 
@@ -95,15 +115,17 @@ if collision_rectangle(x-30,y-30,x+30,y-1000,Tails3,1,0)
 if collision_line(x,y,x+45,y,HS_1G,1,0) or collision_line(x,y,x-45,y,HS_1G,1,0) && ground = true && !place_meeting(x,y,Tails3)
 {
     sprite_index = sprHSE_GAJump
-    vspeed = -7.5
+    mask_index = sprHSE_Walker
+    vsp = -7.5
 }
 
 //Jump Out
 if collision_line(x,y,x,y-50,TeleportRing,0,0)
 {
-    hspeed = 0
-    vspeed = -7.5
+    hsp = 0
+    vsp = -7.5
     sprite_index = sprHSE_GAJump
+    mask_index = sprHSE_Walker
 }
 
 
@@ -112,23 +134,21 @@ if place_meeting(x,y,Tails3)
 {
     Timer_Up -= 1
     sprite_index = sprHSE_Catch
+    mask_index = sprHSE_Walker
     depth = Tails3.depth+1
-    vspeed = 0
+    vsp = 0
 }
     else
     {
-        if !place_meeting(x,y,Tails3)
-        {
-            Timer_Up = 100
-        }
+        Timer_Up = 100
     }
 if global.Tails_mode = true
 {
     if Timer_Up <= 0 && !instance_exists(TailsFatality)
     {
         instance_create(Tails3.x,Tails3.y,TailsFatality)
-        hspeed = 0
-        vspeed = 0
+        hsp = 0
+        vsp = 0
         gravity = 0
         with Tails3
         {
@@ -155,6 +175,7 @@ if instance_exists(TailsFatality)
         with HSE_GA
         {
             sprite_index = sprHSE_Sleep
+            mask_index = sprHSE_Walker
             AwakeTime = 400
             SleepTimer = 300
             SleepTime = true
@@ -185,14 +206,14 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-image_xscale = -image_xscale
+/*image_xscale = -image_xscale
 #define Collision_HS_1G
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
-if place_meeting(x,bbox_bottom,HS_1G)
+/*if place_meeting(x,bbox_bottom,HS_1G)
 {
     move_contact_solid(270, 4);
     vspeed = 0;
@@ -216,5 +237,5 @@ draw_set_font(global.dialoguefont)
 draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale, image_yscale, drawAngle, image_blend, image_alpha);
 if place_meeting(x,y,Tails3) && !instance_exists(TailsFatality)
 {
-draw_text_color(view_xview[0]+210,view_yview[0]+20,Timer_Up, $5050cf,$5050cf,$5050cf,$5050cf,1)
+    draw_text_color(view_xview[0]+210,view_yview[0]+20,Timer_Up, $5050cf,$5050cf,$5050cf,$5050cf,1)
 }

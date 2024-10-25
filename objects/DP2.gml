@@ -57,7 +57,8 @@ switch perass
         }
     break;
 }
-perass1=irandom_range(300,500)
+if global.hardmode = 0 perass1 = irandom_range(300,500)
+else perass1 = irandom_range(100,200)
 /*
 if perass=1
 {

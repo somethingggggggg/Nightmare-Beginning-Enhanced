@@ -31,8 +31,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if image_xscale < 1 image_xscale += 0.02
-if image_yscale < 1 image_yscale += 0.02
+if image_xscale < 0.8 image_xscale += 0.02
+if image_yscale < 0.8 image_yscale += 0.02
 /*if sprite_index = sprTrio_Away1 && image_index <11
 {
 image_speed = 0.3

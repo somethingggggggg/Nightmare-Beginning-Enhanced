@@ -4,7 +4,6 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if obj_textpopup.instance_count > 1 instance_destroy()
 alpha = 2
 text = menusasa.text
 #define Step_0

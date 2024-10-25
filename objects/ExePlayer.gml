@@ -81,7 +81,8 @@ if global.vel < 0 && ground == false
 
 if rolling == false
   image_xscale = 1;
-}}
+}
+}
 //Deacceleration
 if Bot != 5
 {
@@ -186,12 +187,13 @@ image_speed = 0.2 + abs(global.vel / 20)
 //Jumping
 if Bot = 3
 {
-if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && up = false && spindash = false
-{
-vspeed = -10
-sprite_index = sprFinalExe_Jump;
-sound_play(global.S_Jump)
-}}
+    if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && up = false && spindash = false
+    {
+        vspeed = -10
+        sprite_index = sprFinalExe_Jump;
+        sound_play(global.S_Jump)
+    }
+}
 
 
 //Up
@@ -204,13 +206,13 @@ if global.vel == 0 && ground == true && up == false && ducking == false && rolli
 
 
 //Ducking
-if Bot != 7
+if Bot != 7 && Bot = 3
 {
-if global.vel == 0 && ground == true && up == false && ducking == false && rolling == false && keyboard_check(vk_down)
-{
-   ducking = true;
-   image_index = 0;
-}
+    if global.vel == 0 && ground == true && up == false && ducking == false && rolling == false && keyboard_check(vk_down)
+    {
+       ducking = true;
+       image_index = 0;
+    }
 //Rolling
 
 else if global.vel != 0 && ground == true && up == false && ducking == false && rolling == false && keyboard_check(vk_down) && canHit = true
@@ -286,7 +288,8 @@ if ground == false && sprite_index == sprExeDuck
 }
 
 //Spindash
-
+if Bot = 3
+{
 if ground == true && ducking == true && keyboard_check_pressed(ord("Z")) && canHit = true
 {
    spindash = true;
@@ -314,7 +317,7 @@ if ground == true && ducking == true && keyboard_check_pressed(ord("Z")) && canH
   spindash = false;
   spindashTimer = 0;
 }
-
+}
 if Bot = 1
 {
 global.vel = 14

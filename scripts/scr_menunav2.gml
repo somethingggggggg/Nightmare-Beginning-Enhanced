@@ -121,6 +121,7 @@ if keyboard_check_pressed(vk_right)
     }
     else
     {
+        sound_stop(global.S_Locked)
         sound_play(global.S_Locked)
     }
 }

@@ -41,7 +41,7 @@ draw_set_font(global.SPRSONFONT)
 switch global.option
 {
     case 1:
-        draw_sprite(sprite722,global.lang,314+view_xview[view_current],63+view_yview[view_current])
+        draw_sprite(sprite722,global.lang,346+view_xview[view_current],95+view_yview[view_current])
     break;
     case 2:
         draw_sprite(spr_numpad,global.cheats,346+view_xview[view_current],95+view_yview[view_current])

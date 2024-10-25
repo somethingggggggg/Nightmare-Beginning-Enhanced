@@ -444,6 +444,7 @@ applies_to=self
 */
 move_contact_solid(direction, 0.1);
 drawAngle = 0
+hsp = 0
 #define Collision_HS_1G
 /*"/*'/**//* YYD ACTION
 lib_id=1

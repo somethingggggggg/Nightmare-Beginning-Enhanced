@@ -6,13 +6,15 @@ applies_to=self
 */
 instance_create(0,0,obj_loadingscreen)
 
+global.hardmode = 0
+global.mirrored = 0
 pause = 0
 myfade = 0
 sprpausefuck = 0
 global.T_bossfight = 0
 prev_view_hview = view_hview[view_current]
 prev_view_wview = view_wview[view_current]
-alarm[1] = 1
+alarm[1] = 2
 image_speed = 0.2
 
 scroll = 0
@@ -459,13 +461,14 @@ if room != 0
         scr_fourbythreer()
     }
 }
-    //mirrored mode code
-    /*
+if global.mirrored = 1
+{
     with all
     {
         x = room_width - x
+        image_xscale = -image_xscale
     }
-    */
+}
 #define Other_30
 /*"/*'/**//* YYD ACTION
 lib_id=1

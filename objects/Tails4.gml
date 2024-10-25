@@ -52,8 +52,6 @@ applies_to=self
 */
 ///everything
 //Movement
-background_x[0] += global.vel
-background_y[0] = view_yview[view_current]
 if keyboard_check(vk_left) && (canMove == true or (rolling == true && global.vel > 0)) //&& !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapWallDestruct) && !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapElevator) && !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapWallExit) && !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapWall) && !place_meeting(x+(abs(global.vel)*-1)-1, y, Solid) && !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapGround) && !place_meeting(x+(abs(global.vel)*-1)-1, y, HalfSolid)
 {
   global.vel -= acc * (1+ground);

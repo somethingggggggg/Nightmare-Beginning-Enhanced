@@ -52,6 +52,7 @@ if BL.FF_T = false && BL.FF_K = false
 }
 
 //Following
+if global.hardmode = 1 exit;
 with AI1
 {
     if instance_exists(Pers2)

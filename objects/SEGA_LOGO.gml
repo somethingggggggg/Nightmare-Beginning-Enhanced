@@ -24,6 +24,22 @@ if Act = 4
 {
     global.Final = true
 }
+if string_pos('hard',keyboard_string) != 0
+{
+    if global.hardmode = 0
+    {
+        sound_play(global.S_Pingas)
+    }
+    global.hardmode = 1
+}
+if string_pos('mir',keyboard_string) != 0
+{
+    if global.mirrored = 0
+    {
+        sound_play(global.S_CrackNeck)
+    }
+    global.mirrored = 1
+}
 /*if keyboard_string = "jaiz"
 {
     room_goto(90)
