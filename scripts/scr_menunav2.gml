@@ -135,8 +135,7 @@ if keyboard_check_pressed(vk_right)
     global.fourbythree = option[8]
     global.voicedir = option[9]
     global.DCRP_enabled = option[10]
-    global.RG_final_boss = option[11]
-    global.BL_fliter = option[12]
+    global.BL_fliter = option[11]
     if global.lang < 0 global.lang = 2
     if global.lang > 2 global.lang = 0
     if global.cheats < 0 global.cheats = 1
@@ -152,8 +151,7 @@ if keyboard_check_pressed(vk_right)
     option[8] = global.fourbythree
     option[9] = global.voicedir
     option[10] = global.DCRP_enabled
-    option[11] = global.RG_final_boss
-    option[12] = global.BL_fliter
+    option[11] = global.BL_fliter
     texture_set_interpolation(global.BL_fliter)
 
 if global.option > 3 scroll = -((((global.option-3) * 10)+abs(scroll))/2)

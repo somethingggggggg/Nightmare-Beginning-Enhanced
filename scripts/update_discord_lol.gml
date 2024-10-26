@@ -1,4 +1,5 @@
 if global.DCRP_enabled = 0 exit;
+//this is shit and I should redo it with arrays
 imagineavariable = 0
 switch room
 {
@@ -30,4 +31,5 @@ switch room
         imagineavariable = "DESTROYED MIND"
     break;
 }
-discord_update_presence(imagineavariable,"An experimental NB mod 2.0 test build",'sprfex','sprfex')
+if global.hardmode = 0 discord_update_presence(imagineavariable,"An experimental NB mod",'sprfex','sprfex')
+else discord_update_presence(imagineavariable,"HARD MODE EXPERIMENTAL",'sprfex','sprfex')

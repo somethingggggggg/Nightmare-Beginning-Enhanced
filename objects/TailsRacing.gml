@@ -38,6 +38,9 @@ if global.Difficult = 4
 {
 path_speed = 11.5
 }
+
+if global.hardmode = 0; exit;
+path_speed = 13
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

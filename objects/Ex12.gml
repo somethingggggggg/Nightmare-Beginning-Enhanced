@@ -13,14 +13,14 @@ applies_to=self
 */
 if collision_line(x,y,x,y+150,Pers2,0,1)
 {
-instance_change(Ex12_2,Ex12)
-speed = 0
+    instance_change(Ex12_2,Ex12)
+    speed = 0
 }
 
 if collision_line(x,y,x,y+150,AI2,0,1)
 {
-instance_change(Ex12_2_Ai,Ex12)
-speed = 0
+    instance_change(Ex12_2_Ai,Ex12)
+    speed = 0
 }
 #define Collision_Pers1
 /*"/*'/**//* YYD ACTION

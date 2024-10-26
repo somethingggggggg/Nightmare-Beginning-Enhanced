@@ -20,40 +20,20 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-perass=irandom_range(1,6)
-if room = 21 && !(perass = 1 or perass = 2 or perass = 4)
-{
-    do perass = irandom_range(1,6)
-    until !(perass = 1 or perass = 2 or perass = 4)
-}
+if !instance_exists(Knuckles) exit;
+perass=irandom_range(1,3)
 switch perass
 {
     case 1:
-        instance_create(0,256,Ex11_3)
-        Ex11_3.hspeed = 8
-    break;
-    case 2:
-        instance_create(8272,304,Ex11_2)
-        Ex11_2.hspeed =-8
-    break;
-    case 3:
-        spawnedinstance = instance_create(view_xview[0]-1386+view_wview[0]/2,368,Ex11)
+        spawnedinstance = instance_create(view_xview[0]-1386+view_wview[0]/2,Knuckles.y,Ex11)
         spawnedinstance.hspeed = 8
         if BL.FF_E = true
         {
             sound_play_ex(global.S_Egg_Speak2,1,1,-1)
         }
     break;
-    case 4:
-        instance_create(view_xview[0]+1386+view_wview[0]/2/*8272*/,272,Ex12)
-        Ex12.hspeed = -8
-        if BL.FF_E = true
-        {
-            sound_play_ex(global.S_Egg_Speak3,1,1,0)
-        }
-    break;
-    case 5:
-        spawnedinstance = instance_create(view_xview[0]+1386,368,Ex11)
+    case 2:
+        spawnedinstance = instance_create(view_xview[0]+1386+view_wview[0]/2,Knuckles.y,Ex11)
         spawnedinstance.hspeed = -8
         spawnedinstance.image_xscale = -1
         if BL.FF_E = true
@@ -61,7 +41,7 @@ switch perass
             sound_play_ex(global.S_Egg_Speak1,1,1,1)
         }
     break;
-    case 6:
+    case 3:
         instance_create(view_xview[0],view_yview[0],Ex12_9)
         if BL.FF_E = true
         {
@@ -69,8 +49,7 @@ switch perass
         }
     break;
 }
-if global.hardmode = 0 perass1 = irandom_range(300,500)
-else perass1 = irandom_range(100,200)
+perass1 = irandom_range(300,500)
 /*
 if perass=1
 {

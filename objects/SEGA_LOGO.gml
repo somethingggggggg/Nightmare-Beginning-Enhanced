@@ -24,11 +24,11 @@ if Act = 4
 {
     global.Final = true
 }
-if string_pos('hard',keyboard_string) != 0
+if string_pos('hard',keyboard_string) != 0 or string_pos('рфкв',keyboard_string) != 0
 {
     if global.hardmode = 0
     {
-        show_message("SUPER EX PLUS PIZDEC模式被激活#你的行为很随意。")
+        show_message("SUPER EX PLUS PIZDEC模式被激活##你的行为很随意。")
         sound_play(global.S_Pingas)
     }
     global.hardmode = 1

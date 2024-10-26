@@ -31,8 +31,7 @@ option[7] = global.subcnoise
 option[8] = global.fourbythree
 option[9] = global.voicedir
 option[10] = global.DCRP_enabled
-option[11] = global.RG_final_boss
-option[12] = global.BL_fliter
+option[11] = global.BL_fliter
 
 optionblocked[1] = 0
 optionblocked[2] = 1
@@ -44,8 +43,7 @@ optionblocked[7] = 0
 optionblocked[8] = 0
 optionblocked[9] = 0
 optionblocked[10] = 0
-optionblocked[11] = 1
-optionblocked[12] = 0
+optionblocked[11] = 0
 
 optionname[0] = "Back"
 optionname[1] = "Language"
@@ -58,8 +56,7 @@ optionname[7] = "SM Noise"
 optionname[8] = "4:3 mode"
 optionname[9] = "Voiceover"
 optionname[10] = "Enable DCRP"
-optionname[11] = "REALLY GOOD BOSS FIGHT MUSIC"
-optionname[12] = "Billineal filtering"
+optionname[11] = "Billineal filtering"
 
 optiondesc[0] = ""
 optiondesc[1] = "Pick your language"
@@ -72,8 +69,7 @@ optiondesc[7] = "Change how overlayed noise works in subconcious mind"
 optiondesc[8] = "Change the screen resolution back to 4:3#VERY EXPERIMENTAL"
 optiondesc[9] = "Choose the voiceover you want (you can add your own by naming a folder voice_ )"
 optiondesc[10] = "Shows to other people that you are playing NBE"
-optiondesc[11] = "suka blyat"
-optiondesc[12] = "blurs your fucking game so it looks like shit"
+optiondesc[11] = "blurs your fucking game so it looks like shit"
 
 optionstate[0,0] = ""
 
@@ -109,10 +105,7 @@ optionstate[10,1] = "on"
 optionstate[11,0] = "off"
 optionstate[11,1] = "on"
 
-optionstate[12,0] = "off"
-optionstate[12,1] = "on"
-
-menulength = 13
+menulength = 12
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

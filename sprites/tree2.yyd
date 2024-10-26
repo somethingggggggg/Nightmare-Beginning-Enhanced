@@ -1,4 +1,5 @@
 +dialogues
+	|sprSW_SonicNormal
 	|sprSW_Eggman
 	|sprSW_EggmanFrown
 	|sprSW_Knuckles
@@ -16,25 +17,76 @@
 	|sprSW_ExeAngry
 	|sprSW_ExeConfused
 	|sprSW_SlaveSonic
-+group
-	|sprite720
-	|sprite721
+	|sprSW_Tailsdoll
+	|sprSW_Exeils
+	|sprSW_EggmanDeath
+	|sprSW_KnucklesDeath
++Fatal Fog
+	|sprDF_Exe
+	|sprDF_ExeDeath
+	|sprDF_ExeDeath2
+	|sprDF_ExeDuck
+	|sprDF_ExeShocked
+	|sprDF_ExeStand
+	|sprDF_ExeStand2
+	|sprDF_MetalCatch
+	|sprDFExe_Weak
+	|sprDFKnucklesAgony
+	|sprDFEggmanDeath
+	|sprDFKnucklesDeath
+	|sprDFKnucklesFight
+	|sprDFKnucklesKick
+	|sprDF_MetalFly
+	|sprDFExeFight
+	|sprDFLaugh
+	|sprDFTailsDeath
+	|sprDGExeMoveSlow
+	|sprDFKnucklesTreack
+	|sprDF_Re_Turn
+	|sprDF_Spike
+	|sprDF_Spindash
+	|sprDFAttack2
++title cards
+	|sprDF_Note
+	|sprDM_Note
+	|sprFF_Note
+	|sprHill_Note
+	|sprHandS2_Note
+	|sprHandS_Note
+	|sprHL_Note
+	|sprSuicideHill_Note
+	|sprHandS0_Note
+	|spr3dot_Note
++NBE sprites
 	|sprite722
-	|onpct
-	|onunpct
-	|ongr
-	|sprite723
-	|sprite724
-	|sprite725
-	|cheatspct
-	|cheatsgr
-	|cheatsunpct
-	|loadunpct
+	|sprTailsDoll
+	|spr_cred_NICKZACH
+	|spr_cred_NBEDEV
+	|spr_cred_danik
+	|smashwhite
+	|spr_hackerycontin
+	|spr_sound
+	|sprSkidParticles
+	|spr_smallsonfont
+	|spr_son1font
+	|sprFontCount
+	|Spr_Sweat
+	|spr_sonicskid
++leosa002 content
+	|sprEaster_Sequel_1
+	|sprCreamD
+	|sprCreamDamage
+	|sprCreamScary
+	|sprCreamScary1
+	|sprCreamStand
++tailssprites
+	|sprtt
+	|spr_tailsskid
+|spr_NBRsomething
 |sprite773
 |ES_Noteita
 |ES_Noterus
 |HandS3
-|spr3dot_Note
 |spr123_Cratch
 |sprAEC_Amy
 |sprAEC_Sonic
@@ -79,6 +131,7 @@
 |sprDA_2_Dark
 |sprDA_3
 |sprDarkCircle
+|sprLightCircle
 |sprDarkEx4_3
 |sprDarkSlaveSonic
 |sprDarkSlaveSonicWalk
@@ -100,33 +153,7 @@
 |sprDeathRing
 |sprDeathRingOut
 |sprDesk
-|sprDF_Exe
-|sprDF_ExeDeath
-|sprDF_ExeDeath2
-|sprDF_ExeDuck
-|sprDF_ExeShocked
-|sprDF_ExeStand
-|sprDF_ExeStand2
-|sprDF_MetalCatch
-|sprDF_MetalFly
-|sprDF_Note
-|sprDF_Re_Turn
-|sprDF_Spike
-|sprDF_Spindash
-|sprDFAttack2
-|sprDFEggmanDeath
-|sprDFExe_Weak
-|sprDFExeFight
-|sprDFKnucklesAgony
-|sprDFKnucklesDeath
-|sprDFKnucklesFight
-|sprDFKnucklesKick
-|sprDFKnucklesTreack
-|sprDFLaugh
-|sprDFTailsDeath
-|sprDGExeMoveSlow
 |sprDK
-|sprDM_Note
 |sprDM_Spring
 |sprDT
 |sprEaster_Egg
@@ -169,6 +196,7 @@
 |sprES_Creeps
 |sprES_Note
 |sprESCreepsBack
+|sprESImsorry
 |sprEvilPowerRay
 |sprEx_9
 |sprEx1
@@ -187,6 +215,7 @@
 |sprEx2
 |sprEx3
 |sprEx4
+|sprExFuckItAll
 |sprEx4_2
 |sprEx4_3
 |sprEx4_4
@@ -213,7 +242,6 @@
 |sprFF_Allrus
 |sprFF_DT
 |sprFF_Ground
-|sprFF_Note
 |sprFF_Piece
 |sprFF_T&E
 |sprFF_T&K
@@ -252,17 +280,13 @@
 |sprGroundSolid
 |sprGroundSolid2
 |sprH&S_1
-|sprH&S_1_2
+|sprHS_1_2
 |sprH&S_1G
 |sprH&S_2
-|sprH&S_2_2
+|sprHS_2_2
 |sprH&S_3
-|sprHandS_Note
-|sprHandS2_Note
 |sprHalfSolid
-|sprHill_Note
 |sprHitCounter
-|sprHL_Note
 |sprHorrorTails
 |sprHorrorTailsDuck
 |sprHorrorTailsIdie
@@ -348,7 +372,6 @@
 |sprite543
 |sprite707
 |sprite708
-|sprite710
 |sprite715
 |sprite716
 |sprite717
@@ -409,6 +432,7 @@
 |sprMS_4
 |sprMS_5
 |sprMS_5_2
+|sprMS_5_1
 |sprMS_6
 |sprMS_ChargeUp
 |sprMS_Death
@@ -473,7 +497,6 @@
 |sprRealyDedExe
 |sprRealyDedExe2
 |sprRing
-|sprRingCont
 |sprRingOut
 |sprRingStructionFull
 |sprRingStructionFullOut
@@ -522,33 +545,4 @@
 |sprSH_Flower2
 |sprSH_Ground
 |sprSH_KnucklesGhost
-|sprSH_TailsGhost
-|sprSH_Trees
-|sprSH_ViewBack
-|sprSH_ViewBack2
-|sprSH_ViewSonic
-|sprSH_ViewSonic2
-|sprSH_ViewSonic3
-|sprSicon
-|sprSlaveSonic
-|sprSlaveSonicHit
-|sprSlaveSonicIdle
-|sprSlaveSonicIdleBlack
-|sprSlaveSonicJump
-|sprSlaveSonicRun
-|sprSlaveSonicUp
-|sprSlaveSonicWalk
-|sprSolid
-|sprSonic
-|sprSonicAngrySmile
-|sprSonicAngrySmile2
-|sprSonicBalances
-|sprSonicBurned
-|sprSonicDown
-|sprSonicDuck
-|sprSonicExRunin
-|sprSonicExSwithBad
-|sprSonicExSwithCrack
-|sprSonicExSwithDestroy
-|numpad
 |

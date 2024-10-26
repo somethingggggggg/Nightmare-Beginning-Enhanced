@@ -77,6 +77,10 @@ if place_meeting(x, y, HS_1G)
     until !place_meeting(x, y, HS_1G)
     vsp = 0
 }
+else
+{
+    ground = false
+}
 //Movement
 if instance_exists(Tails3)
 {

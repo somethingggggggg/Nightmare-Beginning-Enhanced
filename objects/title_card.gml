@@ -46,6 +46,11 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+if global.hardmode = 1
+{
+    image_xscale = irandom_range(5,15)/10
+    image_yscale = irandom_range(5,15)/10
+}
 if timer > 300 instance_destroy()
 timer += 1
 if anim > 3

@@ -266,6 +266,7 @@ applies_to=self
 */
 view_object[0] = Knuckles
 instance_change(Knuckles,KnucklesStop)
+if global.hardmode = 1 instance_create(0,0,DPHARDKNUCK)
 #define Collision_ScrapGround
 /*"/*'/**//* YYD ACTION
 lib_id=1

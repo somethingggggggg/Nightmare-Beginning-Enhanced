@@ -4,16 +4,15 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-
-if global.hardmode = 0 && global.TDetection = false
+if global.hardmode = 1 && (room = 11 or room = 40 or (room = 21 && global.TDetection = true))
 {
     Sec = 0
-    Min = 0
+    Min = 9
 }
 else
 {
     Sec = 0
-    Min = 9
+    Min = 0
 }
 
 alarm[0] = 60
