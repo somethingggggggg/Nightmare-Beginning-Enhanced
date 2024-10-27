@@ -49,7 +49,7 @@ switch perass
         }
     break;
 }
-perass1 = irandom_range(300,500)
+perass1 = irandom_range(250,400) //irandom_range(300,500)
 /*
 if perass=1
 {

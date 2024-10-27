@@ -28,6 +28,7 @@
 +shaders
 	|bnw
 	|script38
+	|shd_blur
 +voice
 	|scr_voiceunload
 	|scr_voiceinit

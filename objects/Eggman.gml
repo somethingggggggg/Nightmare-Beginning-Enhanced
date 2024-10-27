@@ -57,6 +57,10 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+if global.hardmode = 1
+{
+    view_angle[0] += 0.1
+}
 //Movement
 if Bot = 0
 {

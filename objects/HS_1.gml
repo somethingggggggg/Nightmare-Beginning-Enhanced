@@ -11,7 +11,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if place_meeting(x+32,y,Tails2) && global.vel < 0 && date_get_day(date_current_datetime()) = 1 && date_get_month(date_current_datetime()) = 4
+if place_meeting(x+32,y,Tails2) && global.vel < 0 && global.hardmode = 1//date_get_day(date_current_datetime()) = 1 && date_get_month(date_current_datetime()) = 4
 {
     x -= 1
 }

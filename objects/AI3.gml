@@ -52,9 +52,9 @@ else
 
 if TAB.life = 0
 {
-BL.FF_E = false
-BL.Egg_Death = true
-instance_deactivate_object(AI3)
+    BL.FF_E = false
+    BL.Egg_Death = true
+    instance_deactivate_object(AI3)
 }
 
 //Energy
@@ -79,20 +79,22 @@ if collision_line(x,y+10,x-60,y+10,Ex11,0,0) && image_alpha = 1 && TAB.Energy > 
 //Charge
 if TAB.Energy > 0
 {
-if instance_exists(EnergyShieldFF)
-{
-TAB.Energy -= 1
-}}
+    if instance_exists(EnergyShieldFF)
+    {
+        TAB.Energy -= 1
+    }
+}
+
 if !instance_exists(EnergyShieldFF) && TAB.Energy < 100
 {
-TAB.Energy += 0.2
+    TAB.Energy += 0.2
 }
 
 if TAB.Energy <= 0
 {
     with EnergyShieldFF
     {
-    instance_destroy();
+        instance_destroy();
     }
     image_alpha = 1
     sound_stop(global.S_EGG_Shield)

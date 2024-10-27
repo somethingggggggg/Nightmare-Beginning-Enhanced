@@ -559,6 +559,16 @@ action_id=203
 applies_to=self
 invert=0
 */
+#define Collision_PARTYHARDTAILS
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+global.TLive -= 1
+instance_create(x,y,TailsDeath)
+with HvostStand instance_destroy()
+instance_destroy()
 #define Other_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

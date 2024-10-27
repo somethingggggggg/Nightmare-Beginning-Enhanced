@@ -1,4 +1,4 @@
-fullscreen=1
+fullscreen=0
 interpolate_pixels=0
 dont_draw_border=0
 display_cursor=1

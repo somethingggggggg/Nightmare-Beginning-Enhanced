@@ -5,7 +5,15 @@ action_id=603
 applies_to=self
 */
 instance_create(0,0,obj_loadingscreen)
-
+window_set_fullscreen(1)
+window_resize_buffer(display_get_width(),display_get_height(),1,0)
+i = 0
+repeat(8)
+{
+    view_wport[i] = display_get_width()
+    view_hport[i] = display_get_height()
+    i += 1
+}
 global.hardmode = 0
 global.mirrored = 0
 pause = 0
@@ -14,7 +22,7 @@ sprpausefuck = 0
 global.T_bossfight = 0
 prev_view_hview = view_hview[view_current]
 prev_view_wview = view_wview[view_current]
-alarm[1] = 2
+alarm[1] = 5
 image_speed = 0.2
 
 scroll = 0
@@ -492,6 +500,7 @@ if pause = 1 && room != 0
     {
         draw_set_font(global.SMALLSONFONT)
         //idk why adding half a pixel makes it look better but it does
+        //shader uniforms
         draw_sprite_stretched(sprpausefuck,0,view_xview[view_current],view_yview[view_current],view_wview[view_current]+0.5,view_hview[view_current]+0.5)
         draw_sprite(spranother,0,view_xview[view_current],view_yview[view_current])
         scr_menudraw2()

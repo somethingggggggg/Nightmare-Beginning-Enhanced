@@ -10,6 +10,10 @@ if BL.Knuckles_Plot = false
 }
 if global.hardmode = 1
 {
+    with FF_Wall
+    {
+        image_blend = c_red
+    }
     background_color = $00007a
     background_blend[0] = $0000b1
     background_blend[1] = $0000b1

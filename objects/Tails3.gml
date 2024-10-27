@@ -407,6 +407,21 @@ if view_object[0] = Tails3
 }
 
 scr_skidscript()
+
+if global.hardmode = 1
+{
+        image_xscale = 1
+        if global.vel != 0
+        {
+            drawAngle = -radtodeg(arctan(vspeed/global.vel))
+        }
+        else
+        {
+            if vspeed > 0 image_angle = -90
+            if vspeed < 0 image_angle = 90
+        }
+        if global.vel < 0 drawAngle = -radtodeg(arctan(vspeed/global.vel))+180
+}
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
@@ -514,5 +529,5 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if sprite_index = spr_tailsskid or sprite_index = sprTailsRacing or sprite_index = sprTailsJump draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale, image_yscale, image_angle, $b4b4b4, image_alpha);
-else draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale, image_yscale, image_angle, c_white, image_alpha);
+if sprite_index = spr_tailsskid or sprite_index = sprTailsRacing or sprite_index = sprTailsJump draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale, image_yscale, drawAngle, $b4b4b4, image_alpha);
+else draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale, image_yscale, drawAngle, c_white, image_alpha);

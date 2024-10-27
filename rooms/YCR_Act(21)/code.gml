@@ -22,8 +22,12 @@ if global.EDetection = true
     sound_loop(global.S_You_Can_t_Run)
     sound_loop(global.S_Lift)
 }
-
-if global.Deadly_Mode = true && global.TDetection = true
+if global.TDetection = false exit;
+if global.hardmode != 0
+{
+    instance_create(18696,2016,PARTYHARDTAILS)
+}
+if global.Deadly_Mode = true
 {
     sound_loop(global.S_You_Can_t_Run)
     instance_create(21184,2272,Tails4)
@@ -35,8 +39,7 @@ if global.Deadly_Mode = true && global.TDetection = true
         instance_destroy()
     }
 }
-
-if global.Deadly_Mode = false && global.TDetection = true
+else
 {
     {
         view_object[0] = WinRing

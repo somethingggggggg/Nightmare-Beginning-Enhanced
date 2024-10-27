@@ -24,7 +24,7 @@ if Act = 4
 {
     global.Final = true
 }
-if string_pos('hard',keyboard_string) != 0 or string_pos('рфкв',keyboard_string) != 0
+if string_pos('hard',keyboard_string) != 0 or string_pos('рфкв',keyboard_string) != 0 or (current_day = 1 && current_month = 4)
 {
     if global.hardmode = 0
     {

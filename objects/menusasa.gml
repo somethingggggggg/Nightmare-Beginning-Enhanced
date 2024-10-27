@@ -82,7 +82,8 @@ option[11] = global.RG_final_boss
 option[12] = global.BL_fliter
 
 optionblocked[1] = 0
-optionblocked[2] = 0
+if global.complete = 1 optionblocked[2] = 0
+else optionblocked[2] = 1
 optionblocked[3] = 0
 optionblocked[4] = 0
 optionblocked[5] = 0
@@ -186,9 +187,11 @@ applies_to=self
 switch global.menustate
 {
     case 0:
+        ass -= 0.05
         scr_menudraw1()
     break;
     case 1:
+        ass += 0.05
         draw_sprite_tiled_ext(spr_NBRsomething,0,0,-120+scrollcounter,1,1,c_white,ass)
         scr_menudraw2()
     break;
@@ -200,11 +203,6 @@ switch global.menustate
         scr_menudraw4()
     break;
 }
+if ass > 1 ass = 1
+if ass < 0 ass = 0
 draw_set_font(global.dialoguefont)
-switch text
-{
-    case 0: draw_text_color(view_xview[0],view_yview[0],"COMPLETE THE GAME#ON THE BEST#ENDING FIRST",$00ffff,$00ffff,$00ffff,$005555,ass) break;
-    case 1: draw_text_color(view_xview[0],view_yview[0],"MOD LOADED",$00ffff,$00ffff,$00ffff,$005555,ass) break;
-    case 2: draw_text_color(view_xview[0],view_yview[0],"MOD LOAD FAILED",$00ffff,$00ffff,$00ffff,$005555,ass) break;
-}
-ass -= 0.01

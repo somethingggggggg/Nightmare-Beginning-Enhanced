@@ -22,5 +22,5 @@ applies_to=self
 */
 draw_set_font(global.dialoguefont)
 draw_set_halign(fa_left)
-draw_set_valign(fa_left)
-draw_text_color(view_xview[0],view_yview[0],text,$00ffff,$00ffff,$00ffff,$005555,alpha)
+draw_set_valign(fa_top)
+draw_text_color(view_xview[view_current],view_yview[view_current],text,$00ffff,$00ffff,$00ffff,$005555,alpha)
