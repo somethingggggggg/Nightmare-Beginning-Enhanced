@@ -28,7 +28,11 @@ if global.Suicide = true
     {
         sprite_index = sprWCita
     }
-sound_play(global.S_SuicideHill)
+    ini_open("save.ini")
+    ini_write_real('progress','worstend',1)
+    ini_close()
+    //sound_play(global.S_IHNMAINS)
+    sound_play(global.S_SuicideHill)
 }
 
 if global.BestEnd = true
@@ -45,7 +49,7 @@ if global.BestEnd = true
     {
         sprite_index = sprBCita
     }
-sound_play(global.S_BestEndings)
+    sound_play(global.S_BestEndings)
 }
 
 if global.GoodEnd = true
@@ -62,10 +66,10 @@ if global.GoodEnd = true
     {
         sprite_index = sprGCita
     }
-sound_play(global.S_BestEndings)
+    sound_play(global.S_BestEndings)
 }
 //alarm[1] = 375
-image_speed = 0.1
+image_speed = 0.005
 #define Alarm_1
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -113,3 +117,10 @@ lib_id=1
 action_id=332
 invert=0
 */
+#define Other_7
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if sprite_index != -1 game_end()

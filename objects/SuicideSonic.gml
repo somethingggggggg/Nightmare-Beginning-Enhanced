@@ -239,24 +239,25 @@ alarm[1] = 120
 
 if Act = 4 && keyboard_check_pressed(ord("Z"))
 {
-if global.Suicide = true
-{
-Act = 5
-Bot = 3
-vspeed =-7
-sprite_index = sprSonicJump
-image_speed = 0.15
-maxSpeed = 4
-global.vel = 1.8
+    if global.Suicide = true
+    {
+        Act = 5
+        Bot = 3
+        vspeed =-7
+        sprite_index = sprSonicJump
+        image_speed = 0.15
+        maxSpeed = 4
+        global.vel = 1.8
+    }
+    if global.Suicide = false
+    {
+        show_message("Wait!")
+        view_visible[0] = false
+        view_visible[1] = true
+        Act = 6
+        alarm[2] =140
+    }
 }
-if global.Suicide = false
-{
-show_message("Wait!")
-view_visible[0] = false
-view_visible[1] = true
-Act = 6
-alarm[2] =140
-}}
 #define Collision_Solid
 /*"/*'/**//* YYD ACTION
 lib_id=1

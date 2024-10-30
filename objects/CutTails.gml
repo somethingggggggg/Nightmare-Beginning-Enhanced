@@ -27,11 +27,12 @@ CutKnuckles.hspeed =4
 
 if BL.Tails_Plot = false
 {
-image_alpha = 0
-with HvostBlack
-{
-instance_destroy()
-}}
+    image_alpha = 0
+    with HvostBlack
+    {
+        instance_destroy()
+    }
+}
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

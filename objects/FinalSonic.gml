@@ -126,9 +126,19 @@ if global.vel > -acc && global.vel < acc
    rolling = false;
 }
 }
-
 x += global.vel;
-
+if global.hardmode = 1
+{
+    if Bot = 3
+    {
+        if collision_line(x-16,y,x+16,y,FinalGround,1,0) or collision_line(x-16,y,x+16,y,Solid,1,0) or collision_line(x-16,y,x+16,y,FinalGroundDown,1,0) or collision_line(x-16,y,x+16,y,UpGrounder,1,0)//place_meeting(x, y, FinalGround) &&
+        {
+            global.SLive -= 1
+            instance_create(x,y,FinalSonicDeath)
+            instance_destroy()
+        }
+    }
+}
 //Gravity
 if place_meeting(x, y+vspeed+1, Solid_Mask) or place_meeting(x, y+vspeed+1, ScrapWall) or place_meeting(x, y+vspeed+1, EggElevator) or place_meeting(x, y+vspeed+1, ScrapWallDestruct) or place_meeting(x, y+vspeed+1, ScrapGround) or place_meeting(x, y+vspeed+1, FinalGround) or place_meeting(x, y+vspeed+1, FinalGround2) or place_meeting(x, y+vspeed+1, FinalGroundDown) or place_meeting(x, y+vspeed+1, UpGrounderBroke) or place_meeting(x, y+vspeed+1, UpGrounder) or place_meeting(x, y+vspeed+1, objSlopeParent) && vspeed >= 0
 {
@@ -145,7 +155,6 @@ else
   ground = false;
    gravity = 0.25;
 }
-
 
 //Handle sprites
 if canSpriteChange == true

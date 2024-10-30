@@ -365,7 +365,12 @@ global.vel = 4
 }
 if Bot_mode = true && Act = 0
 {
-global.vel = 0
+if global.hardmode = 0 global.vel = 0
+else
+{
+global.vel = -32
+x += global.vel;
+}
 sprite_index = sprKnucklesPunch
 }
 if Bot_mode = true && Act = 4
@@ -423,23 +428,22 @@ Idie_mode = true
 
 if Idie_mode = true
 {
-if global.Sprite_mode = false
-{
-sprite_index = sprKnucklesIdle
-image_speed = 0.12
-}
-if global.Sprite_mode = true
-{
-sprite_index = sprKnucklesIdleScary
-image_speed = 0.2
+    if global.Sprite_mode = false
+    {
+        sprite_index = sprKnucklesIdle
+        image_speed = 0.12
+    }
+    if global.Sprite_mode = true
+    {
+        sprite_index = sprKnucklesIdleScary
+        image_speed = 0.2
+    }
 }
 
-}
-
-if global.vel !=0 or ducking == true or up == true
+if global.vel != 0 or ducking == true or up == true
 {
-IdieTimer = 300
-Idie_mode = false
+    IdieTimer = 300
+    Idie_mode = false
 }
 #define Collision_Solid
 /*"/*'/**//* YYD ACTION

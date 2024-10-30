@@ -5,6 +5,21 @@ action_id=603
 applies_to=self
 */
 image_speed = 0.15
+if instance_exists(Tails)
+{
+    image_xscale = Tails.image_xscale
+    move_snap(Tails.x-5*image_xscale,Tails.y+4)
+}
+if instance_exists(Tails2)
+{
+    image_xscale = Tails2.image_xscale
+    move_snap(Tails2.x-5*image_xscale,Tails2.y+4)
+}
+if instance_exists(Tails4)
+{
+    image_xscale = Tails4.image_xscale
+    move_snap(Tails4.x-5*image_xscale,Tails4.y+4)
+}
 #define Step_2
 /*"/*'/**//* YYD ACTION
 lib_id=1

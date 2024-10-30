@@ -292,6 +292,7 @@ global.S_Chase=sound_add(working_directory+"/Sound/Chase.mp3",0,0)
 
 //modded sounds
 global.S_suka=sound_add(working_directory+"/Sound/keepup.wav",0,0)
+//global.S_IHNMAINS=sound_add(working_directory+"/Sound/IHNMAIMS Demo Loop.mp3",0,0)
 global.S_tailsfly=sound_add(working_directory+"/Sound/S3K_BA.wav",0,0)
 global.S_tailstired=sound_add(working_directory+"/Sound/S3K_BB.wav",0,0)
 global.S_CYFTS_voiceline=sound_add(working_directory+"/Sound/tailsdollvoice.wav",0,0)

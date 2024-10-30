@@ -9,5 +9,9 @@ else
     {
         instance_destroy()
     }
+    with FinalBackground
+    {
+        image_blend = $00ff00
+    }
 }
 update_discord_lol()
