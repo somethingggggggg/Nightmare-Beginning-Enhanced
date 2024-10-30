@@ -9,6 +9,7 @@ repeat(8)
 global.TLive = 1
 global.ELive = 1
 global.KLive = 1
+global.FLive = 1
 global.SLive = global.TLive + global.ELive + global.KLive
 global.TR = 0
 global.TDetection = false

@@ -4,6 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+drawlives = 0
 if global.TDetection = true
 {
     sprite_index = sprTails_Cont
@@ -21,14 +22,16 @@ if global.EDetection = true
     sprite_index = sprEggman_Cont
     drawlives = global.ELive
 }
-if drawlives < 0
-{
-    drawlives = 0
-}
 
 if global.FDetection = true
 {
-    image_alpha = 0
+    sprite_index = sprDF_ExeDeath2
+    drawlives = global.FLive
+}
+
+if drawlives < 0
+{
+    drawlives = 0
 }
 #define Draw_0
 /*"/*'/**//* YYD ACTION

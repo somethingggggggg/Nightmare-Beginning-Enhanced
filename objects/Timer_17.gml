@@ -17,8 +17,8 @@ sound_play(global.S_SCREAM_5)
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
-action_id=224
-invert=0
-arg0=BR_9_2(34)
-arg1=0
+action_id=603
+applies_to=self
 */
+if global.FLive > 0 room_goto(53)
+else room_goto(34)

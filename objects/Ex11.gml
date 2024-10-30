@@ -70,10 +70,10 @@ view_object[0] = Pers3
 
 if BL.FF_K = false && BL.FF_E = false
 {
-BL.FF_T = false
-BL.End_2 = true
-sound_stop(global.S_DF_S)
-room_goto(33)
+    BL.FF_T = false
+    BL.End_2 = true
+    sound_stop(global.S_DF_S)
+    room_goto(33)
 }
 
 with HvostBlack

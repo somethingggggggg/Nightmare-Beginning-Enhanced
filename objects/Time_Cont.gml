@@ -5,6 +5,7 @@ action_id=603
 applies_to=self
 */
 image_speed = 0
+image_alpha = 1
 count = 10
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -61,45 +62,65 @@ if global.FDetection = true
 {
     room_goto(32)
 }
+#define Alarm_2
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if global.TDetection = true
+{
+    BL.FF_T = false
+    sound_stop(global.S_Continue_S)
+    global.TLive = 0
+    instance_create(0,0,TPassed)
+    room_goto(5)
+}
+if global.KDetection = true
+{
+    instance_create(x,y,KnucklesPreDeath)
+    BL.FF_K = false
+    sound_stop(global.S_Continue_S)
+    global.KLive = 0
+    instance_create(0,0,KPassed)
+    room_goto(5)
+}
+if global.EDetection = true
+{
+    BL.FF_E = false
+    sound_stop(global.S_Continue_S)
+    global.ELive = 0
+    instance_create(0,0,EPassed)
+    room_goto(5)
+}
+if global.FDetection = true
+{
+    sound_stop(global.S_Continue_S)
+    global.FLive = 0
+    room_goto(62)
+}
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
-if image_index = -1
+if count = 0
 {
-    if global.TDetection = true
-    {
-        BL.FF_T = false
-        sound_stop(global.S_Continue_S)
-        global.TLive = 0
-        instance_create(0,0,TPassed)
-        room_goto(5)
-    }
-    if global.KDetection = true
-    {
-        instance_create(x,y,KnucklesPreDeath)
-        BL.FF_K = false
-        sound_stop(global.S_Continue_S)
-        global.KLive = 0
-        instance_create(0,0,KPassed)
-        room_goto(5)
-    }
-    if global.EDetection = true
-    {
-        BL.FF_E = false
-        sound_stop(global.S_Continue_S)
-        global.ELive = 0
-        instance_create(0,0,EPassed)
-        room_goto(5)
-    }
-    if global.FDetection = true
-    {
-        sound_stop(global.S_Continue_S)
-        global.FLive = 0
-        room_goto(62)
-    }
+    count -= 1
+    visible = 0
+    with Continue_Note instance_destroy()
+    with Tails_Cont instance_destroy()
+    with Game_Over_FaExe instance_destroy()
+    with Game_Over_T instance_destroy()
+    with Game_Over_E instance_destroy()
+    with Game_Over_Exe3 instance_destroy()
+    with Game_Over_Exe instance_destroy()
+    with BigLight instance_destroy()
+    with HvostBlack instance_destroy()
+    with Game_Over_FaKnuckles instance_destroy()
+    sound_play(global.S_SCREAM_2)
+    alarm[2] = 60
 }
 #define Draw_0
 /*"/*'/**//* YYD ACTION

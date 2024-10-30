@@ -1,5 +1,9 @@
 update_discord_lol()
 show_message("Get out of here")
+global.FDetection = 1
+global.TDetection = 0
+global.EDetection = 0
+global.KDetection = 0
 if BL.Eggman_Plot = false
 {
     BL.FF_E = false
