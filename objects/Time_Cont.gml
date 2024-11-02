@@ -41,10 +41,10 @@ if global.TDetection = true
     {
         room_goto(10)
     }
-else
-{
-    room_goto(52)
-}
+    else
+    {
+        room_goto(52)
+    }
 }
 
 if global.KDetection = true

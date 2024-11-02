@@ -61,12 +61,12 @@ applies_to=self
 */
 if !instance_exists(EPassed) && keyboard_check_pressed(vk_enter)
 {
-instance_create(0,0,Timer_12)
-instance_destroy()
+    instance_create(0,0,Timer_12)
+    instance_destroy()
 }
 else if instance_exists(EPassed) && keyboard_check_pressed(vk_enter)
 {
-sound_play(global.S_Locked)
+    sound_play(global.S_Locked)
 }
 #define KeyPress_37
 /*"/*'/**//* YYD ACTION

@@ -8,8 +8,8 @@ image_speed = 0.15
 
 if PersonalChoiser.Tails_Pers = true
 {
-view_object[0] = CutTails
-alarm[0] = 1
+    view_object[0] = CutTails
+    alarm[0] = 1
 }
 
 if BL.Knuckles_Plot = false && BL.Eggman_Plot = true

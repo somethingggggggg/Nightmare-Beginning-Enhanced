@@ -16,22 +16,23 @@ applies_to=self
 */
 if global.Deadly_Mode = true
 {
-if BL.Eggman_Plot = true && BL.Knuckles_Plot = true && BL.Tails_Plot = false
-{
-room_goto(80)
+    if BL.Eggman_Plot = true && BL.Knuckles_Plot = true && BL.Tails_Plot = false
+    {
+        room_goto(80)
+    }
+    else
+    {
+        room_goto(31)
+    }
 }
 else
 {
-room_goto(31)
-}}
-
-if global.Deadly_Mode = false
-{
-if (BL.Tails_Plot = true && BL.Knuckles_Plot = true) or (BL.Tails_Plot = true && BL.Eggman_Plot = true) or (BL.Eggman_Plot = true && BL.Knuckles_Plot = true) or (BL.Tails_Plot = true && BL.Knuckles_Plot = true && BL.Eggman_Plot = true)
-{
-room_goto(80)
+    if (BL.Tails_Plot = true && BL.Knuckles_Plot = true) or (BL.Tails_Plot = true && BL.Eggman_Plot = true) or (BL.Eggman_Plot = true && BL.Knuckles_Plot = true) or (BL.Tails_Plot = true && BL.Knuckles_Plot = true && BL.Eggman_Plot = true)
+    {
+        room_goto(80)
+    }
+    else
+    {
+        room_goto(31)
+    }
 }
-else
-{
-room_goto(31)
-}}

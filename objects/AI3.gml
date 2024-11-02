@@ -6,8 +6,13 @@ applies_to=self
 */
 if BL.Eggman_Plot = false
 {
-BL.FF_E = false
-instance_destroy()
+    BL.FF_E = false
+    instance_destroy()
+}
+hspeed = 0
+if global.Windtime > 0
+{
+    hspeed = 2.5
 }
 instance_activate_object(AI3)
 #define Alarm_0
@@ -35,7 +40,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-hspeed = 0
+if global.hardmode = 0 hspeed = 0
 //Gravity
 if place_meeting(x, y+vspeed+1, FF_Ground) && vspeed >= 0
 {
@@ -98,6 +103,11 @@ if TAB.Energy <= 0
     }
     image_alpha = 1
     sound_stop(global.S_EGG_Shield)
+}
+if place_meeting(x,y,Solid)
+{
+    do x -= 1
+    until !place_meeting(x,y,Solid)
 }
 #define Collision_FF_Ground
 /*"/*'/**//* YYD ACTION

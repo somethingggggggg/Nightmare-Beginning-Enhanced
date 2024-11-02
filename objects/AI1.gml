@@ -5,11 +5,15 @@ action_id=603
 applies_to=self
 */
 image_speed = 0.2
-
+global.Windtime = 0
+if global.Windtime > 0
+{
+    hspeed = 2.5
+}
 
 if BL.Tails_Plot = false
 {
-instance_destroy()
+    instance_destroy()
 }
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -56,6 +60,12 @@ else
 {
   ground = false;
    gravity = 0.25;
+}
+
+if place_meeting(x,y,Solid)
+{
+    do x -= 1
+    until !place_meeting(x,y,Solid)
 }
 #define Collision_FF_Ground
 /*"/*'/**//* YYD ACTION

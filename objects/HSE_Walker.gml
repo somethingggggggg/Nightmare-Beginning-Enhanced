@@ -194,8 +194,8 @@ if instance_exists(TailsFatality)
         {
             maxSpeed = 3.5
         }
-    view_object[0] = Tails3
-    instance_destroy()
+        view_object[0] = Tails3
+        instance_destroy()
     }
 }
 

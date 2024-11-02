@@ -54,6 +54,11 @@ action_id=603
 applies_to=self
 */
 instance_create(288,1024,Spring2)
+with Tails3
+{
+    while place_meeting(x,y,Spring2)
+    do y -= 1
+}
 instance_destroy()
 #define Other_7
 /*"/*'/**//* YYD ACTION

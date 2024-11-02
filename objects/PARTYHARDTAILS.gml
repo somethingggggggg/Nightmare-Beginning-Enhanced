@@ -6,6 +6,7 @@ applies_to=self
 */
 active = 0
 alarm[0] = 60*10
+myspeed = 0
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

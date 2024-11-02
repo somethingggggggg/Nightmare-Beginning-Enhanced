@@ -14,6 +14,11 @@ action_id=603
 applies_to=self
 */
 spawnedinstance = 0
+global.Windtime = 0
+if global.hardmode = 1
+{
+    alarm[6] = 360
+}
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -231,3 +236,33 @@ invert=0
 arg0=500
 arg1=2
 */
+#define Alarm_6
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+global.Windtime = 360
+alarm[6] = 360 * irandom_range(3,5)
+with AI1 hspeed = 2.5
+with AI2 hspeed = 2.5
+with AI3 hspeed = 2.5
+background_hspeed[0] = 5
+#define Step_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if global.Windtime > 0 global.Windtime -= 1
+else
+{
+    if global.Windtime = 0
+    {
+        with AI1 hspeed = 0
+        with AI2 hspeed = 0
+        with AI3 hspeed = 0
+        background_hspeed[0] = 0
+        global.Windtime -= 1
+    }
+}

@@ -27,6 +27,7 @@ if global.FDetection = true
 {
     background_visible[0] = true
     instance_create(160,256,Game_Over_FaExe)
+    instance_create(288,256,Game_Over_FaEggman)
     instance_create(224,336,Game_Over_FaKnuckles)
     instance_create(352,336,Game_Over_FaTails)
     instance_create(336,336,HvostBlack)

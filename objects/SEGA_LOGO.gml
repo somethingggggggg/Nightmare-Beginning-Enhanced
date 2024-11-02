@@ -53,13 +53,14 @@ applies_to=self
 */
 if Act = 3
 {
-global.Time += 1
-if global.Time >= 4
-{
-global.Debug_mode = true
-}
-sound_play(global.S_WellRing)
-Act = 4
+    global.Time += 1
+    if global.Time >= 4
+    {
+        global.Debug_mode = true
+    }
+    sound_play_ex(global.S_WellRing,1,1+(global.Time-1)/4,0)
+    //sound_play(global.S_WellRing)
+    Act = 4
 }
 #define Keyboard_69
 /*"/*'/**//* YYD ACTION

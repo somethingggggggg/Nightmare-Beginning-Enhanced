@@ -92,7 +92,8 @@ action_id=603
 applies_to=self
 */
 ES_Creeps.sprite_index = sprSonicAngrySmile2
-sprite_index = sprFinalExe_Hit
+sprite_index = sprExeHurt
+image_speed = 0
 y=y-20
 alarm[4] = 180
 #define Alarm_4
@@ -120,10 +121,9 @@ applies_to=self
 */
 ES_Creeps.sprite_index = sprES_Creeps
 ES_Creeps.y = ES_Creeps.y-12
-//image_speed = 0.15
-image_speed = 0
+image_speed = 0.15
 image_index = 0
-sprite_index = sprExeHurtCircle
+sprite_index = sprFinalExe_Hit
 #define Alarm_11
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -138,7 +138,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if sprite_index = sprExeHurtCircle
+if sprite_index = sprFinalExe_Hit
 {
     image_angle += 4
 }

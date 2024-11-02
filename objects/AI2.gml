@@ -6,12 +6,16 @@ applies_to=self
 */
 image_xscale = -1
 image_speed = 0.2
-
+global.Windtime = 0
+if global.Windtime > 0
+{
+    hspeed = 2.5
+}
 
 if BL.Knuckles_Plot = false
 {
-BL.FF_K = false
-instance_destroy()
+    BL.FF_K = false
+    instance_destroy()
 }
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -73,6 +77,12 @@ else
 {
   ground = false;
    gravity = 0.25;
+}
+
+if place_meeting(x,y,Solid)
+{
+    do x -= 1
+    until !place_meeting(x,y,Solid)
 }
 #define Collision_FF_Ground
 /*"/*'/**//* YYD ACTION

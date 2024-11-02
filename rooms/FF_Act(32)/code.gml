@@ -14,6 +14,8 @@ if BL.Knuckles_Plot = false
 }
 if global.hardmode = 1
 {
+    sound_stop_all()
+    sound_loop(global.S_Action)
     with FF_Wall
     {
         image_blend = c_red
