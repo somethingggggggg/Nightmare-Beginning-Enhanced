@@ -24,7 +24,10 @@ if instance_exists(Sonic)
     if x < Sonic.x image_xscale = 1
     else image_xscale = -1
 }
-
+if global.hackpage = 7
+{
+    image_alpha -= 0.01
+}
 if instance_exists(Luigikid)
 {
     if collision_line(x,y,x-120,y,Luigikid,0,1)

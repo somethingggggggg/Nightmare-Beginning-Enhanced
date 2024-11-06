@@ -29,6 +29,13 @@ action_id=603
 applies_to=self
 */
 //Movement
+if global.pause = 1
+{
+    image_index = 0
+    sprite_index = sprSlaveSonic
+    exit;
+}
+
 if Run_mode = false && Bot = 0
 {
 if keyboard_check(vk_left) && !place_meeting(x+(abs(global.vel)*-1)-1, y, Solid) && (canMove == true or (rolling == true && global.vel > 0))

@@ -60,8 +60,8 @@
                     spritedial = sprSW_Exeils
                 break;
                 case 7:
-                    DeadTails.alarm[0] = 0
                     global.pause = 0
+                    Sonic.maxSpeed -= 1
                     instance_destroy()
                 break;
                 case 8:
@@ -70,7 +70,7 @@
                 break;
                 case 9:
                     global.pause = 0
-                    DeadKnuckles.alarm[0] = 0
+                    Sonic.maxSpeed -= 1
                     instance_destroy()
                 break;
                 case 10:
@@ -79,7 +79,7 @@
                 break;
                 case 11:
                     global.pause = 0
-                    DeadEggman.alarm[0] = 0
+                    Sonic.maxSpeed -= 1
                     instance_destroy()
                 break;
             }
@@ -140,7 +140,6 @@
                 break;
                 case 7:
                     global.pause = 0
-                    DeadTails.alarm[0] = 0
                     Sonic.maxSpeed -= 1.
                     instance_destroy()
                 break;
@@ -150,7 +149,6 @@
                 break;
                 case 9:
                     global.pause = 0
-                    DeadKnuckles.alarm[0] = 0
                     Sonic.maxSpeed -= 1.
                     instance_destroy()
                 break;
@@ -160,8 +158,7 @@
                 break;
                 case 11:
                     global.pause = 0
-                    DeadEggman.alarm[0] = 0
-                    Sonic.maxSpeed -= 1.
+                    Sonic.maxSpeed -= 1
                     instance_destroy()
                 break;
             }
@@ -222,8 +219,7 @@
                 break;
                 case 7:
                     global.pause = 0
-                    DeadTails.alarm[0] = 0
-                    Sonic.maxSpeed -= 1.
+                    Sonic.maxSpeed -= 1
                     instance_destroy()
                 break;
                 case 8:
@@ -232,8 +228,7 @@
                 break;
                 case 9:
                     global.pause = 0
-                    DeadKnuckles.alarm[0] = 0
-                    Sonic.maxSpeed -= 1.
+                    Sonic.maxSpeed -= 1
                     instance_destroy()
                 break;
                 case 10:
@@ -242,8 +237,7 @@
                 break;
                 case 11:
                     global.pause = 0
-                    DeadEggman.alarm[0] = 0
-                    Sonic.maxSpeed -= 1.
+                    Sonic.maxSpeed -= 1
                     instance_destroy()
                 break;
             }
