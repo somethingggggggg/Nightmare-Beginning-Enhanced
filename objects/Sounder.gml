@@ -39,7 +39,7 @@ option[7] = global.subcnoise
 option[8] = global.fourbythree
 option[9] = global.voicedir
 option[10] = global.DCRP_enabled
-option[11] = global.BL_fliter
+option[11] = global.BL_filter
 
 optionblocked[1] = 0
 optionblocked[2] = 1
@@ -300,6 +300,7 @@ global.S_CYFTS_voiceline=sound_add(working_directory+"/Sound/tailsdollvoice.wav"
 global.S_PAUSEMENU=sound_add(working_directory+"/Sound/n8_song.mp3",1,0)
 global.S_skid=sound_add(working_directory+"/Sound/skid.mp3",1,0)
 global.S_Final_Boss_RG=sound_add(working_directory+"/Sound/Final_Boss_REALLY_GOOD.mp3",0,0)
+global.S_GrassSkirtChase=sound_add(working_directory+"/Sound/GrassSkirtChase.mp3",0,0)
 
 //doomsday machine
 if irandom_range(0,10000) = 56
@@ -328,6 +329,14 @@ if room != 0
     {
         if keyboard_check_pressed(vk_escape) && !instance_exists(SW_Control)
         {
+            i = 0
+            repeat(menulength)
+            {
+                prevset[i] = option[i]
+                i += 1
+            }
+            i = 0
+            /*
             prevset[1] = global.lang
             prevset[2] = global.cheats
             prevset[3] = global.dialoguefont
@@ -339,7 +348,8 @@ if room != 0
             prevset[9] = global.voicedir
             prevset[10] = global.DCRP_enabled
             prevset[11] = global.RG_final_boss
-            prevset[12] = global.BL_fliter
+            prevset[12] = global.BL_filter
+            */
             room_speed = 60
             sprpausefuck = sprite_create_from_screen(0,0,view_wport[view_current],view_wport[view_current],0,0,0,0)
             instance_deactivate_all(1)

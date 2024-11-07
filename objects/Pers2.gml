@@ -4,6 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+hspeed = 0
 acc = 0.076875;
 vel = 0;
 maxSpeed = 5;

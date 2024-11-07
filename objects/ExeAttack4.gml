@@ -38,18 +38,19 @@ if instance_exists(FinalSonic)
 //Gravity
 if Grav = false
 {
-if place_meeting(x, y+vspeed+1, FinalGround2)
-{
-   ground = true;
-   gravity = 0;
-if vspeed > 8
-   vspeed = 8;
+    if place_meeting(x, y+vspeed+1, FinalGround2)
+    {
+       ground = true;
+       gravity = 0;
+    if vspeed > 8
+       vspeed = 8;
+    }
+    else
+    {
+      ground = false;
+       gravity = 0.25;
+    }
 }
-else
-{
-  ground = false;
-   gravity = 0.25;
-}}
 if Mode = 1
 {
 sprite_index = sprFinalExe_Jump

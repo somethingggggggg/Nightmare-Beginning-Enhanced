@@ -11,22 +11,25 @@ Target_Eggman = false
 sound_play(global.S_ChargedUp)
 alarm[0] = 342
 
-CharArr[0,0] = AI1
-CharArr[1,0] = AI2
-CharArr[2,0] = AI3
-
-CharArr[0,1] = Pers1
-CharArr[1,1] = Pers2
-CharArr[2,1] = Pers3
-
-do randVal = irandom_range(0,2)
-until instance_exists(CharArr[randVal,0]) or instance_exists(CharArr[randVal,1])
-
-switch randVal
+if !instance_exists(Knuckles)
 {
-    case 0: Target_Tails = 1 break;
-    case 1: Target_Knuckles = 1 break;
-    case 2: Target_Eggman = 1 break;
+    CharArr[0,0] = AI1
+    CharArr[1,0] = AI2
+    CharArr[2,0] = AI3
+
+    CharArr[0,1] = Pers1
+    CharArr[1,1] = Pers2
+    CharArr[2,1] = Pers3
+
+    do randVal = irandom_range(0,2)
+    until instance_exists(CharArr[randVal,0]) or instance_exists(CharArr[randVal,1])
+
+    switch randVal
+    {
+        case 0: Target_Tails = 1 break;
+        case 1: Target_Knuckles = 1 break;
+        case 2: Target_Eggman = 1 break;
+    }
 }
 /*
 if BL.Attack = 1

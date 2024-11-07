@@ -142,13 +142,13 @@ if global.hardmode = 1
 //Gravity
 if place_meeting(x, y+vspeed+1, Solid_Mask) or place_meeting(x, y+vspeed+1, ScrapWall) or place_meeting(x, y+vspeed+1, EggElevator) or place_meeting(x, y+vspeed+1, ScrapWallDestruct) or place_meeting(x, y+vspeed+1, ScrapGround) or place_meeting(x, y+vspeed+1, FinalGround) or place_meeting(x, y+vspeed+1, FinalGround2) or place_meeting(x, y+vspeed+1, FinalGroundDown) or place_meeting(x, y+vspeed+1, UpGrounderBroke) or place_meeting(x, y+vspeed+1, UpGrounder) or place_meeting(x, y+vspeed+1, objSlopeParent) && vspeed >= 0
 {
-{
-   ground = true;
-   gravity = 0;
-if vspeed > 8
-   vspeed = 8;
-
-}
+    if ground = 0
+    {
+        rolling = 0
+    }
+    ground = true;
+    gravity = 0;
+    if vspeed > 8 vspeed = 8;
 }
 else
 {
@@ -275,8 +275,8 @@ else if spindash = true
 
 if spindash = true && ground = false
 {
-spindash = false
-rolling = true
+    spindash = false
+    rolling = true
 }
 
 
@@ -290,7 +290,9 @@ if ground == false && sprite_index == sprSonicDuck
 if ground == true && ducking == true && keyboard_check_pressed(ord("Z")) && canHit = true
 {
    spindash = true;
-   sound_play(global.S_Spindash)
+   //sound_play(global.S_Spindash)
+    sound_stop(global.S_Spindash)
+    sound_play_ex(global.S_Spindash,1,clamp((spindashTimer/30)+1,0.5,2.5))
 
  if spindashTimer < 5
    spindashTimer += 2;
@@ -301,21 +303,23 @@ if ground == true && ducking == true && keyboard_check_pressed(ord("Z")) && canH
  if spindashTimer >= 10
    spindashTimer += 6
 
-  sprite_index = sprSonicSpindash
+    sprite_index = sprSonicSpindash
 }
 
  spindashTimer = spindashTimer - ((spindashTimer div 0.125 )/ 256);
 
- if vspeed = 0
- {
- if ground == true && spindash == true && keyboard_check_released(vk_down)
-{
-  rolling = true;
-  sound_play(global.S_Rolling)
-  global.vel = image_xscale * (5 + spindashTimer);
-  spindash = false;
-  spindashTimer = 0;
-}}}
+    if vspeed = 0
+    {
+        if ground == true && spindash == true && keyboard_check_released(vk_down)
+        {
+            rolling = true;
+            sound_play(global.S_Rolling)
+            global.vel = image_xscale * (5 + spindashTimer);
+            spindash = false;
+            spindashTimer = 0;
+        }
+    }
+}
 
 
 //Slope collision
@@ -521,10 +525,10 @@ action_id=603
 applies_to=self
 */
 drawAngle = 0
-if rolling = true
+/*if rolling = true
 {
-rolling = false
-}
+    rolling = false
+}*/
 if place_meeting(x,bbox_bottom+1,FinalGround)
 {
 move_contact_solid(270, 4);
@@ -551,16 +555,16 @@ applies_to=self
 drawAngle = 0
 if place_meeting(x,bbox_bottom,UpGrounder)
 {
-move_contact_solid(270, 4);
-vspeed = UpGrounder.vspeed;
-ground = true
-sprite_index = sprSonicHit
+    move_contact_solid(270, 4);
+    vspeed = UpGrounder.vspeed;
+    ground = true
+    sprite_index = sprSonicHit
 }
 
 if place_meeting(x,bbox_top,UpGrounder)
 {
-move_contact_solid(90, 4);
-vspeed = 0;
+    move_contact_solid(90, 4);
+    vspeed = 0;
 }
 
 if place_meeting(bbox_right,y,UpGrounder) or place_meeting(bbox_left,y,UpGrounder)
@@ -569,7 +573,7 @@ move_contact_solid(direction, 0.1)
 drawAngle = 0
 global.vel = 0
 }
-if rolling = true
+/*if rolling = true
 {
 rolling = false
 }
@@ -599,7 +603,7 @@ move_contact_solid(direction, 0.1)
 drawAngle = 0
 global.vel = 0
 }
-if rolling = true
+/*if rolling = true
 {
 rolling = false
 }
@@ -629,7 +633,7 @@ move_contact_solid(direction, 0.1)
 drawAngle = 0
 global.vel = 0
 }
-if rolling = true
+/*if rolling = true
 {
 rolling = false
 }
@@ -659,7 +663,7 @@ move_contact_solid(direction, 0.1)
 drawAngle = 0
 global.vel = 0
 }
-if rolling = true
+/*if rolling = true
 {
 rolling = false
 }
@@ -846,7 +850,7 @@ move_contact_solid(direction, 0.1)
 drawAngle = 0
 global.vel = 0
 }
-if rolling = true
+/*if rolling = true
 {
 rolling = false
 }
@@ -858,20 +862,21 @@ applies_to=self
 */
 if !instance_exists(FinalCam4)
 {
-if Bot = 3
-{
-global.SLive -= 1
-instance_create(x,y,FinalSonicDeath)
-instance_destroy()
-}}
+    if Bot = 3
+    {
+        global.SLive -= 1
+        instance_create(x,y,FinalSonicDeath)
+        instance_destroy()
+    }
+}
 if instance_exists(FinalCam4)
 {
-global.GoodEnd = false
-global.BestEnd = true
-sound_stop(global.S_Burn)
-transition_kind = 21
-transition_steps = 180
-room_goto(76)
+    global.GoodEnd = false
+    global.BestEnd = true
+    sound_stop(global.S_Burn)
+    transition_kind = 21
+    transition_steps = 180
+    room_goto(76)
 }
 #define Draw_0
 /*"/*'/**//* YYD ACTION
@@ -880,18 +885,20 @@ action_id=603
 applies_to=self
 */
 draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale, image_yscale, drawAngle, image_blend, image_alpha);
+//draw_text(x,y+20,spindashTimer)
 if instance_exists(Final_Time)
 {
-if !instance_exists(FinalCam4)
-{
-draw_sprite(sprHitCounter,0,view_xview[0]+210,view_yview[0]+42)
-draw_text_color(view_xview[0]+230,view_yview[0]+35,global.Hit,$00ffff,$00ffff,$00ffff,$005555, 1)
-draw_text_color(view_xview[0]+250,view_yview[0]+35,'/15',$00ffff,$00ffff,$00ffff,$005555, 1)
+    if !instance_exists(FinalCam4)
+    {
+        draw_sprite(sprHitCounter,0,view_xview[0]+210,view_yview[0]+42)
+        draw_text_color(view_xview[0]+230,view_yview[0]+35,string(global.Hit)+'/15',$00ffff,$00ffff,$00ffff,$005555, 1)
+        //draw_text_color(view_xview[0]+250,view_yview[0]+35,'/15',$00ffff,$00ffff,$00ffff,$005555, 1)
+    }
+    if instance_exists(FinalCam4) && Bot = 3
+    {
+        draw_sprite(sprRunCounter,0,view_xview[0]+231,view_yview[0]+50)
+    }
 }
-if instance_exists(FinalCam4) && Bot = 3
-{
-draw_sprite(sprRunCounter,0,view_xview[0]+231,view_yview[0]+50)
-}}
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=526

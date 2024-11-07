@@ -56,6 +56,8 @@
 	|FalseSonic
 	|IntroTails
 	|Tornado
+	|HZ_1B
+	|HZ_3B
 +hideseek
 	|H&S_Note
 	|HS_1
@@ -68,6 +70,9 @@
 	|FalseSonic2
 	|TailsStop2
 	|Ex4_2
+	|HS_4
+	|HS_5
+	|HS_6
 +debug
 	|DM_Ring
 	|DM_Sonic
@@ -122,6 +127,8 @@
 	|Ex12_2_Ai
 	|Ex12_9
 	|SmachDash
+	|Ex8_2
+	|Ex8
 +finalfight
 	|FinalCam
 	|HP_Exe
@@ -221,9 +228,6 @@
 |Warn6
 |Warn7
 |object677
-|HS_4
-|HS_5
-|HS_6
 |EE_1
 |Ex5
 |Note_2
@@ -252,8 +256,6 @@
 |Timer_12
 |Timer_13
 |Warn12
-|Ex8
-|Ex8_2
 |Warn13
 |Warn14
 |Timer_14
@@ -279,8 +281,6 @@
 |MS_FF
 |MS_Sonic
 |Selecter2
-|HZ_3B
-|HZ_1B
 |Warn1_5
 |TR1
 |Warn5_2

@@ -9,7 +9,7 @@ background_alpha[2] = 0
 fuckyalpha = 0
 scrollcounter = 0
 scroll = 0
-Notavalmessage = "Unavailable in this version"
+Notavalmessage = "Unavailable"
 global.lang = 0
 global.fourbythree = 1
 image_speed = 0.2
@@ -42,7 +42,8 @@ ini_close()
 ini_open("options.ini")
 global.fourbythree = ini_read_real('options','fourbythree',0)
 global.subcnoise = ini_read_real('options','subcnoise',1)
-global.newcontent = ini_read_real('options','newcontent',1)
+//global.newcontent = ini_read_real('options','newcontent',1)
+global.newcontent = 0
 global.showfps = ini_read_real('options','showfps',0)
 global.lang = ini_read_real('options','language',0)
 global.dialoguefont = ini_read_real('options','font',WORD_Font)
@@ -51,9 +52,9 @@ global.cheats = ini_read_real('options','cheats',0)
 global.voicedir = ini_read_real('options','voicedir',0)
 global.DCRP_enabled = ini_read_real('options','DCRP_enabled',1)
 global.RG_final_boss = ini_read_real('options','RG_final_boss',1)
-global.BL_fliter = ini_read_real('options','BL_fliter',1)
+global.BL_filter = ini_read_real('options','BL_filter',1)
 ini_close()
-texture_set_interpolation(global.BL_fliter)
+texture_set_interpolation(global.BL_filter)
 if global.DCRP_enabled = 1
 {
     discord_init_dll()
@@ -79,7 +80,7 @@ option[8] = global.fourbythree
 option[9] = global.voicedir
 option[10] = global.DCRP_enabled
 option[11] = global.RG_final_boss
-option[12] = global.BL_fliter
+option[12] = global.BL_filter
 
 optionblocked[1] = 0
 if global.complete = 1 optionblocked[2] = 0
@@ -87,7 +88,7 @@ else optionblocked[2] = 1
 optionblocked[3] = 0
 optionblocked[4] = 0
 optionblocked[5] = 0
-optionblocked[6] = 0
+optionblocked[6] = 1
 optionblocked[7] = 0
 optionblocked[8] = 0
 optionblocked[9] = 0

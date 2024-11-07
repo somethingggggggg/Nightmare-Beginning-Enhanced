@@ -66,7 +66,6 @@ if keyboard_check_pressed(vk_enter)
     }
     if global.option = 3
     {
-        scr_saveoptions()
         scr_voiceinit()
         if global.cheats = 1
         {
@@ -97,8 +96,9 @@ if keyboard_check_pressed(vk_enter)
             option[9] = global.voicedir
             option[10] = global.DCRP_enabled
             option[11] = global.RG_final_boss
-            option[12] = global.BL_fliter
+            option[12] = global.BL_filter
         }
+        scr_saveoptions()
         room_goto(87)
     }
 }

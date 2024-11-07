@@ -227,7 +227,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-sound_loop(global.S_Mindfuckery)
+if global.hardmode = 0 sound_loop(global.S_Mindfuckery)
+else sound_loop_single_ex(global.S_GrassSkirtChase,10)
 view_object[0] = Ex14
 /*"/*'/**//* YYD ACTION
 lib_id=1
