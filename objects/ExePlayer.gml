@@ -171,7 +171,7 @@ if ground == true && ducking == false && rolling == false && spindash == false
 
    sprite_index = sprFinalExe_Stand;
 else if global.vel > -8 && global.vel < 8
-   sprite_index = sprFinalExe_Run;
+   sprite_index = sprHSE_Walker;
 else
    sprite_index = sprFinalExe_Run;
 image_speed = abs(global.vel / 20);
@@ -258,10 +258,8 @@ else
 }
 else if rolling == true
 {
-
    sprite_index = sprFinalExe_Jump;
    canMove = false;
-
 }
 else if spindash = true
 {
@@ -293,7 +291,6 @@ if Bot = 3
 if ground == true && ducking == true && keyboard_check_pressed(ord("Z")) && canHit = true
 {
    spindash = true;
-   sound_play(global.S_Spindash)
 
  if spindashTimer < 5
    spindashTimer += 4;
@@ -304,50 +301,54 @@ if ground == true && ducking == true && keyboard_check_pressed(ord("Z")) && canH
  if spindashTimer >= 10
    spindashTimer += 8
 
-  sprite_index = sprSonicSpindash
+    sound_stop(global.S_Spindash)
+    sound_play_ex(global.S_Spindash,1,clamp((spindashTimer/30)+1,0.5,2.5))
+    sprite_index = sprSonicSpindash
 }
 
- spindashTimer = spindashTimer - ((spindashTimer div 0.125 )/ 256);
+spindashTimer = spindashTimer - ((spindashTimer div 0.125 )/ 256);
 
- if ground == true && spindash == true && keyboard_check_released(vk_down)
+if ground == true && spindash == true && keyboard_check_released(vk_down)
 {
-  rolling = true;
-  sound_play(global.S_Rolling)
-  global.vel = image_xscale * (5 + spindashTimer);
-  spindash = false;
-  spindashTimer = 0;
+    rolling = true;
+    sound_play_ex(global.S_SpinLetGo,2)
+    //sound_play(global.S_SpinLetGo)
+    global.vel = image_xscale * (5 + spindashTimer);
+    spindash = false;
+    spindashTimer = 0;
 }
 }
 if Bot = 1
 {
-global.vel = 14
+    global.vel = 14
 }
 
 if Bot = 7
 {
-sprite_index = sprFinalExe_Walk
-image_speed = 0.1
-global.vel = 1
+    sprite_index = sprFinalExe_Walk
+    image_speed = 0.1
+    global.vel = 1
 }
 
 //Animations
 if sprite_index = sprTailsFatality2
 {
-if image_index > 0 && image_index < 5
-{
-image_speed = 0.02
-FF_DT.image_speed = 0.05
+    if image_index > 0 && image_index < 5
+    {
+        image_speed = 0.02
+        FF_DT.image_speed = 0.05
+    }
+    else
+    {
+        image_speed = 0.8
+        FF_DT.image_speed = 0.12
+    }
+    if image_index>= 7
+    {
+        image_speed = 0
+        image_index = 7
+    }
 }
-else
-{
-image_speed = 0.8
-FF_DT.image_speed = 0.12
-}
-if image_index>= 7
-{
-image_speed = 0
-image_index = 7
-}}
 #define Collision_Solid
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -356,23 +357,24 @@ applies_to=self
 */
 if Solid.solid = 1
 {
-move_contact_solid(direction, 0.1);
-drawAngle = 0
-global.vel = 0
+    move_contact_solid(direction, 0.1);
+    drawAngle = 0
+    global.vel = 0
 }
 Solid.alarm[0] = 30
 
 if ExePlayer.Bot = 4
 {
-ExePlayer.Bot = 6
-ExePlayer.sprite_index = sprExeDuck
-Act = 1
-ExePlayer.image_xscale =-1
-alarm[0] = 30
-with TailsRacing
-{
-path_speed = 0
-}}
+    ExePlayer.Bot = 6
+    ExePlayer.sprite_index = sprExeDuck
+    Act = 1
+    ExePlayer.image_xscale =-1
+    alarm[0] = 30
+    with TailsRacing
+    {
+        path_speed = 0
+    }
+}
 #define Collision_FF_DT
 /*"/*'/**//* YYD ACTION
 lib_id=1

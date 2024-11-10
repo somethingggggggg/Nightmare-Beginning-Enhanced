@@ -291,8 +291,6 @@ if ground == true && ducking == true && keyboard_check_pressed(ord("Z")) && canH
 {
    spindash = true;
    //sound_play(global.S_Spindash)
-    sound_stop(global.S_Spindash)
-    sound_play_ex(global.S_Spindash,1,clamp((spindashTimer/30)+1,0.5,2.5))
 
  if spindashTimer < 5
    spindashTimer += 2;
@@ -303,6 +301,8 @@ if ground == true && ducking == true && keyboard_check_pressed(ord("Z")) && canH
  if spindashTimer >= 10
    spindashTimer += 6
 
+    sound_stop(global.S_Spindash)
+    sound_play_ex(global.S_Spindash,1,clamp((spindashTimer/30)+1,0.5,2.5))
     sprite_index = sprSonicSpindash
 }
 
@@ -313,7 +313,7 @@ if ground == true && ducking == true && keyboard_check_pressed(ord("Z")) && canH
         if ground == true && spindash == true && keyboard_check_released(vk_down)
         {
             rolling = true;
-            sound_play(global.S_Rolling)
+            sound_play_ex(global.S_SpinLetGo,2)
             global.vel = image_xscale * (5 + spindashTimer);
             spindash = false;
             spindashTimer = 0;

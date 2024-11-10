@@ -14,10 +14,11 @@ applies_to=self
 FinalSonic.Bot = 3
 if instance_exists(ExePlayer)
 {
-if ExePlayer.Bot !=6
-{
-ExePlayer.Bot = 3
-}}
+    if ExePlayer.Bot != 6
+    {
+        ExePlayer.Bot = 3
+    }
+}
 solid = 1
 #define Collision_Warn2
 /*"/*'/**//* YYD ACTION
