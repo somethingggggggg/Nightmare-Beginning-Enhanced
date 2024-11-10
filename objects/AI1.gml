@@ -6,7 +6,6 @@ applies_to=self
 */
 image_speed = 0.2
 global.Windtime = 0
-image_blend = $808080
 if global.Windtime > 0
 {
     hspeed = 2.5
@@ -32,7 +31,7 @@ action_id=603
 applies_to=self
 */
 vspeed = -7
-sprite_index = sprTailsJumpBlack
+sprite_index = sprTailsJump
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=301
@@ -78,3 +77,13 @@ sprite_index = sprTails
 mask_index = sprTailsMask
 move_contact_solid(270, 4);
 vspeed = 0;
+#define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+shader_pixel_set(psGrayscale())
+shader_pixel_uniform_f("fade",0.5)
+draw_self()
+shader_reset()

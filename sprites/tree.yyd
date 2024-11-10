@@ -330,11 +330,6 @@
 |sprHUD_PC
 |sprHvostBlack
 |sprHvostGhost
-|sprHvostJump
-|sprHvostJump1_2
-|sprHvostJump2
-|sprHvostJump2_2
-|sprHvostJumpUP2
 |sprHvostStand
 |sprHvostStand2
 |sprHyperFly
@@ -370,7 +365,6 @@
 |sprICStand
 |sprICWalk
 |sprite241
-|sprite543
 |sprite707
 |sprite708
 |sprite715

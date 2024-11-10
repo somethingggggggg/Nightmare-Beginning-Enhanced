@@ -66,7 +66,7 @@ DF_Tails.alarm[3] = 50
 }
 if PersonalChoiser.Tails_Pers = true
 {
-sprite_index = sprTailsJumpBlack
+sprite_index = sprTailsJump
 vspeed =-6
 image_xscale = 1
 DF_Knuckles.image_xscale = 1

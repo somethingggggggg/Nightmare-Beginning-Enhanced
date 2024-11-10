@@ -7,6 +7,7 @@ applies_to=self
 drawAngle = 0
 sweattimer = 60
 ground = true
+image_blend = $999999
 canSpriteChange = true
 image_xscale =-1
 Act = -1
@@ -243,4 +244,4 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale, image_yscale, drawAngle, c_white, image_alpha);
+draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale, image_yscale, drawAngle, image_blend, image_alpha);

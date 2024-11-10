@@ -11,7 +11,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if AI1.sprite_index != sprTailsJumpBlack
+if AI1.sprite_index != sprTailsJump
 {
 with HvostBlack
 {
@@ -29,7 +29,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if Pers1.sprite_index != sprTailsJumpBlack
+if Pers1.sprite_index != sprTailsJump
 {
 if BL.FF_K = true
 {

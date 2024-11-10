@@ -28,7 +28,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if Pers1.sprite_index = sprTailsJumpBlack
+if Pers1.sprite_index = sprTailsJump
 {
 instance_destroy()
 }

@@ -93,19 +93,18 @@ if canSpriteChange == true
 if ground == true && ducking == false && rolling == false && spindash == false
 {
    if vel = 0
-   sprite_index = sprTailsBlack;
+   sprite_index = sprTails;
  else if vel > -8 && vel < 8
-   sprite_index = sprTailsWalkBlack;
+   sprite_index = sprTailsWalk;
 else
    sprite_index = sprTailsRun;
 
 image_speed = abs(vel/20);
 }
-else if sprite_index == sprTailsJumpBlack
+else if sprite_index == sprTailsJump
 {
-   sprite_index = sprTailsJumpBlack;
-
-image_speed = (vel/2)
+    sprite_index = sprTailsJump;
+    image_speed = 1
 }
 }
 
@@ -113,7 +112,7 @@ image_speed = (vel/2)
 if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && canMove == true
 {
    vspeed = -7;
-   sprite_index = sprTailsJumpBlack;
+   sprite_index = sprTailsJump;
 }
 
 //Up
@@ -170,7 +169,7 @@ else
 
 if ducking == true && spindash == false
 {
-   sprite_index = sprTailsDuckBlack;
+   sprite_index = sprTailsDuck;
 if image_index < 1
    image_speed = 0.1;
 else
@@ -209,7 +208,7 @@ view_object[0] = Pers3
 }
 
 //Smash Dash
-if sprite_index = sprTailsJumpBlack && ground = false && keyboard_check_pressed(ord("Z")) && SmashDash = false
+if sprite_index = sprTailsJump && ground = false && keyboard_check_pressed(ord("Z")) && SmashDash = false
 {
 SmashDash = true
 instance_create(x,y,SmachDash)
@@ -247,5 +246,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+shader_pixel_set(psGrayscale())
+shader_pixel_uniform_f("fade",0.5)
 draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale, image_yscale, drawAngle, image_blend, image_alpha);
+shader_reset()
 draw_sprite(sprChangePlayer,0,view_xview[0]+40,view_yview[0]+225)

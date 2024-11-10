@@ -24,7 +24,7 @@ applies_to=self
 sound_play(global.S_Rolling)
 hspeed = 8
 DF_Tails.vspeed =-6
-DF_Tails.sprite_index = sprTailsJumpBlack
+DF_Tails.sprite_index = sprTailsJump
 #define Alarm_2
 /*"/*'/**//* YYD ACTION
 lib_id=1

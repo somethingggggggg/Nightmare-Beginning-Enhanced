@@ -7,7 +7,7 @@ applies_to=self
 image_xscale = -1
 image_speed = 0.2
 mask_index = sprKnucklesStandMask
-image_blend = $808080
+//image_blend = $808080
 
 global.Windtime = 0
 if global.Windtime > 0
@@ -35,7 +35,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-sprite_index = sprKnucklesPunchBlack
+sprite_index = sprKnucklesPunch
 mask_index = sprKnucklesStandMask
 alarm[1] = 25
 #define Alarm_1
@@ -48,19 +48,19 @@ image_speed = 0.2
 
 if instance_exists(Pers3)
 {
-if Pers3.Speaker_Knuckles = true
-{
-alarm[0] = 50
-}
+    if Pers3.Speaker_Knuckles = true
+    {
+        alarm[0] = 50
+    }
 
-if Pers3.Speaker_Knuckles != true
-{
-alarm[0] = 110
-}
+    if Pers3.Speaker_Knuckles != true
+    {
+        alarm[0] = 110
+    }
 }
 else
 {
-alarm[0] = 110
+    alarm[0] = 110
 }
 #define Step_0
 /*"/*'/**//* YYD ACTION
@@ -96,3 +96,13 @@ applies_to=self
 */
 move_contact_solid(270, 4);
 vspeed =0
+#define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+shader_pixel_set(psGrayscale())
+shader_pixel_uniform_f("fade",0.5)
+draw_self()
+shader_reset()

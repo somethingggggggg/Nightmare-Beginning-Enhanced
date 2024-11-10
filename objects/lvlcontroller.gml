@@ -9,6 +9,9 @@ switch room
     case 26:
     myx = 2
     break;
+    case 32:
+
+    break;
     case 40:
     myx = 4
     break;
@@ -36,6 +39,10 @@ else
         background_x[1] = view_xview[0] / 1.5
         background_x[2] = view_xview[0] / 2
         background_x[3] = view_xview[0] / 2.5
+
+        background_y[1] = view_yview[0] - 32
+        background_y[2] = view_yview[0] - 32
+        background_y[3] = view_yview[0] - 32
     }
 }
 #define Draw_0

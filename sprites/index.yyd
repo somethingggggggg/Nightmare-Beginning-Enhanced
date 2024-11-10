@@ -252,16 +252,16 @@ sprKnucklesTable
 sprHZ_2_Evening
 sprHZ_2_Night
 sprHvostStand
-sprHvostJump
+
 sprTailsMask
 sprTailsDuckMask
 sprHvostStand2
-sprHvostJump2
-sprHandS2_Note
-sprHvostJumpUP2
 
-sprHvostJump1_2
-sprHvostJump2_2
+sprHandS2_Note
+
+
+
+
 sprHSE_GAJump
 sprHSE_GARun
 
@@ -541,7 +541,7 @@ sprEGG_Shower
 sprMSonicAttack
 sprMSonicBroke
 sprSonicWayOut
-sprite543
+
 sprFinalExLaugh
 sprSonicMask
 sprFinalSpring

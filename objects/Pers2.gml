@@ -127,9 +127,9 @@ if canSpriteChange == true
 if ground == true && ducking == false && rolling == false && spindash == false && Punch = false && TAB.Twister_mode = false
 {
    if vel = 0
-   sprite_index = sprKnucklesStandBlack;
+   sprite_index = sprKnucklesStand;
  else if vel > -8 && vel < 8
-   sprite_index = sprKnucklesWalkBlack;
+   sprite_index = sprKnucklesWalk;
 else
    sprite_index = sprTailsRun;
 
@@ -177,7 +177,9 @@ if rolling == true && (ground == false or vel == 0)
    canMove = true;
 {
 {
-}}}
+}
+}
+}
 {
    mask_index = sprKnucklesStandMask;
    canMove = true
@@ -186,8 +188,8 @@ if rolling == true && (ground == false or vel == 0)
 
 if up == true && spindash == false
 {
+   sprite_index = sprKnucklesUp;
    mask_index = sprKnucklesStandMask;
-   sprite_index = sprKnucklesUpBlack;
 if image_index < 1
    image_speed = 0.1;
 else
@@ -198,7 +200,7 @@ else
 
 if ducking == true && spindash == false
 {
-   sprite_index = sprKnucklesDuckBlack;
+   sprite_index = sprKnucklesDuck;
 if image_index < 1
    image_speed = 0.1;
 else
@@ -217,62 +219,63 @@ if keyboard_check_pressed(ord("D")) && Punch = false && TAB.Twister_mode = false
 
 if Punch = true
 {
-sprite_index = sprKnucklesPunchBlack
-image_speed = 0.2
-maxSpeed = 0
+    sprite_index = sprKnucklesPunch
+    image_speed = 0.2
+    maxSpeed = 0
 }
 
 
 //Change
 if instance_exists(AI3) && keyboard_check_pressed(vk_space) && TAB.Turn = true
 {
-TAB.Turn = false
-TAB.alarm[0] = 10
-sound_play(global.S_TAB)
-instance_change(AI2,Pers2)
-with AI3
-{
-instance_change(Pers3,AI3)
-}
-view_object[0] = Pers3
+    TAB.Turn = false
+    TAB.alarm[0] = 10
+    sound_play(global.S_TAB)
+    instance_change(AI2,Pers2)
+    with AI3
+    {
+        instance_change(Pers3,AI3)
+    }
+    view_object[0] = Pers3
 }
 
 if !instance_exists(AI3) && keyboard_check_pressed(vk_space) && TAB.Turn = true
 {
 if instance_exists(AI1)
 {
-TAB.Turn = false
-TAB.alarm[0] = 10
-sound_play(global.S_TAB)
-instance_change(AI2,Pers2)
-with AI1
-{
-instance_change(Pers1,AI1)
+    TAB.Turn = false
+    TAB.alarm[0] = 10
+    sound_play(global.S_TAB)
+    instance_change(AI2,Pers2)
+    with AI1
+    {
+        instance_change(Pers1,AI1)
+    }
+    view_object[0] = Pers1
+    }
 }
-view_object[0] = Pers1
-}}
 
 //TAB.Twister
 if TAB.Twister_mode = false && Act = 1 && keyboard_check_pressed(ord("X")) && up == false && ducking == false
 {
-TAB.Twister_mode = true
-Act = 0
+    TAB.Twister_mode = true
+    Act = 0
 }
 
 if TAB.Twister_mode = true && Act = 0
 {
-Act = 5
-sprite_index = sprKnucklesTwisterBlack
-image_speed = 0.8
-alarm[4] = 1
-vel = image_xscale * 8
+    Act = 5
+    sprite_index = sprKnucklesTwister
+    image_speed = 0.8
+    alarm[4] = 1
+    vel = image_xscale * 8
 }
 
 if TAB.Twister_mode = true && vel=0
 {
-TAB.Twister_mode = false
-Act = 2
-alarm[3] = 250
+    TAB.Twister_mode = false
+    Act = 2
+    alarm[3] = 250
 }
 global.complpercent = 100 - ((x / 8300) * 100)
 #define Collision_Solid
@@ -297,7 +300,10 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+shader_pixel_set(psGrayscale())
+shader_pixel_uniform_f("fade",0.5)
 draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale, image_yscale, drawAngle, image_blend, image_alpha);
+shader_reset()
 
 draw_sprite(sprChangePlayer,0,view_xview[0]+40,view_yview[0]+225)
 if Act=1

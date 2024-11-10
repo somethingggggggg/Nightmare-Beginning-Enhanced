@@ -65,7 +65,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if AI2.sprite_index = sprKnucklesTwisterBlack
+if AI2.sprite_index = sprKnucklesTwister
 {
 instance_create(x+30,y+96,FF_Piece)
 instance_create(x+15,y+32,FF_Piece)
@@ -76,12 +76,12 @@ sound_play(global.S_Broke)
 }
 
 //Broke down
-if AI2.sprite_index = sprKnucklesPunchBlack
+if AI2.sprite_index = sprKnucklesPunch
 {
-sound_play(global.S_Crack_Wall)
-Strong -= 2
-alarm[0] = 1
-alarm[1] = 20
+    sound_play(global.S_Crack_Wall)
+    Strong -= 2
+    alarm[0] = 1
+    alarm[1] = 20
 }
 #define Collision_Pers2
 /*"/*'/**//* YYD ACTION
@@ -90,7 +90,7 @@ action_id=603
 applies_to=self
 */
 
-if Pers2.sprite_index = sprKnucklesTwisterBlack
+if Pers2.sprite_index = sprKnucklesTwister
 {
     instance_create(x+30,y+96,FF_Piece)
     instance_create(x+15,y+32,FF_Piece)
@@ -101,7 +101,7 @@ if Pers2.sprite_index = sprKnucklesTwisterBlack
 }
 
 //Broke down
-if Pers2.sprite_index = sprKnucklesPunchBlack
+if Pers2.sprite_index = sprKnucklesPunch
 {
     sound_play(global.S_Crack_Wall)
     Strong -= 2
@@ -116,11 +116,12 @@ applies_to=self
 */
 if place_meeting(x,y,EnergyShieldFF)
 {
-vspeed = 1
+    vspeed = 1
 }
+
 if !place_meeting(x,y,EnergyShieldFF)
 {
-vspeed = 0
+    vspeed = 0
 }
 #define Collision_SmachDash
 /*"/*'/**//* YYD ACTION

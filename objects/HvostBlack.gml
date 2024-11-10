@@ -25,12 +25,12 @@ image_xscale = -1
 move_snap(Pers1.x+5,Pers1.y+4)
 }
 
-if Pers1.sprite_index = sprTailsWalkBlack or Pers1.sprite_index = sprTailsJumpBlack
+if Pers1.sprite_index = sprTailsWalk or Pers1.sprite_index = sprTailsJump
 {
 image_alpha = 0
 }
 
-if Pers1.sprite_index != sprTailsWalkBlack && Pers1.sprite_index != sprTailsJumpBlack
+if Pers1.sprite_index != sprTailsWalk && Pers1.sprite_index != sprTailsJump
 {
 image_alpha = 1
 }
@@ -52,12 +52,12 @@ image_xscale = -1
 move_snap(AI1.x+5,AI1.y+4)
 }
 
-if AI1.sprite_index = sprTailsWalkBlack or AI1.sprite_index = sprTailsJumpBlack
+if AI1.sprite_index = sprTailsWalk or AI1.sprite_index = sprTailsJump
 {
 image_alpha = 0
 }
 
-if AI1.sprite_index != sprTailsWalkBlack && AI1.sprite_index != sprTailsJumpBlack
+if AI1.sprite_index != sprTailsWalk && AI1.sprite_index != sprTailsJump
 {
 image_alpha = 1
 }
@@ -94,14 +94,14 @@ image_xscale = -1
 move_snap(DF_Tails.x+5,DF_Tails.y+4)
 }
 
-if DF_Tails.sprite_index = sprTailsWalkBlack or DF_Tails.sprite_index = sprTailsJumpBlack
+if DF_Tails.sprite_index = sprTailsWalk or DF_Tails.sprite_index = sprTailsJump
 {
-image_alpha = 0
+    image_alpha = 0
 }
 
-if DF_Tails.sprite_index != sprTailsWalkBlack && DF_Tails.sprite_index != sprTailsJumpBlack
+if DF_Tails.sprite_index != sprTailsWalk && DF_Tails.sprite_index != sprTailsJump
 {
-image_alpha = 1
+    image_alpha = 1
 }
 depth = DF_Tails.depth+1
 }
@@ -120,12 +120,12 @@ image_xscale = -1
 move_snap(CutTails.x+5,CutTails.y+4)
 }
 
-if CutTails.sprite_index = sprTailsWalkBlack or CutTails.sprite_index = sprTailsJumpBlack
+if CutTails.sprite_index = sprTailsWalk or CutTails.sprite_index = sprTailsJump
 {
 image_alpha = 0
 }
 
-if CutTails.sprite_index != sprTailsWalkBlack && CutTails.sprite_index != sprTailsJumpBlack
+if CutTails.sprite_index != sprTailsWalk && CutTails.sprite_index != sprTailsJump
 {
 image_alpha = 1
 }
@@ -138,3 +138,13 @@ if !instance_exists(Pers1) && !instance_exists(AI1) && !instance_exists(Pers1) &
 {
 instance_destroy()
 }
+#define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+shader_pixel_set(psGrayscale())
+shader_pixel_uniform_f("fade",0.5)
+draw_self()
+shader_reset()

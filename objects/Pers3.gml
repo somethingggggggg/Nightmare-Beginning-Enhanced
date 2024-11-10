@@ -56,8 +56,9 @@ if keyboard_check(vk_right) && !place_meeting(x+abs(hspeed)+1, y, FF_Wall) && !p
 
 if keyboard_check_released(vk_right)
 {
-hspeed = 0
-}}
+    hspeed = 0
+}
+}
 
 //Gravity
 if place_meeting(x, y+vspeed+1, FF_Ground) && vspeed >= 0
@@ -80,21 +81,22 @@ if canSpriteChange == true
 if ground == true && ducking == false && rolling == false && spindash == false
 {
    if hspeed = 0
-   sprite_index = sprEggmanBlack;
+   sprite_index = sprEGGBotStand;
  else if hspeed > -8 && hspeed < 8
-   sprite_index = sprEggmanWalkBlack;
+   sprite_index = sprEGGBotWalk;
 else
    sprite_index = sprTailsRun;
 
-image_speed = abs(hspeed/20);
+    image_speed = abs(hspeed/20);
 }
 else if sprite_index == sprKnucklesJumpBlack
 {
    sprite_index = sprKnucklesJumpBlack;
 
-image_speed = (hspeed/2)
+    image_speed = (hspeed/2)
 }
 }
+mask_index = sprEggmanMask
 
 //Life
 if TAB.life <= 0
@@ -214,7 +216,11 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+shader_pixel_set(psGrayscale())
+shader_pixel_uniform_f("fade",0.5)
 draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale, image_yscale, drawAngle, image_blend, image_alpha);
+shader_reset()
+
 draw_set_halign(fa_center)
 draw_text_color(view_xview[0]+(view_wview[0]/2),view_yview[0]+80,TAB.Energy,$000000,$000000,$000000,$000000, 1)
 draw_sprite(sprEggmanS,0,view_xview[0]+(view_wview[0]/2),view_yview[0]+60)
