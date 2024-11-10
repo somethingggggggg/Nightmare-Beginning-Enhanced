@@ -300,7 +300,6 @@ global.S_CYFTS_voiceline=sound_add(working_directory+"/Sound/tailsdollvoice.wav"
 global.S_PAUSEMENU=sound_add(working_directory+"/Sound/n8_song.mp3",1,0)
 global.S_skid=sound_add(working_directory+"/Sound/skid.mp3",1,0)
 global.S_Final_Boss_RG=sound_add(working_directory+"/Sound/Final_Boss_REALLY_GOOD.mp3",0,0)
-global.S_GrassSkirtChase=sound_add(working_directory+"/Sound/GrassSkirtChase.mp3",0,0)
 
 //doomsday machine
 if irandom_range(0,10000) = 56

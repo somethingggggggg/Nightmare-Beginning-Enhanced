@@ -242,6 +242,7 @@
 |sprFF_Allrus
 |sprFF_DT
 |sprFF_Ground
+|sprFF_NEWGround
 |sprFF_Piece
 |sprFF_T&E
 |sprFF_T&K
@@ -696,7 +697,6 @@
 |sprWorstNoteita
 |sprWorstNoterus
 |sprWorstSuperExe
-|sprWorstTails
 |sprYCR
 |sprYCR_Background
 |sprYellowRing
@@ -709,3 +709,4 @@
 |spr_cutscene_wall
 |sprite796
 |sprite808
+|sprWorstTails

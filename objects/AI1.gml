@@ -6,6 +6,7 @@ applies_to=self
 */
 image_speed = 0.2
 global.Windtime = 0
+image_blend = $808080
 if global.Windtime > 0
 {
     hspeed = 2.5
@@ -47,7 +48,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-mask_index = sprTailsMask
+
 //Gravity
 if place_meeting(x, y+vspeed+1, FF_Ground) && vspeed >= 0
 {
@@ -73,6 +74,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-sprite_index = sprTailsBlack
+sprite_index = sprTails
+mask_index = sprTailsMask
 move_contact_solid(270, 4);
 vspeed = 0;

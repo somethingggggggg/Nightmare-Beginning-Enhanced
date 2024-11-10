@@ -9,6 +9,7 @@ if BL.Eggman_Plot = false
     BL.FF_E = false
     instance_destroy()
 }
+//image_blend = $808080
 hspeed = 0
 if global.Windtime > 0
 {
@@ -124,3 +125,13 @@ action_id=603
 applies_to=self
 */
 TAB.life -= 1
+#define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+shader_pixel_set(psGrayscale())
+shader_pixel_uniform_f("fade",0.5)
+draw_self()
+shader_reset()

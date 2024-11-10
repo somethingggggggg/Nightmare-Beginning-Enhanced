@@ -6,6 +6,9 @@ applies_to=self
 */
 image_xscale = -1
 image_speed = 0.2
+mask_index = sprKnucklesStandMask
+image_blend = $808080
+
 global.Windtime = 0
 if global.Windtime > 0
 {
@@ -33,6 +36,7 @@ action_id=603
 applies_to=self
 */
 sprite_index = sprKnucklesPunchBlack
+mask_index = sprKnucklesStandMask
 alarm[1] = 25
 #define Alarm_1
 /*"/*'/**//* YYD ACTION
@@ -64,7 +68,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-mask_index = sprKnucklesStandMask
+
 //Gravity
 if place_meeting(x, y+vspeed+1, FF_Ground) && vspeed >= 0
 {

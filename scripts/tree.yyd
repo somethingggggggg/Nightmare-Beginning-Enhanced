@@ -29,6 +29,7 @@
 	|bnw
 	|script38
 	|shd_blur
+	|psGrayscale
 +voice
 	|scr_voiceunload
 	|scr_voiceinit

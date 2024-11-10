@@ -1,4 +1,4 @@
-sprite=sprFF_Ground
+sprite=sprFF_NEWGround
 visible=1
 solid=1
 persistent=0

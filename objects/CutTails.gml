@@ -137,23 +137,7 @@ action_id=603
 applies_to=self
 */
 CutEggman.image_xscale = 1
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=201
-relative=0
-applies_to=self
-invert=0
-arg0=
-arg1=1088
-arg2=368
-*/
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=211
-invert=0
-arg0=
-arg1=0
-*/
+sound_play(global.S_Metal_Call)
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=301
