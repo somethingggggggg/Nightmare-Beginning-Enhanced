@@ -94,7 +94,8 @@ if Tails3.sprite_index = sprTailsJump
     y = Tails3.y
     sprite_index = sprtt
     image_xscale = 1
-    if global.vel != 0
+    image_angle = point_direction(Tails3.x,Tails3.y,Tails3.x+global.vel,Tails3.y+Tails3.vspeed)
+    /*if global.vel != 0
     {
         image_angle = -radtodeg(arctan(Tails3.vspeed/global.vel))
     }
@@ -103,7 +104,7 @@ if Tails3.sprite_index = sprTailsJump
         if Tails3.vspeed > 0 image_angle = -90
         if Tails3.vspeed < 0 image_angle = 90
     }
-    if global.vel < 0 image_angle = -radtodeg(arctan(Tails3.vspeed/global.vel))+180
+    if global.vel < 0 image_angle = -radtodeg(arctan(Tails3.vspeed/global.vel))+180*/
 }
 else
 {

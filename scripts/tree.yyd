@@ -13,6 +13,7 @@
 	|scr_pausenav2
 	|scr_hackdialget
 	|scr_dialget
+	|scr_menuclose
 +vanilla scripts
 	|EnemyGetHit
 	|collideSlopes
@@ -42,3 +43,4 @@
 |scr_skidcheck
 |scr_fourbythreer
 |scr_is_plus
+|scr_scaling_wtf

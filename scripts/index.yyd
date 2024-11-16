@@ -51,3 +51,5 @@ scr_voiceunload
 scr_is_plus
 shd_blur
 psGrayscale
+scr_menuclose
+scr_scaling_wtf

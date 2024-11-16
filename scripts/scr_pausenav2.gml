@@ -11,7 +11,8 @@ if keyboard_check_pressed(vk_down) or mouse_wheel_down()
 }
 if keyboard_check_pressed(vk_escape)
 {
-    pause = 0
+    scr_menuclose()
+    /*pause = 0
     //stupid fix because view_current doesn't work
     if room = 66 && view_visible[2] = 1
     {
@@ -22,6 +23,9 @@ if keyboard_check_pressed(vk_escape)
     {
         view_hview[view_current] = prev_view_hview
         view_wview[view_current] = prev_view_wview
+        view_wport[view_current] = prev_view_wport
+        view_hport[view_current] = prev_view_hport
+        window_set_size(prev_view_wport,prev_view_hport)
     }
     global.menustate = 0
     global.option = 0
@@ -32,7 +36,7 @@ if keyboard_check_pressed(vk_escape)
     scr_soundunfuck()
     sprite_delete(sprpausefuck)
     myfade = 0
-    instance_activate_all()
+    instance_activate_all()*/
 }
 if keyboard_check_pressed(vk_enter)
 {

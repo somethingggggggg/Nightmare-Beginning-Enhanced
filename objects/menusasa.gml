@@ -21,7 +21,6 @@ global.DESKFONT = font_add_sprite(sprFontCount,ord('-'),0,0)
 global.hackpage = 0
 global.dialoguefont = WORD_Font
 global.menustate = 0
-global.newcontent = 1
 global.voicedir = 0
 global.voicelist = ds_list_create()
 ds_list_add(global.voicelist,"")
@@ -52,7 +51,8 @@ global.cheats = ini_read_real('options','cheats',0)
 global.voicedir = ini_read_real('options','voicedir',0)
 global.DCRP_enabled = ini_read_real('options','DCRP_enabled',1)
 global.RG_final_boss = ini_read_real('options','RG_final_boss',1)
-global.BL_filter = ini_read_real('options','BL_filter',1)
+global.BL_filter = ini_read_real('options','BL_filter',0)
+global.performance = ini_read_real('options','performance',0)
 ini_close()
 texture_set_interpolation(global.BL_filter)
 if global.DCRP_enabled = 1
@@ -81,6 +81,7 @@ option[9] = global.voicedir
 option[10] = global.DCRP_enabled
 option[11] = global.RG_final_boss
 option[12] = global.BL_filter
+option[12] = global.performance
 
 optionblocked[1] = 0
 if global.complete = 1 optionblocked[2] = 0
@@ -94,6 +95,7 @@ optionblocked[8] = 0
 optionblocked[9] = 0
 optionblocked[10] = 0
 optionblocked[11] = 0
+optionblocked[12] = 0
 
 optionname[0] = "Back"
 optionname[1] = "Language"
@@ -107,6 +109,7 @@ optionname[8] = "4:3 mode"
 optionname[9] = "Voiceover"
 optionname[10] = "Enable DCRP"
 optionname[11] = "Billineal filtering"
+optionname[12] = "Performance mode"
 
 optiondesc[0] = ""
 optiondesc[1] = "Pick your language"
@@ -120,6 +123,7 @@ optiondesc[8] = "Change the screen resolution back to 4:3#VERY EXPERIMENTAL"
 optiondesc[9] = "Choose the voiceover you want (you can add your own by naming a folder voice_ )"
 optiondesc[10] = "Shows to other people that you are playing NBE"
 optiondesc[11] = "blurs your fucking game so it looks like shit"
+optiondesc[12] = "Dogshit solution"
 
 optionstate[0,0] = ""
 
@@ -155,7 +159,10 @@ optionstate[10,1] = "on"
 optionstate[11,0] = "off"
 optionstate[11,1] = "on"
 
-menulength = 12
+optionstate[12,0] = "off"
+optionstate[12,1] = "on"
+
+menulength = 13
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
