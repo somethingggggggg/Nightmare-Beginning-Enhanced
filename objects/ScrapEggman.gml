@@ -129,36 +129,53 @@ if canSpriteChange == true
 
 if ground == true && ducking == false && rolling == false && spindash == false
 {
-   if global.vel = 0
-   sprite_index = sprScrapEggman;
- else if global.vel > -8 && global.vel < 8
-   sprite_index = sprScrapEggmanWalk;
+if global.vel = 0
+{
+    sprite_index = sprEGGBotStand;
+    mask_index = sprEggmanBlackMask;
+}
+else if global.vel > -3 && global.vel < 3
+{
+    sprite_index = sprEGGBotStroll;
+    mask_index = sprEggmanBlackMask;
+}
 else
-   sprite_index = sprTailsRun;
+{
+    sprite_index = sprEGGBotWalk;
+    mask_index = sprEggmanBlackMask;
+}
 
 image_speed = abs(global.vel/20);
 }
 else if sprite_index == sprEggmanJump
 {
-   sprite_index = sprScrapEggmanJump;
-
-image_speed = (global.vel/2)
+    sprite_index = sprEggmanJump;
+    mask_index = sprEggmanBlackMask;
+    image_speed = (global.vel/2)
 }
 }
 
 //Jumping
 if Bot = 0
 {
-if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && canMove == true
+    if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && canMove == true
+    {
+        vspeed = -5;
+        sprite_index = sprEggmanJump;
+        mask_index = sprEggmanBlackMask;
+    }
+}
+
+if ground = 0 && sprite_index = sprEggmanJump
 {
-   vspeed = -5;
-   sprite_index = sprScrapEggmanJump;
-}}
+    if vspeed > 0 image_index = 1
+    else image_index = 0
+}
 
 //Bot
 if Bot = 1
 {
-global.vel = 0
+    global.vel = 0
 }
 #define Collision_Solid
 /*"/*'/**//* YYD ACTION

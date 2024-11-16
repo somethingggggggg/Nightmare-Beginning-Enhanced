@@ -92,7 +92,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if Pers2.sprite_index != sprKnucklesTwister
+if Pers2.sprite_index != sprKnucklesTwister or (Pers2.Punch = 1 && Pers2.image_xscale = -image_xscale)
 {
     if BL.FF_T = true
     {
@@ -128,6 +128,7 @@ if Pers2.sprite_index != sprKnucklesTwister
 }
 else
 {
+    sound_play(global.S_ExeBeat)
     instance_destroy()
 }
 #define Collision_EnergyShieldFF

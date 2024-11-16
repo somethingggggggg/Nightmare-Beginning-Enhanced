@@ -21,6 +21,7 @@ canHit = true;
 canSpriteChange = true;
 canJump = true
 Bot = 0
+image_blend = $282828
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -64,20 +65,23 @@ if global.hardmode = 1
 //Movement
 if Bot = 0
 {
-sprite_index = sprEggmanWalk;
+sprite_index = sprEGGBotWalk;
+mask_index = sprEggmanBlackMask;
 if (!keyboard_check(vk_left) && !keyboard_check(vk_right)) or (keyboard_check(vk_left) && keyboard_check(vk_right))
 {
-    sprite_index = sprEggman
+    sprite_index = sprEGGBotStand
+    mask_index = sprEggmanBlackMask;
 }
 if keyboard_check(vk_left) && (canMove == true or (rolling == true && hspeed > 0))
 {
-  x += -maxSpeed
-  image_xscale = -1;
-  while place_meeting(x,y,Egg_Ground)
-  {
-      sprite_index = sprEggman;
-      x += 1
-  }
+    x += -maxSpeed
+    image_xscale = -1;
+    while place_meeting(x,y,Egg_Ground)
+    {
+        sprite_index = sprEGGBotStand;
+        mask_index = sprEggmanBlackMask;
+        x += 1
+    }
 }
 /*
 if keyboard_check_released(vk_left) or (place_meeting(x+(abs(hspeed)*-1)-1, y, Egg_Ground) or place_meeting(x+(abs(hspeed)*-1)-1, y, Solid))
@@ -91,7 +95,8 @@ if keyboard_check(vk_right) && (canMove == true or (rolling == true && hspeed < 
     image_xscale = 1;
     while place_meeting(x,y,Egg_Ground)
     {
-        sprite_index = sprEggman;
+        sprite_index = sprEGGBotStand;
+        mask_index = sprEggmanBlackMask;
         x -= 1
     }
 }
@@ -112,9 +117,10 @@ if vspeed > 8
 }
 else
 {
-    sprite_index = sprEggmanJump
+    sprite_index = sprEggmanJump;
+    mask_index = sprEggmanBlackMask;
     ground = false;
-   gravity = 0.25;
+    gravity = 0.25;
 }
 
 image_speed = 0.2
@@ -122,23 +128,35 @@ image_speed = 0.2
 //Jumping
 if Bot = 0
 {
-if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && canMove == true
-{
-   vspeed = -5;
-   sprite_index = sprEggmanJump;
+    if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && canMove == true
+    {
+       vspeed = -5;
+       sprite_index = sprEggmanJump;
+       mask_index = sprEggmanBlackMask;
+    }
 }
+
+if ground = 0
+{
+    if vspeed > 0 image_index = 1
+    else image_index = 0
 }
 
 //Bot
 if Bot = 1
 {
-if ground = true sprite_index = sprEggmanWalk
-hspeed = 2
+    if ground = true
+    {
+        sprite_index = sprEGGBotWalk
+        mask_index = sprEggmanBlackMask;
+    }
+    hspeed = 2
 }
 if Bot = 3
 {
-sprite_index = sprEggman;
-hspeed = 0
+    sprite_index = sprEGGBotStand;
+    mask_index = sprEggmanBlackMask;
+    hspeed = 0
 }
 #define Collision_Solid
 /*"/*'/**//* YYD ACTION
@@ -160,8 +178,8 @@ vspeed = 0;
 
 if place_meeting(bbox_right,y,Egg_Ground) or place_meeting(bbox_left,y,Egg_Ground)
 {
-move_contact_solid(direction, 0.1);
-hspeed = 0
+    move_contact_solid(direction, 0.1);
+    hspeed = 0
 }
 #define Collision_Ex10
 /*"/*'/**//* YYD ACTION
@@ -204,4 +222,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+//shader_pixel_set(psGrayscale())
+//shader_pixel_uniform_f("fade",-0.5)
 draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale, image_yscale, drawAngle, image_blend, image_alpha);
+//shader_reset()

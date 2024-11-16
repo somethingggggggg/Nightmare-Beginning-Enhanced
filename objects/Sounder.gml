@@ -453,6 +453,10 @@ if keyboard_check_pressed(vk_f4)
             window_resize_buffer(1280,720,1,0)
             window_set_size(1280,720)
             window_set_region_size(1280,720,1)
+            if global.fourbythree = 2
+            {
+                window_set_region_size((1280 / 4) * 3,720,1)
+            }
         }
     }
     else
@@ -483,6 +487,10 @@ if keyboard_check_pressed(vk_f4)
             window_set_size(display_get_width(),display_get_height())
             window_set_region_size(display_get_width(),display_get_height(),1)
             window_resize_buffer(display_get_width(),display_get_height(),1,0)
+            if global.fourbythree = 2
+            {
+                window_set_region_size((display_get_width() / 4) * 3,display_get_height(),1)
+            }
         }
     }
 }
@@ -583,7 +591,6 @@ else
     if window_get_fullscreen() = 1
     {
         //window_set_size(display_get_width(),display_get_height())
-        //window_set_region_size(display_get_width(),display_get_height(),1)
         window_resize_buffer(display_get_width(),display_get_height(),1,0)
         i = 0
         repeat(8)
@@ -592,6 +599,8 @@ else
             view_hport[i] = display_get_height()
             i += 1
         }
+        if global.fourbythree != 2 window_set_region_size(display_get_width(),display_get_height(),1)
+        else window_set_region_size(display_get_width()/4*3,display_get_height(),1)
     }
     else
     {
@@ -603,6 +612,8 @@ else
             view_hport[i] = 720
             i += 1
         }
+        if global.fourbythree != 2 window_set_region_size(1280,720,1)
+        else window_set_region_size(1280/4*3,720,1)
     }
 }
 if global.mirrored = 1

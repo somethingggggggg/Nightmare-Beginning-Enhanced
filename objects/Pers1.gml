@@ -210,8 +210,8 @@ view_object[0] = Pers3
 //Smash Dash
 if sprite_index = sprTailsJump && ground = false && keyboard_check_pressed(ord("Z")) && SmashDash = false
 {
-SmashDash = true
-instance_create(x,y,SmachDash)
+    SmashDash = true
+    instance_create(x,y,SmachDash)
 }
 global.complpercent = 100 - ((x / 8300) * 100)
 #define Collision_Solid

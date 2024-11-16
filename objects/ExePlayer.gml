@@ -70,8 +70,7 @@ if (keyboard_check(vk_left) && !place_meeting(x+(abs(global.vel)*-1)-1, y, FF_DT
 if global.vel > 0 && ground == false
   global.vel -= acc
 
-if rolling == false
-  image_xscale = -1;
+if rolling == false image_xscale = -1;
 }
 if (keyboard_check(vk_right) && !place_meeting(x+abs(global.vel)+1, y, FF_DT) && !place_meeting(x+abs(global.vel)+1, y, UpGrounderBroke) && !place_meeting(x+abs(global.vel)+1, y, FinalGround) && !place_meeting(x+abs(global.vel)+1, y, Solid)) && (canMove == true or (rolling == true && global.vel < 0))
 {
@@ -79,8 +78,7 @@ if (keyboard_check(vk_right) && !place_meeting(x+abs(global.vel)+1, y, FF_DT) &&
 if global.vel < 0 && ground == false
   global.vel += acc
 
-if rolling == false
-  image_xscale = 1;
+if rolling == false image_xscale = 1;
 }
 }
 //Deacceleration
@@ -161,27 +159,28 @@ else
 
 
 //Handle sprites
-if Bot !=6 && Bot !=7
+if Bot != 6 && Bot != 7
 {
-if canSpriteChange == true
-{
-if ground == true && ducking == false && rolling == false && spindash == false
-{
-   if global.vel == 0
+    if canSpriteChange == true
+    {
+        if ground == true && ducking == false && rolling == false && spindash == false
+        {
+           if global.vel == 0
 
-   sprite_index = sprFinalExe_Stand;
-else if global.vel > -8 && global.vel < 8
-   sprite_index = sprHSE_Walker;
-else
-   sprite_index = sprFinalExe_Run;
-image_speed = abs(global.vel / 20);
+           sprite_index = sprFinalExe_Stand;
+        else if global.vel > -8 && global.vel < 8
+           sprite_index = sprHSE_Walker;
+        else
+           sprite_index = sprFinalExe_Run;
+        image_speed = abs(global.vel / 20);
+        }
+        else if sprite_index == sprFinalExe_Jump
+        {
+            sprite_index = sprFinalExe_Jump;
+            image_speed = 0.2 + abs(global.vel / 20)
+        }
+    }
 }
-else if sprite_index == sprFinalExe_Jump
-{
-   sprite_index = sprFinalExe_Jump;
-image_speed = 0.2 + abs(global.vel / 20)
-}
-}}
 
 
 //Jumping

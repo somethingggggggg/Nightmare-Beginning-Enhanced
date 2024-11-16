@@ -65,8 +65,8 @@ switch global.option
             draw_set_font(global.dialoguefont)
             draw_text_color(406+view_xview[view_current],85+view_yview[view_current],50,$000075,$000051,$000075,$000051,1)
             draw_text_color(426+view_xview[view_current],85+view_yview[view_current],'%',$000075,$000051,$000075,$000051,1)
-            draw_rectangle_color(296+view_xview[view_current],75+view_yview[view_current],396+view_xview[view_current],105+view_yview[view_current],$000000,$000000,$000000,$000000,1)
             draw_rectangle_color(296+view_xview[view_current],75+view_yview[view_current],346+view_xview[view_current],105+view_yview[view_current],$000075,$000051,$000075,$000051,0)
+            draw_rectangle_color(296+view_xview[view_current],75+view_yview[view_current],396+view_xview[view_current],105+view_yview[view_current],$000000,$000000,$000000,$000000,1)
             draw_set_font(global.SMALLSONFONT)
         }
         else

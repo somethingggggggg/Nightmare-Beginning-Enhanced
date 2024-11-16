@@ -256,7 +256,7 @@ if instance_exists(AI1)
 }
 
 //TAB.Twister
-if TAB.Twister_mode = false && Act = 1 && keyboard_check_pressed(ord("X")) && up == false && ducking == false
+if TAB.Twister_mode = false && Act = 1 && keyboard_check_pressed(ord("X")) && up == false && ducking == false && Punch = 0
 {
     TAB.Twister_mode = true
     Act = 0

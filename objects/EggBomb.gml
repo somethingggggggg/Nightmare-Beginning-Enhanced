@@ -24,6 +24,22 @@ else
   ground = false;
    gravity = 0.25;
 }
+
+if vspeed > 0.5
+{
+    image_index = 1
+}
+else
+{
+    if vspeed < 0.5
+    {
+        image_index = 2
+    }
+    else
+    {
+        image_index = 0
+    }
+}
 #define Collision_FF_Ground
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -62,3 +78,13 @@ applies_to=self
 */
 TAB.EggBombTime = false
 instance_destroy()
+#define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+shader_pixel_set(psGrayscale())
+shader_pixel_uniform_f("fade",0.5)
+draw_self()
+shader_reset()

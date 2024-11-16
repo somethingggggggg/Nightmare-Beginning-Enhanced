@@ -26,6 +26,10 @@ else
             view_hport[i] = display_get_height()
             i += 1
         }
+        if global.fourbythree = 2
+        {
+            window_set_region_size((display_get_width() / 4) * 3,display_get_height(),1)
+        }
     }
     else
     {
@@ -37,6 +41,10 @@ else
             view_wport[i] = 1280
             view_hport[i] = 720
             i += 1
+        }
+        if global.fourbythree = 2
+        {
+            window_set_region_size((1280 / 4) * 3,720,1)
         }
     }
 }

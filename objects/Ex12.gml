@@ -28,9 +28,10 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if Pers1.sprite_index = sprTailsJump
+if Pers1.sprite_index = sprTailsJump && instance_exists(SmachDash)
 {
-instance_destroy()
+    sound_play(global.S_ExeBeat)
+    instance_destroy()
 }
 #define Collision_EnergyShieldFF
 /*"/*'/**//* YYD ACTION
