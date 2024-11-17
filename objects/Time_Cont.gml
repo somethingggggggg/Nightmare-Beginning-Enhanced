@@ -60,6 +60,7 @@ if global.EDetection = true
 
 if global.FDetection = true
 {
+    sound_loop(global.S_DF_S)
     room_goto(32)
 }
 #define Alarm_2
@@ -169,7 +170,9 @@ if global.FDetection = true
 {
     with Game_Over_FaExe
     {
-        instance_destroy()
+        hspeed = 0
+        vspeed = -4
+        sprite_index = sprFinalExe_Hit
     }
     BL.Tails_Plot = global.BeforeFFarr[0,0]
     BL.Knuckles_Plot = global.BeforeFFarr[1,0]

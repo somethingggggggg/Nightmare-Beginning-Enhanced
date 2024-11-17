@@ -101,7 +101,7 @@ applies_to=self
 */
 if !instance_exists(CutKnuckles)
 {
-CutTails.sprite_index = sprTailsBlack
+    CutTails.sprite_index = sprTailsBlack
 }
 
 CutTails.image_xscale = 1

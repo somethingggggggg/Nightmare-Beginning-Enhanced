@@ -14,14 +14,14 @@ if PersonalChoiser.Tails_Pers = true
 
 if BL.Knuckles_Plot = false && BL.Eggman_Plot = true
 {
-alarm[0] = 0
-CutEggman.hspeed =-3
+    alarm[0] = 0
+    CutEggman.hspeed = -3
 }
 
 if BL.Knuckles_Plot = true && BL.Eggman_Plot = false
 {
-alarm[0] = 0
-CutKnuckles.hspeed =4
+    alarm[0] = 0
+    CutKnuckles.hspeed = 4
 }
 
 
@@ -52,28 +52,31 @@ applies_to=self
 */
 if PersonalChoiser.Knuckles_Pers = false && PersonalChoiser.Eggman_Pers = false
 {
-if instance_exists(CutKnuckles)
-{
-CutKnuckles.hspeed = 4
+    if instance_exists(CutKnuckles)
+    {
+        CutKnuckles.hspeed = 4
+    }
+    if instance_exists(CutEggman)
+    {
+        CutEggman.hspeed = -3
+    }
 }
-if instance_exists(CutEggman)
-{
-CutEggman.hspeed = -3
-}}
 
 if PersonalChoiser.Knuckles_Pers = true && PersonalChoiser.Eggman_Pers = false
 {
-if instance_exists(CutEggman)
-{
-CutEggman.hspeed = -3
-}}
+    if instance_exists(CutEggman)
+    {
+        CutEggman.hspeed = -3
+    }
+}
 
 if PersonalChoiser.Knuckles_Pers = false && PersonalChoiser.Eggman_Pers = true
 {
-if instance_exists(CutKnuckles)
-{
-CutKnuckles.hspeed = 4
-}}
+    if instance_exists(CutKnuckles)
+    {
+        CutKnuckles.hspeed = 4
+    }
+}
 #define Alarm_2
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -184,3 +187,13 @@ if BL.Tails_Plot = true && BL.Knuckles_Plot = true && BL.Eggman_Plot = true
 instance_create(0,0,SW_Control)
 SW_Control.Page = 5
 }
+#define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+shader_pixel_set(psGrayscale())
+shader_pixel_uniform_f("fade",0.5)
+draw_self()
+shader_reset()

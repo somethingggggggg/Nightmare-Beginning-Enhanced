@@ -22,6 +22,7 @@ pause = 0
 myfade = 0
 sprpausefuck = 0
 global.T_bossfight = 0
+global.FF_End = 0
 prev_view_hview = view_hview[view_current]
 prev_view_wview = view_wview[view_current]
 alarm[1] = 5

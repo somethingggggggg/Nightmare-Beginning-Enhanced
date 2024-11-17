@@ -43,12 +43,13 @@ applies_to=self
 */
 if BL.FF_K = true && BL.FF_T = true && BL.FF_E = true
 {
-BL.End_1 = true
+    BL.End_1 = true
 }
 else
 {
-BL.End_2 = true
+    BL.End_2 = true
 }
+global.FF_End = 1
 sound_play(global.S_Warp)
 sound_stop(global.S_DF_S)
 sound_stop(global.S_ChargedUp)
@@ -68,6 +69,7 @@ else
 {
     BL.End_2 = true
 }
+global.FF_End = 1
 sound_play(global.S_Warp)
 sound_stop(global.S_DF_S)
 sound_stop(global.S_ChargedUp)
@@ -81,12 +83,13 @@ applies_to=self
 */
 if BL.FF_K = true && BL.FF_T = true && BL.FF_E = true
 {
-BL.End_1 = true
+    BL.End_1 = true
 }
 else
 {
-BL.End_2 = true
+    BL.End_2 = true
 }
+global.FF_End = 1
 sound_play(global.S_Warp)
 sound_stop(global.S_DF_S)
 sound_stop(global.S_ChargedUp)

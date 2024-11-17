@@ -1,4 +1,4 @@
-sprite=sprTailsUpBlack
+sprite=sprTails
 visible=1
 solid=0
 persistent=0
