@@ -42,7 +42,7 @@ applies_to=self
 */
 DF_Tails.sprite_index = sprTailsBlack
 DF_Knuckles.sprite_index = sprKnucklesStandBlack
-DF_Eggman.sprite_index = sprEggmanBlack
+DF_Eggman.sprite_index = sprEGGBotStand
 background_hspeed[4] = 0
 if BL.Knuckles_Plot = true
 {
@@ -58,7 +58,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-sprite_index = sprEggmanWalkBlack
+sprite_index = sprEGGBotWalk
 hspeed = -3
 if PersonalChoiser.Eggman_Pers = true && BL.Knuckles_Plot = true
 {
@@ -74,7 +74,7 @@ applies_to=self
 */
 view_object[0] = DF_Exe
 sound_play(global.S_Smeh)
-sprite_index = sprEggmanBlack
+sprite_index = sprEGGBotStand
 hspeed = 0
 with DF_Knuckles
 {

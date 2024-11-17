@@ -98,6 +98,10 @@ else if sprite_index == sprKnucklesJumpBlack
 }
 mask_index = sprEggmanMask
 
+if hspeed = 0
+{
+    image_speed = 0.15
+}
 //Life
 if TAB.life <= 0
 {
@@ -243,16 +247,9 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if image_xscale = 1 && TAB.EggBombTime = false
+if TAB.EggBombTime = false
 {
-TAB.EggBombTime = true
-instance_create(x,y,EggBomb)
-EggBomb.hspeed = 1.5
-}
-
-if image_xscale = -1 && TAB.EggBombTime = false
-{
-TAB.EggBombTime = true
-instance_create(x,y,EggBomb)
-EggBomb.hspeed = -1.5
+    TAB.EggBombTime = true
+    instance_create(x,y,EggBomb)
+    EggBomb.hspeed = 1.5 * image_xscale
 }

@@ -11,6 +11,7 @@ if BL.Eggman_Plot = false
 }
 //image_blend = $808080
 hspeed = 0
+image_speed = 0.15
 if global.Windtime > 0
 {
     hspeed = 2.5

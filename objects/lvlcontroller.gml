@@ -25,7 +25,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if room != 21 && room != 32
+if room != 21 && room != 32 && room != 79
 {
     background_x[0] = view_xview[0] / myx
     background_y[0] = view_yview[0] / myx
@@ -34,7 +34,7 @@ if room != 21 && room != 32
 }
 else
 {
-    if room = 32
+    if room = 32 or room = 79
     {
         background_x[1] = view_xview[0] / 1.5
         background_x[2] = view_xview[0] / 2

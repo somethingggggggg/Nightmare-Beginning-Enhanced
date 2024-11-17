@@ -8,6 +8,10 @@ Tails_Plot = false
 Knuckles_Plot = false
 Eggman_Plot = false
 
+global.BeforeFFarr[0,0] = Tails_Plot
+global.BeforeFFarr[1,0] = Knuckles_Plot
+global.BeforeFFarr[2,0] = Eggman_Plot
+
 End_1 = false
 End_2 = false
 End_3 = false
@@ -31,6 +35,10 @@ FF_T = true
 FF_K = true
 FF_E = true
 WallBroker = false
+
+global.BeforeFFarr[0,1] = BL.FF_T
+global.BeforeFFarr[1,1] = BL.FF_K
+global.BeforeFFarr[2,1] = BL.FF_E
 
 AEC_T = false
 AEC_K = false

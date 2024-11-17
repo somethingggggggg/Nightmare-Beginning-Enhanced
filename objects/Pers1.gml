@@ -21,6 +21,7 @@ canSpriteChange = true;
 canJump = true
 SmashDash = false
 complpercent = 0
+if !place_meeting(x,y,FF_Ground) sprite_index = sprTailsJump
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

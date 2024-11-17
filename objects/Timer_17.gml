@@ -21,5 +21,5 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-/*if global.FLive > 0 && BL.End_1 = false && BL.End_2 = false room_goto(53)
-else*/ room_goto(34)
+if global.FLive > 0 && BL.End_1 = false/*&& BL.End_2 = false*/ room_goto(53)
+else room_goto(34)

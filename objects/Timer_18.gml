@@ -16,14 +16,14 @@ applies_to=self
 */
 if BL.End_1 = true
 {
-instance_create(160,128,Note_6)
-sound_play(global.S_Speak_7)
+    instance_create(160,128,Note_6)
+    sound_play(global.S_Speak_7)
 }
 
 if BL.End_2 = true
 {
-instance_create(160,128,Note_7)
-sound_play(global.S_Speak_8)
+    instance_create(160,128,Note_7)
+    sound_play(global.S_Speak_8)
 }
 /*"/*'/**//* YYD ACTION
 lib_id=1

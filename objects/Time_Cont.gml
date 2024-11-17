@@ -97,6 +97,8 @@ if global.FDetection = true
 {
     sound_stop(global.S_Continue_S)
     global.FLive = 0
+    BL.End_1 = 0
+    BL.End_2 = 1
     room_goto(62)
 }
 #define Step_0
@@ -169,5 +171,13 @@ if global.FDetection = true
     {
         instance_destroy()
     }
+    BL.Tails_Plot = global.BeforeFFarr[0,0]
+    BL.Knuckles_Plot = global.BeforeFFarr[1,0]
+    BL.Eggman_Plot = global.BeforeFFarr[2,0]
+    BL.FF_T = global.BeforeFFarr[0,1]
+    BL.FF_K = global.BeforeFFarr[1,1]
+    BL.FF_E = global.BeforeFFarr[2,1]
+    BL.End_1 = 0
+    BL.End_2 = 0
     alarm[1] = 120
 }

@@ -92,7 +92,13 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if Pers2.sprite_index != sprKnucklesTwister or (Pers2.Punch = 1 && Pers2.image_xscale = -image_xscale)
+if Pers2.Punch = 1 && Pers2.image_xscale = -image_xscale
+{
+    sound_play(global.S_ExeBeat)
+    instance_destroy()
+    exit;
+}
+if Pers2.sprite_index != sprKnucklesTwister
 {
     if BL.FF_T = true
     {

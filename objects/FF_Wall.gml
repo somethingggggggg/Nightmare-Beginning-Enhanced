@@ -104,7 +104,7 @@ if Pers2.sprite_index = sprKnucklesTwister
 if Pers2.sprite_index = sprKnucklesPunch
 {
     sound_play(global.S_Crack_Wall)
-    Strong -= 2
+    Strong -= 25
     alarm[0] = 1
     alarm[1] = 20
 }

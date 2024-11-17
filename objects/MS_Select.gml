@@ -237,6 +237,15 @@ if keyboard_check_pressed(vk_enter)
     instance_create(0,0,GoI)
     instance_create(0,0,GoI_2)
     instance_create(0,0,GoI_3)
+    global.BeforeFFarr[0,0] = BL.Tails_Plot
+    global.BeforeFFarr[1,0] = BL.Knuckles_Plot
+    global.BeforeFFarr[2,0] = BL.Eggman_Plot
+
+    global.BeforeFFarr[0,1] = BL.FF_T
+    global.BeforeFFarr[1,1] = BL.FF_K
+    global.BeforeFFarr[2,1] = BL.FF_E
+
+    global.FLive = global.TLive + global.KLive + global.ELive
 }
 #define Collision_SonicSELECTOR
 /*"/*'/**//* YYD ACTION
