@@ -21,6 +21,7 @@ global.mirrored = 0
 pause = 0
 myfade = 0
 sprpausefuck = 0
+autoscroll = 0
 global.T_bossfight = 0
 global.FF_End = 0
 prev_view_hview = view_hview[view_current]
@@ -349,6 +350,7 @@ repeat(8)
 window_set_region_size(view_wport[view_current],view_hport[view_current],1)
 window_resize_buffer(view_wport[view_current],view_hport[view_current],1,0)
 window_set_size(view_wport[view_current],view_hport[view_current])
+if global.fourbythree = 1 window_set_region_size(display_get_width(),display_get_height(),1)
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -441,6 +443,7 @@ if keyboard_check_pressed(vk_f4)
             window_set_region_size(view_wport[view_current],view_hport[view_current],1)
             window_resize_buffer(view_wport[view_current],view_hport[view_current],1,0)
             window_set_size(view_wport[view_current],view_hport[view_current])
+            if global.fourbythree = 1 window_set_region_size(display_get_width(),display_get_height(),1)
         }
         else
         {
@@ -476,6 +479,7 @@ if keyboard_check_pressed(vk_f4)
             window_set_region_size(view_wport[view_current],view_hport[view_current],1)
             window_resize_buffer(view_wport[view_current],view_hport[view_current],1,0)
             window_set_size(view_wport[view_current],view_hport[view_current])
+            if global.fourbythree = 1 window_set_region_size(display_get_width(),display_get_height(),1)
         }
         else
         {
@@ -585,6 +589,7 @@ if global.performance = 1
         window_set_region_size(view_wport[view_current],view_hport[view_current],1)
         window_resize_buffer(view_wport[view_current],view_hport[view_current],1,0)
         window_set_size(view_wport[view_current],view_hport[view_current])
+        if global.fourbythree = 1 window_set_region_size(display_get_width(),display_get_height(),1)
     }
 }
 else
@@ -678,6 +683,7 @@ if global.showfps = 1
     else if fps > 20 draw_set_color(c_yellow)
     else draw_set_color(c_red)
     draw_text(view_xview[view_current]+8,view_yview[view_current]+8,fps)
+    draw_text_color(view_xview[view_current]+8,view_yview[view_current]+8,fps,make_color_hsv_standard(fps*2,100,100),make_color_hsv_standard(fps*2,100,100),make_color_hsv_standard(fps*2,100,100),make_color_hsv_standard(fps*2,100,100),1)
     //draw_text(view_xview+8,view_yview+16,d3d_get_free_video_memory())
     //if room != 0 draw_text(view_xview,view_yview+32,variable_global_array_get(voiceline,108))
     draw_set_font(global.dialoguefont)

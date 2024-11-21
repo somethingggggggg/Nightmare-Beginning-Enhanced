@@ -141,12 +141,12 @@ if canSpriteChange == true
 //Jumping
 if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && canMove == true && Idie_mode = false
 {
-   vspeed = -7;
-   sound_play(global.S_Jump);
-   stopping = 0
-   sprite_index = sprTailsJump;
-   mask_index = sprTailsJumpMask;
-   up = false
+    vspeed = -7;
+    sound_play(global.S_Jump);
+    stopping = 0
+    sprite_index = sprTailsJump;
+    mask_index = sprTailsJumpMask;
+    up = false
 }
 
 //Up
@@ -237,7 +237,7 @@ if Idie_mode = false
             gravity = 0.1
             //mask_index = sprTailsRacing;
             sprite_index = sprTailsRacing
-            mask_index = sprTailsMaskFly;
+            mask_index = sprTailsMask;//Fly;
             image_speed = 0.15
         }
         else if keyboard_check_pressed(ord("Z"))
@@ -256,6 +256,7 @@ if Idie_mode = false
         }
         gravity = 0.1
         sprite_index = sprTailsRacingTired
+        mask_index = sprTailsMask;
         image_speed = 0.15
     }
 }

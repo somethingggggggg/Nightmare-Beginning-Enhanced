@@ -95,8 +95,8 @@ if keyboard_check_pressed(vk_enter)
             option[8] = global.fourbythree
             option[9] = global.voicedir
             option[10] = global.DCRP_enabled
-            option[11] = global.RG_final_boss
-            option[12] = global.BL_filter
+            option[11] = global.BL_filter
+            option[12] = global.performance
         }
         scr_saveoptions()
         room_goto(87)

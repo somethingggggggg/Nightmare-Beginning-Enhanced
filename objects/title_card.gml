@@ -9,36 +9,36 @@ anim = 0
 myspr = 0
 switch room
 {
-case 8:
-myspr = sprHill_Note
-break;
-case 11:
-if !instance_exists(HS_3) myspr = sprHandS0_Note
-else myspr = sprHandS_Note
-break;
-case 40:
-myspr = sprHandS2_Note
-break;
-case 21:
-myspr = sprYCR
-break;
-case 26:
-image_xscale = 2
-image_yscale = 2
-myspr = spr3dot_Note
-break;
-case 32:
-myspr = sprFF_Note
-break;
-case 66:
-myspr = sprDM_Note
-break;
-case 70:
-myspr = sprSuicideHill_Note
-break;
-case 79:
-myspr = sprDF_Note
-break;
+    case 8:
+        myspr = sprHill_Note
+    break;
+    case 11:
+        if !instance_exists(HS_3) myspr = sprHandS0_Note
+        else myspr = sprHandS_Note
+    break;
+    case 40:
+        myspr = sprHandS2_Note
+    break;
+    case 21:
+        myspr = sprYCR
+    break;
+    case 26:
+        image_xscale = 2
+        image_yscale = 2
+        myspr = spr3dot_Note
+    break;
+    case 32:
+        myspr = sprFF_Note
+    break;
+    case 66:
+        myspr = sprDM_Note
+    break;
+    case 70:
+        myspr = sprSuicideHill_Note
+    break;
+    case 79:
+        myspr = sprDF_Note
+    break;
 }
 #define Step_0
 /*"/*'/**//* YYD ACTION

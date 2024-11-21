@@ -28,7 +28,7 @@ if global.fourbythree != prevset[8]
     scr_fourbythreer()
     scr_scaling_wtf()
 }
-if global.performance != prevset[12] scr_scaling_wtf()
+if global.performance != prevset[12] scr_scaling_wtf();
 if global.DCRP_enabled != prevset[10]
 {
     if global.DCRP_enabled = 0
@@ -43,7 +43,7 @@ if global.DCRP_enabled != prevset[10]
         update_discord_lol()
     }
 }
-if global.voicedir != option[9]
+if global.voicedir != prevset[9]
 {
     scr_voiceunload()
     if global.voicedir != 0 scr_voiceinit()

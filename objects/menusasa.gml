@@ -9,6 +9,7 @@ background_alpha[2] = 0
 fuckyalpha = 0
 scrollcounter = 0
 scroll = 0
+autoscroll = 0
 Notavalmessage = "Unavailable"
 global.lang = 0
 global.fourbythree = 1
@@ -18,6 +19,7 @@ anim = 0
 global.SPRSONFONT = font_add_sprite(spr_son1font,ord('A'),1,1)
 global.SMALLSONFONT = font_add_sprite(spr_smallsonfont,ord('/'),0,0)
 global.DESKFONT = font_add_sprite(sprFontCount,ord('-'),0,0)
+global.Menufont = 0
 global.hackpage = 0
 global.dialoguefont = WORD_Font
 global.menustate = 0
@@ -79,8 +81,8 @@ option[7] = global.subcnoise
 option[8] = global.fourbythree
 option[9] = global.voicedir
 option[10] = global.DCRP_enabled
-option[11] = global.RG_final_boss
-option[12] = global.BL_filter
+//option[11] = global.RG_final_boss
+option[11] = global.BL_filter
 option[12] = global.performance
 
 optionblocked[1] = 0
@@ -97,33 +99,7 @@ optionblocked[10] = 0
 optionblocked[11] = 0
 optionblocked[12] = 0
 
-optionname[0] = "Back"
-optionname[1] = "Language"
-optionname[2] = "Cheats"
-optionname[3] = "Font"
-optionname[4] = "FF progressbar"
-optionname[5] = "Show FPS"
-optionname[6] = "New content"
-optionname[7] = "SM Noise"
-optionname[8] = "4:3 mode"
-optionname[9] = "Voiceover"
-optionname[10] = "Enable DCRP"
-optionname[11] = "Billineal filtering"
-optionname[12] = "Performance mode"
-
-optiondesc[0] = ""
-optiondesc[1] = "Pick your language"
-optiondesc[2] = "Enable debug mode and some cheats accecible with the numpad (enable numlock on your keyboard)"
-optiondesc[3] = "Pick between original NB font (korinna) and new NU font (pallete)"
-optiondesc[4] = "Toggle the progressbar in Fatal Fog"
-optiondesc[5] = "Show FPS"
-optiondesc[6] = "Toggle new content on or off"
-optiondesc[7] = "Change how overlayed noise works in subconcious mind"
-optiondesc[8] = "Change the screen resolution back to 4:3#VERY EXPERIMENTAL"
-optiondesc[9] = "Choose the voiceover you want (you can add your own by naming a folder voice_ )"
-optiondesc[10] = "Shows to other people that you are playing NBE"
-optiondesc[11] = "blurs your fucking game so it looks like shit"
-optiondesc[12] = "Dogshit solution"
+scr_lang_menu_init(global.lang)
 
 optionstate[0,0] = ""
 

@@ -27,11 +27,9 @@ applies_to=self
 */
 if (BL.Tails_Plot = true && BL.Knuckles_Plot = true && BL.Eggman_Plot = true)
 {
-instance_create(view_xview[0],view_yview[0],SW_Control)
-SW_Control.Page = 132
+    instance_create(view_xview[0],view_yview[0],SW_Control)
+    SW_Control.Page = 132
 }
-
-
 
 instance_create(0,0,GoI)
 #define Alarm_1

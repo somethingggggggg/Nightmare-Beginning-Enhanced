@@ -1,18 +1,19 @@
-
+if global.lang != 0 global.Menufont = global.dialoguefont
+else global.Menufont = global.SMALLSONFONT
 draw_sprite(spr_placeholder,0,346+view_xview[view_current],95+view_yview[view_current])
-draw_set_font(global.SMALLSONFONT)
+draw_set_font(global.Menufont)
 while i < menulength
 {
     if global.option = i draw_set_color(c_yellow)
     else draw_set_color(c_white)
 
     if global.complete = 0 && i = 2 or optionblocked[i] = 1 draw_set_color(c_gray)
-    if string_width(optionname[i]) > 112 draw_text_ext_transformed(32+view_xview[view_current],55+view_yview[view_current]+scroll+(i*10),optionname[i],0,1000,112/string_width(optionname[i]),1,0)
+    if string_width(optionname[i]) > 148/*112*/ draw_text_ext_transformed(32+view_xview[view_current],55+view_yview[view_current]+scroll+(i*10),optionname[i],0,1000,148/string_width(optionname[i]),1,0)
     else draw_text(32+view_xview[view_current],55+view_yview[view_current]+scroll+(i*10),optionname[i])
     draw_set_halign(fa_right)
     if i != 9
     {
-        if string_width(optionstate[i,option[i]]) > 64 draw_text_ext_transformed(234+view_xview[view_current],55+view_yview[view_current]+scroll+(i*10),optionstate[i,option[i]],0,1000,64/string_width(optionstate[i,option[i]]),1,0)
+        if string_width(optionstate[i,option[i]]) > 80/*64*/ draw_text_ext_transformed(234+view_xview[view_current],55+view_yview[view_current]+scroll+(i*10),optionstate[i,option[i]],0,1000,80/string_width(optionstate[i,option[i]]),1,0)
         else draw_text(234+view_xview[view_current],55+view_yview[view_current]+scroll+(i*10),optionstate[i,option[i]])
     }
     else
@@ -31,7 +32,7 @@ while i < menulength
     i += 1
 }
 i = 0
-draw_set_font(global.SMALLSONFONT)
+draw_set_font(global.Menufont)
 draw_set_color(c_white)
 draw_set_halign(fa_center)
 if optionblocked[global.option] = 0 draw_text_ext(346+view_xview[view_current],163+view_yview[view_current],optiondesc[global.option],8,192)
@@ -67,7 +68,7 @@ switch global.option
             draw_text_color(426+view_xview[view_current],85+view_yview[view_current],'%',$000075,$000051,$000075,$000051,1)
             draw_rectangle_color(296+view_xview[view_current],75+view_yview[view_current],346+view_xview[view_current],105+view_yview[view_current],$000075,$000051,$000075,$000051,0)
             draw_rectangle_color(296+view_xview[view_current],75+view_yview[view_current],396+view_xview[view_current],105+view_yview[view_current],$000000,$000000,$000000,$000000,1)
-            draw_set_font(global.SMALLSONFONT)
+            draw_set_font(global.Menufont)
         }
         else
         {

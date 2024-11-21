@@ -3,6 +3,11 @@ globalvar voiceline;
 global.voiceline[0] = 0
 if ds_list_find_value(global.voicelist,global.voicedir) = ''
 {
+    repeat(202)
+    {
+        global.voiceline[voicecount] = ''
+        voicecount += 1
+    }
     exit;
 }
 repeat(202)

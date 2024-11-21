@@ -5,15 +5,34 @@ if anim > 192
 {
     anim = 0
 }
-if keyboard_check_pressed(vk_up)
+if keyboard_check(vk_up)
 {
-    global.option -= 1
-    sound_play(global.S_TAB)
+    if keyboard_check_pressed(vk_up)
+    {
+        global.option -= 1
+        sound_play(global.S_TAB)
+    }
+    autoscroll -= 1
 }
-if keyboard_check_pressed(vk_down)
+else
 {
-    global.option += 1
-    sound_play(global.S_TAB)
+    if !keyboard_check(vk_down)
+    {
+        autoscroll = 0
+    }
+}
+if keyboard_check(vk_down)
+{
+    if keyboard_check_pressed(vk_down)
+    {
+        global.option += 1
+        sound_play(global.S_TAB)
+    }
+    autoscroll += 1
+}
+if abs(autoscroll) > 30
+{
+    if autoscroll/4 = floor(autoscroll/4) global.option += sign(autoscroll)
 }
 if global.option < 0 global.option = menulength-1
 if global.option > menulength-1 global.option = 0
@@ -44,6 +63,9 @@ if keyboard_check_pressed(vk_left)
                 if global.option = 1
                 {
                     option[global.option] -= 1
+                    if option[global.option] > 2 option[global.option] = 0
+                    if option[global.option] < 0 option[global.option] = 2
+                    scr_lang_menu_init(option[global.option])
                 }
                 if global.option = 3
                 {
@@ -100,6 +122,9 @@ if keyboard_check_pressed(vk_right)
                 if global.option = 1
                 {
                     option[global.option] += 1
+                    if option[global.option] > 2 option[global.option] = 0
+                    if option[global.option] < 0 option[global.option] = 2
+                    scr_lang_menu_init(option[global.option])
                 }
                 if global.option = 3
                 {

@@ -26,10 +26,10 @@ switch global.option
 }
 draw_set_font(global.dialoguefont)
 draw_set_halign(fa_left)
-switch text
+/*switch text
 {
     case 0: draw_text_color(view_xview[0],view_yview[0],"COMPLETE THE GAME#ON THE BEST#ENDING FIRST",$00ffff,$00ffff,$00ffff,$005555,ass) break;
     case 1: draw_text_color(view_xview[0],view_yview[0],"MOD LOADED",$00ffff,$00ffff,$00ffff,$005555,ass) break;
     case 2: draw_text_color(view_xview[0],view_yview[0],"MOD LOAD FAILED",$00ffff,$00ffff,$00ffff,$005555,ass) break;
-}
+}*/
 ass -= 0.01
