@@ -8,6 +8,7 @@ global.KnuckMeat = true
 global.EggMeat = true
 acc = 0.066875;
 origacc = 0.066875
+jmpframes = 0
 global.vel = 0;
 maxSpeed = 6;
 ground = true;
@@ -141,12 +142,22 @@ if canSpriteChange == true
 //Jumping
 if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && canMove == true && Idie_mode = false
 {
-    vspeed = -7;
+    //vspeed = -7;
     sound_play(global.S_Jump);
+    jmpframes = 7
     stopping = 0
     sprite_index = sprTailsJump;
     mask_index = sprTailsJumpMask;
     up = false
+}
+if keyboard_check(ord("Z")) && jmpframes > 0
+{
+    jmpframes -= 1
+    vspeed = -6
+}
+if keyboard_check_released(ord("Z"))
+{
+    jmpframes = 0
 }
 
 //Up

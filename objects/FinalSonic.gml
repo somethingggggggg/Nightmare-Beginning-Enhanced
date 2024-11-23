@@ -13,6 +13,7 @@ ducking = false;
 rolling = false;
 canMove = true;
 spindash = false;
+jmpframes = 0
 spindashTimer = 0;
 up = false;
 drawAngle = 0;
@@ -183,10 +184,21 @@ if Bot = 3
 {
     if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && up = false && spindash = false && Idie_mode = false
     {
-        vspeed = -7
+        //vspeed = -7
+        jmpframes = 7
         stopping = 0
         sprite_index = sprSonicJump;
         sound_play(global.S_Jump)
+    }
+    if keyboard_check(ord("Z")) && jmpframes > 0
+    {
+        jmpframes -= 1
+        vspeed = -6
+    }
+
+    if keyboard_check_released(ord("Z"))
+    {
+        jmpframes = 0
     }
 }
 
@@ -885,6 +897,7 @@ action_id=603
 applies_to=self
 */
 draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale, image_yscale, drawAngle, image_blend, image_alpha);
+//draw_text(x,y,jmpframes)
 //draw_text(x,y+20,spindashTimer)
 if instance_exists(Final_Time)
 {

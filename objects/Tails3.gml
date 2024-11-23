@@ -9,6 +9,7 @@ acc = 0.066875;
 origacc = 0.066875
 global.vel = 0;
 maxSpeed = 6;
+jmpframes = 0
 ground = true;
 ducking = false;
 rolling = false;
@@ -286,10 +287,20 @@ else
 //Jumping
 if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && canMove == true && Idie_mode = false
 {
-   vspeed = -7;
-   stopping = 0
-   sound_play(global.S_Jump);
-   sprite_index = sprTailsJump;
+    //vspeed = -7;
+    jmpframes = 7
+    stopping = 0
+    sound_play(global.S_Jump);
+    sprite_index = sprTailsJump;
+}
+if keyboard_check(ord("Z")) && jmpframes > 0
+{
+    jmpframes -= 1
+    vspeed = -6
+}
+if keyboard_check_released(ord("Z"))
+{
+    jmpframes = 0
 }
 
 //Hide

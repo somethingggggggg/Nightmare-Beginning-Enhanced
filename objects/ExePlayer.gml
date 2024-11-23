@@ -7,6 +7,7 @@ applies_to=self
 acc = 0.2;
 global.vel = 0;
 maxSpeed = 14;
+jmpframes = 0
 maxSpeed2 = 18;
 ground = false;
 ducking = false;
@@ -188,9 +189,19 @@ if Bot = 3
 {
     if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && up = false && spindash = false
     {
-        vspeed = -10
+        //vspeed = -10
+        jmpframes = 10
         sprite_index = sprFinalExe_Jump;
         sound_play(global.S_Jump)
+    }
+    if keyboard_check(ord("Z")) && jmpframes > 0
+    {
+        jmpframes -= 1
+        vspeed = -8.25
+    }
+    if keyboard_check_released(ord("Z"))
+    {
+        jmpframes = 0
     }
 }
 
