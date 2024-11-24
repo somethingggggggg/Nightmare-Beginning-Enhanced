@@ -51,4 +51,5 @@ if global.voicedir != prevset[9]
 sound_stop(global.S_PAUSEMENU)
 sprite_delete(sprpausefuck)
 myfade = 0
+draw_set_alpha(1)
 instance_activate_all()

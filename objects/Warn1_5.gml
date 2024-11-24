@@ -71,9 +71,10 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+CutKnuckles.sprite_index = sprKnucklesStand
 CutKnuckles.hspeed = 0
 CutTails.image_xscale = -1
-CutTails.sprite_index = sprTailsBlack
+CutTails.sprite_index = sprTails
 instance_destroy()
 #define Collision_CutEggman
 /*"/*'/**//* YYD ACTION
@@ -90,7 +91,7 @@ lib_id=1
 action_id=541
 applies_to=CutEggman
 invert=0
-arg0=sprEggmanBlack
+arg0=sprEGGBotStand
 arg1=0
 arg2=1
 */
@@ -106,4 +107,5 @@ if !instance_exists(CutKnuckles)
 
 CutTails.image_xscale = 1
 CutEggman.hspeed = 0
+CutEggman.image_speed = 0.15
 instance_destroy()

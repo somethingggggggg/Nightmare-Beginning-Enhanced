@@ -165,7 +165,7 @@ lib_id=1
 action_id=541
 applies_to=Ex4_2
 invert=0
-arg0=sprEx14
+arg0=sprFinalExe_Hit
 arg1=0
 arg2=1
 */
@@ -175,6 +175,8 @@ action_id=603
 applies_to=Ex4_2
 */
 view_object[0] = Ex4_2
+with Ex4_2 y -= 10
+//WHY JAIZ??????
 image_angle -= 1
 sound_stop(global.S_Speak_3)
 sound_play(global.S_ExeBeat)

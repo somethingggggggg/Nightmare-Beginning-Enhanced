@@ -182,5 +182,6 @@ if global.FDetection = true
     BL.FF_E = global.BeforeFFarr[2,1]
     BL.End_1 = 0
     BL.End_2 = 0
+    global.FLive -= 1
     alarm[1] = 120
 }

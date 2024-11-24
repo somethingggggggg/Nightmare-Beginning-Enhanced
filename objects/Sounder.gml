@@ -16,8 +16,13 @@ repeat(8)
     view_hport[i] = display_get_height()
     i += 1
 }
+str_back = "back to game"
+str_opt = "options"
+str_quit = "quit game"
+str_select = "lvl select"
 global.hardmode = 0
 global.mirrored = 0
+
 pause = 0
 myfade = 0
 sprpausefuck = 0
@@ -605,8 +610,11 @@ else
             view_hport[i] = display_get_height()
             i += 1
         }
-        if global.fourbythree != 2 window_set_region_size(display_get_width(),display_get_height(),1)
-        else window_set_region_size(display_get_width()/4*3,display_get_height(),1)
+        if room != 0
+        {
+            if global.fourbythree != 2 window_set_region_size(display_get_width(),display_get_height(),1)
+            else window_set_region_size(display_get_width()/4*3,display_get_height(),1)
+        }
     }
     else
     {
@@ -618,8 +626,11 @@ else
             view_hport[i] = 720
             i += 1
         }
-        if global.fourbythree != 2 window_set_region_size(1280,720,1)
-        else window_set_region_size(1280/4*3,720,1)
+        if room != 0
+        {
+            if global.fourbythree != 2 window_set_region_size(1280,720,1)
+            else window_set_region_size(1280/4*3,720,1)
+        }
     }
 }
 if global.mirrored = 1

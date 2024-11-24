@@ -15,7 +15,7 @@ if PersonalChoiser.Knuckles_Pers = true
 
 if BL.Knuckles_Plot = false
 {
-instance_destroy()
+    instance_destroy()
 }
 
 if instance_exists(CutEggman) && PersonalChoiser.Eggman_Pers != true && PersonalChoiser.Tails_Pers != true

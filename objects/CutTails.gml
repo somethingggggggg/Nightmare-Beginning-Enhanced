@@ -5,7 +5,7 @@ action_id=603
 applies_to=self
 */
 image_speed = 0.15
-
+tailstimer = 0
 if PersonalChoiser.Tails_Pers = true
 {
     view_object[0] = CutTails
@@ -90,6 +90,12 @@ arg2=256
 arg3=5
 arg4=0
 */
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+sound_play(global.S_Smeh)
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=301
@@ -187,6 +193,14 @@ if BL.Tails_Plot = true && BL.Knuckles_Plot = true && BL.Eggman_Plot = true
 instance_create(0,0,SW_Control)
 SW_Control.Page = 5
 }
+#define Step_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+tailstimer += image_speed
+if tailstimer > 4 tailstimer = 0
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -195,5 +209,6 @@ applies_to=self
 */
 shader_pixel_set(psGrayscale())
 shader_pixel_uniform_f("fade",0.5)
+draw_sprite_ext(sprHvostStand,tailstimer,x+(-5*image_xscale),y+(4*image_yscale),image_xscale,image_yscale,image_angle,image_blend,image_alpha)
 draw_self()
 shader_reset()

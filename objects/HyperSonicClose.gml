@@ -156,7 +156,7 @@ action_id=603
 applies_to=self
 */
 sound_stop(global.S_Rise)
-global.SLive = global.TLive + global.ELive + global.KLive
+global.SLive = global.FLive
 room_goto(68)
 #define Step_0
 /*"/*'/**//* YYD ACTION
