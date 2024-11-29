@@ -40,28 +40,28 @@ depth = Pers1.depth+1
 
 if instance_exists(AI1)
 {
-if AI1.image_xscale = 1
-{
-image_xscale = 1
-move_snap(AI1.x-5,AI1.y+4)
-}
+    if AI1.image_xscale = 1
+    {
+        image_xscale = 1
+        move_snap(AI1.x-5,AI1.y+4)
+    }
 
-if instance_exists(AI1) && AI1.image_xscale = -1
-{
-image_xscale = -1
-move_snap(AI1.x+5,AI1.y+4)
-}
+    if instance_exists(AI1) && AI1.image_xscale = -1
+    {
+        image_xscale = -1
+        move_snap(AI1.x+5,AI1.y+4)
+    }
 
-if AI1.sprite_index = sprTailsWalk or AI1.sprite_index = sprTailsJump
-{
-image_alpha = 0
-}
+    if AI1.sprite_index = sprTailsWalk or AI1.sprite_index = sprTailsJump
+    {
+        image_alpha = 0
+    }
 
-if AI1.sprite_index != sprTailsWalk && AI1.sprite_index != sprTailsJump
-{
-image_alpha = 1
-}
-depth = AI1.depth+1
+    if AI1.sprite_index != sprTailsWalk && AI1.sprite_index != sprTailsJump
+    {
+        image_alpha = 1
+    }
+    depth = AI1.depth+1
 }
 
 if instance_exists(TailsStop2)
@@ -82,28 +82,28 @@ depth = TailsStop2.depth+1
 
 if instance_exists(DF_Tails)
 {
-if DF_Tails.image_xscale = 1
-{
-image_xscale = 1
-move_snap(DF_Tails.x-5,DF_Tails.y+4)
-}
+    if DF_Tails.image_xscale = 1
+    {
+        image_xscale = 1
+        move_snap(DF_Tails.x-5,DF_Tails.y+4)
+    }
 
-if instance_exists(DF_Tails) && DF_Tails.image_xscale = -1
-{
-image_xscale = -1
-move_snap(DF_Tails.x+5,DF_Tails.y+4)
-}
+    if instance_exists(DF_Tails) && DF_Tails.image_xscale = -1
+    {
+        image_xscale = -1
+        move_snap(DF_Tails.x+5,DF_Tails.y+4)
+    }
 
-if DF_Tails.sprite_index = sprTailsWalk or DF_Tails.sprite_index = sprTailsJump
-{
-    image_alpha = 0
-}
+    if DF_Tails.sprite_index = sprTailsWalk or DF_Tails.sprite_index = sprTailsJump
+    {
+        image_alpha = 0
+    }
 
-if DF_Tails.sprite_index != sprTailsWalk && DF_Tails.sprite_index != sprTailsJump
-{
-    image_alpha = 1
-}
-depth = DF_Tails.depth+1
+    if DF_Tails.sprite_index != sprTailsWalk && DF_Tails.sprite_index != sprTailsJump
+    {
+        image_alpha = 1
+    }
+    depth = DF_Tails.depth+1
 }
 
 if instance_exists(CutTails)

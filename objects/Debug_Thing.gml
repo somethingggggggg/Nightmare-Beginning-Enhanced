@@ -70,13 +70,13 @@ if global.xvel > 0
 //Deacceleration
 if !keyboard_check(vk_left) && !keyboard_check(vk_right)
 {
-global.xvel = 0
+    global.xvel = 0
 }
 
 
 if !keyboard_check(vk_up) && !keyboard_check(vk_down)
 {
-global.yvel = 0
+    global.yvel = 0
 }
 
 x += global.xvel;

@@ -52,7 +52,8 @@ else
 {
   ground = false;
    gravity = 0.25;
-}}
+}
+}
 #define Collision_FF_Ground
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -61,19 +62,20 @@ applies_to=self
 */
 if place_meeting(x,bbox_bottom,FF_Ground)
 {
-move_contact_solid(270, 4);
-vspeed = 0;
+    move_contact_solid(270, 4);
+    vspeed = 0;
 }
 
 if PersonalChoiser.Tails_Pers = true
 {
-if place_meeting(bbox_right,y,FF_Ground) && hspeed >0
-{
-hspeed = 0
-sound_play(global.S_Wall_Fall)
-x = x-10
-image_xscale =-1
-sprite_index = sprDF_ExeDuck
-DF_Tails.image_xscale = 1
-alarm[2] = 40
-}}
+    if place_meeting(bbox_right,y,FF_Ground) && hspeed >0
+    {
+        hspeed = 0
+        sound_play(global.S_Wall_Fall)
+        x = x-10
+        image_xscale =-1
+        sprite_index = sprDF_ExeDuck
+        DF_Tails.image_xscale = 1
+        alarm[2] = 40
+    }
+}

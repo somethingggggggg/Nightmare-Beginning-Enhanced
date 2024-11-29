@@ -13,6 +13,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+alarm[7] = 650
 spawnedinstance = 0
 global.Windtime = 0
 if global.hardmode = 1
@@ -243,11 +244,18 @@ action_id=603
 applies_to=self
 */
 global.Windtime = 360
-alarm[6] = 360 * irandom_range(3,5)
+alarm[6] = 360 * irandom_range(30,50)/10
 with AI1 hspeed = 2.5
 with AI2 hspeed = 2.5
 with AI3 hspeed = 2.5
 background_hspeed[0] = 5
+#define Alarm_7
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+sound_play(global.S_Smeh)
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

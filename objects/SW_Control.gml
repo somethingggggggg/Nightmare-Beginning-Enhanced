@@ -178,81 +178,81 @@ instance_destroy()
 
 if Page = 131
 {
-ReallyDedSonic2.alarm[4] = 1
-instance_destroy()
+    ReallyDedSonic2.alarm[4] = 1
+    instance_destroy()
 }
 
 if Page = 137
 {
-if PersonalChoiser.Tails_Pers = true
-{
-DF_Tails.alarm[1] = 60
-}
-if PersonalChoiser.Knuckles_Pers = true
-{
-DF_Knuckles.alarm[1] = 60
-}
-if PersonalChoiser.Eggman_Pers = true
-{
-DF_Eggman.alarm[1] = 60
-}
-instance_destroy()
+    if PersonalChoiser.Tails_Pers = true
+    {
+        DF_Tails.alarm[1] = 60
+    }
+    if PersonalChoiser.Knuckles_Pers = true
+    {
+        DF_Knuckles.alarm[1] = 60
+    }
+    if PersonalChoiser.Eggman_Pers = true
+    {
+        DF_Eggman.alarm[1] = 60
+    }
+    instance_destroy()
 }
 
 if Page = 142
 {
-DF_Exe.alarm[0] = 1
-instance_destroy()
+    DF_Exe.alarm[0] = 1
+    instance_destroy()
 }
 
 if Page = 149
 {
-DF_Tails.alarm[7] = 1
-instance_destroy()
+    DF_Tails.alarm[7] = 1
+    instance_destroy()
 }
 
 if Page = 152
 {
-DF_Knuckles.alarm[7] = 60
-instance_destroy()
+    DF_Knuckles.alarm[7] = 60
+    instance_destroy()
 }
 
 if Page = 156
 {
-DF_Knuckles.alarm[10] = 1
-instance_destroy()
+    DF_Knuckles.alarm[10] = 1
+    instance_destroy()
 }
 
 if Page = 159
 {
-DF_Head.alarm[2] = 1
-view_object[0] = false
-instance_destroy()
+    DF_Head.alarm[2] = 1
+    view_object[0] = false
+    instance_destroy()
 }
 
 if Page = 161
 {
-DF_Eggman.alarm[8] = 1
-instance_destroy()
+    DF_Eggman.alarm[8] = 1
+    instance_destroy()
 }
 
 if Page = 171
 {
-sound_play(global.S_CrackNeck)
-room_goto(81)
-instance_destroy()
+    sound_play(global.S_CrackNeck)
+    room_goto(81)
+    instance_destroy()
 }
 
 if Page = 177
 {
-RiseSonic0.alarm[5] = 1
-instance_destroy()
+    RiseSonic0.alarm[5] = 1
+    instance_destroy()
 }
 
 if Page = 179
 {
-RiseSonic0.alarm[7] = 1
-instance_destroy()
+    RiseSonic0.alarm[7] = 1
+    instance_destroy()
 }
 
 if Page = 183

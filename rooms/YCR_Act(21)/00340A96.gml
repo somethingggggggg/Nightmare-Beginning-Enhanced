@@ -1,3 +1,4 @@
+depth = -1
 if instance_exists(GoI_2)
 {
 instance_destroy()

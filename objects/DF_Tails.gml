@@ -38,17 +38,17 @@ applies_to=self
 */
 if BL.Eggman_Plot = true
 {
-DF_Tails.hspeed = -1
-DF_Knuckles.hspeed = -1
-instance_create(DF_Eggman.x,DF_Eggman.y-150,DF_Exe)
+    DF_Tails.hspeed = -1
+    DF_Knuckles.hspeed = -1
+    instance_create(DF_Eggman.x,DF_Eggman.y-150,DF_Exe)
 }
 else
 {
-instance_create(DF_Knuckles.x+350,DF_Knuckles.y-20,DF_Exe)
-DF_Exe.sprite_index = sprDF_Spindash
-DF_Exe.hspeed =-8
-DF_Exe.image_xscale =-1
-sound_play(global.S_Spindash)
+    instance_create(DF_Knuckles.x+350,DF_Knuckles.y-20,DF_Exe)
+    DF_Exe.sprite_index = sprDF_Spindash
+    DF_Exe.hspeed =-8
+    DF_Exe.image_xscale =-1
+    sound_play(global.S_Spindash)
 }
 #define Alarm_2
 /*"/*'/**//* YYD ACTION
@@ -94,7 +94,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-sprite_index = sprTailsWalkBlack
+sprite_index = sprTailsWalk
 hspeed =-2
 alarm[5] = 80
 #define Alarm_5
@@ -105,7 +105,7 @@ applies_to=self
 */
 background_hspeed[4] = 0
 hspeed = 0
-sprite_index = sprTailsBlack
+sprite_index = sprTails
 alarm[6] = 120
 #define Alarm_6
 /*"/*'/**//* YYD ACTION
@@ -121,7 +121,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-sprite_index = sprTailsSpindashBlack
+sprite_index = sprTailsSpindash
 sound_play(global.S_Spindash)
 alarm[8] = 60
 #define Alarm_8
@@ -140,18 +140,19 @@ applies_to=self
 //Gravity
 if image_alpha = 1
 {
-if place_meeting(x, y+vspeed+1, FF_Ground) && vspeed >= 0
-{
-   ground = true;
-   gravity = 0;
-if vspeed > 8
-   vspeed = 8;
+    if place_meeting(x, y+vspeed+1, FF_Ground) && vspeed >= 0
+    {
+       ground = true;
+       gravity = 0;
+    if vspeed > 8
+       vspeed = 8;
+    }
+    else
+    {
+      ground = false;
+       gravity = 0.25;
+    }
 }
-else
-{
-  ground = false;
-   gravity = 0.25;
-}}
 #define Collision_FF_Ground
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -167,32 +168,33 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if sprite_index = sprTailsSpindashBlack
+if sprite_index = sprTailsSpindash
 {
-sound_play(global.S_FinalSpindash)
-room_goto(81)
+    sound_play(global.S_FinalSpindash)
+    room_goto(81)
 }
 
 if PersonalChoiser.Knuckles_Pers = true && Act = 0
 {
-Act = 1
-hspeed = DF_Exe.hspeed
-sprite_index = sprTailsHitBlack
+    Act = 1
+    hspeed = DF_Exe.hspeed
+    sprite_index = sprTailsHit
 }
 
+//the fuck is this?
 if PersonalChoiser.Eggman_Pers = true && Act = 0
 {
-Act = 1
-image_speed = 0.1
-hspeed = 0
-sprite_index = sprTailsBlackPulls
+    Act = 1
+    image_speed = 0.1
+    hspeed = 0
+    sprite_index = sprTailsBlackPulls
 }
 
-if PersonalChoiser.Eggman_Pers = true && BL.Knuckles_Plot = false && sprite_index != sprTailsHitBlack
+if PersonalChoiser.Eggman_Pers = true && BL.Knuckles_Plot = false && sprite_index != sprTailsHit
 {
-sprite_index = sprTailsHitBlack
-image_speed = 0.2
-sound_play(global.S_Wall_Fall)
-sound_play(global.S_Spindash)
-DF_Eggman.alarm[2] = 30
+    sprite_index = sprTailsHit
+    image_speed = 0.2
+    sound_play(global.S_Wall_Fall)
+    sound_play(global.S_Spindash)
+    DF_Eggman.alarm[2] = 30
 }

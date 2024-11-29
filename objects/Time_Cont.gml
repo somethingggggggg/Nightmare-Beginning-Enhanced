@@ -146,7 +146,7 @@ applies_to=self
 */
 alarm[0] = 0
 
-if global.TDetection = true or global.T_bossfight = 1
+if (global.TDetection = true or global.T_bossfight = 1) && Game_Over_T.hspeed = 0
 {
     Game_Over_T.hspeed = 5
     alarm[1] = 120

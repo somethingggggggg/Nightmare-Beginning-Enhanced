@@ -9,6 +9,8 @@ window_set_fullscreen(1)
 window_resize_buffer(display_get_width(),display_get_height(),1,0)
 prev_wport = 0
 prev_wport = 0
+prev_win_w_size = 1280
+prev_win_h_size = 720
 i = 0
 repeat(8)
 {
@@ -354,7 +356,7 @@ repeat(8)
 //random bullshit go!
 window_set_region_size(view_wport[view_current],view_hport[view_current],1)
 window_resize_buffer(view_wport[view_current],view_hport[view_current],1,0)
-window_set_size(view_wport[view_current],view_hport[view_current])
+window_set_size(prev_win_w_size,prev_win_h_size)
 if global.fourbythree = 1 window_set_region_size(display_get_width(),display_get_height(),1)
 #define Step_0
 /*"/*'/**//* YYD ACTION
@@ -431,6 +433,11 @@ if room != 0
     }
 }
 //I think this helps with the scaling, but this is so fucking stupid
+if keyboard_check_pressed(vk_f2)
+{
+    execute_program("Sonic-exe NB Enhanced.exe",0,0)
+    game_end()
+}
 if keyboard_check_pressed(vk_f4)
 {
     if window_get_fullscreen() = 1
@@ -447,8 +454,12 @@ if keyboard_check_pressed(vk_f4)
             }
             window_set_region_size(view_wport[view_current],view_hport[view_current],1)
             window_resize_buffer(view_wport[view_current],view_hport[view_current],1,0)
-            window_set_size(view_wport[view_current],view_hport[view_current])
+            window_set_size(1280,720)
             if global.fourbythree = 1 window_set_region_size(display_get_width(),display_get_height(),1)
+            if global.fourbythree = 2
+            {
+                window_set_region_size((1280 / 4) * 3,720,1)
+            }
         }
         else
         {
@@ -483,7 +494,7 @@ if keyboard_check_pressed(vk_f4)
             //random bullshit go!
             window_set_region_size(view_wport[view_current],view_hport[view_current],1)
             window_resize_buffer(view_wport[view_current],view_hport[view_current],1,0)
-            window_set_size(view_wport[view_current],view_hport[view_current])
+            //window_set_size(view_wport[view_current],view_hport[view_current])
             if global.fourbythree = 1 window_set_region_size(display_get_width(),display_get_height(),1)
         }
         else
@@ -494,7 +505,7 @@ if keyboard_check_pressed(vk_f4)
                 view_hport[i] = display_get_height()
                 i += 1
             }
-            window_set_size(display_get_width(),display_get_height())
+            //window_set_size(display_get_width(),display_get_height())
             window_set_region_size(display_get_width(),display_get_height(),1)
             window_resize_buffer(display_get_width(),display_get_height(),1,0)
             if global.fourbythree = 2
@@ -633,6 +644,7 @@ else
         }
     }
 }
+window_set_size(prev_win_w_size,prev_win_h_size)
 if global.mirrored = 1
 {
     with all
@@ -649,6 +661,8 @@ applies_to=self
 */
 prev_wport = view_wport[view_current]
 prev_hport = view_hport[view_current]
+prev_win_w_size = window_get_width()
+prev_win_h_size = window_get_height()
 #define Other_30
 /*"/*'/**//* YYD ACTION
 lib_id=1

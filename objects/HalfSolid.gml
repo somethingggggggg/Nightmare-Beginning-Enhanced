@@ -6,5 +6,5 @@ applies_to=self
 */
 if global.TDetection = true
 {
-instance_destroy()
+    instance_destroy()
 }

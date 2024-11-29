@@ -182,7 +182,7 @@ if ground == true && ducking == false && rolling == false && spindash == false &
 else
    sprite_index = sprKnucklesWalk;
 
-image_speed = abs(global.vel/20);
+    image_speed = abs(global.vel/20);
 }
 else if sprite_index == sprTailsJump
 {
@@ -205,14 +205,16 @@ if ground == true && ducking == false && rolling == false && spindash == false &
 else
    sprite_index = sprKnucklesWalkScary;
 
-image_speed = abs(global.vel/20);
+    image_speed = abs(global.vel/20);
 }
 else if sprite_index == sprTailsJump
 {
    sprite_index = sprTailsJump;
 
 image_speed = (global.vel/2)
-}}}
+}
+}
+}
 
 //Up
 if global.vel == 0 && ground == true && up == false && ducking == false && rolling == false && Punch = false && keyboard_check(vk_up) && Bot_mode = false
@@ -224,71 +226,73 @@ if global.vel == 0 && ground == true && up == false && ducking == false && rolli
 //Ducking
 if global.Sprite_mode = false
 {
-if global.vel == 0 && ground == true && up == false && ducking == false && rolling == false && Punch = false && keyboard_check(vk_down) && Bot_mode = false
-{
-   ducking = true;
-}
+    if global.vel == 0 && ground == true && up == false && ducking == false && rolling == false && Punch = false && keyboard_check(vk_down) && Bot_mode = false
+    {
+       ducking = true;
+    }
 
-if up == true && (!keyboard_check(vk_up) or ground == false)
-{
-   ducking = false;
-   up = false;
-   canMove = true;
-}
+    if up == true && (!keyboard_check(vk_up) or ground == false)
+    {
+       ducking = false;
+       up = false;
+       canMove = true;
+    }
 
-if ducking == true && (!keyboard_check(vk_down) or ground == false)
-{
-   ducking = false;
-   up = false;
-   canMove = true;
-}
+    if ducking == true && (!keyboard_check(vk_down) or ground == false)
+    {
+       ducking = false;
+       up = false;
+       canMove = true;
+    }
 
-if rolling == true && (ground == false or global.vel == 0)
-{
-   rolling = false;
-   canMove = true;
-{
-{
-}}}
-{
-   mask_index = sprKnucklesStandMask;
-   canMove = true
+    if rolling == true && (ground == false or global.vel == 0)
+    {
+       rolling = false;
+       canMove = true;
+    {
+    {
+    }}}
+    {
+       mask_index = sprKnucklesStandMask;
+       canMove = true
 
-}
+    }
 
-if up == true && spindash == false
-{
-   mask_index = sprKnucklesStandMask;
-   sprite_index = sprKnucklesUp;
-if image_index < 1
-   image_speed = 0.1;
-else
-   image_speed = 0;
-   canMove = false;
-}
+    if up == true && spindash == false
+    {
+       mask_index = sprKnucklesStandMask;
+       sprite_index = sprKnucklesUp;
+    if image_index < 1
+       image_speed = 0.1;
+    else
+       image_speed = 0;
+       canMove = false;
+    }
 
 
-if ducking == true && spindash == false
-{
-   sprite_index = sprKnucklesDuck;
-if image_index < 1
-   image_speed = 0.1;
-else
-   image_speed = 0;
-   canMove = false;
-}
+    if ducking == true && spindash == false
+    {
+       sprite_index = sprKnucklesDuck;
+    if image_index < 1
+       image_speed = 0.1;
+    else
+       image_speed = 0;
+       canMove = false;
+    }
 
 //Punch
-if Bot_mode = false && Twister_mode = false && up == false && ducking == false && Idie_mode = false
-{
-if keyboard_check_pressed(ord("D")) && Punch = false
-{
-Punch = true
-maxSpeed = 0
-sprite_index = sprKnucklesPunch
-image_speed = 0.2
-alarm[0] = 25
-}}}
+    if Bot_mode = false && Twister_mode = false && up == false && ducking == false && Idie_mode = false
+    {
+        if keyboard_check_pressed(ord("C")) && Punch = false
+        {
+            Punch = true
+            maxSpeed = 0
+            sprite_index = sprKnucklesPunch
+            image_speed = 0.2
+            alarm[0] = 25
+        }
+    }
+}
 
 if global.Sprite_mode = true
 {

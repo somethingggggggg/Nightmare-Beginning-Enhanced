@@ -28,7 +28,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if other.sprite_index = sprTailsUp
+if other.up = 1
 {
     TimeOver -= 1
 }
@@ -36,8 +36,8 @@ if other.sprite_index = sprTailsUp
 
 if TimeOver <= 0
 {
-sound_stop_all()
-room_goto(15)
+    sound_stop_all()
+    room_goto(15)
 }
 #define Collision_Warn2_2
 /*"/*'/**//* YYD ACTION

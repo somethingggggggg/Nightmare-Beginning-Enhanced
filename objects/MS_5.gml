@@ -32,6 +32,10 @@ applies_to=self
 if !instance_exists(TPassed) && keyboard_check_pressed(vk_enter)
 {
 instance_create(0,0,Timer_2)
+background_hspeed[0] = 0
+with MS_1 image_speed = 0
+with MS_2 image_speed = 0
+with MS_3 image_speed = 0
 instance_destroy()
 }
 else if instance_exists(TPassed) && keyboard_check_pressed(vk_enter)
@@ -47,6 +51,10 @@ applies_to=self
 if !instance_exists(KPassed) && keyboard_check_pressed(vk_enter)
 {
 instance_create(0,0,Timer_7)
+background_hspeed[0] = 0
+with MS_1 image_speed = 0
+with MS_2 image_speed = 0
+with MS_3 image_speed = 0
 instance_destroy()
 }
 else if instance_exists(KPassed) && keyboard_check_pressed(vk_enter)
@@ -62,6 +70,10 @@ applies_to=self
 if !instance_exists(EPassed) && keyboard_check_pressed(vk_enter)
 {
     instance_create(0,0,Timer_12)
+    background_hspeed[0] = 0
+    with MS_1 image_speed = 0
+    with MS_2 image_speed = 0
+    with MS_3 image_speed = 0
     instance_destroy()
 }
 else if instance_exists(EPassed) && keyboard_check_pressed(vk_enter)

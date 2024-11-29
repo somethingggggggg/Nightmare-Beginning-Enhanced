@@ -55,23 +55,19 @@ action_id=603
 applies_to=self
 */
 //Movement
-if keyboard_check(vk_left) && !place_meeting(x+(abs(global.vel)*-1)-1, y, Solid) && !place_meeting(x+(abs(global.vel)*-1)-1, y, HS_1G) && !place_meeting(x+(abs(global.vel)*-1)-1, y, HalfSolid) && (canMove == true or (rolling == true && global.vel > 0))
+if keyboard_check(vk_left) && !keyboard_check(vk_right) && !place_meeting(x+(abs(global.vel)*-1)-1, y, Solid) && !place_meeting(x+(abs(global.vel)*-1)-1, y, HS_1G) && !place_meeting(x+(abs(global.vel)*-1)-1, y, HalfSolid) && (canMove == true or (rolling == true && global.vel > 0))
 {
   global.vel -= acc * (1+ground);
 if global.vel > 0 && ground == false
   global.vel -= acc
 
-if rolling == false
-  image_xscale = -1;
+if rolling == false image_xscale = -1;
 }
-if keyboard_check(vk_right) && !place_meeting(x+abs(global.vel)+1, y, Solid) && !place_meeting(x+abs(global.vel)+1, y, HS_1G) && !place_meeting(x+abs(global.vel)+1, y, HalfSolid) && (canMove == true or (rolling == true && global.vel < 0))
+if keyboard_check(vk_right) && !keyboard_check(vk_left) && !place_meeting(x+abs(global.vel)+1, y, Solid) && !place_meeting(x+abs(global.vel)+1, y, HS_1G) && !place_meeting(x+abs(global.vel)+1, y, HalfSolid) && (canMove == true or (rolling == true && global.vel < 0))
 {
-  global.vel += acc * (1+ground);
-if global.vel < 0 && ground == false
-  global.vel += acc
-
-if rolling == false
-  image_xscale = 1;
+    global.vel += acc * (1+ground);
+    if global.vel < 0 && ground == false global.vel += acc
+    if rolling == false image_xscale = 1;
 }
 
 scr_skidcheck()

@@ -59,7 +59,7 @@ sound_play(global.S_Crash)
 sound_play(global.S_ExeBeat)
 with Ex11
 {
-instance_destroy()
+    instance_destroy()
 }
 instance_destroy()
 #define Collision_FF_Wall

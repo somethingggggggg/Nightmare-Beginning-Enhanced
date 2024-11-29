@@ -31,6 +31,11 @@ if room != 21 && room != 32 && room != 79
     background_y[0] = view_yview[0] / myx
     background_x[1] = view_xview[0] / 8
     background_y[1] = view_yview[0] / 8 + 2000
+    if room = 42
+    {
+        background_x[1] = view_xview[0] / myx/2
+        background_y[1] = view_yview[0] / myx/2
+    }
 }
 else
 {
@@ -44,6 +49,19 @@ else
         background_y[2] = view_yview[0] - 32
         background_y[3] = view_yview[0] - 32
     }
+}
+#define Step_2
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if room = 21
+{
+    if instance_exists(Tails4) view_yview[0] = Tails4.y + view_hview[0]/2
+    if instance_exists(Knuckles) view_yview[0] = Knuckles.y + view_hview[0]/2
+    background_y[0] = view_yview[0]
+    background_y[1] = view_yview[0]
 }
 #define Draw_0
 /*"/*'/**//* YYD ACTION

@@ -38,8 +38,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-DF_Tails.sprite_index = sprTailsBlack
-DF_Knuckles.sprite_index = sprKnucklesStandBlack
+DF_Tails.sprite_index = sprTails
+DF_Knuckles.sprite_index = sprKnucklesStand
 DF_Eggman.sprite_index = sprEGGBotStand
 background_hspeed[4] = 0
 if BL.Knuckles_Plot = true
@@ -60,7 +60,7 @@ sprite_index = sprEGGBotWalk
 hspeed = -3
 if PersonalChoiser.Eggman_Pers = true && BL.Knuckles_Plot = true
 {
-DF_Tails.sprite_index = sprTailsWalkBlack
+DF_Tails.sprite_index = sprTailsWalk
 DF_Tails.hspeed =-1
 }
 alarm[3] = 180
@@ -171,8 +171,8 @@ sound_play(global.S_Spindash)
 sprite_index = sprDFEggmanDeath
 DF_Tails.hspeed = 0
 DF_Knuckles.hspeed = 0
-DF_Tails.sprite_index = sprTailsBlack
-DF_Knuckles.sprite_index = sprKnucklesStandBlack
+DF_Tails.sprite_index = sprTails
+DF_Knuckles.sprite_index = sprKnucklesStand
 background_hspeed[4] = 0
 if PersonalChoiser.Tails_Pers = true
 {

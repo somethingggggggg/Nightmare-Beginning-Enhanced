@@ -14,8 +14,8 @@ applies_to=self
 */
 if Knuckles.sprite_index = sprKnucklesPunchScary
 {
-Strong -= 2
-alarm[0] = 1
+    Strong -= 2
+    alarm[0] = 1
 }
 #define Alarm_1
 /*"/*'/**//* YYD ACTION
@@ -25,8 +25,8 @@ applies_to=self
 */
 if Knuckles.sprite_index = sprKnucklesPunchScary
 {
-sound_play(global.S_Crack_Wall)
-alarm[1] = 20
+    sound_play(global.S_Crack_Wall)
+    alarm[1] = 20
 }
 #define Step_0
 /*"/*'/**//* YYD ACTION
@@ -66,21 +66,21 @@ applies_to=self
 */
 if Knuckles.sprite_index = sprKnucklesTwister
 {
-instance_create(x+30,y+96,Wall_piece)
-instance_create(x+15,y+32,Wall_piece)
-instance_create(x-10,y,Wall_piece)
-instance_create(x,y-32,Wall_piece)
-instance_destroy()
-sound_play(global.S_Broke)
+    instance_create(x+30,y+96,Wall_piece)
+    instance_create(x+15,y+32,Wall_piece)
+    instance_create(x-10,y,Wall_piece)
+    instance_create(x,y-32,Wall_piece)
+    instance_destroy()
+    sound_play(global.S_Broke)
 }
 
 //Broke down
 if Knuckles.sprite_index = sprKnucklesPunchScary or Knuckles.sprite_index = sprKnucklesPunch
 {
-sound_play(global.S_Crack_Wall)
-Strong -= 2
-alarm[0] = 1
-alarm[1] = 20
+    sound_play(global.S_Crack_Wall)
+    Strong -= 2
+    alarm[0] = 1
+    alarm[1] = 20
 }
 #define Collision_DM_Sonic
 /*"/*'/**//* YYD ACTION

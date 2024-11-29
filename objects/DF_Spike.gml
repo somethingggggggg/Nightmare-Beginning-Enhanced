@@ -13,7 +13,7 @@ action_id=603
 applies_to=self
 */
 DF_Tails.hspeed = 2
-DF_Tails.sprite_index = sprTailsWalkBlack
+DF_Tails.sprite_index = sprTailsWalk
 alarm[1] = 200
 #define Alarm_1
 /*"/*'/**//* YYD ACTION
@@ -67,9 +67,9 @@ applies_to=self
 */
 if Act = 0
 {
-Act = 1
-DF_Exe.image_speed = 0.1
-DF_Exe.sprite_index = sprDFExe_Weak
-sound_play(global.S_IntoSpike)
-alarm[0] = 1
+    Act = 1
+    DF_Exe.image_speed = 0.1
+    DF_Exe.sprite_index = sprDFExe_Weak
+    sound_play(global.S_IntoSpike)
+    alarm[0] = 1
 }

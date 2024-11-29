@@ -1,5 +1,7 @@
 //bluat
 pause = 0
+prev_win_w_size = window_get_width()
+prev_win_h_size = window_get_height()
 if room = 66 && view_visible[2] = 1
 {
     view_wview[2] = 640
@@ -53,3 +55,4 @@ sprite_delete(sprpausefuck)
 myfade = 0
 draw_set_alpha(1)
 instance_activate_all()
+window_set_size(prev_win_w_size,prev_win_h_size)

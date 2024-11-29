@@ -131,7 +131,7 @@ applies_to=self
 */
 if place_meeting(x,y,SmachDash)
 {
-Strong -= 5
+    Strong -= 5
 }
 #define Collision_EggBomb
 /*"/*'/**//* YYD ACTION
@@ -139,7 +139,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-Strong-=50
+Strong -= 50
 sound_play(global.S_Crack_Wall)
 #define Collision_DM_Sonic
 /*"/*'/**//* YYD ACTION
@@ -164,10 +164,10 @@ applies_to=self
 */
 if DM_Tails.sprite_index = sprTailsJump && global.vel >=10
 {
-instance_create(x+30,y+96,FF_Piece)
-instance_create(x+15,y+32,FF_Piece)
-instance_create(x-10,y,FF_Piece)
-instance_create(x,y-32,FF_Piece)
-instance_destroy()
-sound_play(global.S_Broke)
+    instance_create(x+30,y+96,FF_Piece)
+    instance_create(x+15,y+32,FF_Piece)
+    instance_create(x-10,y,FF_Piece)
+    instance_create(x,y-32,FF_Piece)
+    instance_destroy()
+    sound_play(global.S_Broke)
 }
