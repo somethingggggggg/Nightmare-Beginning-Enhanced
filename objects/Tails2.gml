@@ -28,7 +28,7 @@ action_id=603
 applies_to=self
 */
 maxSpeed = 5
-background_visible[0] = false
+background_visible[1] = false
 global.pause = 0
 instance_create(0,0,title_card)
 sound_loop(global.S_Hide_and_Seek)
@@ -307,12 +307,12 @@ applies_to=self
 */
 if global.pause = 1 && !instance_exists(obj_dialogue_pause)
 {
-alarm[0] = 540
-HS_1.sprite_index = sprHS_1_2
-HS_2.sprite_index = sprHS_2_2
-HS_4.sprite_index = sprHS_4_2
-HS_5.sprite_index = sprHS_5_2
-HS_6.sprite_index = sprHS_6_2
+    alarm[0] = 540
+    HS_1.sprite_index = sprHS_1_2
+    background_index[0] = HAS_2_2
+    HS_4.sprite_index = sprHS_4_2
+    HS_5.sprite_index = sprHS_5_2
+    HS_6.sprite_index = sprHS_6_2
 }
 #define Collision_Warn4
 /*"/*'/**//* YYD ACTION

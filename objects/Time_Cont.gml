@@ -69,10 +69,10 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+sound_stop(global.S_Continue_S)
 if global.TDetection = true
 {
     BL.FF_T = false
-    sound_stop(global.S_Continue_S)
     global.TLive = 0
     instance_create(0,0,TPassed)
     room_goto(5)
@@ -81,7 +81,6 @@ if global.KDetection = true
 {
     instance_create(x,y,KnucklesPreDeath)
     BL.FF_K = false
-    sound_stop(global.S_Continue_S)
     global.KLive = 0
     instance_create(0,0,KPassed)
     room_goto(5)
@@ -89,18 +88,16 @@ if global.KDetection = true
 if global.EDetection = true
 {
     BL.FF_E = false
-    sound_stop(global.S_Continue_S)
     global.ELive = 0
     instance_create(0,0,EPassed)
     room_goto(5)
 }
 if global.FDetection = true
 {
-    sound_stop(global.S_Continue_S)
     global.FLive = 0
     BL.End_1 = 0
     BL.End_2 = 1
-    room_goto(62)
+    room_goto(34)
 }
 #define Step_0
 /*"/*'/**//* YYD ACTION

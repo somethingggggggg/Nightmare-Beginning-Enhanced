@@ -1,5 +1,5 @@
 caption=
-width=640
+width=853
 height=480
 snap_x=32
 snap_y=32
@@ -95,7 +95,7 @@ views_enabled=1
 view_visible0=1
 view_xview0=0
 view_yview0=0
-view_wview0=640
+view_wview0=853
 view_hview0=480
 view_xport0=0
 view_yport0=0

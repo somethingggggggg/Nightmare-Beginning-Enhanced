@@ -38,21 +38,21 @@ applies_to=self
 */
 if BL.Eggman_Plot = true
 {
-DF_Tails.hspeed = -1
-DF_Knuckles.hspeed = -1
-instance_create(DF_Eggman.x,DF_Eggman.y-150,DF_Exe)
+    DF_Tails.hspeed = -1
+    DF_Knuckles.hspeed = -1
+    instance_create(DF_Eggman.x,DF_Eggman.y-150,DF_Exe)
 }
 else
 {
-background_hspeed[4] = 0
-instance_create(DF_Tails.x+300,DF_Tails.y-20,DF_Exe)
-DF_Exe.sprite_index = sprDF_Spindash
-DF_Exe.hspeed =-8
-DF_Knuckles.sprite_index = sprKnucklesStandBlack
-DF_Tails.sprite_index = sprTailsBlack
-DF_Exe.image_xscale =-1
-sound_play(global.S_Spindash)
-DF_Knuckles.alarm[3] = 100
+    background_hspeed[4] = 0
+    instance_create(DF_Tails.x+300,DF_Tails.y-20,DF_Exe)
+    DF_Exe.sprite_index = sprDF_Spindash
+    DF_Exe.hspeed =-8
+    DF_Knuckles.sprite_index = sprKnucklesStand
+    DF_Tails.sprite_index = sprTails
+    DF_Exe.image_xscale =-1
+    sound_play(global.S_Spindash)
+    DF_Knuckles.alarm[3] = 100
 }
 #define Alarm_2
 /*"/*'/**//* YYD ACTION
@@ -62,11 +62,11 @@ applies_to=self
 */
 with DF_Exe
 {
-sprite_index = sprDF_Spindash
-image_xscale = -1
-sound_play(global.S_Spindash)
-hspeed = -7
-DF_Knuckles.alarm[3] = 60
+    sprite_index = sprDF_Spindash
+    image_xscale = -1
+    sound_play(global.S_Spindash)
+    hspeed = -7
+    DF_Knuckles.alarm[3] = 60
 }
 #define Alarm_3
 /*"/*'/**//* YYD ACTION
@@ -78,13 +78,13 @@ DF_Exe.hspeed = 0
 image_xscale =-1
 with DF_Tails
 {
-hspeed = 0
-x = x-40
-sprite_index = sprDFTailsDeath
+    hspeed = 0
+    x = x-40
+    sprite_index = sprWorstTails
 }
 with HvostBlack
 {
-instance_destroy()
+    instance_destroy()
 }
 DF_Exe.image_xscale =1
 DF_Exe.sprite_index = sprDF_ExeStand2
@@ -96,7 +96,7 @@ action_id=603
 applies_to=self
 */
 hspeed =-2
-sprite_index = sprKnucklesWalkBlack
+sprite_index = sprKnucklesWalk
 alarm[5] = 35
 #define Alarm_5
 /*"/*'/**//* YYD ACTION
@@ -154,7 +154,7 @@ action_id=603
 applies_to=self
 */
 sound_play(global.S_Twister_Start)
-sprite_index = sprKnucklesTwisterBlack
+sprite_index = sprKnucklesTwister
 image_speed = 0.3
 DF_Exe.sprite_index = sprDF_ExeDeath
 instance_create(DF_Exe.x,DF_Exe.y-2,DF_Head)
@@ -164,6 +164,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+if sprite_index = sprKnucklesWalk exit;
 if place_meeting(x, y+vspeed+1, FF_Ground) && vspeed >= 0
 {
    ground = true;
@@ -182,17 +183,18 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+if sprite_index = sprKnucklesWalk exit;
 if sprite_index = sprDFKnucklesKick
 {
-move_contact_solid(270, 4);
-vspeed = 0;
-hspeed = 0
-sprite_index = sprDFKnucklesTreack
-image_speed = 0.1
-DF_Exe.sprite_index = sprDGExeMoveSlow
-DF_Exe.image_speed = 0.15
-DF_Exe.hspeed = 1.5
-alarm[8] = 277
+    move_contact_solid(270, 4);
+    vspeed = 0;
+    hspeed = 0
+    sprite_index = sprKnucklesDie
+    image_speed = 0.1
+    DF_Exe.sprite_index = sprDGExeMoveSlow
+    DF_Exe.image_speed = 0.15
+    DF_Exe.hspeed = 1.5
+    alarm[8] = 277
 }
 move_contact_solid(270, 4);
 vspeed = 0;
@@ -204,29 +206,29 @@ applies_to=self
 */
 if PersonalChoiser.Knuckles_Pers = false && PersonalChoiser.Eggman_Pers = false && Act = 0
 {
-Act = 1
-hspeed = DF_Exe.hspeed
-DF_Tails.alarm[3] = 30
-sprite_index = sprDFKnucklesAgony
+    Act = 1
+    hspeed = DF_Exe.hspeed
+    DF_Tails.alarm[3] = 30
+    sprite_index = sprDFKnucklesAgony
 }
 
 if PersonalChoiser.Knuckles_Pers = true && Act = 0 && hspeed !=0 && DF_Exe.sprite_index != sprDF_ExeDeath
 {
-Act = 1
-hspeed = 0
-sprite_index = sprDFKnucklesFight
-image_speed = 0.2
-DF_Exe.image_speed = 0.15
-DF_Exe.hspeed = 0
-DF_Exe.sprite_index = sprDFExeFight
-alarm[6] = 60
+    Act = 1
+    hspeed = 0
+    sprite_index = sprDFKnucklesFight
+    image_speed = 0.2
+    DF_Exe.image_speed = 0.15
+    DF_Exe.hspeed = 0
+    DF_Exe.sprite_index = sprDFExeFight
+    alarm[6] = 60
 }
 
 if PersonalChoiser.Eggman_Pers = true && (sprite_index != sprDFKnucklesAgony && sprite_index != sprDFKnucklesDeath)
 {
-sprite_index = sprDFKnucklesAgony
-image_speed = 0.2
-sound_play(global.S_Wall_Fall)
-sound_play(global.S_Spindash)
-DF_Eggman.alarm[2] = 30
+    sprite_index = sprDFKnucklesAgony
+    image_speed = 0.2
+    sound_play(global.S_Wall_Fall)
+    sound_play(global.S_Spindash)
+    DF_Eggman.alarm[2] = 30
 }

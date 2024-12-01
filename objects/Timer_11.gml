@@ -22,15 +22,14 @@ applies_to=self
 */
 if global.KLive != 0
 {
-room_goto(53)
+    room_goto(53)
 }
-
-if global.KLive = 0
+else
 {
-instance_create(0,0,KPassed)
-instance_create(176,144,Note_4)
-sound_play(global.S_Speak_5)
-alarm[1] = 610
+    instance_create(0,0,KPassed)
+    instance_create(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,Note_4)
+    sound_play(global.S_Speak_5)
+    alarm[1] = 610
 }
 #define Alarm_1
 /*"/*'/**//* YYD ACTION

@@ -22,7 +22,7 @@ action_id=603
 applies_to=self
 */
 DF_Tails.hspeed = 0
-DF_Tails.sprite_index = sprTailsBlack
+DF_Tails.sprite_index = sprTails
 alarm[2] = 60
 #define Alarm_2
 /*"/*'/**//* YYD ACTION

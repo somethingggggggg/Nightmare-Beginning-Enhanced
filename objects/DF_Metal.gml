@@ -23,10 +23,10 @@ applies_to=self
 */
 with DF_Exe
 {
-instance_destroy()
+    instance_destroy()
 }
 sound_stop(global.S_Bolt)
-sprite_index = sprDF_MetalCatch
+sprite_index = sprHP_MetalCatch
 x=x-40
 y=y-30
 hspeed = 0

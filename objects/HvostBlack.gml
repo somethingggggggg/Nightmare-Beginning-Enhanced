@@ -94,12 +94,11 @@ if instance_exists(DF_Tails)
         move_snap(DF_Tails.x+5,DF_Tails.y+4)
     }
 
-    if DF_Tails.sprite_index = sprTailsWalk or DF_Tails.sprite_index = sprTailsJump
+    if DF_Tails.sprite_index = sprTailsWalk or DF_Tails.sprite_index = sprTailsJump or DF_Tails.sprite_index = sprTailsSpindash
     {
         image_alpha = 0
     }
-
-    if DF_Tails.sprite_index != sprTailsWalk && DF_Tails.sprite_index != sprTailsJump
+    else
     {
         image_alpha = 1
     }

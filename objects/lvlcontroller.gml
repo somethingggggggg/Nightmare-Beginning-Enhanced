@@ -6,11 +6,11 @@ applies_to=self
 */
 switch room
 {
+    case 11:
+    myx = 4
+    break;
     case 26:
     myx = 2
-    break;
-    case 32:
-
     break;
     case 40:
     myx = 4

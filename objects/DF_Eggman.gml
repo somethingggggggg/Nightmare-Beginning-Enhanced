@@ -44,11 +44,11 @@ DF_Eggman.sprite_index = sprEGGBotStand
 background_hspeed[4] = 0
 if BL.Knuckles_Plot = true
 {
-instance_create(DF_Knuckles.x,DF_Knuckles.y-150,DF_Exe)
+    instance_create(DF_Knuckles.x,DF_Knuckles.y-150,DF_Exe)
 }
 if BL.Knuckles_Plot = false && BL.Tails_Plot = true
 {
-instance_create(DF_Tails.x,DF_Tails.y-150,DF_Exe)
+    instance_create(DF_Tails.x,DF_Tails.y-150,DF_Exe)
 }
 #define Alarm_2
 /*"/*'/**//* YYD ACTION
@@ -76,31 +76,31 @@ sprite_index = sprEGGBotStand
 hspeed = 0
 with DF_Knuckles
 {
-image_speed = 0
-sprite_index = sprDFKnucklesDeath
+    image_speed = 0
+    sprite_index = sprDFKnucklesDeath
 }
 with DF_Tails
 {
-instance_destroy()
+    instance_destroy()
 }
 with HvostBlack
 {
-instance_destroy()
+    instance_destroy()
 }
 if BL.Tails_Plot = true
 {
-instance_create(592,272,DFDeathTails)
+    instance_create(592,272,DFDeathTails)
 }
-DF_Exe.sprite_index = sprDFLaugh
-DF_Exe.image_speed = 0.1
-DF_Exe.image_xscale = 1
-if PersonalChoiser.Eggman_Pers = true && BL.Knuckles_Plot = true
-{
-DF_Exe.x = DF_Exe.x+30
-}
+    DF_Exe.sprite_index = sprDFLaugh
+    DF_Exe.image_speed = 0.1
+    DF_Exe.image_xscale = 1
+    if PersonalChoiser.Eggman_Pers = true && BL.Knuckles_Plot = true
+    {
+        DF_Exe.x = DF_Exe.x+30
+    }
 else
 {
-DF_Exe.x = DF_Exe.x-50
+    DF_Exe.x = DF_Exe.x-50
 }
 alarm[4] = 240
 #define Alarm_4
@@ -166,19 +166,20 @@ applies_to=self
 */
 if PersonalChoiser.Eggman_Pers = false && Act = 0
 {
-Act = 1
-sound_play(global.S_Spindash)
-sprite_index = sprDFEggmanDeath
-DF_Tails.hspeed = 0
-DF_Knuckles.hspeed = 0
-DF_Tails.sprite_index = sprTails
-DF_Knuckles.sprite_index = sprKnucklesStand
-background_hspeed[4] = 0
-if PersonalChoiser.Tails_Pers = true
-{
-DF_Tails.alarm[2] = 30
+    Act = 1
+    sound_play(global.S_Spindash)
+    sprite_index = sprDFEggmanDeath
+    DF_Tails.hspeed = 0
+    DF_Knuckles.hspeed = 0
+    DF_Tails.sprite_index = sprTails
+    DF_Knuckles.sprite_index = sprKnucklesStand
+    background_hspeed[4] = 0
+    if PersonalChoiser.Tails_Pers = true
+    {
+        DF_Tails.alarm[2] = 30
+    }
+    if PersonalChoiser.Knuckles_Pers = true
+    {
+        DF_Knuckles.alarm[2] = 30
+    }
 }
-if PersonalChoiser.Knuckles_Pers = true
-{
-DF_Knuckles.alarm[2] = 30
-}}

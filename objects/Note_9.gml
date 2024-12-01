@@ -4,6 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+x = view_xview[0]+(view_wview[0]/2)
 sound_play(global.S_Warp)
 /*"/*'/**//* YYD ACTION
 lib_id=1

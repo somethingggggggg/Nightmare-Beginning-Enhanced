@@ -16,3 +16,4 @@ if global.lang = 2
 {
     sprite_index = sprNote_6ita
 }
+x = view_xview[0]+(view_wview[0]/2)

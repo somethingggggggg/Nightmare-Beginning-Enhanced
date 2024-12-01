@@ -138,6 +138,7 @@ action_id=603
 applies_to=self
 */
 //Gravity
+if sprite_index = sprTailsSpindash exit;
 if image_alpha = 1
 {
     if place_meeting(x, y+vspeed+1, FF_Ground) && vspeed >= 0
@@ -159,9 +160,12 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-sprite_index = sprTailsBlack
-move_contact_solid(270, 4);
-vspeed = 0;
+if sprite_index != sprTailsSpindash
+{
+    sprite_index = sprTails
+    move_contact_solid(270, 4);
+    vspeed = 0;
+}
 #define Collision_DF_Exe
 /*"/*'/**//* YYD ACTION
 lib_id=1

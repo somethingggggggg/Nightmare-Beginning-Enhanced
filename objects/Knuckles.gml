@@ -353,7 +353,7 @@ else
 //Punch
 if Bot_mode = false && Twister_mode = false && up == false && ducking == false && Idie_mode = false
 {
-if keyboard_check_pressed(ord("D")) && Punch = false
+if keyboard_check_pressed(ord("C")) && Punch = false
 {
 Punch = true
 maxSpeed = 0
