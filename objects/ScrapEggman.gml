@@ -126,33 +126,33 @@ else
 //Handle sprites
 if canSpriteChange == true
 {
-
-if ground == true && ducking == false && rolling == false && spindash == false
-{
-if global.vel = 0
-{
-    sprite_index = sprEGGBotStand;
-    mask_index = sprEggmanBlackMask;
-}
-else if global.vel > -3 && global.vel < 3
-{
-    sprite_index = sprEGGBotStroll;
-    mask_index = sprEggmanBlackMask;
-}
-else
-{
-    sprite_index = sprEGGBotWalk;
-    mask_index = sprEggmanBlackMask;
-}
-
-image_speed = abs(global.vel/20);
-}
-else if sprite_index == sprEggmanJump
-{
-    sprite_index = sprEggmanJump;
-    mask_index = sprEggmanBlackMask;
-    image_speed = (global.vel/2)
-}
+    if ground == true && ducking == false && rolling == false && spindash == false
+    {
+        if global.vel = 0
+        {
+            sprite_index = sprEGGBotStand;
+            mask_index = sprEggmanBlackMask;
+            image_speed = 0.15;
+        }
+        else if global.vel > -3 && global.vel < 3
+        {
+            sprite_index = sprEGGBotStroll;
+            mask_index = sprEggmanBlackMask;
+            image_speed = abs(global.vel/20);
+        }
+        else
+        {
+            sprite_index = sprEGGBotWalk;
+            mask_index = sprEggmanBlackMask;
+            image_speed = abs(global.vel/20);
+        }
+    }
+    else if sprite_index == sprEggmanJump
+    {
+        sprite_index = sprEggmanJump;
+        mask_index = sprEggmanBlackMask;
+        image_speed = (global.vel/2)
+    }
 }
 
 //Jumping

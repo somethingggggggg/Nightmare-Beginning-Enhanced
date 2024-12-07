@@ -7,30 +7,60 @@ applies_to=self
 hspeed = 0
 vspeed = 0
 image_speed = 0.15
-view_object[0] = Debug_Thing
+view_object[view_current] = Debug_Thing
 acc = 0.1
 global.xvel = 0;
 global.yvel = 0;
 maxSpeed = 15;
 ground = false
 
+ArrObjDebugMode[0] = DM_Ring
+ArrObjDebugMode[1] = TailsLive
+ArrObjDebugMode[2] = KnucklesLive
+ArrObjDebugMode[3] = EggmanLive
+ArrObjDebugMode[4] = TR1
+ArrObjDebugMode[5] = DM_Spring
+ArrObjDebugMode[6] = DM_MasterEmerald
+ArrObjDebugMode[7] = DM_Knuckles
+ArrObjDebugMode[8] = DM_Tails
+ArrObjDebugMode[9] = ScrapEggman
+ArrObjDebugMode[10] = DM_Sonic
+ArrObjDebugMode[11] = DM_Metal
+
+ArrSprDebugMode[0] = sprRing
+ArrSprDebugMode[1] = sprTailsLive
+ArrSprDebugMode[2] = sprKnucklesLive
+ArrSprDebugMode[3] = sprEggmanLive
+ArrSprDebugMode[4] = sprLTR
+ArrSprDebugMode[5] = sprDM_Spring
+ArrSprDebugMode[6] = sprMasterEmerald
+ArrSprDebugMode[7] = sprKnucklesStand
+ArrSprDebugMode[8] = sprTailsRacing
+ArrSprDebugMode[9] = sprEGGBotStand
+ArrSprDebugMode[10] = sprSonic
+ArrSprDebugMode[11] = sprMS_Stand
+
+Picked = 0
+ArrLength = 12
+
 if instance_exists(HSE_Walker)
 {
-with HSE_Walker
-{
-instance_destroy()
+    with HSE_Walker
+    {
+        instance_destroy()
+    }
+    with HSE_GA
+    {
+        sprite_index = sprHSE_Sleep
+        AwakeTime = 400
+        SleepTimer = 300
+        SleepTime = true
+        Phase_2 = false
+        image_alpha = 1
+        sound_stop(global.S_Chase)
+        sound_loop(global.S_HideSound)
+    }
 }
-with HSE_GA
-{
-sprite_index = sprHSE_Sleep
-AwakeTime = 400
-SleepTimer = 300
-SleepTime = true
-Phase_2 = false
-image_alpha = 1
-sound_stop(global.S_Chase)
-sound_loop(global.S_HideSound)
-}}
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -81,13 +111,41 @@ if !keyboard_check(vk_up) && !keyboard_check(vk_down)
 
 x += global.xvel;
 y += global.yvel;
+
+if keyboard_check_pressed(ord("C"))
+{
+    Picked += 1
+    if Picked > ArrLength-1 Picked = 0
+}
+if keyboard_check_pressed(ord("X"))
+{
+    Picked -= 1
+    if Picked < 0 Picked = ArrLength-1
+}
+
+sprite_index = ArrSprDebugMode[Picked]
+
+if keyboard_check_pressed(ord("V"))
+{
+    instance_create(x,y,ArrObjDebugMode[Picked])
+    if Picked = 9 ScrapEggman.Bot = 0
+    if Picked > 6
+    {
+        instance_destroy()
+        view_object[view_current] = ArrObjDebugMode[Picked]
+    }
+    if Picked = 4 && instance_exists(EggElevator)
+    {
+        TR1.sprite_index = sprLTR
+    }
+}
 #define KeyPress_67
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
-if sprite_index = sprMS_Stand
+/*if sprite_index = sprMS_Stand
 {
 sprite_index = sprMS_Stand
 }
@@ -152,79 +210,80 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if sprite_index = sprRing
+/*if sprite_index = sprRing
 {
-instance_create(x,y,DM_Ring)
+    instance_create(x,y,DM_Ring)
 }
 
 if sprite_index = sprTailsLive
 {
-instance_create(x,y,TailsLive)
+    instance_create(x,y,TailsLive)
 }
 
 if sprite_index = sprKnucklesLive
 {
-instance_create(x,y,KnucklesLive)
+    instance_create(x,y,KnucklesLive)
 }
 
 if sprite_index = sprEggmanLive
 {
-instance_create(x,y,EggmanLive)
+    instance_create(x,y,EggmanLive)
 }
 
 if sprite_index = sprLTR
 {
-instance_create(x,y,TR1)
-if instance_exists(EggElevator)
-{
-TR1.sprite_index = sprLTR
-}}
+    instance_create(x,y,TR1)
+    if instance_exists(EggElevator)
+    {
+        TR1.sprite_index = sprLTR
+    }
+}
 
 if sprite_index = sprDM_Spring
 {
-instance_create(x,y,DM_Spring)
+    instance_create(x,y,DM_Spring)
 }
 
 if sprite_index = sprKnucklesStand
 {
-instance_create(x,y,DM_Knuckles)
-view_object[0] = DM_Knuckles
-instance_destroy()
+    instance_create(x,y,DM_Knuckles)
+    view_object[0] = DM_Knuckles
+    instance_destroy()
 }
 
 if sprite_index = sprTailsRacing
 {
-instance_create(x,y,DM_Tails)
-instance_create(x,y,HvostStand)
-view_object[0] = DM_Tails
-instance_destroy()
+    instance_create(x,y,DM_Tails)
+    instance_create(x,y,HvostStand)
+    view_object[0] = DM_Tails
+    instance_destroy()
 }
 
 if sprite_index = sprScrapEggman
 {
-instance_create(x,y,ScrapEggman)
-ScrapEggman.Bot = 0
-view_object[0] = ScrapEggman
-instance_destroy()
+    instance_create(x,y,ScrapEggman)
+    ScrapEggman.Bot = 0
+    view_object[0] = ScrapEggman
+    instance_destroy()
 }
 
 if sprite_index = sprSonic
 {
-instance_create(x,y,DM_Sonic)
-view_object[0] = DM_Sonic
-instance_destroy()
+    instance_create(x,y,DM_Sonic)
+    view_object[0] = DM_Sonic
+    instance_destroy()
 }
 
 if sprite_index = sprMasterEmerald
 {
-instance_create(x,y,DM_MasterEmerald)
+    instance_create(x,y,DM_MasterEmerald)
 }
 
 if sprite_index = sprMS_Stand
 {
-instance_create(x,y,DM_Metal)
-view_object[0] = DM_Metal
-instance_destroy()
+    instance_create(x,y,DM_Metal)
+    view_object[0] = DM_Metal
+    instance_destroy()
 }
 #define KeyPress_88
 /*"/*'/**//* YYD ACTION
@@ -232,29 +291,29 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if sprite_index = sprRing
+/*if sprite_index = sprRing
 {
-sprite_index = sprRing
+    sprite_index = sprRing
 }
 
 if sprite_index = sprTailsLive
 {
-sprite_index = sprRing
+    sprite_index = sprRing
 }
 
 if sprite_index = sprKnucklesLive
 {
-sprite_index = sprTailsLive
+    sprite_index = sprTailsLive
 }
 
 if sprite_index = sprEggmanLive
 {
-sprite_index = sprKnucklesLive
+    sprite_index = sprKnucklesLive
 }
 
 if sprite_index = sprLTR
 {
-sprite_index = sprEggmanLive
+    sprite_index = sprEggmanLive
 }
 
 if sprite_index = sprDM_Spring

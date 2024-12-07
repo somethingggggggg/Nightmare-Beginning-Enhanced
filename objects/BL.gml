@@ -64,24 +64,27 @@ applies_to=self
 */
 if global.Time >=4
 {
-if instance_exists(AllPers)
-{
-instance_create(AllPers.x,AllPers.y,Debug_Thing)
-with HvostStand
-{
-instance_destroy()
+    if instance_exists(AllPers)
+    {
+        instance_create(AllPers.x,AllPers.y,Debug_Thing)
+        with HvostStand
+        {
+            instance_destroy()
+        }
+        if instance_exists(Pers1)
+        {
+            with HvostBlack
+            {
+                instance_destroy()
+            }
+        }
+        with HvostStand2
+        {
+            instance_destroy()
+        }
+        with AllPers
+        {
+            instance_destroy()
+        }
+    }
 }
-if instance_exists(Pers1)
-{
-with HvostBlack
-{
-instance_destroy()
-}}
-with HvostStand2
-{
-instance_destroy()
-}
-with AllPers
-{
-instance_destroy()
-}}}

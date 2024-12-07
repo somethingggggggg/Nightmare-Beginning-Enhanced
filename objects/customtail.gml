@@ -37,7 +37,7 @@ if instance_exists(tailscustom)
 
     if tailscustom.sprite_index = sprTailsJump
     {
-        sprite_index = sprHvostJump
+        sprite_index = sprtt
     }
     else
     {
