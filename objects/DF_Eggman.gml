@@ -60,8 +60,8 @@ sprite_index = sprEGGBotWalk
 hspeed = -3
 if PersonalChoiser.Eggman_Pers = true && BL.Knuckles_Plot = true
 {
-DF_Tails.sprite_index = sprTailsWalk
-DF_Tails.hspeed =-1
+    DF_Tails.sprite_index = sprTailsWalk
+    DF_Tails.hspeed =-1
 }
 alarm[3] = 180
 #define Alarm_3
@@ -77,7 +77,7 @@ hspeed = 0
 with DF_Knuckles
 {
     image_speed = 0
-    sprite_index = sprDFKnucklesDeath
+    sprite_index = sprKnucklesPreDeath
 }
 with DF_Tails
 {
@@ -183,3 +183,13 @@ if PersonalChoiser.Eggman_Pers = false && Act = 0
         DF_Knuckles.alarm[2] = 30
     }
 }
+#define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+shader_pixel_set(psGrayscale())
+shader_pixel_uniform_f("fade",0.5)
+draw_self()
+shader_reset()

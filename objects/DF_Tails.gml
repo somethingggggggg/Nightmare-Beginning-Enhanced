@@ -81,9 +81,10 @@ DF_Exe.hspeed = 0
 DF_Tails.image_xscale =-1
 with DF_Knuckles
 {
-hspeed = 0
-x = x-20
-sprite_index = sprDFKnucklesDeath
+    hspeed = 0
+    x = x-20
+    image_speed = 0
+    sprite_index = sprKnucklesPreDeath
 }
 DF_Exe.image_xscale =1
 DF_Exe.sprite_index = sprDF_ExeStand
@@ -186,6 +187,8 @@ if PersonalChoiser.Knuckles_Pers = true && Act = 0
 }
 
 //the fuck is this?
+
+//Fuck, its for tails pulling on exetior for some reason
 if PersonalChoiser.Eggman_Pers = true && Act = 0
 {
     Act = 1
@@ -202,3 +205,13 @@ if PersonalChoiser.Eggman_Pers = true && BL.Knuckles_Plot = false && sprite_inde
     sound_play(global.S_Spindash)
     DF_Eggman.alarm[2] = 30
 }
+#define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+shader_pixel_set(psGrayscale())
+shader_pixel_uniform_f("fade",0.5)
+draw_self()
+shader_reset()

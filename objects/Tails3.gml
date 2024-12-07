@@ -414,21 +414,6 @@ if view_object[0] = Tails3
 }
 
 scr_skidscript()
-
-if global.hardmode = 1
-{
-        image_xscale = 1
-        if global.vel != 0
-        {
-            drawAngle = -radtodeg(arctan(vspeed/global.vel))
-        }
-        else
-        {
-            if vspeed > 0 image_angle = -90
-            if vspeed < 0 image_angle = 90
-        }
-        if global.vel < 0 drawAngle = -radtodeg(arctan(vspeed/global.vel))+180
-}
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603

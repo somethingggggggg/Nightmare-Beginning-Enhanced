@@ -30,6 +30,7 @@ if string_pos('hard',keyboard_string) != 0 or string_pos('рфкв',keyboard_str
     {
         show_message("SUPER BRUTAL S EX PLUS PIZDEC MODE模式被激活##你的行为很随意。")
         sound_replace(global.S_Mindfuckery,working_directory+"/Sound/GrassSkirtChase.mp3",0,0)
+        sound_replace(global.S_PAUSEMENU,working_directory+"/Sound/mapMusPostal2.mp3",0,0)
         sound_play(global.S_Pingas)
         with Sounder
         {

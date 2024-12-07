@@ -2,6 +2,6 @@ sprite=sprH&S_3
 visible=1
 solid=0
 persistent=0
-depth=-5
+depth=5
 parent=
 mask=

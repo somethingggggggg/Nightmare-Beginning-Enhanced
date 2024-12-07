@@ -41,18 +41,18 @@ applies_to=self
 //Gravity
 if image_alpha = 1
 {
-if place_meeting(x, y+vspeed+1, FF_Ground) && vspeed >= 0
-{
-   ground = true;
-   gravity = 0;
-if vspeed > 8
-   vspeed = 8;
-}
-else
-{
-  ground = false;
-   gravity = 0.25;
-}
+    if place_meeting(x, y+vspeed+1, FF_Ground) && vspeed >= 0
+    {
+       ground = true;
+       gravity = 0;
+    if vspeed > 8
+       vspeed = 8;
+    }
+    else
+    {
+      ground = false;
+       gravity = 0.25;
+    }
 }
 #define Collision_FF_Ground
 /*"/*'/**//* YYD ACTION

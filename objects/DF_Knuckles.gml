@@ -164,7 +164,18 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if sprite_index = sprKnucklesWalk exit;
+if sprite_index = sprKnucklesWalk
+{
+    if place_meeting(x, y, FF_Ground)
+    {
+        gravity = 0;
+        while place_meeting(x,y,FF_Ground)
+        {
+            y -= 1
+        }
+    }
+    exit;
+}
 if place_meeting(x, y+vspeed+1, FF_Ground) && vspeed >= 0
 {
    ground = true;
@@ -183,21 +194,31 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if sprite_index = sprKnucklesWalk exit;
-if sprite_index = sprDFKnucklesKick
+if sprite_index = sprKnucklesWalk
 {
+    gravity = 0;
+    while place_meeting(x,y,FF_Ground)
+    {
+        y -= 1
+    }
+}
+else
+{
+    if sprite_index = sprDFKnucklesKick
+    {
+        move_contact_solid(270, 4);
+        vspeed = 0;
+        hspeed = 0
+        sprite_index = sprKnucklesDie
+        image_speed = 0.1
+        DF_Exe.sprite_index = sprDGExeMoveSlow
+        DF_Exe.image_speed = 0.15
+        DF_Exe.hspeed = 1.5
+        alarm[8] = 277
+    }
     move_contact_solid(270, 4);
     vspeed = 0;
-    hspeed = 0
-    sprite_index = sprKnucklesDie
-    image_speed = 0.1
-    DF_Exe.sprite_index = sprDGExeMoveSlow
-    DF_Exe.image_speed = 0.15
-    DF_Exe.hspeed = 1.5
-    alarm[8] = 277
 }
-move_contact_solid(270, 4);
-vspeed = 0;
 #define Collision_DF_Exe
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -224,7 +245,7 @@ if PersonalChoiser.Knuckles_Pers = true && Act = 0 && hspeed !=0 && DF_Exe.sprit
     alarm[6] = 60
 }
 
-if PersonalChoiser.Eggman_Pers = true && (sprite_index != sprDFKnucklesAgony && sprite_index != sprDFKnucklesDeath)
+if PersonalChoiser.Eggman_Pers = true && (sprite_index != sprDFKnucklesAgony && sprite_index != sprKnucklesPreDeath)
 {
     sprite_index = sprDFKnucklesAgony
     image_speed = 0.2
@@ -232,3 +253,13 @@ if PersonalChoiser.Eggman_Pers = true && (sprite_index != sprDFKnucklesAgony && 
     sound_play(global.S_Spindash)
     DF_Eggman.alarm[2] = 30
 }
+#define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+shader_pixel_set(psGrayscale())
+shader_pixel_uniform_f("fade",0.5)
+draw_self()
+shader_reset()

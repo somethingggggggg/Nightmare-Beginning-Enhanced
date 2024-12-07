@@ -5,6 +5,10 @@ action_id=603
 applies_to=self
 */
 Act = 1
+if room = 66 && global.hardmode != 0
+{
+    visible = 1
+}
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
