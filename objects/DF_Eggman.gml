@@ -118,7 +118,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-DF_Exe.image_xscale=-1
+DF_Exe.image_xscale= -1
 DF_Exe.sprite_index = sprDF_Spindash
 DF_Exe.image_speed = 0.3
 DF_Exe.hspeed = -7

@@ -86,7 +86,7 @@ with HvostBlack
 {
     instance_destroy()
 }
-DF_Exe.image_xscale =1
+DF_Exe.image_xscale = 1
 DF_Exe.sprite_index = sprDF_ExeStand2
 alarm[4] = 60
 #define Alarm_4
@@ -95,7 +95,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-hspeed =-2
+hspeed = -2
 sprite_index = sprKnucklesWalk
 alarm[5] = 35
 #define Alarm_5

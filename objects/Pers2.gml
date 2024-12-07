@@ -210,7 +210,7 @@ else
 
 
 //Punch
-if keyboard_check_pressed(ord("D")) && Punch = false && TAB.Twister_mode = false
+if keyboard_check_pressed(ord("C")) && Punch = false && TAB.Twister_mode = false
 {
     Punch = true
     alarm[0] = 25
