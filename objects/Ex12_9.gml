@@ -315,30 +315,32 @@ applies_to=self
 */
 if BL.FF_T = true
 {
-with AI1
-{
-instance_change(Pers1,AI1)
-view_object[0] = Pers1
-}}
+    with AI1
+    {
+        instance_change(Pers1,AI1)
+        view_object[0] = Pers1
+    }
+}
 
 if BL.FF_T = false && BL.FF_K = true
 {
-with AI2
-{
-instance_change(Pers2,AI2)
-view_object[0] = Pers2
-}}
+    with AI2
+    {
+        instance_change(Pers2,AI2)
+        view_object[0] = Pers2
+    }
+}
 
 if BL.FF_T = false && BL.FF_K = false
 {
-BL.End_2 = true
-sound_stop(global.S_DF_S)
-room_goto(33)
+    BL.End_2 = true
+    sound_stop(global.S_DF_S)
+    room_goto(33)
 }
 
 with Pers3
 {
-instance_change(Death3,Pers3)
+    instance_change(Death3,Pers3)
 }
 BL.FF_E = false
 #define Collision_EnergyShieldFF
@@ -359,3 +361,13 @@ applies_to=self
 sound_stop(global.S_ChargedUp)
 sound_play(global.S_ExeBeat)
 instance_destroy()
+#define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+shader_pixel_set(psGrayscale())
+shader_pixel_uniform_f("fade",0.5)
+draw_self()
+shader_reset()

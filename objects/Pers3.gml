@@ -21,6 +21,7 @@ canSpriteChange = true;
 canJump = true
 Speaker_Tails = false
 Speaker_Knuckles = false
+sweattimer = 0
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -46,7 +47,7 @@ if keyboard_check(vk_left) && !place_meeting(x+(abs(hspeed)*-1)-1, y, FF_Wall) &
 }
 if keyboard_check_released(vk_left)
 {
-hspeed = 0
+    hspeed = 0
 }
 if keyboard_check(vk_right) && !place_meeting(x+abs(hspeed)+1, y, FF_Wall) && !place_meeting(x+abs(hspeed)+1, y, Solid) && (canMove == true or (rolling == true && hspeed < 0))
 {
@@ -178,7 +179,21 @@ with AI2
 instance_change(Pers2,AI2)
 }
 view_object[0] = Pers2
-}}
+}
+}
+
+if BL.FF_T + BL.FF_K < 1
+{
+    if sweattimer = 0
+    {
+        instance_create(x+irandom_range(-10,10),bbox_top,obj_SweatParticleFF)
+        sweattimer = 10
+    }
+    else
+    {
+        sweattimer -= 1
+    }
+}
 global.complpercent = 100 - ((x / 8300) * 100)
 #define Collision_Solid
 /*"/*'/**//* YYD ACTION

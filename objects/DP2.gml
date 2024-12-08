@@ -26,7 +26,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-perass=irandom_range(1,6)
+perass = irandom_range(1,6)
 if room = 21 && !(perass = 1 or perass = 2 or perass = 4)
 {
     do perass = irandom_range(1,6)

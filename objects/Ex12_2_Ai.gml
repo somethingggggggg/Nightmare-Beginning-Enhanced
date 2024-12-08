@@ -18,17 +18,17 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if AI2.sprite_index = sprKnucklesPunchBlack
+if AI2.sprite_index = sprKnucklesPunch
 {
-instance_destroy()
+    instance_destroy()
 }
 else
 {
-with AI2
-{
-BL.FF_K = false
-instance_destroy()
-}
+    with AI2
+    {
+        BL.FF_K = false
+        instance_destroy()
+    }
 }
 #define Collision_Pers1
 /*"/*'/**//* YYD ACTION
@@ -38,7 +38,7 @@ applies_to=self
 */
 if Pers1.sprite_index = sprTailsJump
 {
-instance_destroy()
+    instance_destroy()
 }
 #define Collision_EnergyShieldFF
 /*"/*'/**//* YYD ACTION

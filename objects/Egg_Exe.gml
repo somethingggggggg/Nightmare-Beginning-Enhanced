@@ -20,6 +20,7 @@ canHit = true;
 canSpriteChange = true;
 Robo = true
 Act = 0
+actOnce = 0
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -28,6 +29,7 @@ applies_to=self
 */
 sprite_index = sprFinalExe_Jump
 hspeed = 5
+actOnce = 2
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -91,7 +93,8 @@ else if sprite_index == sprFinalExe_Jump
    sprite_index = sprFinalExe_Jump;
 
 image_speed = 0.2 + abs(vel / 20)
-}}
+}
+}
 
 if Robo = true
 {
@@ -130,12 +133,19 @@ if Robo = true
             move_towards_point(Pig.x,Pig.y,5)
         }
 }
+if actOnce = 2
+{
+    sprite_index = sprFinalExe_Jump
+    image_speed = 0.2 + abs(hspeed / 20)
+
+}
 #define Collision_Solid
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
+/*
 move_contact_solid(direction, 0.1);
 drawAngle = 0
 vspeed =  0
@@ -146,15 +156,23 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-move_contact_solid(270, 4);
-vspeed =  0
+//move_contact_solid(270, 4);
+while place_meeting(x,y,Ground_Egg)
+{
+    y -= 1
+}
+vspeed = 0
 speed = 0
 
 if Act = 2
 {
     sprite_index = sprExeDuck
-    vspeed =0
-    alarm[0] = 10
+    vspeed = 0
+    if actOnce = 0
+    {
+        alarm[0] = 10
+        actOnce = 1
+    }
 }
 
 if Act = 3
@@ -169,7 +187,7 @@ action_id=603
 applies_to=self
 */
 EGGBot.Act = 11
-vspeed=-5
+vspeed = -5
 Act = 2
 view_object[0] = Egg_Exe
 sprite_index = sprFinalExe_Jump

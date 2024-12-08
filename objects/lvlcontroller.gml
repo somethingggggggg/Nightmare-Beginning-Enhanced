@@ -18,8 +18,17 @@ switch room
     case 42:
     myx = 4
     break;
+    case 64:
+    myx = 4
+    break;
 }
 #define Step_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+#define Step_2
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
@@ -50,12 +59,6 @@ else
         background_y[3] = view_yview[0] - 32
     }
 }
-#define Step_2
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
 if room = 21
 {
     if instance_exists(Tails4) view_yview[0] = Tails4.y + view_hview[0]/2
