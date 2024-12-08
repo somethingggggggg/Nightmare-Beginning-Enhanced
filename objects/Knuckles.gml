@@ -321,7 +321,9 @@ if rolling == true && (ground == false or global.vel == 0)
    canMove = true;
 {
 {
-}}}
+}
+}
+}
 {
    mask_index = sprKnucklesStandMask;
    canMove = true
@@ -332,11 +334,15 @@ if up == true && spindash == false
 {
    mask_index = sprKnucklesStandMask;
    sprite_index = sprKnucklesUpScary;
-if image_index < 1
-   image_speed = 0.1;
-else
-   image_speed = 0;
-   canMove = false;
+    if image_index < 1
+    {
+        image_speed = 0.1;
+    }
+    else
+    {
+        image_speed = 0;
+        canMove = false;
+    }
 }
 
 
@@ -394,24 +400,24 @@ sprite_index = sprKnucklesTwister
 //Twister
 if keyboard_check_pressed(ord("X")) && Bot_mode = false && Act = 1 && Twister_mode = false && up == false && ducking == false && Idie_mode = false
 {
-Twister_mode = true
-Act = 0
+    Twister_mode = true
+    Act = 0
 }
 
 if Twister_mode = true && Act = 0
 {
-Act = 5
-sprite_index = sprKnucklesTwister
-image_speed = 0.8
-alarm[5] = 1
-global.vel = image_xscale * 8
+    Act = 5
+    sprite_index = sprKnucklesTwister
+    image_speed = 0.8
+    alarm[5] = 1
+    global.vel = image_xscale * 8
 }
 
 if Twister_mode = true && global.vel=0
 {
-Twister_mode = false
-Act = 2
-alarm[3] = 250
+    Twister_mode = false
+    Act = 2
+    alarm[3] = 250
 }
 
 //Idie

@@ -97,6 +97,7 @@ if keyboard_check_pressed(vk_enter)
             option[10] = global.DCRP_enabled
             option[11] = global.BL_filter
             option[12] = global.performance
+            option[13] = global.OrigCutscene
         }
         scr_saveoptions()
         room_goto(87)

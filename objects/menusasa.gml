@@ -86,6 +86,20 @@ option[11] = global.BL_filter
 option[12] = global.performance
 option[13] = global.OrigCutscene
 
+optionVarName[1] = "lang"
+optionVarName[2] = "cheats"
+optionVarName[3] = "dialoguefont"
+optionVarName[4] = "progressbar"
+optionVarName[5] = "showfps"
+optionVarName[6] = "newcontent"
+optionVarName[7] = "subcnoise"
+optionVarName[8] = "fourbythree"
+optionVarName[9] = "voicedir"
+optionVarName[10] = "DCRP_enabled"
+optionVarName[11] = "BL_filter"
+optionVarName[12] = "performance"
+optionVarName[13] = "OrigCutscene"
+
 optionblocked[1] = 0
 if global.complete = 1 optionblocked[2] = 0
 else optionblocked[2] = 1
@@ -144,6 +158,9 @@ optionstate[13,0] = "off"
 optionstate[13,1] = "on"
 
 menulength = 14
+
+//variable_global_set("lang",1)
+//if global.lang = 1 show_message('yes')
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

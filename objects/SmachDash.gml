@@ -15,7 +15,18 @@ applies_to=self
 */
 if instance_exists(Pers1)
 {
-move_snap(Pers1.x,Pers1.y)
+    move_snap(Pers1.x,Pers1.y)
+}
+#define Step_2
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if instance_exists(Pers1)
+{
+    x = Pers1.x
+    y = Pers1.y
 }
 #define Other_7
 /*"/*'/**//* YYD ACTION

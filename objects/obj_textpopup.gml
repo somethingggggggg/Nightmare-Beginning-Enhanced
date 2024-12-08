@@ -5,6 +5,8 @@ action_id=603
 applies_to=self
 */
 alpha = 2
+if instance_number(obj_textpopup) > 1 instance_destroy()
+
 if instance_exists(menusasa) text = menusasa.text
 else text = Sounder.text
 #define Step_0

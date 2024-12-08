@@ -1,4 +1,4 @@
-sprite=sprFF_T&K
+sprite=sprFF_TK
 visible=1
 solid=0
 persistent=0

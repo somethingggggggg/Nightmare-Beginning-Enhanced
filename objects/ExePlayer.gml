@@ -50,11 +50,11 @@ applies_to=self
 instance_create(0,0,TPassed)
 if instance_exists(TPassed) && instance_exists(KPassed) && instance_exists(EPassed)
 {
-room_goto(18)
+    room_goto(18)
 }
 else
 {
-room_goto(5)
+    room_goto(5)
 }
 #define Step_0
 /*"/*'/**//* YYD ACTION
@@ -145,6 +145,10 @@ x += global.vel;
 if (place_meeting(x, y+vspeed+1, FF_DT) && vspeed >=0) or (place_meeting(x, y+vspeed+1, FinalGroundDown) && vspeed >=0) or (place_meeting(x, y+vspeed+1, UpGrounderBroke) && vspeed >=0) or (place_meeting(x, y+vspeed+1, UpGrounder) && vspeed >=0) or place_meeting(x, y+vspeed+1, objSlopeParent)
 {
 {
+    if ground = 0
+    {
+        rolling = 0
+    }
    ground = true;
    gravity = 0;
 if vspeed > 8
@@ -392,6 +396,13 @@ action_id=603
 applies_to=self
 */
 drawAngle = 0
+if Bot = 3 && sprite_index = sprFinalExe_Run
+{
+    while place_meeting(x,y,FF_DT)
+    {
+        y -= 1
+    }
+}
 if place_meeting(x,bbox_bottom+1,FF_DT)
 {
 move_contact_solid(270, 4);
@@ -410,10 +421,10 @@ move_contact_solid(direction, 0.1)
 drawAngle = 0
 global.vel = 0
 }
-if rolling = true
-{
-rolling = false
-}
+//if rolling = true
+//{
+//rolling = false
+//}
 #define Collision_TailsRacing
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -452,7 +463,8 @@ applies_to=self
 */
 global.Difficult = 1
 sound_stop(global.S_Exe_Battle)
-room_goto(42)
+//room_goto(42)
+room_restart()
 #define Keyboard_50
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -461,7 +473,7 @@ applies_to=self
 */
 global.Difficult = 2
 sound_stop(global.S_Exe_Battle)
-room_goto(42)
+room_restart()
 #define Keyboard_51
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -470,7 +482,7 @@ applies_to=self
 */
 global.Difficult = 3
 sound_stop(global.S_Exe_Battle)
-room_goto(42)
+room_restart()
 #define Keyboard_52
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -479,7 +491,7 @@ applies_to=self
 */
 global.Difficult = 4
 sound_stop(global.S_Exe_Battle)
-room_goto(42)
+room_restart()
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

@@ -6,7 +6,7 @@ applies_to=self
 */
 if global.lang = 0
 {
-    sprite_index = sprFF_T&E
+    sprite_index = sprFF_TE
 }
 if global.lang = 1
 {

@@ -47,9 +47,8 @@ if global.OrigCutscene = 0
         SW_Control.Page = 3
     }
 }
-else
+/*else
 {
-    room_goto(65)
     if PersonalChoiser.Tails_Pers = true && BL.Tails_Plot = true && BL.Knuckles_Plot = true && BL.Eggman_Plot = true
     {
         instance_create(0,0,SW_Control)
@@ -87,8 +86,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if PersonalChoiser.Knuckles_Pers = false && PersonalChoiser.Eggman_Pers = false
-{
+//if PersonalChoiser.Knuckles_Pers = false && PersonalChoiser.Eggman_Pers = false
+//{
     if instance_exists(CutKnuckles)
     {
         CutKnuckles.hspeed = 4
@@ -97,23 +96,23 @@ if PersonalChoiser.Knuckles_Pers = false && PersonalChoiser.Eggman_Pers = false
     {
         CutEggman.hspeed = -3
     }
-}
+//}
 
-if PersonalChoiser.Knuckles_Pers = true && PersonalChoiser.Eggman_Pers = false
-{
-    if instance_exists(CutEggman)
-    {
-        CutEggman.hspeed = -3
-    }
-}
+//if PersonalChoiser.Knuckles_Pers = true && PersonalChoiser.Eggman_Pers = false
+//{
+//    if instance_exists(CutEggman)
+//    {
+//        CutEggman.hspeed = -3
+//    }
+//}
 
-if PersonalChoiser.Knuckles_Pers = false && PersonalChoiser.Eggman_Pers = true
-{
-    if instance_exists(CutKnuckles)
-    {
-        CutKnuckles.hspeed = 4
-    }
-}
+//if PersonalChoiser.Knuckles_Pers = false && PersonalChoiser.Eggman_Pers = true
+//{
+//    if instance_exists(CutKnuckles)
+//    {
+//        CutKnuckles.hspeed = 4
+//    }
+//}
 #define Alarm_2
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -209,6 +208,7 @@ applies_to=self
 */
 if global.OrigCutscene = 0
 {
+    sprite_index = sprTails
     if BL.Tails_Plot = false && BL.Knuckles_Plot = true && BL.Eggman_Plot = true
     {
         instance_create(0,0,SW_Control)

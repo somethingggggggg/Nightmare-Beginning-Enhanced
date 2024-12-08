@@ -5,7 +5,7 @@ action_id=603
 applies_to=self
 */
 image_speed = 0.2
-hspeed = 4
+if global.OrigCutscene = 1 hspeed = 4
 
 if PersonalChoiser.Knuckles_Pers = true
 {

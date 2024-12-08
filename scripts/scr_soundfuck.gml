@@ -15,3 +15,7 @@ repeat(ds_list_size(soundTwoList))
     i += 1
 }
 sound_resume(global.S_PAUSEMENU)
+sound_resume(global.S_WellRing)
+sound_resume(global.S_TAB)
+sound_resume(global.S_Locked)
+sound_resume(global.S_Ring)
