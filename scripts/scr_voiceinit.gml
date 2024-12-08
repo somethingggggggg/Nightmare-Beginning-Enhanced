@@ -1,5 +1,4 @@
 voicecount = 0
-globalvar voiceline;
 global.voiceline[0] = 0
 if ds_list_find_value(global.voicelist,global.voicedir) = ''
 {

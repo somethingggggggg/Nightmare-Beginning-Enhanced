@@ -55,6 +55,7 @@ global.DCRP_enabled = ini_read_real('options','DCRP_enabled',1)
 global.RG_final_boss = ini_read_real('options','RG_final_boss',1)
 global.BL_filter = ini_read_real('options','BL_filter',0)
 global.performance = ini_read_real('options','performance',0)
+global.OrigCutscene = ini_read_real('options','origCutscene',0)
 ini_close()
 texture_set_interpolation(global.BL_filter)
 if global.DCRP_enabled = 1
@@ -81,9 +82,9 @@ option[7] = global.subcnoise
 option[8] = global.fourbythree
 option[9] = global.voicedir
 option[10] = global.DCRP_enabled
-//option[11] = global.RG_final_boss
 option[11] = global.BL_filter
 option[12] = global.performance
+option[13] = global.OrigCutscene
 
 optionblocked[1] = 0
 if global.complete = 1 optionblocked[2] = 0
@@ -98,6 +99,7 @@ optionblocked[9] = 0
 optionblocked[10] = 0
 optionblocked[11] = 0
 optionblocked[12] = 0
+optionblocked[13] = 0
 
 scr_lang_menu_init(global.lang)
 
@@ -138,7 +140,10 @@ optionstate[11,1] = "on"
 optionstate[12,0] = "off"
 optionstate[12,1] = "on"
 
-menulength = 13
+optionstate[13,0] = "off"
+optionstate[13,1] = "on"
+
+menulength = 14
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

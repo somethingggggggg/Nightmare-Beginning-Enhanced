@@ -52,6 +52,7 @@ option[9] = global.voicedir
 option[10] = global.DCRP_enabled
 option[11] = global.BL_filter
 option[12] = global.performance
+option[13] = global.OrigCutscene
 
 optionblocked[1] = 0
 optionblocked[2] = 1
@@ -65,34 +66,9 @@ optionblocked[9] = 0
 optionblocked[10] = 0
 optionblocked[11] = 0
 optionblocked[12] = 0
+optionblocked[13] = 0
 
-optionname[0] = "Back"
-optionname[1] = "Language"
-optionname[2] = "Cheats"
-optionname[3] = "Font"
-optionname[4] = "FF progressbar"
-optionname[5] = "Show FPS"
-optionname[6] = "New content"
-optionname[7] = "SM Noise"
-optionname[8] = "4:3 mode"
-optionname[9] = "Voiceover"
-optionname[10] = "Enable DCRP"
-optionname[11] = "Billineal filtering"
-optionname[12] = "Performance mode"
-
-optiondesc[0] = ""
-optiondesc[1] = "Pick your language"
-optiondesc[2] = "Enable debug mode and some cheats accecible with the numpad (enable numlock on your keyboard)"
-optiondesc[3] = "Pick between original NB font (korinna) and new NU font (pallete)"
-optiondesc[4] = "Toggle the progressbar in Fatal Fog"
-optiondesc[5] = "Show FPS"
-optiondesc[6] = "Toggle new content on or off"
-optiondesc[7] = "Change how overlayed noise works in subconcious mind"
-optiondesc[8] = "Change the screen resolution back to 4:3#VERY EXPERIMENTAL"
-optiondesc[9] = "Choose the voiceover you want (you can add your own by naming a folder voice_ )"
-optiondesc[10] = "Shows to other people that you are playing NBE"
-optiondesc[11] = "blurs your fucking game so it looks like shit"
-optiondesc[12] = "Dogshit solution"
+scr_lang_menu_init(global.lang)
 
 optionstate[0,0] = ""
 
@@ -131,7 +107,10 @@ optionstate[11,1] = "on"
 optionstate[12,0] = "off"
 optionstate[12,1] = "on"
 
-menulength = 13
+optionstate[13,0] = "off"
+optionstate[13,1] = "on"
+
+menulength = 14
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -420,6 +399,8 @@ if room != 0
                 }*/
             }
             //if window_get_fullscreen() = 1 window_set_region_size(display_get_width(),display_get_height(),0)
+            
+            //testing
             sound_kind_volume(1,1)
             sound_loop(global.S_PAUSEMENU)
             scr_soundfuck()

@@ -6,7 +6,7 @@ applies_to=self
 */
 if instance_exists(FinalSonic)
 {
-alarm[0] = 180
+    alarm[0] = 180
 }
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
@@ -102,7 +102,7 @@ applies_to=self
 */
 if !instance_exists(CutKnuckles)
 {
-    CutTails.sprite_index = sprTailsBlack
+    CutTails.sprite_index = sprTails
 }
 
 CutTails.image_xscale = 1

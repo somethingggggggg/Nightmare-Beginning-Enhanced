@@ -9,12 +9,13 @@ switch argument0
         optionname[4] = "FF progressbar"
         optionname[5] = "Show FPS"
         optionname[6] = "New content"
-        optionname[7] = "White Noise Style"
+        optionname[7] = "White Noise"
         optionname[8] = "4:3 mode"
         optionname[9] = "Voiceover"
         optionname[10] = "Enable DCRP"
         optionname[11] = "Billineal filtering"
         optionname[12] = "Performance mode"
+        optionname[13] = "Original FF Cutscene"
         optiondesc[0] = ""
         optiondesc[1] = "Pick your language"
         optiondesc[2] = "Enable debug mode and some cheats accecible with the numpad (enable numlock on your keyboard)"
@@ -28,6 +29,7 @@ switch argument0
         optiondesc[10] = "Shows to other people that you are playing NBE"
         optiondesc[11] = "blurs your fucking game so it looks like shit"
         optiondesc[12] = "Dogshit solution"
+        optiondesc[13] = "Original FF Cutscene"
     break;
     case 1:
         Notavalmessage = "Недоступно"
@@ -38,12 +40,13 @@ switch argument0
         optionname[4] = "Шкала прогресса в FF"
         optionname[5] = "Показать FPS"
         optionname[6] = "Новый контент"
-        optionname[7] = "Стиль Белого Шума"
+        optionname[7] = "Белый Шум"
         optionname[8] = "Режим 4:3"
         optionname[9] = "Озвучка"
         optionname[10] = "Включить DCRP"
         optionname[11] = "Мыло Блять"
         optionname[12] = "Не лагать"
+        optionname[13] = "Original FF Cutscene"
         optiondesc[0] = ""
         optiondesc[1] = "Выберите свой язык"
         optiondesc[2] = "Включает дебаг мод и некоторые читы доступные на нумпаде (Включи намлок на клавиатуре)"
@@ -57,6 +60,7 @@ switch argument0
         optiondesc[10] = "Shows to other people that you are playing NBE"
         optiondesc[11] = "blurs your fucking game so it looks like shit"
         optiondesc[12] = "Dogshit solution"
+        optiondesc[13] = "Original FF Cutscene"
     break;
     case 2:
         Notavalmessage = "Unavailable"
@@ -73,6 +77,7 @@ switch argument0
         optionname[10] = "Enable DCRP"
         optionname[11] = "Billineal filtering"
         optionname[12] = "Performance mode"
+        optionname[13] = "Original FF Cutscene"
         optiondesc[0] = ""
         optiondesc[1] = "Pick your language"
         optiondesc[2] = "Enable debug mode and some cheats accecible with the numpad (enable numlock on your keyboard)"
@@ -86,5 +91,6 @@ switch argument0
         optiondesc[10] = "Shows to other people that you are playing NBE"
         optiondesc[11] = "blurs your fucking game so it looks like shit"
         optiondesc[12] = "Dogshit solution"
+        optiondesc[13] = "Original FF Cutscene"
     break;
 }

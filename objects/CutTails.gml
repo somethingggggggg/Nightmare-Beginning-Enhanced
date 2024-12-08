@@ -39,10 +39,47 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if PersonalChoiser.Tails_Pers = true && sprite_index = sprTailsUpBlack && BL.Tails_Plot = true && BL.Knuckles_Plot = true && BL.Eggman_Plot = true
+if global.OrigCutscene = 0
 {
-instance_create(0,0,SW_Control)
-SW_Control.Page = 3
+    if PersonalChoiser.Tails_Pers = true && BL.Tails_Plot = true && BL.Knuckles_Plot = true && BL.Eggman_Plot = true
+    {
+        instance_create(0,0,SW_Control)
+        SW_Control.Page = 3
+    }
+}
+else
+{
+    room_goto(65)
+    if PersonalChoiser.Tails_Pers = true && BL.Tails_Plot = true && BL.Knuckles_Plot = true && BL.Eggman_Plot = true
+    {
+        instance_create(0,0,SW_Control)
+        SW_Control.Page = 3
+    }
+    else
+    {
+        if global.Deadly_Mode = true
+        {
+            room_goto(65)
+        }
+    }
+
+    if BL.Tails_Plot = false && BL.Knuckles_Plot = true && BL.Eggman_Plot = true
+    {
+        instance_create(0,0,SW_Control)
+        SW_Control.Page = 27
+    }
+
+    if BL.Tails_Plot = true && BL.Knuckles_Plot = false && BL.Eggman_Plot = true
+    {
+        instance_create(0,0,SW_Control)
+        SW_Control.Page = 48
+    }
+
+    if BL.Tails_Plot = true && BL.Knuckles_Plot = true && BL.Eggman_Plot = false
+    {
+        instance_create(0,0,SW_Control)
+        SW_Control.Page = 70
+    }
 }
 #define Alarm_1
 /*"/*'/**//* YYD ACTION
@@ -170,28 +207,35 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if BL.Tails_Plot = false && BL.Knuckles_Plot = true && BL.Eggman_Plot = true
+if global.OrigCutscene = 0
 {
-instance_create(0,0,SW_Control)
-SW_Control.Page = 27
-}
+    if BL.Tails_Plot = false && BL.Knuckles_Plot = true && BL.Eggman_Plot = true
+    {
+        instance_create(0,0,SW_Control)
+        SW_Control.Page = 27
+    }
 
-if BL.Tails_Plot = true && BL.Knuckles_Plot = false && BL.Eggman_Plot = true
-{
-instance_create(0,0,SW_Control)
-SW_Control.Page = 48
-}
+    if BL.Tails_Plot = true && BL.Knuckles_Plot = false && BL.Eggman_Plot = true
+    {
+        instance_create(0,0,SW_Control)
+        SW_Control.Page = 48
+    }
 
-if BL.Tails_Plot = true && BL.Knuckles_Plot = true && BL.Eggman_Plot = false
-{
-instance_create(0,0,SW_Control)
-SW_Control.Page = 70
-}
+    if BL.Tails_Plot = true && BL.Knuckles_Plot = true && BL.Eggman_Plot = false
+    {
+        instance_create(0,0,SW_Control)
+        SW_Control.Page = 70
+    }
 
-if BL.Tails_Plot = true && BL.Knuckles_Plot = true && BL.Eggman_Plot = true
+    if BL.Tails_Plot = true && BL.Knuckles_Plot = true && BL.Eggman_Plot = true
+    {
+        instance_create(0,0,SW_Control)
+        SW_Control.Page = 5
+    }
+}
+else
 {
-instance_create(0,0,SW_Control)
-SW_Control.Page = 5
+    room_goto(65)
 }
 #define Step_0
 /*"/*'/**//* YYD ACTION

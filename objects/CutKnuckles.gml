@@ -30,7 +30,7 @@ applies_to=self
 */
 if !instance_exists(CutEggman)
 {
-CutTails.alarm[7] = 1
+    CutTails.alarm[7] = 1
 }
 #define Draw_0
 /*"/*'/**//* YYD ACTION

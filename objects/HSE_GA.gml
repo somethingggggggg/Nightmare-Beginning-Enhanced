@@ -22,7 +22,7 @@ applies_to=self
 */
 if !instance_exists(HSE_Walker) && !instance_exists(HSE_Fall)
 {
-TeleportRing.sprite_index = sprTeleportRing
+    TeleportRing.sprite_index = sprTeleportRing
 }
 
 //Gravity
@@ -107,12 +107,13 @@ Phase_2 = true
 
 if Phase_2 = true
 {
-with HSE_GA
-{
-image_alpha = 0
+    with HSE_GA
+    {
+    image_alpha = 0
+    }
+    instance_create(x,y-10,HSE_Walker)
 }
-instance_create(x,y-10,HSE_Walker)
-}
+
 }
 }
 #define Collision_Solid

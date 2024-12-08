@@ -66,6 +66,7 @@ if keyboard_check_pressed(vk_enter)
             global.T_bossfight = 0
             //view_xview = prev_view_xview
             //view_yview = prev_view_yview
+            sprite_delete(sprpausefuck)
             instance_activate_all()
             sound_stop_all()
             myfade = 0
