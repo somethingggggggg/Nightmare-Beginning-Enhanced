@@ -1,4 +1,4 @@
-sprite=sprEx8
+sprite=sprEx8Afterimg
 visible=1
 solid=0
 persistent=0

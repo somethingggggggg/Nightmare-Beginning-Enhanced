@@ -54,9 +54,9 @@ else
         background_x[2] = view_xview[0] / 2
         background_x[3] = view_xview[0] / 2.5
 
-        background_y[1] = view_yview[0] - 32
-        background_y[2] = view_yview[0] - 32
-        background_y[3] = view_yview[0] - 32
+        background_y[1] = view_yview[0] - view_yview[0]/16 - 32 + 238/16
+        background_y[2] = view_yview[0] - view_yview[0]/8 - 32 + 238/8
+        background_y[3] = view_yview[0] - view_yview[0]/4 - 32 + 238/4
     }
 }
 if room = 21

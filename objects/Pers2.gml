@@ -278,6 +278,17 @@ if TAB.Twister_mode = true && vel=0
     alarm[3] = 250
 }
 global.complpercent = 100 - ((x / 8300) * 100)
+#define Step_2
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+view_xview[view_current] = x - view_wview[view_current]/2
+view_yview[view_current] = y - view_hview[view_current]/2
+
+view_xview[view_current] = clamp(view_xview[view_current],0,room_width - view_wview[view_current])
+view_yview[view_current] = clamp(view_yview[view_current],0,room_height - view_hview[view_current])
 #define Collision_Solid
 /*"/*'/**//* YYD ACTION
 lib_id=1

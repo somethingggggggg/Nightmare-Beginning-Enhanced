@@ -9,6 +9,7 @@ image_speed = 0.15
 image_xscale = 1
 hspeed = 0
 global.vel = 0
+image_blend = $282828
 sound_stop(global.S_Egg_Sound)
 sound_play(global.S_Scream_1)
 /*"/*'/**//* YYD ACTION
@@ -73,15 +74,15 @@ applies_to=self
 */
 if global.ELive != 0
 {
-sound_stop(global.S_Noice)
-room_goto(53)
+    sound_stop(global.S_Noice)
+    room_goto(53)
 }
 
 if global.ELive = 0
 {
-instance_create(0,0,EPassed)
-sound_stop(global.S_Noice)
-room_goto(28)
+    instance_create(0,0,EPassed)
+    sound_stop(global.S_Noice)
+    room_goto(28)
 }
 #define Step_0
 /*"/*'/**//* YYD ACTION

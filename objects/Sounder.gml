@@ -39,6 +39,25 @@ image_speed = 0.2
 scroll = 0
 anim = 0
 
+//this is a bad idea
+/*
+i = 0
+repeat(88)
+{
+    global.roomNamesDCRP[i] = ""
+    i += 1
+}
+global.roomNamesDCRP[0] = "IN MAIN MENU"
+global.roomNamesDCRP[8] = "HILL"
+global.roomNamesDCRP[11] = "HIDE AND SEEK"
+global.roomNamesDCRP[40] = "HIDE AND SEEK ACT 2"
+global.roomNamesDCRP[32] =
+global.roomNamesDCRP[70] =
+global.roomNamesDCRP[26] =
+global.roomNamesDCRP[20] =
+global.roomNamesDCRP[66] =
+*/
+
 Notavalmessage = "Not toggleable mid game"
 option[1] = global.lang
 option[2] = global.cheats

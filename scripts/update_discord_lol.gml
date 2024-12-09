@@ -1,5 +1,7 @@
 if global.DCRP_enabled = 0 exit;
 //this is shit and I should redo it with arrays
+
+//09.12.24 - no
 imagineavariable = 0
 switch room
 {
@@ -29,6 +31,9 @@ switch room
     break;
     case 66:
         imagineavariable = "DESTROYED MIND"
+    break;
+    case 62:
+        imagineavariable = "SUBCONCIOUS MIND"
     break;
 }
 if global.hardmode = 0 discord_update_presence(imagineavariable,"An experimental NB mod",'sprfex','sprfex')

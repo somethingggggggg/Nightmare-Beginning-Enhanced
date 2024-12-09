@@ -593,7 +593,7 @@ sprDF_Spike
 sprDFExe_Weak
 
 sprTailsSpindashBlack
-sprTailsHitBlack
+sprTailsHitFatal
 sprDFTailsDeath
 sprDFAttack2
 sprDFKnucklesTreack
@@ -822,3 +822,4 @@ spr_sonicskid
 
 sprFF_NEWGround
 sprEGGBotStroll
+sprEx8Afterimg

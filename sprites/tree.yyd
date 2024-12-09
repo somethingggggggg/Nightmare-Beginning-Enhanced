@@ -224,6 +224,7 @@
 |sprEx7
 |sprEx7_2
 |sprEx8
+|sprEx8Afterimg
 |sprEx8_2
 |sprExeckles
 |sprExeDuck
@@ -633,7 +634,7 @@
 |sprTailsFly
 |sprTailsFlyTired
 |sprTailsHit
-|sprTailsHitBlack
+|sprTailsHitFatal
 |sprTailsIdie
 |sprTailsJump
 |sprTailsJumpBlack

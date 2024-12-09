@@ -21,6 +21,7 @@
 	|obj_SweatParticle
 	|obj_textpopup
 	|obj_SweatParticleFF
+	|objExeFFAfterImg
 +dataselect
 	|MS_1
 	|MS_2

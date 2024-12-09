@@ -5,3 +5,4 @@ action_id=603
 applies_to=self
 */
 image_speed = 0.2
+image_blend = $282828

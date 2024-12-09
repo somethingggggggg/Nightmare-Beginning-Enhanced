@@ -112,8 +112,9 @@ else if sprite_index == sprTailsJump
 //Jumping
 if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && canMove == true
 {
-   vspeed = -7;
-   sprite_index = sprTailsJump;
+    vspeed = -7;
+    sprite_index = sprTailsJump;
+    sound_play(global.S_Jump);
 }
 
 //Up
@@ -215,6 +216,17 @@ if sprite_index = sprTailsJump && ground = false && keyboard_check_pressed(ord("
     instance_create(x,y,SmachDash)
 }
 global.complpercent = 100 - ((x / 8300) * 100)
+#define Step_2
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+view_xview[view_current] = x - view_wview[view_current]/2
+view_yview[view_current] = y - view_hview[view_current]/2
+
+view_xview[view_current] = clamp(view_xview[view_current],0,room_width - view_wview[view_current])
+view_yview[view_current] = clamp(view_yview[view_current],0,room_height - view_hview[view_current])
 #define Collision_Solid
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -249,6 +261,7 @@ applies_to=self
 */
 shader_pixel_set(psGrayscale())
 shader_pixel_uniform_f("fade",0.5)
+if sprite_index = sprTailsJump && !instance_exists(SmachDash) draw_sprite_ext(sprtt, image_index/2, x, y, 1, 1, point_direction(Pers1.x,Pers1.y,Pers1.x+Pers1.vel,Pers1.y+Pers1.vspeed), image_blend, image_alpha);
 draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale, image_yscale, drawAngle, image_blend, image_alpha);
 shader_reset()
 draw_sprite(sprChangePlayer,0,view_xview[0]+40,view_yview[0]+225)

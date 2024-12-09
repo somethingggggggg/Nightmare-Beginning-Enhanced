@@ -1,7 +1,7 @@
-sprite=sprEGGBotStand
+sprite=sprEx8Afterimg
 visible=1
 solid=0
 persistent=0
-depth=0
+depth=6
 parent=
 mask=

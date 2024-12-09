@@ -120,46 +120,6 @@ optionblocked[13] = 0
 
 scr_lang_menu_init(global.lang)
 
-optionstate[0,0] = ""
-
-optionstate[1,0] = "English"
-optionstate[1,1] = "Russian"
-optionstate[1,2] = "Italian"
-
-optionstate[2,0] = "off"
-optionstate[2,1] = "on"
-
-optionstate[3,WORD_Font] = "Old"
-optionstate[3,testingfont] = "New"
-
-optionstate[4,0] = "off"
-optionstate[4,1] = "on"
-
-optionstate[5,0] = "off"
-optionstate[5,1] = "on"
-
-optionstate[6,0] = "off"
-optionstate[6,1] = "on"
-
-optionstate[7,0] = "Original"
-optionstate[7,1] = "Camera Follow"
-
-optionstate[8,0] = "off"
-optionstate[8,1] = "Stretch"
-optionstate[8,2] = "Black Bars"
-
-optionstate[10,0] = "off"
-optionstate[10,1] = "on"
-
-optionstate[11,0] = "off"
-optionstate[11,1] = "on"
-
-optionstate[12,0] = "off"
-optionstate[12,1] = "on"
-
-optionstate[13,0] = "off"
-optionstate[13,1] = "on"
-
 menulength = 14
 
 //variable_global_set("lang",1)

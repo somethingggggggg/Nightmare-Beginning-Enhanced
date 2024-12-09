@@ -43,7 +43,7 @@ switch perass
         Ex11_2.hspeed =-8
     break;
     case 3:
-        spawnedinstance = instance_create(view_xview[0]-1386+view_wview[0]/2,368,Ex11)
+        spawnedinstance = instance_create(view_xview[0]-1386+view_wview[0]/2,360,Ex11)
         spawnedinstance.hspeed = 8
         if BL.FF_E = true
         {
@@ -59,7 +59,7 @@ switch perass
         }
     break;
     case 5:
-        spawnedinstance = instance_create(view_xview[0]+1386,368,Ex11)
+        spawnedinstance = instance_create(view_xview[0]+1386,360,Ex11)
         spawnedinstance.hspeed = -8
         spawnedinstance.image_xscale = -1
         if BL.FF_E = true
@@ -77,6 +77,8 @@ switch perass
 }
 if global.hardmode = 0 perass1 = irandom_range(300,500)
 else perass1 = irandom_range(100,200)
+
+
 /*
 if perass=1
 {
