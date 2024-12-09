@@ -13,8 +13,8 @@ while i < menulength
     draw_set_halign(fa_right)
     if i != 9
     {
-        if string_width(optionstate[i,option[i]]) > 80/*64*/ draw_text_ext_transformed(234+view_xview[view_current],55+view_yview[view_current]+scroll+(i*10),optionstate[i,option[i]],0,1000,80/string_width(optionstate[i,option[i]]),1,0)
-        else draw_text(234+view_xview[view_current],55+view_yview[view_current]+scroll+(i*10),optionstate[i,option[i]])
+        if string_width(optionstate[i,variable_global_get(optionVarName[i])]) > 80/*64*/ draw_text_ext_transformed(234+view_xview[view_current],55+view_yview[view_current]+scroll+(i*10),optionstate[i,variable_global_get(optionVarName[i])],0,1000,80/string_width(optionstate[i,variable_global_get(optionVarName[i])]),1,0)
+        else draw_text(234+view_xview[view_current],55+view_yview[view_current]+scroll+(i*10),optionstate[i,variable_global_get(optionVarName[i])])
     }
     else
     {

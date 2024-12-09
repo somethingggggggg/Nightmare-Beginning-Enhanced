@@ -55,39 +55,34 @@ if keyboard_check_pressed(vk_left)
             sound_play(global.S_WellRing)
             if global.option != 3 && global.option != 8 && global.option != 9 && global.option != 1
             {
-                if option[global.option] = 1 option[global.option] = 0
-                else option[global.option] = 1
+                if variable_global_get(optionVarName[global.option]) = 1 variable_global_set(optionVarName[global.option],0)
+                else variable_global_set(optionVarName[global.option],1)
             }
             else
             {
                 if global.option = 1
                 {
-                    option[global.option] -= 1
-                    if option[global.option] > 2 option[global.option] = 0
-                    if option[global.option] < 0 option[global.option] = 2
-                    scr_lang_menu_init(option[global.option])
+                    variable_global_set(optionVarName[1],variable_global_get(optionVarName[1])-1)
+                    if variable_global_get(optionVarName[1]) > 2 variable_global_set(optionVarName[1],0)
+                    if variable_global_get(optionVarName[1]) < 0 variable_global_set(optionVarName[1],2)
+                    scr_lang_menu_init(variable_global_get(optionVarName[1]))
                 }
                 if global.option = 3
                 {
-                    if option[global.option] = WORD_Font option[global.option] = testingfont
-                    else option[global.option] = WORD_Font
+                    if variable_global_get(optionVarName[3]) = WORD_Font variable_global_set(optionVarName[3],testingfont)
+                    else variable_global_set(optionVarName[3],WORD_Font)
                 }
                 if global.option = 8
                 {
-                    option[global.option] -= 1
-                    if option[global.option] > 2 option[global.option] = 0
-                    if option[global.option] < 0 option[global.option] = 2
+                    variable_global_set(optionVarName[8],variable_global_get(optionVarName[8])-1)
+                    if variable_global_get(optionVarName[8]) > 2 variable_global_set(optionVarName[8],0)
+                    if variable_global_get(optionVarName[8]) < 0 variable_global_set(optionVarName[8],2)
                 }
                 if global.option = 9
                 {
-                    option[global.option] -= 1
-                    if option[global.option] > ds_list_size(global.voicelist)-1 option[global.option] = 0
-                    if option[global.option] < 0 option[global.option] = ds_list_size(global.voicelist)-1
-                }
-                if global.option = 12
-                {
-                    if option[global.option] = 1 option[global.option] = 0
-                    else option[global.option] = 1
+                    variable_global_set(optionVarName[9],variable_global_get(optionVarName[9])-1)
+                    if variable_global_get(optionVarName[9]) > ds_list_size(global.voicelist)-1 variable_global_set(optionVarName[9],0)
+                    if variable_global_get(optionVarName[9]) < 0 variable_global_set(optionVarName[9],ds_list_size(global.voicelist)-1)
                 }
             }
         }
@@ -114,39 +109,34 @@ if keyboard_check_pressed(vk_right)
             sound_play(global.S_WellRing)
             if global.option != 3 && global.option != 8 && global.option != 9 && global.option != 1
             {
-                if option[global.option] = 1 option[global.option] = 0
-                else option[global.option] = 1
+                if variable_global_get(optionVarName[global.option]) = 1 variable_global_set(optionVarName[global.option],0)
+                else variable_global_set(optionVarName[global.option],1)
             }
             else
             {
                 if global.option = 1
                 {
-                    option[global.option] += 1
-                    if option[global.option] > 2 option[global.option] = 0
-                    if option[global.option] < 0 option[global.option] = 2
-                    scr_lang_menu_init(option[global.option])
+                    variable_global_set(optionVarName[1],variable_global_get(optionVarName[1])+1)
+                    if variable_global_get(optionVarName[1]) > 2 variable_global_set(optionVarName[1],0)
+                    if variable_global_get(optionVarName[1]) < 0 variable_global_set(optionVarName[1],2)
+                    scr_lang_menu_init(variable_global_get(optionVarName[1]))
                 }
                 if global.option = 3
                 {
-                    if option[global.option] = WORD_Font option[global.option] = testingfont
-                    else option[global.option] = WORD_Font
+                    if variable_global_get(optionVarName[3]) = WORD_Font variable_global_set(optionVarName[3],testingfont)
+                    else variable_global_set(optionVarName[3],WORD_Font)
                 }
                 if global.option = 8
                 {
-                    option[global.option] += 1
-                    if option[global.option] > 2 option[global.option] = 0
-                    if option[global.option] < 0 option[global.option] = 2
+                    variable_global_set(optionVarName[8],variable_global_get(optionVarName[8])+1)
+                    if variable_global_get(optionVarName[8]) > 2 variable_global_set(optionVarName[8],0)
+                    if variable_global_get(optionVarName[8]) < 0 variable_global_set(optionVarName[8],2)
                 }
                 if global.option = 9
                 {
-                    option[global.option] += 1
-                    if option[global.option] > ds_list_size(global.voicelist)-1 option[global.option] = 0
-                    if option[global.option] < 0 option[global.option] = ds_list_size(global.voicelist)-1
-                }
-                if global.option = 12
-                {
-                    if option[global.option] = 1 option[global.option] = 0
-                    else option[global.option] = 1
+                    variable_global_set(optionVarName[9],variable_global_get(optionVarName[9])+1)
+                    if variable_global_get(optionVarName[9]) > ds_list_size(global.voicelist)-1 variable_global_set(optionVarName[9],0)
+                    if variable_global_get(optionVarName[9]) < 0 variable_global_set(optionVarName[9],ds_list_size(global.voicelist)-1)
                 }
             }
         }
@@ -162,37 +152,6 @@ if keyboard_check_pressed(vk_right)
         sound_play(global.S_Locked)
     }
 }
-    global.lang = option[1]
-    global.cheats = option[2]
-    global.dialoguefont = option[3]
-    global.progressbar = option[4]
-    global.showfps = option[5]
-    global.newcontent = option[6]
-    global.subcnoise = option[7]
-    global.fourbythree = option[8]
-    global.voicedir = option[9]
-    global.DCRP_enabled = option[10]
-    global.BL_filter = option[11]
-    global.performance = option[12]
-    global.OrigCutscene = option[13]
-    if global.lang < 0 global.lang = 2
-    if global.lang > 2 global.lang = 0
-    if global.cheats < 0 global.cheats = 1
-    if global.cheats > 1 global.cheats = 0
-    if global.complete = 0 global.cheats = 0
-    option[1] = global.lang
-    option[2] = global.cheats
-    option[3] = global.dialoguefont
-    option[4] = global.progressbar
-    option[5] = global.showfps
-    option[6] = global.newcontent
-    option[7] = global.subcnoise
-    option[8] = global.fourbythree
-    option[9] = global.voicedir
-    option[10] = global.DCRP_enabled
-    option[11] = global.BL_filter
-    option[12] = global.performance
-    option[13] = global.OrigCutscene
     texture_set_interpolation(global.BL_filter)
 
 if global.option > 3 scroll = -lerp((global.option-3) * 10,abs(scroll),0.5)

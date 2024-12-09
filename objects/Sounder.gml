@@ -54,6 +54,20 @@ option[11] = global.BL_filter
 option[12] = global.performance
 option[13] = global.OrigCutscene
 
+optionVarName[1] = "lang"
+optionVarName[2] = "cheats"
+optionVarName[3] = "dialoguefont"
+optionVarName[4] = "progressbar"
+optionVarName[5] = "showfps"
+optionVarName[6] = "newcontent"
+optionVarName[7] = "subcnoise"
+optionVarName[8] = "fourbythree"
+optionVarName[9] = "voicedir"
+optionVarName[10] = "DCRP_enabled"
+optionVarName[11] = "BL_filter"
+optionVarName[12] = "performance"
+optionVarName[13] = "OrigCutscene"
+
 optionblocked[1] = 0
 optionblocked[2] = 1
 optionblocked[3] = 0
@@ -350,26 +364,12 @@ if room != 0
         if keyboard_check_pressed(vk_escape) && !instance_exists(SW_Control)
         {
             i = 0
-            repeat(menulength)
+            repeat(menulength-1)
             {
-                prevset[i] = option[i]
                 i += 1
+                prevset[i] = variable_global_get(optionVarName[i])
             }
             i = 0
-            /*
-            prevset[1] = global.lang
-            prevset[2] = global.cheats
-            prevset[3] = global.dialoguefont
-            prevset[4] = global.progressbar
-            prevset[5] = global.showfps
-            prevset[6] = global.newcontent
-            prevset[7] = global.subcnoise
-            prevset[8] = global.fourbythree
-            prevset[9] = global.voicedir
-            prevset[10] = global.DCRP_enabled
-            prevset[11] = global.RG_final_boss
-            prevset[12] = global.BL_filter
-            */
             room_speed = 60
             sprpausefuck = sprite_create_from_screen(0,0,view_wport[view_current],view_wport[view_current],0,0,0,0)
             instance_deactivate_all(1)

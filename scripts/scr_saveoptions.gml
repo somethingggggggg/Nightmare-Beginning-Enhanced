@@ -1,5 +1,12 @@
 ini_open("options.ini")
-ini_write_real('options','subcnoise',global.subcnoise)
+i = 0
+repeat(menulength-1)
+{
+    i += 1
+    ini_write_real('options',optionVarName[i],variable_global_get(optionVarName[i]))
+}
+ini_close()
+/*ini_write_real('options','subcnoise',global.subcnoise)
 ini_write_real('options','showfps',global.showfps)
 ini_write_real('options','language',global.lang)
 ini_write_real('options','font',global.dialoguefont)
@@ -13,4 +20,3 @@ ini_write_real('options','RG_final_boss',global.RG_final_boss)
 ini_write_real('options','BL_filter',global.BL_filter)
 ini_write_real('options','performance',global.performance)
 ini_write_real('options','OrigCutscene',global.performance)
-ini_close()

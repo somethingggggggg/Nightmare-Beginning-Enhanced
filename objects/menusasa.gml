@@ -47,11 +47,12 @@ global.subcnoise = ini_read_real('options','subcnoise',1)
 global.newcontent = 0
 global.showfps = ini_read_real('options','showfps',0)
 global.lang = ini_read_real('options','language',0)
-global.dialoguefont = ini_read_real('options','font',WORD_Font)
+global.dialoguefont = ini_read_real('options','dialoguefont',WORD_Font)
 global.progressbar = ini_read_real('options','progressbar',0)
 global.cheats = ini_read_real('options','cheats',0)
 global.voicedir = ini_read_real('options','voicedir',0)
 global.DCRP_enabled = ini_read_real('options','DCRP_enabled',1)
+WeWillNeedThisLater = ini_read_real('options','DCRP_enabled',1)
 global.RG_final_boss = ini_read_real('options','RG_final_boss',1)
 global.BL_filter = ini_read_real('options','BL_filter',0)
 global.performance = ini_read_real('options','performance',0)
@@ -72,6 +73,7 @@ i = 0
 global.valueweneed = 0
 //global.S_Final_Boss_RG
 
+/*
 option[1] = global.lang
 option[2] = global.cheats
 option[3] = global.dialoguefont
@@ -85,6 +87,7 @@ option[10] = global.DCRP_enabled
 option[11] = global.BL_filter
 option[12] = global.performance
 option[13] = global.OrigCutscene
+*/
 
 optionVarName[1] = "lang"
 optionVarName[2] = "cheats"
