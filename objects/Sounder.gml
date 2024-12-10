@@ -11,6 +11,7 @@ prev_wport = 0
 prev_wport = 0
 prev_win_w_size = 1280
 prev_win_h_size = 720
+HorizScroll = 0
 i = 0
 repeat(8)
 {
@@ -59,91 +60,44 @@ global.roomNamesDCRP[66] =
 */
 
 Notavalmessage = "Not toggleable mid game"
-option[1] = global.lang
-option[2] = global.cheats
-option[3] = global.dialoguefont
-option[4] = global.progressbar
-option[5] = global.showfps
-option[6] = global.newcontent
-option[7] = global.subcnoise
-option[8] = global.fourbythree
-option[9] = global.voicedir
-option[10] = global.DCRP_enabled
-option[11] = global.BL_filter
-option[12] = global.performance
-option[13] = global.OrigCutscene
 
-optionVarName[1] = "lang"
-optionVarName[2] = "cheats"
-optionVarName[3] = "dialoguefont"
-optionVarName[4] = "progressbar"
-optionVarName[5] = "showfps"
-optionVarName[6] = "newcontent"
-optionVarName[7] = "subcnoise"
-optionVarName[8] = "fourbythree"
-optionVarName[9] = "voicedir"
-optionVarName[10] = "DCRP_enabled"
-optionVarName[11] = "BL_filter"
-optionVarName[12] = "performance"
-optionVarName[13] = "OrigCutscene"
+optionVarName[0,0] = "lang"
+optionVarName[1,0] = "voicedir"
+optionVarName[2,0] = "showfps"
+optionVarName[3,0] = "performance"
+optionVarName[4,0] = "OrigCutscene"
+optionVarName[5,0] = "DCRP_enabled"
 
-optionblocked[1] = 0
-optionblocked[2] = 1
-optionblocked[3] = 0
-optionblocked[4] = 0
-optionblocked[5] = 0
-optionblocked[6] = 1
-optionblocked[7] = 0
-optionblocked[8] = 0
-optionblocked[9] = 0
-optionblocked[10] = 0
-optionblocked[11] = 0
-optionblocked[12] = 0
-optionblocked[13] = 0
+optionVarName[0,1] = "cheats"
+optionVarName[1,1] = "newcontent"
+
+optionVarName[0,2] = "fourbythree"
+optionVarName[1,2] = "dialoguefont"
+optionVarName[2,2] = "progressbar"
+optionVarName[3,2] = "subcnoise"
+optionVarName[4,2] = "BL_filter"
+
+optionblocked[0,0] = 0
+optionblocked[1,0] = 0
+optionblocked[2,0] = 0
+optionblocked[3,0] = 0
+optionblocked[4,0] = 0
+optionblocked[5,0] = 0
+
+optionblocked[0,1] = 1
+optionblocked[1,1] = 1
+
+optionblocked[0,2] = 0
+optionblocked[1,2] = 0
+optionblocked[2,2] = 0
+optionblocked[3,2] = 0
+optionblocked[4,2] = 0
 
 scr_lang_menu_init(global.lang)
 
-optionstate[0,0] = ""
-
-optionstate[1,0] = "English"
-optionstate[1,1] = "Russian"
-optionstate[1,2] = "Italian"
-
-optionstate[2,0] = "off"
-optionstate[2,1] = "on"
-
-optionstate[3,WORD_Font] = "Old"
-optionstate[3,testingfont] = "New"
-
-optionstate[4,0] = "off"
-optionstate[4,1] = "on"
-
-optionstate[5,0] = "off"
-optionstate[5,1] = "on"
-
-optionstate[6,0] = "off"
-optionstate[6,1] = "on"
-
-optionstate[7,0] = "Original"
-optionstate[7,1] = "Camera Follow"
-
-optionstate[8,0] = "off"
-optionstate[8,1] = "Stretch"
-optionstate[8,2] = "Black Bars"
-
-optionstate[10,0] = "off"
-optionstate[10,1] = "on"
-
-optionstate[11,0] = "off"
-optionstate[11,1] = "on"
-
-optionstate[12,0] = "off"
-optionstate[12,1] = "on"
-
-optionstate[13,0] = "off"
-optionstate[13,1] = "on"
-
-menulength = 14
+menulength[0] = 6
+menulength[1] = 2
+menulength[2] = 5
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -383,10 +337,16 @@ if room != 0
         if keyboard_check_pressed(vk_escape) && !instance_exists(SW_Control)
         {
             i = 0
-            repeat(menulength-1)
+            o = 0
+            repeat(menulength[0]+menulength[1]+menulength[2]-1)
             {
                 i += 1
-                prevset[i] = variable_global_get(optionVarName[i])
+                if i >= menulength[o]
+                {
+                    i = 0
+                    o += 1
+                }
+                prevset[i,o] = variable_global_get(optionVarName[i,o])
             }
             i = 0
             room_speed = 60

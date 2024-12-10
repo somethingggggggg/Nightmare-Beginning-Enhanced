@@ -9,6 +9,7 @@ background_alpha[2] = 0
 fuckyalpha = 0
 scrollcounter = 0
 scroll = 0
+HorizScroll = 0
 autoscroll = 0
 Notavalmessage = "Unavailable"
 global.lang = 0
@@ -33,6 +34,7 @@ while (voice_dir != "")
     voice_dir = file_find_next()
 }
 global.option = 0
+global.suboption = 0
 global.pause = 0
 global.cheats = 0
 //reading inis
@@ -46,7 +48,7 @@ global.subcnoise = ini_read_real('options','subcnoise',1)
 //global.newcontent = ini_read_real('options','newcontent',1)
 global.newcontent = 0
 global.showfps = ini_read_real('options','showfps',0)
-global.lang = ini_read_real('options','language',0)
+global.lang = 0//ini_read_real('options','lang',0)
 global.dialoguefont = ini_read_real('options','dialoguefont',WORD_Font)
 global.progressbar = ini_read_real('options','progressbar',0)
 global.cheats = ini_read_real('options','cheats',0)
@@ -89,38 +91,44 @@ option[12] = global.performance
 option[13] = global.OrigCutscene
 */
 
-optionVarName[1] = "lang"
-optionVarName[2] = "cheats"
-optionVarName[3] = "dialoguefont"
-optionVarName[4] = "progressbar"
-optionVarName[5] = "showfps"
-optionVarName[6] = "newcontent"
-optionVarName[7] = "subcnoise"
-optionVarName[8] = "fourbythree"
-optionVarName[9] = "voicedir"
-optionVarName[10] = "DCRP_enabled"
-optionVarName[11] = "BL_filter"
-optionVarName[12] = "performance"
-optionVarName[13] = "OrigCutscene"
+optionVarName[0,0] = "lang"
+optionVarName[1,0] = "voicedir"
+optionVarName[2,0] = "showfps"
+optionVarName[3,0] = "performance"
+optionVarName[4,0] = "OrigCutscene"
+optionVarName[5,0] = "DCRP_enabled"
 
-optionblocked[1] = 0
-if global.complete = 1 optionblocked[2] = 0
-else optionblocked[2] = 1
-optionblocked[3] = 0
-optionblocked[4] = 0
-optionblocked[5] = 0
-optionblocked[6] = 1
-optionblocked[7] = 0
-optionblocked[8] = 0
-optionblocked[9] = 0
-optionblocked[10] = 0
-optionblocked[11] = 0
-optionblocked[12] = 0
-optionblocked[13] = 0
+optionVarName[0,1] = "cheats"
+optionVarName[1,1] = "newcontent"
+
+optionVarName[0,2] = "fourbythree"
+optionVarName[1,2] = "dialoguefont"
+optionVarName[2,2] = "progressbar"
+optionVarName[3,2] = "subcnoise"
+optionVarName[4,2] = "BL_filter"
+
+optionblocked[0,0] = 0
+optionblocked[1,0] = 0
+optionblocked[2,0] = 0
+optionblocked[3,0] = 0
+optionblocked[4,0] = 0
+optionblocked[5,0] = 0
+
+if global.complete = 1 optionblocked[0,1] = 0
+else optionblocked[0,1] = 1
+optionblocked[1,1] = 1
+
+optionblocked[0,2] = 0
+optionblocked[1,2] = 0
+optionblocked[2,2] = 0
+optionblocked[3,2] = 0
+optionblocked[4,2] = 0
 
 scr_lang_menu_init(global.lang)
 
-menulength = 14
+menulength[0] = 6
+menulength[1] = 2
+menulength[2] = 5
 
 //variable_global_set("lang",1)
 //if global.lang = 1 show_message('yes')

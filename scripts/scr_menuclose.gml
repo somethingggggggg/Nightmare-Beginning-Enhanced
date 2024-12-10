@@ -25,13 +25,13 @@ global.option = 0
 //view_yview = prev_view_yview
 scr_saveoptions()
 scr_soundunfuck()
-if global.fourbythree != prevset[8]
+if global.fourbythree != prevset[0,2]
 {
     scr_fourbythreer()
     scr_scaling_wtf()
 }
-if global.performance != prevset[12] scr_scaling_wtf();
-if global.DCRP_enabled != prevset[10]
+if global.performance != prevset[3,0] scr_scaling_wtf();
+if global.DCRP_enabled != prevset[5,0]
 {
     if global.DCRP_enabled = 0
     {
@@ -45,7 +45,7 @@ if global.DCRP_enabled != prevset[10]
         update_discord_lol()
     }
 }
-if global.voicedir != prevset[9]
+if global.voicedir != prevset[1,0]
 {
     scr_voiceunload()
     if global.voicedir != 0 scr_voiceinit()
