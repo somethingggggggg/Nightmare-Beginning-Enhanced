@@ -97,7 +97,7 @@ if ButtonPressedLeftOrRight != 0 && global.option != 0
         }
         else
         {
-            if optionVarName[global.option,global.suboption] = "cheats"
+            if optionVarName[global.option-2,global.suboption] = "cheats"
             {
                 text = "COMPLETE THE GAME#ON THE BEST#ENDING FIRST"
                 instance_create(0,0,obj_textpopup)

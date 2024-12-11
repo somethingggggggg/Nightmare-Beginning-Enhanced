@@ -58,6 +58,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+ButtonPressedLeftOrRight = keyboard_check(vk_right) - keyboard_check(vk_left)
 if global.hardmode = 1
 {
     view_angle[0] += 0.1
@@ -72,16 +73,11 @@ if (!keyboard_check(vk_left) && !keyboard_check(vk_right)) or (keyboard_check(vk
     sprite_index = sprEGGBotStand
     mask_index = sprEggmanBlackMask;
 }
-if keyboard_check(vk_left) && (canMove == true or (rolling == true && hspeed > 0))
+if ButtonPressedLeftOrRight != 0 && (canMove == true or (rolling == true && hspeed > 0))
 {
-    x += -maxSpeed
-    image_xscale = -1;
-    while place_meeting(x,y,Egg_Ground)
-    {
-        sprite_index = sprEGGBotStand;
-        mask_index = sprEggmanBlackMask;
-        x += 1
-    }
+    if global.Eggmovement = 1 whatvel += (acc * (1+ground))*ButtonPressedLeftOrRight
+    else whatvel = maxSpeed*ButtonPressedLeftOrRight
+    //x += -maxSpeed
 }
 /*
 if keyboard_check_released(vk_left) or (place_meeting(x+(abs(hspeed)*-1)-1, y, Egg_Ground) or place_meeting(x+(abs(hspeed)*-1)-1, y, Solid))
@@ -89,9 +85,11 @@ if keyboard_check_released(vk_left) or (place_meeting(x+(abs(hspeed)*-1)-1, y, E
     hspeed = 0
 }
 */
+/*
 if keyboard_check(vk_right) && (canMove == true or (rolling == true && hspeed < 0))
 {
-    x += maxSpeed
+    whatvel += acc * (1+ground);
+    //x += maxSpeed
     image_xscale = 1;
     while place_meeting(x,y,Egg_Ground)
     {
@@ -100,10 +98,62 @@ if keyboard_check(vk_right) && (canMove == true or (rolling == true && hspeed < 
         x -= 1
     }
 }
+*/
+//Deacceleration
+//Its "Decelleration" Jaiz
+if global.Eggmovement = 1
+{
+    if ground == true
+    {
+        if whatvel > 0
+           whatvel -= acc/(rolling+1);
+        else if whatvel < 0
+           whatvel += acc/(rolling+1);
+    }
+    //Speed limit
+    whatvel = clamp(whatvel,-maxSpeed,maxSpeed)
+
+    if whatvel > -acc && whatvel < acc
+    {
+        whatvel = 0;
+    }
+}
+else
+{
+    if ButtonPressedLeftOrRight = 0
+    {
+        whatvel = 0;
+    }
+}
+x += whatvel
+mask_index = sprEggmanBlackMask;
+if place_meeting(x,y,Egg_Ground)
+{
+    if whatvel != 0
+    {
+        while place_meeting(x,y,Egg_Ground)
+        {
+            x -= acc * sign(whatvel)
+        }
+        whatvel = 0
+    }
+    //sprite_index = sprEGGBotStand;
+    //mask_index = sprEggmanBlackMask;
+}
+//fun
+//if whatvel != 0 image_xscale = 1*whatvel;
+if ButtonPressedLeftOrRight != 0 image_xscale = 1*ButtonPressedLeftOrRight;
+if place_meeting(x,y,Egg_Ground)
+{
+    while place_meeting(x,y,Egg_Ground)
+    {
+        x += /*acc * */image_xscale
+    }
+}
 
 if keyboard_check_released(vk_right) or place_meeting(x+abs(hspeed)+1, y, Egg_Ground) or place_meeting(x+abs(hspeed)+1, y, Solid)
 {
-  hspeed = 0
+    hspeed = 0
 }
 }
 
@@ -124,6 +174,37 @@ else
 }
 
 image_speed = 0.2
+
+if canSpriteChange == true
+{
+    if ground == true && ducking == false && rolling == false && spindash == false
+    {
+        if whatvel = 0
+        {
+            sprite_index = sprEGGBotStand;
+            mask_index = sprEggmanBlackMask;
+            image_speed = 0.15;
+        }
+        else if whatvel > -3 && whatvel < 3
+        {
+            sprite_index = sprEGGBotStroll;
+            mask_index = sprEggmanBlackMask;
+            image_speed = abs(whatvel/20);
+        }
+        else
+        {
+            sprite_index = sprEGGBotWalk;
+            mask_index = sprEggmanBlackMask;
+            image_speed = abs(whatvel/20);
+        }
+    }
+    else if sprite_index == sprEggmanJump
+    {
+        sprite_index = sprEggmanJump;
+        mask_index = sprEggmanBlackMask;
+        image_speed = (whatvel/2)
+    }
+}
 
 //Jumping
 if Bot = 0

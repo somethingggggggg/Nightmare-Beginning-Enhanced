@@ -59,6 +59,7 @@ global.RG_final_boss = ini_read_real('options','RG_final_boss',1)
 global.BL_filter = ini_read_real('options','BL_filter',0)
 global.performance = ini_read_real('options','performance',0)
 global.OrigCutscene = ini_read_real('options','origCutscene',0)
+global.Eggmovement = ini_read_real('options','Eggmovement',0)
 ini_close()
 texture_set_interpolation(global.BL_filter)
 if global.DCRP_enabled = 1
@@ -100,6 +101,7 @@ optionVarName[5,0] = "DCRP_enabled"
 
 optionVarName[0,1] = "cheats"
 optionVarName[1,1] = "newcontent"
+optionVarName[2,1] = "Eggmovement"
 
 optionVarName[0,2] = "fourbythree"
 optionVarName[1,2] = "dialoguefont"
@@ -117,6 +119,7 @@ optionblocked[5,0] = 0
 if global.complete = 1 optionblocked[0,1] = 0
 else optionblocked[0,1] = 1
 optionblocked[1,1] = 1
+optionblocked[2,1] = 0
 
 optionblocked[0,2] = 0
 optionblocked[1,2] = 0
@@ -127,7 +130,7 @@ optionblocked[4,2] = 0
 scr_lang_menu_init(global.lang)
 
 menulength[0] = 6
-menulength[1] = 2
+menulength[1] = 3
 menulength[2] = 5
 
 //variable_global_set("lang",1)

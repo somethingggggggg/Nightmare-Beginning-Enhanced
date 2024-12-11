@@ -16,6 +16,7 @@ switch argument0
 
         optionname[0,1] = "Cheats"
         optionname[1,1] = "New content"
+        optionname[2,1] = "Eggman movement"
 
         optionname[0,2] = "4:3 mode"
         optionname[1,2] = "Font"
@@ -26,18 +27,19 @@ switch argument0
         optiondesc[0,0] = "Pick your language"
         optiondesc[1,0] = "Choose the voiceover you want (you can add your own by naming a folder voice_ )"
         optiondesc[2,0] = "Show FPS"
-
-        optiondesc[5,0] = "Shows to other people that you are playing NBE"
-
-        optiondesc[2] = "Enable debug mode and some cheats accecible with the numpad (enable numlock on your keyboard)"
-        optiondesc[3] = "Pick between original NB font (korinna) and new NU font (pallete)"
-        optiondesc[4] = "Toggle the progressbar in Fatal Fog"
-        optiondesc[6] = "Toggle new content on or off"
-        optiondesc[7] = "Change how overlayed noise works in subconcious mind"
-        optiondesc[8] = "Change the screen resolution back to 4:3#VERY EXPERIMENTAL"
-        optiondesc[11] = "blurs your fucking game so it looks like shit"
         optiondesc[3,0] = "Dogshit solution"
         optiondesc[4,0] = "Original FF Cutscene"
+        optiondesc[5,0] = "Shows to other people that you are playing NBE"
+
+        optiondesc[0,1] = "Enable debug mode and some cheats accecible with the numpad (enable numlock on your keyboard)"
+        optiondesc[1,1] = "Toggle new content on or off"
+        optiondesc[2,1] = "Change how Eggman controls in ..."
+
+        optiondesc[1,2] = "Pick between original NB font (korinna) and new NU font (pallete)"
+        optiondesc[2,2] = "Toggle the progressbar in Fatal Fog"
+        optiondesc[3,2] = "Change how overlayed noise works in subconcious mind"
+        optiondesc[0,2] = "Change the screen resolution back to 4:3#VERY EXPERIMENTAL"
+        optiondesc[4,2] = "blurs your fucking game so it looks like shit"
 
         optionstate1[0,0] = "English"
         optionstate1[0,1] = "Russian"
@@ -63,6 +65,9 @@ switch argument0
 
         optionstate2[1,0] = "off"
         optionstate2[1,1] = "on"
+
+        optionstate2[2,0] = "Final"
+        optionstate2[2,1] = "Beta"
 
         optionstate3[0,0] = "off"
         optionstate3[0,1] = "Stretch"

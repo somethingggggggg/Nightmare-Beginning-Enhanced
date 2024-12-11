@@ -84,7 +84,8 @@ if global.vel < 0 && ground == false
 
 if rolling == false
   image_xscale = 1;
-}}
+}
+}
 
 //Deacceleration
 if ground == true

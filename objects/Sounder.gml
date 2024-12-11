@@ -70,6 +70,7 @@ optionVarName[5,0] = "DCRP_enabled"
 
 optionVarName[0,1] = "cheats"
 optionVarName[1,1] = "newcontent"
+optionVarName[2,1] = "Eggmovement"
 
 optionVarName[0,2] = "fourbythree"
 optionVarName[1,2] = "dialoguefont"
@@ -96,7 +97,7 @@ optionblocked[4,2] = 0
 scr_lang_menu_init(global.lang)
 
 menulength[0] = 6
-menulength[1] = 2
+menulength[1] = 3
 menulength[2] = 5
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
