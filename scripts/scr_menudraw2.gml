@@ -93,6 +93,14 @@ switch global.suboption
                 }
                 draw_set_font(global.dialoguefont)
             break;
+            case 4:
+            if global.Eggmovement = 1 draw_sprite_ext(sprEGGBotWalk,anim/4,346+view_xview[view_current]+sin(anim/16)*64,95+view_yview[view_current],scr_is_plus(cos(anim/16)*64),1,0,c_white,1)
+            else
+            {
+                if anim > 192/2 draw_sprite(sprEGGBotWalk,anim/4,346+view_xview[view_current]-anim+192-32,95+view_yview[view_current])
+                else draw_sprite(sprEGGBotWalk,anim/4,346+view_xview[view_current]+anim-32,95+view_yview[view_current])
+            }
+            break;
         }
     break;
     case 2:
