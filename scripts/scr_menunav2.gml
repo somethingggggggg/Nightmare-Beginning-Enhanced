@@ -1,12 +1,13 @@
 //the options menu
 HorizScroll = lerp(HorizScroll,0,0.5)
 ButtonPressedLeftOrRight = keyboard_check_pressed(vk_right) - keyboard_check_pressed(vk_left)
-anim += 1
+//anim += 1
+time += 1
 mycolor = $ffffff
-if anim > 192
-{
-    anim = 0
-}
+//if anim > 192
+//{
+//    anim = 0
+//}
 if keyboard_check(vk_up) && !keyboard_check(vk_down)
 {
     if keyboard_check_pressed(vk_up)
@@ -38,6 +39,7 @@ if abs(autoscroll) > 30
 }
 if global.option < 0 global.option = menulength[global.suboption]+1
 if global.option > menulength[global.suboption]+1 global.option = 0
+
 if keyboard_check_pressed(vk_enter)
 {
     if global.option = 0
@@ -47,17 +49,35 @@ if keyboard_check_pressed(vk_enter)
         global.option = 0
         global.menustate = 0
     }
+    if global.suboption = 3
+    {
+        if global.option = 2
+        {
+            if file_exists(working_directory+"/options.ini") file_delete(working_directory+"/options.ini")
+            scr_load_inis()
+            sound_play(global.S_Ring)
+        }
+        if global.option = 3
+        {
+            if file_exists(working_directory+"/save.ini") file_delete(working_directory+"/save.ini")
+            global.complete = 0
+            comppercent = 0
+            optionblocked[0,1] = 1
+            sound_play(global.S_Ring)
+        }
+    }
 }
+
 if ButtonPressedLeftOrRight != 0 && global.option != 0
 {
     if global.option = 1
     {
         global.suboption += ButtonPressedLeftOrRight
         HorizScroll = ButtonPressedLeftOrRight * 16
-        if global.suboption < 0 global.suboption = 2
-        if global.suboption > 2 global.suboption = 0
+        if global.suboption < 0 global.suboption = 3
+        if global.suboption > 3 global.suboption = 0
     }
-    else
+    else if global.suboption != 3
     {
         if optionblocked[global.option-2,global.suboption] != 1
         {

@@ -5,6 +5,7 @@ action_id=603
 applies_to=self
 */
 image_speed = 0.2
+image_xscale = -1
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

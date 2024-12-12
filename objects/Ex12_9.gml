@@ -5,6 +5,7 @@ action_id=603
 applies_to=self
 */
 image_speed = 0.2
+time = 0
 Target_Tails = false
 Target_Knuckles = false
 Target_Eggman = false
@@ -103,7 +104,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-sprite_index = sprKnucklesJumpBlack
+sprite_index = sprFinalExe_Jump
 vspeed = 5
 #define Step_0
 /*"/*'/**//* YYD ACTION
@@ -186,6 +187,7 @@ if Target_Eggman = true
         Target_Tails = true
     }
 }
+time += 1
 #define Collision_Knuckles
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -369,5 +371,6 @@ applies_to=self
 */
 shader_pixel_set(psGrayscale())
 shader_pixel_uniform_f("fade",0.5)
-draw_self()
+if time < 342 draw_sprite(sprite_index,image_index,x,y+sin(time/16))
+else draw_self()
 shader_reset()

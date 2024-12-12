@@ -6,6 +6,7 @@ switch argument0
         categoryname[0] = "GENERAL"
         categoryname[1] = "GAMEPLAY"
         categoryname[2] = "VISUAL"
+        categoryname[3] = "SAVE"
 
         optionname[0,0] = "Language"
         optionname[1,0] = "Voiceover"
@@ -24,6 +25,9 @@ switch argument0
         optionname[3,2] = "White Noise"
         optionname[4,2] = "Billineal filtering"
 
+        optionname[0,3] = "Reset options"
+        optionname[1,3] = "Erase save"
+
         optiondesc[0,0] = "Pick your language"
         optiondesc[1,0] = "Choose the voiceover you want (you can add your own by naming a folder voice_ )"
         optiondesc[2,0] = "Show FPS"
@@ -40,6 +44,9 @@ switch argument0
         optiondesc[3,2] = "Change how overlayed noise works in subconcious mind"
         optiondesc[0,2] = "Change the screen resolution back to 4:3#VERY EXPERIMENTAL"
         optiondesc[4,2] = "blurs your fucking game so it looks like shit"
+
+        optiondesc[0,3] = "RESET"
+        optiondesc[1,3] = "RESET"
 
         optionstate1[0,0] = "English"
         optionstate1[0,1] = "Russian"
@@ -84,6 +91,9 @@ switch argument0
 
         optionstate3[4,0] = "off"
         optionstate3[4,1] = "on"
+
+        optionstate4[0,0] = ""
+        optionstate4[1,0] = ""
 
     break;
     case 1:

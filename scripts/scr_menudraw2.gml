@@ -16,7 +16,7 @@ while i < menulength[global.suboption]
     if global.option-2 = i draw_set_color(c_yellow)
     else draw_set_color(c_white)
 
-    if global.complete = 0 && i = 2 or optionblocked[i,global.suboption] = 1 draw_set_color(c_gray)
+    if /*global.complete = 0 && i = 2 or*/ optionblocked[i,global.suboption] = 1 draw_set_color(c_gray)
     if string_width(optionname[i,global.suboption]) > 148/*112*/ draw_text_ext_transformed(32+view_xview[view_current]+HorizScroll,55+view_yview[view_current]+scroll+(i*10+28),optionname[i,global.suboption],0,1000,148/string_width(optionname[i,global.suboption]),1,0)
     else draw_text(32+view_xview[view_current]+HorizScroll,55+view_yview[view_current]+scroll+(i*10+28),optionname[i,global.suboption])
     draw_set_halign(fa_right)
@@ -51,126 +51,106 @@ if global.option > 1
 }
 draw_set_halign(fa_left)
 draw_set_font(global.SPRSONFONT)
-switch global.suboption
+if global.option > 1
 {
-    case 0:
-        switch global.option
+    switch optionVarName[global.option-2,global.suboption]
+    {
+        case "cheats":
+        draw_sprite(spr_numpad,global.cheats,346+view_xview[view_current],95+view_yview[view_current])
+        break;
+        case "lang":
+        draw_sprite(sprite722,global.lang,346+view_xview[view_current],95+view_yview[view_current])
+        break;
+        case "voicedir":
+        draw_sprite(spr_sound,time/64,346+view_xview[view_current],95+view_yview[view_current])
+        break;
+        case "showfps":
+        if global.showfps = 1
         {
+            draw_set_font(global.SMALLSONFONT)
+            draw_text(346+view_xview[view_current]-string_width(fps)/2,95+view_yview[view_current]-8,fps)
+        }
+        draw_set_font(global.dialoguefont)
+        break;
+        case "newcontent":
+        draw_sprite_ext(sprTR,image_index,296+view_xview[view_current],105+view_yview[view_current],1,1,0,$ffffff,1)    //sprHvostStand
+        draw_sprite_ext(sprHvostStand,image_index,331+view_xview[view_current],107+view_yview[view_current],-1,1,0,$ffffff,1)
+        draw_sprite_ext(sprTails,image_index,326+view_xview[view_current],105+view_yview[view_current],-1,1,0,$ffffff,1)
+        if global.newcontent = 1 draw_sprite_ext(sprTailsDoll,image_index,396+view_xview[view_current],95+view_yview[view_current],-1,1,0,$ffffff,1)
+        draw_set_font(global.dialoguefont)
+        break;
+        case "Eggmovement":
+        if global.Eggmovement = 1 draw_sprite_ext(sprEGGBotWalk,time/4,346+view_xview[view_current]+sin(time/16)*64,95+view_yview[view_current],scr_is_plus(cos(time/16)*64),1,0,c_white,1)
+        else
+        {
+            //if scr_is_even(floor(time/192)) = 1 draw_sprite(sprEGGBotWalk,time/4,346+view_xview[view_current]-(round(time/192)-(time/192))*192+192-32,95+view_yview[view_current])
+            //else draw_sprite(sprEGGBotWalk,time/4,346+view_xview[view_current]+(round(time/192)-(time/192))*192-32,95+view_yview[view_current])
+            draw_sprite_ext(sprEGGBotWalk,time/4,346+view_xview[view_current]-32+abs((time mod 100) - 50),95+view_yview[view_current],scr_is_plus((time mod 100) - 50),1,0,c_white,1)
+        }
+        break;
+        case "fourbythree":
+        draw_rectangle_color(346+view_xview[view_current]-96+4,95+view_yview[view_current]-64+4,346+view_xview[view_current]+96-4,95+view_yview[view_current]+64-4,c_white,c_white,c_white,c_white,0)
+        switch global.fourbythree
+        {
+            case 0:
+                draw_sprite_ext(sprSEGA_LOGO,24,346+view_xview[view_current],95+view_yview[view_current],0.5,0.5,0,c_white,1)
+            break;
+            case 1:
+                draw_sprite_ext(sprSEGA_LOGO,24,346+view_xview[view_current],95+view_yview[view_current],1.3333333333*0.5,1*0.5,0,c_white,1)
+            break;
             case 2:
-                draw_sprite(sprite722,global.lang,346+view_xview[view_current],95+view_yview[view_current])
-            break;
-            case 3:
-                draw_sprite(spr_sound,anim/64,346+view_xview[view_current],95+view_yview[view_current])
-            break;
-            case 4:
-                if global.showfps = 1
-                {
-                    draw_text(346+view_xview[view_current]-string_width(fps)/2,95+view_yview[view_current]-8,fps)
-                }
-                draw_set_font(global.dialoguefont)
+                draw_rectangle_color(346+view_xview[view_current]-96+4,95+view_yview[view_current]-60,346+view_xview[view_current]-70,95+view_yview[view_current]+64-4,c_black,c_black,c_black,c_black,0)
+                draw_rectangle_color(346+view_xview[view_current]+96-4,95+view_yview[view_current]-60,346+view_xview[view_current]+70,95+view_yview[view_current]+64-4,c_black,c_black,c_black,c_black,0)
+                //draw_rectangle_color(346+view_xview[view_current]+256,95+view_yview[view_current]-64+4,346+view_xview[view_current]+512,95+view_yview[view_current]+64-4,c_black,c_black,c_black,c_black,0)
+                draw_sprite_ext(sprSEGA_LOGO,24,346+view_xview[view_current],95+view_yview[view_current],0.5,0.5,0,c_white,1)
             break;
         }
-    break;
-    case 1:
-        switch global.option
+        break;
+        case "dialoguefont":
+        if global.dialoguefont = WORD_Font
         {
-            case 2:
-                draw_sprite(spr_numpad,global.cheats,346+view_xview[view_current],95+view_yview[view_current])
-            break;
-            case 3:
-                if global.newcontent = 1
-                {
-                    draw_sprite_ext(sprTailsDoll,image_index,396+view_xview[view_current],95+view_yview[view_current],-1,1,0,$ffffff,1)
-                    draw_sprite_ext(sprTR,image_index,296+view_xview[view_current],105+view_yview[view_current],1,1,0,$ffffff,1)    //sprHvostStand
-                    draw_sprite_ext(sprHvostStand,image_index,331+view_xview[view_current],107+view_yview[view_current],-1,1,0,$ffffff,1)
-                    draw_sprite_ext(sprTails,image_index,326+view_xview[view_current],105+view_yview[view_current],-1,1,0,$ffffff,1)
-                }
-                else
-                {
-                    draw_sprite_ext(sprTR,image_index,296+view_xview[view_current],105+view_yview[view_current],1,1,0,$ffffff,1)    //sprHvostStand
-                    draw_sprite_ext(sprHvostStand,image_index,331+view_xview[view_current],107+view_yview[view_current],-1,1,0,$ffffff,1)
-                    draw_sprite_ext(sprTails,image_index,326+view_xview[view_current],105+view_yview[view_current],-1,1,0,$ffffff,1)
-                }
-                draw_set_font(global.dialoguefont)
-            break;
-            case 4:
-            if global.Eggmovement = 1 draw_sprite_ext(sprEGGBotWalk,anim/4,346+view_xview[view_current]+sin(anim/16)*64,95+view_yview[view_current],scr_is_plus(cos(anim/16)*64),1,0,c_white,1)
-            else
-            {
-                if anim > 192/2 draw_sprite(sprEGGBotWalk,anim/4,346+view_xview[view_current]-anim+192-32,95+view_yview[view_current])
-                else draw_sprite(sprEGGBotWalk,anim/4,346+view_xview[view_current]+anim-32,95+view_yview[view_current])
-            }
-            break;
+            draw_set_font(WORD_Font)
+            draw_text_color(346+view_xview[view_current]-string_width("korinna")/2,95+view_yview[view_current]-string_height("korinna")/2,"korinna",c_white,c_white,c_white,c_white,1)
         }
-    break;
-    case 2:
-        switch global.option
+        else
         {
-            case 3:
-                if global.dialoguefont = WORD_Font
-                {
-                    draw_set_font(WORD_Font)
-                    draw_text_color(346+view_xview[view_current]-string_width("korinna")/2,95+view_yview[view_current]-string_height("korinna")/2,"korinna",c_white,c_white,c_white,c_white,1)
-                }
-                else
-                {
-                    draw_set_font(global.dialoguefont)
-                    draw_text_color(346+view_xview[view_current]-string_width("pallete")/2,95+view_yview[view_current]-string_height("korinna")/2,"pallete",c_white,c_white,c_white,c_white,1)
-                    draw_set_font(WORD_Font)
-                }
-            break;
-            case 4:
-                if global.progressbar = 1
-                {
-                    draw_set_font(global.dialoguefont)
-                    draw_text_color(406+view_xview[view_current],85+view_yview[view_current],50,$000075,$000051,$000075,$000051,1)
-                    draw_text_color(426+view_xview[view_current],85+view_yview[view_current],'%',$000075,$000051,$000075,$000051,1)
-                    draw_rectangle_color(296+view_xview[view_current],75+view_yview[view_current],346+view_xview[view_current],105+view_yview[view_current],$000075,$000051,$000075,$000051,0)
-                    draw_rectangle_color(296+view_xview[view_current],75+view_yview[view_current],396+view_xview[view_current],105+view_yview[view_current],$000000,$000000,$000000,$000000,1)
-                    draw_set_font(global.Menufont)
-                }
-                else
-                {
-                    draw_set_font(global.SPRSONFONT)
-                    draw_text(346+view_xview[view_current]-string_width('good luck')/2,95+view_yview[view_current]-8,'good luck')
-                }
-                draw_set_font(global.dialoguefont)
-            break;
-            case 5:
-                draw_rectangle_color(346+view_xview[view_current]-96+4,95+view_yview[view_current]-64+4,346+view_xview[view_current]+96-4,95+view_yview[view_current]+64-4,$000000,$000000,$000000,$000000,0)
-                draw_sprite(sprSlaveSonicWalk,image_index,346+view_xview[view_current],95+view_yview[view_current])
-                if global.subcnoise = 1
-                {
-                    //adding 4 pixels so that it fits in the sprplaceholder
-                    draw_sprite_part_ext(sprNoice1,anim/2,0,0,192-4,128-4,346+view_xview[view_current]-96+4,95+view_yview[view_current]-64+4,1,1,$ffffff,1)
-                }
-                else
-                {
-                    draw_sprite_part_ext(sprNoice1,anim/2,anim,0,192-anim-4,128-4,346+view_xview[view_current]-96+4,95+view_yview[view_current]-64+4,1,1,$ffffff,1)
-                    draw_sprite_part_ext(sprNoice1,anim/2,0,0,anim-4,128-4,view_xview[view_current]+346-anim+96,95+view_yview[view_current]-64+4,1,1,$ffffff,1)
-                }
-            break;
-            case 2:
-                draw_rectangle_color(346+view_xview[view_current]-96+4,95+view_yview[view_current]-64+4,346+view_xview[view_current]+96-4,95+view_yview[view_current]+64-4,c_white,c_white,c_white,c_white,0)
-                switch global.fourbythree
-                {
-                    case 0:
-                        draw_sprite_ext(sprSEGA_LOGO,24,346+view_xview[view_current],95+view_yview[view_current],0.5,0.5,0,c_white,1)
-                    break;
-                    case 1:
-                        draw_sprite_ext(sprSEGA_LOGO,24,346+view_xview[view_current],95+view_yview[view_current],1.3333333333*0.5,1*0.5,0,c_white,1)
-                    break;
-                    case 2:
-                        draw_rectangle_color(346+view_xview[view_current]-96+4,95+view_yview[view_current]-60,346+view_xview[view_current]-70,95+view_yview[view_current]+64-4,c_black,c_black,c_black,c_black,0)
-                        draw_rectangle_color(346+view_xview[view_current]+96-4,95+view_yview[view_current]-60,346+view_xview[view_current]+70,95+view_yview[view_current]+64-4,c_black,c_black,c_black,c_black,0)
-                        //draw_rectangle_color(346+view_xview[view_current]+256,95+view_yview[view_current]-64+4,346+view_xview[view_current]+512,95+view_yview[view_current]+64-4,c_black,c_black,c_black,c_black,0)
-                        draw_sprite_ext(sprSEGA_LOGO,24,346+view_xview[view_current],95+view_yview[view_current],0.5,0.5,0,c_white,1)
-                    break;
-                }
-            break;
-            }
-    break;
+            draw_set_font(global.dialoguefont)
+            draw_text_color(346+view_xview[view_current]-string_width("pallete")/2,95+view_yview[view_current]-string_height("korinna")/2,"pallete",c_white,c_white,c_white,c_white,1)
+            draw_set_font(WORD_Font)
+        }
+        break;
+        case "progressbar":
+        if global.progressbar = 1
+        {
+            draw_set_font(global.dialoguefont)
+            draw_text_color(406+view_xview[view_current],85+view_yview[view_current],string(round(50+sin(time/16)*50))+"%",$000075,$000051,$000075,$000051,1)
+            draw_rectangle_color(296+view_xview[view_current],75+view_yview[view_current],346+view_xview[view_current]+sin(time/16)*50,105+view_yview[view_current],$000075,$000051,$000075,$000051,0)
+            draw_rectangle_color(296+view_xview[view_current],75+view_yview[view_current],396+view_xview[view_current],105+view_yview[view_current],$000000,$000000,$000000,$000000,1)
+            draw_set_font(global.Menufont)
+        }
+        else
+        {
+            draw_set_font(global.SPRSONFONT)
+            draw_set_halign(fa_middle)
+            draw_text(346+view_xview[view_current],95+view_yview[view_current]-8,'good luck')
+            draw_set_halign(fa_left)
+        }
+        draw_set_font(global.dialoguefont)
+        break;
+        case "subcnoise":
+        draw_rectangle_color(346+view_xview[view_current]-96+4,95+view_yview[view_current]-64+4,346+view_xview[view_current]+96-4,95+view_yview[view_current]+64-4,$000000,$000000,$000000,$000000,0)
+        draw_sprite(sprSlaveSonicWalk,image_index,346+view_xview[view_current],95+view_yview[view_current])
+        if global.subcnoise = 1
+        {
+            //adding 4 pixels so that it fits in the sprplaceholder
+            draw_sprite_part_ext(sprNoice1,time/2,0,0,192-4,128-4,346+view_xview[view_current]-96+4,95+view_yview[view_current]-64+4,1,1,$ffffff,1)
+        }
+        else
+        {
+            draw_sprite_part_ext(sprNoice1,time/2,(time mod 192),0,192-(time mod 192)-4,128-4,346+view_xview[view_current]-96+4,95+view_yview[view_current]-64+4,1,1,$ffffff,1)
+            draw_sprite_part_ext(sprNoice1,time/2,0,0,(time mod 192)-4,128-4,view_xview[view_current]+346-(time mod 192)+96,95+view_yview[view_current]-64+4,1,1,$ffffff,1)
+        }
+        break;
+    }
 }
-
-
 draw_sprite(spr_placemagic,0,346+view_xview[view_current],95+view_yview[view_current])

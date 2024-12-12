@@ -12,6 +12,7 @@ prev_wport = 0
 prev_win_w_size = 1280
 prev_win_h_size = 720
 HorizScroll = 0
+time = 0
 i = 0
 repeat(8)
 {

@@ -56,3 +56,5 @@ scr_scaling_wtf
 scr_lang_menu_init
 
 scr_camera_follow
+scr_is_even
+scr_load_inis

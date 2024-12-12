@@ -6,6 +6,7 @@ applies_to=self
 */
 background_alpha[1] = 0
 background_alpha[2] = 0
+time = 0
 fuckyalpha = 0
 scrollcounter = 0
 scroll = 0
@@ -16,7 +17,7 @@ global.lang = 0
 global.fourbythree = 1
 image_speed = 0.2
 hui = 0
-anim = 0
+//anim = 0
 global.SPRSONFONT = font_add_sprite(spr_son1font,ord('A'),1,1)
 global.SMALLSONFONT = font_add_sprite(spr_smallsonfont,ord('/'),0,0)
 global.DESKFONT = font_add_sprite(sprFontCount,ord('-'),0,0)
@@ -38,29 +39,7 @@ global.suboption = 0
 global.pause = 0
 global.cheats = 0
 //reading inis
-ini_open("save.ini")
-global.complete = ini_read_real('progress','bestend',0)
-comppercent = ((ini_read_real('progress','bestend',0) + ini_read_real('progress','goodend',0) + ini_read_real('progress','worstend',0) + ini_read_real('progress','badend',0) + ini_read_real('progress','eggend',0) + ini_read_real('progress','tailsend',0))/6)*100
-ini_close()
-ini_open("options.ini")
-global.fourbythree = ini_read_real('options','fourbythree',0)
-global.subcnoise = ini_read_real('options','subcnoise',1)
-//global.newcontent = ini_read_real('options','newcontent',1)
-global.newcontent = 0
-global.showfps = ini_read_real('options','showfps',0)
-global.lang = ini_read_real('options','lang',0)
-global.dialoguefont = ini_read_real('options','dialoguefont',WORD_Font)
-global.progressbar = ini_read_real('options','progressbar',0)
-global.cheats = ini_read_real('options','cheats',0)
-global.voicedir = ini_read_real('options','voicedir',0)
-global.DCRP_enabled = ini_read_real('options','DCRP_enabled',1)
-WeWillNeedThisLater = ini_read_real('options','DCRP_enabled',1)
-global.RG_final_boss = ini_read_real('options','RG_final_boss',1)
-global.BL_filter = ini_read_real('options','BL_filter',0)
-global.performance = ini_read_real('options','performance',0)
-global.OrigCutscene = ini_read_real('options','origCutscene',0)
-global.Eggmovement = ini_read_real('options','Eggmovement',0)
-ini_close()
+scr_load_inis()
 texture_set_interpolation(global.BL_filter)
 if global.DCRP_enabled = 1
 {
@@ -74,23 +53,6 @@ text = 0
 
 i = 0
 global.valueweneed = 0
-//global.S_Final_Boss_RG
-
-/*
-option[1] = global.lang
-option[2] = global.cheats
-option[3] = global.dialoguefont
-option[4] = global.progressbar
-option[5] = global.showfps
-option[6] = global.newcontent
-option[7] = global.subcnoise
-option[8] = global.fourbythree
-option[9] = global.voicedir
-option[10] = global.DCRP_enabled
-option[11] = global.BL_filter
-option[12] = global.performance
-option[13] = global.OrigCutscene
-*/
 
 optionVarName[0,0] = "lang"
 optionVarName[1,0] = "voicedir"
@@ -108,6 +70,9 @@ optionVarName[1,2] = "dialoguefont"
 optionVarName[2,2] = "progressbar"
 optionVarName[3,2] = "subcnoise"
 optionVarName[4,2] = "BL_filter"
+
+optionVarName[0,3] = ""
+optionVarName[1,3] = ""
 
 optionblocked[0,0] = 0
 optionblocked[1,0] = 0
@@ -127,11 +92,15 @@ optionblocked[2,2] = 0
 optionblocked[3,2] = 0
 optionblocked[4,2] = 0
 
+optionblocked[0,3] = 0
+optionblocked[1,3] = 0
+
 scr_lang_menu_init(global.lang)
 
 menulength[0] = 6
 menulength[1] = 3
 menulength[2] = 5
+menulength[3] = 2
 
 //variable_global_set("lang",1)
 //if global.lang = 1 show_message('yes')
