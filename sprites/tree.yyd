@@ -79,6 +79,61 @@
 	|sprCreamScary1
 	|sprCreamStand
 +tailssprites
+	+Tails
+		|sprTailsFly
+		|sprTailsHit
+		|sprTailsPickEx
+		|sprTailsMaskFly
+		|sprTailsMask
+		|sprTailsLive
+		|sprTailsJumpMask
+		|sprTailsJumpBlack
+		|sprTailsJump
+		|sprTailsIdie
+		|sprTailsHitFatal
+		|sprTailsFatality3
+		|sprTailsFlyTired
+		|sprTailsFatality2
+		|sprTailsFatality
+		|sprTailsDuckBlack
+		|sprTailsDuckMask
+		|sprTailsDuck
+		|sprTailsDied
+		|sprTailsDeath
+		|sprTailsBlack
+		|sprTails_Cont
+		|sprTailsBlackPulls
+		|sprT_Lives
+		|sprTailsRacingTired
+		|sprTailsSpindash
+		|sprTailsSpindashBlack
+		|sprTailsUp
+		|sprTailsSpringUp
+		|sprTailsUpBlack
+		|sprTailsSmach
+		|sprTailsTable
+		|sprTailsSELECTOR
+		|sprTlelsWalk
+		|sprTailsWalk
+		|sprTlelsStand
+		|sprTailsWalkBlack
+		|sprTailsRacing
+		|sprWorstTails
+		|sprTailsRun
+		|sprTails
+		|sprScaryTails
+		|sprScaryTailsIdle2
+		|sprSadTails2
+		|sprScaryTailsIdle
+		|sprScaryTailsRun
+		|sprScaryTailsDuck
+		|sprScaryTailsUpW
+		|sprScaryTailsUp
+		|sprScaryTailsW
+		|sprScaryTailsWalk
+		|sprScaryTailsWalkW
+		|sprScaryTailsDuckW
+		|sprSadTails
 	|sprtt
 	|spr_tailsskid
 |spr_NBRsomething
@@ -505,21 +560,8 @@
 |sprSadMetal
 |sprSadMetal2
 |sprSadMetalUp
-|sprSadTails
-|sprSadTails2
 |sprSanity_Count
 |sprSB
-|sprScaryTails
-|sprScaryTailsDuck
-|sprScaryTailsDuckW
-|sprScaryTailsIdle
-|sprScaryTailsIdle2
-|sprScaryTailsRun
-|sprScaryTailsUp
-|sprScaryTailsUpW
-|sprScaryTailsW
-|sprScaryTailsWalk
-|sprScaryTailsWalkW
 |sprScrapEggman
 |sprScrapEggmanJump
 |sprScrapEggmanSpringUp
@@ -618,51 +660,10 @@
 |sprSuperExetiorWalk
 |sprSuperTailsStand
 |sprSuperTlelsWalk
-|sprT_Lives
-|sprTails
-|sprTails_Cont
-|sprTailsBlack
-|sprTailsBlackPulls
-|sprTailsDeath
-|sprTailsDied
-|sprTailsDuck
-|sprTailsDuckBlack
-|sprTailsDuckMask
-|sprTailsFatality
-|sprTailsFatality2
-|sprTailsFatality3
-|sprTailsFly
-|sprTailsFlyTired
-|sprTailsHit
-|sprTailsHitFatal
-|sprTailsIdie
-|sprTailsJump
-|sprTailsJumpBlack
-|sprTailsJumpMask
-|sprTailsLive
-|sprTailsMask
-|sprTailsMaskFly
-|sprTailsPickEx
-|sprTailsRacing
-|sprTailsRacingTired
-|sprTailsRun
-|sprTailsSELECTOR
-|sprTailsSmach
-|sprTailsSpindash
-|sprTailsSpindashBlack
-|sprTailsSpringUp
-|sprTailsTable
-|sprTailsUp
-|sprTailsUpBlack
-|sprTailsWalk
-|sprTailsWalkBlack
-|sprTailsWatched
 |sprTeleportRing
 |sprTicon
 |sprTipArrowRight
 |sprTipArrowUp
-|sprTlelsStand
-|sprTlelsWalk
 |sprTornado
 |sprTornadoTails
 |sprTR
@@ -701,4 +702,3 @@
 |spr_cutscene_wall
 |sprite796
 |sprite808
-|sprWorstTails

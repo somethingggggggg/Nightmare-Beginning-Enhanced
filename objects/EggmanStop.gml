@@ -92,11 +92,14 @@ applies_to=self
 */
 gravity = 0.25
 
-view_xview[view_current] += (view_wview[view_current] - (314 + view_wview[view_current]/2))/2
-view_yview[view_current] += (view_hview[view_current] - (177 + view_hview[view_current]/2))/2
+//view_xview[view_current] += (view_wview[view_current] - lerp(515,view_wview[view_current],0.5))/2
+//view_yview[view_current] += (view_hview[view_current] - lerp(290,view_hview[view_current],0.5))/2
 
-view_wview[view_current] = 314 + view_wview[view_current]/2
-view_hview[view_current] = 177 + view_hview[view_current]/2
+view_wview[view_current] = lerp(515,view_wview[view_current],0.5)
+view_hview[view_current] = lerp(290,view_hview[view_current],0.5)
+
+view_xview[view_current] = x - view_wview[view_current]/2
+view_yview[view_current] = y - view_hview[view_current]/2
 #define Collision_Egg_Ground
 /*"/*'/**//* YYD ACTION
 lib_id=1

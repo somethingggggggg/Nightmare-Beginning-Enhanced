@@ -6,6 +6,17 @@ applies_to=self
 */
 image_speed = 0.2
 image_xscale = -1
+alarm[0] = 5
+#define Alarm_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+inst = instance_create(x,y,objExeFFAfterImg)
+inst.image_xscale = image_xscale
+inst.sprite_index = sprite_index
+alarm[0] = 5
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -41,3 +52,13 @@ action_id=603
 applies_to=self
 */
 instance_destroy()
+#define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+shader_pixel_set(psGrayscale())
+shader_pixel_uniform_f("fade",0.5)
+draw_self()
+shader_reset()

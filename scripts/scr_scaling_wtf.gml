@@ -8,9 +8,18 @@ if global.performance = 1
         i += 1
     }
     //random bullshit go!
-    window_set_region_size(view_wport[view_current],view_hport[view_current],1)
-    window_resize_buffer(view_wport[view_current],view_hport[view_current],1,0)
-    window_set_size(view_wport[view_current],view_hport[view_current])
+    if room = 66 && view_visible[2] = 1
+    {
+        window_set_region_size(view_wport[2],view_hport[2],1)
+        window_resize_buffer(view_wport[2],view_hport[2],1,0)
+        window_set_size(view_wport[2],view_hport[2])
+    }
+    else
+    {
+        window_set_region_size(view_wport[view_current],view_hport[view_current],1)
+        window_resize_buffer(view_wport[view_current],view_hport[view_current],1,0)
+        window_set_size(view_wport[view_current],view_hport[view_current])
+    }
     if global.fourbythree = 1 window_set_region_size(display_get_width(),display_get_height(),1)
 }
 else

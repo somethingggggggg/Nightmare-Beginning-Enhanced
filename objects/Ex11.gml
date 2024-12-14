@@ -147,6 +147,7 @@ if Pers2.sprite_index != sprKnucklesTwister
         instance_change(Death2,Pers2)
     }
     BL.FF_K = false
+    instance_destroy()
 }
 else
 {

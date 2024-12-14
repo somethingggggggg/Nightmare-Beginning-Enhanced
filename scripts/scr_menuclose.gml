@@ -6,6 +6,11 @@ if room = 66 && view_visible[2] = 1
 {
     view_wview[2] = 640
     view_hview[2] = 360
+    if global.performance = 1
+    {
+        scr_scaling_wtf()
+        scr_fourbythreer()
+    }
 }
 else
 {

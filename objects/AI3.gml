@@ -26,7 +26,7 @@ applies_to=self
 sound_stop(global.S_EGG_Shield)
 with EnergyShieldFF
 {
-instance_destroy()
+    instance_destroy()
 }
 image_alpha = 1
 #define Alarm_1

@@ -37,28 +37,50 @@ action_id=603
 applies_to=self
 */
 view_object[0] = Pers3
+ButtonPressedLeftOrRight = keyboard_check(vk_right) - keyboard_check(vk_left)
 //Movement
 if !instance_exists(EnergyShieldFF)
 {
-if keyboard_check(vk_left) && !place_meeting(x+(abs(hspeed)*-1)-1, y, FF_Wall) && !place_meeting(x+(abs(hspeed)*-1)-1, y, Solid) && (canMove == true or (rolling == true && hspeed > 0))
-{
-  hspeed = -maxSpeed
-  image_xscale = -1;
-}
-if keyboard_check_released(vk_left)
-{
-    hspeed = 0
-}
-if keyboard_check(vk_right) && !place_meeting(x+abs(hspeed)+1, y, FF_Wall) && !place_meeting(x+abs(hspeed)+1, y, Solid) && (canMove == true or (rolling == true && hspeed < 0))
-{
-  hspeed = maxSpeed
-  image_xscale = 1;
-}
+    /*if keyboard_check(vk_left) && !place_meeting(x+(abs(hspeed)*-1)-1, y, FF_Wall) && !place_meeting(x+(abs(hspeed)*-1)-1, y, Solid) && (canMove == true or (rolling == true && hspeed > 0))
+    {
+      hspeed = -maxSpeed
+      image_xscale = -1;
+    }
+    if keyboard_check_released(vk_left)
+    {
+        hspeed = 0
+    }
+    if keyboard_check(vk_right) && !place_meeting(x+abs(hspeed)+1, y, FF_Wall) && !place_meeting(x+abs(hspeed)+1, y, Solid) && (canMove == true or (rolling == true && hspeed < 0))
+    {
+      hspeed = maxSpeed
+      image_xscale = 1;
+    }
 
-if keyboard_check_released(vk_right)
-{
-    hspeed = 0
+    if keyboard_check_released(vk_right)
+    {
+        hspeed = 0
+    }*/
+    if ButtonPressedLeftOrRight != 0
+    {
+        myxspeed = maxSpeed * ButtonPressedLeftOrRight
+        image_xscale = ButtonPressedLeftOrRight
+    }
+    else
+    {
+        myxspeed = 0
+    }
 }
+x += myxspeed
+if place_meeting(x, y-vspeed, FF_Wall) or place_meeting(x, y-vspeed, Solid)
+{
+    while place_meeting(x, y-vspeed, FF_Wall)
+    {
+        x -= scr_is_plus(myxspeed)
+    }
+    while place_meeting(x, y-vspeed, Solid)
+    {
+        x -= scr_is_plus(myxspeed)
+    }
 }
 
 //Gravity
@@ -81,47 +103,47 @@ if canSpriteChange == true
 
 if ground == true && ducking == false && rolling == false && spindash == false
 {
-   if hspeed = 0
+   if myxspeed = 0
    sprite_index = sprEGGBotStand;
- else if hspeed > -8 && hspeed < 8
+ else if myxspeed > -8 && myxspeed < 8
    sprite_index = sprEGGBotWalk;
 else
    sprite_index = sprTailsRun;
 
-    image_speed = abs(hspeed/20);
+    image_speed = abs(myxspeed/20);
 }
 else if sprite_index == sprKnucklesJumpBlack
 {
    sprite_index = sprKnucklesJumpBlack;
 
-    image_speed = (hspeed/2)
+    image_speed = (myxspeed/2)
 }
 }
 mask_index = sprEggmanMask
 
-if hspeed = 0
+if myxspeed = 0
 {
     image_speed = 0.15
 }
 //Life
 if TAB.life <= 0
 {
-BL.FF_E = false
-BL.End_2 = true
-sound_stop(global.S_DF_S)
-room_goto(33)
+    BL.FF_E = false
+    BL.End_2 = true
+    sound_stop(global.S_DF_S)
+    room_goto(33)
 }
 
 //Shield
 if keyboard_check(ord("S")) && TAB.Energy > 0
 {
-if !instance_exists(EnergyShieldFF)
-{
-instance_create(x,y,EnergyShieldFF)
-sound_loop(global.S_EGG_Shield)
-}
-hspeed = 0
-TAB.Energy -= 1
+    if !instance_exists(EnergyShieldFF)
+    {
+        instance_create(x,y,EnergyShieldFF)
+        sound_loop(global.S_EGG_Shield)
+    }
+    myxspeed = 0
+    TAB.Energy -= 1
 }
 
 if !keyboard_check(ord("S")) or TAB.Energy <= 0
@@ -139,7 +161,7 @@ instance_destroy()
 
 if !keyboard_check(ord("S"))
 {
-sound_stop(global.S_EGG_Shield)
+    sound_stop(global.S_EGG_Shield)
 }
 
 //Change
@@ -148,7 +170,7 @@ if instance_exists(AI1) && keyboard_check_pressed(vk_space) && TAB.Turn = true
 sound_stop(global.S_EGG_Shield)
 with EnergyShieldFF
 {
-instance_destroy()
+    instance_destroy()
 }
 TAB.Turn = false
 TAB.alarm[0] = 10
@@ -156,30 +178,30 @@ sound_play(global.S_TAB)
 instance_change(AI3,Pers3)
 with AI1
 {
-instance_change(Pers1,AI1)
+    instance_change(Pers1,AI1)
 }
 view_object[0] = Pers1
 }
 
 if !instance_exists(AI1) && keyboard_check_pressed(vk_space) && TAB.Turn = true
 {
-if instance_exists(AI2)
-{
-sound_stop(global.S_EGG_Shield)
-with EnergyShieldFF
-{
-instance_destroy()
-}
-TAB.Turn = false
-TAB.alarm[0] = 10
-sound_play(global.S_TAB)
-instance_change(AI3,Pers3)
-with AI2
-{
-instance_change(Pers2,AI2)
-}
-view_object[0] = Pers2
-}
+    if instance_exists(AI2)
+    {
+        sound_stop(global.S_EGG_Shield)
+        with EnergyShieldFF
+        {
+            instance_destroy()
+        }
+        TAB.Turn = false
+        TAB.alarm[0] = 10
+        sound_play(global.S_TAB)
+        instance_change(AI3,Pers3)
+        with AI2
+        {
+            instance_change(Pers2,AI2)
+        }
+        view_object[0] = Pers2
+    }
 }
 
 if BL.FF_T + BL.FF_K < 1

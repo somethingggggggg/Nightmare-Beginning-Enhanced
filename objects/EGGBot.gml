@@ -167,12 +167,12 @@ image_speed = 0.2 + abs(global.vel / 20)
 
 if Rob = true && Act = 0
 {
-global.vel = -3.5
+    global.vel = -3.5
 }
 
 if Rob = true && Act = 3
 {
-    EGG_Shower.image_xscale =-1
+    EGG_Shower.image_xscale = -1
     EGG_Shower.sprite_index = sprMSonicAttack
     EGG_Shower.hspeed = -5
     view_object[0] = EGG_Shower
@@ -199,7 +199,7 @@ if Rob = true && Act = 12
 
 if Rob = true && Act = 14
 {
-    global.vel =15
+    global.vel = 15
     image_xscale = 1
 }
 #define Collision_Ground_Egg

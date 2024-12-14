@@ -39,18 +39,14 @@ applies_to=self
 //Deacceleration
 if ground == true
 {
-if vel > 0
-   vel -= acc/(rolling+1);
-else if vel < 0
-   vel += acc/(rolling+1);
+    if vel > 0 vel -= acc/(rolling+1);
+    else if vel < 0 vel += acc/(rolling+1);
 }
 
 
 //Speed limit
-if vel > maxSpeed
-   vel = maxSpeed;
-else if vel < -maxSpeed
-   vel = -maxSpeed;
+if vel > maxSpeed vel = maxSpeed;
+else if vel < -maxSpeed vel = -maxSpeed;
 
 if vel > -acc && vel < acc
 {
@@ -75,33 +71,36 @@ else
 }
 
 //Handle sprites
-if canSpriteChange == true
+if canSpriteChange == true && Act != 2
 {
-if ground == true && ducking == false && rolling == false && spindash == false
+    if ground == true && ducking == false && rolling == false && spindash == false
+    {
+       if vel = 0
+       sprite_index = sprFinalExe_Stand;
+     else if vel > -8 && vel < 8
+       sprite_index = sprEx4_2;
+    else
+       sprite_index = sprTailsRun;
+
+    image_speed = abs(vel/20);
+    }
+    else if sprite_index == sprFinalExe_Jump
+    {
+       sprite_index = sprFinalExe_Jump;
+
+    image_speed = 0.2 + abs(vel / 20)
+    }
+}
+if Act = 2
 {
-   if vel = 0
-   sprite_index = sprFinalExe_Stand;
- else if vel > -8 && vel < 8
-   sprite_index = sprEx4_2;
-else
-   sprite_index = sprTailsRun;
-
-image_speed = abs(vel/20);
+    image_speed = 0.2 + abs(vel / 20)
 }
-else if sprite_index == sprFinalExe_Jump
-{
-   sprite_index = sprFinalExe_Jump;
-
-image_speed = 0.2 + abs(vel / 20)
-}
-}
-
 if Robo = true
 {
     if collision_line(x,y,x+150,y,EGG_Shower,1,0) && Act = 0
     {
         sprite_index = sprFinalExe_Jump
-        vspeed= -5
+        vspeed = -5
         Act = 1
     }
 
@@ -109,6 +108,7 @@ if Robo = true
     {
         speed = 5
         sprite_index = sprFinalExe_Jump
+        //????????
         point_direction(x,y,EGG_Shower.x,EGG_Shower.y)
     }
 
@@ -158,6 +158,7 @@ applies_to=self
 //move_contact_solid(270, 4);
 while place_meeting(x,y,Ground_Egg)
 {
+    if Act = 1 sprite_index = sprExeDuck
     y -= 1
 }
 vspeed = 0

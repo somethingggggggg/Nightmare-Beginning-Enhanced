@@ -4,10 +4,15 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+scroll = 0
+move = 0
 switch room
 {
     case 11:
     myx = 4
+    break;
+    case 21:
+    scroll = -0.5
     break;
     case 26:
     myx = 2
@@ -20,6 +25,9 @@ switch room
     break;
     case 64:
     myx = 4
+    break;
+    case 79:
+    scroll = 1
     break;
 }
 #define Step_0
@@ -34,6 +42,15 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+if scroll != 0 move += scroll
+
+if room = 43
+{
+    with view_object[0]
+    {
+        scr_camera_follow()
+    }
+}
 if room != 21 && room != 32 && room != 79 && room != 43
 {
     background_x[0] = view_xview[0] / myx
@@ -50,9 +67,9 @@ else
 {
     if room = 32 or room = 79 or room = 43
     {
-        background_x[1] = view_xview[0] / 1.5
-        background_x[2] = view_xview[0] / 2
-        background_x[3] = view_xview[0] / 2.5
+        background_x[1] = (view_xview[0]+move) / 1.5
+        background_x[2] = (view_xview[0]+move) / 2
+        background_x[3] = (view_xview[0]+move) / 2.5
 
         background_y[1] = view_yview[0] - view_yview[0]/16 - 32 + 238/16
         background_y[2] = view_yview[0] - view_yview[0]/8 - 32 + 238/8
@@ -61,10 +78,28 @@ else
 }
 if room = 21
 {
-    if instance_exists(Tails4) view_yview[0] = Tails4.y + view_hview[0]/2
-    if instance_exists(Knuckles) view_yview[0] = Knuckles.y + view_hview[0]/2
+/*    if instance_exists(Tails4) && view_object[0] = Tails4
+    {
+        view_xview[0] = Tails4.x - view_wview[0]/2
+        view_yview[0] = Tails4.y - view_hview[0]/2
+    }
+
+    if instance_exists(Knuckles) && view_object[0] = Knuckles
+    {
+        view_xview[0] = Knuckles.x - view_wview[0]/2
+        view_yview[0] = Knuckles.y - view_hview[0]/2
+    }*/
+    if instance_exists(view_object[0])
+    {
+        view_xview[0] = view_object[0].x - view_wview[0]/2
+        view_yview[0] = view_object[0].y - view_hview[0]/2
+    }
+
     background_y[0] = view_yview[0]
     background_y[1] = view_yview[0]
+
+    background_x[0] = view_xview[0]+move
+    background_x[1] = view_xview[0]+move
 }
 #define Draw_0
 /*"/*'/**//* YYD ACTION

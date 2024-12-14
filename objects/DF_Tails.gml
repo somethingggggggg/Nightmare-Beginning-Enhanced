@@ -106,6 +106,7 @@ applies_to=self
 */
 background_hspeed[4] = 0
 background_hspeed[5] = 0
+lvlcontroller.scroll = 0
 hspeed = 0
 sprite_index = sprTails
 alarm[6] = 120

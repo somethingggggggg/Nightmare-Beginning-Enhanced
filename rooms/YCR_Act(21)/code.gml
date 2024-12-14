@@ -1,6 +1,6 @@
 update_discord_lol()
-background_hspeed[0] = -0.5
-background_hspeed[1] = -0.5
+//background_hspeed[0] = -0.5
+//background_hspeed[1] = -0.5
 if global.hardmode = 1
 {
     background_blend[1] = make_color_hsv_standard(irandom_range(0,360),100,100)

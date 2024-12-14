@@ -46,6 +46,7 @@ else
 {
     background_hspeed[4] = 0
     background_hspeed[5] = 0
+    lvlcontroller.scroll = 0
     instance_create(DF_Tails.x+300,DF_Tails.y-20,DF_Exe)
     DF_Exe.sprite_index = sprDF_Spindash
     DF_Exe.hspeed =-8

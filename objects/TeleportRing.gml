@@ -99,13 +99,9 @@ if instance_exists(TailsFatality)
     {
         image_alpha -= 0.01
     }
-}
-
-if instance_exists(TailsFatality)
-{
     if TailsFatality.Appear = true
     {
-        image_alpha +=0.01
+        image_alpha += 0.01
     }
 }
 
@@ -117,33 +113,33 @@ if image_alpha <= 0
 //Re-color
 if view_object[0] = Tails3
 {
-if collision_circle(x,y,150,HSE_Walker,1,0)
-{
-    Lose_mode = true
+    if collision_circle(x,y,150,HSE_Walker,1,0)
+    {
+        Lose_mode = true
+    }
+    else
+    {
+        Lose_mode = false
+    }
+
+    if Win_mode = true
+    {
+        sprite_index = sprWinRing
+    }
+
+    if Lose_mode = true && Act = 0
+    {
+        sprite_index = sprDeathRing
+    }
+
+    if Win_mode = true && Act = 0
+    {
+        Act = 1
+        alarm[8] = 120
+    }
 }
 
-if !collision_circle(x,y,150,HSE_Walker,1,0)
-{
-    Lose_mode = false
-}
-
-
-if Win_mode = true
-{
-    sprite_index = sprWinRing
-}
-
-if Lose_mode = true && Act = 0
-{
-    sprite_index = sprDeathRing
-}
-
-if Win_mode = true && Act = 0
-{
-Act = 1
-alarm[8] = 120
-}}
-
+/*
 if !instance_exists(Tails3)
 {
     sound_stop(global.S_HideSound)
