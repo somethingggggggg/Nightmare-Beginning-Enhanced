@@ -390,7 +390,7 @@ if room != 0
     }
     else
     {
-        if global.menustate = 1 scr_menunav2()
+        if global.menustate = 1 scr_menunav2(1)
         else scr_pausenav2()
     }
 }

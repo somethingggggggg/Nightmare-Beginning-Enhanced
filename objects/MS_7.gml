@@ -31,13 +31,17 @@ applies_to=self
 */
 if BL.Tails_Plot = true && keyboard_check_pressed(vk_enter)
 {
-instance_create(0,0,Timer_16)
-PersonalChoiser.Tails_Pers = true
-instance_destroy()
+    instance_create(0,0,Timer_16)
+    PersonalChoiser.Tails_Pers = true
+    background_hspeed[0] = 0
+    MS_1.image_speed = 0
+    MS_2.image_speed = 0
+    MS_3.image_speed = 0
+    instance_destroy()
 }
 else if BL.Tails_Plot != true && keyboard_check_pressed(vk_enter)
 {
-sound_play(global.S_Locked)
+    sound_play(global.S_Locked)
 }
 #define Collision_MS_2
 /*"/*'/**//* YYD ACTION
@@ -47,9 +51,13 @@ applies_to=self
 */
 if BL.Knuckles_Plot = true && keyboard_check_pressed(vk_enter)
 {
-instance_create(0,0,Timer_16)
-PersonalChoiser.Knuckles_Pers = true
-instance_destroy()
+    instance_create(0,0,Timer_16)
+    PersonalChoiser.Knuckles_Pers = true
+    background_hspeed[0] = 0
+    MS_1.image_speed = 0
+    MS_2.image_speed = 0
+    MS_3.image_speed = 0
+    instance_destroy()
 }
 else if BL.Knuckles_Plot != true && keyboard_check_pressed(vk_enter)
 {
@@ -63,9 +71,13 @@ applies_to=self
 */
 if BL.Eggman_Plot = true && keyboard_check_pressed(vk_enter)
 {
-instance_create(0,0,Timer_16)
-PersonalChoiser.Eggman_Pers = true
-instance_destroy()
+    instance_create(0,0,Timer_16)
+    PersonalChoiser.Eggman_Pers = true
+    background_hspeed[0] = 0
+    MS_1.image_speed = 0
+    MS_2.image_speed = 0
+    MS_3.image_speed = 0
+    instance_destroy()
 }
 else if BL.Eggman_Plot != true && keyboard_check_pressed(vk_enter)
 {

@@ -6,3 +6,4 @@ applies_to=self
 */
 //this is needed cause FF_Ground is used in other rooms not connected to fatal fog
 if room != 32 && room != 79 && room != 43 sprite_index = sprFF_Ground
+if room = 79 visible = 0

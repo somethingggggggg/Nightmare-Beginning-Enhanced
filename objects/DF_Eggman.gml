@@ -42,6 +42,7 @@ DF_Tails.sprite_index = sprTails
 DF_Knuckles.sprite_index = sprKnucklesStand
 DF_Eggman.sprite_index = sprEGGBotStand
 background_hspeed[4] = 0
+background_hspeed[5] = 0
 if BL.Knuckles_Plot = true
 {
     instance_create(DF_Knuckles.x,DF_Knuckles.y-150,DF_Exe)
@@ -174,6 +175,7 @@ if PersonalChoiser.Eggman_Pers = false && Act = 0
     DF_Tails.sprite_index = sprTails
     DF_Knuckles.sprite_index = sprKnucklesStand
     background_hspeed[4] = 0
+    background_hspeed[5] = 0
     if PersonalChoiser.Tails_Pers = true
     {
         DF_Tails.alarm[2] = 30

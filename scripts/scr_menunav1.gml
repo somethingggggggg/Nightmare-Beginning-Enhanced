@@ -87,6 +87,7 @@ if keyboard_check_pressed(vk_enter)
             discord_update_presence("IN MAIN MENU","An experimental nb mod",'sprfex','sprfex')
         }
         scr_saveoptions()
+        global.suboption = 0
         with Sounder scr_lang_menu_init(global.lang)
         room_goto(87)
     }

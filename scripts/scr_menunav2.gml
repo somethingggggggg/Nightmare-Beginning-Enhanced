@@ -74,8 +74,9 @@ if ButtonPressedLeftOrRight != 0 && global.option != 0
     {
         global.suboption += ButtonPressedLeftOrRight
         HorizScroll = ButtonPressedLeftOrRight * 16
-        if global.suboption < 0 global.suboption = 3
-        if global.suboption > 3 global.suboption = 0
+        sound_play(global.S_BoxBroke)
+        if global.suboption < 0 global.suboption = 3-argument0
+        if global.suboption > 3-argument0 global.suboption = 0
     }
     else if global.suboption != 3
     {

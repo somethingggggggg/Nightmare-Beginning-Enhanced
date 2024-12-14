@@ -114,7 +114,7 @@ applies_to=self
 */
 if instance_exists(Knuckles)
 {
-    if sprite_index != sprKnucklesJumpBlack
+    if sprite_index != sprFinalExe_Jump
     {
         move_snap(Knuckles.x,Knuckles.y-64)
     }
@@ -123,14 +123,14 @@ if Target_Tails = true
 {
     if instance_exists(Pers1)
     {
-        if sprite_index != sprKnucklesJumpBlack
+        if sprite_index != sprFinalExe_Jump
         {
             move_snap(Pers1.x,272)
         }
     }
     if instance_exists(AI1)
     {
-        if sprite_index != sprKnucklesJumpBlack
+        if sprite_index != sprFinalExe_Jump
         {
             move_snap(AI1.x,272)
         }
@@ -146,14 +146,14 @@ if Target_Knuckles = true
 {
     if instance_exists(Pers2)
     {
-        if sprite_index != sprKnucklesJumpBlack
+        if sprite_index != sprFinalExe_Jump
         {
             move_snap(Pers2.x,272)
         }
     }
     if instance_exists(AI2)
     {
-        if sprite_index != sprKnucklesJumpBlack
+        if sprite_index != sprFinalExe_Jump
         {
             move_snap(AI2.x,272)
         }
@@ -169,14 +169,14 @@ if Target_Eggman = true
 {
     if instance_exists(Pers3)
     {
-        if sprite_index != sprKnucklesJumpBlack
+        if sprite_index != sprFinalExe_Jump
         {
             move_snap(Pers3.x,272)
         }
     }
     if instance_exists(AI3)
     {
-        if sprite_index != sprKnucklesJumpBlack
+        if sprite_index != sprFinalExe_Jump
         {
             move_snap(AI3.x,272)
         }

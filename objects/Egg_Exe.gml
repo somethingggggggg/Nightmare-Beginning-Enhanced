@@ -137,7 +137,6 @@ if actOnce = 2
 {
     sprite_index = sprFinalExe_Jump
     image_speed = 0.2 + abs(hspeed / 20)
-
 }
 #define Collision_Solid
 /*"/*'/**//* YYD ACTION

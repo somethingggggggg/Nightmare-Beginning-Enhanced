@@ -113,9 +113,23 @@ applies_to=self
 switch global.menustate
 {
     case 0: scr_menunav1() break;
-    case 1: scr_menunav2() break;
+    case 1: scr_menunav2(0) break;
     case 2: scr_menunav3() break;
     case 3: scr_menunav4() break;
+}
+if keyboard_check_pressed(ord("Q")) && debug_mode = 1
+{
+    ini_open("save.ini")
+    ini_write_real('progress','badend',1)
+    ini_write_real('progress','worstend',1)
+    ini_write_real('progress','bestend',1)
+    ini_write_real('progress','goodend',1)
+    ini_write_real('progress','knuckend',1)
+    ini_write_real('progress','tailsend',1)
+    ini_write_real('progress','eggend',1)
+    ini_close()
+    optionblocked[0,1] = 0
+    global.complete = 1
 }
 if global.menustate = 0
 {

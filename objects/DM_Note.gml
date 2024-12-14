@@ -14,7 +14,7 @@ action_id=603
 applies_to=self
 */
 image_speed = 0.15
-
+sound_volume(global.S_Burn,1)
 sound_loop(global.S_Burn)
 #define Alarm_0
 /*"/*'/**//* YYD ACTION

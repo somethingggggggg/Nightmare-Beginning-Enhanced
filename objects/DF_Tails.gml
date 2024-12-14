@@ -46,7 +46,7 @@ else
 {
     instance_create(DF_Knuckles.x+350,DF_Knuckles.y-20,DF_Exe)
     DF_Exe.sprite_index = sprDF_Spindash
-    DF_Exe.hspeed =-8
+    DF_Exe.hspeed = -8
     DF_Exe.image_xscale =-1
     sound_play(global.S_Spindash)
 }
@@ -105,6 +105,7 @@ action_id=603
 applies_to=self
 */
 background_hspeed[4] = 0
+background_hspeed[5] = 0
 hspeed = 0
 sprite_index = sprTails
 alarm[6] = 120

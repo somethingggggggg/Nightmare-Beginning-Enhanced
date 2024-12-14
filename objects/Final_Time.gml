@@ -4,6 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+sound_stop(global.S_Burn)
 if global.hardmode sound_loop(global.S_Final_Boss_RG)
 else sound_play(global.S_Final_Boss)
 alarm[0] = 2520
