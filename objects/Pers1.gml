@@ -264,4 +264,4 @@ shader_pixel_uniform_f("fade",0.5)
 if sprite_index = sprTailsJump && !instance_exists(SmachDash) draw_sprite_ext(sprtt, image_index/2, x, y, 1, 1, point_direction(Pers1.x,Pers1.y,Pers1.x+Pers1.vel,Pers1.y+Pers1.vspeed), image_blend, image_alpha);
 draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale, image_yscale, drawAngle, image_blend, image_alpha);
 shader_reset()
-draw_sprite(sprChangePlayer,0,view_xview[0]+40,view_yview[0]+225)
+//draw_sprite(sprChangePlayer,0,view_xview[0]+40,view_yview[0]+225)

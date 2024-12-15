@@ -21,6 +21,7 @@ hui = 0
 global.SPRSONFONT = font_add_sprite(spr_son1font,ord('A'),1,1)
 global.SMALLSONFONT = font_add_sprite(spr_smallsonfont,ord('/'),0,0)
 global.DESKFONT = font_add_sprite(sprFontCount,ord('-'),0,0)
+
 global.Menufont = 0
 global.hackpage = 0
 global.dialoguefont = WORD_Font

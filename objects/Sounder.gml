@@ -368,7 +368,7 @@ if room != 0
                 prev_view_wview = view_wview[view_current]
                 view_wview[view_current] = 462
                 view_hview[view_current] = 260
-                /*if global.performance = 1
+                if global.performance = 1
                 {
                     prev_view_hport = view_hport[view_current]
                     prev_view_wport = view_wport[view_current]
@@ -376,8 +376,8 @@ if room != 0
                     view_hport[view_current] = 260
                     window_set_region_size(view_wport[view_current],view_hport[view_current],1)
                     window_resize_buffer(view_wport[view_current],view_hport[view_current],1,0)
-                    window_set_size(view_wport[view_current],view_hport[view_current])
-                }*/
+                    //window_set_size(view_wport[view_current],view_hport[view_current])
+                }
             }
             //if window_get_fullscreen() = 1 window_set_region_size(display_get_width(),display_get_height(),0)
             
@@ -437,7 +437,7 @@ if keyboard_check_pressed(vk_f4)
             window_set_region_size(1280,720,1)
             if global.fourbythree = 2
             {
-                window_set_region_size((1280 / 4) * 3,720,1)
+            //    window_set_region_size((1280 / 4) * 3,720,1)
             }
         }
     }
@@ -549,7 +549,8 @@ if global.performance = 1
             i += 1
         }
         //random bullshit go!
-        window_set_region_size(prev_wport,prev_hport,1)
+        if global.fourbythree != 2 window_set_region_size(display_get_width(),display_get_height(),1)
+        else window_set_region_size(prev_wport,prev_hport,1)
         window_resize_buffer(prev_wport,prev_hport,1,0)
         window_set_size(prev_wport,prev_hport)
         alarm[2] = 1
@@ -655,11 +656,15 @@ if pause = 1 && room != 0
     {
         draw_set_font(global.SMALLSONFONT)
         //idk why adding half a pixel makes it look better but it does
-        draw_sprite_stretched(sprpausefuck,0,view_xview[view_current],view_yview[view_current],view_wview[view_current],view_hview[view_current])
+        if global.performance = 0 draw_sprite_stretched(sprpausefuck,0,view_xview[view_current],view_yview[view_current],view_wview[view_current],view_hview[view_current])
+        else draw_sprite_tiled(spr_NBRsomething,0,view_xview[view_current],view_yview[view_current]+time)
         draw_sprite(spranother,0,view_xview[view_current],view_yview[view_current])
         scr_menudraw2()
     }
-    else scr_pausedraw2()
+    else
+    {
+        scr_pausedraw2()
+    }
     //execute_file(working_directory+"/script.txt")
 }
 if global.showfps = 1

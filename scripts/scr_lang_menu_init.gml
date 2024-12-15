@@ -98,9 +98,11 @@ switch argument0
     break;
     case 1:
         Notavalmessage = "Unavailable"
+
         categoryname[0] = "GENERAL"
         categoryname[1] = "GAMEPLAY"
         categoryname[2] = "VISUAL"
+
         optionname[0,0] = "Язык"
         optionname[1,0] = "Озвучка"
         optionname[2,0] = "Показать FPS"
@@ -108,8 +110,8 @@ switch argument0
         optionname[4,0] = "Шкала прогресса в FF"
         optionname[5,0] = "Включить DCRP"
 
-        optionname[0,1] = "Cheats"
-        optionname[1,1] = "New content"
+        optionname[0,1] = "Читы"
+        optionname[1,1] = "Новый контент"
 
         optionname[0,2] = "Режим 4:3"
         optionname[1,2] = "Шрифт"
@@ -117,8 +119,8 @@ switch argument0
         optionname[3,2] = "White Noise"
         optionname[4,2] = "Billineal filtering"
 
-        optiondesc[0] = ""
-        optiondesc[1] = "Pick your language"
+        //optiondesc[0] = ""
+        optiondesc[0,0] = "Pick your language"
         optiondesc[2] = "Enable debug mode and some cheats accecible with the numpad (enable numlock on your keyboard)"
         optiondesc[3] = "Pick between original NB font (korinna) and new NU font (pallete)"
         optiondesc[4] = "Toggle the progressbar in Fatal Fog"
@@ -187,10 +189,11 @@ switch argument0
         optionname[11] = "Мыло Блять"
         optionname[12] = "Не лагать"
         optionname[13] = "Original FF Cutscene"
+
         optiondesc[0] = ""
-        optiondesc[1] = "Выберите свой язык"
-        optiondesc[2] = "Включает дебаг мод и некоторые читы доступные на нумпаде (Включи намлок на клавиатуре)"
-        optiondesc[3] = "Выберите оригинальный шрифт НБ (Korinna) или шрифт нового НЮ (Pallete)"
+        optiondesc[0,0] = "Выберите свой язык"
+        optiondesc[0,1] = "Включает дебаг мод и некоторые читы доступные на нумпаде (Включи намлок на клавиатуре)"
+        optiondesc[0,2] = "Выберите оригинальный шрифт НБ (Korinna) или шрифт нового НЮ (Pallete)"
         optiondesc[4] = "Переключение шкалы прогресса в FF"
         optiondesc[5] = "Показать FPS"
         optiondesc[6] = "Включить или выключить новый контент"
@@ -201,31 +204,42 @@ switch argument0
         optiondesc[11] = "blurs your fucking game so it looks like shit"
         optiondesc[12] = "Dogshit solution"
         optiondesc[13] = "Original FF Cutscene"
+
         optionstate[0,0] = ""
         optionstate[1,0] = "Английский"
         optionstate[1,1] = "Русский"
         optionstate[1,2] = "Итальянский"
+
         optionstate[2,0] = "выкл."
         optionstate[2,1] = "вкл."
         optionstate[3,WORD_Font] = "Старый"
         optionstate[3,testingfont] = "Новый"
+
         optionstate[4,0] = "off"
         optionstate[4,1] = "on"
+
         optionstate[5,0] = "off"
         optionstate[5,1] = "on"
+
         optionstate[6,0] = "off"
         optionstate[6,1] = "on"
+
         optionstate[7,0] = "Original"
         optionstate[7,1] = "Camera Follow"
+
         optionstate[8,0] = "off"
         optionstate[8,1] = "Stretch"
         optionstate[8,2] = "Black Bars"
+
         optionstate[10,0] = "off"
         optionstate[10,1] = "on"
+
         optionstate[11,0] = "off"
         optionstate[11,1] = "on"
+
         optionstate[12,0] = "off"
         optionstate[12,1] = "on"
+
         optionstate[13,0] = "off"
         optionstate[13,1] = "on"
     break;

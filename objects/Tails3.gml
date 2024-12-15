@@ -291,6 +291,9 @@ if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && can
 }
 if keyboard_check(ord("Z")) && jmpframes > 0
 {
+    sprite_index = sprTailsJump;
+    mask_index = sprTailsJumpMask;
+    stopping = 0
     jmpframes -= 1
     vspeed = -6
 }

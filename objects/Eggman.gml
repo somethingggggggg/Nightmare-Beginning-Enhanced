@@ -270,21 +270,21 @@ applies_to=self
 */
 if global.ELive != 0
 {
-room_goto(53)
+    room_goto(53)
 }
 
 if global.ELive = 0
 {
-with Ex10
-{
-instance_destroy()
-}
-maxSpeed = 0
-instance_create(0,0,EPassed)
-instance_create(x,y,Noice)
-sound_stop(global.S_Egg_Sound)
-sound_play(global.S_Noice)
-alarm[2] = 180
+    with Ex10
+    {
+        instance_destroy()
+    }
+    maxSpeed = 0
+    instance_create(0,0,EPassed)
+    instance_create(x,y,Noice)
+    sound_stop(global.S_Egg_Sound)
+    sound_play(global.S_Noice)
+    alarm[2] = 180
 }
 #define Collision_EggElevator
 /*"/*'/**//* YYD ACTION

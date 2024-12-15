@@ -180,3 +180,7 @@ if global.progressbar = 1
     draw_rectangle_color((view_xview[0] + view_wview[0]/2)-50,view_yview[0],(view_xview[0] + view_wview[0]/2)-50 + global.complpercent,view_yview[0]+30,$000075,$000051,$000075,$000051,0)
     draw_rectangle_color((view_xview[0] + view_wview[0]/2)-50,view_yview[0],view_xview[0] + view_wview[0]/2+50,view_yview[0]+30,$000000,$000000,$000000,$000000,1)
 }
+if (BL.FF_K + BL.FF_E + BL.FF_T) > 1
+{
+    draw_sprite(sprChangePlayer,0,view_xview[0]+40,view_yview[0]+225)
+}

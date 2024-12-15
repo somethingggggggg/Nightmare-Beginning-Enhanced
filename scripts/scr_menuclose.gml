@@ -35,7 +35,8 @@ if global.fourbythree != prevset[0,2]
     scr_fourbythreer()
     scr_scaling_wtf()
 }
-if global.performance != prevset[3,0] scr_scaling_wtf();
+//if global.performance != prevset[3,0] scr_scaling_wtf();
+if global.performance = 1 or global.performance != prevset[3,0] scr_scaling_wtf();
 if global.DCRP_enabled != prevset[5,0]
 {
     if global.DCRP_enabled = 0

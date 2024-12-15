@@ -276,11 +276,11 @@ shader_reset()
 draw_set_halign(fa_center)
 draw_text_color(view_xview[0]+(view_wview[0]/2),view_yview[0]+80,TAB.Energy,$000000,$000000,$000000,$000000, 1)
 draw_sprite(sprEggmanS,0,view_xview[0]+(view_wview[0]/2),view_yview[0]+60)
-draw_sprite(sprChangePlayer,0,view_xview[0]+40,view_yview[0]+225)
+//draw_sprite(sprChangePlayer,0,view_xview[0]+40,view_yview[0]+225)
 
 if TAB.EggBombTime = false
 {
-draw_sprite(sprEggBombNote,0,view_xview[0]+20,view_yview[0]+30)
+    draw_sprite(sprEggBombNote,0,view_xview[0]+20,view_yview[0]+30)
 }
 /*"/*'/**//* YYD ACTION
 lib_id=1

@@ -90,25 +90,25 @@ if ButtonPressedLeftOrRight != 0 && global.option != 0
             }
             else
             {
-                if global.option = 0+2 && global.suboption = 0
+                if global.option = 2 && global.suboption = 0
                 {
                     variable_global_set(optionVarName[0,global.suboption],variable_global_get(optionVarName[0,global.suboption])+ButtonPressedLeftOrRight)
                     if variable_global_get(optionVarName[0,global.suboption]) > 2 variable_global_set(optionVarName[0,global.suboption],0)
                     if variable_global_get(optionVarName[0,global.suboption]) < 0 variable_global_set(optionVarName[0,global.suboption],2)
                     scr_lang_menu_init(global.lang)
                 }
-                if global.option = 1+2 && global.suboption = 2
+                if global.option = 3 && global.suboption = 2
                 {
                     if variable_global_get(optionVarName[1,global.suboption]) = WORD_Font variable_global_set(optionVarName[1,global.suboption],testingfont)
                     else variable_global_set(optionVarName[1,global.suboption],WORD_Font)
                 }
-                if global.option = 0+2 && global.suboption = 2
+                if global.option = 2 && global.suboption = 2
                 {
                     variable_global_set(optionVarName[0,global.suboption],variable_global_get(optionVarName[0,global.suboption])+ButtonPressedLeftOrRight)
                     if variable_global_get(optionVarName[0,global.suboption]) > 2 variable_global_set(optionVarName[0,global.suboption],0)
                     if variable_global_get(optionVarName[0,global.suboption]) < 0 variable_global_set(optionVarName[0,global.suboption],2)
                 }
-                if global.option = 1+2 && global.suboption = 0
+                if global.option = 3 && global.suboption = 0
                 {
                     variable_global_set(optionVarName[1,global.suboption],variable_global_get(optionVarName[1,global.suboption])+ButtonPressedLeftOrRight)
                     if variable_global_get(optionVarName[1,global.suboption]) > ds_list_size(global.voicelist)-1 variable_global_set(optionVarName[1,global.suboption],0)

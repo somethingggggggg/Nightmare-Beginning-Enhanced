@@ -52,8 +52,6 @@ if keyboard_check_pressed(vk_enter)
     {
         if global.cheats = 0 or room = 38
         {
-            discord_free_app()
-            discord_free_dll()
             game_end()
         }
         else

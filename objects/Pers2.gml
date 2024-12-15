@@ -316,9 +316,9 @@ shader_pixel_uniform_f("fade",0.5)
 draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale, image_yscale, drawAngle, image_blend, image_alpha);
 shader_reset()
 
-draw_sprite(sprChangePlayer,0,view_xview[0]+40,view_yview[0]+225)
+//draw_sprite(sprChangePlayer,0,view_xview[0]+40,view_yview[0]+225)
 if Act=1
 {
-draw_sprite(sprTwisterIconBlack, 0, view_xview[0]+view_wview[0]-50, view_yview[0]+25)
+    draw_sprite(sprTwisterIconBlack, 0, view_xview[0]+view_wview[0]-50, view_yview[0]+25)
 }
 draw_sprite(sprPunchIconBlack, 0, view_xview[0]+view_wview[0]-40, view_yview[0]+240)

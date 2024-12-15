@@ -21,23 +21,28 @@ if vspeed > 8
 }
 else
 {
-  ground = false;
+    ground = false;
    gravity = 0.25;
 }
-
-if vspeed > 0.5
+#define Step_2
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if vspeed > 0.25
 {
-    image_index = 1
+    image_index = 2
 }
 else
 {
-    if vspeed < 0.5
+    if vspeed < -0.25
     {
-        image_index = 2
+        image_index = 0
     }
     else
     {
-        image_index = 0
+        image_index = 1
     }
 }
 #define Collision_FF_Ground
@@ -47,7 +52,7 @@ action_id=603
 applies_to=self
 */
 move_contact_solid(270, 4);
-vspeed = -1;
+vspeed = -1.5;
 #define Collision_Ex11
 /*"/*'/**//* YYD ACTION
 lib_id=1

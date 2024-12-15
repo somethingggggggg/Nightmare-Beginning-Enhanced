@@ -192,6 +192,8 @@ if Bot = 3
     }
     if keyboard_check(ord("Z")) && jmpframes > 0
     {
+        sprite_index = sprSonicJump;
+        stopping = 0
         jmpframes -= 1
         vspeed = -6
     }
