@@ -99,6 +99,8 @@ assinylives = get_integer('input lives number',assinylives)
 global.TLive = assinylives
 global.KLive = assinylives
 global.ELive = assinylives
+global.FLive = assinylives
+global.SLive = assinylives
 #define Keyboard_105
 /*"/*'/**//* YYD ACTION
 lib_id=1

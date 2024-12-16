@@ -173,7 +173,7 @@ if Rob = true && Act = 0
 if Rob = true && Act = 3
 {
     EGG_Shower.image_xscale = -1
-    EGG_Shower.sprite_index = sprMSonicAttack
+    EGG_Shower.sprite_index = sprMS_Run
     EGG_Shower.hspeed = -5
     view_object[0] = EGG_Shower
     alarm[1] = 0

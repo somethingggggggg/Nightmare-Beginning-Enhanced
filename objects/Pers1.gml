@@ -160,7 +160,7 @@ if rolling == true && (ground == false or vel == 0)
 if up == true && spindash == false
 {
    mask_index = sprTailsMask;
-   sprite_index = sprTailsUpBlack;
+   sprite_index = sprTailsUp;
 if image_index < 1
    image_speed = 0.1;
 else

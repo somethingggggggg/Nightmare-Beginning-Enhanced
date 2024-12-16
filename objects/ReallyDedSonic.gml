@@ -43,6 +43,7 @@ with PowerRay
     instance_destroy()
 }
 sprite_index = sprReallyDedSonic2
+image_angle = 45
 vspeed = 0.7
 #define Step_0
 /*"/*'/**//* YYD ACTION
@@ -87,7 +88,10 @@ if image_alpha >= 1 && Act = 3
 
 if sprite_index = sprReallyDedSonic2
 {
-    if image_index < 6
+    image_speed = 0.15
+    image_angle -= 0.93
+    if image_angle < -90 image_angle = -90
+    /*if image_index < 6
     {
         image_speed = 0.08
     }
@@ -95,7 +99,7 @@ if sprite_index = sprReallyDedSonic2
     {
         image_index = 6
         image_speed = 0
-    }
+    }*/
 }
 #define Collision_HPGround
 /*"/*'/**//* YYD ACTION

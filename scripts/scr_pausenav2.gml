@@ -1,4 +1,5 @@
 if myfade < 1 myfade += 0.1
+time += 1
 if keyboard_check_pressed(vk_up) or mouse_wheel_up()
 {
     global.option -= 1

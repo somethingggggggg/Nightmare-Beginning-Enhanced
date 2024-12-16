@@ -139,7 +139,6 @@ if view_object[0] = Tails3
     }
 }
 
-/*
 if !instance_exists(Tails3)
 {
     sound_stop(global.S_HideSound)

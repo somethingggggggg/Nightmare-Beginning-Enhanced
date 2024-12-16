@@ -78,7 +78,8 @@ else
 }
 if room = 21
 {
-/*    if instance_exists(Tails4) && view_object[0] = Tails4
+/*
+    if instance_exists(Tails4) && view_object[0] = Tails4
     {
         view_xview[0] = Tails4.x - view_wview[0]/2
         view_yview[0] = Tails4.y - view_hview[0]/2
@@ -88,7 +89,8 @@ if room = 21
     {
         view_xview[0] = Knuckles.x - view_wview[0]/2
         view_yview[0] = Knuckles.y - view_hview[0]/2
-    }*/
+    }
+*/
     if instance_exists(view_object[0])
     {
         view_xview[0] = view_object[0].x - view_wview[0]/2
