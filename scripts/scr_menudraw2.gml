@@ -85,7 +85,7 @@ if global.option > 1
         {
             //if scr_is_even(floor(time/192)) = 1 draw_sprite(sprEGGBotWalk,time/4,346+view_xview[view_current]-(round(time/192)-(time/192))*192+192-32,95+view_yview[view_current])
             //else draw_sprite(sprEGGBotWalk,time/4,346+view_xview[view_current]+(round(time/192)-(time/192))*192-32,95+view_yview[view_current])
-            draw_sprite_ext(sprEGGBotWalk,time/4,346+view_xview[view_current]-32+abs((time mod 100) - 50),95+view_yview[view_current],scr_is_plus((time mod 100) - 50),1,0,c_white,1)
+            draw_sprite_ext(sprEGGBotWalk,time/4,346+view_xview[view_current]-64+abs(((time*2) mod 256) - 128),95+view_yview[view_current],scr_is_plus(((time*2) mod 256) - 128),1,0,c_white,1)
         }
         break;
         case "fourbythree":

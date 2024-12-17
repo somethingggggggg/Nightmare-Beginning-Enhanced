@@ -1218,42 +1218,42 @@ draw_text_ext_color(view_xview[1]+100, view_yview[1], "It's time to end all of y
 
 if Page = 122
 {
-draw_sprite(sprSW_KnucklesWarn,1,view_xview[1],view_yview[1])
+draw_sprite_part(sprSW_KnucklesWarn,1,0,0,642,80,view_xview[1],view_yview[1])
 
 draw_text_ext_color(view_xview[1]+100, view_yview[1], "Just in time Eggman!",16,view_wview[0]-100,$00ffff,$00ffff,$00ffff,$005555,1)
 }
 
 if Page = 124
 {
-draw_sprite(sprSW_KnucklesWarn,1,view_xview[1],view_yview[1])
+draw_sprite_part(sprSW_KnucklesWarn,1,0,0,642,80,view_xview[1],view_yview[1])
 
 draw_text_ext_color(view_xview[1]+100, view_yview[1], "Seems that Sonic has weakened the impostor! Time to complete the cleansing!",16,view_wview[0]-100,$00ffff,$00ffff,$00ffff,$005555,1)
 }
 
 if Page = 125
 {
-draw_sprite(sprSW_KnucklesWarn,1,view_xview[1],view_yview[1])
+draw_sprite_part(sprSW_KnucklesWarn,1,0,0,642,80,view_xview[1],view_yview[1])
 
 draw_text_ext_color(view_xview[1]+100, view_yview[1], "It should force the demon out of Sonic, But at the same time we risk...",16,view_wview[0]-100,$00ffff,$00ffff,$00ffff,$005555,1)
 }
 
 if Page = 126
 {
-draw_sprite(sprSW_KnucklesWarn,1,view_xview[1],view_yview[1])
+draw_sprite_part(sprSW_KnucklesWarn,1,0,0,642,80,view_xview[1],view_yview[1])
 
 draw_text_ext_color(view_xview[1]+100, view_yview[1], "destroying Sonic's mind... But we have no choice! Let's go!",16,view_wview[0]-100,$00ffff,$00ffff,$00ffff,$005555,1)
 }
 
 if Page = 128
 {
-draw_sprite(sprSW_KnucklesWarn,1,view_xview[0],view_yview[0])
+draw_sprite_part(sprSW_KnucklesWarn,1,0,0,642,80,view_xview[1],view_yview[1])
 
 draw_text_ext_color(view_xview[0]+100, view_yview[0], "...Looks like you couldn't beat us. Now its time for you to burn in hell.",16,view_wview[0]-100,$00ffff,$00ffff,$00ffff,$005555,1)
 }
 
 if Page = 130
 {
-draw_sprite(sprSW_KnucklesWarn,1,view_xview[0],view_yview[0])
+draw_sprite_part(sprSW_KnucklesWarn,1,0,0,642,80,view_xview[1],view_yview[1])
 
 draw_text_ext_color(view_xview[0]+100, view_yview[0], "I think he's dead...",16,view_wview[0]-100,$00ffff,$00ffff,$00ffff,$005555,1)
 }
@@ -2392,42 +2392,42 @@ draw_text_ext_color(view_xview[1]+100, view_yview[1], "Пришло время �
 
 if Page = 122
 {
-draw_sprite(sprSW_KnucklesWarn,1,view_xview[1],view_yview[1])
+draw_sprite_part(sprSW_KnucklesWarn,1,0,0,642,80,view_xview[1],view_yview[1])
 
 draw_text_ext_color(view_xview[1]+100, view_yview[1], "Как раз вовремя!",16,view_wview[0]-100,$00ffff,$00ffff,$00ffff,$005555,1)
 }
 
 if Page = 124
 {
-draw_sprite(sprSW_KnucklesWarn,1,view_xview[1],view_yview[1])
+draw_sprite_part(sprSW_KnucklesWarn,1,0,0,642,80,view_xview[1],view_yview[1])
 
 draw_text_ext_color(view_xview[1]+100, view_yview[1], "Похоже, что захватчик ослаб! Пришло время совершить очищение!",16,view_wview[0]-100,$00ffff,$00ffff,$00ffff,$005555,1)
 }
 
 if Page = 125
 {
-draw_sprite(sprSW_KnucklesWarn,1,view_xview[1],view_yview[1])
+draw_sprite_part(sprSW_KnucklesWarn,1,0,0,642,80,view_xview[1],view_yview[1])
 
 draw_text_ext_color(view_xview[1]+100, view_yview[1], "Это должно выбить демона из Соника, но также имеется риск...",16,view_wview[0]-100,$00ffff,$00ffff,$00ffff,$005555,1)
 }
 
 if Page = 126
 {
-draw_sprite(sprSW_KnucklesWarn,1,view_xview[1],view_yview[1])
+draw_sprite_part(sprSW_KnucklesWarn,1,0,0,642,80,view_xview[1],view_yview[1])
 
 draw_text_ext_color(view_xview[1]+100, view_yview[1], "...уничтожить разум ежа. Но у нас нет выбора! Начнём!",16,view_wview[0]-100,$00ffff,$00ffff,$00ffff,$005555,1)
 }
 
 if Page = 128
 {
-draw_sprite(sprSW_KnucklesWarn,1,view_xview[0],view_yview[0])
+draw_sprite_part(sprSW_KnucklesWarn,1,0,0,642,80,view_xview[1],view_yview[1])
 
 draw_text_ext_color(view_xview[0]+100, view_yview[0], "Похоже ты не можешь победить нас. Пришло твоё время гореть в аду.",16,view_wview[0]-100,$00ffff,$00ffff,$00ffff,$005555,1)
 }
 
 if Page = 130
 {
-draw_sprite(sprSW_KnucklesWarn,1,view_xview[0],view_yview[0])
+draw_sprite_part(sprSW_KnucklesWarn,1,0,0,642,80,view_xview[1],view_yview[1])
 
 draw_text_ext_color(view_xview[0]+100, view_yview[0], "Похоже он мёртв...",16,view_wview[0]-100,$00ffff,$00ffff,$00ffff,$005555,1)
 }
@@ -3008,48 +3008,46 @@ draw_text_ext_color(view_xview[1]+100, view_yview[1], "Davvero intelligente Knuc
 if Page = 120
 {
 draw_sprite_part(sprSW_ExeGrin,1,0,0,642,80,view_xview[1],view_yview[1])
-
 draw_text_ext_color(view_xview[1]+100, view_yview[1], "E ora di finire tutti voi!",16,view_wview[0]-100,$5050cf,$5050cf,$5050cf,$5050cf,1)
 }
 
 if Page = 122
 {
-draw_sprite(sprSW_KnucklesWarn,1,view_xview[1],view_yview[1])
-
+draw_sprite_part(sprSW_KnucklesWarn,1,0,0,642,80,view_xview[1],view_yview[1])
 draw_text_ext_color(view_xview[1]+100, view_yview[1], "Appena in tempo Eggman!",16,view_wview[0]-100,$00ffff,$00ffff,$00ffff,$005555,1)
 }
 
 if Page = 124
 {
-draw_sprite(sprSW_KnucklesWarn,1,view_xview[1],view_yview[1])
+draw_sprite_part(sprSW_KnucklesWarn,1,0,0,642,80,view_xview[1],view_yview[1])
 
 draw_text_ext_color(view_xview[1]+100, view_yview[1], "Sembra che Sonic ha indebolito l'impostore! E ora di finire la rimozione!",16,view_wview[0]-100,$00ffff,$00ffff,$00ffff,$005555,1)
 }
 
 if Page = 125
 {
-draw_sprite(sprSW_KnucklesWarn,1,view_xview[1],view_yview[1])
+draw_sprite_part(sprSW_KnucklesWarn,1,0,0,642,80,view_xview[1],view_yview[1])
 
 draw_text_ext_color(view_xview[1]+100, view_yview[1], "Dovrebbe far uscire fuori il demone da Sonic, ma allo stesso tempo rischiamo di distruggere",16,view_wview[0]-100,$00ffff,$00ffff,$00ffff,$005555,1)
 }
 
 if Page = 126
 {
-draw_sprite(sprSW_KnucklesWarn,1,view_xview[1],view_yview[1])
+draw_sprite_part(sprSW_KnucklesWarn,1,0,0,642,80,view_xview[1],view_yview[1])
 
 draw_text_ext_color(view_xview[1]+100, view_yview[1], "la mente di Sonic... Ma non abbiamo scelta! Andiamo!",16,view_wview[0]-100,$00ffff,$00ffff,$00ffff,$005555,1)
 }
 
 if Page = 128
 {
-draw_sprite(sprSW_KnucklesWarn,1,view_xview[0],view_yview[0])
+draw_sprite_part(sprSW_KnucklesWarn,1,0,0,642,80,view_xview[1],view_yview[1])
 
 draw_text_ext_color(view_xview[0]+100, view_yview[0], "...Sembra che non puoi batterci. E ora che tu bruci all'inferno.",16,view_wview[0]-100,$00ffff,$00ffff,$00ffff,$005555,1)
 }
 
 if Page = 130
 {
-draw_sprite(sprSW_KnucklesWarn,1,view_xview[0],view_yview[0])
+draw_sprite_part(sprSW_KnucklesWarn,1,0,0,642,80,view_xview[1],view_yview[1])
 
 draw_text_ext_color(view_xview[0]+100, view_yview[0], "Penso sia morto...",16,view_wview[0]-100,$00ffff,$00ffff,$00ffff,$005555,1)
 }

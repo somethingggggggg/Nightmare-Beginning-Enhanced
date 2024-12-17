@@ -104,10 +104,8 @@ if Bot = 5
 //Deacceleration
 if ground == true
 {
-if global.vel > 4
-global.vel -= acc/(rolling+1);
-else if global.vel < 4
-   global.vel += acc/(rolling+1);
+    if global.vel > 4 global.vel -= acc/(rolling+1);
+    else if global.vel < 4 global.vel += acc/(rolling+1);
 }
 
 //Speed limit
@@ -140,12 +138,24 @@ if global.hardmode = 1
         }
     }
 }
+if keyboard_check_pressed(ord("Z")) && sprite_index = sprSonicJump && ground = 0
+{
+    sprite_index = sprSonicDropDash
+    sound_play(global.S_Spindash)
+}
 //Gravity
 if place_meeting(x, y+vspeed+1, Solid_Mask) or place_meeting(x, y+vspeed+1, ScrapWall) or place_meeting(x, y+vspeed+1, EggElevator) or place_meeting(x, y+vspeed+1, ScrapWallDestruct) or place_meeting(x, y+vspeed+1, ScrapGround) or place_meeting(x, y+vspeed+1, FinalGround) or place_meeting(x, y+vspeed+1, FinalGround2) or place_meeting(x, y+vspeed+1, FinalGroundDown) or place_meeting(x, y+vspeed+1, UpGrounderBroke) or place_meeting(x, y+vspeed+1, UpGrounder) or place_meeting(x, y+vspeed+1, objSlopeParent) && vspeed >= 0
 {
     if ground = 0
     {
         rolling = 0
+        if (keyboard_check(ord("Z")) && sprite_index = sprSonicJump) or global.hardmode = 1
+        {
+            rolling = 1
+            if global.hardmode = 0 global.vel = maxSpeed*image_xscale
+            else global.vel = (5*image_xscale)
+            sound_play_ex(global.S_SpinLetGo,2)
+        }
     }
     ground = true;
     gravity = 0;
@@ -160,22 +170,19 @@ else
 //Handle sprites
 if canSpriteChange == true
 {
-if ground == true && ducking == false && rolling == false && spindash == false && Idie_mode = false
-{
-   if global.vel == 0
+    if ground == true && ducking == false && rolling == false && spindash == false && Idie_mode = false
+    {
+        if global.vel == 0 sprite_index = sprSonic;
+        else if global.vel > -8 && global.vel < 8 sprite_index = sprSonicWalk;
+        else sprite_index = sprSonicRun;
 
-   sprite_index = sprSonic;
-else if global.vel > -8 && global.vel < 8
-   sprite_index = sprSonicWalk;
-else
-   sprite_index = sprSonicRun;
-image_speed = abs(global.vel / 20);
-}
-else if sprite_index == sprSonicJump
-{
-   sprite_index = sprSonicJump;
-image_speed = 0.2 + abs(global.vel / 20)
-}
+        image_speed = abs(global.vel / 20);
+    }
+    else if sprite_index == sprSonicJump
+    {
+        sprite_index = sprSonicJump;
+        image_speed = 0.2 + abs(global.vel / 20)
+    }
 }
 
 
@@ -342,11 +349,11 @@ collideSlopes();
 //Return control when the player falls on the ground when getting hit
 if place_meeting(x, y+2*vspeed+2, Solid) or place_meeting(x, y+vspeed+1, Solid_Mask) or place_meeting(x, y+vspeed+1, EggElevator) or place_meeting(x, y+vspeed+1, ScrapWallDestruct) or place_meeting(x, y+vspeed+1, ScrapWall) or place_meeting(x, y+vspeed+1, ScrapGround) or place_meeting(x, y+vspeed+1, UpGrounder) or place_meeting(x, y+vspeed+1, FinalGround2) or place_meeting(x, y+vspeed+1, FinalGroundDown) or place_meeting(x, y+vspeed+1, FinalGround) or place_meeting(x, y+vspeed+1, objSlopeParent) && (sprite_index = sprSonicHit && canHit =false)
 {
-  canMove = true;
-  canSpriteChange = true;
-  image_alpha = 0.5;
-  alarm[0] = 90;
-  global.vel = 0;
+    canMove = true;
+    canSpriteChange = true;
+    image_alpha = 0.5;
+    alarm[0] = 90;
+    global.vel = 0;
 }
 
 if Bot = 1

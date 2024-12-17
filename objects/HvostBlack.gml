@@ -4,6 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+if instance_number(HvostBlack) > 1 instance_destroy()
 image_speed = 0.15
 #define Step_2
 /*"/*'/**//* YYD ACTION
