@@ -23,6 +23,7 @@
 	|obj_SweatParticleFF
 	|objExeFFAfterImg
 	|objEgg_ExeRecode
+	|objAECAfterStopParallax
 +dataselect
 	|MS_1
 	|MS_2

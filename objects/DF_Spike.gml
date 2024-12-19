@@ -69,7 +69,7 @@ if Act = 0
 {
     Act = 1
     DF_Exe.image_speed = 0.1
-    DF_Exe.sprite_index = sprDFExe_Weak
+    DF_Exe.sprite_index = sprEx13
     sound_play(global.S_IntoSpike)
     alarm[0] = 1
 }

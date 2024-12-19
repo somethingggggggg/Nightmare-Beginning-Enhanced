@@ -90,7 +90,7 @@ sprK_Lives
 sprPunchIcon
 sprNoice
 sprScrapGroundBlood
-sprEx6
+
 sprNote_3
 sprScrapWall
 sprEx7
@@ -182,8 +182,8 @@ sprHS_6G
 
 sprHSE_FlyForw
 sprWinRing
-sprChaseUp
-sprChaseDown
+
+
 sprHSE_Catch
 sprWinRingOut
 sprDeathRing
@@ -825,4 +825,5 @@ sprEGGBotStroll
 sprEx8Afterimg
 sprSonicDropDash
 sprTest
+
 sprTest2

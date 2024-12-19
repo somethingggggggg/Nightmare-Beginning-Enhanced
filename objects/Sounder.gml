@@ -72,6 +72,7 @@ optionVarName[5,0] = "DCRP_enabled"
 optionVarName[0,1] = "cheats"
 optionVarName[1,1] = "newcontent"
 optionVarName[2,1] = "Eggmovement"
+optionVarName[3,1] = "DropDashEnabled"
 
 optionVarName[0,2] = "fourbythree"
 optionVarName[1,2] = "dialoguefont"
@@ -88,6 +89,8 @@ optionblocked[5,0] = 0
 
 optionblocked[0,1] = 1
 optionblocked[1,1] = 1
+optionblocked[2,1] = 0
+optionblocked[3,1] = 0
 
 optionblocked[0,2] = 0
 optionblocked[1,2] = 0
@@ -98,7 +101,7 @@ optionblocked[4,2] = 0
 scr_lang_menu_init(global.lang)
 
 menulength[0] = 6
-menulength[1] = 3
+menulength[1] = 4
 menulength[2] = 5
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
@@ -659,7 +662,7 @@ if pause = 1 && room != 0
         if prevset[3,0] = 1 or global.performance = 1 draw_sprite_tiled(spr_NBRsomething,0,view_xview[view_current],view_yview[view_current]+(time/2))
         else
         {
-            draw_sprite_stretched(sprpausefuck,0,view_xview[view_current],view_yview[view_current],view_wview[view_current],view_hview[view_current])
+            draw_sprite_stretched(sprpausefuck,0,view_xview[view_current],view_yview[view_current],view_wview[view_current]+0.5,view_hview[view_current]+0.5)
             draw_sprite(spranother,0,view_xview[view_current],view_yview[view_current])
         }
         scr_menudraw2()

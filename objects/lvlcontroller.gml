@@ -116,5 +116,5 @@ if room = 32 or room = 79 or room = 43
     draw_sprite_ext(sprDarkCircle,0,view_xview[view_current],view_yview[view_current],1,1,0,c_white,0.25)
     //draw_sprite_ext(sprTest2,fuck,view_xview[view_current],view_yview[view_current],1,1,0,c_white,0.25)
     draw_sprite_stretched_ext(sprTest2,fuck,view_xview[view_current],view_yview[view_current],view_wview[view_current],view_hview[view_current],c_white,0.25)
-    draw_sprite_ext(sprTest,0,view_xview[view_current]-irandom_range(0,462)+462,view_yview[view_current]-irandom_range(0,260)+260,sign(irandom_range(-1,0)+0.5),sign(irandom_range(-1,0)+0.5),0,c_white,0.05)// 0.05
+    draw_sprite_ext(sprTest,0,view_xview[view_current]+irandom_range(0,462),view_yview[view_current]-irandom_range(0,260)+260,sign(irandom_range(-1,0)+0.5),sign(irandom_range(-1,0)+0.5),0,c_white,0.05)// 0.05
 }

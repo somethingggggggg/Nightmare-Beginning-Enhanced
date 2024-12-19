@@ -6,7 +6,7 @@ draw_set_valign(fa_middle)
 if prevset[3,0] = 1 or global.performance = 1 draw_sprite_tiled(spr_NBRsomething,0,view_xview[view_current],view_yview[view_current]+(time/2))
 else
 {
-    draw_sprite_stretched(sprpausefuck,0,view_xview[view_current],view_yview[view_current],view_wview[view_current],view_hview[view_current])
+    draw_sprite_stretched(sprpausefuck,0,view_xview[view_current],view_yview[view_current],view_wview[view_current]+0.5,view_hview[view_current]+0.5)
     draw_sprite(spranother,0,view_xview[view_current],view_yview[view_current])
 }
 draw_text(view_xview[view_current]+view_wview[view_current]/2,view_yview[view_current]+view_hview[view_current]/2-64,str_back)

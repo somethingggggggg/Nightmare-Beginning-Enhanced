@@ -46,6 +46,7 @@
 	|sprDF_Spike
 	|sprDF_Spindash
 	|sprDFAttack2
+	|sprChangePlayer
 +title cards
 	|sprDF_Note
 	|sprDM_Note
@@ -172,14 +173,11 @@
 |sprButtonHS
 |sprCam_Control
 |sprCEmerald
-|sprChangePlayer
 |sprCharasters_Ghost_Close1
 |sprCharasters_Ghost_Close2
 |sprCharasters_Ghost_Close3
 |sprCharasters_Ghost_Close4
 |sprCharasters_Rectangle
-|sprChaseDown
-|sprChaseUp
 |sprContinue_Note
 |sprCS_Easter_Egg
 |sprDA_1
@@ -278,7 +276,6 @@
 |sprEx4_3
 |sprEx4_4
 |sprEx5
-|sprEx6
 |sprEx7
 |sprEx7_2
 |sprEx8

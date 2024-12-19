@@ -57,7 +57,7 @@ if keyboard_check_pressed(vk_enter)
         }
         else
         {
-            pause = 0
+            /*pause = 0
             view_hview = prev_view_hview
             view_wview = prev_view_wview
             global.menustate = 0
@@ -68,7 +68,9 @@ if keyboard_check_pressed(vk_enter)
             sprite_delete(sprpausefuck)
             instance_activate_all()
             sound_stop_all()
-            myfade = 0
+            myfade = 0*/
+            scr_menuclose()
+            sound_stop_all()
             room_goto(38)
         }
     }

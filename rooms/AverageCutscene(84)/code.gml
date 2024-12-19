@@ -19,8 +19,11 @@ if BL.AEC_T = true
     background_hspeed[1] = -1
     background_visible[3] = true
     background_hspeed[3] = -5
+    background_blend[3] = $ff8080//$804040
     instance_create(224,410,AEC_Tails)
+    with AEC_Tails image_blend = $ff8080//$804040
     instance_create(200,410,HvostStand)
+    with HvostStand image_blend = $ff8080//$804040
     instance_create(496,400,AEC_Sonic)
     view_object[0] = AEC_Tails
     if global.cheats = 0 ini_write_real('progress','tailsend',1)

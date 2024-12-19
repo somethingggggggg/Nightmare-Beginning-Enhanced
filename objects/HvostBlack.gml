@@ -14,28 +14,20 @@ applies_to=self
 */
 if instance_exists(Pers1)
 {
-if Pers1.image_xscale = 1
-{
-image_xscale = 1
-move_snap(Pers1.x-5,Pers1.y+4)
-}
+    image_xscale = Pers1.image_xscale
+    x = Pers1.x-(5*image_xscale)
+    y = Pers1.y+4
+    //move_snap(Pers1.x-5,Pers1.y+4)
 
-if instance_exists(Pers1) && Pers1.image_xscale = -1
-{
-image_xscale = -1
-move_snap(Pers1.x+5,Pers1.y+4)
-}
-
-if Pers1.sprite_index = sprTailsWalk or Pers1.sprite_index = sprTailsJump
-{
-image_alpha = 0
-}
-
-if Pers1.sprite_index != sprTailsWalk && Pers1.sprite_index != sprTailsJump
-{
-image_alpha = 1
-}
-depth = Pers1.depth+1
+    if Pers1.sprite_index = sprTailsWalk or Pers1.sprite_index = sprTailsJump
+    {
+        image_alpha = 0
+    }
+    else
+    {
+        image_alpha = 1
+    }
+    depth = Pers1.depth+1
 }
 
 

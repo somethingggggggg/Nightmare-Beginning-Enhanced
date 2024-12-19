@@ -25,7 +25,7 @@ platform = noone
 Act = 0
 IdieTimer = 300
 Idie_mode = false
-
+dropdash = 0
 origacc = 0.08
 stopping = 0
 varsprskid = spr_sonicskid
@@ -109,15 +109,8 @@ if ground == true
 }
 
 //Speed limit
-if global.vel > maxSpeed && rolling = false
-   global.vel = maxSpeed;
-else if global.vel < -maxSpeed && rolling = false
-   global.vel = -maxSpeed;
-
-if global.vel > maxSpeed && rolling = true
- global.vel = maxSpeed2;
-else if global.vel < -maxSpeed && rolling = true
-   global.vel = -maxSpeed2;
+if rolling = 0 global.vel = clamp(global.vel,-maxSpeed,maxSpeed)
+else global.vel = clamp(global.vel,-maxSpeed2,maxSpeed2)
 
 if global.vel > -acc && global.vel < acc
 {
@@ -138,10 +131,15 @@ if global.hardmode = 1
         }
     }
 }
-if keyboard_check_pressed(ord("Z")) && sprite_index = sprSonicJump && ground = 0
+if keyboard_check_pressed(ord("Z")) && sprite_index = sprSonicJump && ground = 0 && global.DropDashEnabled = 1
 {
-    sprite_index = sprSonicDropDash
+    dropdash = 1
     sound_play(global.S_Spindash)
+}
+if keyboard_check_released(ord("Z")) && dropdash = 1
+{
+    dropdash = 0
+    sprite_index = sprSonicJump
 }
 //Gravity
 if place_meeting(x, y+vspeed+1, Solid_Mask) or place_meeting(x, y+vspeed+1, ScrapWall) or place_meeting(x, y+vspeed+1, EggElevator) or place_meeting(x, y+vspeed+1, ScrapWallDestruct) or place_meeting(x, y+vspeed+1, ScrapGround) or place_meeting(x, y+vspeed+1, FinalGround) or place_meeting(x, y+vspeed+1, FinalGround2) or place_meeting(x, y+vspeed+1, FinalGroundDown) or place_meeting(x, y+vspeed+1, UpGrounderBroke) or place_meeting(x, y+vspeed+1, UpGrounder) or place_meeting(x, y+vspeed+1, objSlopeParent) && vspeed >= 0
@@ -149,22 +147,24 @@ if place_meeting(x, y+vspeed+1, Solid_Mask) or place_meeting(x, y+vspeed+1, Scra
     if ground = 0
     {
         rolling = 0
-        if (keyboard_check(ord("Z")) && sprite_index = sprSonicJump) or global.hardmode = 1
+        if (keyboard_check(ord("Z")) && dropdash = 1 && global.DropDashEnabled = 1) or global.hardmode = 1
         {
-            rolling = 1
             if global.hardmode = 0 global.vel = maxSpeed*image_xscale
             else global.vel = (5*image_xscale)
             sound_play_ex(global.S_SpinLetGo,2)
+            rolling = 1
+            mask_index = sprSonicMask
         }
     }
+    dropdash = 0
     ground = true;
     gravity = 0;
     if vspeed > 8 vspeed = 8;
 }
 else
 {
-  ground = false;
-   gravity = 0.25;
+    ground = false;
+    gravity = 0.25;
 }
 
 //Handle sprites
@@ -204,7 +204,6 @@ if Bot = 3
         jmpframes -= 1
         vspeed = -6
     }
-
     if keyboard_check_released(ord("Z"))
     {
         jmpframes = 0
@@ -263,12 +262,10 @@ if rolling == true && (ground == false or global.vel == 0)
 
 if up == true && spindash == false
 {
-   sprite_index = sprSonicUp;
-if image_index < 1
- image_speed = 0.1;
-else
-image_speed = 0;
-canMove = false;
+    sprite_index = sprSonicUp;
+    if image_index < 1 image_speed = 0.1;
+    else image_speed = 0;
+    canMove = false;
 }
 
 
@@ -300,6 +297,12 @@ if spindash = true && ground = false
     rolling = true
 }
 
+if dropdash = 1
+{
+    sprite_index = sprSonicDropDash
+    mask_index = sprSonicMask
+    if (keyboard_check(vk_right) - keyboard_check(vk_left)) != 0 image_xscale = keyboard_check(vk_right) - keyboard_check(vk_left)
+}
 
 //Ducking animation in the air fix
 if ground == false && sprite_index == sprSonicDuck
@@ -310,17 +313,12 @@ if ground == false && sprite_index == sprSonicDuck
 
 if ground == true && ducking == true && keyboard_check_pressed(ord("Z")) && canHit = true
 {
-   spindash = true;
+    spindash = true;
    //sound_play(global.S_Spindash)
 
- if spindashTimer < 5
-   spindashTimer += 2;
-
- if spindashTimer >= 5
-   spindashTimer += 4
-
- if spindashTimer >= 10
-   spindashTimer += 6
+    if spindashTimer < 5 spindashTimer += 2;
+    if spindashTimer >= 5 spindashTimer += 4
+    if spindashTimer >= 10 spindashTimer += 6
 
     sound_stop(global.S_Spindash)
     sound_play_ex(global.S_Spindash,1,clamp((spindashTimer/30)+1,0.5,2.5))
@@ -418,7 +416,7 @@ if Idie_mode = true
     image_speed = 0.12
 }
 
-if global.vel !=0 or ducking == true or up == true
+if global.vel != 0 or ducking == true or up == true
 {
     IdieTimer = 300
     Idie_mode = false
@@ -445,9 +443,9 @@ applies_to=self
 */
 if Solid.solid = 1
 {
-move_contact_solid(direction, 0.1);
-drawAngle = 0
-global.vel = 0
+    move_contact_solid(direction, 0.1);
+    drawAngle = 0
+    global.vel = 0
 }
 #define Collision_ScrapGround
 /*"/*'/**//* YYD ACTION
@@ -552,20 +550,20 @@ drawAngle = 0
 }*/
 if place_meeting(x,bbox_bottom+1,FinalGround)
 {
-move_contact_solid(270, 4);
-vspeed = 0;
+    move_contact_solid(270, 4);
+    vspeed = 0;
 }
 
 if place_meeting(x,bbox_top,FinalGround)
 {
-move_contact_solid(90, 4);
+    move_contact_solid(90, 4);
 }
 
 if place_meeting(bbox_right,y,FinalGround) or place_meeting(bbox_left,y,FinalGround)
 {
-move_contact_solid(direction, 0.1)
-drawAngle = 0
-global.vel = 0
+    move_contact_solid(direction, 0.1)
+    drawAngle = 0
+    global.vel = 0
 }
 #define Collision_UpGrounder
 /*"/*'/**//* YYD ACTION
@@ -791,19 +789,20 @@ applies_to=self
 */
 if ExeAttack3.sprite_index = sprSonicSpindash && sprite_index != sprSonicJump && canHit = true
 {
-playerGetHit()
+    playerGetHit()
 }
 
 if ExeAttack3.sprite_index = sprFinalExePossible_to_beat1 && sprite_index = sprSonicJump
 {
-with ExeAttack3
-{
-global.Hit+=1
-if global.Hit = 27 scr_giveach('DM_WR')
-vspeed =-5
-Hit = true
-sound_play(global.S_Hit)
-}}
+    with ExeAttack3
+    {
+        global.Hit += 1
+        if global.Hit = 27 scr_giveach('DM_WR')
+        vspeed = -5
+        Hit = true
+        sound_play(global.S_Hit)
+    }
+}
 #define Collision_ExeAttack4
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -855,21 +854,21 @@ drawAngle = 0
 
 if place_meeting(x,bbox_bottom+1,Solid_Mask)
 {
-move_contact_solid(270, 4);
-vspeed = 0
+    move_contact_solid(270, 4);
+    vspeed = 0
 }
 
 if place_meeting(x,bbox_top,Solid_Mask)
 {
-move_contact_solid(90, 4);
-vspeed = 0;
+    move_contact_solid(90, 4);
+    vspeed = 0;
 }
 
 if place_meeting(bbox_right,y,Solid_Mask) or place_meeting(bbox_left,y,Solid_Mask)
 {
-move_contact_solid(direction, 0.1)
-drawAngle = 0
-global.vel = 0
+    move_contact_solid(direction, 0.1)
+    drawAngle = 0
+    global.vel = 0
 }
 /*if rolling = true
 {
