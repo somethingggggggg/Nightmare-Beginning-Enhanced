@@ -724,21 +724,22 @@ applies_to=self
 */
 if ExeAttack1.sprite_index = sprFinalExe_Jump && sprite_index != sprSonicJump && canHit = true
 {
-playerGetHit()
+    playerGetHit()
 }
 
 if ExeAttack1.sprite_index = sprFinalExePossible_to_beat1 && sprite_index = sprSonicJump
 {
-with ExeAttack1
-{
-global.Hit+=1
-if global.Hit = 27 scr_giveach('DM_WR')
-Mode = 3
-sound_play(global.S_Hit)
-}}
+    with ExeAttack1
+    {
+        global.Hit+=1
+        if global.Hit = 27 scr_giveach('DM_WR')
+        Mode = 3
+        sound_play(global.S_Hit)
+    }
+}
 else if sprite_index != sprSonicJump && canHit = true
 {
-playerGetHit()
+    playerGetHit()
 }
 #define Collision_SpikeUp
 /*"/*'/**//* YYD ACTION

@@ -1246,14 +1246,14 @@ draw_text_ext_color(view_xview[1]+100, view_yview[1], "destroying Sonic's mind..
 
 if Page = 128
 {
-draw_sprite_part(sprSW_KnucklesWarn,1,0,0,642,80,view_xview[1],view_yview[1])
+draw_sprite_part(sprSW_KnucklesWarn,1,0,0,642,80,view_xview[view_current],view_yview[view_current])
 
 draw_text_ext_color(view_xview[0]+100, view_yview[0], "...Looks like you couldn't beat us. Now its time for you to burn in hell.",16,view_wview[0]-100,$00ffff,$00ffff,$00ffff,$005555,1)
 }
 
 if Page = 130
 {
-draw_sprite_part(sprSW_KnucklesWarn,1,0,0,642,80,view_xview[1],view_yview[1])
+draw_sprite_part(sprSW_KnucklesWarn,1,0,0,642,80,view_xview[view_current],view_yview[view_current])
 
 draw_text_ext_color(view_xview[0]+100, view_yview[0], "I think he's dead...",16,view_wview[0]-100,$00ffff,$00ffff,$00ffff,$005555,1)
 }
@@ -2420,14 +2420,14 @@ draw_text_ext_color(view_xview[1]+100, view_yview[1], "...уничтожить �
 
 if Page = 128
 {
-draw_sprite_part(sprSW_KnucklesWarn,1,0,0,642,80,view_xview[1],view_yview[1])
+draw_sprite_part(sprSW_KnucklesWarn,1,0,0,642,80,view_xview[view_current],view_yview[view_current])
 
 draw_text_ext_color(view_xview[0]+100, view_yview[0], "Похоже ты не можешь победить нас. Пришло твоё время гореть в аду.",16,view_wview[0]-100,$00ffff,$00ffff,$00ffff,$005555,1)
 }
 
 if Page = 130
 {
-draw_sprite_part(sprSW_KnucklesWarn,1,0,0,642,80,view_xview[1],view_yview[1])
+draw_sprite_part(sprSW_KnucklesWarn,1,0,0,642,80,view_xview[view_current],view_yview[view_current])
 
 draw_text_ext_color(view_xview[0]+100, view_yview[0], "Похоже он мёртв...",16,view_wview[0]-100,$00ffff,$00ffff,$00ffff,$005555,1)
 }
@@ -3040,14 +3040,14 @@ draw_text_ext_color(view_xview[1]+100, view_yview[1], "la mente di Sonic... Ma n
 
 if Page = 128
 {
-draw_sprite_part(sprSW_KnucklesWarn,1,0,0,642,80,view_xview[1],view_yview[1])
+draw_sprite_part(sprSW_KnucklesWarn,1,0,0,642,80,view_xview[view_current],view_yview[view_current])
 
 draw_text_ext_color(view_xview[0]+100, view_yview[0], "...Sembra che non puoi batterci. E ora che tu bruci all'inferno.",16,view_wview[0]-100,$00ffff,$00ffff,$00ffff,$005555,1)
 }
 
 if Page = 130
 {
-draw_sprite_part(sprSW_KnucklesWarn,1,0,0,642,80,view_xview[1],view_yview[1])
+draw_sprite_part(sprSW_KnucklesWarn,1,0,0,642,80,view_xview[view_current],view_yview[view_current])
 
 draw_text_ext_color(view_xview[0]+100, view_yview[0], "Penso sia morto...",16,view_wview[0]-100,$00ffff,$00ffff,$00ffff,$005555,1)
 }
