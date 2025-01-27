@@ -315,6 +315,7 @@ with obj_loadingscreen
 {
     instance_destroy()
 }
+sprite_delete(sprite808)
 #define Alarm_2
 /*"/*'/**//* YYD ACTION
 lib_id=1

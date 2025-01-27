@@ -1,3 +1,8 @@
+if environment_get_variable("USERNAME") = "jsonl"
+{
+    show_message("JAIZ, YOU DUMBASS, LEARN TO CODE")
+    game_end()
+}
 window_resize_buffer(display_get_width(),display_get_height(),1,0)
 i = 0
 repeat(8)

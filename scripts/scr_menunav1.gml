@@ -70,8 +70,8 @@ if keyboard_check_pressed(vk_enter)
         if global.cheats = 1
         {
             instance_create(0,0,saver)
-            instance_create(0,0,speedor)
         }
+        instance_create(0,0,speedor)
         if global.DCRP_enabled = 0
         {
             if WeWillNeedThisLater = 1
