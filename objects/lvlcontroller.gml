@@ -93,10 +93,9 @@ if room = 21
         view_yview[0] = Knuckles.y - view_hview[0]/2
     }
 */
-    if instance_exists(view_object[0])
+    with view_object[0]
     {
-        view_xview[0] = view_object[0].x - view_wview[0]/2
-        view_yview[0] = view_object[0].y - view_hview[0]/2
+        scr_camera_follow()
     }
 
     background_y[0] = view_yview[0]
@@ -115,6 +114,7 @@ if room = 32 or room = 79 or room = 43
 {
     draw_sprite_ext(sprDarkCircle,0,view_xview[view_current]+(1-global.performance)/2,view_yview[view_current]+(1-global.performance)/2,1,1,0,c_white,0.25)
     //draw_sprite_ext(sprTest2,fuck,view_xview[view_current],view_yview[view_current],1,1,0,c_white,0.25)
-    draw_sprite_stretched_ext(sprTest2,fuck,view_xview[view_current],view_yview[view_current],view_wview[view_current]+(1-global.performance)/2,view_hview[view_current]+(1-global.performance)/2,c_white,0.25)
+    if global.hardmode = 0 draw_sprite_stretched_ext(sprTest2,fuck,view_xview[view_current],view_yview[view_current],view_wview[view_current]+(1-global.performance)/2,view_hview[view_current]+(1-global.performance)/2,c_white,0.25)
+    else draw_sprite_stretched_ext(sprTest2,fuck,view_xview[view_current],view_yview[view_current],view_wview[view_current]+(1-global.performance)/2,view_hview[view_current]+(1-global.performance)/2,c_red,0.25)
     draw_sprite_ext(sprTest,0,view_xview[view_current]+irandom_range(0,462),view_yview[view_current]-irandom_range(0,260)+260,sign(irandom_range(-1,0)+0.5),sign(irandom_range(-1,0)+0.5),0,c_white,0.05)// 0.05
 }

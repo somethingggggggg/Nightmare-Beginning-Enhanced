@@ -31,6 +31,7 @@ applies_to=self
 */
 background_hspeed[1] = 0
 background_hspeed[3] = 0
+instance_create(x,y,objAECAfterStopParallax)
 hspeed = 3
 alarm[1] = 70
 #define Alarm_1

@@ -37,7 +37,7 @@ image_speed = 0.15
 
 if global.Deadly_Mode = true
 {
-sprite_index = sprSonicExSwithCrack
+    sprite_index = sprSonicExSwithCrack
 }
 #define Alarm_0
 /*"/*'/**//* YYD ACTION

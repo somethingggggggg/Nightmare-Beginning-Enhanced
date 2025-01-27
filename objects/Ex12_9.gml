@@ -116,7 +116,7 @@ if instance_exists(Knuckles)
 {
     if sprite_index != sprFinalExe_Jump
     {
-        move_snap(Knuckles.x,Knuckles.y-64)
+        move_snap(Knuckles.x,Knuckles.y-96)
     }
 }
 if Target_Tails = true

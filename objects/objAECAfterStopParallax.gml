@@ -4,13 +4,25 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-prev_x = 0
-prev_y = 0
+i = 0
+while i <= 2
+{
+    prev_x[i] = background_x[i]
+    prev_y[i] = background_y[i]
+    i += 1
+}
+prev_xview = view_xview[0]
+prev_yview = view_yview[0]
 #define Step_2
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
-background_x[0] = view_xview[view_current]+prev_x
-background_y[0] = view_yview[view_current]+prev_y
+i = 0
+while i <= 2
+{
+    background_x[i] = prev_x[i] + (view_xview[0] - prev_xview)/4
+    background_y[i] = prev_x[i] + (view_yview[0] - prev_xview)/4
+    i += 1
+}

@@ -11,6 +11,8 @@ prev_wport = 0
 prev_wport = 0
 prev_win_w_size = 1280
 prev_win_h_size = 720
+prev_win_x = display_get_width()/2 - prev_win_w_size/2
+prev_win_y = display_get_height()/2 - prev_win_h_size/2
 HorizScroll = 0
 time = 0
 i = 0
@@ -610,7 +612,9 @@ else
         }
     }
 }
-window_set_size(prev_win_w_size,prev_win_h_size)
+//window_set_size(prev_win_w_size,prev_win_h_size)
+//window_set_position(prev_win_x,prev_win_y)
+window_set_rectangle(prev_win_x,prev_win_y,prev_win_w_size,prev_win_h_size)
 if global.mirrored = 1
 {
     with all
@@ -629,6 +633,8 @@ prev_wport = view_wport[view_current]
 prev_hport = view_hport[view_current]
 prev_win_w_size = window_get_width()
 prev_win_h_size = window_get_height()
+prev_win_x = window_get_x()
+prev_win_y = window_get_y()
 #define Other_30
 /*"/*'/**//* YYD ACTION
 lib_id=1

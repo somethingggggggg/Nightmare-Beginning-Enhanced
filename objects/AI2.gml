@@ -9,7 +9,7 @@ image_speed = 0.2
 mask_index = sprKnucklesStandMask
 //image_blend = $808080
 
-global.Windtime = 0
+
 if global.Windtime > 0
 {
     hspeed = 2.5

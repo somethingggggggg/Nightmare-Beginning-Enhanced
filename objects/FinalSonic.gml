@@ -55,17 +55,13 @@ if Bot = 3
     if global.vel > 0 && ground == false
       global.vel -= acc
 
-    if rolling == false
-      image_xscale = -1;
+    if rolling == false image_xscale = -1;
     }
     if (keyboard_check(vk_right) && !place_meeting(x+abs(global.vel)+1, y, Solid_Mask) && !place_meeting(x+abs(global.vel)+1, y, EggElevator) && !place_meeting(x+abs(global.vel)+1, y, ScrapWallDestruct) && !place_meeting(x+abs(global.vel)+1, y, ScrapWall) && !place_meeting(x+abs(global.vel)+1, y, ScrapGround) && !place_meeting(x+abs(global.vel)+1, y, FinalGroundDown) && !place_meeting(x+abs(global.vel)+1, y, FinalGround2) && !place_meeting(x+abs(global.vel)+1, y, UpGrounder) && !place_meeting(x+abs(global.vel)+1, y, UpGrounderBroke) && !place_meeting(x+abs(global.vel)+1, y, FinalGround) && !place_meeting(x+abs(global.vel)+1, y, Solid)) && (canMove == true or (rolling == true && global.vel < 0))
     {
-      global.vel += acc * (1+ground);
-    if global.vel < 0 && ground == false
-      global.vel += acc
-
-    if rolling == false
-      image_xscale = 1;
+        global.vel += acc * (1+ground);
+        if global.vel < 0 && ground == false global.vel += acc
+        if rolling == false image_xscale = 1;
     }
 }
 
@@ -147,13 +143,12 @@ if place_meeting(x, y+vspeed+1, Solid_Mask) or place_meeting(x, y+vspeed+1, Scra
     if ground = 0
     {
         rolling = 0
-        if (keyboard_check(ord("Z")) && dropdash = 1 && global.DropDashEnabled = 1) or global.hardmode = 1
+        if (keyboard_check(ord("Z")) && dropdash = 1 && global.DropDashEnabled = 1)
         {
-            if global.hardmode = 0 global.vel = maxSpeed*image_xscale
-            else global.vel = (5*image_xscale)
+            global.vel = (maxSpeed*image_xscale)
             sound_play_ex(global.S_SpinLetGo,2)
             rolling = 1
-            mask_index = sprSonicMask
+            //mask_index = sprSonicMask
         }
     }
     dropdash = 0

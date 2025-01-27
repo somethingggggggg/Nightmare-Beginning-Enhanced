@@ -245,12 +245,14 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-global.Windtime = 360
+
+global.Windtime = 120
 alarm[6] = 360 * irandom_range(30,50)/10
-with AI1 hspeed = 2.5
-with AI2 hspeed = 2.5
-with AI3 hspeed = 2.5
-background_hspeed[0] = 5
+with AI1 hspeed = 1.5
+with AI2 hspeed = 1.5
+with AI3 hspeed = 1.5
+//background_hspeed[0] = 5
+lvlcontroller.scroll = 5
 #define Alarm_7
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -272,7 +274,7 @@ else
         with AI1 hspeed = 0
         with AI2 hspeed = 0
         with AI3 hspeed = 0
-        background_hspeed[0] = 0
+        lvlcontroller.scroll = 0
         global.Windtime -= 1
     }
 }

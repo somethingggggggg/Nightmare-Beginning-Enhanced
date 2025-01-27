@@ -5,7 +5,6 @@ action_id=603
 applies_to=self
 */
 image_speed = 0.2
-global.Windtime = 0
 if global.Windtime > 0
 {
     hspeed = 2.5

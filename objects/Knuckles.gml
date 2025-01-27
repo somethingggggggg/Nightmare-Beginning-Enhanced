@@ -605,8 +605,14 @@ if Bot_mode = false
     {
         draw_sprite(sprPunchIcon, 0, view_xview[0]+view_wview[0]-40, view_yview[0]+240)
     }
+
     if Act = 1
     {
         draw_sprite(sprTwisterIcon, 0, view_xview[0]+view_wview[0]-50, view_yview[0]+25)
+    }
+    else
+    {
+        draw_sprite_ext(sprTwisterIcon, 0, view_xview[0]+view_wview[0]-50, view_yview[0]+25,1,1,0,$404040,1)
+        if alarm_get(3) != 0 && Act != 5 draw_sprite_part_ext(sprTwisterIcon, 0,0,(alarm_get(3)*0.128),55,32-(alarm_get(3)*0.128), view_xview[0]+view_wview[0]-50-27, view_yview[0]+25-16+(alarm_get(3)*0.128),1,1,$ffffff,1)
     }
 }
