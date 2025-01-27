@@ -1,14 +1,10 @@
 Game Appearance
 Game Maker 8.2 Alpha
-Game Maker 8.2 Chunk
-Game Maker 8.2 Console
 Game Maker 8.2 Core
 Game Maker 8.2 DirectX9
-Game Maker 8.2 DragFile
 Game Maker 8.2 Joystick
 Game Maker 8.2 Live
 Game Maker 8.2 Network
-Game Maker 8.2 SDL Audio
 Game Maker 8.2 Sound
 Game Maker 8.2 Video
 GM Printing

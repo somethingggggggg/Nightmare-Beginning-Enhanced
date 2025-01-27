@@ -4,6 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+
 hspeed = 0
 acc = 0.076875;
 vel = 0;
@@ -259,7 +260,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-shader_pixel_set(psGrayscale())
+shader_pixel_set(global.pshader)
 shader_pixel_uniform_f("fade",0.5)
 if sprite_index = sprTailsJump && !instance_exists(SmachDash) draw_sprite_ext(sprtt, image_index/2, x, y, 1, 1, point_direction(Pers1.x,Pers1.y,Pers1.x+Pers1.vel,Pers1.y+Pers1.vspeed), image_blend, image_alpha);
 draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale, image_yscale, drawAngle, image_blend, image_alpha);

@@ -14,6 +14,7 @@ prev_win_h_size = 720
 prev_win_x = display_get_width()/2 - prev_win_w_size/2
 prev_win_y = display_get_height()/2 - prev_win_h_size/2
 HorizScroll = 0
+global.pshader = psGrayscale()
 time = 0
 i = 0
 repeat(8)
@@ -299,6 +300,7 @@ global.S_SpinLetGo=sound_add(working_directory+"/Sound/SpinLetGo.wav",1,0)
 global.S_Final_Boss_RG=sound_add(working_directory+"/Sound/Final_Boss_REALLY_GOOD.mp3",0,0)
 
 //doomsday machine
+/*
 if irandom_range(0,10000) = 56
 {
     i = 0
@@ -307,7 +309,7 @@ if irandom_range(0,10000) = 56
         sound_replace(ds_list_find_value(sound_kind_list(0),i),working_directory+"/Sound/Final_Boss_REALLY_GOOD.mp3",0,0)
         i += 1
     }
-}
+}*/
 
 with obj_loadingscreen
 {
@@ -410,6 +412,10 @@ if keyboard_check_pressed(vk_f4)
     if window_get_fullscreen() = 1
     {
         window_set_fullscreen(0)
+        if prev_win_x <= 0 && prev_win_x <= 0
+        {
+            window_center()
+        }
         if global.performance = 1
         {
             i = 0

@@ -14,6 +14,7 @@ alarm[0] = 342
 
 if !instance_exists(Knuckles)
 {
+
     CharArr[0,0] = AI1
     CharArr[1,0] = AI2
     CharArr[2,0] = AI3
@@ -98,6 +99,7 @@ if BL.Attack = 3
         }
     }
 }
+*/
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -369,7 +371,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-shader_pixel_set(psGrayscale())
+shader_pixel_set(global.pshader)
 shader_pixel_uniform_f("fade",0.5)
 if time < 342 draw_sprite(sprite_index,image_index,x,y+sin(time/16))
 else draw_self()

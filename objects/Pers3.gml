@@ -4,6 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+
 hspeed = 0
 acc = 0.066875;
 vel = 0;
@@ -268,8 +269,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-shader_pixel_set(psGrayscale())
-shader_pixel_uniform_f("fade",0.5)
+shader_pixel_set(global.pshader)
+//shader_pixel_uniform_f("fade",0.5)
 draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale, image_yscale, drawAngle, image_blend, image_alpha);
 shader_reset()
 

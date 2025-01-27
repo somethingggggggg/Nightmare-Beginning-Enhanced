@@ -261,7 +261,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-shader_pixel_set(psGrayscale())
+shader_pixel_set(global.pshader)
 shader_pixel_uniform_f("fade",0.5)
 draw_self()
 shader_reset()
