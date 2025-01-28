@@ -6,6 +6,8 @@ applies_to=self
 */
 global.TDetection = true
 sound_loop(global.S_Green_Hill)
+image_speed = 0
+image_index = instance_exists(KPassed) + instance_exists(EPassed)
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=301

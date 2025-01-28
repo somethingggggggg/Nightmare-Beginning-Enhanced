@@ -9,6 +9,7 @@ vspeed = 0
 image_speed = 0.15
 view_object[view_current] = Debug_Thing
 acc = 0.1
+drawAngle = 0
 global.xvel = 0;
 global.yvel = 0;
 maxSpeed = 15;
@@ -112,20 +113,20 @@ if !keyboard_check(vk_up) && !keyboard_check(vk_down)
 x += global.xvel;
 y += global.yvel;
 
-if keyboard_check_pressed(ord("C"))
+if keyboard_check_pressed(ord("D"))
 {
     Picked += 1
-    if Picked > ArrLength-1 Picked = 0
+    Picked = (Picked+ArrLength) mod ArrLength
 }
-if keyboard_check_pressed(ord("X"))
+if keyboard_check_pressed(ord("A"))
 {
     Picked -= 1
-    if Picked < 0 Picked = ArrLength-1
+    Picked = (Picked+ArrLength) mod ArrLength
 }
 
 sprite_index = ArrSprDebugMode[Picked]
 
-if keyboard_check_pressed(ord("V"))
+if keyboard_check_pressed(ord("S"))
 {
     instance_create(x,y,ArrObjDebugMode[Picked])
     if Picked = 9 ScrapEggman.Bot = 0
@@ -139,6 +140,59 @@ if keyboard_check_pressed(ord("V"))
         TR1.sprite_index = sprLTR
     }
 }
+if keyboard_check_pressed(ord("Q"))
+{
+    if room=8
+    {
+        sound_stop_all()
+        room_goto(7)
+    }
+
+    if room=11
+    {
+        sound_stop_all()
+        room_goto(10)
+    }
+
+    if room=40
+    {
+        sound_stop_all()
+        room_goto(52)
+    }
+
+    if room=21
+    {
+        sound_stop_all()
+        room_goto(21)
+    }
+
+    if room=26
+    {
+        sound_stop_all()
+        room_goto(25)
+    }
+
+    if room=66
+    {
+        sound_stop_all()
+        room_goto(68)
+    }
+
+    if room=89
+    {
+        sound_stop_all()
+        room_goto(91)
+    }
+}
+#define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale, image_yscale, drawAngle, image_blend, image_alpha);
+draw_sprite(sprDebugHUD,global.lang mod 2,view_xview[0]+10,view_yview[0]+10)
+draw_sprite(sprDebugWarnHUD,global.lang mod 2,view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]-9-3)
 #define KeyPress_67
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -203,6 +257,102 @@ sprite_index = sprKnucklesLive
 if sprite_index = sprRing
 {
 sprite_index = sprTailsLive
+}
+#define KeyPress_69
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if instance_exists(HZ_2)
+{
+instance_create(x,y,Tails)
+instance_create(x,y,HvostStand)
+view_object[0] = Tails
+instance_destroy()
+}
+
+if instance_exists(HS_1)
+{
+instance_create(x,y,Tails2)
+Tails2.maxSpeed = 5
+instance_create(x,y,HvostStand)
+view_object[0] = Tails2
+instance_destroy()
+}
+
+if instance_exists(HS_1G)
+{
+instance_create(x,y,Tails3)
+if global.Tails_mode = true
+{
+instance_create(x,y,HvostStand2)
+}
+view_object[0] = Tails3
+instance_destroy()
+}
+
+if instance_exists(FF_DT)
+{
+instance_create(x,y,ExePlayer)
+ExePlayer.Bot = 3
+view_object[0] = ExePlayer
+instance_destroy()
+}
+
+if instance_exists(Easter_Sequel)
+{
+if Easter_Sequel.sprite_index = sprEaster_Sequel2
+{
+instance_create(x,y,Tails4)
+instance_create(x,y,HvostStand)
+view_object[0] = Tails4
+instance_destroy()
+}}
+
+if instance_exists(Easter_Sequel)
+{
+if Easter_Sequel.sprite_index = sprEaster_Sequel
+{
+instance_create(x,y,Knuckles)
+Knuckles.Bot_mode = false
+view_object[0] = Knuckles
+instance_destroy()
+}}
+
+if global.EDetection = true && instance_exists(Egg_Ground)
+{
+instance_create(x,y,Eggman)
+view_object[0] = Eggman
+instance_destroy()
+}
+if global.EDetection = true && !instance_exists(Egg_Ground)
+{
+instance_create(x,y,ScrapGround)
+view_object[0] = ScrapGround
+instance_destroy()
+}
+
+if instance_exists(Noice2)
+{
+instance_create(x,y,Sonic)
+view_object[0] = Sonic
+instance_destroy()
+}
+
+if instance_exists(SuicideSpikes)
+{
+instance_create(x,y,SuicideSonic)
+view_object[0] = SuicideSonic
+instance_destroy()
+}
+
+if instance_exists(FinalGround2)
+{
+instance_create(x,y,FinalSonic)
+FinalSonic.Bot = 3
+view_object[0] = FinalSonic
+instance_destroy()
 }
 #define KeyPress_86
 /*"/*'/**//* YYD ACTION
@@ -349,100 +499,4 @@ sprite_index = sprSonic
 if sprite_index = sprMS_Stand
 {
 sprite_index = sprMasterEmerald
-}
-#define KeyPress_90
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-if instance_exists(HZ_2)
-{
-instance_create(x,y,Tails)
-instance_create(x,y,HvostStand)
-view_object[0] = Tails
-instance_destroy()
-}
-
-if instance_exists(HS_1)
-{
-instance_create(x,y,Tails2)
-Tails2.maxSpeed = 5
-instance_create(x,y,HvostStand)
-view_object[0] = Tails2
-instance_destroy()
-}
-
-if instance_exists(HS_1G)
-{
-instance_create(x,y,Tails3)
-if global.Tails_mode = true
-{
-instance_create(x,y,HvostStand2)
-}
-view_object[0] = Tails3
-instance_destroy()
-}
-
-if instance_exists(FF_DT)
-{
-instance_create(x,y,ExePlayer)
-ExePlayer.Bot = 3
-view_object[0] = ExePlayer
-instance_destroy()
-}
-
-if instance_exists(Easter_Sequel)
-{
-if Easter_Sequel.sprite_index = sprEaster_Sequel2
-{
-instance_create(x,y,Tails4)
-instance_create(x,y,HvostStand)
-view_object[0] = Tails4
-instance_destroy()
-}}
-
-if instance_exists(Easter_Sequel)
-{
-if Easter_Sequel.sprite_index = sprEaster_Sequel
-{
-instance_create(x,y,Knuckles)
-Knuckles.Bot_mode = false
-view_object[0] = Knuckles
-instance_destroy()
-}}
-
-if global.EDetection = true && instance_exists(Egg_Ground)
-{
-instance_create(x,y,Eggman)
-view_object[0] = Eggman
-instance_destroy()
-}
-if global.EDetection = true && !instance_exists(Egg_Ground)
-{
-instance_create(x,y,ScrapGround)
-view_object[0] = ScrapGround
-instance_destroy()
-}
-
-if instance_exists(Noice2)
-{
-instance_create(x,y,Sonic)
-view_object[0] = Sonic
-instance_destroy()
-}
-
-if instance_exists(SuicideSpikes)
-{
-instance_create(x,y,SuicideSonic)
-view_object[0] = SuicideSonic
-instance_destroy()
-}
-
-if instance_exists(FinalGround2)
-{
-instance_create(x,y,FinalSonic)
-FinalSonic.Bot = 3
-view_object[0] = FinalSonic
-instance_destroy()
 }

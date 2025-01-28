@@ -907,13 +907,13 @@ if instance_exists(Final_Time)
 {
     if !instance_exists(FinalCam4)
     {
-        draw_sprite(sprHitCounter,0,view_xview[0]+210,view_yview[0]+42)
+        draw_sprite(sprHitCounter,global.lang mod 2,view_xview[0]+210,view_yview[0]+42)
         draw_text_color(view_xview[0]+230,view_yview[0]+35,string(global.Hit)+'/15',$00ffff,$00ffff,$00ffff,$005555, 1)
         //draw_text_color(view_xview[0]+250,view_yview[0]+35,'/15',$00ffff,$00ffff,$00ffff,$005555, 1)
     }
     if instance_exists(FinalCam4) && Bot = 3
     {
-        draw_sprite(sprRunCounter,0,view_xview[0]+231,view_yview[0]+50)
+        draw_sprite(sprRunCounter,global.lang mod 2,view_xview[0]+231,view_yview[0]+50)
     }
 }
 /*"/*'/**//* YYD ACTION

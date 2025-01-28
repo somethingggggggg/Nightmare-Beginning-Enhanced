@@ -60,7 +60,8 @@ applies_to=self
 sound_stop_all()
 transition_kind = 21
 transition_steps = 180
-room_goto(69)
+if global.vidCutscn = 0 room_goto(69) //nice
+else room_goto(93)
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

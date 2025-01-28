@@ -71,6 +71,7 @@ optionVarName[2,0] = "showfps"
 optionVarName[3,0] = "performance"
 optionVarName[4,0] = "OrigCutscene"
 optionVarName[5,0] = "DCRP_enabled"
+optionVarName[6,0] = "vidCutscn"
 
 optionVarName[0,1] = "cheats"
 optionVarName[1,1] = "newcontent"
@@ -89,6 +90,7 @@ optionblocked[2,0] = 0
 optionblocked[3,0] = 0
 optionblocked[4,0] = 0
 optionblocked[5,0] = 0
+optionblocked[6,0] = 0
 
 optionblocked[0,1] = 1
 optionblocked[1,1] = 1
@@ -101,9 +103,10 @@ optionblocked[2,2] = 0
 optionblocked[3,2] = 0
 optionblocked[4,2] = 0
 
+
 scr_lang_menu_init(global.lang)
 
-menulength[0] = 6
+menulength[0] = 7
 menulength[1] = 4
 menulength[2] = 5
 #define Alarm_0

@@ -6,6 +6,7 @@ applies_to=self
 */
 image_speed = 0.2
 sound_loop(global.S_Hidden_level)
+global.SLive = global.FLive
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=301

@@ -14,6 +14,7 @@ switch argument0
         optionname[3,0] = "Performance mode"
         optionname[4,0] = "Original FF Cutscene"
         optionname[5,0] = "Enable DCRP"
+        optionname[6,0] = "In-game cutscene"
 
         optionname[0,1] = "Cheats"
         optionname[1,1] = "New content"
@@ -35,6 +36,7 @@ switch argument0
         optiondesc[3,0] = "Dogshit solution"
         optiondesc[4,0] = "Original FF Cutscene"
         optiondesc[5,0] = "Shows to other people that you are playing NBE"
+        optiondesc[6,0] = "Replaces the in-game rise cutscene with the new Uprising cutscene"
 
         optiondesc[0,1] = "Enable debug mode and some cheats accecible with the numpad (enable numlock on your keyboard)"
         optiondesc[1,1] = "Toggle new content on or off"

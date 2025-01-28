@@ -700,8 +700,11 @@
 |sprite782
 |spr_cutscene_wall
 |sprite796
-|sprHZ_NIGHT
-|sprHZ_EVENING
++UpdateSprites
+	|sprHZ_NIGHT
+	|sprHZ_EVENING
+	|sprHZ_NIGHTBloody
+	|sprHZ_EVENINGBloody
+	|sprDebugHUD
+	|sprDebugWarnHUD
 |sprite808
-|sprHZ_NIGHTBloody
-|sprHZ_EVENINGBloody
