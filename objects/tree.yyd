@@ -1,53 +1,3 @@
-|AEC_Amy
-|AEC_Eggman
-|AEC_Knuckles
-|AEC_Metal
-|AEC_Sonic
-|AEC_Tails
-|AI_1
-|AI_Exe
-|AI_Watch
-|AllPers
-|Average
-|BackGround_Egg
-|Bad
-|Badnic_1
-|Badnic_2
-|Badnic_3
-|BE_1
-|BE_2
-|BE_3
-|BE_4
-|BIG_MEME_KNUX
-|BL
-|BlodyAnimal
-|Bushes
-|ButtonDest
-|Cam_Control
-|Charasters_Ghost_Close1
-|Charasters_Ghost_Close2
-|Charasters_Ghost_Close3
-|Charasters_Ghost_Close4
-|Charasters_Rectangle
-|Cheker
-|Choiser_1
-|Choiser_10
-|Choiser_2
-|Choiser_3
-|Choiser_9
-|Continue_Note
-|Credits
-|Creep_Back
-|Creeps
-|CS_Easter_Egg
-|CutEggman
-|CutKnuckles
-|CutTails
-|DA_1
-|DA_2
-|DA_3
-|DarkCircle
-|DarkSonic2
 +dataselect
 	|MS_1
 	|MS_2
@@ -62,18 +12,6 @@
 	|DE
 	|MS_5_2
 	|MS_5_3
-|DeadEggman
-|DeadExe
-|DeadExe2
-|DeadKnuckles
-|Deadnado
-|Deadnado2
-|DeadTails
-|Death1
-|Death2
-|Death3
-|DeathRing
-|DeathRingOut
 +debug
 	|DM_Ring
 	|DM_Sonic
@@ -84,52 +22,6 @@
 	|EnergyBlast
 	|DM_Spring
 	|Debug_Thing
-|DF_Alone
-|DF_Eggman
-|DF_Exe
-|DF_Head
-|DF_Knuckles
-|DF_Metal
-|DF_Note
-|DF_Spike
-|DF_Tails
-|DFDeathTails
-|DM_Note
-|Easter_Sequel
-|EasterExploy
-|EasterSolid
-|EE_1
-|EE_2
-|EEExplode
-|Egg_Controler
-|Egg_Exe
-|EGG_Shower
-|EggBomb
-|EGGBot
-|EggElevator
-|EggmanLive
-|EggmanPreDeath
-|ElectroBall
-|ENDEDScreen
-|EnergyShieldFF
-|EPassed
-|ES_Creeps
-|ES_Exe
-|ES_Note
-|ES_Sonic
-|ESHZ
-|Ex_9
-|Ex10
-|Ex2
-|Ex4
-|Ex5
-|Ex7_2
-|Exe_Attack_Mode
-|Exe_Turner
-|ExePlayer
-|ExetiorBonus
-|ExLastAttack
-|Exploy
 +fatalfog
 	|FF_Note
 	|FF_Ground
@@ -152,14 +44,6 @@
 	|SmachDash
 	|Ex8_2
 	|Ex8
-|FF_All
-|FF_DT
-|FF_Piece
-|FF_TE
-|FF_TK
-|FF_Wall
-|FFNote_Choise
-|Final_Time
 +finalfight
 	|FinalCam
 	|HP_Exe
@@ -212,29 +96,25 @@
 	|WorstKnuckles
 	|WorstMetal
 	|WorstNote
-|FinalPoint1
-|FinalPoint3
-|FinalSonicDeath
-|FinishTable
-|Fog_Exe2
-|FogExe1
-|Game_Over_E
-|Game_Over_Exe
-|Game_Over_Exe2
-|Game_Over_Exe3
-|Game_Over_FaEggman
-|Game_Over_FaExe
-|Game_Over_FaKnuckles
-|Game_Over_FaTails
-|Game_Over_K
-|Game_Over_T
 +general
 	|Achwatch
 	|SW_Control
 	|title_card
 	|lvlcontroller
-|GhostEmerald
-|GhostSonicWin
++hideseek
+	|H&S_Note
+	|HS_1
+	|H&S_3
+	|HS_3
+	|Ex3
+	|object678
+	|Tails2
+	|FalseSonic2
+	|TailsStop2
+	|Ex4_2
+	|HS_4
+	|HS_5
+	|HS_6
 +ghz
 	|Hill_Note
 	|HZ_1
@@ -251,6 +131,220 @@
 	|Tornado
 	|HZ_1B
 	|HZ_3B
++unused
+	|CEmerald
+	|ButtonHS
+	|FinalSELECTOR
+	|Luigikid
+	|DeadSonic
+	|IC003969
++YCR
+	|YCR
+	|ScrapGround
+	|Knuckles
+	|KnucklesStop
+	|Ex6
+	|Noice
+	|ScrapWall
+	|ScrapWallDestruct
+	|ScrapWallExit
+	|Ex7
+	|KnucklesStop2
+	|Note_3
+	|BlodyNoice
+	|Ex14
+	|DPHARDKNUCK
+	|PARTYHARDTAILS
++title
+	|speedor
+	|saver
+	|SEGA_LOGO
+	|STP
+	|SS_Climb
+	|SB
+	|Timer_1
++submind
+	|Sonic
+	|Timer3
+	|Noice2
++threedots
+	|..._Note
+	|Egg_Ground
+	|Eggman
+	|BigLight
+	|BigLightMove
+	|EggmanStop
+	|HardModeLight
++leosa002 content
+	|Cream_528
+	|Cream_529
+	|Cream_530
+	|Cream_531
++lvl select
+	|TailsSELECTOR
+	|KnucklesSELECTOR
+	|EggmanSELECTOR
+	|FFSELECTOR
+	|SonicSELECTOR
+	|SonicIcon
+	|TailsIcon
+	|NoteNegetivRings
+	|Cratch
++NBE content
+	|obj_dialogue_pause
+	|obj_dialogue
+	|obj_cutscene_wall
+	|backmab
+	|tailstrigger
+	|TailsDollBoss
+	|obj_hate
+	|a_solidlool
+	|sm1
+	|tailscustom
+	|customtail
+	|obj_SkidParticle
+	|NewNoiceEngineLOL
+	|menusasa
+	|obj_SweatParticle
+	|obj_textpopup
+	|obj_SweatParticleFF
+	|objExeFFAfterImg
+	|objEgg_ExeRecode
+	|objAECAfterStopParallax
+|AEC_Amy
+|AEC_Eggman
+|AEC_Knuckles
+|AEC_Metal
+|AEC_Sonic
+|AEC_Tails
+|AI_1
+|AI_Exe
+|AI_Watch
+|AllPers
+|Average
+|BackGround_Egg
+|Bad
+|Badnic_1
+|Badnic_2
+|Badnic_3
+|BE_1
+|BE_2
+|BE_3
+|BE_4
+|BIG_MEME_KNUX
+|BL
+|BlodyAnimal
+|Bushes
+|ButtonDest
+|Cam_Control
+|Charasters_Ghost_Close1
+|Charasters_Ghost_Close2
+|Charasters_Ghost_Close3
+|Charasters_Ghost_Close4
+|Charasters_Rectangle
+|Cheker
+|Choiser_1
+|Choiser_10
+|Choiser_2
+|Choiser_3
+|Choiser_9
+|Continue_Note
+|Credits
+|Creep_Back
+|Creeps
+|CS_Easter_Egg
+|CutEggman
+|CutKnuckles
+|CutTails
+|DA_1
+|DA_2
+|DA_3
+|DarkCircle
+|DarkSonic2
+|DeadEggman
+|DeadExe
+|DeadExe2
+|DeadKnuckles
+|Deadnado
+|Deadnado2
+|DeadTails
+|Death1
+|Death2
+|Death3
+|DeathRing
+|DeathRingOut
+|DF_Alone
+|DF_Eggman
+|DF_Exe
+|DF_Head
+|DF_Knuckles
+|DF_Metal
+|DF_Note
+|DF_Spike
+|DF_Tails
+|DFDeathTails
+|DM_Note
+|Easter_Sequel
+|EasterExploy
+|EasterSolid
+|EE_1
+|EE_2
+|EEExplode
+|Egg_Controler
+|Egg_Exe
+|EGG_Shower
+|EggBomb
+|EGGBot
+|EggElevator
+|EggmanLive
+|EggmanPreDeath
+|ElectroBall
+|ENDEDScreen
+|EnergyShieldFF
+|EPassed
+|ES_Creeps
+|ES_Exe
+|ES_Note
+|ES_Sonic
+|ESHZ
+|Ex_9
+|Ex10
+|Ex2
+|Ex4
+|Ex5
+|Ex7_2
+|Exe_Attack_Mode
+|Exe_Turner
+|ExePlayer
+|ExetiorBonus
+|ExLastAttack
+|Exploy
+|FF_All
+|FF_DT
+|FF_Piece
+|FF_TE
+|FF_TK
+|FF_Wall
+|FFNote_Choise
+|Final_Time
+|FinalPoint1
+|FinalPoint3
+|FinalSonicDeath
+|FinishTable
+|Fog_Exe2
+|FogExe1
+|Game_Over_E
+|Game_Over_Exe
+|Game_Over_Exe2
+|Game_Over_Exe3
+|Game_Over_FaEggman
+|Game_Over_FaExe
+|Game_Over_FaKnuckles
+|Game_Over_FaTails
+|Game_Over_K
+|Game_Over_T
+|GhostEmerald
+|GhostSonicWin
 |GoI
 |GoI_2
 |GoI_3
@@ -259,20 +353,6 @@
 |GroundSolid2
 |H&S2_Note
 |HalfSolid
-+hideseek
-	|H&S_Note
-	|HS_1
-	|H&S_3
-	|HS_3
-	|Ex3
-	|object678
-	|Tails2
-	|FalseSonic2
-	|TailsStop2
-	|Ex4_2
-	|HS_4
-	|HS_5
-	|HS_6
 |HL_Note
 |HPE
 |HPEExe
@@ -305,23 +385,8 @@
 |KnucklesRingOut
 |KnucklesTable
 |KPassed
-+leosa002 content
-	|Cream_528
-	|Cream_529
-	|Cream_530
-	|Cream_531
 |Line_Crusher
 |Losters
-+lvl select
-	|TailsSELECTOR
-	|KnucklesSELECTOR
-	|EggmanSELECTOR
-	|FFSELECTOR
-	|SonicSELECTOR
-	|SonicIcon
-	|TailsIcon
-	|NoteNegetivRings
-	|Cratch
 |MasterEmerald
 |Mouse_Cam
 |MS_7
@@ -330,27 +395,6 @@
 |MS_Select
 |MS_Sonic
 |NB_TheUprising
-+NBE content
-	|obj_dialogue_pause
-	|obj_dialogue
-	|obj_cutscene_wall
-	|backmab
-	|tailstrigger
-	|TailsDollBoss
-	|obj_hate
-	|a_solidlool
-	|sm1
-	|tailscustom
-	|customtail
-	|obj_SkidParticle
-	|NewNoiceEngineLOL
-	|menusasa
-	|obj_SweatParticle
-	|obj_textpopup
-	|obj_SweatParticleFF
-	|objExeFFAfterImg
-	|objEgg_ExeRecode
-	|objAECAfterStopParallax
 |Note_1
 |Note_2
 |Note_4
@@ -413,10 +457,6 @@
 |sprDA_2Dark
 |Spring2
 |StripSpike
-+submind
-	|Sonic
-	|Timer3
-	|Noice2
 |SuicideEggman
 |SuicideEggman2
 |SuicideHill_Note
@@ -440,14 +480,6 @@
 |TailsWatched
 |TeleportRing
 |Test
-+threedots
-	|..._Note
-	|Egg_Ground
-	|Eggman
-	|BigLight
-	|BigLightMove
-	|EggmanStop
-	|HardModeLight
 |Time_Cont
 |Timer
 |Timer_10
@@ -468,26 +500,11 @@
 |Timer_9
 |Timer19
 |Timer2
-+title
-	|speedor
-	|saver
-	|SEGA_LOGO
-	|STP
-	|SS_Climb
-	|SB
-	|Timer_1
 |Tlels
 |TPassed
 |TR1
 |Trio_Away
 |Truther
-+unused
-	|CEmerald
-	|ButtonHS
-	|FinalSELECTOR
-	|Luigikid
-	|DeadSonic
-	|IC003969
 |VideoIcon
 |ViewGround
 |ViewSpike
@@ -517,23 +534,6 @@
 |WinRing
 |WinRingOut
 |Worse
-+YCR
-	|YCR
-	|ScrapGround
-	|Knuckles
-	|KnucklesStop
-	|Ex6
-	|Noice
-	|ScrapWall
-	|ScrapWallDestruct
-	|ScrapWallExit
-	|Ex7
-	|KnucklesStop2
-	|Note_3
-	|BlodyNoice
-	|Ex14
-	|DPHARDKNUCK
-	|PARTYHARDTAILS
 |YCR_Background
 |YellowRing
 |YellowRingOut

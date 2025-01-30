@@ -27,6 +27,19 @@ ArrObjDebugMode[8] = DM_Tails
 ArrObjDebugMode[9] = ScrapEggman
 ArrObjDebugMode[10] = DM_Sonic
 ArrObjDebugMode[11] = DM_Metal
+ArrObjDebugMode[12] = ExetiorBonus
+
+ArrLength = 13
+
+/*
+i = 0
+repeat ArrLength
+{
+    ArrSprDebugMode[i] = object_get_sprite(ArrObjDebugMode[i])
+    i += 1
+}
+i = 0
+*/
 
 ArrSprDebugMode[0] = sprRing
 ArrSprDebugMode[1] = sprTailsLive
@@ -40,9 +53,9 @@ ArrSprDebugMode[8] = sprTailsRacing
 ArrSprDebugMode[9] = sprEGGBotStand
 ArrSprDebugMode[10] = sprSonic
 ArrSprDebugMode[11] = sprMS_Stand
+ArrSprDebugMode[12] = sprFinalExLaugh
 
 Picked = 0
-ArrLength = 12
 
 if instance_exists(HSE_Walker)
 {
@@ -129,13 +142,14 @@ sprite_index = ArrSprDebugMode[Picked]
 if keyboard_check_pressed(ord("S"))
 {
     instance_create(x,y,ArrObjDebugMode[Picked])
-    if Picked = 9 ScrapEggman.Bot = 0
-    if Picked > 6
+    if ArrObjDebugMode[Picked] = ScrapEggman ScrapEggman.Bot = 0
+    if object_is_ancestor(ArrObjDebugMode[Picked],AllPers) //Picked > 6
     {
-        instance_destroy()
         view_object[view_current] = ArrObjDebugMode[Picked]
+        if ArrObjDebugMode[Picked] = DM_Tails instance_create(x,y,HvostStand)
+        instance_destroy()
     }
-    if Picked = 4 && instance_exists(EggElevator)
+    if ArrObjDebugMode[Picked] = TR1 && instance_exists(EggElevator)
     {
         TR1.sprite_index = sprLTR
     }

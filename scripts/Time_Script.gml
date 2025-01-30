@@ -106,5 +106,35 @@ with SuicideSonic
     if Timer3.Sec < 10 draw_text(view_xview[view_current]+81,view_yview[view_current]+24,string("0")+string(Timer3.Sec))
     else draw_text(view_xview[view_current]+81,view_yview[view_current]+24,string(Timer3.Sec))
 }
+
+if instance_exists(DM_Metal)
+{
+    with DM_Metal
+    {
+        draw_sprite(sprMS_Lives, 0, view_xview+35, view_yview+240)
+        draw_sprite(sprDesk, 0, view_xview+35, view_yview+32)
+        draw_text(view_xview[view_current]+81,view_yview[view_current]+40,string(global.rings))
+        draw_sprite(sprLive_Cont,string(clamp(global.ELive-1,0,9)),view_xview+55,view_yview+244)
+
+        draw_text(view_xview+57,view_yview+24,Timer.Min)
+        if Timer.Sec < 10 draw_text(view_xview[view_current]+81,view_yview[view_current]+24,string("0")+string(Timer.Sec))
+        else draw_text(view_xview[view_current]+81,view_yview[view_current]+24,string(Timer.Sec))
+        if sprite_index != sprMS_ChargeUp draw_sprite(sprLaserBallIcon, 0, view_xview[0]+270, view_yview[0]+25)
+    }
+}
+
+with ExetiorBonus
+{
+    draw_sprite(sprExe_Lives, 0, view_xview+35, view_yview+240)
+    draw_sprite(sprDesk, 0, view_xview+35, view_yview+32)
+    draw_text(view_xview[view_current]+81,view_yview[view_current]+40,string(global.rings))
+    draw_sprite(sprLive_Cont,string(clamp(global.SLive-1,0,9)),view_xview+55,view_yview+244)
+    draw_text(view_xview+57,view_yview+24,Timer.Min)
+    if Timer.Sec < 10 draw_text(view_xview[view_current]+81,view_yview[view_current]+24,string("0")+string(Timer.Sec))
+    else draw_text(view_xview[view_current]+81,view_yview[view_current]+24,string(Timer.Sec))
+    //if GOD_LEVEL.State=2 && GOD_LEVEL.FireUse<2{
+    //draw_sprite(sprFireBallIcon, 0, view_xview[0]+270, view_yview[0]+25)}
+}
+
 draw_set_halign(fa_left)
 draw_set_valign(fa_left)

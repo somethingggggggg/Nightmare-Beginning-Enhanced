@@ -408,8 +408,9 @@ if room != 0
 //I think this helps with the scaling, but this is so fucking stupid
 if keyboard_check_pressed(vk_f2)
 {
-    execute_program("Sonic-exe NB Enhanced.exe",0,0)
-    game_end()
+    nbe_restart()
+    //execute_program("Sonic-exe NB Enhanced.exe",0,0)
+    //game_end()
 }
 if keyboard_check_pressed(vk_f4)
 {

@@ -220,6 +220,7 @@
 |sprEgg_Controler
 |sprEgg_Exe
 |sprEgg_ExeDuck
+|sprExetiorP_Up
 |sprEgg_ExeJump
 |sprEgg_Ground
 |sprEGG_Shower
@@ -377,6 +378,7 @@
 |sprHSE_SleepUp
 |sprHSE_TurnBack
 |sprHSE_Walk
+|sprExetiorP_LookAround
 |sprHSE_Walker
 |sprHSE_Watch
 |sprHSEUp
@@ -707,4 +709,7 @@
 	|sprHZ_EVENINGBloody
 	|sprDebugHUD
 	|sprDebugWarnHUD
+	|sprMS_Lives
+	|sprExe_Lives
+	|sprLaserBallIcon
 |sprite808

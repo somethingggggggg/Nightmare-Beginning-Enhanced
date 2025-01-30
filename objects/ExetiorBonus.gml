@@ -149,16 +149,16 @@ if ground == true && ducking == false && rolling == false && spindash == false &
 {
    if global.vel == 0
 
-   sprite_index = sprExetiorP_Stand;
+   sprite_index = sprFinalExe_Stand;
 else if global.vel > -10 && global.vel < 10
-   sprite_index = sprExetiorP_Walk;
+   sprite_index = sprHSE_Walker;
 else
-   sprite_index = sprExetiorP_Run;
+   sprite_index = sprFinalExe_Run;
 image_speed = abs(global.vel / 20);
 }
-else if sprite_index == sprExetiorP_Jump
+else if sprite_index == sprFinalExe_Jump
 {
-   sprite_index = sprExetiorP_Jump;
+   sprite_index = sprFinalExe_Jump;
 image_speed = 0.2 + abs(global.vel / 20)
 }
 }
@@ -171,7 +171,7 @@ if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && up 
 {
 if room=89{vspeed=-9}else{
 vspeed = -8}
-sprite_index = sprExetiorP_Jump;
+sprite_index = sprFinalExe_Jump;
 sound_play(global.S_Jump)
 }}
 
@@ -239,7 +239,7 @@ canMove = false;
 
 if ducking == true && spindash == false
 {
-   sprite_index = sprExetiorP_Duck;
+   sprite_index = sprExeDuck;
 if image_index < 1
    image_speed = 0.1;
 else
@@ -248,13 +248,13 @@ else
 }
 else if rolling == true
 {
-   sprite_index = sprExetiorP_Jump;
+   sprite_index = sprFinalExe_Jump;
    canMove = false;
 
 }
 else if spindash = true
 {
-  sprite_index = sprExetiorP_Spindash;
+  sprite_index = sprSonicSpindash;
   image_speed = 0.25;
   canMove = false;
 }
@@ -267,8 +267,8 @@ rolling = true
 
 
 //Ducking animation in the air fix
-if ground == false && sprite_index == sprExetiorP_Duck
-   sprite_index = sprExetiorP_Jump;
+if ground == false && sprite_index == sprExeDuck
+   sprite_index = sprFinalExe_Jump;
 
 
 //Spindash
@@ -287,7 +287,7 @@ if ground == true && ducking == true && keyboard_check_pressed(ord("Z"))
  if spindashTimer >= 10
    spindashTimer += 6
 
-  sprite_index = sprExetiorP_Spindash
+  sprite_index = sprSonicSpindash
 }
 
  spindashTimer = spindashTimer - ((spindashTimer div 0.125 )/ 256);
@@ -346,47 +346,51 @@ spindash = false
 
 if Bot = 6 or Bot = 7
 {
-sprite_index = sprExetiorP_LookAround
-image_xscale=-1
+    sprite_index = sprExetiorP_LookAround
+    image_xscale=-1
 }
 if Bot = 6
 {
-Bot = 7
-FinalCam.alarm[5] = 120
+    Bot = 7
+    FinalCam.alarm[5] = 120
 }
 //Platform
 platform = instance_place(x, y + 1, UpGrounder)
 }
 
 //Idie
-if Bot=3{
-if global.vel = 0 && ground = true && Idie_mode = false && ducking == false && up == false && spindash == false
+if Bot=3
 {
-if IdieTimer >-1
-{
-IdieTimer -= 1
-}}
+    if global.vel = 0 && ground = true && Idie_mode = false && ducking == false && up == false && spindash == false
+    {
+        if IdieTimer >-1
+        {
+            IdieTimer -= 1
+        }
+    }
+    else
+    {
+        IdieTimer = 300
+    }
+    if IdieTimer <=0
+    {
+        Idie_mode = true
+    }
+
+    if Idie_mode = true
+    {
+        sprite_index = sprHSE_Sleep
+        image_speed = 0.06
+    }
+
+    if global.vel !=0 or ducking == true or up == true
+    {
+    IdieTimer = 300
+    Idie_mode = false
+    }
+}
 else
 {
-IdieTimer = 300
-}
-if IdieTimer <=0
-{
-Idie_mode = true
-}
-
-if Idie_mode = true
-{
-sprite_index = sprExetiorP_Idle
-image_speed = 0.06
-}
-
-if global.vel !=0 or ducking == true or up == true
-{
-IdieTimer = 300
-Idie_mode = false
-}}
-else{
 IdieTimer = 300
 Idie_mode = false
 }
