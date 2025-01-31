@@ -228,7 +228,7 @@ if rolling == true && (ground == false or global.vel == 0)
 
 if up == true && spindash == false
 {
-   sprite_index = sprExetiorP_Up;
+   sprite_index = sprExLookAround;
 if image_index < 1
  image_speed = 0.1;
 else
@@ -346,7 +346,7 @@ spindash = false
 
 if Bot = 6 or Bot = 7
 {
-    sprite_index = sprExetiorP_LookAround
+    sprite_index = sprExLookAround
     image_xscale=-1
 }
 if Bot = 6

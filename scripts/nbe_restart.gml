@@ -13,6 +13,11 @@ with all
 font_delete(global.SPRSONFONT)
 font_delete(global.SMALLSONFONT)
 font_delete(global.DESKFONT)
+if instance_exists(menusasa)
+{
+    ds_list_destroy(menusasa.fuckarr)
+}
+scr_voiceunload()
 ds_list_destroy(global.voicelist)
 sound_stop_all()
 if global.DCRP_enabled = 1

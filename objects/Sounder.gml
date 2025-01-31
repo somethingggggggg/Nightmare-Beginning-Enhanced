@@ -669,6 +669,7 @@ action_id=603
 applies_to=self
 */
 draw_set_halign(fa_left)
+draw_set_alpha(1)
 draw_set_color(c_white)
 if pause = 1 && room != 0
 {

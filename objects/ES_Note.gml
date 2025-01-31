@@ -10,11 +10,11 @@ if global.lang = 0
 }
 if global.lang = 1
 {
-    sprite_index = ES_Noterus
+    sprite_index = sprES_Noterus
 }
 if global.lang = 2
 {
-    sprite_index = ES_Noteita
+    sprite_index = sprES_Noteita
 }
 /*"/*'/**//* YYD ACTION
 lib_id=1

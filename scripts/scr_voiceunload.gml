@@ -1,3 +1,4 @@
+var voicecount;
 voicecount = 0
 repeat(202)
 {

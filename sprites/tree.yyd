@@ -75,6 +75,7 @@
 	|sprSonicDropDash
 	|sprTest
 	|sprTest2
+	|sprSEGA_logo_cover
 +leosa002 content
 	|sprEaster_Sequel_1
 	|sprCreamD
@@ -142,8 +143,8 @@
 	|spr_tailsskid
 |spr_NBRsomething
 |sprite773
-|ES_Noteita
-|ES_Noterus
+|sprES_Noteita
+|sprES_Noterus
 |HandS3
 |spr123_Cratch
 |sprAEC_Amy
@@ -257,7 +258,6 @@
 |sprEvilPowerRay
 |sprEx_9
 |sprEx1
-|sprEx10
 |sprEx11_1
 |sprEx11_2
 |sprEx11Black

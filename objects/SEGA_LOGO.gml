@@ -6,7 +6,15 @@ applies_to=self
 */
 image_speed = 0.4
 Act = 0
+moveBlya = 0
+a = 0
 #define Alarm_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+draw_set_alpha(1)
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=224
@@ -49,6 +57,15 @@ if string_pos('mir',keyboard_string) != 0
         sound_play(global.S_CrackNeck)
     }
     global.mirrored = 1
+}
+moveBlya += 4
+if moveBlya > 235 && a=0
+{
+    a = 1
+    sound_play(global.S_Sega)
+    image_speed = 0
+    image_index = 24
+    alarm[0] = 240
 }
 /*if keyboard_string = "jaiz"
 {
@@ -111,15 +128,24 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+/*
 sound_play(global.S_Sega)
 image_speed = 0
 image_index = 24
+alarm[0] = 240
+#define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
-action_id=301
-relative=0
+action_id=603
 applies_to=self
-invert=0
-arg0=240
-arg1=0
 */
+var pos;
+pos = min(x-94+moveBlya,x+94+17)
+
+draw_set_alpha(1)
+draw_self()
+draw_set_alpha((188-(moveBlya-141))/94)
+draw_sprite(sprSEGA_logo_cover,0,pos,y)
+draw_set_color(c_white)
+draw_rectangle(x-94,y-30,pos-17,y+30,0)
+draw_rectangle(pos+17,y-30,x+94,y+30,0)

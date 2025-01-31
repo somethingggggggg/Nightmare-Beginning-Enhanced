@@ -30,8 +30,8 @@ if global.hardmode != 0
 if global.Deadly_Mode = true
 {
     sound_loop(global.S_You_Can_t_Run)
-    instance_create(21184,2272,Tails4)
-    instance_create(21168,2272,HvostStand)
+    instance_create(21184,2282,Tails4)
+    instance_create(21168,2282,HvostStand)
     instance_create(21120,2464,Solid)
     view_object[0] = Tails4
     with WinRing

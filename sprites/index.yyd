@@ -110,7 +110,7 @@ sprEx8_2
 
 sprNote_5
 sprEx_9
-sprEx10
+
 sprBE_1
 sprBE_2
 sprFF_Note
@@ -728,8 +728,8 @@ sprite722
 
 
 
-ES_Noterus
-ES_Noteita
+sprES_Noterus
+sprES_Noteita
 sprBCrus
 sprWCrus
 sprGCrus
@@ -840,3 +840,4 @@ sprExetiorP_Up
 sprMS_Lives
 sprExe_Lives
 sprLaserBallIcon
+sprSEGA_logo_cover

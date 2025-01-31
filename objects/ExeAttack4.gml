@@ -36,7 +36,7 @@ applies_to=self
 if instance_exists(FinalSonic)
 {
 //Gravity
-if Grav = false
+if Grav = 0
 {
     if place_meeting(x, y+vspeed+1, FinalGround2)
     {
@@ -51,46 +51,39 @@ if Grav = false
        gravity = 0.25;
     }
 }
-if Mode = 1
+switch Mode
 {
-sprite_index = sprFinalExe_Jump
-image_speed = 1
-hspeed = image_xscale*4
+    case 1:
+    sprite_index = sprFinalExe_Jump
+    image_speed = 1
+    hspeed = image_xscale*4
+    break;
+    case 2:
+    image_speed = 0
+    sprite_index = sprFinalExePossible_to_beat1
+    if vspeed < 0 image_index = 0
+    else image_index = 1
+    break;
+    case 3:
+    hspeed = 0
+    sprite_index = sprFinalExe_Hit
+    break;
+    case 4:
+    hspeed = 0
+    sprite_index = sprExWeak
+    break;
+    case 5:
+    hspeed = 0
+    sprite_index = sprExLookAround
+    break;
+    case 6:
+    sprite_index = sprFinalExe_Hit
+    hspeed = -6
+    vspeed =-3
+    Grav = 1
+    break;
 }
-if Mode = 2
-{
-image_speed = 0
-sprite_index = sprFinalExePossible_to_beat1
-if vspeed < 0
-{
-image_index = 0
 }
-if vspeed >= 0
-{
-image_index = 1
-}}
-if Mode = 3
-{
-hspeed = 0
-sprite_index = sprFinalExe_Hit
-}
-if Mode = 4
-{
-hspeed = 0
-sprite_index = sprExWeak
-}
-if Mode = 5
-{
-hspeed = 0
-sprite_index = sprExLookAround
-}
-if Mode = 6
-{
-sprite_index = sprFinalExe_Hit
-hspeed = -6
-vspeed =-3
-Grav = true
-}}
 #define Collision_Solid
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -99,8 +92,8 @@ applies_to=self
 */
 if !instance_exists(FinalMasterEmerald) && !instance_exists(HP_ExeWeak)
 {
-Mode =1
-image_xscale = -image_xscale
+    Mode = 1
+    image_xscale = -image_xscale
 }
 #define Collision_FinalGround2
 /*"/*'/**//* YYD ACTION

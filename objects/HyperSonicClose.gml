@@ -135,18 +135,18 @@ applies_to=self
 */
 with SuperExetior
 {
-image_xscale = -1
-sprite_index = sprHSE_GARun
-y=y+2
-image_speed = 0.2
-hspeed =-6
+    image_xscale = -1
+    sprite_index = sprHSE_GARun
+    y=y+12
+    image_speed = 0.2
+    hspeed =-6
 }
 
 with RiseSonic1
 {
-sprite_index = sprSonicRun
-image_speed = 0.2
-hspeed =-6.1
+    sprite_index = sprSonicRun
+    image_speed = 0.2
+    hspeed = -6.1
 }
 alarm[11] = 250
 #define Alarm_11
