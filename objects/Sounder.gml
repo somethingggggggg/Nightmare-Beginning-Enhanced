@@ -412,15 +412,34 @@ if keyboard_check_pressed(vk_f2)
     //execute_program("Sonic-exe NB Enhanced.exe",0,0)
     //game_end()
 }
+
+
+//if window_get_fullscreen() = 1 window_set_size(display_get_width(),display_get_height())
+/*else
+{
+    window_set_showborder(1)
+    window_set_showicons(1)
+    window_set_sizeable(1)
+}
+#define Step_2
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if global.hardmode = 1
+{
+    transition_kind = irandom_range(1,21)
+    transition_steps = 80
+}
+
+/*
 if keyboard_check_pressed(vk_f4)
 {
+    window_set_fullscreen(!window_get_fullscreen())
+    if prev_win_x <= 0 && prev_win_x <= 0 window_center()
     if window_get_fullscreen() = 1
     {
-        window_set_fullscreen(0)
-        if prev_win_x <= 0 && prev_win_x <= 0
-        {
-            window_center()
-        }
         if global.performance = 1
         {
             i = 0
@@ -430,8 +449,26 @@ if keyboard_check_pressed(vk_f4)
                 view_hport[i] = view_hview[i]
                 i += 1
             }
-            window_set_region_size(view_wport[view_current],view_hport[view_current],1)
-            window_resize_buffer(view_wport[view_current],view_hport[view_current],1,0)
+            if room = 66 && view_visible[2] = 1
+            {
+                window_set_region_size(view_wport[2],view_hport[2],0)
+                window_resize_buffer(view_wport[2],view_hport[2],1,0)
+            }
+            else if room = 70 && view_visible[1] = 1
+            {
+                window_set_region_size(view_wport[1],view_hport[1],0)
+                window_resize_buffer(view_wport[1],view_hport[1],1,0)
+            }
+            else if room = 70 && view_visible[2] = 1
+            {
+                window_set_region_size(view_wport[2],view_hport[2],0)
+                window_resize_buffer(view_wport[2],view_hport[2],1,0)
+            }
+            else
+            {
+                window_set_region_size(view_wport[view_current],view_hport[view_current],0)
+                window_resize_buffer(view_wport[view_current],view_hport[view_current],1,0)
+            }
             window_set_size(1280,720)
             if global.fourbythree = 1 window_set_region_size(display_get_width(),display_get_height(),1)
             if global.fourbythree = 2 && room != 0
@@ -459,7 +496,6 @@ if keyboard_check_pressed(vk_f4)
     }
     else
     {
-        window_set_fullscreen(1)
         i = 0
         if global.performance = 1
         {
@@ -470,7 +506,7 @@ if keyboard_check_pressed(vk_f4)
                 i += 1
             }
             //random bullshit go!
-            window_set_region_size(view_wport[view_current],view_hport[view_current],1)
+            window_set_region_size(view_wport[view_current],view_hport[view_current],0)
             window_resize_buffer(view_wport[view_current],view_hport[view_current],1,0)
             //window_set_size(view_wport[view_current],view_hport[view_current])
             if global.fourbythree = 1 window_set_region_size(display_get_width(),display_get_height(),1)
@@ -492,25 +528,6 @@ if keyboard_check_pressed(vk_f4)
             }
         }
     }
-}
-
-//if window_get_fullscreen() = 1 window_set_size(display_get_width(),display_get_height())
-/*else
-{
-    window_set_showborder(1)
-    window_set_showicons(1)
-    window_set_sizeable(1)
-}
-#define Step_2
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-if global.hardmode = 1
-{
-    transition_kind = irandom_range(1,21)
-    transition_steps = 80
 }
 #define Other_3
 /*"/*'/**//* YYD ACTION
@@ -663,6 +680,88 @@ action_id=332
 invert=0
 */
 #define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if keyboard_check_pressed(vk_f4)
+{
+    window_set_fullscreen(!window_get_fullscreen())
+    if prev_win_x <= 0 && prev_win_x <= 0 window_center()
+    if window_get_fullscreen() = 1
+    {
+        if global.performance = 1
+        {
+            i = 0
+            repeat(8)
+            {
+                view_wport[i] = view_wview[i]
+                view_hport[i] = view_hview[i]
+                i += 1
+            }
+            window_set_region_size(view_wport[view_current],view_hport[view_current],0)
+            window_resize_buffer(view_wport[view_current],view_hport[view_current],1,0)
+            window_set_size(1280,720)
+            if global.fourbythree = 1 window_set_region_size(display_get_width(),display_get_height(),1)
+            if global.fourbythree = 2 && room != 0
+            {
+                window_set_region_size((1280 / 4) * 3,720,1)
+            }
+        }
+        else
+        {
+            i = 0
+            repeat(8)
+            {
+                view_wport[i] = 1280
+                view_hport[i] = 720
+                i += 1
+            }
+            window_resize_buffer(1280,720,1,0)
+            window_set_size(1280,720)
+            window_set_region_size(1280,720,1)
+            if global.fourbythree = 2
+            {
+            //    window_set_region_size((1280 / 4) * 3,720,1)
+            }
+        }
+    }
+    else
+    {
+        i = 0
+        if global.performance = 1
+        {
+            repeat(8)
+            {
+                view_wport[i] = view_wview[i]
+                view_hport[i] = view_hview[i]
+                i += 1
+            }
+            //random bullshit go!
+            window_set_region_size(view_wport[view_current],view_hport[view_current],0)
+            window_resize_buffer(view_wport[view_current],view_hport[view_current],1,0)
+            //window_set_size(view_wport[view_current],view_hport[view_current])
+            if global.fourbythree = 1 window_set_region_size(display_get_width(),display_get_height(),1)
+        }
+        else
+        {
+            repeat(8)
+            {
+                view_wport[i] = display_get_width()
+                view_hport[i] = display_get_height()
+                i += 1
+            }
+            //window_set_size(display_get_width(),display_get_height())
+            window_set_region_size(display_get_width(),display_get_height(),1)
+            window_resize_buffer(display_get_width(),display_get_height(),1,0)
+            if global.fourbythree = 2 && room != 0
+            {
+                window_set_region_size((display_get_width() / 4) * 3,display_get_height(),1)
+            }
+        }
+    }
+}
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603

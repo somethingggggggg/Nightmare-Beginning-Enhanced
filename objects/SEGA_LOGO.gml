@@ -149,3 +149,12 @@ draw_sprite(sprSEGA_logo_cover,0,pos,y)
 draw_set_color(c_white)
 draw_rectangle(x-94,y-30,pos-17,y+30,0)
 draw_rectangle(pos+17,y-30,x+94,y+30,0)
+#define KeyPress_13
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+sound_stop_all()
+transition_kind=21
+room_goto(3)

@@ -10,6 +10,8 @@ SW_Control.jink = 19
 image_speed = 0.2
 image_xscale = 0
 image_yscale = 0
+count = 0
+centerY = y
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=301
@@ -31,8 +33,13 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if image_xscale < 0.8 image_xscale += 0.02
-if image_yscale < 0.8 image_yscale += 0.02
+if image_xscale < 1 image_xscale += 0.02
+if image_yscale < 1 image_yscale += 0.02
+else
+{
+    count += 1
+    y = centerY + sin(count/8)*1.25
+}
 /*if sprite_index = sprTrio_Away1 && image_index <11
 {
 image_speed = 0.3

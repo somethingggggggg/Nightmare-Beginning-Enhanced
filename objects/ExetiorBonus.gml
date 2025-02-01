@@ -424,21 +424,22 @@ applies_to=self
 */
 if instance_exists(HSE_Walker)
 {
-with HSE_Walker
-{
-instance_destroy()
+    with HSE_Walker
+    {
+        instance_destroy()
+    }
+    with HSE_GA
+    {
+        sprite_index = sprHSE_Sleep
+        AwakeTime = 400
+        SleepTimer = 300
+        SleepTime = true
+        Phase_2 = false
+        image_alpha = 1
+        sound_stop(global.S_Chase)
+        sound_loop(global.S_HideSound)
+    }
 }
-with HSE_GA
-{
-sprite_index = sprHSE_Sleep
-AwakeTime = 400
-SleepTimer = 300
-SleepTime = true
-Phase_2 = false
-image_alpha = 1
-sound_stop(global.S_Chase)
-sound_loop(global.S_HideSound)
-}}
 #define Collision_ScrapElevator
 /*"/*'/**//* YYD ACTION
 lib_id=1

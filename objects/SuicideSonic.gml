@@ -254,6 +254,7 @@ if Act = 4 && keyboard_check_pressed(ord("Z"))
         show_message("Wait!")
         view_visible[0] = false
         view_visible[1] = true
+        scr_scaling_wtf()
         Act = 6
         alarm[2] =140
     }

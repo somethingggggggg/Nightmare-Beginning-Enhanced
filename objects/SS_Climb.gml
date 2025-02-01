@@ -126,3 +126,15 @@ arg0=sprSS_Climb2
 arg1=0
 arg2=0.1
 */
+#define KeyPress_13
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if alarm_get(4) != -1 exit;
+sound_stop_all()
+sprite_index = sprSS_Scary3
+image_speed = 0
+SB.image_blend = c_red
+alarm[4] = 8

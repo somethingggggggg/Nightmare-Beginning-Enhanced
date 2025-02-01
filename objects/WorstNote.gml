@@ -34,7 +34,7 @@ applies_to=self
 */
 if Act = 1
 {
-image_alpha += 0.01
+    image_alpha += 0.01
 }
 #define KeyPress_13
 /*"/*'/**//* YYD ACTION
