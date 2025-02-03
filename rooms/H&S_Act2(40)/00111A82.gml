@@ -1,1 +1,2 @@
-alarm[4] = 180
+//alarm[4] = 180
+ringNumber = 4

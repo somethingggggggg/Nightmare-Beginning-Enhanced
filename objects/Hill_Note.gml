@@ -4,10 +4,13 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+arr[0] = global.S_Green_Hill
+arr[1] = global.S_Green_Hill_Evening
+arr[2] = global.S_Green_Hill_Night
 global.TDetection = true
-sound_loop(global.S_Green_Hill)
 image_speed = 0
 image_index = instance_exists(KPassed) + instance_exists(EPassed)
+sound_loop(arr[image_index])
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=301

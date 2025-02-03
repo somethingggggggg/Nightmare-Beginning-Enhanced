@@ -84,6 +84,8 @@ optionVarName[2,2] = "progressbar"
 optionVarName[3,2] = "subcnoise"
 optionVarName[4,2] = "BL_filter"
 
+optionVarName[0,3] = "HSmusic"
+
 optionblocked[0,0] = 0
 optionblocked[1,0] = 0
 optionblocked[2,0] = 0
@@ -103,12 +105,14 @@ optionblocked[2,2] = 0
 optionblocked[3,2] = 0
 optionblocked[4,2] = 0
 
+optionblocked[0,3] = 0
 
 scr_lang_menu_init(global.lang)
 
 menulength[0] = 7
 menulength[1] = 4
 menulength[2] = 5
+menulength[3] = 1
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -302,6 +306,10 @@ global.S_skid=sound_add(working_directory+"/Sound/skid.mp3",1,0)
 global.S_SpinLetGo=sound_add(working_directory+"/Sound/SpinLetGo.wav",1,0)
 global.S_Final_Boss_RG=sound_add(working_directory+"/Sound/Final_Boss_REALLY_GOOD.mp3",0,0)
 
+//Update Sounds
+global.S_Green_Hill_Evening=sound_add(working_directory+"/Sound/updateSounds/Green_Hill_Evening.mp3",0,0)
+global.S_Green_Hill_Night=sound_add(working_directory+"/Sound/updateSounds/Green_Hill_Night.mp3",0,0)
+
 //doomsday machine
 /*
 if irandom_range(0,10000) = 56
@@ -351,7 +359,7 @@ if room != 0
         {
             i = 0
             o = 0
-            repeat(menulength[0]+menulength[1]+menulength[2]-1)
+            repeat(menulength[0]+menulength[1]+menulength[2]+menulength[3]-1)
             {
                 i += 1
                 if i >= menulength[o]
@@ -408,7 +416,7 @@ if room != 0
 //I think this helps with the scaling, but this is so fucking stupid
 if keyboard_check_pressed(vk_f2)
 {
-    nbe_restart()
+    scr_nbe_restart()
     //execute_program("Sonic-exe NB Enhanced.exe",0,0)
     //game_end()
 }

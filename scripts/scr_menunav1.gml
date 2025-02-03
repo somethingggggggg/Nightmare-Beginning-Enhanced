@@ -1,5 +1,4 @@
-view_wview = 462
-view_hview = 260
+
 if background_alpha[1] > 0
 {
     background_alpha[1] -= 0.1
@@ -34,7 +33,7 @@ if keyboard_check_pressed(vk_enter)
         sound_play(global.S_Ring)
         global.option = 0
         global.menustate = 1
-        view_yview[0] = 125
+        view_yview[0] = 0
     }
     if global.option = 1
     {
@@ -62,7 +61,10 @@ if keyboard_check_pressed(vk_enter)
         sound_play(global.S_Ring)
         global.option = 0
         global.menustate = 2
-        view_yview[0] = 125
+        view_yview[0] = 0
+        view_wview = 622
+        view_hview = 350
+        scr_scaling_wtf()
     }
     if global.option = 3
     {
@@ -89,6 +91,8 @@ if keyboard_check_pressed(vk_enter)
         scr_saveoptions()
         global.suboption = 0
         with Sounder scr_lang_menu_init(global.lang)
+        if global.HSmusic = 0 sound_replace(global.S_Chase,working_directory+"/Sound/Chase.mp3",0,0)
+        else sound_replace(global.S_Chase,working_directory+"/Sound/updateSounds/Chase.mp3",0,0)
         room_goto(87)
     }
 }

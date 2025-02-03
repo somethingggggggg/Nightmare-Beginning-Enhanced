@@ -1,27 +1,27 @@
 draw_set_font(font6)
 draw_set_halign(fa_center)
-draw_text(view_xview+(view_wview/2),128,"OPTIONS")
-draw_text(view_xview+(view_wview/2),192,"LOAD MOD")
-draw_text(view_xview+(view_wview/2),256,"CREDITS")
-draw_text(view_xview+(view_wview/2),320,"PLAY")
+draw_text(view_xview+(view_wview/2),view_yview,"OPTIONS")
+draw_text(view_xview+(view_wview/2),view_yview+64,"LOAD MOD")
+draw_text(view_xview+(view_wview/2),view_yview+128,"CREDITS")
+draw_text(view_xview+(view_wview/2),view_yview+192,"PLAY")
 draw_set_font(testingfont)
-draw_text(view_xview+(view_wview/2)+128,352,string(comppercent)+'%#complete')
+draw_text(view_xview+(view_wview/2)+128,view_yview+156,string(comppercent)+'%#complete')
 draw_set_font(font6)
 switch global.option
 {
     case 0:
-        draw_text_color(view_xview+(view_wview/2),128,"OPTIONS",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
+        draw_text_color(view_xview+(view_wview/2),view_yview,"OPTIONS",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
     break;
     case 1:
-        draw_text_color(view_xview+(view_wview/2),192,"LOAD MOD",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
+        draw_text_color(view_xview+(view_wview/2),view_yview+64,"LOAD MOD",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
     break;
     case 2:
-        draw_text_color(view_xview+(view_wview/2),256,"CREDITS",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
+        draw_text_color(view_xview+(view_wview/2),view_yview+128,"CREDITS",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
     break;
     case 3:
-        draw_text_color(view_xview+(view_wview/2),320,"PLAY",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
+        draw_text_color(view_xview+(view_wview/2),view_yview+192,"PLAY",$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
         draw_set_font(testingfont)
-        draw_text_color(view_xview+(view_wview/2)+128,352,string(comppercent)+'%#complete',$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
+        draw_text_color(view_xview+(view_wview/2)+128,view_yview+156,string(comppercent)+'%#complete',$00f6ff,$00f6ff,$00f6ff,$00f6ff,1)
     break;
 }
 draw_set_font(global.dialoguefont)

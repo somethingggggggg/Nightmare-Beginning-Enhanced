@@ -56,6 +56,11 @@ if global.voicedir != prevset[1,0]
     scr_voiceunload()
     if global.voicedir != 0 scr_voiceinit()
 }
+if global.HSmusic != prevset[0,3]
+{
+    if global.HSmusic = 0 sound_replace(global.S_Chase,working_directory+"/Sound/Chase.mp3",0,0)
+    else sound_replace(global.S_Chase,working_directory+"/Sound/updateSounds/Chase.mp3",0,0)
+}
 sound_stop(global.S_PAUSEMENU)
 sprite_delete(sprpausefuck)
 myfade = 0

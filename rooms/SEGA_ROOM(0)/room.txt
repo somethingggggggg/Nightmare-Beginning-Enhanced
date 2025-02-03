@@ -93,8 +93,8 @@ bg_stretch7=0
 
 views_enabled=1
 view_visible0=1
-view_xview0=54
-view_yview0=125
+view_xview0=0
+view_yview0=0
 view_wview0=462
 view_hview0=260
 view_xport0=0

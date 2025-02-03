@@ -5,6 +5,28 @@ action_id=603
 applies_to=self
 */
 image_speed = 0.15
+Active = 0
+alarm[1] = 180
+
+coords[0,0] = 0
+coords[1,0] = 2080
+coords[2,0] = 3264
+coords[3,0] = 3008
+coords[4,0] = 2160
+coords[5,0] = 160
+coords[6,0] = 560
+coords[7,0] = 2944
+
+coords[0,1] = 0
+coords[1,1] = 640
+coords[2,1] = 1408
+coords[3,1] = 400
+coords[4,1] = 928
+coords[5,1] = 512
+coords[6,1] = 16
+coords[7,1] = 1888
+
+
 Teleport_1 = false
 Teleport_2 = false
 Teleport_3 = false
@@ -28,7 +50,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-Teleport_1 = true
+//Teleport_1 = true
+Active = 1
 #define Alarm_2
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -150,6 +173,22 @@ action_id=603
 applies_to=self
 */
 //Tails
+if Active = 1 && image_alpha >= 1
+{
+    with Tails3
+    {
+        instance_destroy()
+    }
+    instance_create(coords[ringNumber,0],coords[ringNumber,1],Tails3)
+    with HvostStand2
+    {
+        instance_destroy()
+    }
+    instance_create(coords[ringNumber,0],coords[ringNumber,1],HvostStand2)
+    sound_play(global.S_Warp2)
+}
+
+/*
 if Teleport_1 = true && image_alpha >= 1
 {
 with Tails3
@@ -223,23 +262,23 @@ sound_play(global.S_Warp2)
 //tails
 if global.Tails_mode = true
 {
-if Teleport_1 = true && image_alpha >= 1
-{
-    with HvostStand2
+    if Teleport_1 = true && image_alpha >= 1
     {
-        instance_create(2080,640,HvostStand2)
-        instance_destroy()
+        with HvostStand2
+        {
+            instance_create(2080,640,HvostStand2)
+            instance_destroy()
+        }
     }
-}
 
-if Teleport_2 = true && image_alpha >= 1
-{
-    with HvostStand2
+    if Teleport_2 = true && image_alpha >= 1
     {
-        instance_create(3264,1408,HvostStand2)
-        instance_destroy()
+        with HvostStand2
+        {
+            instance_create(3264,1408,HvostStand2)
+            instance_destroy()
+        }
     }
-}
 
 if Teleport_3 = true && image_alpha >= 1
 {
@@ -281,6 +320,7 @@ with HvostStand2
 instance_create(2944,1888,HvostStand2)
 instance_destroy()
 }}}
+*/
 
 if Win_mode = true
 {
@@ -310,18 +350,18 @@ sound_play(global.S_Warp2)
 
 if Lose_mode = true
 {
-with Tails3
-{
-instance_destroy()
-}
+    with Tails3
+    {
+        instance_destroy()
+    }
 
-with HvostStand2
-{
-instance_destroy()
-}
-instance_change(DeathRingOut,TeleportRing)
-sound_stop(global.S_HideSound)
-sound_play(global.S_Warp2)
+    with HvostStand2
+    {
+        instance_destroy()
+    }
+    instance_change(DeathRingOut,TeleportRing)
+    sound_stop(global.S_HideSound)
+    sound_play(global.S_Warp2)
 }
 #define Collision_HSE_Walker
 /*"/*'/**//* YYD ACTION
@@ -329,6 +369,16 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+if Active = 1 && image_alpha >= 1
+{
+    with HSE_Walker
+    {
+        instance_destroy()
+    }
+    instance_create(coords[ringNumber,0],coords[ringNumber,1],HSE_Walker)
+    sound_play(global.S_Warp2)
+}
+/*
 if Teleport_1 = true && image_alpha >= 1
 {
 with HSE_Walker
@@ -397,6 +447,22 @@ instance_create(2944,1888,HSE_Walker)
 instance_destroy()
 }
 sound_play(global.S_Warp2)
-}
+}*/
 
 Win_mode = true
+#define Collision_AllPers
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if other.object_index = Tails3 exit;
+
+if Active = 1 && image_alpha >= 1
+{
+    other.x = coords[ringNumber,0]
+    other.y = coords[ringNumber,1]
+    global.vel = 0
+    other.hspeed = 0
+    sound_play(global.S_Warp2)
+}

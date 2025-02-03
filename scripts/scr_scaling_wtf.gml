@@ -12,25 +12,25 @@ if global.performance = 1
     {
         window_set_region_size(view_wport[2],view_hport[2],0)
         window_resize_buffer(view_wport[2],view_hport[2],1,0)
-        window_set_size(view_wport[2],view_hport[2])
+        //window_set_size(view_wport[2],view_hport[2])
     }
     else if room = 70 && view_visible[1] = 1
     {
         window_set_region_size(view_wport[1],view_hport[1],0)
         window_resize_buffer(view_wport[1],view_hport[1],1,0)
-        window_set_size(view_wport[1],view_hport[1])
+        //window_set_size(view_wport[1],view_hport[1])
     }
     else if room = 70 && view_visible[2] = 1
     {
         window_set_region_size(view_wport[2],view_hport[2],0)
         window_resize_buffer(view_wport[2],view_hport[2],1,0)
-        window_set_size(view_wport[2],view_hport[2])
+        //window_set_size(view_wport[2],view_hport[2])
     }
     else
     {
         window_set_region_size(view_wport[view_current],view_hport[view_current],0)
         window_resize_buffer(view_wport[view_current],view_hport[view_current],1,0)
-        window_set_size(view_wport[view_current],view_hport[view_current])
+        //window_set_size(view_wport[view_current],view_hport[view_current])
     }
     if global.fourbythree = 1 window_set_region_size(display_get_width(),display_get_height(),1)
 }

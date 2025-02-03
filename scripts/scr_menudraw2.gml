@@ -151,6 +151,15 @@ if global.option > 1
             draw_sprite_part_ext(sprNoice1,time/2,0,0,(time mod 192)-4,128-4,view_xview[view_current]+346-(time mod 192)+96,95+view_yview[view_current]-64+4,1,1,$ffffff,1)
         }
         break;
+        default:
+        {
+            draw_set_font(global.Menufont)
+            draw_set_halign(fa_middle)
+            draw_set_valign(fa_center)
+            draw_text(346+view_xview[view_current],95+view_yview[view_current],'MISSING PREVIEW')
+            draw_set_halign(fa_left)
+            draw_set_valign(fa_top)
+        }
     }
 }
 draw_sprite(spr_placemagic,0,346+view_xview[view_current],95+view_yview[view_current])

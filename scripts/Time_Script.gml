@@ -96,10 +96,10 @@ with Sonic
 
 with SuicideSonic
 {
-    draw_text(view_xview[view_current]+81,view_yview[view_current]+40,string(-global.TR))
-    draw_text(view_xview+57,view_yview+24,Timer3.Min)
-    if Timer3.Sec < 10 draw_text(view_xview[view_current]+81,view_yview[view_current]+24,string("0")+string(Timer3.Sec))
-    else draw_text(view_xview[view_current]+81,view_yview[view_current]+24,string(Timer3.Sec))
+    draw_text(view_xview[0]+81,view_yview[0]+40,string(-global.TR))
+    draw_text(view_xview[0]+57,view_yview[0]+24,Timer3.Min)
+    if Timer3.Sec < 10 draw_text(view_xview[0]+81,view_yview[0]+24,string("0")+string(Timer3.Sec))
+    else draw_text(view_xview[0]+81,view_yview[0]+24,string(Timer3.Sec))
 }
 
 if instance_exists(DM_Metal)

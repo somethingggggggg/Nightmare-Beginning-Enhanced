@@ -1,1 +1,1 @@
-alarm[1] = 180
+ringNumber = 1

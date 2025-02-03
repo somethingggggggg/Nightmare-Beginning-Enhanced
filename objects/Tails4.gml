@@ -397,16 +397,16 @@ applies_to=self
 drawAngle = 0
 if place_meeting(x,bbox_bottom+1,ScrapWall)
 {
-Fly = false
-FlyTime = 220
-move_contact_solid(270, 4);
-vspeed = 0;
+    Fly = false
+    FlyTime = 220
+    move_contact_solid(270, 4);
+    vspeed = 0;
 }
 
 if place_meeting(x,bbox_top,ScrapWall)
 {
-move_contact_solid(90, 4);
-vspeed = 0;
+    move_contact_solid(90, 4);
+    vspeed = 0;
 }
 
 if place_meeting(bbox_right,y,ScrapWall) or place_meeting(bbox_left,y,ScrapWall)
@@ -487,8 +487,27 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-move_contact_solid(270, 4);
-vspeed = 0;
+//move_contact_solid(270, 4);
+//vspeed = 0;
+
+if place_meeting(x,bbox_bottom+1,FinalGround)
+{
+    move_contact_solid(270, 4);
+    vspeed = 0;
+}
+
+if place_meeting(x,bbox_top,FinalGround)
+{
+    move_contact_solid(0, 4);
+    vspeed = 0;
+}
+
+if place_meeting(bbox_right,y,FinalGround) or place_meeting(bbox_left,y,FinalGround)
+{
+    move_contact_solid(direction, 0.1)
+    drawAngle = 0
+    global.vel = 0
+}
 #define Collision_HalfSolid
 /*"/*'/**//* YYD ACTION
 lib_id=1

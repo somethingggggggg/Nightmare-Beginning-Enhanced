@@ -49,7 +49,7 @@ if keyboard_check_pressed(vk_enter)
         global.option = 0
         global.menustate = 0
     }
-    if global.suboption = 3
+    if global.suboption = 4
     {
         if global.option = 2
         {
@@ -73,13 +73,13 @@ if ButtonPressedLeftOrRight != 0 && global.option != 0
     if global.option = 1
     {
         //global.suboption += ButtonPressedLeftOrRight
-        global.suboption = (global.suboption + ButtonPressedLeftOrRight) mod (4-argument0)
-        if global.suboption < 0 global.suboption = 3-argument0
+        global.suboption = (global.suboption + ButtonPressedLeftOrRight + (5-argument0)) mod (5-argument0)
+        //if global.suboption < 0 global.suboption = 4-argument0
         HorizScroll = ButtonPressedLeftOrRight * 16
         sound_play(global.S_BoxBroke)
         //if global.suboption > 3-argument0 global.suboption = 0
     }
-    else if global.suboption != 3
+    else if global.suboption != 4
     {
         if optionblocked[global.option-2,global.suboption] != 1
         {

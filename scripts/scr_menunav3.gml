@@ -8,21 +8,13 @@ if background_alpha[2] < 1
 }
 if keyboard_check_pressed(vk_enter)
 {
-    if global.option = 0
-    {
-        sound_play(global.S_Ring)
-        global.option = 0
-        global.menustate = 0
-        view_yview[0] = 125
-    }
+    sound_play(global.S_Ring)
+    global.option = 0
+    global.menustate = 0
+    view_yview[0] = 0
+    view_wview = 462
+    view_hview = 260
+    scr_scaling_wtf()
 }
-if keyboard_check(vk_up)
-{
-    view_yview -= 4
-}
-if keyboard_check(vk_down)
-{
-    view_yview += 4
-}
-if view_yview[view_current] < 125 view_yview[view_current] = 125
-if view_yview[view_current] > 233 view_yview[view_current] = 233
+credScroll += (keyboard_check(vk_up) - keyboard_check(vk_down)) * 4
+credScroll = clamp(credScroll,-85,25)

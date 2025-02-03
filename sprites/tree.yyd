@@ -61,9 +61,7 @@
 +NBE sprites
 	|sprite722
 	|sprTailsDoll
-	|spr_cred_NICKZACH
-	|spr_cred_NBEDEV
-	|spr_cred_danik
+	|spr_cred_icons
 	|smashwhite
 	|spr_sound
 	|sprSkidParticles
@@ -423,7 +421,7 @@
 |sprite707
 |sprite708
 |sprite715
-|sprite716
+|sprHZ_2_EveningNew
 |sprite717
 |sprK_Lives
 |sprKnockKnockStand

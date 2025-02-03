@@ -84,6 +84,7 @@ applies_to=self
 if global.pause = 1
 {
     image_index = 0
+    sprite_index = sprTails
     exit;
 }
 //Movement

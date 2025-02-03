@@ -714,7 +714,7 @@ sprite708
 
 
 sprite715
-sprite716
+sprHZ_2_EveningNew
 sprite717
 
 
@@ -782,8 +782,8 @@ sprTailsDoll
 sprSW_Tailsdoll
 sprite782
 spr_placemagic
-spr_cred_danik
-spr_cred_NBEDEV
+
+spr_cred_icons
 sprExFuckItAll
 spr_cutscene_wall
 
@@ -795,7 +795,7 @@ sprHandS0_Note
 
 sprMS_5_1
 sprite796
-spr_cred_NICKZACH
+
 
 sprCreamDamage
 sprCreamD

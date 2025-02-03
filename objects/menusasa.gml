@@ -6,6 +6,10 @@ applies_to=self
 */
 background_alpha[1] = 0
 background_alpha[2] = 0
+credArr[0] = "HELL'S ENCYCLOPEDIA#PROGRAMMER"
+credArr[1] = "NICK ZACH#SPRITER"
+credArr[2] = "DANIK#SPRITE HELP"
+credScroll = 0
 time = 0
 fuckyalpha = 0
 scrollcounter = 0
@@ -74,8 +78,10 @@ optionVarName[2,2] = "progressbar"
 optionVarName[3,2] = "subcnoise"
 optionVarName[4,2] = "BL_filter"
 
-optionVarName[0,3] = ""
-optionVarName[1,3] = ""
+optionVarName[0,3] = "HSmusic"
+
+optionVarName[0,4] = ""
+optionVarName[1,4] = ""
 
 optionblocked[0,0] = 0
 optionblocked[1,0] = 0
@@ -97,16 +103,18 @@ optionblocked[2,2] = 0
 optionblocked[3,2] = 0
 optionblocked[4,2] = 0
 
-
 optionblocked[0,3] = 0
-optionblocked[1,3] = 0
+
+optionblocked[0,4] = 0
+optionblocked[1,4] = 0
 
 scr_lang_menu_init(global.lang)
 
 menulength[0] = 7
 menulength[1] = 4
 menulength[2] = 5
-menulength[3] = 2
+menulength[3] = 1
+menulength[4] = 2
 
 //variable_global_set("lang",1)
 //if global.lang = 1 show_message('yes')
@@ -123,6 +131,7 @@ switch global.menustate
     case 2: scr_menunav3() break;
     case 3: scr_menunav4() break;
 }
+
 if keyboard_check_pressed(ord("Q")) && debug_mode = 1
 {
     ini_open("save.ini")

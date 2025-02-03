@@ -57,6 +57,7 @@ applies_to=self
 */
 view_visible[1] = false
 view_visible[2] = true
+scr_scaling_wtf()
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
