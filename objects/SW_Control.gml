@@ -1615,7 +1615,8 @@ if global.GoodEnd = true
 draw_sprite(sprSW_Twin,1,view_xview[0],view_yview[0])
 
 draw_text_ext_color(view_xview[0]+100, view_yview[0], "You got the good ending",16,view_wview[0]-100,$006e00,$006e00,$006e00,$006e00,1)
-}}
+}
+}
 
 if Page = 191
 {

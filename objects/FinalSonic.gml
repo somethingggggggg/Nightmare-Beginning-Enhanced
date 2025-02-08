@@ -115,7 +115,7 @@ if global.vel > -acc && global.vel < acc
 }
 }
 x += global.vel;
-if global.hardmode = 1
+if global.hardmode = 2
 {
     if Bot = 3
     {

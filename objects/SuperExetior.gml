@@ -127,6 +127,7 @@ applies_to=self
 view_visible[0] = false
 background_visible[0] = false
 view_visible[1] = true
+Sounder.refresh = 1
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -135,8 +136,8 @@ applies_to=self
 */
 if collision_line(x,y,x,y-100,Charasters_Rectangle,1,0) && Act = 0
 {
-hspeed = 0
-sprite_index = sprSuperExetiorStand
-Act = 1
-alarm[0] = 90
+    hspeed = 0
+    sprite_index = sprSuperExetiorStand
+    Act = 1
+    alarm[0] = 90
 }

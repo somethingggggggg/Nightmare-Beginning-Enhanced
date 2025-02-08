@@ -59,7 +59,7 @@ action_id=603
 applies_to=self
 */
 ButtonPressedLeftOrRight = keyboard_check(vk_right) - keyboard_check(vk_left)
-if global.hardmode = 1
+if global.hardmode = 2
 {
     view_angle[0] += 0.1
 }

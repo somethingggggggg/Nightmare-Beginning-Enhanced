@@ -43,7 +43,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if global.hardmode = 0 hspeed = 0
+if global.hardmode != 2 hspeed = 0
 //Gravity
 if place_meeting(x, y+vspeed+1, FF_Ground) && vspeed >= 0
 {

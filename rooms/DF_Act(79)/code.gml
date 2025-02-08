@@ -1,7 +1,7 @@
 background_hspeed[0] = 1
 background_hspeed[4] = 1
 background_hspeed[5] = 1
-if global.hardmode = 1
+if global.hardmode = 2
 {
     background_color = $000000//7a
     background_blend[0] = $0000b1

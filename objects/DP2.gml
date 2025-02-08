@@ -16,7 +16,7 @@ applies_to=self
 alarm[7] = 650
 spawnedinstance = 0
 global.Windtime = 0
-if global.hardmode = 1
+if global.hardmode = 2
 {
     alarm[6] = 360
 }
@@ -75,7 +75,7 @@ switch perass
         }
     break;
 }
-if global.hardmode = 0 perass1 = irandom_range(300,500)
+if global.hardmode != 2 perass1 = irandom_range(300,500)
 else perass1 = irandom_range(100,200)
 
 

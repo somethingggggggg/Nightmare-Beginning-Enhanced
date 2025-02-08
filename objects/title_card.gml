@@ -41,7 +41,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if global.hardmode = 1
+if global.hardmode = 2
 {
     image_xscale = irandom_range(5,15)/10
     image_yscale = irandom_range(5,15)/10

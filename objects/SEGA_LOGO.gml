@@ -48,7 +48,7 @@ if string_pos('hard',keyboard_string) != 0 or string_pos('рфкв',keyboard_str
             str_select = "YOU FUCKING CHEATER"
         }
     }
-    global.hardmode = 1
+    global.hardmode = 2
 }
 if string_pos('mir',keyboard_string) != 0
 {

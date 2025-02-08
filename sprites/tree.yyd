@@ -197,9 +197,6 @@
 |sprDeadlySonic
 |sprDeadnado
 |sprDeadnado2
-|sprDeadnado3
-|sprDeadnado4
-|sprDeadnado5
 |sprDeadSonic
 |sprDeadSonic2
 |sprDeadSonic3
@@ -330,7 +327,6 @@
 |sprGCrus
 |sprGhostEmerald
 |sprGhostSonicWin
-|sprGood
 |sprGround_Egg
 |sprGroundSolid
 |sprGroundSolid2
@@ -377,7 +373,6 @@
 |sprHSE_Walk
 |sprExetiorP_LookAround
 |sprHSE_Walker
-|sprHSE_Watch
 |sprHSEUp
 |sprHUD_Chat
 |sprHUD_PC
@@ -524,7 +519,6 @@
 |sprPig
 |sprPlaceRing
 |sprPowerRay
-|sprPowerRayClose
 |sprPre_DF1
 |sprPre_DF1ita
 |sprPre_DF1rus

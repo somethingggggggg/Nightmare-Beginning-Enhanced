@@ -487,9 +487,10 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-//move_contact_solid(270, 4);
-//vspeed = 0;
+move_contact_solid(direction, 4);
+vspeed = 0;
 
+/*
 if place_meeting(x,bbox_bottom+1,FinalGround)
 {
     move_contact_solid(270, 4);
@@ -501,7 +502,7 @@ if place_meeting(x,bbox_top,FinalGround)
     move_contact_solid(0, 4);
     vspeed = 0;
 }
-
+*/
 if place_meeting(bbox_right,y,FinalGround) or place_meeting(bbox_left,y,FinalGround)
 {
     move_contact_solid(direction, 0.1)

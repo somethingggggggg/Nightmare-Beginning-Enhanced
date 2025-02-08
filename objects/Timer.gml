@@ -4,7 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if global.hardmode = 1 && (room = 11 or room = 40 or (room = 21 && global.TDetection = true))
+if global.hardmode = 2 && (room = 11 or room = 40 or (room = 21 && global.TDetection = true))
 {
     Sec = 0
     Min = 9

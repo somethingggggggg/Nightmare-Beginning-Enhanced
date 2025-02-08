@@ -14,7 +14,7 @@ applies_to=self
 */
 x = view_xview[view_current]+100
 y = view_yview[view_current]+140
-/*if global.hardmode = 1
+/*if global.hardmode = 2
 {
     with all
     {

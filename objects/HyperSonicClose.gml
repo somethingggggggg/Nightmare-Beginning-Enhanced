@@ -14,6 +14,7 @@ applies_to=self
 */
 view_visible[1] = false
 view_visible[0] = true
+Sounder.refresh = 1
 alarm[1] = 80
 #define Alarm_1
 /*"/*'/**//* YYD ACTION
@@ -49,6 +50,7 @@ applies_to=self
 */
 view_visible[0] = false
 view_visible[1] = true
+Sounder.refresh = 1
 alarm[4] = 350
 alarm[5] = 350
 #define Alarm_4
@@ -59,6 +61,7 @@ applies_to=self
 */
 view_visible[0] = true
 view_visible[1] = false
+Sounder.refresh = 1
 view_object[0] = RiseSonic1
 alarm[7] = 240
 #define Alarm_5

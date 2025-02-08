@@ -5,7 +5,7 @@ action_id=603
 applies_to=self
 */
 Act = 1
-if room = 66 && global.hardmode != 0
+if room = 66 && global.hardmode = 2
 {
     visible = 1
 }

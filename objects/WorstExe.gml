@@ -11,6 +11,7 @@ MasterEmerald.solid = 1
 Act = 0
 hspeed = -0.7
 global.Suicide = true
+camMove = 0
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -35,7 +36,8 @@ instance_create(240,144,PowerRay)
 PowerRay.sprite_index = sprEvilPowerRay
 sound_play(global.S_Ray)
 sound_play(global.S_ExeScream)
-alarm[2] = 40
+//alarm[2] = 40
+camMove = 1
 #define Alarm_2
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -153,12 +155,23 @@ else
 
 if collision_line(x,y,x-50,y,MasterEmerald,1,0) && Act = 0
 {
-sound_play(global.S_Jump)
-Act = 1
-vspeed = -7
-hspeed = -1.5
-sprite_index = sprFinalExe_Jump
+    sound_play(global.S_Jump)
+    Act = 1
+    vspeed = -7
+    hspeed = -1.5
+    sprite_index = sprFinalExe_Jump
 }
+
+if camMove
+{
+    view_hview[0] -= 4
+    view_xview[0] += 2
+    view_yview[0] += 2
+    if global.fourbythree != 0 view_wview[0] = view_hview[0]/3*4
+    else view_wview[0] = view_hview[0]/9*16
+    Sounder.refresh = 1
+}
+if view_hview[0] < 20 room_goto(78)
 #define Collision_HPGround
 /*"/*'/**//* YYD ACTION
 lib_id=1

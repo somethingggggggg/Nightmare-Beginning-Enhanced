@@ -1,1 +1,1 @@
-if global.hardmode = 1 instance_destroy()
+if global.hardmode = 2 instance_destroy()

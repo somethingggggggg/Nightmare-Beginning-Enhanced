@@ -6,7 +6,7 @@ applies_to=self
 */
 image_speed = 0
 rotate_speed = irandom_range(-15,15)/10
-if global.hardmode = 1 image_blend = c_red
+if global.hardmode = 2 image_blend = c_red
 ground = false
 hspeed = 1.5
 #define Step_0

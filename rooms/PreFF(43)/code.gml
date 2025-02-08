@@ -1,4 +1,4 @@
-if global.hardmode = 1
+if global.hardmode = 2
 {
     background_color = $000000//7a
     background_blend[0] = $0000b1

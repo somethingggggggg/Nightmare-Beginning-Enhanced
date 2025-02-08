@@ -16,17 +16,17 @@ applies_to=self
 image_alpha = 1
 if global.Suicide = true
 {
-    if global.lang = 0
+    switch global.lang
     {
+        case 0:
         sprite_index = sprWC
-    }
-    if global.lang = 1
-    {
+        break;
+        case 1:
         sprite_index = sprWCrus
-    }
-    if global.lang = 2
-    {
+        break;
+        case 2:
         sprite_index = sprWCita
+        break;
     }
     ini_open("save.ini")
     ini_write_real('progress','worstend',1)
@@ -37,34 +37,34 @@ if global.Suicide = true
 
 if global.BestEnd = true
 {
-    if global.lang = 0
+    switch global.lang
     {
+        case 0:
         sprite_index = sprBC
-    }
-    if global.lang = 1
-    {
+        break;
+        case 1:
         sprite_index = sprBCrus
-    }
-    if global.lang = 2
-    {
+        break;
+        case 2:
         sprite_index = sprBCita
+        break;
     }
     sound_play(global.S_BestEndings)
 }
 
 if global.GoodEnd = true
 {
-    if global.lang = 0
+    switch global.lang
     {
+        case 0:
         sprite_index = sprGC
-    }
-    if global.lang = 1
-    {
+        break;
+        case 1:
         sprite_index = sprGCrus
-    }
-    if global.lang = 2
-    {
+        break;
+        case 2:
         sprite_index = sprGCita
+        break;
     }
     sound_play(global.S_BestEndings)
 }

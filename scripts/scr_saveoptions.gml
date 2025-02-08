@@ -1,9 +1,8 @@
 ini_open("options.ini")
 i = 0
 o = 0
-repeat(menulength[0]+menulength[1]+menulength[2]-1)
+repeat(menulength[0]+menulength[1]+menulength[2]+menulength[3])
 {
-    i += 1
     if i >= menulength[o]
     {
         i = 0
@@ -11,6 +10,7 @@ repeat(menulength[0]+menulength[1]+menulength[2]-1)
     }
     if debug_mode = 1 show_debug_message(optionVarName[i,o])
     ini_write_real('options',optionVarName[i,o],variable_global_get(optionVarName[i,o]))
+    i += 1
 }
 ini_close()
 /*ini_write_real('options','subcnoise',global.subcnoise)

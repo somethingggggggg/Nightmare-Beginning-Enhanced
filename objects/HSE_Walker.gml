@@ -16,6 +16,7 @@ hsp = 0
 vsp = 0
 sound_stop(global.S_HideSound)
 sound_loop(global.S_Chase)
+image_blend = $b4b4b4
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -147,7 +148,7 @@ if place_meeting(x,y,Tails3)
 }
     else
     {
-        if global.hardmode = 0 Timer_Up = 100
+        if global.hardmode != 2 Timer_Up = 100
         else if Timer_Up < 100 Timer_Up += 1
     }
 if global.Tails_mode = true

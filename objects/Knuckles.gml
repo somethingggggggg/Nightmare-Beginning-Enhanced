@@ -375,7 +375,7 @@ global.vel = 4
 }
 if Bot_mode = true && Act = 0
 {
-if global.hardmode = 0 global.vel = 0
+if global.hardmode != 2 global.vel = 0
 else
 {
 global.vel = -32

@@ -12,7 +12,7 @@ if BL.Knuckles_Plot = false
 {
     BL.FF_K = false
 }
-if global.hardmode = 1
+if global.hardmode = 2
 {
     sound_stop_all()
     sound_loop(global.S_Action)

@@ -176,7 +176,7 @@ sprHalfSolid
 sprHSE_Fall
 sprHSE_Walk
 sprHSE_TurnBack
-sprHSE_Watch
+
 sprHS_5G
 sprHS_6G
 
@@ -326,10 +326,10 @@ sprHZFlowerNega
 sprDeadSonic3
 sprDeadnado
 sprDeadnado2
-sprDeadnado3
-sprDeadnado4
-sprDeadnado5
-sprGood
+
+
+
+
 sprAverage
 sprBad
 sprWorse
@@ -411,7 +411,7 @@ sprHyperFly
 sprSonicTurnHyper
 sprPowerRay
 sprHyperSonicClose
-sprPowerRayClose
+
 sprSonicWaitHyper
 sprCharasters_Rectangle
 sprCam_Control

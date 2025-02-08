@@ -1,4 +1,4 @@
-if global.hardmode = 0
+if global.hardmode != 2
 {
     global.rings = 10
 }

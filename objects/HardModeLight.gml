@@ -4,7 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if global.hardmode = 0 instance_destroy()
+if global.hardmode != 2 instance_destroy()
 image_yscale = 0.1316
 image_xscale = 0.1316
 time = 0

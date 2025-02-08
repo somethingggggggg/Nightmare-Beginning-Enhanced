@@ -24,12 +24,27 @@ invert=0
 arg0=GOD_Room(35)
 arg1=21
 */
+#define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if keyboard_check(vk_anykey)
+{
+    draw_sprite(sprBE_2,global.lang mod 2,x,y)
+}
+else
+{
+    draw_self()
+}
 #define KeyPress_1
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
+/*
 Click_Time += 1
 
 if Click_Time < 10
@@ -59,6 +74,10 @@ view_visible[1] = true
 view_visible[0] = false
 }
 #define KeyRelease_1
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=425
+*/
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=203

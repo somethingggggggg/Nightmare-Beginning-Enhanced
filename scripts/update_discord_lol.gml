@@ -36,5 +36,5 @@ switch room
         imagineavariable = "SUBCONCIOUS MIND"
     break;
 }
-if global.hardmode = 0 discord_update_presence(imagineavariable,"An experimental NB mod",'sprfex','sprfex')
+if global.hardmode != 2 discord_update_presence(imagineavariable,"An experimental NB mod",'sprfex','sprfex')
 else discord_update_presence(imagineavariable,"HARD MODE EXPERIMENTAL",'sprfex','sprfex')

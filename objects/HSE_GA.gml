@@ -14,6 +14,7 @@ SleepTimer = 150
 Phase_1 = true
 Phase_2 = false
 AwakeTime = 300
+image_blend = $b4b4b4
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

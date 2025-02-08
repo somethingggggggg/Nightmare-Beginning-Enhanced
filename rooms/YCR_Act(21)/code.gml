@@ -1,7 +1,7 @@
 update_discord_lol()
 //background_hspeed[0] = -0.5
 //background_hspeed[1] = -0.5
-if global.hardmode = 1
+if global.hardmode = 2
 {
     background_blend[1] = make_color_hsv_standard(irandom_range(0,360),100,100)
 }
@@ -23,7 +23,7 @@ if global.EDetection = true
     sound_loop(global.S_Lift)
 }
 if global.TDetection = false exit;
-if global.hardmode != 0
+if global.hardmode = 2
 {
     instance_create(18696,2016,PARTYHARDTAILS)
 }

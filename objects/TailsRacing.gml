@@ -39,7 +39,7 @@ if global.Difficult = 4
     path_speed = 11.5
 }
 
-if global.hardmode = 1 path_speed = 13
+if global.hardmode = 2 path_speed = 13
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

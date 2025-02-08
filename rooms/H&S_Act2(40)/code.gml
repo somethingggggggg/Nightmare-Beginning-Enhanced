@@ -1,6 +1,6 @@
 global.Tails_mode = true
 update_discord_lol()
-if global.hardmode = 0 exit;
+if global.hardmode != 2 exit;
 
 background_blend[0] = c_blue
 with HS_1G

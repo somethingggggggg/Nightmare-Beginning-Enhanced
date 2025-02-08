@@ -14,6 +14,7 @@ prev_win_h_size = 720
 prev_win_x = display_get_width()/2 - prev_win_w_size/2
 prev_win_y = display_get_height()/2 - prev_win_h_size/2
 HorizScroll = 0
+refresh = 0
 global.pshader = psGrayscale()
 time = 0
 i = 0
@@ -120,6 +121,7 @@ action_id=603
 applies_to=self
 */
 scr_menuclose()
+
 /*
 pause = 0
 if room = 66 && view_visible[2] = 1
@@ -435,7 +437,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if global.hardmode = 1
+if global.hardmode = 2
 {
     transition_kind = irandom_range(1,21)
     transition_steps = 80
@@ -667,6 +669,7 @@ applies_to=self
 */
 prev_wport = view_wport[view_current]
 prev_hport = view_hport[view_current]
+if window_get_fullscreen() exit;
 prev_win_w_size = window_get_width()
 prev_win_h_size = window_get_height()
 prev_win_x = window_get_x()
@@ -693,6 +696,24 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+///We need this
+
+if refresh = 1
+{
+    scr_scaling_wtf()
+    refresh = 0
+}
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+///Fullscreen switch
+
+//We do this because of view_current
+
+//...really stupid
+
 if keyboard_check_pressed(vk_f4)
 {
     window_set_fullscreen(!window_get_fullscreen())
@@ -719,19 +740,18 @@ if keyboard_check_pressed(vk_f4)
         }
         else
         {
-            i = 0
             repeat(8)
             {
-                view_wport[i] = 1280
-                view_hport[i] = 720
+                view_wport[i] = display_get_width()
+                view_hport[i] = display_get_height()
                 i += 1
             }
-            window_resize_buffer(1280,720,1,0)
-            window_set_size(1280,720)
-            window_set_region_size(1280,720,1)
-            if global.fourbythree = 2
+            //window_set_size(display_get_width(),display_get_height())
+            window_set_region_size(display_get_width(),display_get_height(),1)
+            window_resize_buffer(display_get_width(),display_get_height(),1,0)
+            if global.fourbythree = 2 && room != 0
             {
-            //    window_set_region_size((1280 / 4) * 3,720,1)
+                window_set_region_size((display_get_width() / 4) * 3,display_get_height(),1)
             }
         }
     }
@@ -754,18 +774,19 @@ if keyboard_check_pressed(vk_f4)
         }
         else
         {
+            i = 0
             repeat(8)
             {
-                view_wport[i] = display_get_width()
-                view_hport[i] = display_get_height()
+                view_wport[i] = 1280
+                view_hport[i] = 720
                 i += 1
             }
-            //window_set_size(display_get_width(),display_get_height())
-            window_set_region_size(display_get_width(),display_get_height(),1)
-            window_resize_buffer(display_get_width(),display_get_height(),1,0)
-            if global.fourbythree = 2 && room != 0
+            window_resize_buffer(1280,720,1,0)
+            window_set_size(1280,720)
+            window_set_region_size(1280,720,1)
+            if global.fourbythree = 2
             {
-                window_set_region_size((display_get_width() / 4) * 3,display_get_height(),1)
+            //    window_set_region_size((1280 / 4) * 3,720,1)
             }
         }
     }
@@ -775,6 +796,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+///Pause menu drawing
+
 draw_set_halign(fa_left)
 draw_set_alpha(1)
 draw_set_color(c_white)
