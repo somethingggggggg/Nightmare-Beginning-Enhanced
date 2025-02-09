@@ -57,7 +57,7 @@ applies_to=self
 */
 view_visible[1] = false
 view_visible[2] = true
-scr_scaling_wtf()
+Sounder.refresh = 1
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -255,7 +255,7 @@ if Act = 4 && keyboard_check_pressed(ord("Z"))
         show_message("Wait!")
         view_visible[0] = false
         view_visible[1] = true
-        scr_scaling_wtf()
+        Sounder.refresh = 1
         Act = 6
         alarm[2] =140
     }

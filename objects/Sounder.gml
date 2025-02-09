@@ -78,6 +78,8 @@ optionVarName[0,1] = "cheats"
 optionVarName[1,1] = "newcontent"
 optionVarName[2,1] = "Eggmovement"
 optionVarName[3,1] = "DropDashEnabled"
+optionVarName[4,1] = "FlightCancelType"
+optionVarName[5,1] = "EggLvl"
 
 optionVarName[0,2] = "fourbythree"
 optionVarName[1,2] = "dialoguefont"
@@ -99,6 +101,8 @@ optionblocked[0,1] = 1
 optionblocked[1,1] = 1
 optionblocked[2,1] = 0
 optionblocked[3,1] = 0
+optionblocked[4,1] = 0
+optionblocked[5,1] = 0
 
 optionblocked[0,2] = 0
 optionblocked[1,2] = 0
@@ -111,7 +115,7 @@ optionblocked[0,3] = 0
 scr_lang_menu_init(global.lang)
 
 menulength[0] = 7
-menulength[1] = 4
+menulength[1] = 6
 menulength[2] = 5
 menulength[3] = 1
 #define Alarm_0
@@ -120,7 +124,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-scr_menuclose()
+//scr_menuclose()
 
 /*
 pause = 0
@@ -307,6 +311,7 @@ global.S_PAUSEMENU=sound_add(working_directory+"/Sound/n8_song.mp3",1,0)
 global.S_skid=sound_add(working_directory+"/Sound/skid.mp3",1,0)
 global.S_SpinLetGo=sound_add(working_directory+"/Sound/SpinLetGo.wav",1,0)
 global.S_Final_Boss_RG=sound_add(working_directory+"/Sound/Final_Boss_REALLY_GOOD.mp3",0,0)
+global.S_MainMenu=sound_add(working_directory+"/Sound/PTCUshop.mp3",0,0)
 
 //Update Sounds
 global.S_Green_Hill_Evening=sound_add(working_directory+"/Sound/updateSounds/Green_Hill_Evening.mp3",0,0)
@@ -329,6 +334,7 @@ with obj_loadingscreen
     instance_destroy()
 }
 sprite_delete(sprite808)
+sound_loop(global.S_MainMenu)
 #define Alarm_2
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -353,74 +359,11 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if room != 0
-{
-    if pause = 0
-    {
-        if keyboard_check_pressed(vk_escape) && !instance_exists(SW_Control)
-        {
-            i = 0
-            o = 0
-            repeat(menulength[0]+menulength[1]+menulength[2]+menulength[3]-1)
-            {
-                i += 1
-                if i >= menulength[o]
-                {
-                    i = 0
-                    o += 1
-                }
-                prevset[i,o] = variable_global_get(optionVarName[i,o])
-            }
-            i = 0
-            room_speed = 60
-            sprpausefuck = sprite_create_from_screen(0,0,view_wport[view_current],view_wport[view_current],0,0,0,0)
-            instance_deactivate_all(1)
-            //stupid fix because view_current doesn't work
-            if room = 66 && view_visible[2] = 1
-            {
-                prev_view_hview = view_hview[2]
-                prev_view_wview = view_wview[2]
-                view_wview[2] = 462
-                view_hview[2] = 260
-            }
-            else
-            {
-                prev_view_hview = view_hview[view_current]
-                prev_view_wview = view_wview[view_current]
-                view_wview[view_current] = 462
-                view_hview[view_current] = 260
-                if global.performance = 1
-                {
-                    prev_view_hport = view_hport[view_current]
-                    prev_view_wport = view_wport[view_current]
-                    view_wport[view_current] = 462
-                    view_hport[view_current] = 260
-                    window_set_region_size(view_wport[view_current],view_hport[view_current],1)
-                    window_resize_buffer(view_wport[view_current],view_hport[view_current],1,0)
-                    //window_set_size(view_wport[view_current],view_hport[view_current])
-                }
-            }
-            //if window_get_fullscreen() = 1 window_set_region_size(display_get_width(),display_get_height(),0)
-            
-            //testing
-            sound_kind_volume(1,1)
-            sound_loop(global.S_PAUSEMENU)
-            scr_soundfuck()
-            pause = 1
-        }
-    }
-    else
-    {
-        if global.menustate = 1 scr_menunav2(1)
-        else scr_pausenav2()
-    }
-}
-//I think this helps with the scaling, but this is so fucking stupid
+
+
 if keyboard_check_pressed(vk_f2)
 {
     scr_nbe_restart()
-    //execute_program("Sonic-exe NB Enhanced.exe",0,0)
-    //game_end()
 }
 
 
@@ -691,6 +634,55 @@ action_id=332
 invert=0
 */
 #define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if room != 0
+{
+    if pause = 0
+    {
+        if keyboard_check_pressed(vk_escape) && !instance_exists(SW_Control)
+        {
+            i = 0
+            o = 0
+            repeat(menulength[0]+menulength[1]+menulength[2]+menulength[3]-1)
+            {
+                i += 1
+                if i >= menulength[o]
+                {
+                    i = 0
+                    o += 1
+                }
+                prevset[i,o] = variable_global_get(optionVarName[i,o])
+            }
+            i = 0
+            room_speed = 60
+            sprpausefuck = sprite_create_from_screen(0,0,view_wport[view_current],view_wport[view_current],0,0,0,0)
+            instance_deactivate_all(1)
+            prev_view_hview = view_hview[view_current]
+            prev_view_wview = view_wview[view_current]
+            view_wview[view_current] = 462
+            view_hview[view_current] = 260
+            Sounder.refresh = 1
+            //if window_get_fullscreen() = 1 window_set_region_size(display_get_width(),display_get_height(),0)
+
+            //testing
+            sound_kind_volume(1,1)
+            sound_loop(global.S_PAUSEMENU)
+            scr_soundfuck()
+            if room = 26 optionblocked[5,1] = 1
+            else optionblocked[5,1] = 0
+            pause = 1
+        }
+    }
+    else
+    {
+        if global.menustate = 1 scr_menunav2(1)
+        else scr_pausenav2()
+    }
+}
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603

@@ -93,6 +93,8 @@ if keyboard_check_pressed(vk_enter)
         with Sounder scr_lang_menu_init(global.lang)
         if global.HSmusic = 0 sound_replace(global.S_Chase,working_directory+"/Sound/Chase.mp3",0,0)
         else sound_replace(global.S_Chase,working_directory+"/Sound/updateSounds/Chase.mp3",0,0)
+        sound_delete(global.S_MainMenu)
+        sound_stop_all()
         room_goto(87)
     }
 }

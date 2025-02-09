@@ -75,6 +75,7 @@ if global.Hit >= 15
 {
 view_visible[1] = false
 view_visible[0] = true
+Sounder.refresh = 1
 instance_create(FinalSonic.x,FinalSonic.y,FinalCam4)
 ExeAttack4.Mode = 6
 alarm[3] = 80
@@ -83,6 +84,7 @@ else
 {
 view_visible[1] = false
 view_visible[0] = true
+Sounder.refresh = 1
 instance_create(FinalSonic.x,FinalSonic.y,FinalCam4)
 with ExeAttack4
 {

@@ -68,15 +68,15 @@ else
 //Act
 if Act = 1
 {
-sprite_index = sprEx4
-Act = 2
-alarm[0] = 120
+    sprite_index = sprEx4
+    Act = 2
+    alarm[0] = 120
 }
 
 if Act = 2 && vspeed > 5
 {
-sprite_index = sprFinalExe_Jump
-move_towards_point(ScrapEggman.x,ScrapEggman.y,8)
+    sprite_index = sprFinalExe_Jump
+    move_towards_point(ScrapEggman.x,ScrapEggman.y,8)
 }
 #define Collision_ScrapGround
 /*"/*'/**//* YYD ACTION

@@ -5,7 +5,7 @@ action_id=603
 applies_to=self
 */
 sound_stop(global.S_Burn)
-if global.hardmode sound_loop(global.S_Final_Boss_RG)
+if global.hardmode = 2 sound_loop(global.S_Final_Boss_RG)
 else sound_play(global.S_Final_Boss)
 alarm[0] = 2520
 alarm[1] = 4680
@@ -45,6 +45,7 @@ instance_create(x,y,Execkles)
 view_object[1] = HPK
 view_visible[2] = false
 view_visible[1] = true
+Sounder.refresh = 1
 #define Alarm_2
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -53,6 +54,7 @@ applies_to=self
 */
 view_visible[0] = true
 view_visible[1] = false
+Sounder.refresh = 1
 instance_create(FinalSonic.x+15,FinalSonic.y,Line_Crusher)
 with UpGrounder
 {

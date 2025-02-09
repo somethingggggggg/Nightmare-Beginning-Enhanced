@@ -6,6 +6,7 @@ applies_to=self
 */
 view_visible[1] = false
 view_visible[0] = true
+Sounder.refresh = 1
 Warn2.hspeed = -10
 with TipArrowRight
 {

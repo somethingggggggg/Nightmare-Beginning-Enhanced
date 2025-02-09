@@ -43,7 +43,7 @@ if keyboard_check_pressed(vk_enter)
 {
     if global.option = 0
     {
-        alarm[0] = 1
+        scr_menuclose()
     }
     if global.option = 1
     {

@@ -1,6 +1,10 @@
 if global.hardmode != 2
 {
     global.rings = 10
+    if global.hardmode = 1
+    {
+        with Ring instance_destroy()
+    }
 }
 else
 {

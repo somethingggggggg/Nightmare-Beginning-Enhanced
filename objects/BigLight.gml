@@ -5,18 +5,24 @@ action_id=603
 applies_to=self
 */
 image_speed = 0.1
+if global.hardmode = 1
+{
+    path_speed = 3.5
+}
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
+/*
 if instance_exists(Egg_Controler)
 {
 if Egg_Controler.Act = 1
 {
 instance_destroy()
 }}
+*/
 #define Collision_Eggman
 /*"/*'/**//* YYD ACTION
 lib_id=1

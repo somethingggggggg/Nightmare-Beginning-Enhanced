@@ -45,6 +45,7 @@ if Act = 0
     sound_play(global.S_Signpost)
     view_visible[0] = false
     view_visible[1] = true
+    Sounder.refresh = 1
     alarm[0] = 160
     sprite_index = sprTurnTable
     image_speed = 0.5
@@ -59,6 +60,7 @@ with FinishTable
     instance_create(44928,2928,Tabls)
     view_visible[0] = false
     view_visible[1] = true
+    Sounder.refresh = 1
     ExePlayer.Bot = 7
     ExePlayer.image_xscale = 1
 }
@@ -72,10 +74,11 @@ with FinishTable
     instance_create(44928,2928,Tabls)
     view_visible[0] = false
     view_visible[1] = true
+    Sounder.refresh = 1
     ExePlayer.Bot = 7
     ExePlayer.image_xscale = 1
 }
-scr_scaling_wtf()
+//scr_scaling_wtf()
 #define Collision_TailsRacing
 /*"/*'/**//* YYD ACTION
 lib_id=1

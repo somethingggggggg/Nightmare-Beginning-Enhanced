@@ -16,6 +16,7 @@ applies_to=self
 AllPers.canMove = true
 view_visible[0] = true
 view_visible[1] = false
+Sounder.refresh = 1
 sound_play(global.S_BoxBroke)
 instance_create(x,y,EasterExploy)
 instance_destroy()
@@ -61,6 +62,7 @@ image_index = 0
 AllPers.canMove = false
 view_visible[1] = true
 view_visible[0] = false
+Sounder.refresh = 1
 sound_play(global.S_WTG)
 alarm[0] = 120
 }

@@ -1,6 +1,7 @@
 //the options menu
 HorizScroll = lerp(HorizScroll,0,0.5)
 ButtonPressedLeftOrRight = keyboard_check_pressed(vk_right) - keyboard_check_pressed(vk_left)
+ButtonUpOrDown = keyboard_check(vk_down) - keyboard_check(vk_up)
 //anim += 1
 time += 1
 mycolor = $ffffff
@@ -8,6 +9,7 @@ mycolor = $ffffff
 //{
 //    anim = 0
 //}
+
 if keyboard_check(vk_up) && !keyboard_check(vk_down)
 {
     if keyboard_check_pressed(vk_up)
@@ -15,15 +17,8 @@ if keyboard_check(vk_up) && !keyboard_check(vk_down)
         global.option -= 1
         sound_play(global.S_TAB)
     }
-    autoscroll -= 1
 }
-else
-{
-    if !keyboard_check(vk_down)
-    {
-        autoscroll = 0
-    }
-}
+
 if keyboard_check(vk_down) && !keyboard_check(vk_up)
 {
     if keyboard_check_pressed(vk_down)
@@ -31,7 +26,15 @@ if keyboard_check(vk_down) && !keyboard_check(vk_up)
         global.option += 1
         sound_play(global.S_TAB)
     }
-    autoscroll += 1
+}
+
+if ButtonUpOrDown != 0
+{
+    autoscroll += ButtonUpOrDown
+}
+else
+{
+    autoscroll = 0
 }
 if abs(autoscroll) > 30
 {

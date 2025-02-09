@@ -15,12 +15,14 @@ switch argument0
         optionname[3,0] = "Performance mode"
         optionname[4,0] = "Original FF Cutscene"
         optionname[5,0] = "Enable DCRP"
-        optionname[6,0] = "In-game cutscene"
+        optionname[6,0] = "Uprising cutscene"
 
         optionname[0,1] = "Cheats"
         optionname[1,1] = "New content"
         optionname[2,1] = "Eggman movement"
         optionname[3,1] = "Sonic Dropdash"
+        optionname[4,1] = "Flight Cancel"
+        optionname[5,1] = "... LVL layout"
 
         optionname[0,2] = "4:3 mode"
         optionname[1,2] = "Font"
@@ -29,6 +31,7 @@ switch argument0
         optionname[4,2] = "Billineal filtering"
 
         optionname[0,3] = "HAS act 2 chase"
+        optionname[1,3] = "FF voicelines"
 
         optionname[0,4] = "Reset options"
         optionname[1,4] = "Erase save"
@@ -45,6 +48,8 @@ switch argument0
         optiondesc[1,1] = "Toggle new content on or off"
         optiondesc[2,1] = "Change how Eggman controls in ..."
         optiondesc[3,1] = "Enable Sonic's Dropdash in Destroyed Mind"
+        optiondesc[4,1] = "Changes the style of Tails's flight cancel, Z plus DOWN (NBE) or X (UPDATE)"
+        optiondesc[5,1] = "New Eggman level layout from the update"
 
         optiondesc[1,2] = "Pick between original NB font (korinna) and new NU font (pallete)"
         optiondesc[2,2] = "Toggle the progressbar in Fatal Fog"
@@ -87,6 +92,12 @@ switch argument0
 
         optionstate2[3,0] = "off"
         optionstate2[3,1] = "on"
+
+        optionstate2[4,0] = "NBE"
+        optionstate2[4,1] = "Update"
+
+        optionstate2[5,0] = "off"
+        optionstate2[5,1] = "on"
 
         optionstate3[0,0] = "off"
         optionstate3[0,1] = "Stretch"

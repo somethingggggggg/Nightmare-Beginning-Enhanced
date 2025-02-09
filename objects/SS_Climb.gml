@@ -116,6 +116,22 @@ invert=0
 arg0=BR_1(4)
 arg1=0
 */
+#define Step_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if string_pos('uim',keyboard_string) != 0 && global.hardmode != 1
+{
+    global.hardmode = 1
+    sound_play(global.S_Smeh)
+}
+if string_pos('mario',keyboard_string) != 0
+{
+    sound_stop_all()
+    //room_goto(91)
+}
 #define Other_7
 /*"/*'/**//* YYD ACTION
 lib_id=1

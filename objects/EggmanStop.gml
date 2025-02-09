@@ -46,6 +46,7 @@ applies_to=self
 */
 view_visible[0] = false
 view_visible[1] = true
+Sounder.refresh = 1
 sound_loop(global.S_Noice)
 /*"/*'/**//* YYD ACTION
 lib_id=1

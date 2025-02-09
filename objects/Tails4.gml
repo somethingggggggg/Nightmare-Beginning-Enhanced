@@ -223,7 +223,7 @@ else
 //Fly
 if Idie_mode = false
 {
-    if Fly = true && keyboard_check_pressed(ord("Z")) && keyboard_check(vk_down)
+    if Fly = true && scrFlightCancelCheck()
     {
         FlyTime = 0
         Fly = false

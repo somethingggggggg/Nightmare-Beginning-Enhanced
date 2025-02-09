@@ -19,7 +19,11 @@ canHit = true;
 canSpriteChange = true;
 canJump = true
 Bot = 1
-alarm[1] = 2100
+alarm[1] = 2500
+if global.hardmode = 1
+{
+    alarm[1] = 1900
+}
 global.KnuckMeat = true
 #define Alarm_0
 /*"/*'/**//* YYD ACTION

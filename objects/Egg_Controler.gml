@@ -21,8 +21,9 @@ applies_to=self
 */
 if Act = 0
 {
-Act = 1
-alarm[0] = 240
+    Act = 1
+    with BigLight instance_destroy()
+    alarm[0] = 240
 }
 #define Draw_0
 /*"/*'/**//* YYD ACTION

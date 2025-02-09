@@ -211,7 +211,8 @@ if Bot = 0
 {
     if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && canMove == true
     {
-       vspeed = -5;
+       if global.EggLvl vspeed = -6.2;
+       else vspeed = -5;
        sprite_index = sprEggmanJump;
        mask_index = sprEggmanBlackMask;
     }

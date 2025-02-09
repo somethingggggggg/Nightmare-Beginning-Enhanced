@@ -2,27 +2,11 @@
 pause = 0
 prev_win_w_size = window_get_width()
 prev_win_h_size = window_get_height()
-if room = 66 && view_visible[2] = 1
-{
-    view_wview[2] = 640
-    view_hview[2] = 360
-    if global.performance = 1
-    {
-        scr_scaling_wtf()
-        scr_fourbythreer()
-    }
-}
-else
-{
-    view_hview[view_current] = prev_view_hview
-    view_wview[view_current] = prev_view_wview
-    //view_wport[view_current] = prev_view_wport
-    //view_hport[view_current] = prev_view_hport
-    //window_set_size(prev_view_wport,prev_view_hport)
-    //window_set_region_size(prev_view_wport,prev_view_hport,0)
-    //window_resize_buffer(prev_view_wport,prev_view_hport,1,0)
-    //window_set_size(prev_view_wport,prev_view_hport)
-}
+
+view_hview[view_current] = prev_view_hview
+view_wview[view_current] = prev_view_wview
+
+Sounder.refresh = 1
 
 global.menustate = 0
 global.option = 0
@@ -33,10 +17,9 @@ scr_soundunfuck()
 if global.fourbythree != prevset[0,2]
 {
     scr_fourbythreer()
-    scr_scaling_wtf()
+    //scr_scaling_wtf()
 }
-//if global.performance != prevset[3,0] scr_scaling_wtf();
-if global.performance = 1 or global.performance != prevset[3,0] scr_scaling_wtf();
+//if global.performance = 1 or global.performance != prevset[3,0] scr_scaling_wtf();
 if global.DCRP_enabled != prevset[5,0]
 {
     if global.DCRP_enabled = 0

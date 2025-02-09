@@ -25,6 +25,7 @@ view_visible[5] = 0
 view_visible[6] = 0
 view_visible[7] = 0
 view_visible[2] = 1
+Sounder.refresh = 1
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

@@ -23,7 +23,7 @@ image_speed = 0.2
 hui = 0
 //anim = 0
 global.SPRSONFONT = font_add_sprite(spr_son1font,ord('A'),1,1)
-global.SMALLSONFONT = font_add_sprite(spr_smallsonfont,ord('/'),0,0)
+global.SMALLSONFONT = font_add_sprite(spr_smallsonfont,ord('-'),0,0)
 global.DESKFONT = font_add_sprite(sprFontCount,ord('-'),0,0)
 
 global.Menufont = 0
@@ -71,6 +71,8 @@ optionVarName[0,1] = "cheats"
 optionVarName[1,1] = "newcontent"
 optionVarName[2,1] = "Eggmovement"
 optionVarName[3,1] = "DropDashEnabled"
+optionVarName[4,1] = "FlightCancelType"
+optionVarName[5,1] = "EggLvl"
 
 optionVarName[0,2] = "fourbythree"
 optionVarName[1,2] = "dialoguefont"
@@ -96,6 +98,8 @@ else optionblocked[0,1] = 1
 optionblocked[1,1] = 1
 optionblocked[2,1] = 0
 optionblocked[3,1] = 0
+optionblocked[4,1] = 0
+optionblocked[5,1] = 0
 
 optionblocked[0,2] = 0
 optionblocked[1,2] = 0
@@ -111,7 +115,7 @@ optionblocked[1,4] = 0
 scr_lang_menu_init(global.lang)
 
 menulength[0] = 7
-menulength[1] = 4
+menulength[1] = 6
 menulength[2] = 5
 menulength[3] = 1
 menulength[4] = 2
