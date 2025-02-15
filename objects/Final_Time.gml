@@ -58,8 +58,10 @@ Sounder.refresh = 1
 instance_create(FinalSonic.x+15,FinalSonic.y,Line_Crusher)
 with UpGrounder
 {
-instance_create(x,y,UpGrounderBroke)
-instance_destroy()
+    sound_play(global.S_Broke)
+    instance_create(x,y,UpGrounderBroke)
+    instance_create(x,y,UpGrounderBroke2)
+    instance_destroy()
 }
 #define Alarm_3
 /*"/*'/**//* YYD ACTION

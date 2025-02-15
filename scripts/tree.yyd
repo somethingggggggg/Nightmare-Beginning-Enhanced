@@ -50,3 +50,4 @@
 |scr_load_inis
 |scr_nbe_restart
 |scrFlightCancelCheck
+|scr_draw_sprite_tiled_area

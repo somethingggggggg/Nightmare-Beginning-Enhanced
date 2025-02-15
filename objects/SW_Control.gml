@@ -509,7 +509,6 @@ if global.lang = 0
 if Page = 1
 {
 draw_sprite(sprSW_Tails,1,view_xview[0],view_yview[0])
-
 draw_text_ext_color(view_xview[0]+100, view_yview[0], "Back to green hill again...Last time I was here was when Sonic went off for his first adventure, I wonder why he called me here though.",16,view_wview[0]-100,$00ffff,$00ffff,$00ffff,$005555,1)
 }
 
@@ -517,14 +516,12 @@ draw_text_ext_color(view_xview[0]+100, view_yview[0], "Back to green hill again.
 if Page = 3
 {
 draw_sprite(sprSW_Tails,1,view_xview[0],view_yview[0])
-
 draw_text_ext_color(view_xview[0]+100, view_yview[0], "Что это за место?",16,view_wview[0]-100,$00ffff,$00ffff,$00ffff,$005555,1)
 }
 
 if Page = 5
 {
 draw_sprite(sprSW_Tails,1,view_xview[0],view_yview[0])
-
 draw_text_ext_color(view_xview[0]+100, view_yview[0], "Наклз! Эггман! Как я рад вас видеть! Что-то не так с Соником: он пытался...",16,view_wview[0]-100,$00ffff,$00ffff,$00ffff,$005555,1)
 }
 
@@ -532,7 +529,6 @@ if Page = 6
 {
 CutTails.image_xscale = -1
 draw_sprite(sprSW_KnucklesWarn,1,view_xview[0],view_yview[0])
-
 draw_text_ext_color(view_xview[0]+100, view_yview[0], "...Убить тебя? Не удивляйся: со мной он тоже пытался разделаться! Что ты сделал с Соником, Яйцеголовый?!",16,view_wview[0]-100,$00ffff,$00ffff,$00ffff,$005555,1)
 }
 
@@ -540,14 +536,12 @@ if Page = 7
 {
 CutTails.image_xscale = 1
 draw_sprite(sprSW_Eggman,1,view_xview[0],view_yview[0])
-
 draw_text_ext_color(view_xview[0]+100, view_yview[0], "Меня зовут Эггман! И я понятия не имею что случилось с этим синим выскочкой!",16,view_wview[0]-100,$00ffff,$00ffff,$00ffff,$005555,1)
 }
 
 if Page = 8
 {
 draw_sprite(sprSW_Eggman,1,view_xview[0],view_yview[0])
-
 draw_text_ext_color(view_xview[0]+100, view_yview[0], "Моя цель - роботизация, не убийство! Я видел как Соник убивал животных. Но я чуял, что он хочет добраться до меня!",16,view_wview[0]-100,$00ffff,$00ffff,$00ffff,$005555,1)
 }
 
@@ -1716,14 +1710,12 @@ draw_text_ext_color(view_xview[0]+100, view_yview[0], "Снова зелёные
 if Page = 3
 {
 draw_sprite(sprSW_Tails,1,view_xview[0],view_yview[0])
-
 draw_text_ext_color(view_xview[0]+100, view_yview[0], "Что это за место?",16,view_wview[0]-100,$00ffff,$00ffff,$00ffff,$005555,1)
 }
 
 if Page = 5
 {
 draw_sprite(sprSW_Tails,1,view_xview[0],view_yview[0])
-
 draw_text_ext_color(view_xview[0]+100, view_yview[0], "Наклз! Эггман! Как я рад вас видеть! Что-то не так с Соником: он пытался...",16,view_wview[0]-100,$00ffff,$00ffff,$00ffff,$005555,1)
 }
 
@@ -2464,7 +2456,7 @@ draw_text_ext_color(view_xview[0]+100, view_yview[0], "Хватит впусту
 }
 else if Page = 135 && BL.Eggman_Plot = false
 {
-Page +=1
+    Page += 1
 }
 
 if Page = 136

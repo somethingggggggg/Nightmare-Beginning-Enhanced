@@ -8,6 +8,8 @@ image_speed = 0.4
 Act = 0
 moveBlya = 0
 a = 0
+view_xview[0] = x - (view_wview[0]/2)
+view_yview[0] = y - (view_hview[0]/2)
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -37,8 +39,9 @@ if string_pos('hard',keyboard_string) != 0 or string_pos('рфкв',keyboard_str
     if global.hardmode = 0
     {
         show_message("SUPER BRUTAL S EX PLUS PIZDEC MODE模式被激活##你的行为很随意。")
-        sound_replace(global.S_Mindfuckery,working_directory+"/Sound/GrassSkirtChase.mp3",0,0)
-        sound_replace(global.S_PAUSEMENU,working_directory+"/Sound/mapMusPostal2.mp3",0,0)
+        sound_replace(global.S_Mindfuckery,working_directory+"/Sound/HardMode/GrassSkirtChase.mp3",0,0)
+        sound_replace(global.S_PAUSEMENU,working_directory+"/Sound/HardMode/mapMusPostal2.mp3",0,0)
+        sound_replace(global.S_Egg_Sound,working_directory+"/Sound/HardMode/Alternative italian.wav",0,0)
         sound_play(global.S_Pingas)
         with Sounder
         {
@@ -144,6 +147,7 @@ pos = min(x-94+moveBlya,x+94+17)
 
 draw_set_alpha(1)
 draw_self()
+if transition_kind != 0 exit;
 draw_set_alpha((188-(moveBlya-141))/94)
 draw_sprite(sprSEGA_logo_cover,0,pos,y)
 draw_set_color(c_white)

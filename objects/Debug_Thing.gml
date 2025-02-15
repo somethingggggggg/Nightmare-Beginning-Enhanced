@@ -10,8 +10,8 @@ image_speed = 0.15
 view_object[view_current] = Debug_Thing
 acc = 0.1
 drawAngle = 0
-global.xvel = 0;
-global.yvel = 0;
+xvel = 0;
+yvel = 0;
 maxSpeed = 15;
 ground = false
 
@@ -81,50 +81,68 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+LeftOrRight = keyboard_check(vk_right) - keyboard_check(vk_left)
+UpOrDown = keyboard_check(vk_down) - keyboard_check(vk_up)
+
+if LeftOrRight != 0
+{
+    xvel += acc*LeftOrRight*2
+    //if xvel < 0 xvel -= acc*LeftOrRight
+}
+else
+{
+    xvel = 0
+}
+
+if UpOrDown != 0
+{
+    yvel += acc*UpOrDown*2
+    //if yvel < 0 yvel -= acc*UpOrDown
+}
+else
+{
+    yvel = 0
+}
+/*
 if keyboard_check(vk_left)
 {
-  global.xvel -= acc
-if global.xvel < 0
-  global.xvel -= acc
+    xvel -= acc
+    if xvel < 0 xvel -= acc
 }
 
 if keyboard_check(vk_up)
 {
-  global.yvel -= acc
-if global.yvel < 0
-  global.yvel -= acc
+    yvel -= acc
+    if yvel < 0 yvel -= acc
 }
 
 if keyboard_check(vk_down)
 {
-  global.yvel += acc
-if global.yvel > 0
-  global.yvel += acc
+    yvel += acc
+    if yvel > 0 yvel += acc
 }
 
 
 if keyboard_check(vk_right)
 {
-  global.xvel += acc
-if global.xvel > 0
-  global.xvel += acc
-
+    xvel += acc
+    if xvel > 0 xvel += acc
 }
 
 //Deacceleration
 if !keyboard_check(vk_left) && !keyboard_check(vk_right)
 {
-    global.xvel = 0
+    xvel = 0
 }
 
 
 if !keyboard_check(vk_up) && !keyboard_check(vk_down)
 {
-    global.yvel = 0
+    yvel = 0
 }
-
-x += global.xvel;
-y += global.yvel;
+*/
+x += xvel;
+y += yvel;
 
 if keyboard_check_pressed(ord("D"))
 {

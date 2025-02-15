@@ -689,7 +689,13 @@ action_id=603
 applies_to=self
 */
 ///We need this
-
+/*if global.performance = 0 && window_get_fullscreen() = 0
+{
+    view_hport[view_current] = window_get_height()
+    view_wport[view_current] = window_get_width()
+    refresh = 1
+}
+*/
 if refresh = 1
 {
     scr_scaling_wtf()
@@ -710,6 +716,8 @@ if keyboard_check_pressed(vk_f4)
 {
     window_set_fullscreen(!window_get_fullscreen())
     if prev_win_x <= 0 && prev_win_x <= 0 window_center()
+    scr_scaling_wtf()
+    /*
     if window_get_fullscreen() = 1
     {
         if global.performance = 1
@@ -781,7 +789,7 @@ if keyboard_check_pressed(vk_f4)
             //    window_set_region_size((1280 / 4) * 3,720,1)
             }
         }
-    }
+    }*/
 }
 /*"/*'/**//* YYD ACTION
 lib_id=1

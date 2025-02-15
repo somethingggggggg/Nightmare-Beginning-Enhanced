@@ -13,21 +13,22 @@ applies_to=self
 */
 if Act = 1
 {
-Act = 2
-Tails2.Bot_Mode = true
-global.hackpage = 2
-instance_create(0,0,obj_dialogue_pause)
+    Act = 2
+    Tails2.Bot_Mode = true
+    //global.hackpage = 2
+    global.pause = 1
+    instance_create(0,0,objDialHSSonic)
 /* if global.lang = 0
 {
-show_message("There you are Tails!...Listen, I'm a bit tired... Don't let the murderer get away! Go now! I'll catch up with you in a second!")
+    show_message("There you are Tails!...Listen, I'm a bit tired... Don't let the murderer get away! Go now! I'll catch up with you in a second!")
 }
 if global.lang = 1
 {
-show_message("Соник: Вот ты где! Слушай, я немного устал, но убийца всё ещё рядом! Не дай ему уйти! Я догоню тебя через несколько секунд")
+    show_message("Соник: Вот ты где! Слушай, я немного устал, но убийца всё ещё рядом! Не дай ему уйти! Я догоню тебя через несколько секунд")
 }
 if global.lang = 2
 {
-show_message("Sonic: Eccoti Tails!... Ascolta, sono un poco stanco. Non lasciar scappare l'assassino! Vai adesso! Ti raggiungero in un secondo!")
+    show_message("Sonic: Eccoti Tails!... Ascolta, sono un poco stanco. Non lasciar scappare l'assassino! Vai adesso! Ti raggiungero in un secondo!")
 }
 */
 }

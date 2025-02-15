@@ -8,9 +8,13 @@ image_speed = 0.15
 ground = false;
 acc = 0.066875;
 maxSpeed = 7
+if global.hardmode = 1 maxSpeed = 10
 canSpriteChange = true
 Phase_2 = false
 Timer_Up = 100
+if global.hardmode = 1 Timer_Up = 70
+
+MaxTimer_Up = Timer_Up
 drawAngle = 0
 hsp = 0
 vsp = 0
@@ -148,8 +152,8 @@ if place_meeting(x,y,Tails3)
 }
     else
     {
-        if global.hardmode != 2 Timer_Up = 100
-        else if Timer_Up < 100 Timer_Up += 1
+        if global.hardmode != 2 Timer_Up = MaxTimer_Up
+        else if Timer_Up < MaxTimer_Up Timer_Up += 1
     }
 if global.Tails_mode = true
 {

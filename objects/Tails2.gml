@@ -306,7 +306,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if global.pause = 1 && !instance_exists(obj_dialogue_pause)
+/*if global.pause = 1 && !instance_exists(objDialHSTails)
 {
     alarm[0] = 540
     HS_1.sprite_index = sprHS_1_2

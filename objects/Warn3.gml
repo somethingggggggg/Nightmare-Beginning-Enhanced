@@ -1,3 +1,10 @@
+#define Create_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+activated = 0
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -150,12 +157,14 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if global.pause = 0
-{
+//if global.pause = 0 //&& alarm_get(0) = -1
+//{
+    if activated = 1 exit;
     Tails2.Bot_Mode = false
     global.vel = 0
     global.hackpage = 4
-    instance_create(0,0,obj_dialogue_pause)
+    instance_create(0,0,objDialHSTails)
+    activated = 1
     /*if global.lang = 0
     {
     show_message("Tails: Wait... Sonic never gets tired...")
@@ -168,8 +177,10 @@ if global.pause = 0
     {
     show_message("Tails: Aspetta... Sonic non e mai stanco...")
     }*/
-}
-if global.pause = 1 && !instance_exists(obj_dialogue_pause)
+//}
+
+/*
+if global.pause = 1 && !instance_exists(objDialHSTails)
 {
     alarm[0] = 1
 }

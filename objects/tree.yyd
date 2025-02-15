@@ -101,6 +101,7 @@
 	|SW_Control
 	|title_card
 	|lvlcontroller
+	|Skiper
 +hideseek
 	|H&S_Note
 	|HS_1
@@ -191,6 +192,7 @@
 	|NoteNegetivRings
 	|Cratch
 +NBE content
+	|objDialPar
 	|obj_dialogue_pause
 	|obj_dialogue
 	|obj_cutscene_wall
@@ -206,11 +208,14 @@
 	|NewNoiceEngineLOL
 	|menusasa
 	|obj_SweatParticle
+	|obj_FinalSweatParticle
 	|obj_textpopup
 	|obj_SweatParticleFF
 	|objExeFFAfterImg
 	|objEgg_ExeRecode
 	|objAECAfterStopParallax
+	|objDialHSSonic
+	|objDialHSTails
 |AEC_Amy
 |AEC_Eggman
 |AEC_Knuckles
@@ -442,7 +447,6 @@
 |SH_ViewBack2
 |SH_ViewSonic
 |SH_ViewSonic2
-|Skiper
 |Solid
 |Solid_Mask
 |SonicExAssasin
@@ -537,4 +541,5 @@
 |YCR_Background
 |YellowRing
 |YellowRingOut
+|UpGrounderBroke2
 |ExeYCRChaser

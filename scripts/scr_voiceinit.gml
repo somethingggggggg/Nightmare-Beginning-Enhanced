@@ -17,5 +17,9 @@ repeat(202)
     {
         global.voiceline[voicecount] = sound_add(working_directory+"/Sound/"+ds_list_find_value(global.voicelist,global.voicedir)+"/"+string(voicecount)+".ogg",0,0)
     }
+    if file_exists(working_directory+"/Sound/"+ds_list_find_value(global.voicelist,global.voicedir)+"/"+string(voicecount)+".mp3")
+    {
+        global.voiceline[voicecount] = sound_add(working_directory+"/Sound/"+ds_list_find_value(global.voicelist,global.voicedir)+"/"+string(voicecount)+".mp3",0,0)
+    }
     voicecount += 1
 }
