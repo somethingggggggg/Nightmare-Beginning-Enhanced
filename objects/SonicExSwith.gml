@@ -46,6 +46,7 @@ action_id=603
 applies_to=self
 */
 sound_stop(global.S_D_Mode_Active)
+sound_stop_all()
 sound_play(global.S_Warp)
 /*"/*'/**//* YYD ACTION
 lib_id=1

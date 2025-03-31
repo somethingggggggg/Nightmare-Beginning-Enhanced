@@ -88,6 +88,7 @@ optionVarName[3,2] = "subcnoise"
 optionVarName[4,2] = "BL_filter"
 
 optionVarName[0,3] = "HSmusic"
+optionVarName[1,3] = "FFvoices"
 
 optionblocked[0,0] = 0
 optionblocked[1,0] = 0
@@ -111,13 +112,14 @@ optionblocked[3,2] = 0
 optionblocked[4,2] = 0
 
 optionblocked[0,3] = 0
+optionblocked[1,3] = 0
 
 scr_lang_menu_init(global.lang)
 
 menulength[0] = 7
 menulength[1] = 6
 menulength[2] = 5
-menulength[3] = 1
+menulength[3] = 2
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -312,6 +314,7 @@ global.S_skid=sound_add(working_directory+"/Sound/skid.mp3",1,0)
 global.S_SpinLetGo=sound_add(working_directory+"/Sound/SpinLetGo.wav",1,0)
 global.S_Final_Boss_RG=sound_add(working_directory+"/Sound/Final_Boss_REALLY_GOOD.mp3",0,0)
 global.S_MainMenu=sound_add(working_directory+"/Sound/PTCUshop.mp3",0,0)
+global.S_FFDeath=sound_add(working_directory+"/Sound/NBESounds/FFDeath.wav",0,0)
 
 //Update Sounds
 global.S_Green_Hill_Evening=sound_add(working_directory+"/Sound/updateSounds/Green_Hill_Evening.mp3",0,0)
@@ -674,6 +677,10 @@ if room != 0
             scr_soundfuck()
             if room = 26 optionblocked[5,1] = 1
             else optionblocked[5,1] = 0
+            if room = 40 optionblocked[0,3] = 1
+            else optionblocked[0,3] = 0
+            if room = 32 optionblocked[1,3] = 1
+            else optionblocked[1,3] = 0
             pause = 1
         }
     }
@@ -682,24 +689,6 @@ if room != 0
         if global.menustate = 1 scr_menunav2(1)
         else scr_pausenav2()
     }
-}
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-///We need this
-/*if global.performance = 0 && window_get_fullscreen() = 0
-{
-    view_hport[view_current] = window_get_height()
-    view_wport[view_current] = window_get_width()
-    refresh = 1
-}
-*/
-if refresh = 1
-{
-    scr_scaling_wtf()
-    refresh = 0
 }
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -716,7 +705,7 @@ if keyboard_check_pressed(vk_f4)
 {
     window_set_fullscreen(!window_get_fullscreen())
     if prev_win_x <= 0 && prev_win_x <= 0 window_center()
-    scr_scaling_wtf()
+    refresh = 1
     /*
     if window_get_fullscreen() = 1
     {
@@ -790,6 +779,24 @@ if keyboard_check_pressed(vk_f4)
             }
         }
     }*/
+}
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+///We need this
+/*if global.performance = 0 && window_get_fullscreen() = 0
+{
+    view_hport[view_current] = window_get_height()
+    view_wport[view_current] = window_get_width()
+    refresh = 1
+}
+*/
+if refresh = 1
+{
+    scr_scaling_wtf()
+    refresh = 0
 }
 /*"/*'/**//* YYD ACTION
 lib_id=1

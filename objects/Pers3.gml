@@ -9,6 +9,8 @@ hspeed = 0
 acc = 0.066875;
 vel = 0;
 maxSpeed = 3;
+MaxCharge = 100
+if global.hardmode = 1 MaxCharge = 60
 ground = true;
 ducking = false;
 rolling = false;
@@ -150,7 +152,7 @@ if keyboard_check(ord("S")) && TAB.Energy > 0
 if !keyboard_check(ord("S")) or TAB.Energy <= 0
 {
 sound_stop(global.S_EGG_Shield)
-if TAB.Energy < 101
+if TAB.Energy <= MaxCharge
 {
 TAB.Energy += 0.2
 }

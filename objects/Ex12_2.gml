@@ -64,6 +64,7 @@ with Pers1
 instance_change(Death1,Pers1)
 }
 BL.FF_T = false
+sound_play(global.S_FFDeath)
 }
 #define Collision_Pers2
 /*"/*'/**//* YYD ACTION
@@ -102,6 +103,7 @@ with Pers2
 instance_change(Death2,Pers2)
 }
 BL.FF_K = false
+sound_play(global.S_FFDeath)
 }
 else
 {

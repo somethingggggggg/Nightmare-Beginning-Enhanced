@@ -58,6 +58,7 @@ switch argument0
         optiondesc[4,2] = "blurs your fucking game so it looks like shit"
 
         optiondesc[0,3] = "RESET"
+        optiondesc[1,3] = "RESET"
 
         optiondesc[0,4] = "RESET"
         optiondesc[1,4] = "RESET"
@@ -117,6 +118,9 @@ switch argument0
 
         optionstate4[0,0] = "Original"
         optionstate4[0,1] = "Update"
+
+        optionstate4[1,0] = "Original"
+        optionstate4[1,1] = "Update"
 
         optionstate5[0,0] = ""
         optionstate5[1,0] = ""
@@ -179,6 +183,7 @@ switch argument0
         optiondesc[4,2] = "blurs your fucking game so it looks like shit"
 
         optiondesc[0,3] = "RESET"
+        optiondesc[1,3] = "RESET"
 
         optiondesc[0,4] = "RESET"
         optiondesc[1,4] = "RESET"

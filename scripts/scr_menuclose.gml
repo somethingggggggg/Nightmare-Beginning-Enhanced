@@ -1,8 +1,10 @@
 //bluat
 pause = 0
-prev_win_w_size = window_get_width()
-prev_win_h_size = window_get_height()
-
+if window_get_fullscreen() = 0
+{
+    prev_win_w_size = window_get_width()
+    prev_win_h_size = window_get_height()
+}
 view_hview[view_current] = prev_view_hview
 view_wview[view_current] = prev_view_wview
 
@@ -43,6 +45,21 @@ if global.HSmusic != prevset[0,3]
 {
     if global.HSmusic = 0 sound_replace(global.S_Chase,working_directory+"/Sound/Chase.mp3",0,0)
     else sound_replace(global.S_Chase,working_directory+"/Sound/updateSounds/Chase.mp3",0,0)
+}
+if global.FFvoices != prevset[1,3]
+{
+    if global.FFvoices = 1
+    {
+        sound_replace(global.S_Egg_Speak1,working_directory+"/Sound/updateSounds/Egg_Speak1.wav",0,0)
+        sound_replace(global.S_Egg_Speak2,working_directory+"/Sound/updateSounds/Egg_Speak2.wav",0,0)
+        sound_replace(global.S_Egg_Speak3,working_directory+"/Sound/updateSounds/Egg_Speak3.wav",0,0)
+    }
+    else
+    {
+        sound_replace(global.S_Egg_Speak1,working_directory+"/Sound/Egg_Speak1.wav",0,0)
+        sound_replace(global.S_Egg_Speak2,working_directory+"/Sound/Egg_Speak2.wav",0,0)
+        sound_replace(global.S_Egg_Speak3,working_directory+"/Sound/Egg_Speak3.wav",0,0)
+    }
 }
 sound_stop(global.S_PAUSEMENU)
 sprite_delete(sprpausefuck)

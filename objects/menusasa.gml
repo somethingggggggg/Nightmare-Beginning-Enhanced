@@ -81,6 +81,7 @@ optionVarName[3,2] = "subcnoise"
 optionVarName[4,2] = "BL_filter"
 
 optionVarName[0,3] = "HSmusic"
+optionVarName[1,3] = "FFvoices"
 
 optionVarName[0,4] = ""
 optionVarName[1,4] = ""
@@ -108,6 +109,7 @@ optionblocked[3,2] = 0
 optionblocked[4,2] = 0
 
 optionblocked[0,3] = 0
+optionblocked[1,3] = 0
 
 optionblocked[0,4] = 0
 optionblocked[1,4] = 0
@@ -117,7 +119,7 @@ scr_lang_menu_init(global.lang)
 menulength[0] = 7
 menulength[1] = 6
 menulength[2] = 5
-menulength[3] = 1
+menulength[3] = 2
 menulength[4] = 2
 
 //variable_global_set("lang",1)

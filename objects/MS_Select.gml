@@ -148,6 +148,8 @@ if place_meeting(x,y,NoteNegetivRings)
         BL.E_Ring = true
     }
 }
+view_xview = lerp(clamp(x-(view_wview/2),0,736-view_wview),view_xview,0.5)
+/*
 view_xview = ((x + view_xview) / 2) - view_wview[0]/4
 if view_xview < 0 view_xview = 0
 if view_xview+view_wview > 736 view_xview = 736-view_wview

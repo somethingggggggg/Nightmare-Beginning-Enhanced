@@ -49,6 +49,7 @@ if AI1.sprite_index != sprTailsJump
         BL.FF_T = false
         instance_destroy()
     }
+    sound_play(global.S_FFDeath)
     instance_destroy()
 }
 else
@@ -101,6 +102,7 @@ with Pers1
 instance_change(Death1,Pers1)
 }
 BL.FF_T = false
+sound_play(global.S_FFDeath)
 instance_destroy()
 #define Collision_Pers2
 /*"/*'/**//* YYD ACTION
@@ -147,6 +149,7 @@ if Pers2.sprite_index != sprKnucklesTwister
         instance_change(Death2,Pers2)
     }
     BL.FF_K = false
+    sound_play(global.S_FFDeath)
     instance_destroy()
 }
 else

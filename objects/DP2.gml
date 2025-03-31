@@ -53,7 +53,7 @@ switch perass
     case 4:
         instance_create(view_xview[0]+1386+view_wview[0]/2/*8272*/,272,Ex12)
         Ex12.hspeed = -8
-        if BL.FF_E = true
+        if (BL.FF_E = true && global.FFvoices = 0) or (BL.FF_T = true && global.FFvoices = 1)
         {
             sound_play_ex(global.S_Egg_Speak3,1,1,0)
         }
@@ -62,14 +62,14 @@ switch perass
         spawnedinstance = instance_create(view_xview[0]+1386,360,Ex11)
         spawnedinstance.hspeed = -8
         spawnedinstance.image_xscale = -1
-        if BL.FF_E = true
+        if (BL.FF_E = true && global.FFvoices = 0) or (BL.FF_K = true && global.FFvoices = 1)
         {
             sound_play_ex(global.S_Egg_Speak1,1,1,1)
         }
     break;
     case 6:
         instance_create(view_xview[0],view_yview[0],Ex12_9)
-        if BL.FF_E = true
+        if (BL.FF_E = true && global.FFvoices = 0) or (BL.FF_T = true && global.FFvoices = 1)
         {
             sound_play_ex(global.S_Egg_Speak3,1,1,0)
         }

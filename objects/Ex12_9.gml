@@ -218,8 +218,9 @@ applies_to=self
 */
 with AI2
 {
-BL.FF_K = false
-instance_destroy()
+    BL.FF_K = false
+    sound_play(global.S_FFDeath)
+    instance_destroy()
 }
 #define Collision_AI3
 /*"/*'/**//* YYD ACTION
@@ -230,6 +231,7 @@ applies_to=self
 with AI3
 {
 BL.FF_E = false
+sound_play(global.S_FFDeath)
 instance_destroy()
 }
 #define Collision_Pers1
@@ -273,6 +275,7 @@ with Pers1
 instance_change(Death1,Pers1)
 }
 BL.FF_T = false
+sound_play(global.S_FFDeath)
 }
 #define Collision_Pers2
 /*"/*'/**//* YYD ACTION
@@ -311,6 +314,7 @@ with Pers2
     instance_change(Death2,Pers2)
 }
 BL.FF_K = false
+sound_play(global.S_FFDeath)
 #define Collision_Pers3
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -347,6 +351,7 @@ with Pers3
     instance_change(Death3,Pers3)
 }
 BL.FF_E = false
+sound_play(global.S_FFDeath)
 #define Collision_EnergyShieldFF
 /*"/*'/**//* YYD ACTION
 lib_id=1
