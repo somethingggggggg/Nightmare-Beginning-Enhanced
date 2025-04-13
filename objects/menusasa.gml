@@ -172,6 +172,7 @@ switch global.menustate
 {
     case 0:
         ass -= 0.05
+        //if (live_call(scr_menudraw1)) return live_result;
         scr_menudraw1()
     break;
     case 1:

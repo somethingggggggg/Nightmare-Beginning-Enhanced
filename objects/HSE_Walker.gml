@@ -21,6 +21,7 @@ vsp = 0
 sound_stop(global.S_HideSound)
 sound_loop(global.S_Chase)
 image_blend = $b4b4b4
+mask_index = sprSonicMask;
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -66,7 +67,7 @@ x += hsp
 if place_meeting(x, y, HS_1G)
 {
     sprite_index = sprHSE_Walker
-    mask_index = sprHSE_Walker
+    //mask_index = sprHSE_Walker
     do x -= scr_is_plus(hsp)
     until !place_meeting(x, y, HS_1G)
     hsp = 0
@@ -77,7 +78,7 @@ if place_meeting(x, y, HS_1G)
 {
     ground = true
     sprite_index = sprHSE_Walker
-    mask_index = sprHSE_Walker
+    //mask_index = sprHSE_Walker
     do y -= scr_is_plus(vsp)
     until !place_meeting(x, y, HS_1G)
     vsp = 0
@@ -109,7 +110,7 @@ if collision_rectangle(x-10,y-30,x+30,y-150,Tails3,1,0) && sprite_index != sprHS
 {
     vsp = -7.5
     sprite_index = sprHSE_GAJump
-    mask_index = sprHSE_Walker
+    //mask_index = sprHSE_Walker
     hsp = 0
 }
 
@@ -119,7 +120,7 @@ if collision_rectangle(x-30,y-30,x+30,y-1000,Tails3,1,0)
     {
         vsp = -7.5
         sprite_index = sprHSE_GAJump
-        mask_index = sprHSE_Walker
+        //mask_index = sprHSE_Walker
     }
 }
 
@@ -127,7 +128,7 @@ if collision_rectangle(x-30,y-30,x+30,y-1000,Tails3,1,0)
 if collision_line(x,y,x+45,y,HS_1G,1,0) or collision_line(x,y,x-45,y,HS_1G,1,0) && ground = true && !place_meeting(x,y,Tails3)
 {
     sprite_index = sprHSE_GAJump
-    mask_index = sprHSE_Walker
+    //mask_index = sprHSE_Walker
     vsp = -7.5
 }
 
@@ -137,7 +138,7 @@ if collision_line(x,y,x,y-50,TeleportRing,0,0)
     hsp = 0
     vsp = -7.5
     sprite_index = sprHSE_GAJump
-    mask_index = sprHSE_Walker
+    //mask_index = sprHSE_Walker
 }
 
 
@@ -146,7 +147,7 @@ if place_meeting(x,y,Tails3)
 {
     Timer_Up -= 1
     sprite_index = sprHSE_Catch
-    mask_index = sprHSE_Walker
+    //mask_index = sprHSE_Walker
     depth = Tails3.depth+1
     vsp = 0
 }
@@ -188,7 +189,7 @@ if instance_exists(TailsFatality)
         with HSE_GA
         {
             sprite_index = sprHSE_Sleep
-            mask_index = sprHSE_Walker
+            //mask_index = sprHSE_Walker
             AwakeTime = 400
             SleepTimer = 300
             SleepTime = true

@@ -4,6 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+mask_index = -1
 view_visible[1] = false
 view_visible[0] = true
 Sounder.refresh = 1

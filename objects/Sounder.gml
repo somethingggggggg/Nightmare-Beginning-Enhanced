@@ -4,6 +4,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+//live_init()
+show_collision = 0
 instance_create(0,0,obj_loadingscreen)
 window_set_fullscreen(1)
 window_resize_buffer(display_get_width(),display_get_height(),1,0)
@@ -16,6 +18,7 @@ prev_win_y = display_get_height()/2 - prev_win_h_size/2
 HorizScroll = 0
 refresh = 0
 global.pshader = psGrayscale()
+global.sukaShad = script68()
 time = 0
 i = 0
 repeat(8)
@@ -362,13 +365,12 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-
-
+//live_update()
 if keyboard_check_pressed(vk_f2)
 {
     scr_nbe_restart()
 }
-
+if keyboard_check_pressed(ord("K")) && debug_mode show_collision = !show_collision
 
 //if window_get_fullscreen() = 1 window_set_size(display_get_width(),display_get_height())
 /*else
@@ -642,6 +644,24 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+if show_collision
+{
+    with all
+    {
+        var __is_solid;
+        __is_solid = (object_get_parent(object_index) == Solid_Mask or solid == 1)
+        shader_pixel_set(global.sukaShad)
+        if object_get_parent(object_index) == AllPers colColor = c_red
+        else if __is_solid colColor = c_blue
+        else colColor = c_white
+        //shader uniforms
+        shader_pixel_uniform_color("_u_color",colColor,1)
+        if mask_index != -1 draw_sprite_ext(mask_index,0,x,y,image_xscale,image_yscale,0,colColor,1)
+        else if sprite_index != -1 && __is_solid draw_sprite_ext(sprite_index,0,x,y,image_xscale,image_yscale,0,colColor,1)
+        shader_reset()
+    }
+}
+
 if room != 0
 {
     if pause = 0

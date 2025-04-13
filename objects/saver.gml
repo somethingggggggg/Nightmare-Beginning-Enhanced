@@ -4,7 +4,7 @@ lib_id=1
 action_id=611
 relative=0
 applies_to=self
-var_name=fffggg
+var_name=save_name
 var_value=0
 */
 #define Keyboard_97
@@ -13,10 +13,10 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-fffggg = get_string('Input Savefile Name',fffggg)
-if fffggg != ("Sonic-exe NB Enhanced.exe")
+save_name = get_string('Input Savefile Name',save_name)
+if save_name != ("Sonic-exe NB Enhanced.exe")
 {
-    game_save(fffggg)
+    game_save(save_name+".nbesave")
 }
 else
 {
@@ -27,14 +27,14 @@ else
 lib_id=1
 action_id=333
 invert=0
-arg0=save2
+arg0=save2.nbesave
 */
 #define Keyboard_99
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=333
 invert=0
-arg0=save3
+arg0=save3.nbesave
 */
 #define Keyboard_100
 /*"/*'/**//* YYD ACTION
@@ -42,21 +42,21 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-fffggg = get_string('Input Savefile Name',fffggg)
-game_load(fffggg)
+save_name = get_string('Input Savefile Name',save_name)
+game_load(save_name+".nbesave")
 #define Keyboard_101
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=334
 invert=0
-arg0=save2
+arg0=save2.nbesave
 */
 #define Keyboard_102
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=334
 invert=0
-arg0=save3
+arg0=save3.nbesave
 */
 #define Keyboard_103
 /*"/*'/**//* YYD ACTION

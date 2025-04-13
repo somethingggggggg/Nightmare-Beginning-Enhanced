@@ -1,3 +1,9 @@
++GMLive
+	|live_init
+	|live_update
+	|live_never
+	|live_call
+	|live_call_ext
 +Menus
 	|scr_menudraw1
 	|scr_menudraw2
@@ -31,6 +37,7 @@
 	|script38
 	|shd_blur
 	|psGrayscale
+	|script68
 +voice
 	|scr_voiceunload
 	|scr_voiceinit

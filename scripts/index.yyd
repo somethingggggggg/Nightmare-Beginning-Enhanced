@@ -61,3 +61,9 @@ scr_load_inis
 scr_nbe_restart
 scrFlightCancelCheck
 scr_draw_sprite_tiled_area
+live_init
+live_update
+live_never
+live_call
+live_call_ext
+script68
