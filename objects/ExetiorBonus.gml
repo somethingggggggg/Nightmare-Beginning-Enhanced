@@ -412,9 +412,9 @@ applies_to=self
 */
 if Solid.solid = 1
 {
-move_contact_solid(direction, 0.1);
-drawAngle = 0
-global.vel = 0
+    move_contact_solid(direction, 0.1);
+    drawAngle = 0
+    global.vel = 0
 }
 #define Collision_TeleportRing
 /*"/*'/**//* YYD ACTION

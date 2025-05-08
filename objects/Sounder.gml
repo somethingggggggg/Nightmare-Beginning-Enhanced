@@ -322,6 +322,7 @@ global.S_FFDeath=sound_add(working_directory+"/Sound/NBESounds/FFDeath.wav",0,0)
 //Update Sounds
 global.S_Green_Hill_Evening=sound_add(working_directory+"/Sound/updateSounds/Green_Hill_Evening.mp3",0,0)
 global.S_Green_Hill_Night=sound_add(working_directory+"/Sound/updateSounds/Green_Hill_Night.mp3",0,0)
+global.S_World1_1=sound_add(working_directory+"/Sound/updateSounds/World1_1.mp3",0,1)
 
 //doomsday machine
 /*

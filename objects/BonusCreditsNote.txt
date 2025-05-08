@@ -1,0 +1,7 @@
+sprite=sprStormsonMentionHUD
+visible=0
+solid=0
+persistent=0
+depth=-9000
+parent=
+mask=
