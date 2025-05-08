@@ -4,7 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-//live_init()
+if LIVE_ENABLED live_init()
 show_collision = 0
 instance_create(0,0,obj_loadingscreen)
 window_set_fullscreen(1)
@@ -365,7 +365,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-//live_update()
+if LIVE_ENABLED live_update()
 if keyboard_check_pressed(vk_f2)
 {
     scr_nbe_restart()
@@ -657,7 +657,8 @@ if show_collision
         //shader uniforms
         shader_pixel_uniform_color("_u_color",colColor,1)
         if mask_index != -1 draw_sprite_ext(mask_index,0,x,y,image_xscale,image_yscale,0,colColor,1)
-        else if sprite_index != -1 && __is_solid draw_sprite_ext(sprite_index,0,x,y,image_xscale,image_yscale,0,colColor,1)
+        else if sprite_index != -1 && __is_solid draw_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,0)
+        //draw_sprite_ext(sprite_index,0,x,y,image_xscale,image_yscale,0,colColor,1)
         shader_reset()
     }
 }
