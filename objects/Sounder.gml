@@ -181,6 +181,7 @@ action_id=603
 applies_to=self
 */
 ///initialize all sounds in the stupidest way
+
 global.S_sound_take=sound_add(working_directory+"/Sound/S_sound_take.ogg",0,0)
 global.S_YCRS=sound_add(working_directory+"/Sound/S_You_Can_t_Run_Secret.ogg",0,0)
 global.S_Alarm_2=sound_add(working_directory+"/Sound/Alarm_2.mp3",0,0)
@@ -323,6 +324,40 @@ global.S_FFDeath=sound_add(working_directory+"/Sound/NBESounds/FFDeath.wav",0,0)
 global.S_Green_Hill_Evening=sound_add(working_directory+"/Sound/updateSounds/Green_Hill_Evening.mp3",0,0)
 global.S_Green_Hill_Night=sound_add(working_directory+"/Sound/updateSounds/Green_Hill_Night.mp3",0,0)
 global.S_World1_1=sound_add(working_directory+"/Sound/updateSounds/World1_1.mp3",0,1)
+
+global.S_CoinCollect = sound_add(working_directory+"/Sound/updateSounds/CoinCollect.wav",0,0)
+global.S_TailsEndSpeech = sound_add(working_directory+"/Sound/updateSounds/TailsEndSpeech.mp3",0,0)
+global.S_KnuxEndSpeech = sound_add(working_directory+"/Sound/updateSounds/KnuxEndSpeech.mp3",0,0)
+global.S_EggEndSpeech = sound_add(working_directory+"/Sound/updateSounds/EggEndSpeech.mp3",0,0)
+
+//IDC right now
+
+//global.F_FireBreak=working_directory+"/Sound/updateSounds/FireBreak.wav"
+global.F_ShellHit=working_directory+"/Sound/updateSounds/ShellHit.wav"
+global.F_FireToss=working_directory+"/Sound/updateSounds/FireToss.wav"
+global.F_PowerGet=working_directory+"/Sound/updateSounds/PowerGet.wav"
+global.F_BlockUse=working_directory+"/Sound/updateSounds/BlockUse.wav"
+global.F_PowerDown=working_directory+"/Sound/updateSounds/PowerDown.wav"
+global.F_BlockBump=working_directory+"/Sound/updateSounds/BlockBump.wav"
+global.F_BlockBreak=working_directory+"/Sound/updateSounds/BlockBreak.wav"
+global.F_Stomp=working_directory+"/Sound/updateSounds/Stomp.wav"
+global.F_Underground=working_directory+"/Sound/updateSounds/Underground.mp3"
+global.F_ExtraLife=working_directory+"/Sound/updateSounds/ExtraLife.wav"
+global.F_LevelClear=working_directory+"/Sound/updateSounds/LevelClear.wav"
+
+global.S_FireBreak = scr_add_sound_nbe("updateSounds/FireBreak.wav",0)
+//global.S_FireBreak=sound_add(global.F_FireBreak,0,0)
+global.S_ShellHit=sound_add(global.F_ShellHit,0,0)
+global.S_FireToss=sound_add(global.F_FireToss,0,0)
+global.S_PowerGet=sound_add(global.F_PowerGet,0,0)
+global.S_BlockUse=sound_add(global.F_BlockUse,0,0)
+global.S_PowerDown=sound_add(global.F_PowerDown,0,0)
+global.S_BlockBump=sound_add(global.F_BlockBump,0,0)
+global.S_BlockBreak=sound_add(global.F_BlockBreak,0,0)
+global.S_Stomp=sound_add(global.F_Stomp,0,0)
+global.S_Underground=sound_add(global.F_Underground,0,0)
+global.S_ExtraLife=sound_add(global.F_ExtraLife,0,0)
+global.S_LevelClear=sound_add(global.F_LevelClear,0,0)
 
 //doomsday machine
 /*

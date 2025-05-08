@@ -95,39 +95,64 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if instance_exists(AllPers){
-if Hit=1{
-if GOD_LEVEL.JumpMode=1 or GOD_LEVEL.SpindashMode=1{
-sound_play(global.S_Stomp);Hit=1.5;Move=0;hspeed=0;vspeed=0;sprite_index=sprKoopa2;image_index=0;image_speed=0;alarm[2]=35
-
-if AllPers.ground!=1{
-if AllPers.vspeed > 0
-  {
-  if keyboard_check(ord("Z"))
-  {
-  if AllPers.vspeed > 3
-  AllPers.vspeed = -AllPers.vspeed
-  else
-  AllPers.vspeed = -3
-  }
-  else
-  AllPers.vspeed = -3
-  }}}
-
-if GOD_LEVEL.JumpMode=0 && GOD_LEVEL.SpindashMode=0{
-if AllPers.ground=1 && AllPers.image_alpha=1{playerGetHit()}}}
-
-
-
-//Shell
-if Hit=2{
-if GOD_LEVEL.JumpMode=1 or GOD_LEVEL.SpindashMode=1{
-if sprite_index=sprKoopa2{Hit=2.5;alarm[3]=35;Move=1;image_speed=0.3
-AllPers.vspeed=-3}}
-
-if (GOD_LEVEL.JumpMode=0 && hspeed!=0) && GOD_LEVEL.SpindashMode=0{
-if AllPers.ground=1 && AllPers.image_alpha=1{
-playerGetHit()}}}}
+if !instance_exists(AllPers) exit;
+var kill;
+kill = scr_check_killstate()
+if Hit = 1
+{
+    if kill//GOD_LEVEL.JumpMode=1 or GOD_LEVEL.SpindashMode=1
+    {
+        sound_play(global.S_Stomp);
+        Hit=1.5;
+        Move=0;
+        hspeed=0;
+        vspeed=0;
+        sprite_index=sprKoopa2;
+        image_index=0;
+        image_speed=0;
+        alarm[2]=35
+        if AllPers.ground != 1
+        {
+            if AllPers.vspeed > 0
+            {
+                if keyboard_check(ord("Z"))
+                {
+                    if AllPers.vspeed > 3 AllPers.vspeed = -AllPers.vspeed
+                    else AllPers.vspeed = -3
+                }
+                else AllPers.vspeed = -3
+            }
+        }
+    }
+    if !kill//GOD_LEVEL.JumpMode=0 && GOD_LEVEL.SpindashMode=0
+    {
+        if AllPers.ground=1 && AllPers.image_alpha=1
+        {
+            playerGetHit()
+        }
+    }
+} //Shell
+else if Hit=2
+{
+    if kill
+    {
+        if sprite_index=sprKoopa2
+        {
+            Hit=2.5;
+            alarm[3]=35;
+            Move=1;
+            image_speed=0.3
+            AllPers.vspeed=-3
+        }
+    }
+    else //if (GOD_LEVEL.JumpMode = 0 && hspeed!=0) && GOD_LEVEL.SpindashMode = 0
+    {
+        if AllPers.ground = 1 && AllPers.image_alpha = 1
+        {
+            playerGetHit()
+        }
+    }
+}
 #define Collision_Solid_Mask
 /*"/*'/**//* YYD ACTION
 lib_id=1

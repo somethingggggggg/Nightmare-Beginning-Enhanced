@@ -58,3 +58,6 @@
 |scr_nbe_restart
 |scrFlightCancelCheck
 |scr_draw_sprite_tiled_area
+|scr_add_sound_nbe
+|scr_check_killstate
+|scr_check_killstate_ext

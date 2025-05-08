@@ -165,7 +165,7 @@
 |sprBestTails
 |sprBIG_MEME_KNUX
 |sprBlackColor
-|sprBlackTable
+|sprBlackTable10
 |sprBlodyAnimal
 |sprBlodyNoice
 |sprBushes
@@ -704,8 +704,8 @@
 	|sprMS_Lives
 	|sprExe_Lives
 	|sprLaserBallIcon
+	|sprBrickByBrick0
 |sprite808
-|sprBrickByBrick0
 |sprBrick
 |sprBrick2
 |sprBrickByBrick
@@ -731,7 +731,6 @@
 |sprPipe
 |sprPipeChunk
 |sprPipeSolid
-|sprBlackTable
 |sprBlackTable2
 |sprKoopa2
 |sprKoopaMask
@@ -740,3 +739,4 @@
 |sprite749
 |sprRedCoin
 |sprMKZ_Note
+|sprExployLight

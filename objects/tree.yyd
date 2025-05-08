@@ -543,32 +543,34 @@
 |YellowRingOut
 |UpGrounderBroke2
 |ExeYCRChaser
-|Brick
-|Brick2
-|BrickBlock
-|BrickByBrick
-|BrickByBrick0
-|CoinBlock2
-|CoinBlock
-|Coin2
-|Coin
-|Goomba
-|Pipe
-|Pipe2
-|PipeCheck
-|PipeCheck2
-|PipeChunk
-|EndLevel
-|SolidLineVer
-|SolidLineHor
-|Background
-|Functions
-|BonusCreditsNote
-|Koopa
-|Fireball
-|FireFlower
-|Block
-|HiddenBlock
-|MKZ_Note
-|MaskOutUp
-|Cam
++Update_objects
+	|Brick
+	|Brick2
+	|BrickBlock
+	|BrickByBrick
+	|BrickByBrick0
+	|CoinBlock
+	|Coin2
+	|Coin
+	|Goomba
+	|Pipe
+	|Pipe2
+	|PipeCheck
+	|PipeCheck2
+	|PipeChunk
+	|EndLevel
+	|SolidLineVer
+	|SolidLineHor
+	|Background
+	|Functions
+	|CoinBlock2
+	|BonusCreditsNote
+	|Koopa
+	|Fireball
+	|FireFlower
+	|HiddenBlock
+	|Block
+	|MKZ_Note
+	|MaskOutUp
+	|ExployLight
+	|Cam

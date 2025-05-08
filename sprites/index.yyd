@@ -868,7 +868,7 @@ sprQuesBlock
 sprPipe
 sprPipeChunk
 sprPipeSolid
-sprBlackTable
+sprBlackTable10
 sprBlackTable2
 sprKoopa2
 sprKoopaMask
@@ -877,3 +877,4 @@ sprCoin
 sprite749
 sprRedCoin
 sprMKZ_Note
+sprExployLight

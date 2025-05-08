@@ -67,3 +67,6 @@ live_never
 live_call
 live_call_ext
 script68
+scr_add_sound_nbe
+scr_check_killstate
+scr_check_killstate_ext
