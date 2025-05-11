@@ -333,31 +333,32 @@ global.S_EggEndSpeech = sound_add(working_directory+"/Sound/updateSounds/EggEndS
 //IDC right now
 
 //global.F_FireBreak=working_directory+"/Sound/updateSounds/FireBreak.wav"
-global.F_ShellHit=working_directory+"/Sound/updateSounds/ShellHit.wav"
-global.F_FireToss=working_directory+"/Sound/updateSounds/FireToss.wav"
-global.F_PowerGet=working_directory+"/Sound/updateSounds/PowerGet.wav"
-global.F_BlockUse=working_directory+"/Sound/updateSounds/BlockUse.wav"
-global.F_PowerDown=working_directory+"/Sound/updateSounds/PowerDown.wav"
-global.F_BlockBump=working_directory+"/Sound/updateSounds/BlockBump.wav"
-global.F_BlockBreak=working_directory+"/Sound/updateSounds/BlockBreak.wav"
-global.F_Stomp=working_directory+"/Sound/updateSounds/Stomp.wav"
-global.F_Underground=working_directory+"/Sound/updateSounds/Underground.mp3"
-global.F_ExtraLife=working_directory+"/Sound/updateSounds/ExtraLife.wav"
-global.F_LevelClear=working_directory+"/Sound/updateSounds/LevelClear.wav"
+F_ShellHit=working_directory+"/Sound/updateSounds/ShellHit.wav"
+F_FireToss=working_directory+"/Sound/updateSounds/FireToss.wav"
+F_PowerGet=working_directory+"/Sound/updateSounds/PowerGet.wav"
+F_BlockUse=working_directory+"/Sound/updateSounds/BlockUse.wav"
+F_PowerDown=working_directory+"/Sound/updateSounds/PowerDown.wav"
+F_BlockBump=working_directory+"/Sound/updateSounds/BlockBump.wav"
+F_BlockBreak=working_directory+"/Sound/updateSounds/BlockBreak.wav"
+F_Stomp=working_directory+"/Sound/updateSounds/Stomp.wav"
+F_Underground=working_directory+"/Sound/updateSounds/Underground.mp3"
+F_ExtraLife=working_directory+"/Sound/updateSounds/ExtraLife.wav"
+F_LevelClear=working_directory+"/Sound/updateSounds/LevelClear.wav"
 
 global.S_FireBreak = scr_add_sound_nbe("updateSounds/FireBreak.wav",0)
-//global.S_FireBreak=sound_add(global.F_FireBreak,0,0)
-global.S_ShellHit=sound_add(global.F_ShellHit,0,0)
-global.S_FireToss=sound_add(global.F_FireToss,0,0)
-global.S_PowerGet=sound_add(global.F_PowerGet,0,0)
-global.S_BlockUse=sound_add(global.F_BlockUse,0,0)
-global.S_PowerDown=sound_add(global.F_PowerDown,0,0)
-global.S_BlockBump=sound_add(global.F_BlockBump,0,0)
-global.S_BlockBreak=sound_add(global.F_BlockBreak,0,0)
-global.S_Stomp=sound_add(global.F_Stomp,0,0)
-global.S_Underground=sound_add(global.F_Underground,0,0)
-global.S_ExtraLife=sound_add(global.F_ExtraLife,0,0)
-global.S_LevelClear=sound_add(global.F_LevelClear,0,0)
+global.S_BlowsUp = scr_add_sound_nbe("updateSounds/BlowsUp.wav",0)
+//global.S_FireBreak=sound_add(F_FireBreak,0,0)
+global.S_ShellHit=sound_add(F_ShellHit,0,0)
+global.S_FireToss=sound_add(F_FireToss,0,0)
+global.S_PowerGet=sound_add(F_PowerGet,0,0)
+global.S_BlockUse=sound_add(F_BlockUse,0,0)
+global.S_PowerDown=sound_add(F_PowerDown,0,0)
+global.S_BlockBump=sound_add(F_BlockBump,0,0)
+global.S_BlockBreak=sound_add(F_BlockBreak,0,0)
+global.S_Stomp=sound_add(F_Stomp,0,0)
+global.S_Underground=sound_add(F_Underground,0,0)
+global.S_ExtraLife=sound_add(F_ExtraLife,0,0)
+global.S_LevelClear=sound_add(F_LevelClear,0,0)
 
 //doomsday machine
 /*
@@ -898,4 +899,20 @@ if global.showfps = 1
     //if room != 0 draw_text(view_xview,view_yview+32,variable_global_array_get(voiceline,108))
     draw_set_font(global.dialoguefont)
     draw_set_color(c_white)
+}
+#define KeyPress_88
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if !instance_exists(AllPers) exit;
+
+if global.EasterEggState = 2 && !instance_exists(DM_Metal) //&& !instance_exists(AntiDebug)
+{
+    if global.FireUsage < (2 - sign(global.hardmode))
+    {
+        sound_play(global.S_FireToss)
+        instance_create(AllPers.x+(5*AllPers.image_xscale),AllPers.y,Fireball)
+    }
 }

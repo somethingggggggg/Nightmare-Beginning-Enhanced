@@ -1,30 +1,3 @@
-+GMLive
-	|live_init
-	|live_update
-	|live_never
-	|live_call
-	|live_call_ext
-+Menus
-	|scr_menudraw1
-	|scr_menudraw2
-	|scr_menudraw3
-	|scr_menudraw4
-	|scr_pausedraw
-	|scr_pausedraw2
-	|scr_menunav1
-	|scr_menunav2
-	|scr_menunav3
-	|scr_menunav4
-	|scr_pausenav
-	|scr_pausenav2
-	|scr_hackdialget
-	|scr_dialget
-	|scr_menuclose
-+vanilla scripts
-	|EnemyGetHit
-	|collideSlopes
-	|Time_Script
-	|playerGetHit
 +discord rich presence
 	|discord_init_dll
 	|discord_init_app
@@ -32,16 +5,48 @@
 	|discord_free_app
 	|discord_update_presence
 	|update_discord_lol
++GMLive
+	|live_init
+	|live_update
+	|live_never
+	|live_call
+	|live_call_ext
++vanilla scripts
+	|EnemyGetHit
+	|collideSlopes
+	|Time_Script
+	|playerGetHit
 +shaders
 	|bnw
 	|script38
 	|shd_blur
 	|psGrayscale
 	|script68
-+voice
-	|scr_voiceunload
-	|scr_voiceinit
-	|scr_voicethefucker
++NBE specific
+	|scr_gameload
+	|scr_gamesave
+	|scr_nbe_restart
+	|scr_add_sound_nbe
+	+Menus
+		|scr_menudraw1
+		|scr_menudraw2
+		|scr_menudraw3
+		|scr_menudraw4
+		|scr_pausedraw
+		|scr_pausedraw2
+		|scr_menunav1
+		|scr_menunav2
+		|scr_menunav3
+		|scr_menunav4
+		|scr_pausenav
+		|scr_pausenav2
+		|scr_hackdialget
+		|scr_dialget
+		|scr_menuclose
+	+voice
+		|scr_voiceunload
+		|scr_voiceinit
+		|scr_voicethefucker
 |scr_soundfuck
 |scr_soundunfuck
 |scr_saveoptions
@@ -55,9 +60,7 @@
 |scr_camera_follow
 |scr_is_even
 |scr_load_inis
-|scr_nbe_restart
 |scrFlightCancelCheck
 |scr_draw_sprite_tiled_area
-|scr_add_sound_nbe
 |scr_check_killstate
 |scr_check_killstate_ext

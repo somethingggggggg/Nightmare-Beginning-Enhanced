@@ -20,7 +20,11 @@ action_id=603
 applies_to=self
 */
 global.Enemy += 1
-if instance_exists(ExetiorBonus){sound_play(global.S_BlowsUp);instance_create(x,y,BloodExplode)}
+if instance_exists(ExetiorBonus)
+{
+    sound_play(global.S_BlowsUp);
+    instance_create(x,y,BloodExplode)
+}
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

@@ -25,6 +25,8 @@ global.rings = 0
 global.BestEnd = false
 global.GoodEnd = false
 global.Hit = 0
+global.EasterEggState = 0
+global.FireUsage = 0
 
 global.Debug_mode = false
 global.Time = 0

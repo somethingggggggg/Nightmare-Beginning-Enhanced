@@ -130,7 +130,7 @@ if string_pos('uim',keyboard_string) != 0 && global.hardmode != 1
 if string_pos('mario',keyboard_string) != 0
 {
     sound_stop_all()
-    //room_goto(91)
+    room_goto(91)
 }
 #define Other_7
 /*"/*'/**//* YYD ACTION

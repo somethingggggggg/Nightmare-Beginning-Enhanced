@@ -169,7 +169,7 @@
 	|Timer3
 	|Noice2
 +threedots
-	|..._Note
+	|3dot_Note
 	|Egg_Ground
 	|Eggman
 	|BigLight
@@ -574,3 +574,6 @@
 	|MaskOutUp
 	|ExployLight
 	|Cam
+	|Mushroom
+	|LifeShroom
+	|BloodExplode

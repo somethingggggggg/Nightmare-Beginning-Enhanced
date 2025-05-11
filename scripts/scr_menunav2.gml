@@ -124,8 +124,10 @@ if ButtonPressedLeftOrRight != 0 && global.option != 0
         {
             if optionVarName[global.option-2,global.suboption] = "cheats"
             {
-                text = "COMPLETE THE GAME#ON THE BEST#ENDING FIRST"
-                instance_create(0,0,obj_textpopup)
+                with instance_create(0,0,obj_textpopup)
+                {
+                    text = "COMPLETE THE GAME#ON THE BEST#ENDING FIRST"
+                }
             }
             sound_stop(global.S_Locked)
             sound_play(global.S_Locked)

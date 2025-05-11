@@ -26,17 +26,21 @@ applies_to=self
 
 if Act=0
 {
-if place_meeting(x,bbox_bottom+0.5,AllPers)
-{
-instance_create(x,bbox_top,Coin2);
-sound_play(global.S_CoinCollect)
-sprite_index=sprHitBlock
+    if place_meeting(x,bbox_bottom+1/*0.5*/,AllPers)
+    {
+        instance_create(x,bbox_top,Coin2);
+        sound_play(global.S_CoinCollect)
+        sprite_index = sprHitBlock
+    }
+    Act=1
 }
-Act=1}
 
-if place_meeting(x,bbox_bottom+0.5,AllPers)
+if place_meeting(x,bbox_bottom+1,AllPers)
 {
-if Hit=0{
-sound_play(global.S_BlockBump)
-Hit=1
-alarm[0]=10}}
+    if Hit=0
+    {
+        sound_play(global.S_BlockBump)
+        Hit=1
+        alarm[0]=10
+    }
+}

@@ -694,6 +694,7 @@
 |sprite782
 |spr_cutscene_wall
 |sprite796
+|sprite808
 +UpdateSprites
 	|sprHZ_NIGHT
 	|sprHZ_EVENING
@@ -705,38 +706,41 @@
 	|sprExe_Lives
 	|sprLaserBallIcon
 	|sprBrickByBrick0
-|sprite808
-|sprBrick
-|sprBrick2
-|sprBrickByBrick
-|sprite736
-|sprGoombaMask
-|sprFireball
-|sprFireBallIcon
-|sprFireFlower
-|sprFireOut
-|sprGoomba1
-|sprGoomba2
-|sprSolidLineHor
-|sprSolidLineHor0
-|sprSolidLineVer
-|sprSolidLineVer0
-|sprBonusSignSpinTails
-|sprBonusSignSpinEx
-|sprBonusSignSpinKnuckles
-|sprBonusSignSpinMetal
-|sprBonusSignSpinSonic
-|sprStormsonMentionHUD
-|sprQuesBlock
-|sprPipe
-|sprPipeChunk
-|sprPipeSolid
-|sprBlackTable2
-|sprKoopa2
-|sprKoopaMask
-|sprKoopa1
-|sprCoin
-|sprite749
-|sprRedCoin
-|sprMKZ_Note
-|sprExployLight
+	|sprHitBlock
+	|sprMushroom
+	|sprLifeShroom
+	|sprBrick
+	|sprBrick2
+	|sprBrickByBrick
+	|sprite736
+	|sprGoombaMask
+	|sprFireball
+	|sprFireBallIcon
+	|sprFireFlower
+	|sprFireOut
+	|sprGoomba1
+	|sprGoomba2
+	|sprSolidLineHor
+	|sprSolidLineHor0
+	|sprSolidLineVer
+	|sprSolidLineVer0
+	|sprBonusSignSpinTails
+	|sprBonusSignSpinEx
+	|sprBonusSignSpinKnuckles
+	|sprBonusSignSpinMetal
+	|sprBonusSignSpinSonic
+	|sprStormsonMentionHUD
+	|sprQuesBlock
+	|sprPipe
+	|sprPipeChunk
+	|sprPipeSolid
+	|sprBlackTable2
+	|sprKoopa2
+	|sprKoopaMask
+	|sprKoopa1
+	|sprCoin
+	|sprite749
+	|sprRedCoin
+	|sprMKZ_Note
+	|sprExployLight
+	|sprBloodExplode

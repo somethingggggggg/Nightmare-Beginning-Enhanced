@@ -13,7 +13,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-GOD_LEVEL.State=2
+global.EasterEggState = 2
 sound_play(global.S_PowerGet)
 instance_destroy()
 #define Collision_Solid_Mask

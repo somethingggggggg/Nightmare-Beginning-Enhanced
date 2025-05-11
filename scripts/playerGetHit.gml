@@ -339,3 +339,56 @@ with Knuckles
     instance_create(x,y,KnucklesDeath)
     instance_destroy()
 }
+
+with ExetiorBonus
+{
+    Idie_mode = false
+    if global.rings != 0
+    {
+        rolling = false
+        spindash = false
+        Hitted=1
+        sound_play(global.S_LoseRings)
+        canHit = false;
+        canSpriteChange = false;
+        canMove = false;
+        sprite_index = sprExeHurtCircle;
+        vspeed = -5;
+        global.vel = image_xscale * -2.5;
+        ground = false;
+
+        var t, angle, n, spd;
+        t = 0
+        angle = 101.25;
+        n = false;
+        spd = 4
+
+        while t < global.rings
+        {
+            var ringID;
+            ringID = instance_create(x, y, RingLoss);
+            ringID.vspeed = -sin(angle)*spd;
+            ringID.hspeed = cos(angle)*spd;
+            if n == true
+            {
+                ringID.hspeed *= -1;
+                angle += 22.5;
+            }
+            n = !n;
+            t += 1
+            if t == 16
+            {
+                spd = 2;
+                angle = 101.25;
+            }
+        }
+
+        global.rings = 0;
+    }
+    else if global.rings = 0 && canHit = true
+    {
+        global.SLive -= 1
+        instance_create(x,y,ExetiorDeath)
+        instance_destroy()
+    }
+}

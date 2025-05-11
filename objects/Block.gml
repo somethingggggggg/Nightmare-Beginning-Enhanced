@@ -28,11 +28,11 @@ if place_meeting(x,bbox_bottom+0.5,AllPers)
 {
 sound_play(global.S_BlockUse)
 sprite_index=sprHitBlock
-if GOD_LEVEL.State<1
+if global.EasterEggState < 1
 {
 instance_create(x,y-36,Mushroom)
 }
-else if GOD_LEVEL.State>=1
+else if global.EasterEggState >= 1
 {
 instance_create(x,y-34,FireFlower)
 }

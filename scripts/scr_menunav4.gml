@@ -38,13 +38,11 @@ if keyboard_check_pressed(vk_enter)
         if file_exists(working_directory+"\mods\"+ds_list_find_value(fuckarr,global.option-1)+"\mod.txt")
         {
             execute_file(working_directory+"\mods\"+ds_list_find_value(fuckarr,global.option-1)+"\mod.txt")
-            text = "MOD LOADED"
-            instance_create(0,0,obj_textpopup)
+            with instance_create(0,0,obj_textpopup) text = "MOD LOADED"
         }
         else
         {
-            text = "MOD LOAD FAILED"
-            instance_create(0,0,obj_textpopup)
+            instance_create(0,0,obj_textpopup) text = "MOD LOAD FAILED"
         }
     }
 }

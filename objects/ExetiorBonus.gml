@@ -310,12 +310,12 @@ collideSlopes();
 //Return control when the player falls on the ground when getting hit
 if place_meeting(x, y+2*vspeed+2, Solid) or place_meeting(x, y+vspeed+1, Solid_Mask) or place_meeting(x, y+vspeed+1, EggElevator) or place_meeting(x, y+vspeed+1, ScrapWallDestruct) or place_meeting(x, y+vspeed+1, ScrapWall) or place_meeting(x, y+vspeed+1, ScrapGround) or place_meeting(x, y+vspeed+1, UpGrounder) or place_meeting(x, y+vspeed+1, FinalGround2) or place_meeting(x, y+vspeed+1, FinalGroundDown) or place_meeting(x, y+vspeed+1, FinalGround) or place_meeting(x, y+vspeed+1, objSlopeParent) && (Hitted=1)
 {
-  Hitted=0
-  canMove = true;
-  canSpriteChange = true;
-  image_alpha = 0.5;
-  alarm[0] = 90;
-  global.vel = 0;
+    Hitted=0
+    canMove = true;
+    canSpriteChange = true;
+    image_alpha = 0.5;
+    alarm[0] = 90;
+    global.vel = 0;
 }
 
 if Bot = 1

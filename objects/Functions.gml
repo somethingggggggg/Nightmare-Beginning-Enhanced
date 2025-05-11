@@ -112,3 +112,10 @@ background_alpha[7]+=0.02
 if background_alpha[7]>1{
 background_alpha[7]=1;Fade=0
 Background.Back=1;Track=0;sound_stop(global.S_Underground);PipeCheck2.Act=3;Cam.Stage=0;alarm[2]=45}}
+#define Other_5
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+sound_stop_all()
