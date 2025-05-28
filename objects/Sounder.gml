@@ -5,6 +5,20 @@ action_id=603
 applies_to=self
 */
 if LIVE_ENABLED live_init()
+
+global.mod_list = ds_list_create()
+global.mod_objects = ds_map_create()
+file_name = file_find_first(working_directory+"\mods\*.*",fa_directory);
+while (file_name != "")
+{
+    if file_exists(working_directory+"\mods\"+file_name+"\init.gml")
+    {
+        ds_list_add(global.mod_list,file_name)
+    }
+    file_name = file_find_next()
+}
+file_find_close();
+
 show_collision = 0
 instance_create(0,0,obj_loadingscreen)
 window_set_fullscreen(1)

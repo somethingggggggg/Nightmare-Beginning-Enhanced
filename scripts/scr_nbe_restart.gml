@@ -17,10 +17,7 @@ font_delete(global.SPRSONFONT)
 font_delete(global.SMALLSONFONT)
 font_delete(global.DESKFONT)
 scr_voiceunload()
-if instance_exists(menusasa)
-{
-    ds_list_destroy(menusasa.fuckarr)
-}
+ds_list_destroy(global.mod_list)
 ds_list_destroy(global.voicelist)
 sound_stop_all()
 global.S_MainMenu=sound_add(working_directory+"/Sound/PTCUshop.mp3",0,0)

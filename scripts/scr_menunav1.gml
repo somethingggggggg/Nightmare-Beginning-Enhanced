@@ -37,22 +37,7 @@ if keyboard_check_pressed(vk_enter)
     }
     if global.option = 1
     {
-        fuckarr = ds_list_create()
-        file_name = file_find_first(working_directory+"\mods\*.*",fa_directory);
-        while (file_name != "")
-        {
-            if file_exists(working_directory+"\mods\"+file_name+"\mod.txt")
-            {
-                ds_list_add(fuckarr,file_name)
-            }
-            /*
-            suka += 1
-            files[suka] = file_name;
-            */
-            file_name = file_find_next()
-        }
-        suka = 0
-        file_find_close();
+
         global.menustate = 3
         global.option = 0
     }

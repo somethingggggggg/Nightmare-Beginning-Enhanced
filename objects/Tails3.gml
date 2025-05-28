@@ -80,10 +80,8 @@ else if global.vel < 0
 }
 
 //Speed limit
-if global.vel > maxSpeed
-   global.vel = maxSpeed;
-else if global.vel < -maxSpeed
-   global.vel = -maxSpeed;
+if global.vel > maxSpeed global.vel = maxSpeed;
+else if global.vel < -maxSpeed global.vel = -maxSpeed;
 
 if global.vel > -acc && global.vel < acc
 {
@@ -96,55 +94,59 @@ x += global.vel;
 //Gravity
 if place_meeting(x, y+vspeed+1, GroundSolid2) or place_meeting(x, y+vspeed+1, HS_1G) && vspeed >= 0
 {
-   ground = true;
-   gravity = 0;
-if vspeed > 8
-   vspeed = 8;
+    ground = true;
+    gravity = 0;
+    if vspeed > 8 vspeed = 8;
 }
 else
 {
-  ground = false;
-   gravity = 0.25;
+    ground = false;
+    gravity = 0.25;
 }
-
+if global.Tails_mode = true
+{
+    sprNorm = sprHorrorTails
+    sprWalk = sprHorrorTailsWalk
+    sprRun = sprHorrorTailsRun
+    sprJump = sprTailsJump
+}
+else
+{
+    sprNorm = sprScaryTailsW
+    sprWalk = sprScaryTailsWalkW
+    sprRun = sprScaryTailsWalkW
+    sprJump = sprTailsJump
+}
 //Handle sprites
 if canSpriteChange == true
 {
-if global.Tails_mode = true
-{
-if ground == true && ducking == false && rolling == false && spindash == false && Idie_mode = false
-{
-   if global.vel = 0
-   sprite_index = sprHorrorTails;
- else if global.vel > -6 && global.vel < 6
-   sprite_index = sprHorrorTailsWalk;
-else
-   sprite_index = sprHorrorTailsRun;
-
-image_speed = abs(global.vel/20);
+    if global.Tails_mode = true
+    {
+        if ground == true && ducking == false && rolling == false && spindash == false && Idie_mode = false
+        {
+            if global.vel = 0 sprite_index = sprNorm;
+            else if global.vel > -6 && global.vel < 6 sprite_index = sprWalk;
+            else sprite_index = sprRun;
+            image_speed = abs(global.vel/20);
+        }
+        else if sprite_index == sprJump
+        {
+            sprite_index = sprJump;
+            image_speed = 1
+        }
+    }
 }
-else if sprite_index == sprTailsJump
-{
-   sprite_index = sprTailsJump;
-
-image_speed = 1
-}
-}}
-
+/*
 if canSpriteChange == true
 {
     if global.Tails_mode = false
     {
         if ground == true && ducking == false && rolling == false && spindash == false && Idie_mode = false
         {
-           if global.vel = 0
-           sprite_index = sprScaryTailsW;
-         else if global.vel > -6 && global.vel < 6
-           sprite_index = sprScaryTailsWalkW;
-        else
-           sprite_index = sprScaryTailsWalkW;
-
-        image_speed = abs(global.vel/20);
+            if global.vel = 0 sprite_index = sprScaryTailsW;
+            else if global.vel > -6 && global.vel < 6 sprite_index = sprScaryTailsWalkW;
+            else sprite_index = sprScaryTailsWalkW;
+            image_speed = abs(global.vel/20);
         }
         else if sprite_index == sprTailsJump
         {
@@ -152,7 +154,7 @@ if canSpriteChange == true
         }
     }
 }
-
+*/
 
 //Up
 if global.vel == 0 && ground == true && up == false && ducking == false && rolling == false && keyboard_check(vk_up)
@@ -187,6 +189,7 @@ if global.Tails_mode = true
     {
        rolling = false;
        canMove = true;
+       //?????????
     {
     {
     }
