@@ -74,3 +74,5 @@ scr_gamesave
 scr_gameload
 
 instance_create_mod
+scr_input_get
+scr_input_dir_get

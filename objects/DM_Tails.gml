@@ -126,7 +126,7 @@ image_speed = (global.vel/2)
 }
 
 //Jumping
-if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && Idie_mode = false
+if ground == true && scr_input_get("jump","pressed") && ducking == false && Idie_mode = false
 {
    vspeed = -7;
    sprite_index = sprTailsJump;
@@ -224,7 +224,7 @@ if ground == false && sprite_index == sprTailsDuck
 
 //Spindash
 
-if ground == true && ducking == true && keyboard_check_pressed(ord("Z")) && canHit = true
+if ground == true && ducking == true && scr_input_get("jump","pressed") && canHit = true
 {
    spindash = true;
    sound_play(global.S_Spindash)
@@ -260,7 +260,7 @@ collideSlopes();
 //Fly
 if Idie_mode = false
 {
-if ground = false && keyboard_check_pressed(ord("Z")) && FlyTime = 220
+if ground = false && scr_input_get("jump","pressed") && FlyTime = 220
 {
 Fly = true
 vspeed = 2.3
@@ -269,14 +269,14 @@ if rolling = true
 rolling = false
 }}
 
-if Fly = true && !keyboard_check_pressed(ord("Z"))
+if Fly = true && !scr_input_get("jump","pressed")
 {
 FlyTime -=1
 gravity = 0.1
 sprite_index = sprTailsRacing
 image_speed = 0.15
 }
-else if Fly = true && keyboard_check_pressed(ord("Z"))
+else if Fly = true && scr_input_get("jump","pressed")
 {
 vspeed=-2.5
 }

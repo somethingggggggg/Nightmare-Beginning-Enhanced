@@ -191,19 +191,19 @@ if Bot != 6 && Bot != 7
 //Jumping
 if Bot = 3
 {
-    if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && up = false && spindash = false
+    if ground == true && scr_input_get("jump","pressed") && ducking == false && up = false && spindash = false
     {
         //vspeed = -10
         jmpframes = 10
         sprite_index = sprFinalExe_Jump;
         sound_play(global.S_Jump)
     }
-    if keyboard_check(ord("Z")) && jmpframes > 0
+    if scr_input_get("jump","check") && jmpframes > 0
     {
         jmpframes -= 1
         vspeed = -8.25
     }
-    if keyboard_check_released(ord("Z"))
+    if scr_input_get("jump","released")
     {
         jmpframes = 0
     }
@@ -302,7 +302,7 @@ if ground == false && sprite_index == sprExeDuck
 //Spindash
 if Bot = 3
 {
-if ground == true && ducking == true && keyboard_check_pressed(ord("Z")) && canHit = true
+if ground == true && ducking == true && scr_input_get("jump","pressed") && canHit = true
 {
    spindash = true;
 

@@ -55,7 +55,7 @@ applies_to=self
 if botmode = 4
 {
     vspeed = -0.25
-    if sprite_index = sprTailsJump && keyboard_check_pressed(ord("Z")) && place_meeting(x,y,TailsDollBoss)
+    if sprite_index = sprTailsJump && scr_input_get("jump","pressed") && place_meeting(x,y,TailsDollBoss)
     {
         SmashDash = true
         instance_create(x,y,sm1)
@@ -156,7 +156,7 @@ image_speed = (global.vel/2)
 if botmode = 0
 {
     //Jumping
-    if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && Idie_mode = false
+    if ground == true && scr_input_get("jump","pressed") && ducking == false && Idie_mode = false
     {
        vspeed = -7;
        sprite_index = sprTailsJump;
@@ -295,7 +295,7 @@ if place_meeting(x, y+2*vspeed+2, Solid) or place_meeting(x, y+vspeed+1, Solid_M
   global.vel = 0;
 }
 //Smash Dash
-if sprite_index = sprTailsJump && ground = false && keyboard_check_pressed(ord("Z")) && SmashDash = false
+if sprite_index = sprTailsJump && ground = false && scr_input_get("jump","pressed") && SmashDash = false
 {
     SmashDash = true
     instance_create(x,y,sm1)

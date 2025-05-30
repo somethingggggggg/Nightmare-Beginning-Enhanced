@@ -140,7 +140,7 @@ if canSpriteChange == true
 }
 
 //Jumping
-if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && canMove == true && Idie_mode = false
+if ground == true && scr_input_get("jump","pressed") && ducking == false && canMove == true && Idie_mode = false
 {
     //vspeed = -7;
     sound_play(global.S_Jump);
@@ -150,7 +150,7 @@ if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && can
     mask_index = sprTailsJumpMask;
     up = false
 }
-if keyboard_check(ord("Z")) && jmpframes > 0
+if scr_input_get("jump","check") && jmpframes > 0
 {
     sprite_index = sprTailsJump;
     mask_index = sprTailsJumpMask;
@@ -158,7 +158,7 @@ if keyboard_check(ord("Z")) && jmpframes > 0
     jmpframes -= 1
     vspeed = -6
 }
-if keyboard_check_released(ord("Z"))
+if scr_input_get("jump","released")
 {
     jmpframes = 0
 }
@@ -232,7 +232,7 @@ if Idie_mode = false
         sprite_index = sprTailsJump;
         mask_index = sprTailsJumpMask;
     }
-    if ground = false && keyboard_check_pressed(ord("Z")) && FlyTime = 220
+    if ground = false && scr_input_get("jump","pressed") && FlyTime = 220
     {
         Fly = true
         vspeed = 2.3
@@ -245,7 +245,7 @@ if Idie_mode = false
             sound_stop(global.S_tailsfly)
             sound_loop(global.S_tailsfly)
         }
-        if !keyboard_check_pressed(ord("Z"))
+        if !scr_input_get("jump","pressed")
         {
             FlyTime -=1
             gravity = 0.1
@@ -254,7 +254,7 @@ if Idie_mode = false
             mask_index = sprTailsMask;//Fly;
             image_speed = 0.15
         }
-        else if keyboard_check_pressed(ord("Z"))
+        else if scr_input_get("jump","pressed")
         {
             vspeed= -2.5
         }

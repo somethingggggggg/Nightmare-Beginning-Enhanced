@@ -102,7 +102,7 @@ if Hit=1
         {
             if AllPers.vspeed > 0
             {
-                if keyboard_check(ord("Z"))
+                if scr_input_get("jump","check")
                 {
                     if AllPers.vspeed > 3 AllPers.vspeed = -AllPers.vspeed
                     else AllPers.vspeed = -3

@@ -6,6 +6,33 @@ applies_to=self
 */
 if LIVE_ENABLED live_init()
 
+global.dpad_pressed[0] = 0
+global.dpad_pressed[1] = 0
+global.dpad_pressed[2] = 0
+global.dpad_pressed[3] = 0
+
+global.dpad_check[0] = 0
+global.dpad_check[1] = 0
+global.dpad_check[2] = 0
+global.dpad_check[3] = 0
+
+global.dpad_released[0] = 0
+global.dpad_released[1] = 0
+global.dpad_released[2] = 0
+global.dpad_released[3] = 0
+
+global.joy_button_binds = ds_map_create()
+global.key_button_binds = ds_map_create()
+
+ds_map_add(global.key_button_binds,"jump",ord("Z"))
+
+ds_map_add(global.key_button_binds,"left",vk_left)
+ds_map_add(global.key_button_binds,"right",vk_right)
+ds_map_add(global.key_button_binds,"up",vk_up)
+ds_map_add(global.key_button_binds,"down",vk_down)
+
+ds_map_add(global.joy_button_binds,"jump",0)
+
 global.mod_list = ds_list_create()
 global.mod_objects = ds_map_create()
 file_name = file_find_first(working_directory+"\mods\*.*",fa_directory);
@@ -430,6 +457,24 @@ if keyboard_check_pressed(ord("K")) && debug_mode show_collision = !show_collisi
     window_set_showicons(1)
     window_set_sizeable(1)
 }
+#define Step_1
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+
+if !global.dpad_check[joy_left] && joystick_pov_x(0) <= -0.5 global.dpad_pressed[joy_left] = 1
+else global.dpad_pressed[joy_left] = 0
+if global.dpad_check[joy_left] && joystick_pov_x(0) > -0.5 global.dpad_released[joy_left] = 1
+else global.dpad_released[joy_left] = 0
+global.dpad_check[joy_left] = (joystick_pov_x(0) <= -0.5)
+
+if !global.dpad_check[joy_right] && joystick_pov_x(0) >= 0.5 global.dpad_pressed[joy_right] = 1
+else global.dpad_pressed[joy_right] = 0
+if global.dpad_check[joy_right] && joystick_pov_x(0) < 0.5 global.dpad_released[joy_right] = 1
+else global.dpad_released[joy_right] = 0
+global.dpad_check[joy_right] = (joystick_pov_x(0) >= 0.5)
 #define Step_2
 /*"/*'/**//* YYD ACTION
 lib_id=1

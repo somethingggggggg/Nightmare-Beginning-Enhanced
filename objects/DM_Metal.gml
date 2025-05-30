@@ -176,7 +176,7 @@ image_speed = 0.2 + abs(global.vel / 20)
 //Jumping
 if Bot = 3
 {
-if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && up = false && spindash = false && Idie_mode = false
+if ground == true && scr_input_get("jump","pressed") && ducking == false && up = false && spindash = false && Idie_mode = false
 {
 vspeed = -7
 sprite_index = sprMS_Jump;
@@ -281,7 +281,7 @@ if ground == false && sprite_index == sprMS_Duck
 
 //Spindash
 
-if ground == true && ducking == true && keyboard_check_pressed(ord("Z")) && canHit = true
+if ground == true && ducking == true && scr_input_get("jump","pressed") && canHit = true
 {
    spindash = true;
    sound_play(global.S_MetalSpindash)
@@ -393,7 +393,7 @@ Idie_mode = false
 }}
 
 //Blast
-if ground = false && sprite_index = sprMS_Jump && keyboard_check_pressed(ord("Z"))
+if ground = false && sprite_index = sprMS_Jump && scr_input_get("jump","pressed")
 {
 sprite_index = sprMS_ChargeUp
 image_speed = 0.15

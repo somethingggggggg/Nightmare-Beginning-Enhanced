@@ -66,3 +66,5 @@
 |scr_draw_sprite_tiled_area
 |scr_check_killstate
 |scr_check_killstate_ext
+|scr_input_get
+|scr_input_dir_get

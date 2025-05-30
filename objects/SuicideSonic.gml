@@ -238,7 +238,7 @@ Act = 3
 alarm[1] = 120
 }
 
-if Act = 4 && keyboard_check_pressed(ord("Z"))
+if Act = 4 && scr_input_get("jump","pressed")
 {
     if global.Suicide = true
     {

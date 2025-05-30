@@ -163,7 +163,7 @@ if canSpriteChange == true
 //Jumping
 if Bot = 0
 {
-    if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && canMove == true
+    if ground == true && scr_input_get("jump","pressed") && ducking == false && canMove == true
     {
         vspeed = -5;
         sprite_index = sprEggmanJump;

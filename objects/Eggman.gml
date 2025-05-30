@@ -209,7 +209,7 @@ if canSpriteChange == true
 //Jumping
 if Bot = 0
 {
-    if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && canMove == true
+    if ground == true && scr_input_get("jump","pressed") && ducking == false && canMove == true
     {
        if global.EggLvl vspeed = -6.2;
        else vspeed = -5;

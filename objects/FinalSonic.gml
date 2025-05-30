@@ -127,12 +127,12 @@ if global.hardmode = 2
         }
     }
 }
-if keyboard_check_pressed(ord("Z")) && sprite_index = sprSonicJump && ground = 0 && global.DropDashEnabled = 1
+if scr_input_get("jump","pressed") && sprite_index = sprSonicJump && ground = 0 && global.DropDashEnabled = 1
 {
     dropdash = 1
     sound_play(global.S_Spindash)
 }
-if keyboard_check_released(ord("Z")) && dropdash = 1
+if scr_input_get("jump","released") && dropdash = 1
 {
     dropdash = 0
     sprite_index = sprSonicJump
@@ -143,7 +143,7 @@ if place_meeting(x, y+vspeed+1, Solid_Mask) or place_meeting(x, y+vspeed+1, Scra
     if ground = 0
     {
         rolling = 0
-        if (keyboard_check(ord("Z")) && dropdash = 1 && global.DropDashEnabled = 1)
+        if (scr_input_get("jump","check") && dropdash = 1 && global.DropDashEnabled = 1)
         {
             global.vel = (maxSpeed*image_xscale)
             sound_play_ex(global.S_SpinLetGo,2)
@@ -184,7 +184,7 @@ if canSpriteChange == true
 //Jumping
 if Bot = 3
 {
-    if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && up = false && spindash = false && Idie_mode = false
+    if ground == true && scr_input_get("jump","pressed") && ducking == false && up = false && spindash = false && Idie_mode = false
     {
         //vspeed = -7
         jmpframes = 7
@@ -192,14 +192,14 @@ if Bot = 3
         sprite_index = sprSonicJump;
         sound_play(global.S_Jump)
     }
-    if keyboard_check(ord("Z")) && jmpframes > 0
+    if scr_input_get("jump","check") && jmpframes > 0
     {
         sprite_index = sprSonicJump;
         stopping = 0
         jmpframes -= 1
         vspeed = -6
     }
-    if keyboard_check_released(ord("Z"))
+    if scr_input_get("jump","released")
     {
         jmpframes = 0
     }
@@ -306,7 +306,7 @@ if ground == false && sprite_index == sprSonicDuck
 
 //Spindash
 
-if ground == true && ducking == true && keyboard_check_pressed(ord("Z")) && canHit = true
+if ground == true && ducking == true && scr_input_get("jump","pressed") && canHit = true
 {
     spindash = true;
    //sound_play(global.S_Spindash)

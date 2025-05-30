@@ -120,7 +120,7 @@ image_speed = (vel/2)
 }
 
 //Jumping
-if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && canMove == true
+if ground == true && scr_input_get("jump","pressed") && ducking == false && canMove == true
 {
    vspeed = -7;
    sprite_index = sprTailsJumpBlack;
@@ -188,7 +188,7 @@ else
    canMove = false;
 }
 //Smash Dash
-if sprite_index = sprTailsJumpBlack && ground = false && keyboard_check_pressed(ord("Z")) && SmashDash = false
+if sprite_index = sprTailsJumpBlack && ground = false && scr_input_get("jump","pressed") && SmashDash = false
 {
 SmashDash = true
 instance_create(x,y,SmachDash)

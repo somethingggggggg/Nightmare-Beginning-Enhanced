@@ -80,7 +80,7 @@ sound_stop(global.S_MetalBroke)
 sound_stop(global.S_Pig_Scream)
 room_goto(25)
 }
-/*if room = room87 && keyboard_check_pressed(ord("Z"))
+/*if room = room87 && scr_input_get("jump","pressed")
 {
     room_goto(88)
 }

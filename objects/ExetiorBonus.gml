@@ -167,7 +167,7 @@ image_speed = 0.2 + abs(global.vel / 20)
 //Jumping
 if Bot = 3
 {
-if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && up = false && spindash = false && Idie_mode = false
+if ground == true && scr_input_get("jump","pressed") && ducking == false && up = false && spindash = false && Idie_mode = false
 {
 if room=89{vspeed=-9}else{
 vspeed = -8}
@@ -273,7 +273,7 @@ if ground == false && sprite_index == sprExeDuck
 
 //Spindash
 
-if ground == true && ducking == true && keyboard_check_pressed(ord("Z"))
+if ground == true && ducking == true && scr_input_get("jump","pressed")
 {
    spindash = true;
    sound_play(global.S_Spindash)

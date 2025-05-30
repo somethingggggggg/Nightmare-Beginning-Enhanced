@@ -164,7 +164,7 @@ image_speed = 0.2 + abs(global.vel / 20)
 //Jumping
 if Bot = 3
 {
-if ground == true && keyboard_check_pressed(ord("Z")) && ducking == false && up = false && spindash = false && Idie_mode = false
+if ground == true && scr_input_get("jump","pressed") && ducking == false && up = false && spindash = false && Idie_mode = false
 {
 vspeed = -6.5
 sprite_index = sprKnucklesJump;
@@ -268,7 +268,7 @@ if ground == false && sprite_index == sprKnucklesDuck
 
 //Spindash
 
-if ground == true && ducking == true && keyboard_check_pressed(ord("Z")) && canHit = true
+if ground == true && ducking == true && scr_input_get("jump","pressed") && canHit = true
 {
    spindash = true;
    sound_play(global.S_Spindash)
@@ -381,12 +381,12 @@ Idie_mode = false
 }}
 
 //Glide
-if vspeed <=-3 = false && sprite_index = sprKnucklesJump && keyboard_check_pressed(ord("Z"))
+if vspeed <=-3 = false && sprite_index = sprKnucklesJump && scr_input_get("jump","pressed")
 {
 Glide = true
 }
 
-if Glide = true && keyboard_check(ord("Z"))
+if Glide = true && scr_input_get("jump","check")
 {
 gravity= 0.15
 vspeed = 0
@@ -416,7 +416,7 @@ if rolling = true
 {
 rolling = false
 }}
-else if Glide = true && !keyboard_check(ord("Z"))
+else if Glide = true && !scr_input_get("jump","check")
 {
 sprite_index = sprKnucklesGoDown
 Glide = false
@@ -449,7 +449,7 @@ if !keyboard_check(vk_up) && !keyboard_check(vk_down)
 vspeed = 0
 }
 
-if keyboard_check_pressed(ord("Z"))
+if scr_input_get("jump","pressed")
 {
 sprite_index = sprKnucklesJump
 vspeed = -4
