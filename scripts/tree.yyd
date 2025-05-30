@@ -47,6 +47,8 @@
 		|scr_voiceunload
 		|scr_voiceinit
 		|scr_voicethefucker
+	+mod
+		|instance_create_mod
 |scr_soundfuck
 |scr_soundunfuck
 |scr_saveoptions
