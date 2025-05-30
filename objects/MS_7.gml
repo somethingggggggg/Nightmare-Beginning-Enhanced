@@ -29,7 +29,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if BL.Tails_Plot = true && keyboard_check_pressed(vk_enter)
+if BL.Tails_Plot = true && scr_input_get("enter","pressed")
 {
     instance_create(0,0,Timer_16)
     PersonalChoiser.Tails_Pers = true
@@ -39,7 +39,7 @@ if BL.Tails_Plot = true && keyboard_check_pressed(vk_enter)
     MS_3.image_speed = 0
     instance_destroy()
 }
-else if BL.Tails_Plot != true && keyboard_check_pressed(vk_enter)
+else if BL.Tails_Plot != true && scr_input_get("enter","pressed")
 {
     sound_play(global.S_Locked)
 }
@@ -49,7 +49,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if BL.Knuckles_Plot = true && keyboard_check_pressed(vk_enter)
+if BL.Knuckles_Plot = true && scr_input_get("enter","pressed")
 {
     instance_create(0,0,Timer_16)
     PersonalChoiser.Knuckles_Pers = true
@@ -59,7 +59,7 @@ if BL.Knuckles_Plot = true && keyboard_check_pressed(vk_enter)
     MS_3.image_speed = 0
     instance_destroy()
 }
-else if BL.Knuckles_Plot != true && keyboard_check_pressed(vk_enter)
+else if BL.Knuckles_Plot != true && scr_input_get("enter","pressed")
 {
 sound_play(global.S_Locked)
 }
@@ -69,7 +69,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if BL.Eggman_Plot = true && keyboard_check_pressed(vk_enter)
+if BL.Eggman_Plot = true && scr_input_get("enter","pressed")
 {
     instance_create(0,0,Timer_16)
     PersonalChoiser.Eggman_Pers = true
@@ -79,7 +79,7 @@ if BL.Eggman_Plot = true && keyboard_check_pressed(vk_enter)
     MS_3.image_speed = 0
     instance_destroy()
 }
-else if BL.Eggman_Plot != true && keyboard_check_pressed(vk_enter)
+else if BL.Eggman_Plot != true && scr_input_get("enter","pressed")
 {
 sound_play(global.S_Locked)
 }

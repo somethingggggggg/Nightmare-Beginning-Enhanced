@@ -6,7 +6,7 @@ applies_to=self
 */
 image_speed = 0.15
 image_xscale = -1
-if global.OrigCutscene = 1 hspeed = -3
+if global.OrigCutscene == 0 hspeed = -3
 
 if PersonalChoiser.Eggman_Pers = true
 {

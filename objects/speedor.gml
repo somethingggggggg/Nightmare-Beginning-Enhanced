@@ -36,7 +36,7 @@ if keyboard_check_released(vk_numpad0)
     room_speed = prevSpeed
 }
 /*
-if keyboard_check(vk_alt) && keyboard_check_pressed(vk_enter) or keyboard_check_pressed(vk_alt) && keyboard_check(vk_enter)
+if keyboard_check(vk_alt) && scr_input_get("enter","pressed") or keyboard_check_pressed(vk_alt) && keyboard_check(vk_enter)
 {
     if flscr = 0
     {

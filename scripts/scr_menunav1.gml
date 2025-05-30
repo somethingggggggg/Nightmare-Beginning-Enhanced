@@ -7,18 +7,18 @@ if background_alpha[2] > 0
 {
     background_alpha[2] -= 0.1
 }
-if keyboard_check_pressed(vk_up)
+if scr_input_dir_get("up","pressed")
 {
     global.option -= 1
     sound_play(global.S_MS_Move)
 }
-if keyboard_check_pressed(vk_down)
+if scr_input_dir_get("down","pressed")
 {
     global.option += 1
     sound_play(global.S_MS_Move)
 }
 
-if keyboard_check_pressed(vk_enter)
+if scr_input_get("enter","pressed")
 {
     if global.option = 0
     {

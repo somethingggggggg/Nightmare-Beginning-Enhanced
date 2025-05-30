@@ -48,7 +48,7 @@ sprite_index = sprMS_5
 image_index = 1
 }
 */
-if keyboard_check_pressed(vk_right)
+if scr_input_dir_get("right","pressed")
 {
         //mp_linear_step_object(x+10000,y, 112,Solid)
         x += 112
@@ -63,7 +63,7 @@ if keyboard_check_pressed(vk_right)
         }
         sound_play(global.S_MS_Move)
 }
-if keyboard_check_pressed(vk_left)
+if scr_input_dir_get("left","pressed")
 {
     if Act = 0
     {
@@ -108,7 +108,7 @@ if place_meeting(x,y,Truther)
 }
 if place_meeting(x,y,NoteNegetivRings)
 {
-    if keyboard_check_pressed(vk_left)
+    if scr_input_dir_get("left","pressed")
     {
         sprite_index = sprMS_5_1
     }
@@ -159,7 +159,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if keyboard_check_pressed(vk_enter)
+if scr_input_get("enter","pressed")
 {
 instance_create(0,0,Timer_2)
 instance_destroy()
@@ -170,7 +170,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if keyboard_check_pressed(vk_enter)
+if scr_input_get("enter","pressed")
 {
 instance_create(0,0,Timer_7)
 instance_destroy()
@@ -181,7 +181,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if keyboard_check_pressed(vk_enter)
+if scr_input_get("enter","pressed")
 {
 instance_create(0,0,Timer_12)
 instance_destroy()
@@ -192,7 +192,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if keyboard_check_pressed(vk_up)
+if scr_input_dir_get("up","pressed")
 {
     if FFSELECTOR.image_index = 0
     {
@@ -205,7 +205,7 @@ if keyboard_check_pressed(vk_up)
     }
 }
 
-if keyboard_check_pressed(vk_down)
+if scr_input_dir_get("down","pressed")
 {
 if FFSELECTOR.image_index = 2
 {
@@ -218,7 +218,7 @@ sound_play(global.S_TAB)
 }}
 
 
-if keyboard_check_pressed(vk_enter)
+if scr_input_get("enter","pressed")
 {
     instance_create(0,0,Timer_16)
     if FFSELECTOR.image_index = 0
@@ -255,7 +255,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if keyboard_check_pressed(vk_enter)
+if scr_input_get("enter","pressed")
 {
     if SonicIcon.image_index = 0
     {
@@ -353,7 +353,7 @@ action_id=603
 applies_to=self
 */
 /*sprite_index = sprMS_5_2
-if keyboard_check_pressed(vk_left)
+if scr_input_dir_get("left","pressed")
 {
     image_index = 0
 }
@@ -399,7 +399,7 @@ action_id=603
 applies_to=self
 */
 image_alpha = 1
-if keyboard_check_pressed(vk_enter)
+if scr_input_get("enter","pressed")
 {
 if global.Final = false
 {
@@ -420,7 +420,7 @@ action_id=603
 applies_to=self
 */
 /*sprite_index = sprMS_5_2
-if keyboard_check_pressed(vk_right)
+if scr_input_dir_get("right","pressed")
 {
     image_index = 1
 }

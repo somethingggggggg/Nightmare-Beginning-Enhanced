@@ -6,7 +6,7 @@ if background_alpha[2] < 1
 {
     background_alpha[2] += 0.1
 }
-if keyboard_check_pressed(vk_enter)
+if scr_input_get("enter","pressed")
 {
     sound_play(global.S_Ring)
     global.option = 0
@@ -16,5 +16,5 @@ if keyboard_check_pressed(vk_enter)
     view_hview = 260
     scr_scaling_wtf()
 }
-credScroll += (keyboard_check(vk_up) - keyboard_check(vk_down)) * 4
+credScroll += (scr_input_dir_get("up","check") - scr_input_dir_get("down","check")) * 4
 credScroll = clamp(credScroll,-85,25)

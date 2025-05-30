@@ -62,7 +62,7 @@ view_object[0] = Pers2
 //Movement
 if TAB.Twister_mode = false
 {
-if keyboard_check(vk_left) && !place_meeting(x+(abs(vel)*-1)-1, y, Solid) && (canMove == true or (rolling == true && vel > 0))
+if scr_input_dir_get("left","check") && !place_meeting(x+(abs(vel)*-1)-1, y, Solid) && (canMove == true or (rolling == true && vel > 0))
 {
   vel -= acc * (1+ground);
 if vel > 0 && ground == false
@@ -71,7 +71,7 @@ if vel > 0 && ground == false
 if rolling == false
   image_xscale = -1;
 }
-if keyboard_check(vk_right) && !place_meeting(x+abs(vel)+1, y, Solid) && (canMove == true or (rolling == true && vel < 0))
+if scr_input_dir_get("right","check") && !place_meeting(x+abs(vel)+1, y, Solid) && (canMove == true or (rolling == true && vel < 0))
 {
   vel += acc * (1+ground);
 if vel < 0 && ground == false
@@ -146,26 +146,26 @@ image_speed = (vel/2)
 
 
 //Up
-if vel == 0 && ground == true && up == false && ducking == false && rolling == false && keyboard_check(vk_up)
+if vel == 0 && ground == true && up == false && ducking == false && rolling == false && scr_input_dir_get("up","check")
 {
    up = true;
 }
 
 
 //Ducking
-if vel == 0 && ground == true && up == false && ducking == false && rolling == false && keyboard_check(vk_down)
+if vel == 0 && ground == true && up == false && ducking == false && rolling == false && scr_input_dir_get("down","check")
 {
    ducking = true;
 }
 
-if up == true && (!keyboard_check(vk_up) or ground == false)
+if up == true && (!scr_input_dir_get("up","check") or ground == false)
 {
    ducking = false;
    up = false;
    canMove = true;
 }
 
-if ducking == true && (!keyboard_check(vk_down) or ground == false)
+if ducking == true && (!scr_input_dir_get("down","check") or ground == false)
 {
    ducking = false;
    up = false;
@@ -211,7 +211,7 @@ else
 
 
 //Punch
-if keyboard_check_pressed(ord("C")) && Punch = false && TAB.Twister_mode = false
+if scr_input_get("punch","pressed") && Punch = false && TAB.Twister_mode = false
 {
     Punch = true
     alarm[0] = 25
@@ -242,22 +242,22 @@ if instance_exists(AI3) && keyboard_check_pressed(vk_space) && TAB.Turn = true
 
 if !instance_exists(AI3) && keyboard_check_pressed(vk_space) && TAB.Turn = true
 {
-if instance_exists(AI1)
-{
-    TAB.Turn = false
-    TAB.alarm[0] = 10
-    sound_play(global.S_TAB)
-    instance_change(AI2,Pers2)
-    with AI1
+    if instance_exists(AI1)
     {
-        instance_change(Pers1,AI1)
-    }
-    view_object[0] = Pers1
+        TAB.Turn = false
+        TAB.alarm[0] = 10
+        sound_play(global.S_TAB)
+        instance_change(AI2,Pers2)
+        with AI1
+        {
+            instance_change(Pers1,AI1)
+        }
+        view_object[0] = Pers1
     }
 }
 
 //TAB.Twister
-if TAB.Twister_mode = false && Act = 1 && keyboard_check_pressed(ord("X")) && up == false && ducking == false && Punch = 0
+if TAB.Twister_mode = false && Act = 1 && scr_input_get("spin","pressed") && up == false && ducking == false && Punch = 0
 {
     TAB.Twister_mode = true
     Act = 0

@@ -1,7 +1,7 @@
 //the options menu
 HorizScroll = lerp(HorizScroll,0,0.5)
-ButtonPressedLeftOrRight = keyboard_check_pressed(vk_right) - keyboard_check_pressed(vk_left)
-ButtonUpOrDown = keyboard_check(vk_down) - keyboard_check(vk_up)
+ButtonPressedLeftOrRight = scr_input_dir_get("right","pressed") - scr_input_dir_get("left","pressed")
+ButtonUpOrDown = scr_input_dir_get("down","check") - scr_input_dir_get("up","check")
 //anim += 1
 time += 1
 mycolor = $ffffff
@@ -10,18 +10,18 @@ mycolor = $ffffff
 //    anim = 0
 //}
 
-if keyboard_check(vk_up) && !keyboard_check(vk_down)
+if scr_input_dir_get("up","check") && !scr_input_dir_get("down","check")
 {
-    if keyboard_check_pressed(vk_up)
+    if scr_input_dir_get("up","pressed")
     {
         global.option -= 1
         sound_play(global.S_TAB)
     }
 }
 
-if keyboard_check(vk_down) && !keyboard_check(vk_up)
+if scr_input_dir_get("down","check") && !scr_input_dir_get("up","check")
 {
-    if keyboard_check_pressed(vk_down)
+    if scr_input_dir_get("down","pressed")
     {
         global.option += 1
         sound_play(global.S_TAB)
@@ -43,7 +43,7 @@ if abs(autoscroll) > 30
 if global.option < 0 global.option = menulength[global.suboption]+1
 if global.option > menulength[global.suboption]+1 global.option = 0
 
-if keyboard_check_pressed(vk_enter)
+if scr_input_get("enter","pressed")
 {
     if global.option = 0
     {
@@ -124,10 +124,7 @@ if ButtonPressedLeftOrRight != 0 && global.option != 0
         {
             if optionVarName[global.option-2,global.suboption] = "cheats"
             {
-                with instance_create(0,0,obj_textpopup)
-                {
-                    text = "COMPLETE THE GAME#ON THE BEST#ENDING FIRST"
-                }
+                (instance_create(0,0,obj_textpopup)).text = "COMPLETE THE GAME#ON THE BEST#ENDING FIRST"
             }
             sound_stop(global.S_Locked)
             sound_play(global.S_Locked)

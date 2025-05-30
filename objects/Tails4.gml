@@ -53,7 +53,7 @@ applies_to=self
 */
 ///everything
 //Movement
-if keyboard_check(vk_left) && (canMove == true or (rolling == true && global.vel > 0)) //&& !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapWallDestruct) && !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapElevator) && !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapWallExit) && !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapWall) && !place_meeting(x+(abs(global.vel)*-1)-1, y, Solid) && !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapGround) && !place_meeting(x+(abs(global.vel)*-1)-1, y, HalfSolid)
+if scr_input_dir_get("left","check") && (canMove == true or (rolling == true && global.vel > 0)) //&& !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapWallDestruct) && !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapElevator) && !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapWallExit) && !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapWall) && !place_meeting(x+(abs(global.vel)*-1)-1, y, Solid) && !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapGround) && !place_meeting(x+(abs(global.vel)*-1)-1, y, HalfSolid)
 {
   global.vel -= acc * (1+ground);
 if global.vel > 0 && ground == false
@@ -63,7 +63,7 @@ if rolling == false
   image_xscale = -1;
 }
 
-if keyboard_check(vk_right) && (canMove == true or (rolling == true && global.vel < 0)) //&& !place_meeting(x+abs(global.vel)+1, y, ScrapWallDestruct) && !place_meeting(x+abs(global.vel)+1, y, ScrapElevator) && !place_meeting(x+abs(global.vel)+1, y, ScrapWallExit) && !place_meeting(x+abs(global.vel)+1, y, ScrapWall) && !place_meeting(x+abs(global.vel)+1, y, Solid) && !place_meeting(x+abs(global.vel)+1, y, ScrapGround) && !place_meeting(x+abs(global.vel)+1, y, HalfSolid)
+if scr_input_dir_get("right","check") && (canMove == true or (rolling == true && global.vel < 0)) //&& !place_meeting(x+abs(global.vel)+1, y, ScrapWallDestruct) && !place_meeting(x+abs(global.vel)+1, y, ScrapElevator) && !place_meeting(x+abs(global.vel)+1, y, ScrapWallExit) && !place_meeting(x+abs(global.vel)+1, y, ScrapWall) && !place_meeting(x+abs(global.vel)+1, y, Solid) && !place_meeting(x+abs(global.vel)+1, y, ScrapGround) && !place_meeting(x+abs(global.vel)+1, y, HalfSolid)
 {
   global.vel += acc * (1+ground);
 if global.vel < 0 && ground == false
@@ -164,26 +164,26 @@ if scr_input_get("jump","released")
 }
 
 //Up
-if global.vel == 0 && ground == true && up == false && ducking == false && rolling == false && keyboard_check(vk_up)
+if global.vel == 0 && ground == true && up == false && ducking == false && rolling == false && scr_input_dir_get("up","check")
 {
    up = true;
 }
 
 
 //Ducking
-if global.vel == 0 && ground == true && up == false && ducking == false && rolling == false && keyboard_check(vk_down)
+if global.vel == 0 && ground == true && up == false && ducking == false && rolling == false && scr_input_dir_get("down","check")
 {
    ducking = true;
 }
 
-if up == true && (!keyboard_check(vk_up) or ground == false)
+if up == true && (!scr_input_dir_get("up","check") or ground == false)
 {
    ducking = false;
    up = false;
    canMove = true;
 }
 
-if ducking == true && (!keyboard_check(vk_down) or ground == false)
+if ducking == true && (!scr_input_dir_get("down","check") or ground == false)
 {
    ducking = false;
    up = false;

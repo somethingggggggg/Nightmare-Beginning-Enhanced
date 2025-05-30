@@ -1,16 +1,16 @@
 if myfade < 1 myfade += 0.1
 time += 1
-if keyboard_check_pressed(vk_up) or mouse_wheel_up()
+if scr_input_dir_get("up","pressed") or mouse_wheel_up()
 {
     global.option -= 1
     sound_play(global.S_MS_Move)
 }
-if keyboard_check_pressed(vk_down) or mouse_wheel_down()
+if scr_input_dir_get("down","pressed") or mouse_wheel_down()
 {
     global.option += 1
     sound_play(global.S_MS_Move)
 }
-if keyboard_check_pressed(vk_escape)
+if scr_input_pause()
 {
     scr_menuclose()
     /*pause = 0
@@ -39,7 +39,7 @@ if keyboard_check_pressed(vk_escape)
     myfade = 0
     instance_activate_all()*/
 }
-if keyboard_check_pressed(vk_enter)
+if scr_input_get("enter","pressed")
 {
     if global.option = 0
     {
@@ -79,3 +79,4 @@ if global.lang < 0 global.lang = 2
 if global.lang > 2 global.lang = 0
 if global.option < 0 global.option = 2
 if global.option > 2 global.option = 0
+if buffer buffer = 0

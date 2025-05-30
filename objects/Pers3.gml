@@ -40,26 +40,26 @@ action_id=603
 applies_to=self
 */
 view_object[0] = Pers3
-ButtonPressedLeftOrRight = keyboard_check(vk_right) - keyboard_check(vk_left)
+ButtonPressedLeftOrRight = scr_input_dir_get("right","check") - scr_input_dir_get("left","check")
 //Movement
 if !instance_exists(EnergyShieldFF)
 {
-    /*if keyboard_check(vk_left) && !place_meeting(x+(abs(hspeed)*-1)-1, y, FF_Wall) && !place_meeting(x+(abs(hspeed)*-1)-1, y, Solid) && (canMove == true or (rolling == true && hspeed > 0))
+    /*if scr_input_dir_get("left","check") && !place_meeting(x+(abs(hspeed)*-1)-1, y, FF_Wall) && !place_meeting(x+(abs(hspeed)*-1)-1, y, Solid) && (canMove == true or (rolling == true && hspeed > 0))
     {
       hspeed = -maxSpeed
       image_xscale = -1;
     }
-    if keyboard_check_released(vk_left)
+    if scr_input_dir_get("left","released")
     {
         hspeed = 0
     }
-    if keyboard_check(vk_right) && !place_meeting(x+abs(hspeed)+1, y, FF_Wall) && !place_meeting(x+abs(hspeed)+1, y, Solid) && (canMove == true or (rolling == true && hspeed < 0))
+    if scr_input_dir_get("right","check") && !place_meeting(x+abs(hspeed)+1, y, FF_Wall) && !place_meeting(x+abs(hspeed)+1, y, Solid) && (canMove == true or (rolling == true && hspeed < 0))
     {
       hspeed = maxSpeed
       image_xscale = 1;
     }
 
-    if keyboard_check_released(vk_right)
+    if scr_input_dir_get("right","released")
     {
         hspeed = 0
     }*/
@@ -138,7 +138,7 @@ if TAB.life <= 0
 }
 
 //Shield
-if keyboard_check(ord("S")) && TAB.Energy > 0
+if scr_input_get("shield","check") && TAB.Energy > 0
 {
     if !instance_exists(EnergyShieldFF)
     {
@@ -149,7 +149,7 @@ if keyboard_check(ord("S")) && TAB.Energy > 0
     TAB.Energy -= 1
 }
 
-if !keyboard_check(ord("S")) or TAB.Energy <= 0
+if !scr_input_get("shield","check") or TAB.Energy <= 0
 {
 sound_stop(global.S_EGG_Shield)
 if TAB.Energy <= MaxCharge
@@ -162,7 +162,7 @@ instance_destroy()
 }
 }
 
-if !keyboard_check(ord("S"))
+if !scr_input_get("shield","check")
 {
     sound_stop(global.S_EGG_Shield)
 }
@@ -170,20 +170,20 @@ if !keyboard_check(ord("S"))
 //Change
 if instance_exists(AI1) && keyboard_check_pressed(vk_space) && TAB.Turn = true
 {
-sound_stop(global.S_EGG_Shield)
-with EnergyShieldFF
-{
-    instance_destroy()
-}
-TAB.Turn = false
-TAB.alarm[0] = 10
-sound_play(global.S_TAB)
-instance_change(AI3,Pers3)
-with AI1
-{
-    instance_change(Pers1,AI1)
-}
-view_object[0] = Pers1
+    sound_stop(global.S_EGG_Shield)
+    with EnergyShieldFF
+    {
+        instance_destroy()
+    }
+    TAB.Turn = false
+    TAB.alarm[0] = 10
+    sound_play(global.S_TAB)
+    instance_change(AI3,Pers3)
+    with AI1
+    {
+        instance_change(Pers1,AI1)
+    }
+    view_object[0] = Pers1
 }
 
 if !instance_exists(AI1) && keyboard_check_pressed(vk_space) && TAB.Turn = true

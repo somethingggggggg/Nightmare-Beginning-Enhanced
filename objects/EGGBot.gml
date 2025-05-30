@@ -83,7 +83,7 @@ else
 //Movement
 if Rob = false
 {
-if keyboard_check(vk_left) && !place_meeting(x+(abs(global.vel)*-1)-1, y, Solid) && (canMove == true or (rolling == true && global.vel > 0))
+if scr_input_dir_get("left","check") && !place_meeting(x+(abs(global.vel)*-1)-1, y, Solid) && (canMove == true or (rolling == true && global.vel > 0))
 {
   global.vel -= acc * (1+ground);
 if global.vel > 0 && ground == false
@@ -91,7 +91,7 @@ if global.vel > 0 && ground == false
 
   image_xscale = -1;
 }
-if keyboard_check(vk_right) && !place_meeting(x+abs(global.vel)+1, y, Solid) && (canMove == true or (rolling == true && global.vel < 0))
+if scr_input_dir_get("right","check") && !place_meeting(x+abs(global.vel)+1, y, Solid) && (canMove == true or (rolling == true && global.vel < 0))
 {
   global.vel += acc * (1+ground);
 if global.vel < 0 && ground == false

@@ -31,7 +31,7 @@ applies_to=self
 */
 if global.pause = 1 exit;
 //Movement
-if keyboard_check(vk_left) && !place_meeting(x+(abs(global.vel)*-1)-1, y, Solid) && (canMove == true or (rolling == true && global.vel > 0))
+if scr_input_dir_get("left","check") && !place_meeting(x+(abs(global.vel)*-1)-1, y, Solid) && (canMove == true or (rolling == true && global.vel > 0))
 {
   global.vel -= acc * (1+ground);
 if global.vel > 0 && ground == false
@@ -40,7 +40,7 @@ if global.vel > 0 && ground == false
 if rolling == false
   image_xscale = -1;
 }
-if keyboard_check(vk_right) && !place_meeting(x+abs(global.vel)+1, y, Solid) && (canMove == true or (rolling == true && global.vel < 0))
+if scr_input_dir_get("right","check") && !place_meeting(x+abs(global.vel)+1, y, Solid) && (canMove == true or (rolling == true && global.vel < 0))
 {
   global.vel += acc * (1+ground);
 if global.vel < 0 && ground == false
@@ -114,7 +114,7 @@ image_speed = 0.2 + abs(global.vel / 20)
 }}
 
 //Up
-if global.vel == 0 && ground == true && up == false && ducking == false && rolling == false && keyboard_check(vk_up)
+if global.vel == 0 && ground == true && up == false && ducking == false && rolling == false && scr_input_dir_get("up","check")
 {
    up = true;
 }
@@ -123,19 +123,19 @@ if global.vel == 0 && ground == true && up == false && ducking == false && rolli
 //Ducking
 if Sprite_mode = false
 {
-if global.vel == 0 && ground == true && up == false && ducking == false && rolling == false && keyboard_check(vk_down)
+if global.vel == 0 && ground == true && up == false && ducking == false && rolling == false && scr_input_dir_get("down","check")
 {
    ducking = true;
 }
 
-if up == true && (!keyboard_check(vk_up) or ground == false)
+if up == true && (!scr_input_dir_get("up","check") or ground == false)
 {
    ducking = false;
    up = false;
    canMove = true;
 }
 
-if ducking == true && (!keyboard_check(vk_down) or ground == false)
+if ducking == true && (!scr_input_dir_get("down","check") or ground == false)
 {
    ducking = false;
    up = false;
@@ -206,19 +206,19 @@ image_speed = (global.vel/2)
 }}
 
 
-if global.vel == 0 && ground == true && up == false && ducking == false && rolling == false && keyboard_check(vk_down)
+if global.vel == 0 && ground == true && up == false && ducking == false && rolling == false && scr_input_dir_get("down","check")
 {
    ducking = true;
 }
 
-if up == true && (!keyboard_check(vk_up) or ground == false)
+if up == true && (!scr_input_dir_get("up","check") or ground == false)
 {
    ducking = false;
    up = false;
    canMove = true;
 }
 
-if ducking == true && (!keyboard_check(vk_down) or ground == false)
+if ducking == true && (!scr_input_dir_get("down","check") or ground == false)
 {
    ducking = false;
    up = false;

@@ -31,7 +31,7 @@ applies_to=self
 */
 view_object[0] = Pers1
 //Movement
-if keyboard_check(vk_left) && !place_meeting(x+(abs(vel)*-1)-1, y, FF_Wall) && !place_meeting(x+(abs(vel)*-1)-1, y, Solid) && (canMove == true or (rolling == true && vel > 0))
+if scr_input_dir_get("left","check") && !place_meeting(x+(abs(vel)*-1)-1, y, FF_Wall) && !place_meeting(x+(abs(vel)*-1)-1, y, Solid) && (canMove == true or (rolling == true && vel > 0))
 {
   vel -= acc * (1+ground);
 if vel > 0 && ground == false
@@ -40,7 +40,7 @@ if vel > 0 && ground == false
 if rolling == false
   image_xscale = -1;
 }
-if keyboard_check(vk_right) && !place_meeting(x+abs(vel)+1, y, FF_Wall) && !place_meeting(x+abs(vel)+1, y, Solid) && (canMove == true or (rolling == true && vel < 0))
+if scr_input_dir_get("right","check") && !place_meeting(x+abs(vel)+1, y, FF_Wall) && !place_meeting(x+abs(vel)+1, y, Solid) && (canMove == true or (rolling == true && vel < 0))
 {
   vel += acc * (1+ground);
 if vel < 0 && ground == false
@@ -119,26 +119,26 @@ if ground == true && scr_input_get("jump","pressed") && ducking == false && canM
 }
 
 //Up
-if vel == 0 && ground == true && up == false && ducking == false && rolling == false && keyboard_check(vk_up)
+if vel == 0 && ground == true && up == false && ducking == false && rolling == false && scr_input_dir_get("up","check")
 {
    up = true;
 }
 
 
 //Ducking
-if vel == 0 && ground == true && up == false && ducking == false && rolling == false && keyboard_check(vk_down)
+if vel == 0 && ground == true && up == false && ducking == false && rolling == false && scr_input_dir_get("down","check")
 {
    ducking = true;
 }
 
-if up == true && (!keyboard_check(vk_up) or ground == false)
+if up == true && (!scr_input_dir_get("up","check") or ground == false)
 {
    ducking = false;
    up = false;
    canMove = true;
 }
 
-if ducking == true && (!keyboard_check(vk_down) or ground == false)
+if ducking == true && (!scr_input_dir_get("down","check") or ground == false)
 {
    ducking = false;
    up = false;
@@ -183,31 +183,31 @@ else
 //Change
 if instance_exists(AI2) && keyboard_check_pressed(vk_space) && TAB.Turn = true
 {
-TAB.Turn = false
-TAB.alarm[0] = 10
-sound_play(global.S_TAB)
-instance_change(AI1,Pers1)
-with AI2
-{
-instance_change(Pers2,AI2)
-}
-view_object[0] = Pers2
+    TAB.Turn = false
+    TAB.alarm[0] = 10
+    sound_play(global.S_TAB)
+    instance_change(AI1,Pers1)
+    with AI2
+    {
+        instance_change(Pers2,AI2)
+    }
+    view_object[0] = Pers2
 }
 
 if !instance_exists(AI2) && keyboard_check_pressed(vk_space) && TAB.Turn = true
 {
-if instance_exists(AI3)
-{
-TAB.Turn = false
-TAB.alarm[0] = 10
-sound_play(global.S_TAB)
-instance_change(AI1,Pers1)
-with AI3
-{
-instance_change(Pers3,AI3)
-}
-}
-view_object[0] = Pers3
+    if instance_exists(AI3)
+    {
+        TAB.Turn = false
+        TAB.alarm[0] = 10
+        sound_play(global.S_TAB)
+        instance_change(AI1,Pers1)
+        with AI3
+        {
+            instance_change(Pers3,AI3)
+        }
+    }
+    view_object[0] = Pers3
 }
 
 //Smash Dash

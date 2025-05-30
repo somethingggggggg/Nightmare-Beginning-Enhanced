@@ -38,7 +38,6 @@
 		|scr_menunav2
 		|scr_menunav3
 		|scr_menunav4
-		|scr_pausenav
 		|scr_pausenav2
 		|scr_hackdialget
 		|scr_dialget
@@ -67,4 +66,5 @@
 |scr_check_killstate
 |scr_check_killstate_ext
 |scr_input_get
+|scr_input_pause
 |scr_input_dir_get

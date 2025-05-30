@@ -81,8 +81,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-LeftOrRight = keyboard_check(vk_right) - keyboard_check(vk_left)
-UpOrDown = keyboard_check(vk_down) - keyboard_check(vk_up)
+LeftOrRight = scr_input_dir_get("right","check") - scr_input_dir_get("left","check")
+UpOrDown = scr_input_dir_get("down","check") - scr_input_dir_get("up","check")
 
 if LeftOrRight != 0
 {
@@ -104,39 +104,39 @@ else
     yvel = 0
 }
 /*
-if keyboard_check(vk_left)
+if scr_input_dir_get("left","check")
 {
     xvel -= acc
     if xvel < 0 xvel -= acc
 }
 
-if keyboard_check(vk_up)
+if scr_input_dir_get("up","check")
 {
     yvel -= acc
     if yvel < 0 yvel -= acc
 }
 
-if keyboard_check(vk_down)
+if scr_input_dir_get("down","check")
 {
     yvel += acc
     if yvel > 0 yvel += acc
 }
 
 
-if keyboard_check(vk_right)
+if scr_input_dir_get("right","check")
 {
     xvel += acc
     if xvel > 0 xvel += acc
 }
 
 //Deacceleration
-if !keyboard_check(vk_left) && !keyboard_check(vk_right)
+if !scr_input_dir_get("left","check") && !scr_input_dir_get("right","check")
 {
     xvel = 0
 }
 
 
-if !keyboard_check(vk_up) && !keyboard_check(vk_down)
+if !scr_input_dir_get("up","check") && !scr_input_dir_get("down","check")
 {
     yvel = 0
 }

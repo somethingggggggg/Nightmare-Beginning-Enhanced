@@ -34,7 +34,7 @@ if keyboard_check_pressed(ord("P"))
     }
 }
 Alpha = clamp(Alpha-0.01,0,1)
-if keyboard_check_pressed(vk_anykey) && !keyboard_check_pressed(vk_enter) && !keyboard_check_pressed(ord("P"))
+if keyboard_check_pressed(vk_anykey) && !scr_input_get("enter","pressed") && !keyboard_check_pressed(ord("P"))
 {
     Alpha = 1
 }

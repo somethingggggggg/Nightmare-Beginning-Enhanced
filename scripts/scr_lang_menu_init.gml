@@ -13,7 +13,7 @@ switch argument0
         optionname[1,0] = "Voiceover"
         optionname[2,0] = "Show FPS"
         optionname[3,0] = "Performance mode"
-        optionname[4,0] = "Original FF Cutscene"
+        optionname[4,0] = "Unused FF Cutscene"
         optionname[5,0] = "Enable DCRP"
         optionname[6,0] = "Uprising cutscene"
 
@@ -40,7 +40,7 @@ switch argument0
         optiondesc[1,0] = "Choose the voiceover you want (you can add your own by naming a folder voice_ )"
         optiondesc[2,0] = "Show FPS"
         optiondesc[3,0] = "Dogshit solution"
-        optiondesc[4,0] = "Original FF Cutscene"
+        optiondesc[4,0] = "Unused FF Cutscene"
         optiondesc[5,0] = "Shows to other people that you are playing NBE"
         optiondesc[6,0] = "Replaces the in-game rise cutscene with the new Uprising cutscene"
 
@@ -76,8 +76,8 @@ switch argument0
         optionstate1[4,0] = "off"
         optionstate1[4,1] = "on"
 
-        optionstate1[5,0] = "off"
-        optionstate1[5,1] = "on"
+        optionstate1[5,0] = "Original"
+        optionstate1[5,1] = "Update"
 
         optionstate1[6,0] = "off"
         optionstate1[6,1] = "on"

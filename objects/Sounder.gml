@@ -6,6 +6,8 @@ applies_to=self
 */
 if LIVE_ENABLED live_init()
 
+buffer = 0
+
 global.dpad_pressed[0] = 0
 global.dpad_pressed[1] = 0
 global.dpad_pressed[2] = 0
@@ -21,10 +23,20 @@ global.dpad_released[1] = 0
 global.dpad_released[2] = 0
 global.dpad_released[3] = 0
 
+global.joy_pause = 0
+joy_pause_fuck = 0
+
 global.joy_button_binds = ds_map_create()
 global.key_button_binds = ds_map_create()
 
 ds_map_add(global.key_button_binds,"jump",ord("Z"))
+ds_map_add(global.key_button_binds,"spin",ord("X"))
+ds_map_add(global.key_button_binds,"flightcancel",ord("X"))
+ds_map_add(global.key_button_binds,"punch",ord("C"))
+ds_map_add(global.key_button_binds,"shield",ord("S"))
+ds_map_add(global.key_button_binds,"enter",vk_enter)
+ds_map_add(global.key_button_binds,"esc",vk_escape)
+ds_map_add(global.key_button_binds,"charswitchforw",vk_space)
 
 ds_map_add(global.key_button_binds,"left",vk_left)
 ds_map_add(global.key_button_binds,"right",vk_right)
@@ -32,6 +44,14 @@ ds_map_add(global.key_button_binds,"up",vk_up)
 ds_map_add(global.key_button_binds,"down",vk_down)
 
 ds_map_add(global.joy_button_binds,"jump",0)
+ds_map_add(global.joy_button_binds,"spin",1)
+ds_map_add(global.joy_button_binds,"flightcancel",2)
+ds_map_add(global.joy_button_binds,"punch",2)
+ds_map_add(global.joy_button_binds,"shield",2)
+ds_map_add(global.joy_button_binds,"enter",0)
+ds_map_add(global.joy_button_binds,"esc",7)
+ds_map_add(global.joy_button_binds,"charswitchforw",5)
+ds_map_add(global.joy_button_binds,"charswitchback",4)
 
 global.mod_list = ds_list_create()
 global.mod_objects = ds_map_create()
@@ -464,6 +484,10 @@ action_id=603
 applies_to=self
 */
 
+if !joy_pause_fuck && joystick_check_button(0,7) global.joy_pause = 1
+else global.joy_pause = 0
+joy_pause_fuck = joystick_check_button(0,7)
+
 if !global.dpad_check[joy_left] && joystick_pov_x(0) <= -0.5 global.dpad_pressed[joy_left] = 1
 else global.dpad_pressed[joy_left] = 0
 if global.dpad_check[joy_left] && joystick_pov_x(0) > -0.5 global.dpad_released[joy_left] = 1
@@ -475,6 +499,18 @@ else global.dpad_pressed[joy_right] = 0
 if global.dpad_check[joy_right] && joystick_pov_x(0) < 0.5 global.dpad_released[joy_right] = 1
 else global.dpad_released[joy_right] = 0
 global.dpad_check[joy_right] = (joystick_pov_x(0) >= 0.5)
+
+if !global.dpad_check[joy_up] && joystick_pov_y(0) <= -0.5 global.dpad_pressed[joy_up] = 1
+else global.dpad_pressed[joy_up] = 0
+if global.dpad_check[joy_up] && joystick_pov_y(0) > -0.5 global.dpad_released[joy_up] = 1
+else global.dpad_released[joy_up] = 0
+global.dpad_check[joy_up] = (joystick_pov_y(0) <= -0.5)
+
+if !global.dpad_check[joy_down] && joystick_pov_y(0) >= 0.5 global.dpad_pressed[joy_down] = 1
+else global.dpad_pressed[joy_down] = 0
+if global.dpad_check[joy_down] && joystick_pov_y(0) < 0.5 global.dpad_released[joy_down] = 1
+else global.dpad_released[joy_down] = 0
+global.dpad_check[joy_down] = (joystick_pov_y(0) >= 0.5)
 #define Step_2
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -763,7 +799,7 @@ if room != 0
 {
     if pause = 0
     {
-        if keyboard_check_pressed(vk_escape) && !instance_exists(SW_Control)
+        if scr_input_get("esc","pressed") && !instance_exists(SW_Control)
         {
             i = 0
             o = 0
@@ -781,6 +817,8 @@ if room != 0
             room_speed = 60
             sprpausefuck = sprite_create_from_screen(0,0,view_wport[view_current],view_wport[view_current],0,0,0,0)
             instance_deactivate_all(1)
+            //thanks gm82
+            instance_activate_object(__newobject766)
             prev_view_hview = view_hview[view_current]
             prev_view_wview = view_wview[view_current]
             view_wview[view_current] = 462
@@ -799,6 +837,7 @@ if room != 0
             if room = 32 optionblocked[1,3] = 1
             else optionblocked[1,3] = 0
             pause = 1
+            buffer = 1
         }
     }
     else

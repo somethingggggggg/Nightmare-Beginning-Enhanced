@@ -278,7 +278,7 @@ instance_destroy()
 }
 
 //Action
-if keyboard_check_pressed(vk_enter) && jink = 0
+if scr_input_get("enter","pressed") && jink = 0
 {
     Page += 1
     scr_voicethefucker()

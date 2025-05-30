@@ -58,7 +58,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-ButtonPressedLeftOrRight = keyboard_check(vk_right) - keyboard_check(vk_left)
+ButtonPressedLeftOrRight = scr_input_dir_get("right","check") - scr_input_dir_get("left","check")
 if global.hardmode = 2
 {
     view_angle[0] += 0.1
@@ -68,7 +68,7 @@ if Bot = 0
 {
 sprite_index = sprEGGBotWalk;
 mask_index = sprEggmanBlackMask;
-if (!keyboard_check(vk_left) && !keyboard_check(vk_right)) or (keyboard_check(vk_left) && keyboard_check(vk_right))
+if (!scr_input_dir_get("left","check") && !scr_input_dir_get("right","check")) or (scr_input_dir_get("left","check") && scr_input_dir_get("right","check"))
 {
     sprite_index = sprEGGBotStand
     mask_index = sprEggmanBlackMask;
@@ -80,13 +80,13 @@ if ButtonPressedLeftOrRight != 0 && (canMove == true or (rolling == true && hspe
     //x += -maxSpeed
 }
 /*
-if keyboard_check_released(vk_left) or (place_meeting(x+(abs(hspeed)*-1)-1, y, Egg_Ground) or place_meeting(x+(abs(hspeed)*-1)-1, y, Solid))
+if scr_input_dir_get("left","released") or (place_meeting(x+(abs(hspeed)*-1)-1, y, Egg_Ground) or place_meeting(x+(abs(hspeed)*-1)-1, y, Solid))
 {
     hspeed = 0
 }
 */
 /*
-if keyboard_check(vk_right) && (canMove == true or (rolling == true && hspeed < 0))
+if scr_input_dir_get("right","check") && (canMove == true or (rolling == true && hspeed < 0))
 {
     whatvel += acc * (1+ground);
     //x += maxSpeed
@@ -151,7 +151,7 @@ if place_meeting(x,y,Egg_Ground)
     }
 }
 
-if keyboard_check_released(vk_right) or place_meeting(x+abs(hspeed)+1, y, Egg_Ground) or place_meeting(x+abs(hspeed)+1, y, Solid)
+if scr_input_dir_get("right","released") or place_meeting(x+abs(hspeed)+1, y, Egg_Ground) or place_meeting(x+abs(hspeed)+1, y, Solid)
 {
     hspeed = 0
 }

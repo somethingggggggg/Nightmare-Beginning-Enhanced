@@ -1,15 +1,15 @@
 myfade = 1
-if keyboard_check_pressed(vk_up) or mouse_wheel_up()
+if scr_input_dir_get("up","pressed") or mouse_wheel_up()
 {
     global.option -= 1
     sound_play(global.S_MS_Move)
 }
-if keyboard_check_pressed(vk_down) or mouse_wheel_down()
+if scr_input_dir_get("down","pressed") or mouse_wheel_down()
 {
     global.option += 1
     sound_play(global.S_MS_Move)
 }
-if (keyboard_check_pressed(vk_enter) && global.option = 0) or keyboard_check_pressed(vk_escape)
+if (scr_input_get("enter","pressed") && global.option = 0) or scr_input_get("esc","pressed")
 {
     global.menustate = 0
     //scr_applysettings()

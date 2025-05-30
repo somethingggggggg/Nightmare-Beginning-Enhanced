@@ -29,7 +29,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if !instance_exists(TPassed) && keyboard_check_pressed(vk_enter)
+if !instance_exists(TPassed) && scr_input_get("enter","pressed")
 {
 instance_create(0,0,Timer_2)
 background_hspeed[0] = 0
@@ -38,7 +38,7 @@ with MS_2 image_speed = 0
 with MS_3 image_speed = 0
 instance_destroy()
 }
-else if instance_exists(TPassed) && keyboard_check_pressed(vk_enter)
+else if instance_exists(TPassed) && scr_input_get("enter","pressed")
 {
 sound_play(global.S_Locked)
 }
@@ -48,7 +48,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if !instance_exists(KPassed) && keyboard_check_pressed(vk_enter)
+if !instance_exists(KPassed) && scr_input_get("enter","pressed")
 {
 instance_create(0,0,Timer_7)
 background_hspeed[0] = 0
@@ -57,7 +57,7 @@ with MS_2 image_speed = 0
 with MS_3 image_speed = 0
 instance_destroy()
 }
-else if instance_exists(KPassed) && keyboard_check_pressed(vk_enter)
+else if instance_exists(KPassed) && scr_input_get("enter","pressed")
 {
 sound_play(global.S_Locked)
 }
@@ -67,7 +67,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if !instance_exists(EPassed) && keyboard_check_pressed(vk_enter)
+if !instance_exists(EPassed) && scr_input_get("enter","pressed")
 {
     instance_create(0,0,Timer_12)
     background_hspeed[0] = 0
@@ -76,7 +76,7 @@ if !instance_exists(EPassed) && keyboard_check_pressed(vk_enter)
     with MS_3 image_speed = 0
     instance_destroy()
 }
-else if instance_exists(EPassed) && keyboard_check_pressed(vk_enter)
+else if instance_exists(EPassed) && scr_input_get("enter","pressed")
 {
     sound_play(global.S_Locked)
 }

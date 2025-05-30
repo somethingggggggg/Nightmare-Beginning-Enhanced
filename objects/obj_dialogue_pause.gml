@@ -14,7 +14,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if keyboard_check_pressed(vk_enter)
+if scr_input_get("enter","pressed")
 {
     global.hackpage += 1
     scr_hackdialget()

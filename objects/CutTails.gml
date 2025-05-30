@@ -39,7 +39,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if global.OrigCutscene = 0
+if global.OrigCutscene
 {
     if PersonalChoiser.Tails_Pers = true && BL.Tails_Plot = true && BL.Knuckles_Plot = true && BL.Eggman_Plot = true
     {
@@ -206,7 +206,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if global.OrigCutscene = 0
+if global.OrigCutscene
 {
     sprite_index = sprTails
     if BL.Tails_Plot = false && BL.Knuckles_Plot = true && BL.Eggman_Plot = true

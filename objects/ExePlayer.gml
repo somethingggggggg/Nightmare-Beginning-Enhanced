@@ -65,7 +65,7 @@ applies_to=self
 //Movement
 if Bot = 3
 {
-if (keyboard_check(vk_left) && !place_meeting(x+(abs(global.vel)*-1)-1, y, FF_DT) && !place_meeting(x+(abs(global.vel)*-1)-1, y, UpGrounderBroke) && !place_meeting(x+(abs(global.vel)*-1)-1, y, FinalGround) && !place_meeting(x+(abs(global.vel)*-1)-1, y, Solid)) && (canMove == true or (rolling == true && global.vel > 0))
+if (scr_input_dir_get("left","check") && !place_meeting(x+(abs(global.vel)*-1)-1, y, FF_DT) && !place_meeting(x+(abs(global.vel)*-1)-1, y, UpGrounderBroke) && !place_meeting(x+(abs(global.vel)*-1)-1, y, FinalGround) && !place_meeting(x+(abs(global.vel)*-1)-1, y, Solid)) && (canMove == true or (rolling == true && global.vel > 0))
 {
   global.vel -= acc * (1+ground);
 if global.vel > 0 && ground == false
@@ -73,7 +73,7 @@ if global.vel > 0 && ground == false
 
 if rolling == false image_xscale = -1;
 }
-if (keyboard_check(vk_right) && !place_meeting(x+abs(global.vel)+1, y, FF_DT) && !place_meeting(x+abs(global.vel)+1, y, UpGrounderBroke) && !place_meeting(x+abs(global.vel)+1, y, FinalGround) && !place_meeting(x+abs(global.vel)+1, y, Solid)) && (canMove == true or (rolling == true && global.vel < 0))
+if (scr_input_dir_get("right","check") && !place_meeting(x+abs(global.vel)+1, y, FF_DT) && !place_meeting(x+abs(global.vel)+1, y, UpGrounderBroke) && !place_meeting(x+abs(global.vel)+1, y, FinalGround) && !place_meeting(x+abs(global.vel)+1, y, Solid)) && (canMove == true or (rolling == true && global.vel < 0))
 {
   global.vel += acc * (1+ground);
 if global.vel < 0 && ground == false
@@ -212,7 +212,7 @@ if Bot = 3
 
 //Up
 
-if global.vel == 0 && ground == true && up == false && ducking == false && rolling == false && keyboard_check(vk_up)
+if global.vel == 0 && ground == true && up == false && ducking == false && rolling == false && scr_input_dir_get("up","check")
 {
    up = true;
    image_index = 0;
@@ -222,27 +222,27 @@ if global.vel == 0 && ground == true && up == false && ducking == false && rolli
 //Ducking
 if Bot != 7 && Bot = 3
 {
-    if global.vel == 0 && ground == true && up == false && ducking == false && rolling == false && keyboard_check(vk_down)
+    if global.vel == 0 && ground == true && up == false && ducking == false && rolling == false && scr_input_dir_get("down","check")
     {
        ducking = true;
        image_index = 0;
     }
 //Rolling
 
-else if global.vel != 0 && ground == true && up == false && ducking == false && rolling == false && keyboard_check(vk_down) && canHit = true
+else if global.vel != 0 && ground == true && up == false && ducking == false && rolling == false && scr_input_dir_get("down","check") && canHit = true
 {
    rolling = true;
    sound_play(global.S_Rolling)
 }
 
-if up == true && (!keyboard_check(vk_up) or ground == false)
+if up == true && (!scr_input_dir_get("up","check") or ground == false)
 {
    ducking = false;
    up = false;
    canMove = true;
 }
 
-if ducking == true && (!keyboard_check(vk_down) or ground == false)
+if ducking == true && (!scr_input_dir_get("down","check") or ground == false)
 {
    ducking = false;
    up = false;
@@ -322,7 +322,7 @@ if ground == true && ducking == true && scr_input_get("jump","pressed") && canHi
 
 spindashTimer = spindashTimer - ((spindashTimer div 0.125 )/ 256);
 
-if ground == true && spindash == true && keyboard_check_released(vk_down)
+if ground == true && spindash == true && scr_input_dir_get("down","released")
 {
     rolling = true;
     sound_play_ex(global.S_SpinLetGo,2)

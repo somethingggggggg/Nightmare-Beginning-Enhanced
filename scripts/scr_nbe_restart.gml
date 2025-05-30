@@ -13,6 +13,8 @@ with all
 {
     if object_index != Sounder instance_destroy()
 }
+ds_map_destroy(global.joy_button_binds)
+ds_map_destroy(global.key_button_binds)
 font_delete(global.SPRSONFONT)
 font_delete(global.SMALLSONFONT)
 font_delete(global.DESKFONT)

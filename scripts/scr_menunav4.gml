@@ -1,10 +1,10 @@
-if (keyboard_check_pressed(vk_up) - keyboard_check_pressed(vk_down)) != 0
+if (scr_input_dir_get("up","pressed") - scr_input_dir_get("down","pressed")) != 0
 {
-    global.option -= (keyboard_check_pressed(vk_up) - keyboard_check_pressed(vk_down))
+    global.option -= (scr_input_dir_get("up","pressed") - scr_input_dir_get("down","pressed"))
     sound_play(global.S_MS_Move)
     global.option = (global.option+ds_list_size(global.mod_list)+1) mod (ds_list_size(global.mod_list)+1)
 }
-if keyboard_check_pressed(vk_enter)
+if scr_input_get("enter","pressed")
 {
     if global.option = 0
     {

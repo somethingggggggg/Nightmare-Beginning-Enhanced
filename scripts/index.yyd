@@ -23,7 +23,7 @@ scr_menunav2
 scr_menudraw1
 scr_menudraw2
 scr_pausedraw
-scr_pausenav
+
 scr_dialget
 
 
@@ -76,3 +76,4 @@ scr_gameload
 instance_create_mod
 scr_input_get
 scr_input_dir_get
+scr_input_pause
