@@ -18,10 +18,10 @@
 	|playerGetHit
 +shaders
 	|bnw
-	|script38
+	|idk
 	|shd_blur
 	|psGrayscale
-	|script68
+	|debugcol
 +NBE specific
 	|scr_gameload
 	|scr_gamesave
@@ -68,3 +68,5 @@
 |scr_input_get
 |scr_input_pause
 |scr_input_dir_get
+|scr_joy_rumble
+|scr_save_binds

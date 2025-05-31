@@ -130,6 +130,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+if instance_exists(obj_joy_mapper) exit;
 switch global.menustate
 {
     case 0: scr_menunav1() break;

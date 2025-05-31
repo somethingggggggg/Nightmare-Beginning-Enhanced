@@ -7,6 +7,7 @@ applies_to=self
 if LIVE_ENABLED live_init()
 
 buffer = 0
+global.joy_rumble = 0
 
 global.dpad_pressed[0] = 0
 global.dpad_pressed[1] = 0
@@ -37,21 +38,26 @@ ds_map_add(global.key_button_binds,"shield",ord("S"))
 ds_map_add(global.key_button_binds,"enter",vk_enter)
 ds_map_add(global.key_button_binds,"esc",vk_escape)
 ds_map_add(global.key_button_binds,"charswitchforw",vk_space)
+ds_map_add(global.key_button_binds,"charswitchback",-4)
+ds_map_add(global.key_button_binds,"bomb",ord("Q"))
 
 ds_map_add(global.key_button_binds,"left",vk_left)
 ds_map_add(global.key_button_binds,"right",vk_right)
 ds_map_add(global.key_button_binds,"up",vk_up)
 ds_map_add(global.key_button_binds,"down",vk_down)
 
-ds_map_add(global.joy_button_binds,"jump",0)
-ds_map_add(global.joy_button_binds,"spin",1)
-ds_map_add(global.joy_button_binds,"flightcancel",2)
-ds_map_add(global.joy_button_binds,"punch",2)
-ds_map_add(global.joy_button_binds,"shield",2)
-ds_map_add(global.joy_button_binds,"enter",0)
-ds_map_add(global.joy_button_binds,"esc",7)
-ds_map_add(global.joy_button_binds,"charswitchforw",5)
-ds_map_add(global.joy_button_binds,"charswitchback",4)
+ini_open("binds.ini")
+ds_map_add(global.joy_button_binds,"jump",ini_read_real("joy","jump",0))
+ds_map_add(global.joy_button_binds,"spin",ini_read_real("joy","spin",1))
+ds_map_add(global.joy_button_binds,"flightcancel",ini_read_real("joy","flightcancel",2))
+ds_map_add(global.joy_button_binds,"punch",ini_read_real("joy","punch",2))
+ds_map_add(global.joy_button_binds,"shield",ini_read_real("joy","shield",2))
+ds_map_add(global.joy_button_binds,"enter",ini_read_real("joy","enter",0))
+ds_map_add(global.joy_button_binds,"esc",ini_read_real("joy","esc",7))
+ds_map_add(global.joy_button_binds,"charswitchforw",ini_read_real("joy","charswitchforw",5))
+ds_map_add(global.joy_button_binds,"charswitchback",ini_read_real("joy","charswitchback",4))
+ds_map_add(global.joy_button_binds,"bomb",ini_read_real("joy","bomb",1))
+ini_close()
 
 global.mod_list = ds_list_create()
 global.mod_objects = ds_map_create()
@@ -79,7 +85,7 @@ prev_win_y = display_get_height()/2 - prev_win_h_size/2
 HorizScroll = 0
 refresh = 0
 global.pshader = psGrayscale()
-global.sukaShad = script68()
+global.sukaShad = debugcol()
 time = 0
 i = 0
 repeat(8)
@@ -144,6 +150,7 @@ optionVarName[2,1] = "Eggmovement"
 optionVarName[3,1] = "DropDashEnabled"
 optionVarName[4,1] = "FlightCancelType"
 optionVarName[5,1] = "EggLvl"
+//optionVarName[6,1] = "FlightReactivation"
 
 optionVarName[0,2] = "fourbythree"
 optionVarName[1,2] = "dialoguefont"
@@ -168,6 +175,7 @@ optionblocked[2,1] = 0
 optionblocked[3,1] = 0
 optionblocked[4,1] = 0
 optionblocked[5,1] = 0
+optionblocked[6,1] = 0
 
 optionblocked[0,2] = 0
 optionblocked[1,2] = 0
@@ -643,6 +651,7 @@ if room != 0
         scr_fourbythreer()
     }
 }
+
 if window_get_fullscreen() = 1
 {
     //full hd lag
@@ -818,7 +827,7 @@ if room != 0
             sprpausefuck = sprite_create_from_screen(0,0,view_wport[view_current],view_wport[view_current],0,0,0,0)
             instance_deactivate_all(1)
             //thanks gm82
-            instance_activate_object(__newobject766)
+            instance_activate_object(gm82core_object)
             prev_view_hview = view_hview[view_current]
             prev_view_wview = view_wview[view_current]
             view_wview[view_current] = 462

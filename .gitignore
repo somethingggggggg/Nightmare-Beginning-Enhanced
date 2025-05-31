@@ -1,5 +1,4 @@
-options.ini
-save.ini
+*.ini
 game_errors.log
 save2
 save3

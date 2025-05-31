@@ -227,6 +227,40 @@ if Punch = true
 
 
 //Change
+fuck = (scr_input_get("charswitchforw","pressed") - scr_input_get("charswitchback","pressed"))
+if fuck != 0 && TAB.Turn = true
+{
+    arr[0,0] = AI1
+    arr[1,0] = AI3
+    arr[0,1] = Pers1
+    arr[1,1] = Pers3
+    suka = clamp(fuck,0,1)
+    if instance_exists(arr[suka,0])
+    {
+        TAB.Turn = false
+        TAB.alarm[0] = 10
+        sound_play(global.S_TAB)
+        instance_change(AI2,1)
+        with arr[suka,0]
+        {
+            instance_change(other.arr[other.suka,1],1)
+            view_object[0] = other.arr[other.suka,1]
+        }
+    }
+    else if instance_exists(arr[!suka,0])
+    {
+        TAB.Turn = false
+        TAB.alarm[0] = 10
+        sound_play(global.S_TAB)
+        instance_change(AI2,1)
+        with arr[!suka,0]
+        {
+            instance_change(other.arr[!other.suka,1],1)
+            view_object[0] = other.arr[!other.suka,1]
+        }
+    }
+}
+/*
 if instance_exists(AI3) && keyboard_check_pressed(vk_space) && TAB.Turn = true
 {
     TAB.Turn = false
@@ -255,7 +289,7 @@ if !instance_exists(AI3) && keyboard_check_pressed(vk_space) && TAB.Turn = true
         view_object[0] = Pers1
     }
 }
-
+*/
 //TAB.Twister
 if TAB.Twister_mode = false && Act = 1 && scr_input_get("spin","pressed") && up == false && ducking == false && Punch = 0
 {

@@ -77,15 +77,14 @@ x += vel;
 //Gravity
 if place_meeting(x, y+vspeed+1, FF_Ground) && vspeed >= 0
 {
-   ground = true;
-   gravity = 0;
-if vspeed > 8
-   vspeed = 8;
+    ground = true;
+    gravity = 0;
+    if vspeed > 8 vspeed = 8;
 }
 else
 {
-  ground = false;
-   gravity = 0.25;
+    ground = false;
+    gravity = 0.25;
 }
 
 //Handle sprites
@@ -181,6 +180,40 @@ else
 }
 
 //Change
+fuck = (scr_input_get("charswitchforw","pressed") - scr_input_get("charswitchback","pressed"))
+if fuck != 0 && TAB.Turn = true
+{
+    arr[0,0] = AI3
+    arr[1,0] = AI2
+    arr[0,1] = Pers3
+    arr[1,1] = Pers2
+    suka = clamp(fuck,0,1)
+    if instance_exists(arr[suka,0])
+    {
+        TAB.Turn = false
+        TAB.alarm[0] = 10
+        sound_play(global.S_TAB)
+        instance_change(AI1,1)
+        with arr[suka,0]
+        {
+            instance_change(other.arr[other.suka,1],1)
+            view_object[0] = other.arr[other.suka,1]
+        }
+    }
+    else if instance_exists(arr[!suka,0])
+    {
+        TAB.Turn = false
+        TAB.alarm[0] = 10
+        sound_play(global.S_TAB)
+        instance_change(AI1,1)
+        with arr[!suka,0]
+        {
+            instance_change(other.arr[!other.suka,1],1)
+            view_object[0] = other.arr[!other.suka,1]
+        }
+    }
+}
+/*
 if instance_exists(AI2) && keyboard_check_pressed(vk_space) && TAB.Turn = true
 {
     TAB.Turn = false
@@ -209,6 +242,7 @@ if !instance_exists(AI2) && keyboard_check_pressed(vk_space) && TAB.Turn = true
     }
     view_object[0] = Pers3
 }
+*/
 
 //Smash Dash
 if sprite_index = sprTailsJump && ground = false && scr_input_get("jump","pressed") && SmashDash = false

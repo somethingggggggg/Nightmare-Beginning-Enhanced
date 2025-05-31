@@ -11,10 +11,16 @@ with speedor instance_destroy()
 
 with all
 {
-    if object_index != Sounder instance_destroy()
+    if object_index != Sounder && object_index != gm82core_object instance_destroy()
 }
 ds_map_destroy(global.joy_button_binds)
 ds_map_destroy(global.key_button_binds)
+i = 0
+repeat(ds_list_size(global.mod_objects))
+{
+    object_delete(ds_list_find_value(global.mod_objects,i))
+    i += 1
+}
 font_delete(global.SPRSONFONT)
 font_delete(global.SMALLSONFONT)
 font_delete(global.DESKFONT)

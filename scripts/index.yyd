@@ -36,7 +36,7 @@ scr_pausenav2
 scr_pausedraw2
 bnw
 
-script38
+idk
 scr_soundfuck
 scr_soundunfuck
 scr_voicethefucker
@@ -66,7 +66,7 @@ live_update
 live_never
 live_call
 live_call_ext
-script68
+debugcol
 scr_add_sound_nbe
 scr_check_killstate
 scr_check_killstate_ext
@@ -77,3 +77,6 @@ instance_create_mod
 scr_input_get
 scr_input_dir_get
 scr_input_pause
+scr_joy_rumble
+scr_save_binds
+

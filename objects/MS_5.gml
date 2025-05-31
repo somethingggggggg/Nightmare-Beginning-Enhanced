@@ -23,6 +23,18 @@ applies_to=self
 */
 image_alpha = 1
 alarm[0] = 5
+#define Step_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+ass = scr_input_dir_get("right","pressed") - scr_input_dir_get("left","pressed")
+if ass != 0
+{
+    mp_linear_step_object(x+(10000*ass),y, 112,Solid)
+    sound_play(global.S_MS_Move)
+}
 #define Collision_MS_1
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -80,19 +92,3 @@ else if instance_exists(EPassed) && scr_input_get("enter","pressed")
 {
     sound_play(global.S_Locked)
 }
-#define KeyPress_37
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-mp_linear_step_object(x-10000,y, 112,Solid)
-sound_play(global.S_MS_Move)
-#define KeyPress_39
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-mp_linear_step_object(x+10000,y, 112,Solid)
-sound_play(global.S_MS_Move)

@@ -8,7 +8,17 @@ if instance_exists(TPassed) && instance_exists(KPassed) && instance_exists(EPass
 {
 alarm[0] = 300
 }
-
+suka = 192
+if instance_exists(TPassed)
+{
+    suka += 112
+    if instance_exists(KPassed)
+    {
+        suka += 112
+    }
+}
+instance_create(suka,256,MS_5)
+/*
 if !instance_exists(TPassed) && instance_exists(KPassed) && instance_exists(EPassed)
 {
 instance_create(192,256,MS_5)
@@ -43,6 +53,7 @@ if !instance_exists(TPassed) && instance_exists(KPassed) && !instance_exists(EPa
 {
 instance_create(192,256,MS_5)
 }
+*/
 if instance_exists(TPassed) && instance_exists(GoI)
 {
 instance_create(192,272,MS_6)

@@ -168,6 +168,7 @@ if !scr_input_get("shield","check")
 }
 
 //Change
+/*
 if instance_exists(AI1) && keyboard_check_pressed(vk_space) && TAB.Turn = true
 {
     sound_stop(global.S_EGG_Shield)
@@ -205,6 +206,46 @@ if !instance_exists(AI1) && keyboard_check_pressed(vk_space) && TAB.Turn = true
         }
         view_object[0] = Pers2
     }
+}
+*/
+fuck = (scr_input_get("charswitchforw","pressed") - scr_input_get("charswitchback","pressed"))
+if fuck != 0 && TAB.Turn = true
+{
+    arr[0,0] = AI2
+    arr[1,0] = AI1
+    arr[0,1] = Pers2
+    arr[1,1] = Pers1
+    suka = clamp(fuck,0,1)
+    if instance_exists(arr[suka,0])
+    {
+        TAB.Turn = false
+        TAB.alarm[0] = 10
+        sound_play(global.S_TAB)
+        instance_change(AI3,1)
+        with arr[suka,0]
+        {
+            instance_change(other.arr[other.suka,1],1)
+            view_object[0] = other.arr[other.suka,1]
+        }
+    }
+    else if instance_exists(arr[!suka,0])
+    {
+        TAB.Turn = false
+        TAB.alarm[0] = 10
+        sound_play(global.S_TAB)
+        instance_change(AI3,1)
+        with arr[!suka,0]
+        {
+            instance_change(other.arr[!other.suka,1],1)
+            view_object[0] = other.arr[!other.suka,1]
+        }
+    }
+}
+if TAB.EggBombTime = false && scr_input_get("bomb","pressed")
+{
+    TAB.EggBombTime = true
+    instance_create(x,y,EggBomb)
+    EggBomb.hspeed = 1.5 * image_xscale
 }
 
 if BL.FF_T + BL.FF_K < 1
@@ -298,9 +339,3 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if TAB.EggBombTime = false
-{
-    TAB.EggBombTime = true
-    instance_create(x,y,EggBomb)
-    EggBomb.hspeed = 1.5 * image_xscale
-}
