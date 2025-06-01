@@ -6,6 +6,7 @@ applies_to=self
 */
 background_alpha[1] = 0
 background_alpha[2] = 0
+
 credArr[0] = "HELL'S ENCYCLOPEDIA#PROGRAMMER"
 credArr[1] = "NICK ZACH#SPRITER"
 credArr[2] = "DANIK#SPRITE HELP"
@@ -66,6 +67,7 @@ optionVarName[3,0] = "performance"
 optionVarName[4,0] = "OrigCutscene"
 optionVarName[5,0] = "DCRP_enabled"
 optionVarName[6,0] = "vidCutscn"
+optionVarName[7,0] = -1
 
 optionVarName[0,1] = "cheats"
 optionVarName[1,1] = "newcontent"
@@ -93,6 +95,7 @@ optionblocked[3,0] = 0
 optionblocked[4,0] = 0
 optionblocked[5,0] = 0
 optionblocked[6,0] = 0
+optionblocked[7,0] = 0
 
 if global.complete = 1 optionblocked[0,1] = 0
 else optionblocked[0,1] = 1
@@ -116,7 +119,7 @@ optionblocked[1,4] = 0
 
 scr_lang_menu_init(global.lang)
 
-menulength[0] = 7
+menulength[0] = 8
 menulength[1] = 6
 menulength[2] = 5
 menulength[3] = 2
@@ -179,6 +182,7 @@ switch global.menustate
     case 1:
         ass += 0.05
         draw_sprite_tiled_ext(spr_NBRsomething,0,0,-120+scrollcounter,1,1,c_white,ass)
+        //if (live_call(scr_menudraw2)) return live_result;
         scr_menudraw2()
     break;
     case 2:

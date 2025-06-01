@@ -15,26 +15,28 @@ while i < menulength[global.suboption]
 {
     if global.option-2 = i draw_set_color(c_yellow)
     else draw_set_color(c_white)
-
     if /*global.complete = 0 && i = 2 or*/ optionblocked[i,global.suboption] = 1 draw_set_color(c_gray)
     if string_width(optionname[i,global.suboption]) > 148/*112*/ draw_text_ext_transformed(32+view_xview[view_current]+HorizScroll,55+view_yview[view_current]+scroll+(i*10+28),optionname[i,global.suboption],0,1000,148/string_width(optionname[i,global.suboption]),1,0)
     else draw_text(32+view_xview[view_current]+HorizScroll,55+view_yview[view_current]+scroll+(i*10+28),optionname[i,global.suboption])
     draw_set_halign(fa_right)
-    if optionVarName[i,global.suboption] != "voicedir"
+    if is_string(optionVarName[i,global.suboption])
     {
-        if string_width(variable_local_array2_get("optionstate"+string(global.suboption+1),i,variable_global_get(optionVarName[i,global.suboption]))) > 80/*64*/ draw_text_ext_transformed(234+view_xview[view_current]+HorizScroll,55+view_yview[view_current]+scroll+(i*10+28),variable_local_array2_get("optionstate"+string(global.suboption+1),i,variable_global_get(optionVarName[i,global.suboption])),0,1000,80/string_width(variable_local_array2_get("optionstate"+string(global.suboption+1),i,variable_global_get(optionVarName[i,global.suboption]))),1,0)
-        else draw_text(234+view_xview[view_current]+HorizScroll,55+view_yview[view_current]+scroll+(i*10+28),variable_local_array2_get("optionstate"+string(global.suboption+1),i,variable_global_get(optionVarName[i,global.suboption])))
-    }
-    else
-    {
-        if ds_list_find_value(global.voicelist,global.voicedir) != ''
+        if optionVarName[i,global.suboption] != "voicedir"
         {
-            if string_width(string_copy_end(ds_list_find_value(global.voicelist,global.voicedir),string_length(ds_list_find_value(global.voicelist,global.voicedir))-6)) < 64 draw_text(234+view_xview[view_current]+HorizScroll,55+view_yview[view_current]+scroll+(i*10+28),string_copy_end(ds_list_find_value(global.voicelist,global.voicedir),string_length(ds_list_find_value(global.voicelist,global.voicedir))-6))
-            else draw_text_ext_transformed(234+view_xview[view_current]+HorizScroll,55+view_yview[view_current]+scroll+(i*10+28),string_copy_end(ds_list_find_value(global.voicelist,global.voicedir),string_length(ds_list_find_value(global.voicelist,global.voicedir))-6),0,1000,64/string_width(string_copy_end(ds_list_find_value(global.voicelist,global.voicedir),string_length(ds_list_find_value(global.voicelist,global.voicedir))-6)),1,0)
+            if string_width(variable_local_array2_get("optionstate"+string(global.suboption+1),i,variable_global_get(optionVarName[i,global.suboption]))) > 80/*64*/ draw_text_ext_transformed(234+view_xview[view_current]+HorizScroll,55+view_yview[view_current]+scroll+(i*10+28),variable_local_array2_get("optionstate"+string(global.suboption+1),i,variable_global_get(optionVarName[i,global.suboption])),0,1000,80/string_width(variable_local_array2_get("optionstate"+string(global.suboption+1),i,variable_global_get(optionVarName[i,global.suboption]))),1,0)
+            else draw_text(234+view_xview[view_current]+HorizScroll,55+view_yview[view_current]+scroll+(i*10+28),variable_local_array2_get("optionstate"+string(global.suboption+1),i,variable_global_get(optionVarName[i,global.suboption])))
         }
         else
         {
-            draw_text(234+view_xview[view_current]+HorizScroll,55+view_yview[view_current]+scroll+(i*10+28),'off')
+            if ds_list_find_value(global.voicelist,global.voicedir) != ''
+            {
+                if string_width(string_copy_end(ds_list_find_value(global.voicelist,global.voicedir),string_length(ds_list_find_value(global.voicelist,global.voicedir))-6)) < 64 draw_text(234+view_xview[view_current]+HorizScroll,55+view_yview[view_current]+scroll+(i*10+28),string_copy_end(ds_list_find_value(global.voicelist,global.voicedir),string_length(ds_list_find_value(global.voicelist,global.voicedir))-6))
+                else draw_text_ext_transformed(234+view_xview[view_current]+HorizScroll,55+view_yview[view_current]+scroll+(i*10+28),string_copy_end(ds_list_find_value(global.voicelist,global.voicedir),string_length(ds_list_find_value(global.voicelist,global.voicedir))-6),0,1000,64/string_width(string_copy_end(ds_list_find_value(global.voicelist,global.voicedir),string_length(ds_list_find_value(global.voicelist,global.voicedir))-6)),1,0)
+            }
+            else
+            {
+                draw_text(234+view_xview[view_current]+HorizScroll,55+view_yview[view_current]+scroll+(i*10+28),'off')
+            }
         }
     }
     draw_set_halign(fa_left)
@@ -51,6 +53,7 @@ if global.option > 1
 }
 draw_set_halign(fa_left)
 draw_set_font(global.SPRSONFONT)
+
 if global.option > 1
 {
     switch optionVarName[global.option-2,global.suboption]
@@ -132,12 +135,14 @@ if global.option > 1
         {
             draw_set_font(global.SPRSONFONT)
             draw_set_halign(fa_middle)
-            draw_text(346+view_xview[view_current],95+view_yview[view_current]-8,'good luck')
+            draw_text(346+view_xview[view_current],95+view_yview[view_current]-8,"good luck")
             draw_set_halign(fa_left)
         }
         draw_set_font(global.dialoguefont)
         break;
         case "subcnoise":
+        draw_set_color(c_white)
+        draw_set_alpha(1)
         draw_rectangle_color(346+view_xview[view_current]-96+4,95+view_yview[view_current]-64+4,346+view_xview[view_current]+96-4,95+view_yview[view_current]+64-4,$000000,$000000,$000000,$000000,0)
         draw_sprite(sprSlaveSonicWalk,image_index,346+view_xview[view_current],95+view_yview[view_current])
         if global.subcnoise = 1

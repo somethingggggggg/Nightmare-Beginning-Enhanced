@@ -2,4 +2,4 @@ joy_left=3
 joy_down=2
 joy_right=1
 joy_up=0
-LIVE_ENABLED=0
+LIVE_ENABLED=1

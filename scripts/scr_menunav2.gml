@@ -52,6 +52,10 @@ if scr_input_get("enter","pressed")
         global.option = 0
         global.menustate = 0
     }
+    if global.suboption = 0 && global.option == 9
+    {
+        instance_create(0,0,obj_joy_mapper)
+    }
     if global.suboption = 4
     {
         if global.option = 2
@@ -84,7 +88,7 @@ if ButtonPressedLeftOrRight != 0 && global.option != 0
     }
     else if global.suboption != 4
     {
-        if optionblocked[global.option-2,global.suboption] != 1
+        if optionblocked[global.option-2,global.suboption] != 1 && is_string(optionname[global.option-2,global.suboption])
         {
             sound_play(global.S_WellRing)
             if global.option != 0 && !(global.option = 2 && global.suboption = 0) && !(global.option = 1+2 && global.suboption = 2) && !(global.option = 0+2 && global.suboption = 2) && !(global.option = 1+2 && global.suboption = 0)

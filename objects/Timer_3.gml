@@ -41,6 +41,6 @@ if instance_exists(TailsIcon)
 }
 else
 {
-room_goto(7)
-instance_deactivate_object(TailsIcon)
+    room_goto(7)
+    instance_deactivate_object(TailsIcon)
 }

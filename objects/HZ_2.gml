@@ -6,12 +6,12 @@ applies_to=self
 */
 if instance_exists(KPassed) or instance_exists(EPassed)
 {
-sprite_index = sprHZ_2_EveningNew
+    sprite_index = sprHZ_2_EveningNew
 }
 
 if instance_exists(KPassed) && instance_exists(EPassed)
 {
-sprite_index = sprHZ_2_Night
+    sprite_index = sprHZ_2_Night
 }
 scrollX = x
 image_speed = 0.15

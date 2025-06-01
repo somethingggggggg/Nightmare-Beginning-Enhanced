@@ -161,8 +161,8 @@ applies_to=self
 */
 if scr_input_get("enter","pressed")
 {
-instance_create(0,0,Timer_2)
-instance_destroy()
+    instance_create(0,0,Timer_2)
+    instance_destroy()
 }
 #define Collision_KnucklesSELECTOR
 /*"/*'/**//* YYD ACTION
@@ -172,8 +172,8 @@ applies_to=self
 */
 if scr_input_get("enter","pressed")
 {
-instance_create(0,0,Timer_7)
-instance_destroy()
+    instance_create(0,0,Timer_7)
+    instance_destroy()
 }
 #define Collision_EggmanSELECTOR
 /*"/*'/**//* YYD ACTION
@@ -183,8 +183,8 @@ applies_to=self
 */
 if scr_input_get("enter","pressed")
 {
-instance_create(0,0,Timer_12)
-instance_destroy()
+    instance_create(0,0,Timer_12)
+    instance_destroy()
 }
 #define Collision_FFSELECTOR
 /*"/*'/**//* YYD ACTION

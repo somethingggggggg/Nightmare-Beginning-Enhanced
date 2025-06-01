@@ -5,7 +5,6 @@ action_id=603
 applies_to=self
 */
 if LIVE_ENABLED live_init()
-
 buffer = 0
 global.joy_rumble = 0
 
@@ -491,7 +490,6 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-
 if !joy_pause_fuck && joystick_check_button(0,7) global.joy_pause = 1
 else global.joy_pause = 0
 joy_pause_fuck = joystick_check_button(0,7)

@@ -6,6 +6,7 @@ repeat(8)
     view_hport[i] = display_get_height()
     i += 1
 }
+global.lvl_sel_room = -1
 global.TLive = 1
 global.ELive = 1
 global.KLive = 1

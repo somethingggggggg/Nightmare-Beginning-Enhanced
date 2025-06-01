@@ -6,6 +6,8 @@ applies_to=self
 */
 temp = ds_map_create()
 suka = ds_map_find_first(global.joy_button_binds)
+start = 0
+alarm[0] = 1
 #define Destroy_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -16,12 +18,20 @@ ds_map_empty(global.joy_button_binds)
 ds_map_copy(global.joy_button_binds,temp)
 ds_map_destroy(temp)
 scr_save_binds()
+#define Alarm_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+start = 1
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
+if !start exit;
 
 if !is_string(suka) instance_destroy()
 for(i = 0;i < 33;i += 1)
@@ -39,6 +49,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+if !start exit;
 draw_set_color(c_black)
 draw_rectangle(0,0,room_width,room_height,0)
 draw_set_color(c_white)

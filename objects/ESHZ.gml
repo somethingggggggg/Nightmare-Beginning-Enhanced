@@ -11,5 +11,5 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if room = 57 draw_sprite_tiled(sprHZ_2_EveningNew,image_index,0,141)
+if room = 57 draw_sprite_tiled(sprHZ_2_EveningNew,image_index,0,0)
 else draw_self()

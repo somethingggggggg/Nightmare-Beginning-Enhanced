@@ -16,6 +16,7 @@ switch argument0
         optionname[4,0] = "Unused FF Cutscene"
         optionname[5,0] = "Enable DCRP"
         optionname[6,0] = "Uprising cutscene"
+        optionname[7,0] = "Remap Controller"
 
         optionname[0,1] = "Cheats"
         optionname[1,1] = "New content"
@@ -43,6 +44,7 @@ switch argument0
         optiondesc[4,0] = "Unused FF Cutscene"
         optiondesc[5,0] = "Shows to other people that you are playing NBE"
         optiondesc[6,0] = "Replaces the in-game rise cutscene with the new Uprising cutscene"
+        optiondesc[7,0] = ""
 
         optiondesc[0,1] = "Enable debug mode and some cheats accecible with the numpad (enable numlock on your keyboard)"
         optiondesc[1,1] = "Toggle new content on or off"
@@ -76,11 +78,14 @@ switch argument0
         optionstate1[4,0] = "off"
         optionstate1[4,1] = "on"
 
-        optionstate1[5,0] = "Original"
-        optionstate1[5,1] = "Update"
+        optionstate1[5,0] = "off"
+        optionstate1[5,1] = "on"
 
         optionstate1[6,0] = "off"
         optionstate1[6,1] = "on"
+
+        optionstate1[7,0] = ""
+        optionstate1[7,1] = ""
 
         optionstate2[0,0] = "off"
         optionstate2[0,1] = "on"
@@ -97,8 +102,8 @@ switch argument0
         optionstate2[4,0] = "NBE"
         optionstate2[4,1] = "Update"
 
-        optionstate2[5,0] = "off"
-        optionstate2[5,1] = "on"
+        optionstate2[5,0] = "Original"
+        optionstate2[5,1] = "Update"
 
         optionstate3[0,0] = "off"
         optionstate3[0,1] = "Stretch"

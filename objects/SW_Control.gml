@@ -701,17 +701,15 @@ draw_text_ext_color(view_xview[0]+100, view_yview[0], "Я приказал ба�
 
 if Page = 32
 {
-draw_sprite(sprSW_Eggman,1,view_xview[0],view_yview[0])
-
-draw_text_ext_color(view_xview[0]+100, view_yview[0], "Как оказалось, я был прав.",16,view_wview[0]-100,$00ffff,$00ffff,$00ffff,$005555,1)
+    draw_sprite(sprSW_Eggman,1,view_xview[0],view_yview[0])
+    draw_text_ext_color(view_xview[0]+100, view_yview[0], "Как оказалось, я был прав.",16,view_wview[0]-100,$00ffff,$00ffff,$00ffff,$005555,1)
 }
 
 if Page = 33
 {
-CutTails.image_xscale = -1
-draw_sprite(sprSW_KnucklesWarn,1,view_xview[0],view_yview[0])
-
-draw_text_ext_color(view_xview[0]+100, view_yview[0], "Похоже, теперь синий может управлять чужим сознанием! Было ощущение, что он хотел заставить меня сойти с ума!",16,view_wview[0]-100,$00ffff,$00ffff,$00ffff,$005555,1)
+    CutTails.image_xscale = -1
+    draw_sprite(sprSW_KnucklesWarn,1,view_xview[0],view_yview[0])
+    draw_text_ext_color(view_xview[0]+100, view_yview[0], "Похоже, теперь синий может управлять чужим сознанием! Было ощущение, что он хотел заставить меня сойти с ума!",16,view_wview[0]-100,$00ffff,$00ffff,$00ffff,$005555,1)
 }
 
 if Page = 34
