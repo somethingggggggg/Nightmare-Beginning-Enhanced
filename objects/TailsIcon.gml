@@ -8,6 +8,12 @@ image_speed = 0
 anim = 0
 mycolor = 0
 ass = -1
+lvl[0] = 7
+lvl[1] = 10
+lvl[2] = 52
+lvl[3] = 21
+lvl[4] = 42
+lvl_picked = 0
 #define Destroy_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -26,7 +32,7 @@ if place_meeting(x,y,MS_Select)
     uod = scr_input_dir_get("down","pressed") - scr_input_dir_get("up","pressed")
     if uod != 0
     {
-        image_index = clamp(image_index+uod,0,image_number-1)
+        lvl_picked = clamp(lvl_picked+uod,0,image_number-1)
         sound_play(global.S_MS_Move)
     }
     anim += 0.5

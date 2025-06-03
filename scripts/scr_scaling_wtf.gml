@@ -18,7 +18,7 @@ if global.performance = 1
 }
 else
 {
-    if window_get_fullscreen() = 1
+    if window_get_fullscreen()
     {
         //window_set_region_size(dgw,dgh,0)
         window_set_region_size(view_wview[view_current],view_hview[view_current],0)

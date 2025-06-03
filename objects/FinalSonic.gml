@@ -5,6 +5,7 @@ action_id=603
 applies_to=self
 */
 acc = 0.08
+prev_dropdash = 0
 global.vel = 0;
 maxSpeed = 8;
 maxSpeed2 = 12;
@@ -51,11 +52,9 @@ if Bot = 3
 {
     if (scr_input_dir_get("left","check") && !place_meeting(x+(abs(global.vel)*-1)-1, y, Solid_Mask) && !place_meeting(x+(abs(global.vel)*-1)-1, y, EggElevator) && !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapWallDestruct) && !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapWall) && !place_meeting(x+(abs(global.vel)*-1)-1, y, ScrapGround) && !place_meeting(x+(abs(global.vel)*-1)-1, y, FinalGroundDown) && !place_meeting(x+(abs(global.vel)*-1)-1, y, FinalGround2) && !place_meeting(x+(abs(global.vel)*-1)-1, y, UpGrounder) && !place_meeting(x+(abs(global.vel)*-1)-1, y, UpGrounderBroke) && !place_meeting(x+(abs(global.vel)*-1)-1, y, FinalGround) && !place_meeting(x+(abs(global.vel)*-1)-1, y, Solid)) && (canMove == true or (rolling == true && global.vel > 0))
     {
-      global.vel -= acc * (1+ground);
-    if global.vel > 0 && ground == false
-      global.vel -= acc
-
-    if rolling == false image_xscale = -1;
+        global.vel -= acc * (1+ground);
+        if global.vel > 0 && ground == false global.vel -= acc
+        if rolling == false image_xscale = -1;
     }
     if (scr_input_dir_get("right","check") && !place_meeting(x+abs(global.vel)+1, y, Solid_Mask) && !place_meeting(x+abs(global.vel)+1, y, EggElevator) && !place_meeting(x+abs(global.vel)+1, y, ScrapWallDestruct) && !place_meeting(x+abs(global.vel)+1, y, ScrapWall) && !place_meeting(x+abs(global.vel)+1, y, ScrapGround) && !place_meeting(x+abs(global.vel)+1, y, FinalGroundDown) && !place_meeting(x+abs(global.vel)+1, y, FinalGround2) && !place_meeting(x+abs(global.vel)+1, y, UpGrounder) && !place_meeting(x+abs(global.vel)+1, y, UpGrounderBroke) && !place_meeting(x+abs(global.vel)+1, y, FinalGround) && !place_meeting(x+abs(global.vel)+1, y, Solid)) && (canMove == true or (rolling == true && global.vel < 0))
     {
@@ -142,12 +141,13 @@ if place_meeting(x, y+vspeed+1, Solid_Mask) or place_meeting(x, y+vspeed+1, Scra
 {
     if ground = 0
     {
-        rolling = 0
+        if !prev_dropdash rolling = 0
         if (scr_input_get("jump","check") && dropdash = 1 && global.DropDashEnabled = 1)
         {
             global.vel = (maxSpeed*image_xscale)
             sound_play_ex(global.S_SpinLetGo,2)
             rolling = 1
+            prev_dropdash = 5
             //mask_index = sprSonicMask
         }
     }
@@ -161,7 +161,7 @@ else
     ground = false;
     gravity = 0.25;
 }
-
+prev_dropdash = max(0,prev_dropdash-1)
 //Handle sprites
 if canSpriteChange == true
 {
@@ -294,7 +294,8 @@ if spindash = true && ground = false
 
 if dropdash = 1
 {
-    sprite_index = sprSonicDropDash
+    //sprite_index = sprSonicDropDash
+    sprite_index = sprSonicJump;
     mask_index = sprSonicMask
     if (scr_input_dir_get("right","check") - scr_input_dir_get("left","check")) != 0 image_xscale = scr_input_dir_get("right","check") - scr_input_dir_get("left","check")
 }
@@ -900,7 +901,9 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale, image_yscale, drawAngle, image_blend, image_alpha);
+// needed because jaiz checks for sprite_index
+if dropdash draw_sprite_ext(sprSonicDropDash, image_index, round(x), round(y), image_xscale, image_yscale, drawAngle, image_blend, image_alpha);
+else draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale, image_yscale, drawAngle, image_blend, image_alpha);
 //draw_text(x,y,jmpframes)
 //draw_text(x,y+20,spindashTimer)
 if instance_exists(Final_Time)

@@ -783,6 +783,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+///menu activation and collision drawing
 if show_collision
 {
     with all
@@ -973,35 +974,28 @@ draw_set_alpha(1)
 draw_set_color(c_white)
 if pause = 1 && room != 0
 {
-    if global.menustate = 1
-    {
-        draw_set_font(global.SMALLSONFONT)
-        //idk why adding half a pixel makes it look better but it does
-        if prevset[3,0] = 1 or global.performance = 1 draw_sprite_tiled(spr_NBRsomething,0,view_xview[view_current],view_yview[view_current]+(time/2))
-        else
-        {
-            draw_sprite_stretched(sprpausefuck,0,view_xview[view_current],view_yview[view_current],view_wview[view_current]+0.5,view_hview[view_current]+0.5)
-            draw_sprite(spranother,0,view_xview[view_current],view_yview[view_current])
-        }
-        scr_menudraw2()
-    }
+    draw_set_font(global.SMALLSONFONT)
+    //idk why adding half a pixel makes it look better but it does
+    if prevset[3,0] = 1 or global.performance = 1 draw_sprite_tiled(spr_NBRsomething,0,view_xview[view_current],view_yview[view_current]+(time/2))
     else
     {
-        scr_pausedraw2()
+        if prevset[0,2] = 2
+        {
+            draw_rect(view_xview[view_current],view_yview[view_current],view_wview[view_current],view_hview[view_current],c_black,1,0)
+            draw_sprite_stretched(sprpausefuck,0,view_xview[view_current]+(view_wview[view_current]/8),view_yview[view_current],view_wview[view_current]/4*3,view_hview[view_current]+0.5)
+        }
+        else draw_sprite_stretched(sprpausefuck,0,view_xview[view_current],view_yview[view_current],view_wview[view_current]+0.5,view_hview[view_current]+0.5)
+        draw_sprite(spranother,0,view_xview[view_current],view_yview[view_current])
     }
+    if global.menustate = 1 scr_menudraw2()
+    else scr_pausedraw2()
     //execute_file(working_directory+"/script.txt")
 }
 if global.showfps = 1
 {
     draw_set_font(global.SMALLSONFONT)
     if debug_mode = 1 draw_text(view_xview[view_current]+32,view_yview[view_current]+8,get_ram_usage())
-    //if fps > 40 draw_set_color(c_lime)
-    //else if fps > 20 draw_set_color(c_yellow)
-    //else draw_set_color(c_red)
-    //draw_text(view_xview[view_current]+8,view_yview[view_current]+8,fps)
     draw_text_color(view_xview[view_current]+8,view_yview[view_current]+8,fps,make_color_hsv_standard(fps*2,100,100),make_color_hsv_standard(fps*2,100,100),make_color_hsv_standard(fps*2,100,100),make_color_hsv_standard(fps*2,100,100),1)
-    //draw_text(view_xview+8,view_yview+16,d3d_get_free_video_memory())
-    //if room != 0 draw_text(view_xview,view_yview+32,variable_global_array_get(voiceline,108))
     draw_set_font(global.dialoguefont)
     draw_set_color(c_white)
 }

@@ -42,22 +42,28 @@
 		|scr_hackdialget
 		|scr_dialget
 		|scr_menuclose
+		|scr_saveoptions
+		|scr_lang_menu_init
 	+voice
 		|scr_voiceunload
 		|scr_voiceinit
 		|scr_voicethefucker
 	+mod
 		|instance_create_mod
+	+input system
+		|scr_input_get
+		|scr_input_pause
+		|scr_input_dir_get
+		|scr_joy_rumble
+		|scr_save_binds
 |scr_soundfuck
 |scr_soundunfuck
-|scr_saveoptions
 |scr_giveach
 |scr_skidscript
 |scr_skidcheck
 |scr_fourbythreer
 |scr_is_plus
 |scr_scaling_wtf
-|scr_lang_menu_init
 |scr_camera_follow
 |scr_is_even
 |scr_load_inis
@@ -65,8 +71,3 @@
 |scr_draw_sprite_tiled_area
 |scr_check_killstate
 |scr_check_killstate_ext
-|scr_input_get
-|scr_input_pause
-|scr_input_dir_get
-|scr_joy_rumble
-|scr_save_binds

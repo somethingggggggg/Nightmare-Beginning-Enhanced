@@ -218,6 +218,7 @@
 	|objDialHSTails
 	|obj_joy_mapper
 	|obj_sprite
+	|obj_lvl_sel_timer
 |AEC_Amy
 |AEC_Eggman
 |AEC_Knuckles
