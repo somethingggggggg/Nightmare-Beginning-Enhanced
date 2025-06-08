@@ -16,6 +16,7 @@ action_id=603
 applies_to=self
 */
 hspeed = image_xscale*1.2
+if global.hardmode == 1 hspeed = image_xscale * 1.6
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

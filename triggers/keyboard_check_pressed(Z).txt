@@ -1,2 +1,0 @@
-constant=keyboard_check_pressed
-kind=1

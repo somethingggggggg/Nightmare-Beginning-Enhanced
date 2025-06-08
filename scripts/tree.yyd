@@ -23,10 +23,14 @@
 	|psGrayscale
 	|debugcol
 +NBE specific
-	|scr_gameload
-	|scr_gamesave
-	|scr_nbe_restart
-	|scr_add_sound_nbe
+	+mod
+		|instance_create_mod
+	+input system
+		|scr_input_get
+		|scr_input_pause
+		|scr_input_dir_get
+		|scr_joy_rumble
+		|scr_save_binds
 	+Menus
 		|scr_menudraw1
 		|scr_menudraw2
@@ -48,14 +52,10 @@
 		|scr_voiceunload
 		|scr_voiceinit
 		|scr_voicethefucker
-	+mod
-		|instance_create_mod
-	+input system
-		|scr_input_get
-		|scr_input_pause
-		|scr_input_dir_get
-		|scr_joy_rumble
-		|scr_save_binds
+	|scr_add_sound_nbe
+	|scr_gamesave
+	|scr_gameload
+	|scr_nbe_restart
 |scr_soundfuck
 |scr_soundunfuck
 |scr_giveach

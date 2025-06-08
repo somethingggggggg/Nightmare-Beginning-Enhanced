@@ -1,8 +1,0 @@
-name=Fixedsys
-size=1
-bold=0
-italic=0
-charset=204
-aa_level=0
-range_start=0
-range_end=255
